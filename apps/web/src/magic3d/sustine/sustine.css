@@ -1,0 +1,67 @@
+/* "Sustine Magic3D": discret, in paleta Magic3D, mai putin vizibil decat butonul de print. */
+
+.magic3d-sustine-subsol {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--primary);
+}
+
+.magic3d-sustine-meniu {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+}
+
+.magic3d-sustine-nota {
+  position: fixed;
+  right: 16px;
+  bottom: 44px;
+  z-index: 40;
+  width: min(300px, calc(100vw - 32px));
+  padding: 10px 32px 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--panel);
+  color: var(--foreground);
+  box-shadow: var(--shadow);
+  font: 13px var(--font-ui);
+}
+
+.magic3d-sustine-nota a {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.magic3d-sustine-nota p {
+  margin: 4px 0 6px;
+  color: var(--muted-strong);
+  font-size: 12px;
+}
+
+.magic3d-sustine-inchide {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  display: inline-flex;
+  padding: 2px;
+  border: 0;
+  background: transparent;
+  color: var(--muted-strong);
+  cursor: pointer;
+}
+
+.magic3d-sustine-nu-mai {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--muted-strong);
+  font: inherit;
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: pointer;
+}

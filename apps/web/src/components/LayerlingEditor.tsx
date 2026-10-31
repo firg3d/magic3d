@@ -36,6 +36,7 @@ import { DESCHIDE_GENERATOARE } from "@/magic3d/generatoare/GeneratoareButton";
 import { GeneratoarePanel, type AplicaGenerare } from "@/magic3d/generatoare/GeneratoarePanel";
 import { pachetGenerat } from "@/magic3d/generatoare/forma";
 import { IMPORTA_MODEL, type CerereImport } from "@/magic3d/generatoare/Biblioteca";
+import { semnaleazaExport } from "@/magic3d/sustine/config";
 import { t as tMagic3d } from "@/magic3d/core/i18n/index";
 import { qrCodeOf, qrCodeShape, regeneratedQrCodeShape } from "@/lib/editorQrCode";
 import { DEFAULT_QR_WIDTH, MAX_QR_HEIGHT, MAX_QR_WIDTH, MIN_QR_HEIGHT, MIN_QR_WIDTH, QR_BYTE_CAPACITY, QR_ERROR_CORRECTIONS, QR_STYLES, normalizeQrSettings, qrByteLength, qrMatrix, qrModuleSize, qrModuleTooSmall, qrTextFits, type QrCodeSettings, type QrErrorCorrection, type QrStyle } from "@/lib/qrCode";
@@ -13148,6 +13149,7 @@ export function LayerlingEditor({
         const exportOverhangs = bedPrinter ? bedOverhangs(exportable, bedPrinter.width, bedPrinter.depth, bedPrinter.height) : [];
         // Tiny loose pieces a cut left behind are not written (#352); the notice says how many.
         const splinterNote = splinters > 0 ? ` ${t("status.exportSplinters", { count: splinters })}` : "";
+        if (gescheitert === 0) semnaleazaExport(label);
         if (gescheitert > 0) setNotice(t("status.exportUnionFailed"), true);
         else if (bedPrinter && exportOverhangs.length > 0) setNotice(bedOverhangMessage(exportOverhangs, `${bedPrinter.vendor} ${bedPrinter.model}`), true);
         else if (verschmolzen > 0) setNotice(t("status.exportUnioned", { count: verschmolzen, label }) + (savedOn ? ` ${savedOn}` : "") + hiddenNote + splinterNote);
@@ -13227,6 +13229,7 @@ export function LayerlingEditor({
       const named = skipped.slice(0, 3).map((entry) => t("status.exportStepSkippedItem", { name: entry.name, reason: t(`status.exportStepSkip.${entry.code}`) }));
       const more = skipped.length > 3 ? t("status.exportStepSkippedMore", { count: skipped.length - 3 }) : "";
       const skipNote = skipped.length === 0 ? "" : t("status.exportStepSkippedList", { list: named.join(", ") + more });
+      semnaleazaExport("STEP");
       setNotice((savedOn ? `${savedOn} ` : "") + (exportedCount === 1
         ? t("status.exportedStepOne", { skipNote })
         : t("status.exportedStepMany", { count: exportedCount, skipNote })) + hiddenNote);

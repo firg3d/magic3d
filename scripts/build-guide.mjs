@@ -45,13 +45,20 @@ export function parseEnv(text) {
 }
 
 async function readEnvironment() {
+  // Magic3D: the committed production settings (.env.production) first, local ones over them.
+  let production = {};
+  try {
+    production = parseEnv(await readFile(join(root, "apps", "web", ".env.production"), "utf8"));
+  } catch {
+    // no production settings in this checkout
+  }
   let file = {};
   try {
     file = parseEnv(await readFile(join(root, "apps", "web", ".env.local"), "utf8"));
   } catch {
     // no local settings: the guide then shows only what every installation has
   }
-  return { ...file, ...process.env };
+  return { ...production, ...file, ...process.env };
 }
 
 const PRINTER_ICON = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>';
@@ -77,13 +84,17 @@ export function renderFooter({ language, messages, environment, version }) {
   const external = ' rel="noopener"';
   const fallback = LANGUAGE_INFO[language].legal;
   const left = [];
-  // Same rule as the program: an address of the operator's own wins, otherwise
-  // the project's support page, unless NEXT_PUBLIC_SUPPORT_HINT=off.
-  const ownSponsorUrl = environment.NEXT_PUBLIC_SPONSOR_URL?.trim();
-  const supportOff = environment.NEXT_PUBLIC_SUPPORT_HINT?.trim().toLowerCase() === "off";
-  const sponsorUrl = ownSponsorUrl || (supportOff ? "" : "https://layerling.com/support.html");
-  const sponsorNeedsLang = !ownSponsorUrl || sponsorUrl.startsWith("/");
-  if (sponsorUrl) left.push(link(sponsorNeedsLang ? `${sponsorUrl}${sponsorUrl.includes("?") ? "&" : "?"}lang=${language}` : sponsorUrl, environment.NEXT_PUBLIC_SPONSOR_LABEL?.trim() || messages["dashboard.sponsor"], external));
+  // Magic3D: "Susține Magic3D" from NEXT_PUBLIC_SUPPORT_URL, as in the program's footer; without it, no support link.
+  const supportUrl = environment.NEXT_PUBLIC_SUPPORT_URL?.trim();
+  if (supportUrl) {
+    try {
+      const url = new URL(supportUrl);
+      url.searchParams.set("utm_content", "support-footer");
+      left.push(link(url.href, language === "ro" ? "Susține Magic3D" : "Support Magic3D", ' target="_blank" rel="noopener"'));
+    } catch {
+      // not an address: leave the link out
+    }
+  }
   left.push(link(GUIDE_LANGUAGES[language].forumUrl, messages["dashboard.forum"], external));
   const imprintUrl = environment.NEXT_PUBLIC_IMPRINT_URL?.trim();
   if (imprintUrl) left.push(link(imprintUrl, environment.NEXT_PUBLIC_IMPRINT_LABEL?.trim() || fallback.imprint));

@@ -25,6 +25,7 @@ import { TopPanel } from "./TopActionPanel";
 import { useToolbarCollapse } from "./useToolbarCollapse";
 import { OfertaButton } from "@/magic3d/oferta/OfertaButton";
 import { GeneratoareButton } from "@/magic3d/generatoare/GeneratoareButton";
+import { SustineButon } from "@/magic3d/sustine/SustineButon";
 
 
 /** Die Befehle der Suche, die im Verlaufsblick wach bleiben: sie aendern nichts am Entwurf. */
@@ -1530,6 +1531,7 @@ export function SecondaryToolbar({
               <button className={`action-icon-button ${interactiveHelpActive ? "active" : ""}`} type="button" aria-label={t("interactiveHelp.title")} title={`${t("interactiveHelp.title")} (${COMMAND_SHORTCUTS["interactive-help"]})`} aria-pressed={interactiveHelpActive} data-layerling-tool="interactive-help" data-help-exempt onClick={onInteractiveHelp}>
                 <CircleHelp className="toolbar-search-icon" aria-hidden="true" />
               </button>
+              <SustineButon loc="support-menu" varianta="meniu" />
             </div>
           )}
           <ThemeSwitch />

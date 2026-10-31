@@ -133,22 +133,23 @@ describe("guide footer", () => {
 
   it("shows the legal links of the installation from any folder, and leaves out what is not set", async () => {
     const messages = await loadMessages("de");
-    const full = renderFooter({ language: "de", messages, version: "9.9.9", environment: { NEXT_PUBLIC_IMPRINT_URL: "/impressum.html", NEXT_PUBLIC_PRIVACY_URL: "/datenschutz.html", NEXT_PUBLIC_SPONSOR_URL: "https://example.org/spende" } });
+    const full = renderFooter({ language: "de", messages, version: "9.9.9", environment: { NEXT_PUBLIC_IMPRINT_URL: "/impressum.html", NEXT_PUBLIC_PRIVACY_URL: "/datenschutz.html", NEXT_PUBLIC_SUPPORT_URL: "https://example.org/spende" } });
     expect(full).toContain('href="/impressum.html">Impressum');
     expect(full).toContain('href="/datenschutz.html">Datenschutz');
-    expect(full).toContain("https://example.org/spende");
+    expect(full).toContain("https://example.org/spende?utm_content=support-footer");
     expect(full).toContain("v9.9.9");
     const bare = renderFooter({ language: "en", messages: await loadMessages("en"), version: "1.0.0", environment: {} });
     expect(bare).not.toMatch(/Imprint|Privacy|impressum/i);
     expect(bare).toContain("Discussions");
   });
 
-  it("links the project's support page by default and drops it when switched off", async () => {
+  // Magic3D: "Support Magic3D" only when NEXT_PUBLIC_SUPPORT_URL is set; never the layerling support page.
+  it("links Support Magic3D when the address is set, in a new tab, and nothing when it is not", async () => {
     const messages = await loadMessages("en");
-    const byDefault = renderFooter({ language: "en", messages, version: "1.0.0", environment: {} });
-    expect(byDefault).toContain("https://layerling.com/support.html?lang=en");
-    const off = renderFooter({ language: "en", messages, version: "1.0.0", environment: { NEXT_PUBLIC_SUPPORT_HINT: "off" } });
-    expect(off).not.toContain("support.html");
+    const set = renderFooter({ language: "en", messages, version: "1.0.0", environment: { NEXT_PUBLIC_SUPPORT_URL: "https://praktik3d.ro/s?utm_source=magic3d" } });
+    expect(set).toContain('href="https://praktik3d.ro/s?utm_source=magic3d&amp;utm_content=support-footer" target="_blank" rel="noopener">Support Magic3D');
+    const unset = renderFooter({ language: "en", messages, version: "1.0.0", environment: {} });
+    expect(unset).not.toMatch(/Support Magic3D|support\.html/);
   });
 });
 

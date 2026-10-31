@@ -1,6 +1,6 @@
 "use client";
 
-import { Heart, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
 import { LANGUAGE_INFO, t, type Language } from "@/lib/i18n";
 import { useLanguage } from "@/lib/useLanguage";
@@ -11,8 +11,7 @@ import { SHOW_WHATS_NEW_EVENT } from "@/lib/useWhatsNew";
 import { InstallAppHint } from "@/components/InstallAppHint";
 import { TabletHint } from "@/components/TabletHint";
 import { PenHoverTips } from "@/components/PenHoverTips";
-import { SupportNudge } from "@/components/SupportNudge";
-import { supportCardEnabled, supportLink, type SupportSettings } from "@/lib/supportLink";
+import { SustineButon, SustineNota } from "@/magic3d/sustine/SustineButon";
 
 export { SOURCE_CODE_URL };
 
@@ -54,15 +53,6 @@ function legalLinks(language: Language) {
     label: link.label?.trim() || LANGUAGE_INFO[language].legal[link.fallbackLabel],
   })).filter((link) => link.href.length > 0);
 }
-
-// Everyone sees the way to support the project. Whoever runs an installation
-// may name an address of their own through build-time variables, just like the
-// legal pages, or switch the built-in link and the reminder card off.
-const SUPPORT_SETTINGS: SupportSettings = {
-  url: process.env.NEXT_PUBLIC_SPONSOR_URL,
-  label: process.env.NEXT_PUBLIC_SPONSOR_LABEL,
-  hint: process.env.NEXT_PUBLIC_SUPPORT_HINT,
-};
 
 // The footer reads as two halves: what this installation is on the left, where
 // the project lives on the right. Middle dots separate the parts and sit in
@@ -110,7 +100,6 @@ export function AppFooter({
 }) {
   const language = useLanguage();
   const simpleMode = useSimpleMode();
-  const sponsor = supportLink(SUPPORT_SETTINGS, language);
   const { update: hookUpdate } = useAppUpdate(version);
   const update = updateInfo !== undefined ? updateInfo : hookUpdate;
   // On someone's own computer the release page does not say how to update,
@@ -129,22 +118,12 @@ export function AppFooter({
     {variant === "editor" ? <InstallAppHint variant="editor" /> : null}
     {variant === "editor" ? <TabletHint variant="editor" /> : null}
     {variant === "editor" ? <PenHoverTips /> : null}
-    {sponsor && supportCardEnabled(SUPPORT_SETTINGS) ? <SupportNudge href={sponsor.href} /> : null}
+    {/* Magic3D: "Sustine Magic3D" replaces the layerling support link and its reminder card; after an export, a quiet note. */}
+    {variant === "editor" ? <SustineNota /> : null}
     <footer className={variant === "editor" ? "dashboard-legal editor-legal" : "dashboard-legal"}>
       <div className="dashboard-legal-group">
         {joinWithDots([
-          sponsor ? (
-            <a
-              className="dashboard-legal-sponsor"
-              href={sponsor.href}
-              target="_blank"
-              rel="noreferrer"
-              key="sponsor"
-            >
-              <Heart size={13} aria-hidden="true" />
-              {sponsor.label || t("dashboard.sponsor")}
-            </a>
-          ) : null,
+          <SustineButon loc="support-footer" varianta="subsol" key="sustine" />,
           onShowWelcome ? (
             <a
               href="#welcome"
