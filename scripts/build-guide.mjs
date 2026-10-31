@@ -71,7 +71,8 @@ function printLink(strings, className = "") {
 /** The page with every chapter in a row, for printing; one in each guide folder. */
 export const PRINT_ALL_PAGE = "print-all.html";
 
-const SOURCE_CODE = "https://github.com/henmedia/layerling";
+// Magic3D: the code this guide is built from, as the program's "Source" link (lib/appUpdate.ts).
+const DEFAULT_SOURCE_CODE = "https://github.com/firg3d/magic3d";
 
 /**
  * The footer of the program, for the guide's pages: the same links from the
@@ -100,9 +101,10 @@ export function renderFooter({ language, messages, environment, version }) {
   if (imprintUrl) left.push(link(imprintUrl, environment.NEXT_PUBLIC_IMPRINT_LABEL?.trim() || fallback.imprint));
   const privacyUrl = environment.NEXT_PUBLIC_PRIVACY_URL?.trim();
   if (privacyUrl) left.push(link(privacyUrl, environment.NEXT_PUBLIC_PRIVACY_LABEL?.trim() || fallback.privacy));
+  const sourceCode = (environment.NEXT_PUBLIC_SOURCE_CODE_URL?.trim() || DEFAULT_SOURCE_CODE).replace(/\/+$/, "");
   const right = [
-    link(SOURCE_CODE, messages["dashboard.projectOnGitHub"], external),
-    link(`${SOURCE_CODE}/releases`, (messages["dashboard.releaseNotes"] ?? "").replace("{version}", version), external),
+    link(sourceCode, messages["dashboard.projectOnGitHub"], external),
+    link(`${sourceCode}/releases`, (messages["dashboard.releaseNotes"] ?? "").replace("{version}", version), external),
   ];
   const group = (items) => `<div>${items.join('<span class="dot" aria-hidden="true">&middot;</span>')}</div>`;
   const trademark = messages["footer.trademark"] ? `<p class="trademark">${escapeHtml(messages["footer.trademark"])}</p>` : "";
