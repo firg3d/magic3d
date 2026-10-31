@@ -11,6 +11,7 @@ import { DESCHIDE_GENERATOARE } from "@/magic3d/generatoare/GeneratoareButton";
 import { START, tx } from "@/magic3d/start/config";
 import { noteazaFormaInitiala } from "@/magic3d/start/formaInitiala";
 import { tst } from "@/magic3d/start/texte";
+import { tl } from "@/magic3d/logo/texte";
 
 /*
  * Butonul de creare si cardul de import iau textul din catalogul interfetei (dashboard.*), pe care il citeste si ghidul.
@@ -151,6 +152,14 @@ export function StartGeneratoare({ onCreate }: { onCreate: () => void }) {
           <Sparkles size={16} aria-hidden="true" /> {tst("genMagic3d")}
         </button>
       </div>
+      <button type="button" className="m3d-card-logo" data-testid="start-logo" onClick={() => deschide("magic3dLogo")}>
+        <img src="/magic3d/logo/logo-icon.svg" alt="" width={56} height={56} />
+        <span>
+          <strong>{tl("cardTitlu")}</strong>
+          <span>{tl("cardText")}</span>
+        </span>
+        <span className="m3d-card-logo-sageata" aria-hidden="true">→</span>
+      </button>
       <div className="m3d-grila-generatoare">
         {START.generatoare.map((generator, index) => (
           <button key={generator.forma} type="button" className="m3d-card-generator" data-testid={`start-generator-${generator.forma}`} onClick={() => deschide(generator.forma)}>

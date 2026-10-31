@@ -24,6 +24,9 @@ import {
 } from "@/magic3d/oferta/oferta";
 import { to } from "@/magic3d/oferta/texte";
 
+/** De unde vine cererea: generatorul care a facut piesa (scris in mesaj) si daca se ofera optiunea pentru firme. */
+export type ContextOferta = { generator?: string; firma?: boolean };
+
 /** Ce pregateste editorul pentru o oferta: fisierele si masuratorile piesei. */
 export type PachetOferta = {
   threeMf: Uint8Array;
@@ -51,7 +54,7 @@ const numar = (value: number, digits = 1) =>
  * arata o estimare si verificarile, apoi urca fisierele pe magic3d.ro si deschide WhatsApp cu
  * mesajul gata scris. Datele din formular nu ajung pe server.
  */
-export function OfertaPanel({ onClose, pregateste }: { onClose: () => void; pregateste: () => Promise<PachetOferta> }) {
+export function OfertaPanel({ onClose, pregateste, context }: { onClose: () => void; pregateste: () => Promise<PachetOferta>; context?: ContextOferta | null }) {
   useLanguage();
   const [config, setConfig] = useState<OfertaConfig>(OFERTA_IMPLICIT);
   const [pachet, setPachet] = useState<PachetOferta | null>(null);
@@ -65,6 +68,7 @@ export function OfertaPanel({ onClose, pregateste }: { onClose: () => void; preg
   const [cantitate, setCantitate] = useState("1");
   const [observatii, setObservatii] = useState("");
   const [student, setStudent] = useState(false);
+  const [firma, setFirma] = useState(false);
   const [trimit, setTrimit] = useState(false);
   const [eroare, setEroare] = useState("");
   const [gata, setGata] = useState<{ url: string; mesaj: string; link: string; zile: number } | null>(null);
@@ -131,6 +135,8 @@ export function OfertaPanel({ onClose, pregateste }: { onClose: () => void; preg
         cantitate: cantitateNumar,
         student,
         observatii,
+        generator: context?.generator,
+        firma: Boolean(context?.firma) && firma,
         dimensiuni: formatDimensiuni(pachet.dimensiuni, (value) => numar(value)),
         volum: estimare ? `${numar(estimare.volumeCm3)} cm³` : "",
         greutate: estimare ? `≈ ${numar(estimare.grams, 0)} g (${materialAles})` : "",
@@ -248,6 +254,12 @@ export function OfertaPanel({ onClose, pregateste }: { onClose: () => void; preg
                   <span>{to("student")}</span>
                 </label>
                 <p className="oferta-lat oferta-nota">{to("studentNota")}</p>
+                {context?.firma ? (
+                  <label className="oferta-lat oferta-student">
+                    <input type="checkbox" data-testid="oferta-firma" checked={firma} onChange={(event) => setFirma(event.target.checked)} />
+                    <span>{to("firma")}</span>
+                  </label>
+                ) : null}
               </div>
             </section>
 

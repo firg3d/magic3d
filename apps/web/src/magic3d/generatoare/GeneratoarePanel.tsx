@@ -12,6 +12,8 @@ import { grupuriFonturi, incarcaManifestFonturi, type FontItem } from "@/magic3d
 import type { GeneratorDef, Magic3dGenerat, ParamDef, Parametri, RezultatGenerare } from "@/magic3d/generatoare/tipuri";
 import { tg } from "@/magic3d/generatoare/texte";
 import { Biblioteca, type Colectie } from "@/magic3d/generatoare/Biblioteca";
+import { DESCHIDE_LOGO } from "@/magic3d/logo/asset";
+import { tl } from "@/magic3d/logo/texte";
 
 /** Ce face editorul cu o constructie: o pune pe placa (tinta null) sau inlocuieste pachetul `tinta`. Intoarce id-ul pachetului. */
 export type AplicaGenerare = (rezultat: RezultatGenerare, def: GeneratorDef, meta: Magic3dGenerat, tinta: string | null) => string;
@@ -179,6 +181,22 @@ export function GeneratoarePanel({ onClose, editat, aplica }: {
                   <button key={g.id} type="button" className="gen-card" onClick={() => alege(g)}>{tm(g.titlu)}</button>
                 ))}
               </div>
+              <section className="gen-sectiune">
+                <h3>{tl("titlu")}</h3>
+                <div className="gen-lista">
+                  <button
+                    type="button"
+                    className="gen-card"
+                    data-testid="gen-logo"
+                    onClick={() => {
+                      onClose();
+                      window.dispatchEvent(new Event(DESCHIDE_LOGO));
+                    }}
+                  >
+                    {tl("cardText")}
+                  </button>
+                </div>
+              </section>
               <section className="gen-sectiune">
                 <h3>{tg("modele")}</h3>
                 <div className="gen-lista">

@@ -50,6 +50,8 @@ export const OFERTA_IMPLICIT: OfertaConfig = {
     "Dimensiuni: {dimensiuni}",
     "Volum estimat: {volum}",
     "Greutate estimată: {greutate}",
+    "Generator: {generator}",
+    "Firmă: {firma}",
     "Observații: {observatii}",
     "",
     "Fișiere: {link}",
@@ -177,7 +179,14 @@ export type DateOferta = {
   greutate: string;
   link: string;
   zile: number;
+  /** Ce generator Magic3D a facut piesa ("Logo → Plăcuță cu logo"); gol pentru o piesa desenata. */
+  generator?: string;
+  /** Comanda pentru firma: mai multe bucati sau factura pe firma. */
+  firma?: boolean;
 };
+
+/** Pagina atelierului pentru comenzile firmelor, pusa in mesaj langa mentiunea B2B. */
+export const LINK_FIRME = "https://praktik3d.ro/pages/printare-3d-firme";
 
 /** "1 zi", "7 zile", "20 de zile", "101 zile": cu "de" cand ultimele doua cifre nu sunt intre 1 si 19. */
 export function zileText(zile: number): string {
@@ -203,6 +212,8 @@ export function mesajOferta(sablon: readonly string[], date: DateOferta): string
     link: date.link,
     zile: String(date.zile),
     zileText: zileText(date.zile),
+    generator: (date.generator ?? "").trim(),
+    firma: date.firma ? `da — mai multe bucăți / factură pe firmă (B2B), ${LINK_FIRME}` : "",
   };
   return sablon
     .filter((line) => {

@@ -1,0 +1,271 @@
+/* Panoul "Din poză sau logo": aceeasi fereastra mobila ca oferta, cu verdele Magic3D. */
+
+.top-action-panel.logo-panel {
+  display: flex;
+  flex-direction: column;
+  width: min(440px, calc(100vw - 32px));
+  max-height: calc(100vh - var(--editor-toolbar-height, 120px) - 24px);
+}
+
+.top-action-panel.logo-panel .top-action-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: none;
+  overflow-y: auto;
+}
+
+.logo-descriere {
+  margin: 0 0 10px;
+  color: var(--muted-strong);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.logo-sectiune {
+  margin: 12px 0;
+}
+
+.logo-sectiune h3 {
+  margin: 0 0 8px;
+  color: var(--muted-strong);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.logo-fisier {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px dashed #9fc7b1;
+  border-radius: 12px;
+  background: color-mix(in srgb, #1f8a5b 6%, transparent);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.logo-fisier:hover,
+.logo-fisier-trage {
+  border-color: #1f8a5b;
+  background: color-mix(in srgb, #1f8a5b 12%, transparent);
+}
+
+.logo-fisier svg {
+  flex: none;
+  color: #1f8a5b;
+}
+
+.logo-fisier span {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.logo-fisier strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.logo-fisier small {
+  color: var(--muted-strong);
+  font-size: 12px;
+}
+
+.logo-optiuni {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 12px;
+  margin: 10px 0;
+}
+
+.logo-camp {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.logo-camp select,
+.logo-camp input[type="text"] {
+  width: 100%;
+  min-width: 0;
+  padding: 6px 8px;
+  border: 1px solid var(--border, #d6dedb);
+  border-radius: 8px;
+  background: var(--panel-bg, #ffffff);
+  color: inherit;
+  font: inherit;
+  font-weight: 500;
+}
+
+.logo-camp-valoare {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.logo-camp-valoare small {
+  color: var(--muted-strong);
+  font-weight: 500;
+}
+
+.logo-glisor input[type="range"] {
+  width: 100%;
+  accent-color: #1f8a5b;
+}
+
+.logo-bifa {
+  display: flex;
+  grid-column: 1 / -1;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.logo-bifa input {
+  accent-color: #1f8a5b;
+}
+
+.logo-previzualizare {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-height: 140px;
+  margin: 0;
+  padding: 10px;
+  border: 1px solid var(--border, #d6dedb);
+  border-radius: 12px;
+  /* Tabla de sah: se vede si un logo alb, si unul negru. */
+  background: repeating-conic-gradient(#eef2f0 0 25%, #ffffff 0 50%) 0 0 / 16px 16px;
+}
+
+.logo-previzualizare svg {
+  width: 100%;
+  max-height: 220px;
+}
+
+.logo-previzualizare figcaption {
+  color: #3b4a43;
+  font-size: 12px;
+}
+
+.logo-stare {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #ffffff;
+}
+
+.logo-iesiri {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.logo-iesiri button {
+  padding: 6px 10px;
+  border: 1px solid var(--border, #d6dedb);
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.logo-iesiri button.activ {
+  border-color: #1f8a5b;
+  background: #1f8a5b;
+  color: #ffffff;
+}
+
+.logo-nota {
+  margin: 4px 0 10px;
+  color: var(--muted-strong);
+  font-size: 12.5px;
+}
+
+.logo-actiuni {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.logo-buton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: 1px solid #1f8a5b;
+  border-radius: 10px;
+  background: transparent;
+  color: #15734c;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.logo-buton-plin {
+  background: #1f8a5b;
+  color: #ffffff;
+}
+
+.logo-buton:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.logo-gata {
+  margin: 8px 0 0;
+  color: #15734c;
+  font-size: 13px;
+}
+
+.logo-eroare {
+  margin: 8px 0 0;
+  color: #b42318;
+  font-size: 13px;
+}
+
+html[data-theme="dark"] .logo-buton {
+  color: #7fd3a9;
+  border-color: #3fb67f;
+}
+
+html[data-theme="dark"] .logo-buton-plin,
+html[data-theme="dark"] .logo-iesiri button.activ {
+  background: #1f8a5b;
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .logo-gata {
+  color: #7fd3a9;
+}
+
+@media (max-width: 520px) {
+  .logo-optiuni {
+    grid-template-columns: 1fr;
+  }
+}
+
+html[data-theme="dark"] .logo-camp select,
+html[data-theme="dark"] .logo-camp input[type="text"] {
+  border-color: #2c3a33;
+  background: #151c19;
+  color: #e8efeb;
+}
+
+html[data-theme="dark"] .logo-fisier {
+  border-color: #2c4a3b;
+}

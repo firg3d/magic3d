@@ -452,6 +452,55 @@ html[data-theme="dark"] .m3d-start .m3d-buton-plin:hover {
   gap: 18px;
 }
 
+/* "Din poză sau logo": un card lat deasupra grilei, ca prima cale de pornire. */
+.m3d-card-logo {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+  padding: 18px 22px;
+  border: 1.5px solid var(--m3d-linie-verde);
+  border-radius: 20px;
+  background: linear-gradient(120deg, var(--m3d-verde-deschis), var(--m3d-alb) 70%);
+  color: var(--m3d-text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.m3d-card-logo:hover {
+  box-shadow: 0 14px 34px rgba(15, 90, 59, 0.12);
+  transform: translateY(-2px);
+}
+
+.m3d-card-logo img {
+  flex: none;
+}
+
+.m3d-card-logo > span:nth-child(2) {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.m3d-card-logo strong {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.m3d-card-logo > span:nth-child(2) span {
+  color: var(--m3d-text3);
+  font-size: 14px;
+}
+
+.m3d-card-logo-sageata {
+  color: var(--m3d-verde);
+  font-size: 24px;
+  font-weight: 800;
+}
+
 .m3d-card-generator {
   display: flex;
   flex-direction: column;

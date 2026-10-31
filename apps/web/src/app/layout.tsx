@@ -13,6 +13,7 @@ import "./sketchImage.css";
 import "./sketchLock.css";
 import "./dashboardSelect.css";
 import "@/magic3d/oferta/oferta.css";
+import "@/magic3d/logo/logo.css";
 import "@/magic3d/generatoare/generatoare.css";
 import "@/magic3d/sustine/sustine.css";
 import "@/magic3d/start/start.css";

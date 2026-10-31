@@ -21,6 +21,8 @@
     "Dimensiuni: {dimensiuni}",
     "Volum estimat: {volum}",
     "Greutate estimată: {greutate}",
+    "Generator: {generator}",
+    "Firmă: {firma}",
     "Observații: {observatii}",
     "",
     "Fișiere (3MF, STL, imagine): {link}",

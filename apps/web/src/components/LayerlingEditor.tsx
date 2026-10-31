@@ -27,11 +27,15 @@ import { cookieCutterFillets, cookieCutterProfiles, normalizeCookieCutterOptions
 import type { IconLayerPatch, IconTagControls, ReferenceImageControls, TextLayerPatch } from "@/components/workplane/ShapeInspector";
 import { calibratedReferenceImage, dataUrlByteLength, isReferenceImage, LARGE_REFERENCE_IMAGE_BYTES, mirrorHidesReferenceImage, referenceImageOpacity, referenceImagePixelDistance, referenceImageShape } from "@/lib/referenceImage";
 import { IconTagPanel } from "@/components/workplane/IconTagPanel";
+import { DESCHIDE_LOGO, logoAsset } from "@/magic3d/logo/asset";
+import { construiesteLogo, siluetaCaCorp } from "@/magic3d/logo/constructie";
+import { LogoPanel, type CreeazaLogo } from "@/magic3d/logo/LogoPanel";
+import { tl } from "@/magic3d/logo/texte";
 import { QrCodePanel } from "@/components/workplane/QrCodePanel";
 import { meshBounds } from "@/lib/exportUnion";
 import { DESCHIDE_OFERTA } from "@/magic3d/oferta/OfertaButton";
 import { muchiiDeschise, peretiSubtiri } from "@/magic3d/oferta/oferta";
-import { OfertaPanel, type PachetOferta } from "@/magic3d/oferta/OfertaPanel";
+import { OfertaPanel, type ContextOferta, type PachetOferta } from "@/magic3d/oferta/OfertaPanel";
 import { DESCHIDE_GENERATOARE } from "@/magic3d/generatoare/GeneratoareButton";
 import { GeneratoarePanel, type AplicaGenerare } from "@/magic3d/generatoare/GeneratoarePanel";
 import { pachetGenerat } from "@/magic3d/generatoare/forma";
@@ -2849,13 +2853,20 @@ export function LayerlingEditor({
   const [topPanel, setTopPanel] = useState<TopPanel>(null);
   /** The icon tag window: an SVG file, its width and OK (the library's Icon tag). */
   const [iconTagPanelOpen, setIconTagPanelOpen] = useState(false);
+  // Magic3D: "Din poză sau logo", deschis din biblioteca de forme, din panoul Generatoare sau de pe pagina de start.
+  const [logoPanelOpen, setLogoPanelOpen] = useState(false);
+  useEffect(() => {
+    const open = () => setLogoPanelOpen(true);
+    window.addEventListener(DESCHIDE_LOGO, open);
+    return () => window.removeEventListener(DESCHIDE_LOGO, open);
+  }, []);
   const [qrCodePanelOpen, setQrCodePanelOpen] = useState(false);
   // Magic3D: "Printeaza in Romania - cere oferta", deschis din butonul din bara de titlu.
-  const [ofertaOpen, setOfertaOpen] = useState(false);
+  const [ofertaOpen, setOfertaOpen] = useState<ContextOferta | null>(null);
   // Magic3D: the generators panel, with the generated bundle that was selected when it opened (to edit it).
   const [generatoare, setGeneratoare] = useState<{ editat: { id: string; meta: NonNullable<WorkplaneShape["magic3d"]> } | null } | null>(null);
   useEffect(() => {
-    const open = () => setOfertaOpen(true);
+    const open = (event: Event) => setOfertaOpen((event as CustomEvent<ContextOferta | undefined>).detail ?? {});
     window.addEventListener(DESCHIDE_OFERTA, open);
     return () => window.removeEventListener(DESCHIDE_OFERTA, open);
   }, []);
@@ -3694,6 +3705,11 @@ export function LayerlingEditor({
     if (asset.id === iconTagAsset.id) {
       setQrCodePanelOpen(false);
       setIconTagPanelOpen(true);
+      return;
+    }
+    // Magic3D: "Din poză sau logo" porneste tot dintr-un fisier, in panoul lui.
+    if (asset.id === logoAsset.id) {
+      setLogoPanelOpen(true);
       return;
     }
     // The QR code (#553) starts from a text, in its own window too.
@@ -5872,6 +5888,10 @@ export function LayerlingEditor({
       if (asset.id === iconTagAsset.id) {
         setQrCodePanelOpen(false);
         setIconTagPanelOpen(true);
+        return;
+      }
+      if (asset.id === logoAsset.id) {
+        setLogoPanelOpen(true);
         return;
       }
       if (asset.id === qrCodeAsset.id) {
@@ -9387,6 +9407,24 @@ export function LayerlingEditor({
       return { ok: false as const, message };
     }
   }, [commitShapes, selectedShapes, activeRotationPivot]);
+
+  /**
+   * Magic3D "Din poză sau logo": obiectul ca grup editabil pe mijlocul placii; apasat din nou, panoul
+   * inlocuieste ce a pus el. Forma de prajitura o face unealta de mai sus, din silueta logo-ului.
+   */
+  const creeazaLogo = useCallback<CreeazaLogo>(async (trasare, setari, inlocuieste) => {
+    const fara = (shapes: WorkplaneShape[]) => (inlocuieste ? shapes.filter((shape) => shape.id !== inlocuieste) : shapes);
+    if (setari.tip === "prajitura") {
+      const silueta = await siluetaCaCorp(trasare, setari.marime);
+      if (inlocuieste && shapesRef.current.some((shape) => shape.id === inlocuieste)) commitShapes(fara(shapesRef.current), [], tl("iesire_prajitura"));
+      const facut = await makeCookieCutter(undefined, [silueta]);
+      if (!facut.ok) throw new Error(facut.message);
+      return { id: facut.id, nume: tl("iesire_prajitura") };
+    }
+    const obiect = await construiesteLogo(trasare, setari);
+    commitShapes([...fara(shapesRef.current), obiect], [obiect.id], tl("adaugat", { nume: obiect.name }));
+    return { id: obiect.id, nume: obiect.name };
+  }, [commitShapes, makeCookieCutter]);
 
   /** The settings the last cutter was built with, so the next one starts from them; the defaults where none are kept. */
   const storedCookieCutterSettings = useCallback((): CookieCutterSettings => {
@@ -15374,10 +15412,11 @@ export function LayerlingEditor({
       {iconTagPanelOpen && !historyViewState ? (
         <IconTagPanel onClose={() => setIconTagPanelOpen(false)} onCreate={createIconTag} />
       ) : null}
+      {logoPanelOpen && !historyViewState ? <LogoPanel onClose={() => setLogoPanelOpen(false)} onCreate={creeazaLogo} /> : null}
       {qrCodePanelOpen && !historyViewState ? (
         <QrCodePanel onClose={() => setQrCodePanelOpen(false)} onCreate={createQrCode} />
       ) : null}
-      {ofertaOpen ? <OfertaPanel onClose={() => setOfertaOpen(false)} pregateste={pregatesteOferta} /> : null}
+      {ofertaOpen ? <OfertaPanel onClose={() => setOfertaOpen(null)} pregateste={pregatesteOferta} context={ofertaOpen} /> : null}
       {generatoare ? <GeneratoarePanel editat={generatoare.editat} aplica={aplicaGenerare} onClose={() => setGeneratoare(null)} /> : null}
       {topPanel ? (
         <TopActionPanel
