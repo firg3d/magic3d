@@ -18,6 +18,8 @@ export default defineConfig({
   test: {
     environment: "node",
     include: ["tests/e2e/**/*.e2e.ts"],
+    // Magic3D opens in Romanian; these tests read the English sentences, as the unit tests do.
+    setupFiles: ["tests/setupLanguage.ts"],
     testTimeout: 120000,
     hookTimeout: 120000,
     maxWorkers: shareTheMachine(),
