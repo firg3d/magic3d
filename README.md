@@ -557,12 +557,17 @@ layerling is a fork of [SketchForge-3D](https://github.com/Formsmith746/SketchFo
 contributors. The fork started on 16 September 2026 from SketchForge 1.0.9. SketchForge remains an excellent project and
 the reason this one exists.
 
+Magic3D is a fork of [layerling](https://github.com/henmedia/layerling) by the layerling contributors, started on
+31 October 2026 from layerling 1.127.0. It adds the Magic3D parametric generators (letters, names, keychains, boxes,
+honeycomb and LED letters, among others), which live in `apps/web/src/magic3d/`.
+
 ## Trademarks
 
 Tinkercad is a trademark of Autodesk, Inc. layerling is an independent project and is not affiliated with, endorsed or sponsored by Autodesk.
 
 ## License
 
+Copyright (C) 2026 Magic3D contributors.
 Copyright (C) 2026 layerling contributors.
 Copyright (C) 2026 SketchForge contributors.
 
