@@ -3,6 +3,7 @@
 import { FolderOpen, Search, Sparkles, Upload } from "lucide-react";
 import { LanguageSwitch } from "@/components/LanguageSwitch";
 import { ThemeSwitch } from "@/components/ThemeSwitch";
+import { t } from "@/lib/i18n";
 import { LANGUAGE_INFO } from "@/lib/languages";
 import { libraryShapeAssets } from "@/lib/shapeCatalog";
 import { useLanguage } from "@/lib/useLanguage";
@@ -12,6 +13,8 @@ import { noteazaFormaInitiala } from "@/magic3d/start/formaInitiala";
 import { tst } from "@/magic3d/start/texte";
 
 /*
+ * Butonul de creare si cardul de import iau textul din catalogul interfetei (dashboard.*), pe care il citeste si ghidul.
+ *
  * Sectiunile noi ale paginii de start Magic3D (macheta "Pagina de start"). Nu tin stare proprie:
  * cautarea, crearea, continuarea si importul sunt functiile existente ale paginii, primite ca props.
  */
@@ -79,7 +82,7 @@ export function StartHero({ onCreate, onContinue, onImport, ultima }: {
         </h1>
         <p className="m3d-intro">{tst("intro")}</p>
         <div className="m3d-hero-butoane">
-          <button className="m3d-buton m3d-buton-plin m3d-buton-mare" type="button" onClick={onCreate}>{tst("incepe")}</button>
+          <button className="m3d-buton m3d-buton-plin m3d-buton-mare" type="button" onClick={onCreate}>{t("dashboard.createDesign")}</button>
           <a className="m3d-buton m3d-buton-moale m3d-buton-mare" href="#generatoare">{tst("dinGenerator")}</a>
         </div>
         <div className="m3d-hero-carduri">
@@ -97,7 +100,7 @@ export function StartHero({ onCreate, onContinue, onImport, ultima }: {
           <button className="m3d-card-actiune m3d-card-import" type="button" onClick={onImport}>
             <span className="m3d-card-actiune-icon"><Upload size={20} aria-hidden="true" /></span>
             <span className="m3d-card-actiune-text">
-              <strong>{tst("importa")}</strong>
+              <strong>{t("dashboard.importGeometry")}</strong>
               <span>{tst("formate")}</span>
             </span>
           </button>

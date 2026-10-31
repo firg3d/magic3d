@@ -5,13 +5,15 @@ summary: De la o foaie goală la prima ta piesă pentru imprimanta 3D, în cinci
 
 Magic3D este un program de proiectare pentru printare 3D care rulează direct în browser. Construiești o piesă din forme simple, faci găuri în ea, îi rotunjești muchiile și o trimiți în slicer. Nu ai nimic de instalat și nu trebuie să te înregistrezi. Ce construiești rămâne pe calculatorul tău.
 
-![Pagina de start Magic3D: „Creează un proiect 3D nou" sus, proiectele tale și ghidul rapid dedesubt.](shot:start-page)
+![Pagina de start Magic3D: butonul pentru un design nou și importul sus, generatoarele, apoi proiectele tale.](shot:start-page)
 
 ## Crearea unui proiect
 
 Deschide [magic3d.ro](https://magic3d.ro/). Pe pagina de start, dă clic pe {{ui:dashboard.createDesign}}. Editorul se deschide cu un plan de lucru gol, grila pe care prinde formă totul.
 
-Dacă ai deja un fișier pe care vrei să-l continui, folosește {{ui:dashboard.importGeometry}}. Merge atât pentru proiecte Magic3D (`.lyl`), cât și pentru fișiere STL, OBJ, 3MF, STEP sau SVG.
+Poți porni și dintr-un generator: cardurile de sub butoane (breloc cu nume, cutie, roată dințată, cod QR, vază și altele) deschid un design nou cu forma deja pe placă. Generatoarele Magic3D (litere, nume, brelocuri, rame și altele) le găsești în editor, la **Generatoare**.
+
+Dacă ai deja un fișier pe care vrei să-l continui, folosește {{ui:dashboard.importGeometry}} sau trage fișierul peste pagina de start. Merge atât pentru proiecte Magic3D (`.lyl`), cât și pentru fișiere STL, OBJ, 3MF, STEP sau SVG. Ultimul proiect la care ai lucrat se redeschide cu un clic pe **Continuă ultima planșă**.
 
 Toate proiectele tale apar apoi pe pagina de start, cu o imagine de previzualizare. Sunt păstrate în spațiul de stocare al browserului și se salvează automat după fiecare modificare, așa că nu există buton de salvare. **Magic3D nu își asumă nicio răspundere pentru proiectele păstrate în browser.** Un browser se poate strica sau o actualizare a lui poate crea probleme, așa că fă din când în când o copie de siguranță a proiectelor cu {{ui:dashboard.backupAll}} de pe pagina de start sau salvează-le ca fișiere. O copie de siguranță se recuperează cu {{ui:dashboard.restoreBackup}}. Cum împachetezi proiectele într-un fișier și cum le dai mai departe afli în [Fișiere și salvare](chapter:files-and-saving). Dacă vrei un memento, activează {{ui:workspace.confirmTabClose}} în setări (rotița dințată din panglică): browserul te întreabă atunci înainte să închidă sau să reîncarce o filă cu un proiect deschis.
 
