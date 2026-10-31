@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Generator de litere 3D personalizate — Magic3D</title>
+<meta name="description" content="Unsprezece generatoare parametrice pentru litere 3D, brelocuri, plăcuțe, cutii cadou și obiecte luminoase. Configurezi în minute, primești fișiere 3MF gata de printat.">
+<meta name="author" content="Firg3D">
+<meta name="theme-color" content="#5b4dd1">
+<link rel="canonical" href="https://magic3d.ro/">
+<link rel="alternate" hreflang="ro" href="https://magic3d.ro/">
+<link rel="alternate" hreflang="en" href="https://magic3d.ro/en/">
+<link rel="alternate" hreflang="x-default" href="https://magic3d.ro/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ro_RO">
+<meta property="og:site_name" content="Magic3D">
+<meta property="og:title" content="Generator de litere 3D personalizate — Magic3D">
+<meta property="og:description" content="Unsprezece generatoare parametrice care produc fișiere gata de printat. Configurezi în minute, printezi în aceeași zi.">
+<meta property="og:url" content="https://magic3d.ro/">
+<meta property="og:image" content="https://magic3d.ro/landing/og-landing.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Generator de litere 3D personalizate — Magic3D">
+<meta name="twitter:description" content="Unsprezece generatoare parametrice care produc fișiere gata de printat. Configurezi în minute, printezi în aceeași zi.">
+<link rel="stylesheet" href="/landing/landing.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://magic3d.ro/#org",
+      "name": "Firg3D",
+      "url": "https://magic3d.ro/",
+      "description": "Generatoare parametrice 3D pentru producție de obiecte personalizate."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://magic3d.ro/#site",
+      "url": "https://magic3d.ro/",
+      "name": "Magic3D",
+      "inLanguage": "ro-RO",
+      "publisher": {
+        "@id": "https://magic3d.ro/#org"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://magic3d.ro/?q={q}"
+        },
+        "query-input": "required name=q"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Magic3D",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Web",
+      "inLanguage": "ro-RO",
+      "publisher": {
+        "@id": "https://magic3d.ro/#org"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "price": "",
+          "priceCurrency": "RON",
+          "name": "Comercial"
+        },
+        {
+          "@type": "Offer",
+          "price": "",
+          "priceCurrency": "RON",
+          "name": "Suporter"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Ce produce Magic3D?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fișiere 3MF gata de printat, cu piesele deja orientate pentru imprimantă și așezate pe plăci. Lângă fiecare export primești o fișă de producție în format text, cu tabelul de culori, pașii de montaj și lista de verificare înainte de livrare."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Trebuie să știu modelare 3D?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nu. Alegi litera, fontul și dimensiunile din panouri, iar geometria se generează singură. Nu există schițe, constrângeri sau arbore de operații ca într-un program CAD."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Când am nevoie de licență comercială?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Când vinzi ce produci cu aplicația — printuri, obiecte fizice sau fișiere. Pentru proiectele tale, pentru familie sau ca daruri, aplicația e gratuită și completă. Licența nu deblochează funcții; îți dă dreptul de vânzare și un număr de licență care apare pe fișa de producție."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ce înseamnă tokenul de suporter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "E un mod de a susține dezvoltarea, nu o licență. Primești fișierele token3d pentru printare proprie și o insignă pe care o poți afișa în randările tale. NU acordă drept de utilizare comercială: rămâi în regim de uz personal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Cu ce imprimantă merge?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cu orice imprimantă FDM. Exportul e 3MF standard, deschis de Bambu Studio, OrcaSlicer, PrusaSlicer și Cura. Dimensiunea plăcii se alege din aplicație, iar piesele care nu încap se împart automat pe mai multe plăci."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Funcționează fără internet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da. Toată generarea rulează local, pe calculatorul tău. Nu se trimite nimic pe niciun server și nu ai nevoie de conexiune ca să lucrezi sau să exporți."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ce e semnătura Praktik3D?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un marcaj mic, gravat, cu textul praktik3d.ro, pe generatoarele noi — nu și pe cele de litere, care rămân fără niciun marcaj. E felul nostru de a ne semna munca la exportul gratuit. Cu licența comercială îl înlocuiești cu logo-ul tău sau îl scoți."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="hd">
+  <a class="skip" href="#continut">Sari la conținut</a>
+  <div class="wrap hd-in">
+    <a class="logo" href="/" aria-label="Magic3D">
+      <img src="/brand/magic3d-logo.svg" alt="Magic3D" width="150" height="36">
+    </a>
+    <nav class="nav" aria-label="Aplicații">
+      <a href="#aplicatii">Aplicații</a>
+      <a href="#cum">Cum funcționează</a>
+      <a href="#comparatie">De ce nu CAD</a>
+      <a href="#preturi">Prețuri</a>
+      <a href="#intrebari">Întrebări</a>
+    </nav>
+    <div class="hd-act">
+      <a class="lang" href="/en/" hreflang="en" lang="en">English</a>
+      <a class="btn btn-p" href="/litere.html">Deschide aplicația</a>
+    </div>
+  </div>
+</header>
+<main id="continut">
+
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div class="hero-txt">
+        <h1>Transformă o comandă de o oră în <em>trei minute</em>.</h1>
+        <p class="lead">Platformă de generatoare parametrice pentru ateliere de printare 3D. Toate cele unsprezece aplicații funcționează acum, gratuit pentru uz personal, fără cont și fără instalare.</p>
+        <div class="cta">
+          <a class="btn btn-p btn-lg" href="/litere.html">Deschide gratuit →</a>
+          <a class="btn btn-g btn-lg" href="#cum">Cum funcționează</a>
+        </div>
+        <ul class="trust"><li><b>11/22</b><span>aplicații livrate</span></li><li><b data-numara="780000">0</b><span>combinații</span></li><li><b>3MF</b><span>gata de printat</span></li></ul>
+      </div>
+      <div class="hero-demo" aria-hidden="true">
+        <img class="hero-img" src="/produse/litere-decor.png" alt="" width="1100" height="825" fetchpriority="high" decoding="async"
+          onerror="this.closest('.hero-demo').classList.add('fara-img')">
+        <div class="consola" data-consola data-nume='[&quot;Maria&quot;,&quot;Mateo&quot;,&quot;Andrei&quot;]'>
+          <div class="consola-ttl">Generare în timp real</div>
+          <div class="consola-nume">Maria</div>
+          <dl class="consola-par"><div><dt>font</dt><dd data-par='[&quot;Alex Brush&quot;,&quot;Archivo Black&quot;,&quot;Pacifico&quot;]'>Alex Brush</dd></div><div><dt>grosime</dt><dd data-par='[&quot;18 mm&quot;,&quot;25 mm&quot;,&quot;32 mm&quot;]'>18 mm</dd></div><div><dt>culoare</dt><dd data-par='[&quot;albastru&quot;,&quot;violet&quot;,&quot;chihlimbar&quot;]'>albastru</dd></div><div><dt>postament</dt><dd data-par='[&quot;fără&quot;,&quot;drept&quot;,&quot;înclinat&quot;]'>fără</dd></div></dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-alt">
+    <div class="wrap">
+      <h2 class="reveal">Trei lucruri pe care le simți din prima comandă</h2>
+      <div class="grid-3"><div class="benef reveal"><h3>Timp: ore → minute</h3><p>Alegi litera, fontul și cotele din panouri. Geometria se generează singură, fără schițe și fără constrângeri.</p></div><div class="benef reveal"><h3>Filament: mai puține rebuturi</h3><p>Piesele se verifică înainte de export: intră inlay-ul, ține peretele, stă litera în picioare.</p></div><div class="benef reveal"><h3>Predare: oricine poate printa</h3><p>Lângă fișier primești o fișă de producție cu tabelul de culori și pașii de montaj.</p></div></div>
+    </div>
+  </section>
+
+  <section class="sec" id="aplicatii">
+    <div class="wrap">
+      <h2 class="reveal">Treisprezece generatoare, gata de folosit</h2>
+      <p class="sub reveal">Fiecare produs are ecranul lui, cu exact controalele de care are nevoie. Fără meniuri pline de opțiuni care nu te privesc.</p>
+      <div class="cards">
+        <a class="card" href="/litere.html">
+    <div class="card-art"><img src="/produse/litere-decor.png" alt="Randare a unei litere decorative printate 3D" width="600" height="450" loading="lazy" decoding="async"></div>
+    <div class="card-b">
+      <span class="tag tag-ok">Disponibil</span>
+      <h3>Litere Decor</h3>
+      <p>Litere cu nume gravat și decorațiuni tematice, cu locaș de inlay și postament.</p>
+      <span class="card-link">Deschide aplicația →</span>
+    </div>
+  </a>
+        <a class="card" href="/nume.html">
+    <div class="card-art"><img src="/produse/nume-3d.png" alt="Nume 3D cursiv printat, care stă în picioare" width="600" height="450" loading="lazy" decoding="async"></div>
+    <div class="card-b">
+      <span class="tag tag-ok">Disponibil</span>
+      <h3>Nume 3D</h3>
+      <p>Numele întreg în cursiv, cu contur colorat, care stă singur în picioare.</p>
+      <span class="card-link">Deschide aplicația →</span>
+    </div>
+  </a>
+        <a class="card" href="/brelocuri.html">
+    <div class="card-art"><img src="/produse/brelocuri.png" alt="Breloc personalizat printat 3D cu nume" width="600" height="450" loading="lazy" decoding="async"></div>
+    <div class="card-b">
+      <span class="tag tag-ok">Disponibil</span>
+      <h3>Brelocuri</h3>
+      <p>Brelocuri cu nume sau inițială, plăcuță colorată și inel de agățare.</p>
+      <span class="card-link">Deschide aplicația →</span>
+    </div>
+  </a>
+        <a class="card" href="/breloc-decor.html">
+    <div class="card-art"><img src="/produse/breloc-decor.png" alt="Breloc cu inițiala C și numele Cristi ca inserție colorată, cu inel de agățare" width="600" height="450" loading="lazy" decoding="async"></div>
+    <div class="card-b">
+      <span class="tag tag-ok">Disponibil</span>
+      <h3>Brelocuri Decor</h3>
+      <p>Inițiala ca tăviță, cu numele ca inserție colorată în locaș. Breloc bicolor, cu inel de agățare.</p>
+      <span class="card-link">Deschide aplicația →</span>
+    </div>
+  </a>
+        <a class="card" href="/fagure.html">
+    <div class="card-art"><img src="/produse/litere-fagure.png" alt="Literă cu umplutură fagure printată 3D" width="600" height="450" loading="lazy" decoding="async"></div>
+    <div class="card-b">
+      <span class="tag tag-ok">Disponibil</span>
+      <h3>Litere Fagure</h3>
+      <p>Litere umplute cu pattern hexagonal, diagonal sau triunghiular.</p>
+      <span class="card-link">Deschide aplicația →</span>
+    </div>
+  </a>
+        <a class="card" href="/cutii.html">
+    <div class="card-art"><img src="/produse/cutii-litere.png" alt="Cutie-literă printată 3D pentru aranjamente" width="600" height="450" loading="lazy" decoding="async"></div>
+    <div class="card-b">
+      <span class="tag tag-ok">Disponibil</span>
+      <h3>Cutii Litere</h3>
+      <p>Litere-cutie pentru flori, lichen artificial, dulciuri sau cadouri.</p>
+      <span class="card-link">Deschide aplicația →</span>
+    </div>
+  </a>
+        <a class="card" href="/cuvinte.html">
+    <div class="card-art"><img src="/produse/cuvinte-decor.png" alt="Cuvânt decorativ printat 3D cu simbol" width="600" height="450" loading="lazy" decoding="async"></div>
+    <div class="card-b">
+      <span class="tag tag-ok">Disponibil</span>
+      <h3>Cuvinte Decor</h3>
+      <p>Cuvinte cu literele lipite și un simbol în locul unei litere.</p>
+      <span class="card-link">Deschide aplicația →</span>
+    </div>
+  </a>
+        <a class="card" href="/led.html">
+    <div class="card-art"><img src="/produse/litere-led.png" alt="Literă LED printată 3D, luminată" width="600" height="450" loading="lazy" decoding="async"></div>
+    <div class="card-b">
+      <span class="tag tag-ok">Disponibil</span>
+      <h3>Litere LED</h3>
+      <p>Literă luminoasă din corp opac și față translucidă, cu bandă LED.</p>
+      <span class="card-link">Deschide aplicația →</span>
+    </div>
+  </a>
+        <a class="card" href="/nume-led.html">
+    <div class="card-art"><img src="/produse/nume-led.png" alt="Numele Ana printat 3D, cu corp opac și față translucidă luminoasă" width="600" height="450" loading="lazy" decoding="async"></div>
+    <div class="card-b">
+      <span class="tag tag-ok">Disponibil</span>
+      <h3>Nume LED</h3>
+      <p>Un nume întreg, luminat pe dinăuntru: corp opac, față translucidă și o singură bandă LED prin tot cuvântul.</p>
+      <span class="card-link">Deschide aplicația →</span>
+    </div>
+  </a>
+        <a class="card" href="/articulat.html">
+    <div class="card-art"><img src="/produse/articulat.png" alt="Breloc articulat printat 3D, cu litere legate prin balamale" width="600" height="450" loading="lazy" decoding="async"></div>
+    <div class="card-b">
+      <span class="tag tag-ok">Disponibil</span>
+      <h3>Brelocuri Articulate</h3>
+      <p>Nume din litere legate prin balamale printate pe loc. Se pliază în palmă, se printează dintr-o bucată.</p>
+      <span class="card-link">Deschide aplicația →</span>
+    </div>
+  </a>
+        <a class="card" href="/placute.html">
+    <div class="card-art"><img src="/produse/placute.png" alt="Plăcuță personalizată printată 3D cu prindere aleasă" width="600" height="450" loading="lazy" decoding="async"></div>
+    <div class="card-b">
+      <span class="tag tag-ok">Disponibil</span>
+      <h3>Plăcuțe &amp; Etichete</h3>
+      <p>O singură aplicație pentru breloc, etichetă de cablu, tăbliță de plante, marcaj de pahar sau magnet.</p>
+      <span class="card-link">Deschide aplicația →</span>
+    </div>
+  </a>
+        <a class="card" href="/rame.html">
+    <div class="card-art"><img src="/produse/rame-tematice.png" alt="Ramă pânză de păianjen printată 3D, cu numele Maria, pe bază ovală" width="600" height="450" loading="lazy" decoding="async"></div>
+    <div class="card-b">
+      <span class="tag tag-ok">Disponibil</span>
+      <h3>Rame Tematice</h3>
+      <p>Pânză de păianjen, stea sau inimă, cu numele peste ea, pe o bază ovală. Trei piese, trei culori, niciun suport.</p>
+      <span class="card-link">Deschide aplicația →</span>
+    </div>
+  </a>
+        <a class="card card-soon" href="/token.html"><div class="card-art card-art-soon"><img src="/produse/brelocuri.png" alt="" width="600" height="450" loading="lazy" decoding="async"><span class="soon-badge">În Curând</span></div><div class="card-b">
+      <span class="tag tag-soon">În Curând</span>
+      <h3>Module noi în curând</h3>
+      <p>Susține dezvoltarea cu un token — deblochezi mai repede următoarele generatoare.</p>
+      <span class="card-link">Vezi tokenii →</span>
+    </div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-alt" id="cum">
+    <div class="wrap">
+      <h2 class="reveal">De la idee la fișier, în trei pași</h2>
+      <ol class="pasi"><li class="reveal"><span class="pas-n">1</span><h3>Configurezi</h3><p>Alegi caracterul, fontul, înălțimea și grosimea. Adaugi un nume gravat sau o decorațiune din bibliotecă.</p></li><li class="reveal"><span class="pas-n">2</span><h3>Verifici</h3><p>Aplicația măsoară singură: contactul dintre piese, grosimea pereților, stabilitatea, încadrarea pe placă.</p></li><li class="reveal"><span class="pas-n">3</span><h3>Exporți</h3><p>Primești 3MF cu culoare per corp, piesele orientate pentru print, plus fișa de producție.</p></li></ol>
+    </div>
+  </section>
+
+  <section class="sec" id="comparatie">
+    <div class="wrap">
+      <h2 class="reveal">De ce nu pur și simplu un program CAD</h2>
+      <div class="tabel-wrap reveal">
+      <table class="cmp">
+        <thead><tr><th></th><th>Program CAD</th><th class="cmp-noi">Magic3D</th></tr></thead>
+        <tbody><tr><th scope="row">Ca să începi</th><td>Săptămâni de învățat</td><td class="cmp-noi">Cinci minute</td></tr><tr><th scope="row">O literă nouă</th><td>Schiță, constrângeri, extrudare</td><td class="cmp-noi">O alegere din listă</td></tr><tr><th scope="row">Locașul de inlay</th><td>Îl construiești manual</td><td class="cmp-noi">Se taie singur, cu joc reglabil</td></tr><tr><th scope="row">Verificarea piesei</th><td>Cu ochiul, sau la print</td><td class="cmp-noi">Măsurată înainte de export</td></tr><tr><th scope="row">Pregătirea pentru print</th><td>Orientezi și aranjezi tu</td><td class="cmp-noi">Orientate și așezate pe plăci</td></tr></tbody>
+      </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-academia" id="academia">
+    <div class="wrap">
+      <span class="ac-eticheta reveal">ACADEMIA 3D</span>
+      <h2 class="reveal">Academia 3D. Gratuit pentru toți.</h2>
+      <p class="sub reveal">Patru capitole despre ce se strică la printare și de ce, scrise dintr-un atelier cu 20 de imprimante care rulează zilnic. Fără cont, fără abonament, fără email cerut la intrare.</p>
+      <div class="ac-grid reveal"><a class="ac-card" href="/academia/primul-print-care-iese-prost/"><span class="ac-card-nr">Capitolul 1</span>
+      <h3>Primul print care iese prost</h3>
+      <p>Cele șapte defecte care se repetă, recunoscute după cum arată piesa. Cauza reală și fixul, pentru fiecare.</p>
+      <span class="card-link">Citește →</span></a><a class="ac-card" href="/academia/ce-filament-alegi/"><span class="ac-card-nr">Capitolul 2</span>
+      <h3>Ce filament alegi</h3>
+      <p>Se decide dintr-o singură întrebare: unde ajunge obiectul. De ce PLA nu rezistă în mașină vara.</p>
+      <span class="card-link">Citește →</span></a><a class="ac-card ac-card-soon" href="/academia/"><span class="ac-card-nr">Capitolul 3</span>
+      <h3>Ce imprimantă să îți iei</h3>
+      <p>Trei categorii, nu douăzeci de modele. Ce costă de fapt multicolorul.</p>
+      <span class="tag tag-soon">În curând</span></a><a class="ac-card ac-card-soon" href="/academia/"><span class="ac-card-nr">Capitolul 4</span>
+      <h3>De la o bucată la o comandă</h3>
+      <p>Ce se schimbă la cincizeci de bucăți și cum calculezi prețul ca să nu lucrezi degeaba.</p>
+      <span class="tag tag-soon">În curând</span></a></div>
+      <div class="cta reveal">
+        <a class="btn btn-p btn-lg" href="/academia/">Intră în Academie →</a>
+        <a class="btn btn-g btn-lg" href="/academia/primul-print-care-iese-prost/">Începe cu primul capitol</a>
+      </div>
+      <p class="ac-semnatura reveal">Scrisă de Firg3D Printing SRL — 20 de imprimante, București, Sectorul 5, din 2022.</p>
+    </div>
+  </section>
+
+  <section class="sec sec-alt" id="parcurs">
+    <div class="wrap">
+      <h2 class="reveal">11 livrate, platforma crește</h2>
+      <p class="sub reveal">Nucleul e construit și testat — generarea din font, verificările de geometrie, exportul, aranjarea pe plăci. Fiecare aplicație nouă se ridică peste el, deci apar din ce în ce mai repede.</p>
+      <div class="prog reveal">
+        <strong>Stadiul platformei</strong>
+        <div class="bara"><i style="--p:50%"></i></div>
+        <div class="bara-lab"><span><b>11 din 22 · restul în lucru</b></span><span>versiunea 1.0</span></div>
+        <div class="mile"><div class="m m-gata"><div class="m-s">Gata</div><h4>Nucleul</h4><p>Geometrie, export, verificări. 15 suite de teste automate.</p></div><div class="m m-gata"><div class="m-s">Gata</div><h4>Primele șapte aplicații</h4><p>Litere Decor, Brelocuri, Litere Fagure, Cutii Litere, Litere LED, Nume 3D, Cuvinte Decor.</p></div><div class="m m-gata"><div class="m-s">Gata</div><h4>Încă două generatoare</h4><p>Brelocuri Articulate, cu balamale printate pe loc, și Plăcuțe &amp; Etichete — acum funcționale.</p></div><div class="m "><div class="m-s">Urmează</div><h4>Aplicație Windows</h4><p>Instalare locală, actualizări automate, limba engleză.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="preturi">
+    <div class="wrap">
+      <h2 class="reveal">Gratuit pentru tine. Cu licență, dacă vinzi.</h2>
+      <p class="sub reveal">Aplicația e completă în ambele cazuri. Nu există funcții blocate și nici filigran.</p>
+      <div class="preturi"><div class="pcard">
+      
+      <h3>Gratuit</h3>
+      <p class="pcard-sub">Uz personal</p>
+      <div class="pret"><b>0</b> RON</div>
+      <ul><li>Toate cele 12 aplicații</li><li>Fără cont, fără instalare</li><li>Generatoarele de litere: fără niciun marcaj</li><li>Generatoarele noi poartă semnătura Praktik3D, gravată discret</li><li>Fișă de producție inclusă</li></ul>
+      <a class="btn btn-g" href="/litere.html">Deschide aplicația</a>
+    </div><div class="pcard pcard-rec">
+      <span class="pcard-badge">Recomandat</span>
+      <h3>Comercial</h3>
+      <p class="pcard-sub">Vinzi ce produci</p>
+      <div class="pret"><b>149</b> RON<span>/achiziție unică</span></div>
+      <ul><li>Achiziție unică — fără expirare</li><li>Drept de vânzare, fără limită de cantitate</li><li>Pe oricâte calculatoare</li><li>Numărul licenței pe fișa de producție</li><li>Logo-ul tău în locul semnăturii, sau fără marcaj</li></ul>
+      <a class="btn btn-p" href="https://praktik3d.ro/cart/58784023282009:1"
+          target="_blank" rel="noopener noreferrer">Cumpără licența — 149 RON</a>
+        <a class="pcard-detalii" href="/token.html#comercial">vezi detaliile →</a>
+    </div><div class="pcard">
+      
+      <h3>Suporter</h3>
+      <p class="pcard-sub">Susții dezvoltarea</p>
+      <div class="pret"><b>15</b> RON<span>/o dată</span></div>
+      <ul><li>Fișierele token3d, STL și 3MF</li><li>Insignă de suporter în randări</li><li>NU acordă drept comercial</li><li>Rămâi în regim de uz personal</li></ul>
+      <a class="btn btn-p" href="https://praktik3d.ro/cart/58784804766041:1"
+          target="_blank" rel="noopener noreferrer">Cumpără tokenul — 15 RON</a>
+        <a class="pcard-detalii" href="/token.html#suporter">vezi detaliile →</a>
+    </div></div>
+      <p class="pret-v2 reveal">Orice achiziție — comercială sau de suporter — primește 25% reducere la versiunea Windows, pentru achizițiile efectuate până la lansarea ei. Codul se trimite pe emailul comenzii.</p>
+      <p class="pret-incurajare reveal">Fiecare licență sau token de suporter finanțează direct următoarele module. Mulțumim că susții dezvoltarea Magic3D!</p>
+    </div>
+  </section>
+
+  <section class="sec sec-alt" id="intrebari">
+    <div class="wrap wrap-ingust">
+      <h2 class="reveal">Ce vrei să știi înainte să începi</h2>
+      <div class="faq"><details class="reveal"><summary>Ce produce Magic3D?</summary><div class="faq-a"><p>Fișiere 3MF gata de printat, cu piesele deja orientate pentru imprimantă și așezate pe plăci. Lângă fiecare export primești o fișă de producție în format text, cu tabelul de culori, pașii de montaj și lista de verificare înainte de livrare.</p></div></details><details class="reveal"><summary>Trebuie să știu modelare 3D?</summary><div class="faq-a"><p>Nu. Alegi litera, fontul și dimensiunile din panouri, iar geometria se generează singură. Nu există schițe, constrângeri sau arbore de operații ca într-un program CAD.</p></div></details><details class="reveal"><summary>Când am nevoie de licență comercială?</summary><div class="faq-a"><p>Când vinzi ce produci cu aplicația — printuri, obiecte fizice sau fișiere. Pentru proiectele tale, pentru familie sau ca daruri, aplicația e gratuită și completă. Licența nu deblochează funcții; îți dă dreptul de vânzare și un număr de licență care apare pe fișa de producție.</p></div></details><details class="reveal"><summary>Ce înseamnă tokenul de suporter?</summary><div class="faq-a"><p>E un mod de a susține dezvoltarea, nu o licență. Primești fișierele token3d pentru printare proprie și o insignă pe care o poți afișa în randările tale. NU acordă drept de utilizare comercială: rămâi în regim de uz personal.</p></div></details><details class="reveal"><summary>Cu ce imprimantă merge?</summary><div class="faq-a"><p>Cu orice imprimantă FDM. Exportul e 3MF standard, deschis de Bambu Studio, OrcaSlicer, PrusaSlicer și Cura. Dimensiunea plăcii se alege din aplicație, iar piesele care nu încap se împart automat pe mai multe plăci.</p></div></details><details class="reveal"><summary>Funcționează fără internet?</summary><div class="faq-a"><p>Da. Toată generarea rulează local, pe calculatorul tău. Nu se trimite nimic pe niciun server și nu ai nevoie de conexiune ca să lucrezi sau să exporți.</p></div></details><details class="reveal"><summary>Ce e semnătura Praktik3D?</summary><div class="faq-a"><p>Un marcaj mic, gravat, cu textul praktik3d.ro, pe generatoarele noi — nu și pe cele de litere, care rămân fără niciun marcaj. E felul nostru de a ne semna munca la exportul gratuit. Cu licența comercială îl înlocuiești cu logo-ul tău sau îl scoți.</p></div></details></div>
+    </div>
+  </section>
+
+  <section class="sec sec-final">
+    <div class="wrap">
+      <div class="final reveal">
+        <h2>Gratuit pentru tine. Cu licență, dacă vinzi.</h2>
+        <p>Toate cele unsprezece aplicații funcționează chiar acum, fără cont și fără instalare. Pentru proiectele tale sunt gratuite. Dacă vinzi ce produci cu ele, ai nevoie de o Licență Comercială.</p>
+        <a class="btn btn-p btn-lg" href="/litere.html">Deschide Litere Decor →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="ft">
+  <div class="wrap ft-in">
+    <span><b>Magic3D powered by Firg3D · versiunea 1.0</b></span>
+    <span>Generare locală · export 3MF · fișă de producție inclusă</span>
+    <span class="ft-lk"><a href="/contact/">Contact</a> · <a href="/token.html#comercial">Licență comercială</a> · <a href="/token.html#suporter">Suporter</a></span>
+  </div>
+</footer>
+<script type="module" src="/landing/landing.js"></script>
+</body>
+</html>

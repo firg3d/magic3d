@@ -1,0 +1,10 @@
+{
+  "scene": [
+    {
+      "id": "masa-test",
+      "nume": "Masa (test)",
+      "fisier": "masa-test/scena.json",
+      "thumb": "masa-test/fundal.svg"
+    }
+  ]
+}

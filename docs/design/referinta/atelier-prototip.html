@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="ro" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Magic3D — Litere · prototip „Atelier" v2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Baloo+2:wght@700;800&family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.31.0/dist/tabler-icons.min.css">
+<style>
+  :root{
+    --canvas:#EDEBE6; --panel:#FFFFFF; --panel-2:#F5F4F1; --panel-3:#ECEAE4; --border:#E2E0DA; --border-strong:#CFCCC4;
+    --text:#1B1B1F; --text-2:#5C5B62; --text-3:#8A8990;
+    --accent:#5B4DD1; --accent-hover:#4B3EC0; --accent-soft:#EEEBFB; --on-accent:#FFFFFF;
+    --ok:#1F8A5B; --warn:#B8741A;
+    --x:#D14B4B; --y:#1F9E6C; --z:#3A78D6;
+    --r-s:8px; --r-m:10px; --r-l:14px;
+    --font:"Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --shadow:0 4px 16px rgba(20,18,40,.10);
+  }
+  [data-theme="dark"]{
+    --canvas:#1E1E23; --panel:#26262C; --panel-2:#2E2E35; --panel-3:#36363E; --border:#3A3A42; --border-strong:#4A4A54;
+    --text:#F2F2F4; --text-2:#B6B6BE; --text-3:#7F7F89;
+    --accent:#8B7FF0; --accent-hover:#9C92F3; --accent-soft:#33305A; --on-accent:#14122B;
+    --ok:#4FC28A; --warn:#E0A455;
+    --shadow:0 4px 16px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0}
+  body{font-family:var(--font);font-size:13.5px;line-height:1.45;color:var(--text);background:var(--panel);font-feature-settings:"tnum" 1;-webkit-font-smoothing:antialiased;overflow:hidden}
+  button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+  button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  input{font:inherit;color:inherit}
+
+  /* ---------- layout ---------- */
+  .app{--lw:340px;--rw:300px;height:100%;display:grid;grid-template-rows:52px 1fr 36px;grid-template-columns:var(--lw) 1fr var(--rw);grid-template-areas:"top top top" "left vp right" "status status status"}
+  .app.hide-panels{grid-template-columns:0 1fr 0}
+  .app.hide-panels .left,.app.hide-panels .right{display:none}
+  .app.prezentare{grid-template-columns:0 1fr 300px}
+  .app.prezentare .left,.app.prezentare .status,.app.prezentare .fab{display:none}
+  .top{grid-area:top;display:flex;align-items:center;gap:8px;padding:0 14px;border-bottom:1px solid var(--border);background:var(--panel)}
+  .left{grid-area:left;border-right:1px solid var(--border);overflow-y:auto;overflow-x:hidden;padding:4px 0 24px}
+  .right{grid-area:right;border-left:1px solid var(--border);overflow-y:auto;overflow-x:hidden}
+  .vp{grid-area:vp;position:relative;background:var(--canvas);overflow:hidden;touch-action:none}
+  .status{grid-area:status;display:flex;align-items:center;gap:24px;padding:0 16px;border-top:1px solid var(--border);color:var(--text-2);font-size:12.5px}
+
+  /* ---------- top bar ---------- */
+  .brand{display:flex;align-items:center;gap:8px;font-weight:700;font-size:15px}
+  .brand i{color:var(--accent);font-size:20px}
+  .crumb{display:flex;align-items:center;gap:6px;height:34px;padding:0 12px;border-radius:var(--r-s);background:var(--panel-2);color:var(--text-2)}
+  .crumb:hover{color:var(--text)}
+  .tools{display:flex;gap:2px;padding:3px;border-radius:var(--r-m);background:var(--panel-2)}
+  .tools button{display:flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-radius:var(--r-s);color:var(--text-2)}
+  .tools button:hover{color:var(--text)}
+  .tools button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent);font-weight:600}
+  .tools button[aria-pressed="true"] kbd{color:var(--on-accent);border-color:rgba(255,255,255,.45);opacity:.85}
+  .tb[aria-pressed="true"] i{color:var(--accent)}
+  kbd{font:500 10px/1 var(--font);color:var(--text-3);border:1px solid var(--border);border-radius:4px;padding:2px 4px;min-width:16px;text-align:center}
+  .tb{display:flex;align-items:center;gap:6px;height:34px;padding:0 12px;border-radius:var(--r-s);color:var(--text-2)}
+  .tb:hover{background:var(--panel-2);color:var(--text)}
+  .tb[aria-pressed="true"]{background:var(--accent-soft);color:var(--accent)}
+  .tb i{font-size:18px}
+  .grow{flex:1}
+  .primary{display:flex;align-items:center;justify-content:center;gap:6px;height:36px;padding:0 16px;border-radius:var(--r-s);background:var(--accent);color:var(--on-accent);font-weight:600}
+  .primary:hover{background:var(--accent-hover)}
+  .sep{width:1px;height:20px;background:var(--border);margin:0 4px}
+
+  /* ---------- pane collapse ---------- */
+  .pane-h{display:flex;align-items:center;justify-content:space-between;height:40px;padding:0 10px 0 20px;color:var(--text-3);font-size:12.5px;font-weight:600}
+  .right .pane-h{padding:0 10px 0 16px}
+  .collapse{width:30px;height:30px;border-radius:var(--r-s);display:grid;place-items:center;color:var(--text-3)}
+  .collapse:hover{background:var(--panel-2);color:var(--text)}
+  .collapse i{font-size:18px}
+  .rail{display:none;flex-direction:column;align-items:center;gap:12px;padding:8px 0}
+  .rail .lbl{writing-mode:vertical-rl;transform:rotate(180deg);color:var(--text-3);font-size:12px;font-weight:600}
+  .left.collapsed,.right.collapsed{padding:0}
+  .left.collapsed>*:not(.rail),.right.collapsed>*:not(.rail){display:none}
+  .collapsed .rail{display:flex}
+
+  /* ---------- left panel ---------- */
+  .sec{padding:10px 20px}
+  .sec+.sec{border-top:1px solid var(--border)}
+  .sec-h{display:flex;align-items:center;justify-content:space-between;height:36px;width:100%;font-weight:600;font-size:14px}
+  .sec-h i{color:var(--text-3);transition:transform .2s}
+  .sec[data-open="false"] .sec-h i{transform:rotate(-90deg)}
+  .sec[data-open="false"] .sec-b{display:none}
+  .sec-b{padding-top:4px}
+  .note{color:var(--text-3);font-size:12.5px;margin:0 0 8px}
+
+  .preview{display:grid;grid-template-columns:88px 1fr;gap:12px;align-items:stretch;margin-bottom:8px}
+  .tile{height:88px;border-radius:var(--r-m);background:var(--panel-2);display:grid;place-items:center;font-family:"Baloo 2",var(--font);font-weight:800;font-size:54px;line-height:1;color:#889EC8}
+  .stack{display:flex;flex-direction:column;justify-content:space-between}
+  .field{display:flex;align-items:center;justify-content:space-between;gap:8px;height:36px;padding:0 10px;border:1px solid var(--border);border-radius:var(--r-s);background:var(--panel)}
+  .field:hover{border-color:var(--border-strong)}
+  .field input{width:100%;border:0;background:none;padding:0}
+  .field input:focus{outline:none}
+  .field i{color:var(--text-3);font-size:16px}
+  .field .lbl{color:var(--text-3);font-size:12px;white-space:nowrap}
+  .field .baloo{font-family:"Baloo 2";font-weight:700;font-size:15px}
+
+  .p{padding:6px 0 4px}
+  .p-h{display:flex;align-items:center;justify-content:space-between;height:28px}
+  .p-h label{color:var(--text-2)}
+  .num{display:flex;align-items:center;gap:4px;height:30px;padding:0 8px;border:1px solid var(--border);border-radius:var(--r-s);width:84px}
+  .num:hover{border-color:var(--border-strong)}
+  .num input{width:100%;border:0;background:none;text-align:right;padding:0}
+  .num input:focus{outline:none}
+  .num small{color:var(--text-3)}
+  input[type=range]{width:100%;accent-color:var(--accent);height:22px;margin:2px 0 0}
+  .swatches{display:flex;gap:8px;padding:4px 0 6px}
+  .sw{width:28px;height:28px;border-radius:50%;border:1px solid var(--border-strong)}
+  .sw[aria-pressed="true"]{box-shadow:0 0 0 2px var(--panel),0 0 0 4px var(--accent)}
+  .sw.plus{background:none;border:1px dashed var(--border-strong);color:var(--text-3);display:grid;place-items:center}
+  .switch{width:34px;height:20px;border-radius:10px;background:var(--border-strong);position:relative;transition:background .15s;flex:none}
+  .switch::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:#fff;transition:transform .15s}
+  .switch[aria-checked="true"]{background:var(--accent)}
+  .switch[aria-checked="true"]::after{transform:translateX(14px)}
+  .sub{margin:2px 0 4px 6px;padding-left:14px;border-left:2px solid var(--border)}
+  .row{display:flex;align-items:center;justify-content:space-between;min-height:34px;gap:10px}
+  .row label{color:var(--text-2)}
+
+  /* ---------- right panel ---------- */
+  .rsec{padding:10px 16px}
+  .rsec+.rsec{border-top:1px solid var(--border)}
+  .rsec .sec-h{height:36px}
+  .item{display:flex;align-items:center;gap:8px;width:100%;height:34px;padding:0 8px;border-radius:var(--r-s);color:var(--text)}
+  .item:hover{background:var(--panel-2)}
+  .item[aria-selected="true"]{background:var(--accent-soft);box-shadow:inset 3px 0 0 var(--accent)}
+  .item.child{padding-left:30px}
+  .item .n{flex:1;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .item .acts{display:flex;gap:2px}
+  .item .acts span{width:26px;height:26px;display:grid;place-items:center;border-radius:6px;color:var(--text-3)}
+  .item .acts span:hover{background:var(--panel);color:var(--text)}
+  .icon-btn{width:30px;height:30px;display:grid;place-items:center;border-radius:var(--r-s);color:var(--text-2)}
+  .icon-btn:hover{background:var(--panel-2);color:var(--text)}
+  .xyz{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;flex:1}
+  .xyz .num{width:auto}
+  .xyz .num b{font-weight:700;font-size:11px}
+  .xyz .num b.x{color:var(--x)}.xyz .num b.y{color:var(--y)}.xyz .num b.z{color:var(--z)}
+  .summary{margin:6px 0;padding:12px 14px;border-radius:var(--r-m);background:var(--panel-2)}
+  .summary dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:6px 0 0}
+  .summary dt{color:var(--text-2)}.summary dd{margin:0;text-align:right}
+  .empty{color:var(--text-3);padding:8px 0 12px}
+  .chips{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:4px 0 8px}
+  .chip{height:34px;border:1px solid var(--border);border-radius:var(--r-s);color:var(--text-2)}
+  .chip:hover{border-color:var(--border-strong);color:var(--text)}
+  .chip[aria-pressed="true"]{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+  .ghost{display:flex;align-items:center;justify-content:center;gap:6px;height:34px;width:100%;border:1px solid var(--border);border-radius:var(--r-s);color:var(--text-2);margin-top:8px}
+  .ghost:hover{border-color:var(--border-strong);color:var(--text)}
+
+  /* ---------- viewport overlays ---------- */
+  .fab{position:absolute;top:14px;left:14px;height:42px;padding:0 16px 0 12px;border-radius:999px;background:var(--accent);color:var(--on-accent);font-weight:600;display:flex;align-items:center;gap:6px;box-shadow:var(--shadow);z-index:3}
+  .fab:hover{background:var(--accent-hover)}
+  .fab i{font-size:20px}
+  .menu{position:absolute;top:64px;left:14px;min-width:250px;padding:6px;border-radius:var(--r-l);background:var(--panel);border:1px solid var(--border);box-shadow:var(--shadow);z-index:4}
+  .menu[hidden]{display:none}
+  .menu button{display:grid;grid-template-columns:34px 1fr;align-items:center;gap:8px;width:100%;padding:8px;border-radius:var(--r-s);text-align:left}
+  .menu button:hover{background:var(--panel-2)}
+  .menu button i{font-size:20px;color:var(--accent);display:grid;place-items:center;width:34px;height:34px;border-radius:var(--r-s);background:var(--accent-soft)}
+  .menu button b{display:block;font-weight:600}
+  .menu button small{color:var(--text-3)}
+  .navcube{position:absolute;top:14px;right:14px;display:flex;flex-direction:column;gap:4px;z-index:3}
+  .navcube button{width:38px;height:38px;border-radius:var(--r-s);background:var(--panel);border:1px solid var(--border);color:var(--text-2);display:grid;place-items:center;font-size:11px;font-weight:600}
+  .navcube button:hover{color:var(--text)}
+  .navcube button[aria-pressed="true"]{color:var(--accent);border-color:var(--accent)}
+  .navcube button i{font-size:18px}
+  .hint{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);display:flex;align-items:center;gap:10px;padding:6px 8px 6px 12px;border-radius:999px;background:var(--panel);border:1px solid var(--border);color:var(--text-2);font-size:12.5px;white-space:nowrap;z-index:3}
+  .hint button{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;color:var(--text-3)}
+  .hint button:hover{background:var(--panel-2)}
+  .busy{position:absolute;left:50%;top:14px;transform:translateX(-50%);padding:5px 12px;border-radius:999px;background:var(--panel);border:1px solid var(--border);color:var(--text-2);font-size:12.5px;opacity:0;transition:opacity .15s;pointer-events:none;z-index:3}
+  .busy.on{opacity:1}
+  canvas{display:block}
+  .vp.studio{background:radial-gradient(120% 90% at 50% 30%, #f7f6f2 0%, #dcd9d1 70%, #c9c6bd 100%)}
+  [data-theme="dark"] .vp.studio{background:radial-gradient(120% 90% at 50% 30%, #34343b 0%, #232328 70%, #19191d 100%)}
+
+  .check{display:flex;align-items:center;gap:5px;color:var(--ok);font-weight:500}
+  .check i{font-size:15px}
+  .status .end{margin-left:auto;color:var(--text-3)}
+  @media (max-width:1200px){ .app{--lw:300px;--rw:272px} .tools button span,.tb span{display:none} }
+</style>
+</head>
+<body>
+<div class="app" id="app">
+
+  <header class="top">
+    <div class="brand"><i class="ti ti-sparkles" aria-hidden="true"></i>Magic3D</div>
+    <button class="crumb">Litere <i class="ti ti-chevron-down" aria-hidden="true"></i></button>
+    <div class="grow"></div>
+    <div class="tools" role="radiogroup" aria-label="Unealtă" style="margin-right:6px">
+      <button data-tool="selectare" aria-pressed="false"><i class="ti ti-pointer"></i><span>Selectare</span><kbd>Q</kbd></button>
+      <button data-tool="muta" aria-pressed="true"><i class="ti ti-arrows-move"></i><span>Mută</span><kbd>G</kbd></button>
+      <button data-tool="roteste" aria-pressed="false"><i class="ti ti-rotate"></i><span>Rotește</span><kbd>R</kbd></button>
+      <button data-tool="scaleaza" aria-pressed="false"><i class="ti ti-arrows-diagonal"></i><span>Scalează</span><kbd>S</kbd></button>
+    </div>
+    <div class="sep"></div>
+    <button class="tb"><i class="ti ti-layout-grid"></i><span>Bambu A1 · 256</span><i class="ti ti-chevron-down" style="font-size:14px"></i></button>
+    <button class="tb" id="btnPlaci" aria-pressed="false"><i class="ti ti-layout-columns"></i><span>Plăci</span></button>
+    <div class="sep"></div>
+    <button class="tb" id="btnPres" aria-pressed="false"><i class="ti ti-camera"></i><span>Prezentare</span></button>
+    <button class="tb" id="btnTheme" aria-label="Comută tema"><i class="ti ti-moon"></i></button>
+    <button class="tb" aria-label="Ajutor și scurtături"><i class="ti ti-help-circle"></i></button>
+    <div class="sep"></div>
+    <button class="tb"><i class="ti ti-user-circle"></i><span>Uz personal</span></button>
+    <button class="primary"><i class="ti ti-download"></i>Export 3MF</button>
+  </header>
+
+  <!-- ---------- stânga ---------- -->
+  <aside class="left" aria-label="Parametri">
+    <div class="pane-h"><span>Parametri</span><button class="collapse" data-collapse="left" aria-label="Strânge panoul de parametri" title="Strânge"><i class="ti ti-layout-sidebar-left-collapse"></i></button></div>
+    <div class="rail"><button class="collapse" data-expand="left" aria-label="Deschide panoul de parametri" title="Parametri"><i class="ti ti-layout-sidebar-left-expand"></i></button><span class="lbl">Parametri</span></div>
+    <section class="sec" data-open="true">
+      <button class="sec-h" data-toggle>Conținut <i class="ti ti-chevron-down"></i></button>
+      <div class="sec-b">
+        <div class="preview">
+          <div class="tile" id="tile">A</div>
+          <div class="stack">
+            <div class="field"><span class="lbl">Literă</span><input id="litera" value="A" maxlength="1" style="text-align:right;font-weight:600"><i class="ti ti-chevron-down"></i></div>
+            <div class="field"><span class="lbl">Font</span><span class="baloo">Baloo 2</span><i class="ti ti-chevron-down"></i></div>
+          </div>
+        </div>
+        <p class="note">Litera se sprijină pe scrisul de dedesubt. Adaugă o bază dacă vrei să stea și singură.</p>
+      </div>
+    </section>
+
+    <section class="sec" data-open="true">
+      <button class="sec-h" data-toggle>Dimensiuni <i class="ti ti-chevron-down"></i></button>
+      <div class="sec-b">
+        <div class="p"><div class="p-h"><label for="h">Înălțime</label><div class="num"><input id="hN" value="120"><small>mm</small></div></div><input type="range" id="h" min="60" max="200" value="120"></div>
+        <div class="p"><div class="p-h"><label for="t">Grosime</label><div class="num"><input id="tN" value="25"><small>mm</small></div></div><input type="range" id="t" min="10" max="40" value="25"></div>
+        <div class="p"><div class="p-h"><label for="r">Rază muchie</label><div class="num"><input id="rN" value="1,2"><small>mm</small></div></div><input type="range" id="r" min="0" max="4" step="0.1" value="1.2"></div>
+      </div>
+    </section>
+
+    <section class="sec" data-open="true">
+      <button class="sec-h" data-toggle>Finisaj <i class="ti ti-chevron-down"></i></button>
+      <div class="sec-b">
+        <div class="p-h"><label>Culoare</label></div>
+        <div class="swatches" role="radiogroup" aria-label="Culoare">
+          <button class="sw" data-color="#889EC8" aria-pressed="true" aria-label="Albastru" style="background:#889EC8"></button>
+          <button class="sw" data-color="#E9E4D6" aria-pressed="false" aria-label="Alb cald" style="background:#E9E4D6"></button>
+          <button class="sw" data-color="#2B2B30" aria-pressed="false" aria-label="Negru" style="background:#2B2B30"></button>
+          <button class="sw" data-color="#D94F4F" aria-pressed="false" aria-label="Roșu" style="background:#D94F4F"></button>
+          <button class="sw" data-color="#1D9E75" aria-pressed="false" aria-label="Verde" style="background:#1D9E75"></button>
+          <button class="sw" data-color="#F2B134" aria-pressed="false" aria-label="Galben" style="background:#F2B134"></button>
+          <button class="sw plus" aria-label="Altă culoare"><i class="ti ti-plus"></i></button>
+        </div>
+        <div class="row"><label>Chenar</label><button class="switch" role="switch" aria-checked="true" id="chenar" aria-label="Chenar"></button></div>
+        <div class="sub" id="chenarSub">
+          <div class="row"><label>Lățime</label><div class="num"><input value="3"><small>mm</small></div></div>
+          <div class="row"><label>Adâncime</label><div class="num"><input value="3"><small>mm</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" data-open="false">
+      <button class="sec-h" data-toggle>Avansat <i class="ti ti-chevron-down"></i></button>
+      <div class="sec-b">
+        <p class="note">Setări pe care rareori le schimbi. Valorile implicite sunt sigure pentru print.</p>
+        <div class="row"><label>Tăiere bază <small style="color:var(--text-3)">C, O, G…</small></label><div class="num"><input value="2"><small>mm</small></div></div>
+        <div class="row"><label>Prag de ieșire</label><div class="num"><input value="8"><small>mm</small></div></div>
+      </div>
+    </section>
+  </aside>
+
+  <!-- ---------- viewport ---------- -->
+  <main class="vp" id="vp" aria-label="Scena 3D">
+    <button class="fab" id="fab" aria-expanded="false"><i class="ti ti-plus"></i>Adaugă</button>
+    <div class="menu" id="menu" hidden>
+      <button data-add="baza"><i class="ti ti-square-rounded"></i><span><b>Bază</b><small>placă, disc, teren, inimă…</small></span></button>
+      <button data-add="element"><i class="ti ti-star"></i><span><b>Element</b><small>stele, inimi, unelte, mingi…</small></span></button>
+      <button data-add="text"><i class="ti ti-writing"></i><span><b>Text</b><small>un nume sau un cuvânt</small></span></button>
+      <button data-add="svg"><i class="ti ti-photo-up"></i><span><b>Imagine SVG</b><small>logo propriu · licență comercială</small></span></button>
+    </div>
+    <div class="navcube">
+      <button id="vSus" title="Vedere de sus (7)">Sus</button>
+      <button id="vFata" title="Vedere din față (1)">Față</button>
+      <button id="vIzo" title="Izometric">Izo</button>
+      <button id="vPersp" title="Perspectivă / Ortografic (5)" aria-pressed="false"><i class="ti ti-perspective"></i></button>
+    </div>
+    <div class="hint" id="hint"><span>Trage piesa ca s-o muți pe placă · trage de săgeata verde ca s-o ridici · trage în gol ca să rotești camera</span><button id="hintX" aria-label="Închide"><i class="ti ti-x"></i></button></div>
+    <div class="busy" id="busy">Recalculez geometria…</div>
+  </main>
+
+  <!-- ---------- dreapta ---------- -->
+  <aside class="right" aria-label="Elemente și proprietăți">
+    <div class="pane-h"><span>Scenă</span><button class="collapse" data-collapse="right" aria-label="Strânge panoul scenei" title="Strânge"><i class="ti ti-layout-sidebar-right-collapse"></i></button></div>
+    <div class="rail"><button class="collapse" data-expand="right" aria-label="Deschide panoul scenei" title="Scenă"><i class="ti ti-layout-sidebar-right-expand"></i></button><span class="lbl">Scenă</span></div>
+    <div id="editPanel">
+      <section class="rsec">
+        <div class="sec-h">Elemente <button class="icon-btn" id="addFromList" aria-label="Adaugă element"><i class="ti ti-plus"></i></button></div>
+        <div id="list"></div>
+      </section>
+      <section class="rsec">
+        <div class="sec-h"><span id="propTitle">Mută</span></div>
+        <div id="propBody">
+          <div class="row"><label>Poziție</label>
+            <div class="xyz">
+              <div class="num"><b class="x">X</b><input id="px" value="0"></div>
+              <div class="num"><b class="y">Y</b><input id="py" value="0"></div>
+              <div class="num"><b class="z">Z</b><input id="pz" value="0"></div>
+            </div>
+          </div>
+          <div class="row"><label>Rotire</label>
+            <div class="xyz">
+              <div class="num"><b class="x">X</b><input value="0°"></div>
+              <div class="num"><b class="y">Y</b><input value="0°"></div>
+              <div class="num"><b class="z">Z</b><input value="0°"></div>
+            </div>
+          </div>
+          <div class="row"><label>Pe placă <small style="color:var(--text-3)">stă lipită</small></label><button class="switch" role="switch" aria-checked="true" id="onPlate" aria-label="Fixează pe placă"></button></div>
+        </div>
+        <div class="empty" id="propEmpty" hidden>Selectează un element ca să-i vezi proprietățile.</div>
+      </section>
+      <section class="rsec">
+        <div class="summary">
+          <div style="font-weight:600">Piesa</div>
+          <dl>
+            <dt>Dimensiuni</dt><dd id="dims">100 × 120 × 25 mm</dd>
+            <dt>Volum</dt><dd id="vol">144 cm³</dd>
+            <dt>Timp estimat</dt><dd id="timp">3 h 40 min</dd>
+            <dt>Culori</dt><dd>2</dd>
+          </dl>
+        </div>
+      </section>
+    </div>
+
+    <div id="presPanel" hidden>
+      <section class="rsec">
+        <div class="sec-h">Prezentare <button class="icon-btn" id="presBack" aria-label="Înapoi la editare"><i class="ti ti-x"></i></button></div>
+        <p class="note">Modificările se văd imediat. Esc revine la editare.</p>
+        <div class="p-h"><label>Scenă</label></div>
+        <div class="chips" role="radiogroup">
+          <button class="chip" data-scene="masa" aria-pressed="true">Masă</button>
+          <button class="chip" data-scene="gol" aria-pressed="false">Gol</button>
+          <button class="chip" data-scene="studio" aria-pressed="false">Studio</button>
+        </div>
+        <div class="p-h"><label>Unghi</label></div>
+        <div class="chips">
+          <button class="chip" data-angle="fata">Față</button>
+          <button class="chip" data-angle="trei">Trei sferturi</button>
+          <button class="chip" data-angle="sus">Sus</button>
+        </div>
+        <div class="row"><label>Format</label><div class="field" style="width:120px"><span>4 : 5</span><i class="ti ti-chevron-down"></i></div></div>
+        <button class="ghost" id="reframe"><i class="ti ti-focus-2"></i>Reîncadrează pe piesă</button>
+        <button class="primary" style="width:100%;margin-top:12px"><i class="ti ti-photo"></i>Salvează fotografia</button>
+      </section>
+    </div>
+  </aside>
+
+  <footer class="status">
+    <span class="check"><i class="ti ti-check"></i>stă în picioare</span>
+    <span class="check"><i class="ti ti-check"></i>perete 3 mm</span>
+    <span class="check"><i class="ti ti-check"></i>încape pe placă</span>
+    <span class="check"><i class="ti ti-check"></i>scrisul taie litera</span>
+    <span class="end" id="recalc">actualizat în 0,6 s</span>
+  </footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+  const app=document.getElementById('app'), vp=document.getElementById('vp');
+  const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  const $=id=>document.getElementById(id);
+
+  /* ---------- renderer / scene ---------- */
+  const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});
+  renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+  renderer.shadowMap.enabled=true; renderer.shadowMap.type=THREE.PCFSoftShadowMap; renderer.outputEncoding=THREE.sRGBEncoding;
+  vp.appendChild(renderer.domElement);
+  const scene=new THREE.Scene();
+  const persp=new THREE.PerspectiveCamera(36,1,1,6000);
+  const ortho=new THREE.OrthographicCamera(-1,1,1,-1,-3000,6000);
+  let cam=persp, isOrtho=false;
+
+  const hemi=new THREE.HemisphereLight(0xffffff,0x8a8a80,0.55); scene.add(hemi);
+  const sun=new THREE.DirectionalLight(0xffffff,0.95); sun.position.set(180,320,160); sun.castShadow=true;
+  sun.shadow.mapSize.set(2048,2048); Object.assign(sun.shadow.camera,{left:-260,right:260,top:260,bottom:-260,near:10,far:1200}); sun.shadow.bias=-0.0005; scene.add(sun);
+  const fill=new THREE.DirectionalLight(0xffffff,0.25); fill.position.set(-200,120,-120); scene.add(fill);
+
+  const plate=new THREE.Group();
+  const plateMat=new THREE.MeshStandardMaterial({color:0xffffff,roughness:0.95});
+  const plateMesh=new THREE.Mesh(new THREE.BoxGeometry(256,2,256),plateMat); plateMesh.position.y=-1; plateMesh.receiveShadow=true; plate.add(plateMesh);
+  const grid=new THREE.GridHelper(256,16,0x000000,0x000000); grid.material.transparent=true; grid.material.opacity=0.12; grid.position.y=0.05; plate.add(grid);
+  scene.add(plate);
+  const ground=new THREE.Mesh(new THREE.PlaneGeometry(6000,6000),new THREE.ShadowMaterial({opacity:0.18})); ground.rotation.x=-Math.PI/2; ground.position.y=-2.1; ground.receiveShadow=true; scene.add(ground);
+
+  /* ---------- elements ---------- */
+  const state={tool:'muta',selected:null,theme:'light',pres:false,scene:'masa',panels:true};
+  const elements=[]; // {id,name,icon,mesh,child,removable}
+  const meshes=()=>elements.map(e=>e.mesh);
+  let uid=0;
+
+  /* letter A */
+  const shape=new THREE.Shape();
+  [[0,0],[26,0],[36,30],[64,30],[74,0],[100,0],[64,120],[36,120]].forEach((p,i)=> i?shape.lineTo(p[0],p[1]):shape.moveTo(p[0],p[1])); shape.closePath();
+  const hole=new THREE.Path(); hole.moveTo(42,48); hole.lineTo(58,48); hole.lineTo(50,76); hole.closePath(); shape.holes.push(hole);
+  const geo=new THREE.ExtrudeGeometry(shape,{depth:25,bevelEnabled:true,bevelThickness:1.2,bevelSize:1.2,bevelSegments:3}); geo.translate(-50,0,-12.5);
+  const mat=new THREE.MeshStandardMaterial({color:0x889EC8,roughness:0.62,metalness:0.02});
+  const letter=new THREE.Mesh(geo,mat); letter.castShadow=true; letter.receiveShadow=true;
+  scene.add(letter);
+
+  /* script "Andrei" */
+  const c=document.createElement('canvas'); c.width=1024; c.height=320; const g=c.getContext('2d');
+  const tex=new THREE.CanvasTexture(c); tex.encoding=THREE.sRGBEncoding;
+  function drawScript(){ g.clearRect(0,0,1024,320); g.font='150px Pacifico, cursive'; g.textAlign='center'; g.textBaseline='middle'; g.lineJoin='round'; g.strokeStyle='#cfcbc0'; g.lineWidth=16; g.strokeText('Andrei',512,160); g.fillStyle='#f3f0e8'; g.fillText('Andrei',512,160); tex.needsUpdate=true; }
+  drawScript(); if(document.fonts){ document.fonts.load('150px Pacifico').then(drawScript); }
+  const scris=new THREE.Mesh(new THREE.PlaneGeometry(170,53),new THREE.MeshStandardMaterial({map:tex,transparent:true,roughness:0.8,side:THREE.DoubleSide,alphaTest:0.2}));
+  scris.position.set(0,26,36); scris.rotation.x=-0.18; scris.castShadow=true;
+  scene.add(scris);
+
+  addElement('Litera A','ti-letter-a',letter,false,false);
+  addElement('Scris „Andrei"','ti-writing',scris,true,true);
+
+  function addElement(name,icon,mesh,child,removable){ const id='e'+(++uid); mesh.name=id; elements.push({id,name,icon,mesh,child,removable}); renderList(); return id; }
+  function removeElement(mesh){ const i=elements.findIndex(e=>e.mesh===mesh); if(i<0||!elements[i].removable) return; scene.remove(mesh); elements.splice(i,1); renderList(); }
+  function renderList(){ const L=$('list'); L.innerHTML=''; elements.forEach(e=>{ const b=document.createElement('button'); b.className='item'+(e.child?' child':''); b.dataset.id=e.id; b.setAttribute('aria-selected',String(state.selected===e.mesh));
+    b.innerHTML=`<i class="ti ${e.icon}"></i><span class="n">${e.name}</span><span class="acts"><span title="Ascunde"><i class="ti ${e.mesh.visible?'ti-eye':'ti-eye-off'}"></i></span><span title="Blochează"><i class="ti ti-lock-open"></i></span>${e.removable?'<span title="Șterge" data-del><i class="ti ti-trash"></i></span>':''}</span>`;
+    b.addEventListener('click',ev=>{ if(ev.target.closest('[data-del]')){ removeElement(e.mesh); if(state.selected===e.mesh) select(null); return; } if(ev.target.closest('[title="Ascunde"]')){ e.mesh.visible=!e.mesh.visible; renderList(); return; } select(e.mesh); });
+    L.appendChild(b); }); }
+
+  /* ---------- gizmo (with pickable handles) ---------- */
+  const gizmo=new THREE.Group(); const picks=[];
+  function axis(dir,col,name){ const a=new THREE.ArrowHelper(dir,new THREE.Vector3(),60,col,14,7); gizmo.add(a);
+    const h=new THREE.Mesh(new THREE.CylinderGeometry(6,6,60,8),new THREE.MeshBasicMaterial({visible:false})); h.position.copy(dir.clone().multiplyScalar(30)); h.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),dir); h.userData.axis=dir.clone(); h.userData.name=name; gizmo.add(h); picks.push(h); }
+  axis(new THREE.Vector3(1,0,0),0xD14B4B,'x'); axis(new THREE.Vector3(0,1,0),0x1F9E6C,'y'); axis(new THREE.Vector3(0,0,1),0x3A78D6,'z');
+  gizmo.add(new THREE.Mesh(new THREE.SphereGeometry(4.5,16,16),new THREE.MeshBasicMaterial({color:0xffffff})));
+  scene.add(gizmo);
+
+  /* ---------- state / camera ---------- */
+  const target=new THREE.Vector3(0,60,0); let radius=440, theta=0.65, phi=1.12, anim=null;
+  function applyTheme(){ const d=state.theme==='dark'; document.documentElement.dataset.theme=state.theme; plateMat.color.set(d?0x2e2e34:0xf6f5f1); grid.material.color.set(d?0xffffff:0x000000); grid.material.opacity=d?0.10:0.12; hemi.groundColor.set(d?0x2a2a30:0x8a8a80); ground.material.opacity=d?0.35:0.18; scene.background=state.scene==='studio'?null:new THREE.Color(css('--canvas')); $('btnTheme').firstElementChild.className=d?'ti ti-sun':'ti ti-moon'; }
+  function resize(){ const w=vp.clientWidth,h=vp.clientHeight; renderer.setSize(w,h,false); persp.aspect=w/h; persp.updateProjectionMatrix(); const hh=radius*Math.tan(THREE.MathUtils.degToRad(persp.fov/2)); ortho.left=-hh*w/h; ortho.right=hh*w/h; ortho.top=hh; ortho.bottom=-hh; ortho.updateProjectionMatrix(); }
+  function placeCamera(){ const p=Math.max(0.0001,Math.min(Math.PI-0.0001,phi)); const x=radius*Math.sin(p)*Math.sin(theta), y=radius*Math.cos(p), z=radius*Math.sin(p)*Math.cos(theta); for(const k of [persp,ortho]){ k.position.set(target.x+x,target.y+y,target.z+z); k.up.set(0,1,0); k.lookAt(target);} if(isOrtho) resize(); }
+  function animateTo(nt,np,nr,nc){ anim={t0:performance.now(),dur:260,from:{t:theta,p:phi,r:radius,c:target.clone()},to:{t:nt,p:np,r:nr,c:nc||target.clone()}}; }
+  function stepAnim(){ const k=Math.min(1,(performance.now()-anim.t0)/anim.dur), e=1-Math.pow(1-k,3); theta=anim.from.t+(anim.to.t-anim.from.t)*e; phi=anim.from.p+(anim.to.p-anim.from.p)*e; radius=anim.from.r+(anim.to.r-anim.from.r)*e; target.lerpVectors(anim.from.c,anim.to.c,e); placeCamera(); if(k>=1) anim=null; }
+  function fitTo(t,p){ const box=new THREE.Box3(); meshes().filter(m=>m.visible).forEach(m=>box.expandByObject(m)); const ctr=box.getCenter(new THREE.Vector3()), r=box.getSize(new THREE.Vector3()).length()/2; animateTo(t,p,r/Math.sin(THREE.MathUtils.degToRad(persp.fov/2))*1.05,ctr); }
+  function updateGizmo(){ const on=!!state.selected&&!state.pres&&state.tool==='muta'; gizmo.visible=on; if(on){ gizmo.position.copy(state.selected.position); gizmo.scale.setScalar(radius/440);} }
+  function render(){ updateGizmo(); renderer.render(scene,cam); }
+  (function loop(){ requestAnimationFrame(loop); if(anim) stepAnim(); render(); })();
+
+  /* ---------- pointer: select / drag (axis or plane) / orbit ---------- */
+  const ray=new THREE.Raycaster(), ndc=new THREE.Vector2();
+  let down=null, drag=null, moved=false, orbit=false;
+  function castAt(ev){ const r=vp.getBoundingClientRect(); ndc.set(((ev.clientX-r.left)/r.width)*2-1,-((ev.clientY-r.top)/r.height)*2+1); ray.setFromCamera(ndc,cam); return ray; }
+  function closestOnAxis(o,d,ro,rd){ const w=o.clone().sub(ro); const b=d.dot(rd), dd=w.dot(d), e=w.dot(rd), den=1-b*b; if(Math.abs(den)<1e-4) return null; return (b*e-dd)/den; }
+  vp.addEventListener('pointerdown',ev=>{ if(ev.target.closest('.navcube,.hint,.fab,.menu')) return; closeMenu(); vp.setPointerCapture(ev.pointerId); down={x:ev.clientX,y:ev.clientY,shift:ev.shiftKey}; moved=false;
+    const rc=castAt(ev);
+    if(state.selected&&state.tool==='muta'&&!state.pres&&gizmo.visible){ const hp=rc.intersectObjects(picks); if(hp.length){ const m=state.selected, d=hp[0].object.userData.axis; const t0=closestOnAxis(m.position,d,rc.ray.origin,rc.ray.direction); drag={mesh:m,mode:'axis',axis:d,t0,start:m.position.clone()}; return; } }
+    const hm=rc.intersectObjects(meshes().filter(m=>m.visible));
+    if(hm.length&&state.tool==='muta'&&!state.pres){ const m=hm[0].object; const lowCam=phi>1.32; const n=lowCam?cam.getWorldDirection(new THREE.Vector3()).negate():new THREE.Vector3(0,1,0); const plane=new THREE.Plane().setFromNormalAndCoplanarPoint(n,m.position); const p0=new THREE.Vector3(); rc.ray.intersectPlane(plane,p0); drag={mesh:m,mode:'plane',plane,p0,start:m.position.clone(),lowCam}; return; }
+    orbit=true; });
+  vp.addEventListener('pointermove',ev=>{ if(!down) return; const dx=ev.clientX-down.x, dy=ev.clientY-down.y; if(Math.hypot(dx,dy)>4) moved=true;
+    if(drag&&moved){ const rc=castAt(ev); const m=drag.mesh;
+      if(drag.mode==='axis'){ const t=closestOnAxis(drag.start,drag.axis,rc.ray.origin,rc.ray.direction); if(t!==null&&drag.t0!==null){ m.position.copy(drag.start).addScaledVector(drag.axis,t-drag.t0); if(drag.axis.y===1) $('onPlate').setAttribute('aria-checked',String(Math.abs(m.position.y)<0.5)); } }
+      else { const p=new THREE.Vector3(); if(rc.ray.intersectPlane(drag.plane,p)){ m.position.copy(drag.start).add(p.sub(drag.p0)); if(!drag.lowCam) m.position.y=drag.start.y; } }
+      if(m===state.selected) syncNumeric(); return; }
+    if(orbit){ if(down.shift){ const s=radius/900; const right=new THREE.Vector3().crossVectors(cam.getWorldDirection(new THREE.Vector3()),cam.up).normalize(); target.addScaledVector(right,-dx*s); target.y+=dy*s; } else { theta-=dx*0.006; phi-=dy*0.006; } down.x=ev.clientX; down.y=ev.clientY; placeCamera(); } });
+  vp.addEventListener('pointerup',ev=>{ if(!down) return; if(!moved){ const hm=castAt(ev).intersectObjects(meshes().filter(m=>m.visible)); select(hm.length?hm[0].object:null); } else if(drag) busy(); down=null; drag=null; orbit=false; });
+  vp.addEventListener('wheel',ev=>{ ev.preventDefault(); radius*=Math.exp(ev.deltaY*0.0012); radius=Math.max(80,Math.min(3000,radius)); placeCamera(); },{passive:false});
+
+  /* ---------- selection / props ---------- */
+  function select(m){ state.selected=m; renderList(); meshes().forEach(x=>{ if(x.material.emissive){ x.material.emissive.set(x===m?0x5B4DD1:0x000000); x.material.emissiveIntensity=0.18; } }); syncNumeric(); propVisibility(); }
+  const toolLabel=()=>({selectare:'Selectare',muta:'Mută',roteste:'Rotește',scaleaza:'Scalează'})[state.tool];
+  function propVisibility(){ const has=!!state.selected; $('propBody').hidden=!has; $('propEmpty').hidden=has; const e=elements.find(x=>x.mesh===state.selected); $('propTitle').textContent=has?`${toolLabel()} — ${e?e.name:''}`:toolLabel(); }
+  function syncNumeric(){ const m=state.selected; if(!m) return; const f=v=>v.toFixed(1).replace('.',','); $('px').value=f(m.position.x); $('py').value=f(m.position.z); $('pz').value=f(m.position.y); $('onPlate').setAttribute('aria-checked',String(Math.abs(m.position.y)<0.5)); }
+  $('onPlate').addEventListener('click',()=>{ const m=state.selected; if(!m) return; const on=$('onPlate').getAttribute('aria-checked')!=='true'; if(on) m.position.y=0; $('onPlate').setAttribute('aria-checked',String(on)); syncNumeric(); });
+  function setTool(t){ state.tool=t; document.querySelectorAll('.tools button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.tool===t))); propVisibility(); }
+  document.querySelectorAll('.tools button').forEach(b=>b.addEventListener('click',()=>setTool(b.dataset.tool)));
+  document.querySelectorAll('[data-toggle]').forEach(b=>b.addEventListener('click',()=>{ const s=b.closest('.sec'); s.dataset.open=String(s.dataset.open!=='true'); }));
+  document.querySelectorAll('.switch:not(#onPlate)').forEach(s=>s.addEventListener('click',()=>{ const on=s.getAttribute('aria-checked')!=='true'; s.setAttribute('aria-checked',String(on)); if(s.id==='chenar') $('chenarSub').style.display=on?'':'none'; }));
+  document.querySelectorAll('.sw[data-color]').forEach(s=>s.addEventListener('click',()=>{ document.querySelectorAll('.sw[data-color]').forEach(x=>x.setAttribute('aria-pressed','false')); s.setAttribute('aria-pressed','true'); mat.color.set(s.dataset.color); $('tile').style.color=s.dataset.color; }));
+  $('litera').addEventListener('input',e=>{ const v=(e.target.value||'A').toUpperCase().slice(0,1); e.target.value=v; $('tile').textContent=v; elements[0].name='Litera '+v; renderList(); propVisibility(); });
+
+  /* ---------- dimensions (two-phase) ---------- */
+  const H=$('h'),T=$('t'),HN=$('hN'),TN=$('tN');
+  function applyDims(){ const h=+H.value,t=+T.value; letter.scale.set(h/120,h/120,t/25); HN.value=h; TN.value=t; $('dims').textContent=`${Math.round(100*h/120)} × ${h} × ${t} mm`; const vol=144*(h/120)*(h/120)*(t/25); $('vol').textContent=`${Math.round(vol)} cm³`; const min=220*vol/144; $('timp').textContent=`${Math.floor(min/60)} h ${String(Math.round(min%60)).padStart(2,'0')} min`; }
+  [H,T].forEach(el=>{ el.addEventListener('input',applyDims); el.addEventListener('change',busy); });
+  HN.addEventListener('change',()=>{H.value=HN.value;applyDims();busy();}); TN.addEventListener('change',()=>{T.value=TN.value;applyDims();busy();});
+  function busy(){ const b=$('busy'); b.classList.add('on'); const t0=performance.now(); setTimeout(()=>{ b.classList.remove('on'); $('recalc').textContent=`actualizat în ${((performance.now()-t0)/1000).toFixed(1).replace('.',',')} s`; },420); }
+
+  /* ---------- add menu ---------- */
+  const menu=$('menu'), fab=$('fab');
+  function openMenu(){ menu.hidden=false; fab.setAttribute('aria-expanded','true'); }
+  function closeMenu(){ menu.hidden=true; fab.setAttribute('aria-expanded','false'); }
+  fab.addEventListener('click',()=>menu.hidden?openMenu():closeMenu());
+  $('addFromList').addEventListener('click',openMenu);
+  document.addEventListener('pointerdown',ev=>{ if(!ev.target.closest('#menu,#fab,#addFromList')) closeMenu(); });
+  menu.querySelectorAll('[data-add]').forEach(b=>b.addEventListener('click',()=>{ const k=b.dataset.add; closeMenu();
+    if(k==='baza'){ const m=new THREE.Mesh(new THREE.CylinderGeometry(78,80,5,64),new THREE.MeshStandardMaterial({color:0xE9E4D6,roughness:0.8})); m.position.set(0,2.5,0); m.castShadow=m.receiveShadow=true; scene.add(m); letter.position.y=5; scris.position.y=31; select(m); addElement('Bază disc','ti-circle',m,false,true); busy(); }
+    if(k==='element'){ const s=new THREE.Shape(); for(let i=0;i<10;i++){ const r=i%2?9:22, a=i/10*Math.PI*2-Math.PI/2; i?s.lineTo(Math.cos(a)*r,Math.sin(a)*r):s.moveTo(Math.cos(a)*r,Math.sin(a)*r);} s.closePath();
+      const m=new THREE.Mesh(new THREE.ExtrudeGeometry(s,{depth:8,bevelEnabled:true,bevelThickness:1,bevelSize:1,bevelSegments:2}),new THREE.MeshStandardMaterial({color:0xF2B134,roughness:0.6})); m.position.set(58,96,10); m.castShadow=true; scene.add(m); select(m); addElement('Stea','ti-star',m,true,true); busy(); }
+    if(k==='text'){ alert('În produs: se deschide câmpul de text cu fontul curent.'); }
+    if(k==='svg'){ alert('În produs: încărcare SVG — disponibil cu licența comercială.'); }
+    select(state.selected); }));
+
+  /* ---------- views / presentation / plates / theme / keys ---------- */
+  function setOrtho(o){ isOrtho=o; cam=o?ortho:persp; $('vPersp').setAttribute('aria-pressed',String(o)); resize(); placeCamera(); }
+  $('vSus').addEventListener('click',()=>{ fitTo(theta,0.0001); setOrtho(true); });
+  $('vFata').addEventListener('click',()=>{ fitTo(0,Math.PI/2); setOrtho(true); });
+  $('vIzo').addEventListener('click',()=>{ fitTo(0.65,1.12); setOrtho(false); });
+  $('vPersp').addEventListener('click',()=>setOrtho(!isOrtho));
+  const btnPres=$('btnPres');
+  function setPres(on){ state.pres=on; app.classList.toggle('prezentare',on); btnPres.setAttribute('aria-pressed',String(on)); $('editPanel').hidden=on; $('presPanel').hidden=!on; $('hint').hidden=on||hintClosed; if(on){ select(null); fitTo(0.55,1.15);} resize(); }
+  btnPres.addEventListener('click',()=>setPres(!state.pres)); $('presBack').addEventListener('click',()=>setPres(false));
+  document.querySelectorAll('[data-scene]').forEach(b=>b.addEventListener('click',()=>{ state.scene=b.dataset.scene; document.querySelectorAll('[data-scene]').forEach(x=>x.setAttribute('aria-pressed',String(x===b))); plate.visible=state.scene==='masa'; vp.classList.toggle('studio',state.scene==='studio'); applyTheme(); }));
+  document.querySelectorAll('[data-angle]').forEach(b=>b.addEventListener('click',()=>{ const a=b.dataset.angle; if(a==='fata') fitTo(0,1.35); if(a==='trei') fitTo(0.7,1.1); if(a==='sus') fitTo(0.3,0.35); }));
+  $('reframe').addEventListener('click',()=>fitTo(theta,phi));
+  $('btnPlaci').addEventListener('click',e=>{ const on=e.currentTarget.getAttribute('aria-pressed')!=='true'; e.currentTarget.setAttribute('aria-pressed',String(on)); if(on){ animateTo(0,0.0001,540,new THREE.Vector3(0,0,0)); setOrtho(true);} else { animateTo(0.65,1.12,440,new THREE.Vector3(0,60,0)); setOrtho(false);} });
+  $('btnTheme').addEventListener('click',()=>{ state.theme=state.theme==='dark'?'light':'dark'; applyTheme(); });
+  function setPane(side,collapsed){ const el=document.querySelector('.'+side); el.classList.toggle('collapsed',collapsed); app.style.setProperty(side==='left'?'--lw':'--rw',collapsed?'44px':''); resize(); placeCamera(); }
+  document.querySelectorAll('[data-collapse]').forEach(b=>b.addEventListener('click',()=>setPane(b.dataset.collapse,true)));
+  document.querySelectorAll('[data-expand]').forEach(b=>b.addEventListener('click',()=>setPane(b.dataset.expand,false)));
+  let hintClosed=false; $('hintX').addEventListener('click',()=>{ hintClosed=true; $('hint').hidden=true; });
+  window.addEventListener('keydown',ev=>{ if(ev.target.matches('input')) return; const k=ev.key.toLowerCase();
+    if(k==='q') setTool('selectare'); if(k==='g') setTool('muta'); if(k==='r') setTool('roteste'); if(k==='s') setTool('scaleaza');
+    if(k==='escape'){ closeMenu(); if(state.pres) setPres(false); else select(null); }
+    if(k==='tab'){ ev.preventDefault(); state.panels=!state.panels; app.classList.toggle('hide-panels',!state.panels); resize(); }
+    if(k==='7'){ fitTo(theta,0.0001); setOrtho(true);} if(k==='1'){ fitTo(0,Math.PI/2); setOrtho(true);} if(k==='5') setOrtho(!isOrtho);
+    if((k==='delete'||k==='backspace')&&state.selected){ const m=state.selected; removeElement(m); if(!elements.find(e=>e.mesh===m)) select(null); } });
+
+  new ResizeObserver(()=>{resize();placeCamera();}).observe(vp);
+  applyTheme(); resize(); placeCamera(); select(letter); applyDims();
+})();
+</script>
+</body>
+</html>

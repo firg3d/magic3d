@@ -1,0 +1,155 @@
+{
+  "id": "iphone-15-plus",
+  "brand": "Apple",
+  "model": "iPhone 15 Plus",
+  "an": 2023,
+  "corp": {
+    "lungime": 160.9,
+    "latime": 77.8,
+    "grosime": 7.81,
+    "razaColt": 3.72,
+    "profilMargine": "plat",
+    "razaMuchie": 2.41,
+    "grosimeMaxHusaSpate": 2.1,
+    "zonaIncarcare": {
+      "x": 0.0,
+      "y": 0.0,
+      "diametru": 57.5
+    }
+  },
+  "ecran": {
+    "proeminentaFataDeCorp": 0.0
+  },
+  "insulaCamera": {
+    "forma": "patrat",
+    "x": -19.71,
+    "y": 61.27,
+    "latime": 35.93,
+    "inaltime": 35.93,
+    "razaColt": 9.0,
+    "razaEstimata": true,
+    "proeminenta": 1.85,
+    "lentile": [
+      {
+        "x": -26.17,
+        "y": 67.72,
+        "diametru": 15.07,
+        "proeminentaSuplimentara": 1.73,
+        "con": {
+          "unghi": 121.0,
+          "distanta": 8.5,
+          "referinta": "sticla-fata"
+        }
+      },
+      {
+        "x": -13.26,
+        "y": 54.81,
+        "diametru": 15.07,
+        "proeminentaSuplimentara": 1.73,
+        "con": {
+          "unghi": 75.0,
+          "distanta": 7.0,
+          "referinta": "sticla-fata"
+        }
+      }
+    ],
+    "blit": {
+      "x": -11.58,
+      "y": 69.39,
+      "diametru": 6.28,
+      "con": {
+        "unghi": 112.0,
+        "distanta": 8.5,
+        "referinta": "sticla-fata"
+      }
+    }
+  },
+  "butoane": [
+    {
+      "tip": "mut",
+      "latura": "dreapta",
+      "y": 54.46,
+      "lungime": 5.7,
+      "latime": 2.85,
+      "acoperibil": false
+    },
+    {
+      "tip": "volum+",
+      "latura": "dreapta",
+      "y": 41.14,
+      "lungime": 11.3,
+      "latime": 2.76,
+      "acoperibil": true
+    },
+    {
+      "tip": "volum-",
+      "latura": "dreapta",
+      "y": 27.14,
+      "lungime": 11.3,
+      "latime": 2.76,
+      "acoperibil": true
+    },
+    {
+      "tip": "pornire",
+      "latura": "stanga",
+      "y": 27.92,
+      "lungime": 18.14,
+      "latime": 2.76,
+      "acoperibil": true
+    }
+  ],
+  "port": {
+    "latura": "jos",
+    "x": 0.0,
+    "latime": 12.45,
+    "inaltime": 6.6,
+    "tip": "usb-c"
+  },
+  "decupajeJos": [
+    {
+      "tip": "microfon",
+      "x": -10.0,
+      "latime": 10.0
+    },
+    {
+      "tip": "difuzor",
+      "x": -46.0,
+      "latime": 11.0
+    }
+  ],
+  "decupajeSus": [
+    {
+      "tip": "microfon",
+      "x": 0.0,
+      "latime": 14.4
+    }
+  ],
+  "keepOut": [
+    {
+      "nume": "blitz pe platou",
+      "x": -11.58,
+      "y": 69.39,
+      "latime": 6.28,
+      "inaltime": 6.28,
+      "motiv": "blitz pe platou; decupaj separat"
+    },
+    {
+      "nume": "microfon spate",
+      "x": -27.43,
+      "y": 53.55,
+      "latime": 2.1,
+      "inaltime": 2.1,
+      "motiv": "orificiu acustic; nu se acoperă"
+    }
+  ],
+  "sursa": {
+    "document": "Apple Dimensional Drawings (developer.apple.com/accessories/dimensional-drawings)",
+    "fisier": "iphone-15-plus.pdf",
+    "versiune": "2023-10",
+    "pagina": 1,
+    "foaie": "SHT 1 OF 3"
+  },
+  "verificat": false,
+  "verificatLa": null,
+  "note": "Coordonate din desen: origine centrul spatelui, X + spre dreapta PRIVIT DIN SPATE, Y + în sus. butoane[].latura din spate: volumul apare pe DREAPTA. Cameră ca iPhone 15 (2 lentile diagonale Ø15,07 la (12,73;-12,73),(25,64;-25,64); blitz Ø6,28 la (27,32;-11,06)), corp 160,9×77,8 (Plus), USB-C. Butoane familia 15/13. De confirmat la rama de probă."
+}

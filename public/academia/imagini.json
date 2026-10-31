@@ -1,0 +1,483 @@
+{
+  "atelier-linie": {
+    "lipsa": false,
+    "alt": "Imprimante 3D în funcțiune în atelierul Firg3D din București",
+    "altEn": "3D printers running in the Firg3D workshop in Bucharest",
+    "sectiune": null,
+    "sectiuneEn": null,
+    "unde": "hub, caseta de autor, landing",
+    "w": 1600,
+    "h": 1141,
+    "raport": 1.4023,
+    "surse": [
+      {
+        "fisier": "/academia/img/atelier-linie-640.avif",
+        "format": "avif",
+        "w": 640,
+        "h": 456,
+        "kb": 28
+      },
+      {
+        "fisier": "/academia/img/atelier-linie-640.webp",
+        "format": "webp",
+        "w": 640,
+        "h": 456,
+        "kb": 36
+      },
+      {
+        "fisier": "/academia/img/atelier-linie-1000.avif",
+        "format": "avif",
+        "w": 1000,
+        "h": 713,
+        "kb": 49
+      },
+      {
+        "fisier": "/academia/img/atelier-linie-1000.webp",
+        "format": "webp",
+        "w": 1000,
+        "h": 713,
+        "kb": 67
+      },
+      {
+        "fisier": "/academia/img/atelier-linie-1600.avif",
+        "format": "avif",
+        "w": 1600,
+        "h": 1141,
+        "kb": 94
+      },
+      {
+        "fisier": "/academia/img/atelier-linie-1600.webp",
+        "format": "webp",
+        "w": 1600,
+        "h": 1141,
+        "kb": 125
+      }
+    ]
+  },
+  "atelier-paralel": {
+    "lipsa": false,
+    "alt": "Imprimante 3D printând comenzi în paralel",
+    "altEn": "3D printers running customer orders in parallel",
+    "sectiune": null,
+    "sectiuneEn": null,
+    "unde": "hub",
+    "w": 1600,
+    "h": 1200,
+    "raport": 1.3333,
+    "surse": [
+      {
+        "fisier": "/academia/img/atelier-paralel-640.avif",
+        "format": "avif",
+        "w": 640,
+        "h": 480,
+        "kb": 43
+      },
+      {
+        "fisier": "/academia/img/atelier-paralel-640.webp",
+        "format": "webp",
+        "w": 640,
+        "h": 480,
+        "kb": 52
+      },
+      {
+        "fisier": "/academia/img/atelier-paralel-1000.avif",
+        "format": "avif",
+        "w": 1000,
+        "h": 750,
+        "kb": 74
+      },
+      {
+        "fisier": "/academia/img/atelier-paralel-1000.webp",
+        "format": "webp",
+        "w": 1000,
+        "h": 750,
+        "kb": 98
+      },
+      {
+        "fisier": "/academia/img/atelier-paralel-1600.avif",
+        "format": "avif",
+        "w": 1600,
+        "h": 1200,
+        "kb": 138
+      },
+      {
+        "fisier": "/academia/img/atelier-paralel-1600.webp",
+        "format": "webp",
+        "w": 1600,
+        "h": 1200,
+        "kb": 175
+      }
+    ]
+  },
+  "stoc-filamente": {
+    "lipsa": false,
+    "alt": "Stoc de filamente pentru printare 3D, role de PLA, PETG și ASA pe rafturi",
+    "altEn": "Filament stock for 3D printing: PLA, PETG and ASA spools on the shelves",
+    "sectiune": "cele-patru-materiale-pe-scurt",
+    "sectiuneEn": "the-four-materials-briefly",
+    "unde": "capitolul 2",
+    "w": 1600,
+    "h": 1200,
+    "raport": 1.3333,
+    "surse": [
+      {
+        "fisier": "/academia/img/stoc-filamente-640.avif",
+        "format": "avif",
+        "w": 640,
+        "h": 480,
+        "kb": 37
+      },
+      {
+        "fisier": "/academia/img/stoc-filamente-640.webp",
+        "format": "webp",
+        "w": 640,
+        "h": 480,
+        "kb": 47
+      },
+      {
+        "fisier": "/academia/img/stoc-filamente-1000.avif",
+        "format": "avif",
+        "w": 1000,
+        "h": 750,
+        "kb": 67
+      },
+      {
+        "fisier": "/academia/img/stoc-filamente-1000.webp",
+        "format": "webp",
+        "w": 1000,
+        "h": 750,
+        "kb": 91
+      },
+      {
+        "fisier": "/academia/img/stoc-filamente-1600.avif",
+        "format": "avif",
+        "w": 1600,
+        "h": 1200,
+        "kb": 133
+      },
+      {
+        "fisier": "/academia/img/stoc-filamente-1600.webp",
+        "format": "webp",
+        "w": 1600,
+        "h": 1200,
+        "kb": 175
+      }
+    ]
+  },
+  "piese-finalizate": {
+    "lipsa": false,
+    "alt": "Obiecte printate 3D finalizate",
+    "altEn": "Finished 3D printed objects",
+    "sectiune": null,
+    "sectiuneEn": null,
+    "unde": "capitolul 4",
+    "w": 1000,
+    "h": 1333,
+    "raport": 0.7502,
+    "surse": [
+      {
+        "fisier": "/academia/img/piese-finalizate-640.avif",
+        "format": "avif",
+        "w": 640,
+        "h": 853,
+        "kb": 24
+      },
+      {
+        "fisier": "/academia/img/piese-finalizate-640.webp",
+        "format": "webp",
+        "w": 640,
+        "h": 853,
+        "kb": 33
+      },
+      {
+        "fisier": "/academia/img/piese-finalizate-1000.avif",
+        "format": "avif",
+        "w": 1000,
+        "h": 1333,
+        "kb": 37
+      },
+      {
+        "fisier": "/academia/img/piese-finalizate-1000.webp",
+        "format": "webp",
+        "w": 1000,
+        "h": 1333,
+        "kb": 54
+      }
+    ]
+  },
+  "laser-format-mare": {
+    "lipsa": false,
+    "alt": "Gravor laser și imprimantă 3D de format mare 800x1000 mm",
+    "altEn": "Laser engraver and large-format 800x1000 mm 3D printer",
+    "sectiune": null,
+    "sectiuneEn": null,
+    "unde": "capitolul 3",
+    "w": 1000,
+    "h": 1333,
+    "raport": 0.7502,
+    "surse": [
+      {
+        "fisier": "/academia/img/laser-format-mare-640.avif",
+        "format": "avif",
+        "w": 640,
+        "h": 853,
+        "kb": 30
+      },
+      {
+        "fisier": "/academia/img/laser-format-mare-640.webp",
+        "format": "webp",
+        "w": 640,
+        "h": 853,
+        "kb": 46
+      },
+      {
+        "fisier": "/academia/img/laser-format-mare-1000.avif",
+        "format": "avif",
+        "w": 1000,
+        "h": 1333,
+        "kb": 57
+      },
+      {
+        "fisier": "/academia/img/laser-format-mare-1000.webp",
+        "format": "webp",
+        "w": 1000,
+        "h": 1333,
+        "kb": 88
+      }
+    ]
+  },
+  "butoane-land-rover": {
+    "lipsa": false,
+    "alt": "Butoane de bord Land Rover Defender reproduse prin scanare 3D și printate din ASA negru, originalul alături de copii",
+    "altEn": "Land Rover Defender dashboard buttons reproduced by 3D scanning and printed in black ASA, the original next to the copies",
+    "sectiune": "intrebarea-care-decide-aproape-totul-unde-ajunge-obiectul",
+    "sectiuneEn": "the-question-that-settles-almost-everything-where-does-the-object-end-up",
+    "unde": "capitolul 2, imagine principală și sursă OG",
+    "w": 1600,
+    "h": 1600,
+    "raport": 1,
+    "surse": [
+      {
+        "fisier": "/academia/img/butoane-land-rover-640.avif",
+        "format": "avif",
+        "w": 640,
+        "h": 640,
+        "kb": 21
+      },
+      {
+        "fisier": "/academia/img/butoane-land-rover-640.webp",
+        "format": "webp",
+        "w": 640,
+        "h": 640,
+        "kb": 29
+      },
+      {
+        "fisier": "/academia/img/butoane-land-rover-1000.avif",
+        "format": "avif",
+        "w": 1000,
+        "h": 1000,
+        "kb": 34
+      },
+      {
+        "fisier": "/academia/img/butoane-land-rover-1000.webp",
+        "format": "webp",
+        "w": 1000,
+        "h": 1000,
+        "kb": 49
+      },
+      {
+        "fisier": "/academia/img/butoane-land-rover-1600.avif",
+        "format": "avif",
+        "w": 1600,
+        "h": 1600,
+        "kb": 56
+      },
+      {
+        "fisier": "/academia/img/butoane-land-rover-1600.webp",
+        "format": "webp",
+        "w": 1600,
+        "h": 1600,
+        "kb": 86
+      }
+    ]
+  },
+  "clema-asa": {
+    "lipsa": false,
+    "alt": "Clemă de închidere portbagaj auto, reprodusă prin scanare 3D și printată din ASA negru",
+    "altEn": "Car boot latch clip, reproduced by 3D scanning and printed in black ASA",
+    "sectiune": "intrebarea-care-decide-aproape-totul-unde-ajunge-obiectul",
+    "sectiuneEn": "the-question-that-settles-almost-everything-where-does-the-object-end-up",
+    "unde": "capitolul 2, aceeași secțiune",
+    "w": 1000,
+    "h": 1334,
+    "raport": 0.7496,
+    "surse": [
+      {
+        "fisier": "/academia/img/clema-asa-640.avif",
+        "format": "avif",
+        "w": 640,
+        "h": 854,
+        "kb": 16
+      },
+      {
+        "fisier": "/academia/img/clema-asa-640.webp",
+        "format": "webp",
+        "w": 640,
+        "h": 854,
+        "kb": 25
+      },
+      {
+        "fisier": "/academia/img/clema-asa-1000.avif",
+        "format": "avif",
+        "w": 1000,
+        "h": 1334,
+        "kb": 30
+      },
+      {
+        "fisier": "/academia/img/clema-asa-1000.webp",
+        "format": "webp",
+        "w": 1000,
+        "h": 1334,
+        "kb": 49
+      }
+    ]
+  },
+  "rotita-sla": {
+    "lipsa": false,
+    "alt": "Rotiță zimțată de 7 mm pentru ceas turometru, reprodusă prin printare SLA cu rășină",
+    "altEn": "A 7 mm toothed gear for a tachometer, reproduced by SLA resin printing",
+    "sectiune": null,
+    "sectiuneEn": null,
+    "unde": "capitolul 3, când FDM nu e suficient",
+    "w": 1000,
+    "h": 1000,
+    "raport": 1,
+    "surse": [
+      {
+        "fisier": "/academia/img/rotita-sla-640.avif",
+        "format": "avif",
+        "w": 640,
+        "h": 640,
+        "kb": 4
+      },
+      {
+        "fisier": "/academia/img/rotita-sla-640.webp",
+        "format": "webp",
+        "w": 640,
+        "h": 640,
+        "kb": 7
+      },
+      {
+        "fisier": "/academia/img/rotita-sla-1000.avif",
+        "format": "avif",
+        "w": 1000,
+        "h": 1000,
+        "kb": 9
+      },
+      {
+        "fisier": "/academia/img/rotita-sla-1000.webp",
+        "format": "webp",
+        "w": 1000,
+        "h": 1000,
+        "kb": 17
+      }
+    ]
+  },
+  "macheta-velier": {
+    "lipsa": false,
+    "alt": "Machetă de velier modelată 3D după fotografii și printată din PLA multicolor",
+    "altEn": "A sailing ship model, 3D modelled from photographs and printed in multicolour PLA",
+    "sectiune": null,
+    "sectiuneEn": null,
+    "unde": "capitolul 3, multicolor",
+    "w": 1000,
+    "h": 1333,
+    "raport": 0.7502,
+    "surse": [
+      {
+        "fisier": "/academia/img/macheta-velier-640.avif",
+        "format": "avif",
+        "w": 640,
+        "h": 853,
+        "kb": 9
+      },
+      {
+        "fisier": "/academia/img/macheta-velier-640.webp",
+        "format": "webp",
+        "w": 640,
+        "h": 853,
+        "kb": 15
+      },
+      {
+        "fisier": "/academia/img/macheta-velier-1000.avif",
+        "format": "avif",
+        "w": 1000,
+        "h": 1333,
+        "kb": 14
+      },
+      {
+        "fisier": "/academia/img/macheta-velier-1000.webp",
+        "format": "webp",
+        "w": 1000,
+        "h": 1333,
+        "kb": 26
+      }
+    ]
+  },
+  "defect-desprindere": {
+    "lipsa": true,
+    "alt": "Print desprins de pe pat, cu ghemul de filament format în jurul duzei, lângă aceeași piesă printată corect",
+    "altEn": "A print that came off the bed, with the tangle of filament around the nozzle, next to the same part printed correctly",
+    "sectiune": "printul-nu-se-lipeste-de-pat",
+    "sectiuneEn": "the-print-will-not-stick-to-the-bed",
+    "unde": "capitolul 1"
+  },
+  "defect-warping": {
+    "lipsa": true,
+    "alt": "Colț ridicat de pe placă, văzut lateral, cu baza vizibil curbată, lângă o piesă cu baza plană",
+    "altEn": "A corner lifted off the plate, seen from the side, with the base visibly curled, next to a part with a flat base",
+    "sectiune": "colturile-se-ridica-de-pe-placa",
+    "sectiuneEn": "the-corners-lift-off-the-plate",
+    "unde": "capitolul 1"
+  },
+  "defect-delaminare": {
+    "lipsa": true,
+    "alt": "Piesă cu straturile despicate, ruptă în mână, lângă o piesă cu straturile sudate",
+    "altEn": "A part with split layers, broken by hand, next to a part whose layers are welded",
+    "sectiune": "straturile-se-despica",
+    "sectiuneEn": "the-layers-split",
+    "unde": "capitolul 1"
+  },
+  "defect-stringing": {
+    "lipsa": true,
+    "alt": "Fire subțiri de plastic între două piese printate pe aceeași placă, lângă aceleași piese fără fire",
+    "altEn": "Thin plastic strings between two parts printed on the same plate, next to the same parts without them",
+    "sectiune": "fire-subtiri-intre-piese",
+    "sectiuneEn": "thin-strings-between-parts",
+    "unde": "capitolul 1"
+  },
+  "defect-picior-elefant": {
+    "lipsa": true,
+    "alt": "Piesă cu baza lățită, picior de elefant, alături de aceeași piesă cu baza dreaptă",
+    "altEn": "A part with a splayed base, elephant foot, next to the same part with a straight base",
+    "sectiune": "baza-e-mai-lata-decat-restul",
+    "sectiuneEn": "the-base-is-wider-than-the-rest",
+    "unde": "capitolul 1"
+  },
+  "defect-subextrudare": {
+    "lipsa": true,
+    "alt": "Perete cu goluri din sub-extrudare, lângă un perete printat complet",
+    "altEn": "A wall with gaps from under-extrusion, next to a fully printed wall",
+    "sectiune": "peretii-au-goluri-sau-firul-lipseste-pe-alocuri",
+    "sectiuneEn": "the-walls-have-gaps-or-the-strand-is-missing-in-places",
+    "unde": "capitolul 1"
+  },
+  "defect-decalaj": {
+    "lipsa": true,
+    "alt": "Piesă cu straturile decalate lateral de la mijloc în sus, lângă o piesă aliniată",
+    "altEn": "A part with the layers shifted sideways from the middle up, next to an aligned part",
+    "sectiune": "piesa-e-decalata-la-mijloc",
+    "sectiuneEn": "the-part-is-shifted-in-the-middle",
+    "unde": "capitolul 1"
+  }
+}

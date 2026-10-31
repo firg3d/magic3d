@@ -1,0 +1,641 @@
+{
+  "limba": "en",
+  "eticheta": "English",
+  "radacina": "/en",
+  "site": {
+    "nume": "Magic3D",
+    "domeniu": "https://magic3d.ro",
+    "autor": "Firg3D",
+    "descriereOrganizatie": "Parametric 3D generators for producing personalised objects."
+  },
+  "nav": {
+    "aplicatii": "Apps",
+    "cum": "How it works",
+    "comparatie": "Why not CAD",
+    "parcurs": "Roadmap",
+    "preturi": "Pricing",
+    "intrebari": "Questions",
+    "deschide": "Open the app",
+    "spreLimba": "Română",
+    "sugestieLimba": "Acest site este disponibil și în română.",
+    "sugestieDa": "Treci pe română",
+    "sugestieNu": "Stay in English"
+  },
+  "meta": {
+    "titlu": "Custom 3D letter generator — Magic3D",
+    "descriere": "Eleven parametric generators for 3D letters, keychains, tags, gift boxes and lit signs. Configure in minutes, get print-ready 3MF files with a production sheet.",
+    "og": "Eleven parametric generators that output print-ready files. Configure in minutes, print the same day."
+  },
+  "hero": {
+    "h1Inainte": "Turn a one-hour order into",
+    "h1Accent": "three minutes",
+    "lead": "A platform of parametric generators for 3D printing workshops. All eleven apps work right now, free for personal use, no account and no install.",
+    "ctaPrimar": "Open for free",
+    "ctaSecundar": "How it works",
+    "consolaTitlu": "Live generation",
+    "consolaNume": [
+      "Maria",
+      "Mateo",
+      "Andrei"
+    ],
+    "consolaParametri": [
+      {
+        "eticheta": "font",
+        "valori": [
+          "Alex Brush",
+          "Archivo Black",
+          "Pacifico"
+        ]
+      },
+      {
+        "eticheta": "depth",
+        "valori": [
+          "18 mm",
+          "25 mm",
+          "32 mm"
+        ]
+      },
+      {
+        "eticheta": "colour",
+        "valori": [
+          "blue",
+          "violet",
+          "amber"
+        ]
+      },
+      {
+        "eticheta": "base",
+        "valori": [
+          "none",
+          "flat",
+          "angled"
+        ]
+      }
+    ],
+    "incredere": [
+      {
+        "cifra": "11/22",
+        "text": "apps shipped"
+      },
+      {
+        "cifra": "780000",
+        "text": "combinations",
+        "numara": true
+      },
+      {
+        "cifra": "3MF",
+        "text": "print-ready"
+      }
+    ]
+  },
+  "beneficii": {
+    "titlu": "Three things you notice on the first order",
+    "carduri": [
+      {
+        "titlu": "Time: hours → minutes",
+        "text": "Pick the letter, the font and the dimensions from panels. The geometry builds itself — no sketches, no constraints."
+      },
+      {
+        "titlu": "Filament: fewer failed prints",
+        "text": "Parts are checked before export: the inlay fits, the wall holds, the letter stands on its own."
+      },
+      {
+        "titlu": "Handover: anyone can print it",
+        "text": "Alongside the file you get a production sheet with the colour table and the assembly steps."
+      }
+    ]
+  },
+  "aplicatii": {
+    "titlu": "Thirteen generators, ready to use",
+    "sub": "Each product has its own screen, with exactly the controls it needs. No menus full of options that don't concern you.",
+    "etichetaGata": "Available",
+    "etichetaLucru": "Coming Soon",
+    "deschide": "Open the app",
+    "afla": "Learn more",
+    "inDezvoltare": "In development",
+    "inLucru": [
+      {
+        "titlu": "New modules coming soon",
+        "text": "Back the work with a token — you unlock the next generators sooner.",
+        "thumb": "/produse/brelocuri.png",
+        "cta": "See the tokens",
+        "link": "/en/token.html"
+      }
+    ]
+  },
+  "cum": {
+    "titlu": "From idea to file, in three steps",
+    "pasi": [
+      {
+        "titlu": "Configure",
+        "text": "Choose the character, the font, the height and the depth. Add an engraved name or a decoration from the library."
+      },
+      {
+        "titlu": "Check",
+        "text": "The app measures on its own: contact between parts, wall thickness, stability, fit on the print bed."
+      },
+      {
+        "titlu": "Export",
+        "text": "You get a 3MF with per-body colour, parts oriented for printing, plus the production sheet."
+      }
+    ]
+  },
+  "comparatie": {
+    "titlu": "Why not just use a CAD program",
+    "capCad": "CAD program",
+    "capNoi": "Magic3D",
+    "randuri": [
+      {
+        "criteriu": "To get started",
+        "cad": "Weeks of learning",
+        "noi": "Five minutes"
+      },
+      {
+        "criteriu": "A new letter",
+        "cad": "Sketch, constraints, extrude",
+        "noi": "One pick from a list"
+      },
+      {
+        "criteriu": "The inlay pocket",
+        "cad": "You build it by hand",
+        "noi": "Cut automatically, with adjustable clearance"
+      },
+      {
+        "criteriu": "Checking the part",
+        "cad": "By eye, or at the printer",
+        "noi": "Measured before export"
+      },
+      {
+        "criteriu": "Print preparation",
+        "cad": "You orient and arrange it",
+        "noi": "Oriented and laid out on beds"
+      }
+    ]
+  },
+  "academia": {
+    "eticheta": "3D ACADEMY",
+    "titlu": "The 3D Academy. Free for everyone.",
+    "sub": "Four chapters on what goes wrong when you print and why, written in a workshop with 20 printers running daily. No account, no subscription, no email at the door. Written in Romanian for now.",
+    "carduri": [
+      {
+        "capitol": 1,
+        "titlu": "The first print that fails",
+        "text": "The seven defects that keep coming back, recognised by how the part looks. The real cause and the fix, for each one.",
+        "link": "academy/why-3d-prints-fail",
+        "gata": true
+      },
+      {
+        "capitol": 2,
+        "titlu": "Which filament to choose",
+        "text": "One question settles it: where the object ends up. Why PLA gives up in a car in summer.",
+        "link": "academy/which-filament-to-choose",
+        "gata": true
+      },
+      {
+        "capitol": 3,
+        "titlu": "Which printer to buy",
+        "text": "Three categories, not twenty models. What multicolour actually costs.",
+        "link": "academy",
+        "gata": false
+      },
+      {
+        "capitol": 4,
+        "titlu": "From one piece to an order",
+        "text": "What changes at fifty pieces, and how to price so you are not working for free.",
+        "link": "academy",
+        "gata": false
+      }
+    ],
+    "ctaPrimar": "Enter the Academy",
+    "ctaSecundar": "Start with the first chapter",
+    "linkHub": "academy",
+    "linkPrimulCapitol": "academy/why-3d-prints-fail",
+    "incheiere": "Written by Firg3D Printing SRL - 20 printers, Bucharest, District 5, since 2022.",
+    "scurt": "3D Academy",
+    "capitol": "Chapter",
+    "din": "of",
+    "minute": "minutes",
+    "citeste": "Read",
+    "curand": "Coming soon",
+    "anterior": "Previous chapter",
+    "urmator": "Next chapter",
+    "navCapitole": "Chapter navigation",
+    "firimituri": "You are here",
+    "citit": "read",
+    "fotoLipsa": "photo in preparation",
+    "autorTitlu": "Who wrote this",
+    "autorText": "Firg3D Printing SRL - the workshop in District 5, Bucharest, which runs the Praktik3D shop and the Magic3D platform. We have printed commercially since 2022, with 20 FDM printers, SLA resin printing, 3D scanning and laser engraving. Everything here comes from real orders, not from manufacturer documentation.",
+    "autorLink": "About the workshop and the team"
+  },
+  "parcurs": {
+    "titlu": "11 shipped, the platform is growing",
+    "sub": "The core is built and tested — font-to-geometry, the geometric checks, export, bed layout. Every new app stands on top of it, so they arrive faster and faster.",
+    "stadiu": "Platform status",
+    "procent": 50,
+    "etichetaBara": "11 of 22 · more on the way",
+    "versiune": "version 1.0",
+    "gata": "Done",
+    "urmeaza": "Next",
+    "etape": [
+      {
+        "stare": "gata",
+        "titlu": "The core",
+        "text": "Geometry, export, checks. 15 automated test suites."
+      },
+      {
+        "stare": "gata",
+        "titlu": "The first 7 apps",
+        "text": "Decor Letters, Keychains, Honeycomb Letters, Letter Boxes, LED Letters, 3D Names, Decor Words."
+      },
+      {
+        "stare": "gata",
+        "titlu": "Two more generators",
+        "text": "Articulated Keychains, with print-in-place hinges, and Tags & Labels — now working."
+      },
+      {
+        "stare": "urmeaza",
+        "titlu": "Windows app",
+        "text": "Local install, automatic updates, English interface."
+      }
+    ]
+  },
+  "preturi": {
+    "titlu": "Free for you. Licensed, if you sell.",
+    "sub": "The app is complete either way. Nothing is locked behind a paywall and there is no watermark.",
+    "recomandat": "Recommended",
+    "planuri": [
+      {
+        "cheie": "gratuit",
+        "nume": "Free",
+        "pret": "0",
+        "produs": "",
+        "moneda": "RON",
+        "perioada": "",
+        "text": "Personal use",
+        "puncte": [
+          "All 12 apps",
+          "No account, no install",
+          "The letter generators: no marking at all",
+          "New generators carry the Praktik3D signature, discreetly engraved",
+          "Production sheet included"
+        ],
+        "cta": "Open the app",
+        "ctaCumpara": "",
+        "ctaDetalii": "",
+        "link": "/litere.html"
+      },
+      {
+        "cheie": "comercial",
+        "nume": "Commercial",
+        "pret": "",
+        "produs": "licenta",
+        "moneda": "RON",
+        "perioada": "one-time",
+        "text": "You sell what you make",
+        "puncte": [
+          "One-time purchase — no expiration",
+          "The right to sell, with no quantity limit",
+          "On any number of computers",
+          "Licence number on the production sheet",
+          "Your own logo instead of the signature, or no marking at all"
+        ],
+        "cta": "See the commercial licence",
+        "ctaCumpara": "Buy the licence",
+        "ctaDetalii": "see the details",
+        "link": "/en/token.html#comercial"
+      },
+      {
+        "cheie": "suporter",
+        "nume": "Supporter",
+        "pret": "",
+        "produs": "suporter",
+        "moneda": "RON",
+        "perioada": "one-off",
+        "text": "You back the work",
+        "puncte": [
+          "The token3d files, STL and 3MF",
+          "A supporter badge for your renders",
+          "Does NOT grant commercial rights",
+          "You stay in personal-use mode"
+        ],
+        "cta": "See the supporter token",
+        "ctaCumpara": "Buy the token",
+        "ctaDetalii": "see the details",
+        "link": "/en/token.html#suporter"
+      }
+    ],
+    "notaV2": "Any purchase — commercial or supporter — gets 25% off the Windows version, for purchases made before it launches. The code is sent to the order's email address.",
+    "incurajare": "Every licence or supporter token directly funds the next modules. Thank you for supporting Magic3D!"
+  },
+  "intrebari": {
+    "titlu": "What you want to know before you start",
+    "lista": [
+      {
+        "q": "What does Magic3D produce?",
+        "a": "Print-ready 3MF files, with the parts already oriented for the printer and laid out on beds. Alongside each export you get a production sheet in plain text, with the colour table, the assembly steps and a checklist to run before delivery."
+      },
+      {
+        "q": "Do I need to know 3D modelling?",
+        "a": "No. You pick the letter, the font and the dimensions from panels, and the geometry generates itself. There are no sketches, constraints or feature trees like in a CAD program."
+      },
+      {
+        "q": "When do I need a commercial licence?",
+        "a": "When you sell what you make with the app — prints, physical objects or files. For your own projects, for family or as gifts, the app is free and complete. The licence does not unlock features; it grants the right to sell and gives you a licence number that appears on the production sheet."
+      },
+      {
+        "q": "What is the supporter token?",
+        "a": "It is a way to back the development, not a licence. You get the token3d files to print yourself and a badge you can show in your renders. It does NOT grant commercial use: you stay in personal-use mode."
+      },
+      {
+        "q": "Which printer does it work with?",
+        "a": "Any FDM printer. The export is standard 3MF, opened by Bambu Studio, OrcaSlicer, PrusaSlicer and Cura. You choose the bed size in the app, and parts that don't fit are split across several beds automatically."
+      },
+      {
+        "q": "Does it work offline?",
+        "a": "Yes. All generation runs locally, on your own computer. Nothing is sent to any server and you don't need a connection to work or to export."
+      },
+      {
+        "q": "What is the Praktik3D signature?",
+        "a": "A small engraved marking reading praktik3d.ro, on the new generators — not on the letter ones, which stay free of any marking. It is how we sign our work on a free export. With the commercial licence you replace it with your own logo, or remove it."
+      }
+    ]
+  },
+  "final": {
+    "titlu": "Free for you. Licensed, if you sell.",
+    "text": "All eleven apps work right now, with no account and no install. For your own projects they are free. If you sell what you make with them, you need a Commercial Licence.",
+    "cta": "Open Decor Letters"
+  },
+  "subsol": {
+    "semnatura": "Magic3D powered by Firg3D · version 1.0",
+    "rezumat": "Local generation · 3MF export · production sheet included",
+    "licenta": "Commercial licence",
+    "suporter": "Supporter"
+  },
+  "aplicatiiLista": [
+    {
+      "slug": "decor-letters",
+      "app": "/litere.html",
+      "nume": "Decor Letters",
+      "rezumat": "Letters with an engraved name and themed decorations, with an inlay pocket and base.",
+      "thumb": "/produse/litere-decor.png",
+      "altThumb": "Render of a 3D printed decorative letter"
+    },
+    {
+      "slug": "3d-names",
+      "app": "/nume.html",
+      "nume": "3D Names",
+      "rezumat": "A whole name in cursive, with a coloured outline, standing on its own.",
+      "thumb": "/produse/nume-3d.png",
+      "altThumb": "A standing 3D printed cursive name"
+    },
+    {
+      "slug": "keychains",
+      "app": "/brelocuri.html",
+      "nume": "Keychains",
+      "rezumat": "Keychains with a name or initial, a coloured plate and a hanging ring.",
+      "thumb": "/produse/brelocuri.png",
+      "altThumb": "A personalised 3D printed name keychain"
+    },
+    {
+      "slug": "decor-keychains",
+      "app": "/breloc-decor.html",
+      "nume": "Decor Keychains",
+      "rezumat": "The initial as a tray, with the name as a coloured inlay set into it. A two-colour keychain with a hanging ring.",
+      "thumb": "/produse/breloc-decor.png",
+      "altThumb": "A keychain with the initial C and the name Cristi as a coloured inlay, with a hanging ring"
+    },
+    {
+      "slug": "honeycomb-letters",
+      "app": "/fagure.html",
+      "nume": "Honeycomb Letters",
+      "rezumat": "Letters filled with a hexagonal, diagonal or triangular pattern.",
+      "thumb": "/produse/litere-fagure.png",
+      "altThumb": "A 3D printed honeycomb-filled letter"
+    },
+    {
+      "slug": "letter-boxes",
+      "app": "/cutii.html",
+      "nume": "Letter Boxes",
+      "rezumat": "Box-letters for flowers, artificial moss, sweets or gifts.",
+      "thumb": "/produse/cutii-litere.png",
+      "altThumb": "A 3D printed box-letter for arrangements"
+    },
+    {
+      "slug": "decor-words",
+      "app": "/cuvinte.html",
+      "nume": "Decor Words",
+      "rezumat": "Words with joined letters and a symbol in place of a letter.",
+      "thumb": "/produse/cuvinte-decor.png",
+      "altThumb": "A 3D printed decorative word with a symbol"
+    },
+    {
+      "slug": "led-letters",
+      "app": "/led.html",
+      "nume": "LED Letters",
+      "rezumat": "A lit letter with an opaque body and a translucent face, with an LED strip.",
+      "thumb": "/produse/litere-led.png",
+      "altThumb": "A lit 3D printed LED letter"
+    },
+    {
+      "slug": "led-names",
+      "app": "/nume-led.html",
+      "nume": "LED Names",
+      "rezumat": "A whole name lit from within: opaque body, translucent face, and one LED strip running through the entire word.",
+      "thumb": "/produse/nume-led.png",
+      "altThumb": "The name Ana 3D printed, with an opaque body and a glowing translucent face"
+    },
+    {
+      "slug": "articulated-keychains",
+      "app": "/articulat.html",
+      "nume": "Articulated Keychains",
+      "rezumat": "A name made of letters joined by print-in-place hinges. Folds into your palm, prints in one piece.",
+      "thumb": "/produse/articulat.png",
+      "altThumb": "A 3D printed articulated keychain with letters joined by hinges"
+    },
+    {
+      "slug": "tags-labels",
+      "app": "/placute.html",
+      "nume": "Tags & Labels",
+      "rezumat": "One app for keychains, cable tags, plant labels, glass markers or fridge magnets.",
+      "thumb": "/produse/placute.png",
+      "altThumb": "A custom 3D printed tag with a chosen fastening"
+    },
+    {
+      "slug": "themed-frames",
+      "app": "/rame.html",
+      "nume": "Themed Frames",
+      "rezumat": "A spider web, star or heart with the name across it, standing on an oval base. Three pieces, three colours, no supports.",
+      "thumb": "/produse/rame-tematice.png",
+      "altThumb": "A 3D printed spider web frame with the name Maria, on an oval base"
+    },
+    {
+      "slug": "iphone-cases",
+      "app": "/huse.html",
+      "nume": "iPhone Cases",
+      "rezumat": "A case compatible with iPhone, built to the dimensions in Apple's accessory documentation. Print the test frame first — ten minutes — and confirm the fit before the full case.",
+      "thumb": "/produse/huse-iphone.png",
+      "altThumb": "A 3D printed iPhone case with a camera cutout and a cut-out name on the back",
+      "pagina": "/aplicatii/huse-iphone/",
+      "ascuns": true
+    }
+  ],
+  "contact": {
+    "titluSeo": "Contact and contributions — Magic3D",
+    "metaDescriere": "Write to us: problems you hit, suggestions for themes and bases, ideas for generators we are missing, questions about the commercial licence. You can attach screenshots and files.",
+    "h1": "Write to us",
+    "intro": "The platform grows out of what you tell us. The messages below reach the workshop directly, and the ones with an email address get an answer.",
+    "utileTitlu": "What helps us most",
+    "utile": [
+      {
+        "titlu": "Problems you hit",
+        "text": "What you tried to do and what happened instead. One screenshot saves us ten questions."
+      },
+      {
+        "titlu": "Themes and decorations",
+        "text": "A model you need that is not in the library. If you have a photo of the object, attach it."
+      },
+      {
+        "titlu": "Generators we are missing",
+        "text": "A product you print often and would like to configure by itself, the way letters or keychains do."
+      },
+      {
+        "titlu": "Bases and stands",
+        "text": "Stand shapes you use on orders and that we could add to the library."
+      },
+      {
+        "titlu": "The commercial licence",
+        "text": "Any question about what you may sell and how to get the token."
+      }
+    ],
+    "formTitlu": "The form",
+    "etichetaCategorie": "What is this about",
+    "categorii": [
+      {
+        "valoare": "problema",
+        "eticheta": "Something does not work"
+      },
+      {
+        "valoare": "tematica",
+        "eticheta": "A suggestion for a new theme"
+      },
+      {
+        "valoare": "generator",
+        "eticheta": "An idea for a new generator"
+      },
+      {
+        "valoare": "baza",
+        "eticheta": "A suggestion for a base or stand"
+      },
+      {
+        "valoare": "licenta",
+        "eticheta": "A question about the licence"
+      },
+      {
+        "valoare": "altele",
+        "eticheta": "Something else"
+      }
+    ],
+    "etichetaAplicatie": "Which app",
+    "aplicatii": [
+      {
+        "valoare": "litere-decor",
+        "eticheta": "Decor Letters"
+      },
+      {
+        "valoare": "nume-3d",
+        "eticheta": "3D Names"
+      },
+      {
+        "valoare": "brelocuri",
+        "eticheta": "Keychains"
+      },
+      {
+        "valoare": "litere-fagure",
+        "eticheta": "Honeycomb Letters"
+      },
+      {
+        "valoare": "cutii-litere",
+        "eticheta": "Letter Boxes"
+      },
+      {
+        "valoare": "cuvinte-decor",
+        "eticheta": "Decor Words"
+      },
+      {
+        "valoare": "litere-led",
+        "eticheta": "LED Letters"
+      },
+      {
+        "valoare": "brelocuri-articulate",
+        "eticheta": "Articulated Keychains"
+      },
+      {
+        "valoare": "placute-etichete",
+        "eticheta": "Tags & Labels"
+      },
+      {
+        "valoare": "platforma",
+        "eticheta": "The platform as a whole"
+      },
+      {
+        "valoare": "nu-se-aplica",
+        "eticheta": "Not applicable"
+      }
+    ],
+    "etichetaNume": "Your name",
+    "placeholderNume": "what we should call you",
+    "etichetaEmail": "Email",
+    "placeholderEmail": "so we can reply to you",
+    "etichetaMesaj": "Your message",
+    "placeholderMesaj": "Take your time. If it is a problem: what you tried, what happened, and what you expected to happen.",
+    "etichetaFisiere": "Files (optional)",
+    "dropzone": "Drag the files here",
+    "dropzoneSau": "or",
+    "butonFisiere": "pick from disk",
+    "notaFisiere": "at most {max} files, {mb} MB each · images, STL, 3MF, OBJ, ZIP, PDF",
+    "contorFisiere": "{n} of {max}",
+    "stergeFisier": "remove the file",
+    "trimite": "Send the message",
+    "seTrimite": "Sending…",
+    "succes": "Sent. Thank you — we read everything that comes in, and if you left an email address, we will reply.",
+    "erori": {
+      "categorie": "Choose what this is about.",
+      "campuri": "Fill in your name, email and message.",
+      "mesajScurt": "Please describe it in a little more detail — at least {min} characters. There are {are} now.",
+      "email": "That email address does not look valid.",
+      "recaptcha": "Please tick the anti-robot verification box.",
+      "preaMulte": "You can attach at most {max} files, and “{nume}” did not fit.",
+      "preaMare": "“{nume}” is {mb} MB. Each file has to be under {max} MB — for large files, send a link in the message.",
+      "extensie": "“{nume}” is not an accepted type. Use images, STL, 3MF, OBJ, ZIP or PDF.",
+      "retea": "We could not send the message ({eroare}). Write to us directly at contact@firg3d.com."
+    },
+    "recaptchaCheie": "",
+    "recaptchaLipsa": "The anti-spam check is not configured on this server yet, and without it the submission will be rejected. Until then, write to us directly at contact@firg3d.com.",
+    "endpoint": "/contact-magic3d.php",
+    "navContact": "Contact"
+  },
+  "paginaHuse": {
+    "titlu": "iPhone Cases",
+    "descriere": "A case compatible with iPhone, generated from the dimensions in Apple's public accessory documentation.",
+    "sectiuni": [
+      {
+        "titlu": "Print the test frame first",
+        "text": "A 3 mm ring, ten minutes of printing. Put it on the phone and find out whether the fit is right before you spend a whole case. It carries the model and the clearance engraved on it, so four frames printed in one afternoon are not four identical rings."
+      },
+      {
+        "titlu": "Dimensions are never invented",
+        "text": "Every model has its dimensions transcribed from Apple's dimensional drawings, with the source written into the file. Anything missing stays blank and the model does not appear in the list. Models not yet confirmed in the workshop are labelled “from Apple drawings, not verified physically”."
+      },
+      {
+        "titlu": "Slim, not a block",
+        "text": "The case is built around the camera island, with a local protective lip, instead of raising the whole back. Measured on the pilot models: the case adds 2.40 mm over the phone's face, and the camera lip stands higher only where the camera is."
+      },
+      {
+        "titlu": "The back, your way",
+        "text": "Solid, engraved pattern, perforated, engraved name or cut-out name. Perforated goes through the wall; engraved leaves it closed. The charging ring stays solid however dense you make the holes."
+      }
+    ],
+    "nota": "Compatible with iPhone. Magic3D is not affiliated with Apple. Model names are used only as a compatibility reference.",
+    "cta": "Open the generator"
+  }
+}

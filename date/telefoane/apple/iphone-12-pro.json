@@ -1,0 +1,167 @@
+{
+  "id": "iphone-12-pro",
+  "brand": "Apple",
+  "model": "iPhone 12 Pro",
+  "an": 2020,
+  "corp": {
+    "lungime": 146.71,
+    "latime": 71.54,
+    "grosime": 7.4,
+    "razaColt": 3.8,
+    "profilMargine": "plat",
+    "razaMuchie": 2.41,
+    "grosimeMaxHusaSpate": 2.1,
+    "zonaIncarcare": {
+      "x": 0.0,
+      "y": 0.0,
+      "diametru": 57.5
+    }
+  },
+  "ecran": {
+    "proeminentaFataDeCorp": 0.0
+  },
+  "insulaCamera": {
+    "forma": "patrat",
+    "x": -16.94,
+    "y": 53.49,
+    "latime": 28.8,
+    "inaltime": 30.87,
+    "razaColt": 8.93,
+    "razaEstimata": true,
+    "proeminenta": 2.12,
+    "lentile": [
+      {
+        "x": -23.61,
+        "y": 61.2,
+        "diametru": 12.45,
+        "proeminentaSuplimentara": 1.73,
+        "con": {
+          "unghi": 123.0,
+          "distanta": 8.0,
+          "referinta": "sticla-fata"
+        }
+      },
+      {
+        "x": -23.61,
+        "y": 45.78,
+        "diametru": 12.45,
+        "proeminentaSuplimentara": 1.73,
+        "con": {
+          "unghi": 86.0,
+          "distanta": 7.0,
+          "referinta": "sticla-fata"
+        }
+      },
+      {
+        "x": -10.26,
+        "y": 53.48,
+        "diametru": 12.45,
+        "proeminentaSuplimentara": 1.73,
+        "con": {
+          "unghi": 33.0,
+          "distanta": 3.5,
+          "referinta": "sticla-fata"
+        }
+      }
+    ],
+    "blit": {
+      "x": -10.26,
+      "y": 64.19,
+      "diametru": 6.28,
+      "con": {
+        "unghi": 112.0,
+        "distanta": 8.35,
+        "referinta": "sticla-fata"
+      }
+    },
+    "note_insula": "anvelopa lentilelor+blitz+1,5mm (Pro, fără platou dreptunghiular cotat)"
+  },
+  "butoane": [
+    {
+      "tip": "mut",
+      "latura": "dreapta",
+      "y": 47.37,
+      "lungime": 5.7,
+      "latime": 2.85,
+      "acoperibil": false
+    },
+    {
+      "tip": "volum+",
+      "latura": "dreapta",
+      "y": 34.05,
+      "lungime": 11.3,
+      "latime": 2.76,
+      "acoperibil": true
+    },
+    {
+      "tip": "volum-",
+      "latura": "dreapta",
+      "y": 20.05,
+      "lungime": 11.3,
+      "latime": 2.76,
+      "acoperibil": true
+    },
+    {
+      "tip": "pornire",
+      "latura": "stanga",
+      "y": 27.05,
+      "lungime": 17.8,
+      "latime": 2.76,
+      "acoperibil": true
+    }
+  ],
+  "port": {
+    "latura": "jos",
+    "x": 0.0,
+    "latime": 12.45,
+    "inaltime": 6.6,
+    "tip": "lightning"
+  },
+  "decupajeJos": [
+    {
+      "tip": "microfon",
+      "x": -9.0,
+      "latime": 10.0
+    },
+    {
+      "tip": "difuzor",
+      "x": -42.0,
+      "latime": 11.0
+    }
+  ],
+  "decupajeSus": [
+    {
+      "tip": "microfon",
+      "x": 0.0,
+      "latime": 14.4
+    }
+  ],
+  "keepOut": [
+    {
+      "nume": "blitz pe platou",
+      "x": -10.26,
+      "y": 64.19,
+      "latime": 6.28,
+      "inaltime": 6.28,
+      "motiv": "blitz pe platou; decupaj separat"
+    },
+    {
+      "nume": "microfon spate",
+      "x": -5.54,
+      "y": 45.98,
+      "latime": 1.15,
+      "inaltime": 1.15,
+      "motiv": "orificiu acustic; nu se acoperă"
+    }
+  ],
+  "sursa": {
+    "document": "Apple Dimensional Drawings (developer.apple.com/accessories/dimensional-drawings)",
+    "fisier": "iphone-12-pro.pdf",
+    "versiune": "2020-10",
+    "pagina": 1,
+    "foaie": "SHT 1 OF 3"
+  },
+  "verificat": false,
+  "verificatLa": null,
+  "note": "Coordonate din desen: origine centrul spatelui, X + spre dreapta PRIVIT DIN SPATE, Y + în sus. butoane[].latura din spate: volumul pe DREAPTA. 3 lentile Ø12,45 la (12,16;-12,16),(12,16;-27,58),(25,51;-19,87); blitz Ø6,28 la (25,51;-9,17); mic Ø1,15. razaColt R3,80. platou 2,12. LiDAR prezent fizic dar necotat separat pe acest desen."
+}

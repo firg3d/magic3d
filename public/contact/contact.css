@@ -1,0 +1,80 @@
+/*
+ * PAGINA DE CONTACT — stiluri proprii, peste landing.css și academia.css.
+ *
+ * Reia coloana îngustă de citit a Academiei (aceleași clase `wrap-ingust` și `ac-proza`) și
+ * adaugă doar formularul. Variabilele vin din landing.css, încărcat înaintea acestei foi.
+ */
+
+.ct-intro { font-size: 1.06rem; line-height: 1.7; color: var(--slab, #6c6688); }
+
+/* ── ce ne ajută ─────────────────────────────────────────────────────────── */
+.ct-utile { margin-top: 2.4rem; }
+.ct-utile h2 { font-size: 1.2rem; margin: 0 0 1rem; }
+.ct-utile ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .7rem; }
+.ct-utile li { display: grid; gap: .15rem; padding: .8rem 1rem; border-radius: 12px;
+  background: var(--bgCard, #f6f4fd); }
+.ct-utile b { font-size: .97rem; }
+.ct-utile span { font-size: .92rem; line-height: 1.55; color: var(--slab, #6c6688); }
+
+/* ── formularul ──────────────────────────────────────────────────────────── */
+.ct-form-wrap { margin-top: 2.6rem; }
+.ct-form-wrap h2 { font-size: 1.2rem; margin: 0 0 1.1rem; }
+.ct-form { display: grid; gap: 1.1rem; }
+.ct-camp { display: grid; gap: .35rem; }
+.ct-camp[hidden] { display: none; }
+.ct-eticheta { font-size: .88rem; font-weight: 600; }
+.ct-rand { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+@media (max-width: 620px) { .ct-rand { grid-template-columns: 1fr; } }
+
+.ct-form input[type=text], .ct-form input[type=email], .ct-form select, .ct-form textarea {
+  width: 100%; padding: .6rem .75rem; font: inherit; font-size: .95rem;
+  border: 1px solid var(--linie, #d7d0ee); border-radius: 10px; background: #fff; color: inherit;
+}
+.ct-form textarea { resize: vertical; line-height: 1.6; }
+.ct-form :is(input, select, textarea):focus-visible {
+  outline: 2px solid var(--brand, #5b4dd1); outline-offset: 1px; border-color: transparent;
+}
+
+/* ── zona de fișiere ─────────────────────────────────────────────────────── */
+.ct-zona { border: 2px dashed var(--linie, #d7d0ee); border-radius: 14px; padding: 1.1rem;
+  text-align: center; transition: border-color .15s, background .15s; }
+.ct-zona.peste { border-color: var(--brand, #5b4dd1); background: rgba(91, 77, 209, .05); }
+.ct-zona p { margin: 0; font-size: .93rem; }
+.ct-zona .ct-nota { margin-top: .35rem; font-size: .82rem; color: var(--slab, #6c6688); }
+.ct-alege { font: inherit; font-size: .93rem; color: var(--brand, #5b4dd1); background: none;
+  border: 0; padding: 0; text-decoration: underline; cursor: pointer; }
+.ct-contor { font-style: normal; font-weight: 500; color: var(--slab, #6c6688); }
+
+.ct-lista { list-style: none; margin: .7rem 0 0; padding: 0; display: grid; gap: .45rem; }
+.ct-lista li { display: flex; align-items: center; gap: .7rem; padding: .45rem .6rem;
+  border: 1px solid var(--linie, #e6e1f5); border-radius: 10px; }
+.ct-lista img { width: 44px; height: 44px; object-fit: cover; border-radius: 7px; flex: none; }
+.ct-ext { width: 44px; height: 44px; display: grid; place-items: center; flex: none;
+  border-radius: 7px; background: var(--bgCard, #f1eefb); font-size: .7rem; font-weight: 700;
+  color: var(--brand, #5b4dd1); }
+.ct-nume { flex: 1; font-size: .88rem; overflow-wrap: anywhere; }
+.ct-sterge { flex: none; width: 28px; height: 28px; border-radius: 50%; border: 0; cursor: pointer;
+  background: var(--bgCard, #f1eefb); color: var(--slab, #6c6688); font-size: .8rem; }
+.ct-sterge:hover { background: #fde8e8; color: #b42318; }
+
+/*
+ * CAPCANA ANTI-SPAM. Nu `display:none`: o parte din roboți sar peste câmpurile ascunse așa.
+ * Scos din flux și din ordinea de tabulare, deci un om nu ajunge niciodată la el.
+ */
+.ct-capcana { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+/* ── acțiuni și stări ────────────────────────────────────────────────────── */
+.ct-actiuni { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-top: .4rem; }
+.ct-actiuni button[disabled] { opacity: .6; cursor: progress; }
+.ct-stare { margin: 0; font-size: .9rem; line-height: 1.5; }
+.ct-stare.ct-eroare { color: #b42318; }
+.ct-stare.ct-succes { color: #2e7d52; }
+.ct-stare.ct-lucru { color: var(--slab, #6c6688); }
+.ct-stare.ct-lucru::before { content: ''; display: inline-block; width: .7em; height: .7em;
+  margin-right: .45em; border: 2px solid currentColor; border-right-color: transparent;
+  border-radius: 50%; animation: ct-rotire .7s linear infinite; vertical-align: -1px; }
+@keyframes ct-rotire { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .ct-stare.ct-lucru::before { animation: none; } }
+
+.ct-avertisment { font-size: .9rem; line-height: 1.55; padding: .8rem 1rem; border-radius: 10px;
+  background: #fff7ed; border: 1px solid #fed7aa; color: #7c2d12; margin: 0; }

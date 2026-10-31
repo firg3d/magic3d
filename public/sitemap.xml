@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://magic3d.ro/</loc>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://magic3d.ro/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://magic3d.ro/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://magic3d.ro/"/>
+  </url>
+  <url>
+    <loc>https://magic3d.ro/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://magic3d.ro/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://magic3d.ro/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://magic3d.ro/contact/"/>
+  </url>
+  <url>
+    <loc>https://magic3d.ro/academia/</loc>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://magic3d.ro/academia/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://magic3d.ro/en/academy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://magic3d.ro/academia/"/>
+  </url>
+  <url>
+    <loc>https://magic3d.ro/academia/primul-print-care-iese-prost/</loc>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://magic3d.ro/academia/primul-print-care-iese-prost/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://magic3d.ro/en/academy/why-3d-prints-fail/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://magic3d.ro/academia/primul-print-care-iese-prost/"/>
+  </url>
+  <url>
+    <loc>https://magic3d.ro/academia/ce-filament-alegi/</loc>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://magic3d.ro/academia/ce-filament-alegi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://magic3d.ro/en/academy/which-filament-to-choose/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://magic3d.ro/academia/ce-filament-alegi/"/>
+  </url>
+</urlset>

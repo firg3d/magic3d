@@ -1,0 +1,175 @@
+{
+  "id": "iphone-14-pro-max",
+  "brand": "Apple",
+  "model": "iPhone 14 Pro Max",
+  "an": 2022,
+  "corp": {
+    "lungime": 160.7,
+    "latime": 77.6,
+    "grosime": 7.85,
+    "razaColt": 3.72,
+    "profilMargine": "plat",
+    "razaMuchie": 2.41,
+    "grosimeMaxHusaSpate": 2.1,
+    "zonaIncarcare": {
+      "x": 0.0,
+      "y": 0.0,
+      "diametru": 57.5
+    }
+  },
+  "ecran": {
+    "proeminentaFataDeCorp": 0.0
+  },
+  "insulaCamera": {
+    "forma": "patrat",
+    "x": -15.6,
+    "y": 56.45,
+    "latime": 36.45,
+    "inaltime": 37.85,
+    "razaColt": 11.3,
+    "razaEstimata": true,
+    "proeminenta": 2.19,
+    "lentile": [
+      {
+        "x": -24.52,
+        "y": 66.07,
+        "diametru": 15.61,
+        "proeminentaSuplimentara": 1.73,
+        "con": {
+          "unghi": 123.0,
+          "distanta": 8.29,
+          "referinta": "sticla-fata"
+        }
+      },
+      {
+        "x": -24.52,
+        "y": 46.83,
+        "diametru": 15.61,
+        "proeminentaSuplimentara": 1.73,
+        "con": {
+          "unghi": 86.0,
+          "distanta": 7.59,
+          "referinta": "sticla-fata"
+        }
+      },
+      {
+        "x": -6.68,
+        "y": 56.45,
+        "diametru": 15.61,
+        "proeminentaSuplimentara": 1.73,
+        "con": {
+          "unghi": 33.2,
+          "distanta": 3.51,
+          "referinta": "sticla-fata"
+        }
+      }
+    ],
+    "blit": {
+      "x": -6.68,
+      "y": 70.03,
+      "diametru": 6.9,
+      "con": {
+        "unghi": 112.0,
+        "distanta": 8.35,
+        "referinta": "sticla-fata"
+      }
+    },
+    "note_insula": "anvelopa lentilelor+blitz+1,5mm (Pro, fără platou dreptunghiular cotat)"
+  },
+  "butoane": [
+    {
+      "tip": "mut",
+      "latura": "dreapta",
+      "y": 54.36,
+      "lungime": 5.7,
+      "latime": 2.85,
+      "acoperibil": false
+    },
+    {
+      "tip": "volum+",
+      "latura": "dreapta",
+      "y": 41.04,
+      "lungime": 11.3,
+      "latime": 2.76,
+      "acoperibil": true
+    },
+    {
+      "tip": "volum-",
+      "latura": "dreapta",
+      "y": 27.04,
+      "lungime": 11.3,
+      "latime": 2.76,
+      "acoperibil": true
+    },
+    {
+      "tip": "pornire",
+      "latura": "stanga",
+      "y": 25.35,
+      "lungime": 18.14,
+      "latime": 2.76,
+      "acoperibil": true
+    }
+  ],
+  "port": {
+    "latura": "jos",
+    "x": 0.0,
+    "latime": 12.45,
+    "inaltime": 6.6,
+    "tip": "lightning"
+  },
+  "decupajeJos": [
+    {
+      "tip": "microfon",
+      "x": -10.0,
+      "latime": 10.0
+    },
+    {
+      "tip": "difuzor",
+      "x": -46.0,
+      "latime": 11.0
+    }
+  ],
+  "decupajeSus": [
+    {
+      "tip": "microfon",
+      "x": 0.0,
+      "latime": 14.4
+    }
+  ],
+  "keepOut": [
+    {
+      "nume": "blitz pe platou",
+      "x": -6.68,
+      "y": 70.03,
+      "latime": 6.9,
+      "inaltime": 6.9,
+      "motiv": "blitz pe platou; decupaj separat"
+    },
+    {
+      "nume": "microfon spate",
+      "x": -3.8,
+      "y": 46.37,
+      "latime": 1.15,
+      "inaltime": 1.15,
+      "motiv": "orificiu acustic; nu se acoperă"
+    },
+    {
+      "nume": "senzor LiDAR",
+      "x": -6.68,
+      "y": 40.35,
+      "latime": 10.0,
+      "inaltime": 10.0,
+      "motiv": "rear sensor keepout, la nivel cu platoul; nu se acoperă"
+    }
+  ],
+  "sursa": {
+    "document": "Apple Dimensional Drawings (developer.apple.com/accessories/dimensional-drawings)",
+    "fisier": "iphone-14-pro-max.pdf",
+    "versiune": "2022-09",
+    "pagina": 1,
+    "foaie": "SHT 1 OF 3"
+  },
+  "verificat": false,
+  "verificatLa": null,
+  "note": "Coordonate din desen: origine centrul spatelui, X + spre dreapta PRIVIT DIN SPATE, Y + în sus. butoane[].latura din spate: volumul pe DREAPTA. Corp 160,7×77,6. Cameră ca 14 Pro. Layout de confirmat la rama de probă."
+}

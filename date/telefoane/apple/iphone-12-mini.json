@@ -1,0 +1,155 @@
+{
+  "id": "iphone-12-mini",
+  "brand": "Apple",
+  "model": "iPhone 12 mini",
+  "an": 2020,
+  "corp": {
+    "lungime": 131.5,
+    "latime": 64.2,
+    "grosime": 7.39,
+    "razaColt": 3.8,
+    "profilMargine": "plat",
+    "razaMuchie": 2.41,
+    "grosimeMaxHusaSpate": 2.1,
+    "zonaIncarcare": {
+      "x": 0.0,
+      "y": 0.0,
+      "diametru": 57.5
+    }
+  },
+  "ecran": {
+    "proeminentaFataDeCorp": 0.0
+  },
+  "insulaCamera": {
+    "forma": "patrat",
+    "x": -12.24,
+    "y": 45.89,
+    "latime": 32.87,
+    "inaltime": 32.87,
+    "razaColt": 9.0,
+    "razaEstimata": true,
+    "proeminenta": 0.73,
+    "lentile": [
+      {
+        "x": -19.37,
+        "y": 53.02,
+        "diametru": 12.1,
+        "proeminentaSuplimentara": 1.51,
+        "con": {
+          "unghi": 120.0,
+          "distanta": 8.0,
+          "referinta": "sticla-fata"
+        }
+      },
+      {
+        "x": -19.37,
+        "y": 38.74,
+        "diametru": 12.1,
+        "proeminentaSuplimentara": 1.51,
+        "con": {
+          "unghi": 85.0,
+          "distanta": 7.0,
+          "referinta": "sticla-fata"
+        }
+      }
+    ],
+    "blit": {
+      "x": -6.82,
+      "y": 45.88,
+      "diametru": 5.66,
+      "con": {
+        "unghi": 112.0,
+        "distanta": 8.0,
+        "referinta": "sticla-fata"
+      }
+    }
+  },
+  "butoane": [
+    {
+      "tip": "mut",
+      "latura": "dreapta",
+      "y": 43.75,
+      "lungime": 5.7,
+      "latime": 2.85,
+      "acoperibil": false
+    },
+    {
+      "tip": "volum+",
+      "latura": "dreapta",
+      "y": 31.75,
+      "lungime": 10.0,
+      "latime": 2.76,
+      "acoperibil": true
+    },
+    {
+      "tip": "volum-",
+      "latura": "dreapta",
+      "y": 19.75,
+      "lungime": 10.0,
+      "latime": 2.76,
+      "acoperibil": true
+    },
+    {
+      "tip": "pornire",
+      "latura": "stanga",
+      "y": 23.75,
+      "lungime": 16.0,
+      "latime": 2.76,
+      "acoperibil": true
+    }
+  ],
+  "port": {
+    "latura": "jos",
+    "x": 0.0,
+    "latime": 12.45,
+    "inaltime": 6.6,
+    "tip": "lightning"
+  },
+  "decupajeJos": [
+    {
+      "tip": "microfon",
+      "x": -9.0,
+      "latime": 10.0
+    },
+    {
+      "tip": "difuzor",
+      "x": -40.0,
+      "latime": 11.0
+    }
+  ],
+  "decupajeSus": [
+    {
+      "tip": "microfon",
+      "x": 0.0,
+      "latime": 14.4
+    }
+  ],
+  "keepOut": [
+    {
+      "nume": "blitz pe platou",
+      "x": -6.82,
+      "y": 45.88,
+      "latime": 5.66,
+      "inaltime": 5.66,
+      "motiv": "blitz pe platou; decupaj separat"
+    },
+    {
+      "nume": "microfon spate",
+      "x": -6.82,
+      "y": 53.47,
+      "latime": 2.4,
+      "inaltime": 2.4,
+      "motiv": "orificiu acustic; nu se acoperă"
+    }
+  ],
+  "sursa": {
+    "document": "Apple Dimensional Drawings (developer.apple.com/accessories/dimensional-drawings)",
+    "fisier": "iphone-12-mini.pdf",
+    "versiune": "2020-10",
+    "pagina": 1,
+    "foaie": "SHT 1 OF 3"
+  },
+  "verificat": false,
+  "verificatLa": null,
+  "note": "Coordonate din desen: origine centrul spatelui, X + spre dreapta PRIVIT DIN SPATE, Y + în sus. butoane[].latura din spate: volumul apare pe DREAPTA. 2 lentile VERTICALE Ø12,10; corp 131,5×64,2 (mini). Butoane aproximate din scalare — de confirmat la rama de probă."
+}

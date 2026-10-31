@@ -1,0 +1,4380 @@
+[
+  {
+    "fisier": "AbrilFatface-Regular.ttf",
+    "familie": "Abril Fatface",
+    "categorie": "Serif display",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Akronim-Regular.ttf",
+    "familie": "Akronim",
+    "categorie": "Decorative",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț"
+    ]
+  },
+  {
+    "fisier": "Aladin-Regular.ttf",
+    "familie": "Aladin",
+    "categorie": "Decorative",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "AlexBrush-Regular.ttf",
+    "familie": "Alex Brush",
+    "categorie": "Cursiv",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "AlfaSlabOne-Regular.ttf",
+    "familie": "Alfa Slab One",
+    "categorie": "Sans display",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Allura-Regular.ttf",
+    "familie": "Allura",
+    "categorie": "Cursiv",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Anton-Regular.ttf",
+    "familie": "Anton",
+    "categorie": "Sans display",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "ArchivoBlack-Regular.ttf",
+    "familie": "Archivo Black",
+    "categorie": "Sans display",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Arimo-Regular.ttf",
+    "familie": "Arimo",
+    "categorie": "Neutre",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Arimo-Italic.ttf",
+    "familie": "Arimo",
+    "categorie": "Neutre",
+    "weight": 400,
+    "italic": true,
+    "eticheta": "Regular Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Arimo-700.ttf",
+    "familie": "Arimo",
+    "categorie": "Neutre",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Arimo-700italic.ttf",
+    "familie": "Arimo",
+    "categorie": "Neutre",
+    "weight": 700,
+    "italic": true,
+    "eticheta": "Bold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Arimo-500.ttf",
+    "familie": "Arimo Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": false,
+    "eticheta": "Medium",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Arimo-500italic.ttf",
+    "familie": "Arimo Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": true,
+    "eticheta": "Medium Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Arimo-600.ttf",
+    "familie": "Arimo SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": false,
+    "eticheta": "SemiBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Arimo-600italic.ttf",
+    "familie": "Arimo SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": true,
+    "eticheta": "SemiBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Audiowide-Regular.ttf",
+    "familie": "Audiowide",
+    "categorie": "Decorative",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț"
+    ]
+  },
+  {
+    "fisier": "BadScript-Regular.ttf",
+    "familie": "Bad Script",
+    "categorie": "Cursiv",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Baloo2-Regular.ttf",
+    "familie": "Baloo 2",
+    "categorie": "Sans display",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Baloo2-700.ttf",
+    "familie": "Baloo 2",
+    "categorie": "Sans display",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Baloo2-800.ttf",
+    "familie": "Baloo 2 ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": false,
+    "eticheta": "ExtraBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Baloo2-500.ttf",
+    "familie": "Baloo 2 Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": false,
+    "eticheta": "Medium",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Baloo2-600.ttf",
+    "familie": "Baloo 2 SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": false,
+    "eticheta": "SemiBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Bangers-Regular.ttf",
+    "familie": "Bangers",
+    "categorie": "Decorative",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "BebasNeue-Regular.ttf",
+    "familie": "Bebas Neue",
+    "categorie": "Sans display",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "BodoniModa-Regular.ttf",
+    "familie": "Bodoni Moda",
+    "categorie": "Serif display",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "BodoniModa-Italic.ttf",
+    "familie": "Bodoni Moda",
+    "categorie": "Serif display",
+    "weight": 400,
+    "italic": true,
+    "eticheta": "Regular Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "BodoniModa-700.ttf",
+    "familie": "Bodoni Moda",
+    "categorie": "Serif display",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "BodoniModa-700italic.ttf",
+    "familie": "Bodoni Moda",
+    "categorie": "Serif display",
+    "weight": 700,
+    "italic": true,
+    "eticheta": "Bold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "BodoniModa-900.ttf",
+    "familie": "Bodoni Moda Black",
+    "categorie": "Altele",
+    "weight": 900,
+    "italic": false,
+    "eticheta": "Black",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "BodoniModa-900italic.ttf",
+    "familie": "Bodoni Moda Black",
+    "categorie": "Altele",
+    "weight": 900,
+    "italic": true,
+    "eticheta": "Black Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "BodoniModa-800.ttf",
+    "familie": "Bodoni Moda ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": false,
+    "eticheta": "ExtraBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "BodoniModa-800italic.ttf",
+    "familie": "Bodoni Moda ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": true,
+    "eticheta": "ExtraBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "BodoniModa-500.ttf",
+    "familie": "Bodoni Moda Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": false,
+    "eticheta": "Medium",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "BodoniModa-500italic.ttf",
+    "familie": "Bodoni Moda Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": true,
+    "eticheta": "Medium Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "BodoniModa-600.ttf",
+    "familie": "Bodoni Moda SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": false,
+    "eticheta": "SemiBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "BodoniModa-600italic.ttf",
+    "familie": "Bodoni Moda SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": true,
+    "eticheta": "SemiBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "BowlbyOne-Regular.ttf",
+    "familie": "Bowlby One",
+    "categorie": "Sans display",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "BubblegumSans-Regular.ttf",
+    "familie": "Bubblegum Sans",
+    "categorie": "Decorative",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "Bungee-Regular.ttf",
+    "familie": "Bungee",
+    "categorie": "Sans display",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Caveat-Regular.ttf",
+    "familie": "Caveat",
+    "categorie": "Cursiv",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Caveat-700.ttf",
+    "familie": "Caveat",
+    "categorie": "Cursiv",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Caveat-500.ttf",
+    "familie": "Caveat Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": false,
+    "eticheta": "Medium",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Caveat-600.ttf",
+    "familie": "Caveat SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": false,
+    "eticheta": "SemiBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "ChangaOne-Regular.ttf",
+    "familie": "Changa One",
+    "categorie": "Decorative",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "ChangaOne-Italic.ttf",
+    "familie": "Changa One",
+    "categorie": "Decorative",
+    "weight": 400,
+    "italic": true,
+    "eticheta": "Regular Italic",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "Chewy-Regular.ttf",
+    "familie": "Chewy",
+    "categorie": "Sans display",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "Cinzel-Regular.ttf",
+    "familie": "Cinzel",
+    "categorie": "Serif display",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Cinzel-700.ttf",
+    "familie": "Cinzel",
+    "categorie": "Serif display",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Cinzel-900.ttf",
+    "familie": "Cinzel Black",
+    "categorie": "Altele",
+    "weight": 900,
+    "italic": false,
+    "eticheta": "Black",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "CinzelDecorative-Regular.ttf",
+    "familie": "Cinzel Decorative",
+    "categorie": "Serif display",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "CinzelDecorative-700.ttf",
+    "familie": "Cinzel Decorative",
+    "categorie": "Serif display",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "CinzelDecorative-900.ttf",
+    "familie": "Cinzel Decorative Black",
+    "categorie": "Altele",
+    "weight": 900,
+    "italic": false,
+    "eticheta": "Black",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Cinzel-800.ttf",
+    "familie": "Cinzel ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": false,
+    "eticheta": "ExtraBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Cinzel-500.ttf",
+    "familie": "Cinzel Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": false,
+    "eticheta": "Medium",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Cinzel-600.ttf",
+    "familie": "Cinzel SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": false,
+    "eticheta": "SemiBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Cookie-Regular.ttf",
+    "familie": "Cookie",
+    "categorie": "Cursiv",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "CormorantGaramond-Regular.ttf",
+    "familie": "Cormorant Garamond",
+    "categorie": "Serif display",
+    "weight": 300,
+    "italic": false,
+    "eticheta": "Light",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "CormorantGaramond-Italic.ttf",
+    "familie": "Cormorant Garamond",
+    "categorie": "Serif display",
+    "weight": 400,
+    "italic": true,
+    "eticheta": "Regular Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "CormorantGaramond-700.ttf",
+    "familie": "Cormorant Garamond",
+    "categorie": "Serif display",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "CormorantGaramond-700italic.ttf",
+    "familie": "Cormorant Garamond",
+    "categorie": "Serif display",
+    "weight": 700,
+    "italic": true,
+    "eticheta": "Bold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "CormorantGaramond-300.ttf",
+    "familie": "Cormorant Garamond Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": false,
+    "eticheta": "Light",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "CormorantGaramond-300italic.ttf",
+    "familie": "Cormorant Garamond Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": true,
+    "eticheta": "Light Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "CormorantGaramond-500.ttf",
+    "familie": "Cormorant Garamond Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": false,
+    "eticheta": "Medium",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "CormorantGaramond-500italic.ttf",
+    "familie": "Cormorant Garamond Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": true,
+    "eticheta": "Medium Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "CormorantGaramond-600.ttf",
+    "familie": "Cormorant Garamond SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": false,
+    "eticheta": "SemiBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "CormorantGaramond-600italic.ttf",
+    "familie": "Cormorant Garamond SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": true,
+    "eticheta": "SemiBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Courgette-Regular.ttf",
+    "familie": "Courgette",
+    "categorie": "Cursiv",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ț",
+      "ț"
+    ]
+  },
+  {
+    "fisier": "CrimsonPro-Regular.ttf",
+    "familie": "Crimson Pro",
+    "categorie": "Serif display",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "CrimsonPro-Italic.ttf",
+    "familie": "Crimson Pro",
+    "categorie": "Serif display",
+    "weight": 400,
+    "italic": true,
+    "eticheta": "Regular Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "CrimsonPro-700.ttf",
+    "familie": "Crimson Pro",
+    "categorie": "Serif display",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "CrimsonPro-700italic.ttf",
+    "familie": "Crimson Pro",
+    "categorie": "Serif display",
+    "weight": 700,
+    "italic": true,
+    "eticheta": "Bold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "CrimsonPro-900.ttf",
+    "familie": "Crimson Pro Black",
+    "categorie": "Altele",
+    "weight": 900,
+    "italic": false,
+    "eticheta": "Black",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "CrimsonPro-900italic.ttf",
+    "familie": "Crimson Pro Black",
+    "categorie": "Altele",
+    "weight": 900,
+    "italic": true,
+    "eticheta": "Black Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "CrimsonPro-800.ttf",
+    "familie": "Crimson Pro ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": false,
+    "eticheta": "ExtraBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "CrimsonPro-800italic.ttf",
+    "familie": "Crimson Pro ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": true,
+    "eticheta": "ExtraBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "CrimsonPro-200.ttf",
+    "familie": "Crimson Pro ExtraLight",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": false,
+    "eticheta": "250",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "CrimsonPro-200italic.ttf",
+    "familie": "Crimson Pro ExtraLight",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": true,
+    "eticheta": "250 Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "CrimsonPro-300.ttf",
+    "familie": "Crimson Pro Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": false,
+    "eticheta": "Light",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "CrimsonPro-300italic.ttf",
+    "familie": "Crimson Pro Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": true,
+    "eticheta": "Light Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "CrimsonPro-500.ttf",
+    "familie": "Crimson Pro Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": false,
+    "eticheta": "Medium",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "CrimsonPro-500italic.ttf",
+    "familie": "Crimson Pro Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": true,
+    "eticheta": "Medium Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "CrimsonPro-600.ttf",
+    "familie": "Crimson Pro SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": false,
+    "eticheta": "SemiBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "CrimsonPro-600italic.ttf",
+    "familie": "Crimson Pro SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": true,
+    "eticheta": "SemiBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Damion-Regular.ttf",
+    "familie": "Damion",
+    "categorie": "Cursiv",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "DancingScript-Regular.ttf",
+    "familie": "Dancing Script",
+    "categorie": "Cursiv",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "DancingScript-700.ttf",
+    "familie": "Dancing Script",
+    "categorie": "Cursiv",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "DancingScript-500.ttf",
+    "familie": "Dancing Script Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": false,
+    "eticheta": "Medium",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "DancingScript-600.ttf",
+    "familie": "Dancing Script SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": false,
+    "eticheta": "SemiBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "DMSerifDisplay-Regular.ttf",
+    "familie": "DM Serif Display",
+    "categorie": "Serif display",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "DMSerifDisplay-Italic.ttf",
+    "familie": "DM Serif Display",
+    "categorie": "Serif display",
+    "weight": 400,
+    "italic": true,
+    "eticheta": "Regular Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "DynaPuff-Regular.ttf",
+    "familie": "DynaPuff",
+    "categorie": "Decorative",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "DynaPuff-700.ttf",
+    "familie": "DynaPuff",
+    "categorie": "Decorative",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "DynaPuff-500.ttf",
+    "familie": "DynaPuff Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": false,
+    "eticheta": "Medium",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "DynaPuff-600.ttf",
+    "familie": "DynaPuff SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": false,
+    "eticheta": "SemiBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "EBGaramond-Regular.ttf",
+    "familie": "EB Garamond",
+    "categorie": "Serif display",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "EBGaramond-Italic.ttf",
+    "familie": "EB Garamond",
+    "categorie": "Serif display",
+    "weight": 400,
+    "italic": true,
+    "eticheta": "Regular Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "EBGaramond-700.ttf",
+    "familie": "EB Garamond",
+    "categorie": "Serif display",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "EBGaramond-700italic.ttf",
+    "familie": "EB Garamond",
+    "categorie": "Serif display",
+    "weight": 700,
+    "italic": true,
+    "eticheta": "Bold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "EBGaramond-800.ttf",
+    "familie": "EB Garamond ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": false,
+    "eticheta": "ExtraBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "EBGaramond-800italic.ttf",
+    "familie": "EB Garamond ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": true,
+    "eticheta": "ExtraBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "EBGaramond-500.ttf",
+    "familie": "EB Garamond Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": false,
+    "eticheta": "Medium",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "EBGaramond-500italic.ttf",
+    "familie": "EB Garamond Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": true,
+    "eticheta": "Medium Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "EBGaramond-600.ttf",
+    "familie": "EB Garamond SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": false,
+    "eticheta": "SemiBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "EBGaramond-600italic.ttf",
+    "familie": "EB Garamond SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": true,
+    "eticheta": "SemiBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Forum-Regular.ttf",
+    "familie": "Forum",
+    "categorie": "Serif display",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Fredoka-Regular.ttf",
+    "familie": "Fredoka",
+    "categorie": "Sans display",
+    "weight": 300,
+    "italic": false,
+    "eticheta": "Light",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "Fredoka-700.ttf",
+    "familie": "Fredoka",
+    "categorie": "Sans display",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "Fredoka-300.ttf",
+    "familie": "Fredoka Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": false,
+    "eticheta": "Light",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "Fredoka-500.ttf",
+    "familie": "Fredoka Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": false,
+    "eticheta": "Medium",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "Fredoka-600.ttf",
+    "familie": "Fredoka SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": false,
+    "eticheta": "SemiBold",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "GildaDisplay-Regular.ttf",
+    "familie": "Gilda Display",
+    "categorie": "Serif display",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "GochiHand-Regular.ttf",
+    "familie": "Gochi Hand",
+    "categorie": "Cursiv",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "GreatVibes-Regular.ttf",
+    "familie": "Great Vibes",
+    "categorie": "Cursiv",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Griffy-Regular.ttf",
+    "familie": "Griffy",
+    "categorie": "Decorative",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "HerrVonMuellerhoff-Regular.ttf",
+    "familie": "Herr Von Muellerhoff",
+    "categorie": "Cursiv",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "IndieFlower-Regular.ttf",
+    "familie": "Indie Flower",
+    "categorie": "Cursiv",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ț",
+      "ț"
+    ]
+  },
+  {
+    "fisier": "Inter-Regular.ttf",
+    "familie": "Inter",
+    "categorie": "Neutre",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Inter-Italic.ttf",
+    "familie": "Inter",
+    "categorie": "Neutre",
+    "weight": 400,
+    "italic": true,
+    "eticheta": "Regular Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Inter-700.ttf",
+    "familie": "Inter",
+    "categorie": "Neutre",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Inter-700italic.ttf",
+    "familie": "Inter",
+    "categorie": "Neutre",
+    "weight": 700,
+    "italic": true,
+    "eticheta": "Bold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Inter-900.ttf",
+    "familie": "Inter Black",
+    "categorie": "Altele",
+    "weight": 900,
+    "italic": false,
+    "eticheta": "Black",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Inter-900italic.ttf",
+    "familie": "Inter Black",
+    "categorie": "Altele",
+    "weight": 900,
+    "italic": true,
+    "eticheta": "Black Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Inter-800.ttf",
+    "familie": "Inter ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": false,
+    "eticheta": "ExtraBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Inter-800italic.ttf",
+    "familie": "Inter ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": true,
+    "eticheta": "ExtraBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Inter-200.ttf",
+    "familie": "Inter ExtraLight",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": false,
+    "eticheta": "250",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Inter-200italic.ttf",
+    "familie": "Inter ExtraLight",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": true,
+    "eticheta": "250 Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Inter-300.ttf",
+    "familie": "Inter Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": false,
+    "eticheta": "Light",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Inter-300italic.ttf",
+    "familie": "Inter Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": true,
+    "eticheta": "Light Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Inter-500.ttf",
+    "familie": "Inter Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": false,
+    "eticheta": "Medium",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Inter-500italic.ttf",
+    "familie": "Inter Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": true,
+    "eticheta": "Medium Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Inter-600.ttf",
+    "familie": "Inter SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": false,
+    "eticheta": "SemiBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Inter-600italic.ttf",
+    "familie": "Inter SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": true,
+    "eticheta": "SemiBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Inter-100.ttf",
+    "familie": "Inter Thin",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": false,
+    "eticheta": "250",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Inter-100italic.ttf",
+    "familie": "Inter Thin",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": true,
+    "eticheta": "250 Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Italianno-Regular.ttf",
+    "familie": "Italianno",
+    "categorie": "Cursiv",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "KaushanScript-Regular.ttf",
+    "familie": "Kaushan Script",
+    "categorie": "Cursiv",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Lato-Regular.ttf",
+    "familie": "Lato",
+    "categorie": "Neutre",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "Lato-Italic.ttf",
+    "familie": "Lato",
+    "categorie": "Neutre",
+    "weight": 400,
+    "italic": true,
+    "eticheta": "Regular Italic",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "Lato-700.ttf",
+    "familie": "Lato",
+    "categorie": "Neutre",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "Lato-700italic.ttf",
+    "familie": "Lato",
+    "categorie": "Neutre",
+    "weight": 700,
+    "italic": true,
+    "eticheta": "Bold Italic",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "Lato-900.ttf",
+    "familie": "Lato Black",
+    "categorie": "Altele",
+    "weight": 900,
+    "italic": false,
+    "eticheta": "Black",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "Lato-900italic.ttf",
+    "familie": "Lato Black",
+    "categorie": "Altele",
+    "weight": 900,
+    "italic": true,
+    "eticheta": "Black Italic",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "Lato-100.ttf",
+    "familie": "Lato Hairline",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": false,
+    "eticheta": "250",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "Lato-100italic.ttf",
+    "familie": "Lato Hairline",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": true,
+    "eticheta": "250 Italic",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "Lato-300.ttf",
+    "familie": "Lato Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": false,
+    "eticheta": "Light",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "Lato-300italic.ttf",
+    "familie": "Lato Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": true,
+    "eticheta": "Light Italic",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "LibreBaskerville-Regular.ttf",
+    "familie": "Libre Baskerville",
+    "categorie": "Serif display",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "LibreBaskerville-Italic.ttf",
+    "familie": "Libre Baskerville",
+    "categorie": "Serif display",
+    "weight": 400,
+    "italic": true,
+    "eticheta": "Regular Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "LibreBaskerville-700.ttf",
+    "familie": "Libre Baskerville",
+    "categorie": "Serif display",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "LibreBaskerville-700italic.ttf",
+    "familie": "Libre Baskerville",
+    "categorie": "Serif display",
+    "weight": 700,
+    "italic": true,
+    "eticheta": "Bold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "LibreBaskerville-500.ttf",
+    "familie": "Libre Baskerville Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": false,
+    "eticheta": "Medium",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "LibreBaskerville-500italic.ttf",
+    "familie": "Libre Baskerville Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": true,
+    "eticheta": "Medium Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "LibreBaskerville-600.ttf",
+    "familie": "Libre Baskerville SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": false,
+    "eticheta": "SemiBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "LibreBaskerville-600italic.ttf",
+    "familie": "Libre Baskerville SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": true,
+    "eticheta": "SemiBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "LilitaOne-Regular.ttf",
+    "familie": "Lilita One",
+    "categorie": "Sans display",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "Lobster-Regular.ttf",
+    "familie": "Lobster",
+    "categorie": "Decorative",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "LobsterTwo-Regular.ttf",
+    "familie": "Lobster Two",
+    "categorie": "Cursiv",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "LobsterTwo-Italic.ttf",
+    "familie": "Lobster Two",
+    "categorie": "Cursiv",
+    "weight": 400,
+    "italic": true,
+    "eticheta": "Regular Italic",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "LobsterTwo-700.ttf",
+    "familie": "Lobster Two",
+    "categorie": "Cursiv",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "LobsterTwo-700italic.ttf",
+    "familie": "Lobster Two",
+    "categorie": "Cursiv",
+    "weight": 700,
+    "italic": true,
+    "eticheta": "Bold Italic",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "Lora-Regular.ttf",
+    "familie": "Lora",
+    "categorie": "Neutre",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Lora-Italic.ttf",
+    "familie": "Lora",
+    "categorie": "Neutre",
+    "weight": 400,
+    "italic": true,
+    "eticheta": "Regular Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Lora-700.ttf",
+    "familie": "Lora",
+    "categorie": "Neutre",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Lora-700italic.ttf",
+    "familie": "Lora",
+    "categorie": "Neutre",
+    "weight": 700,
+    "italic": true,
+    "eticheta": "Bold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Lora-500.ttf",
+    "familie": "Lora Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": false,
+    "eticheta": "Medium",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Lora-500italic.ttf",
+    "familie": "Lora Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": true,
+    "eticheta": "Medium Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Lora-600.ttf",
+    "familie": "Lora SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": false,
+    "eticheta": "SemiBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Lora-600italic.ttf",
+    "familie": "Lora SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": true,
+    "eticheta": "SemiBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "LuckiestGuy-Regular.ttf",
+    "familie": "Luckiest Guy",
+    "categorie": "Decorative",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț"
+    ]
+  },
+  {
+    "fisier": "Marcellus-Regular.ttf",
+    "familie": "Marcellus",
+    "categorie": "Serif display",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț"
+    ]
+  },
+  {
+    "fisier": "MarckScript-Regular.ttf",
+    "familie": "Marck Script",
+    "categorie": "Cursiv",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ț",
+      "ț"
+    ]
+  },
+  {
+    "fisier": "Merriweather-Regular.ttf",
+    "familie": "Merriweather",
+    "categorie": "Neutre",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Merriweather-Italic.ttf",
+    "familie": "Merriweather",
+    "categorie": "Neutre",
+    "weight": 400,
+    "italic": true,
+    "eticheta": "Regular Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Merriweather-700.ttf",
+    "familie": "Merriweather",
+    "categorie": "Neutre",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Merriweather-700italic.ttf",
+    "familie": "Merriweather",
+    "categorie": "Neutre",
+    "weight": 700,
+    "italic": true,
+    "eticheta": "Bold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Merriweather-900.ttf",
+    "familie": "Merriweather Black",
+    "categorie": "Altele",
+    "weight": 900,
+    "italic": false,
+    "eticheta": "Black",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Merriweather-900italic.ttf",
+    "familie": "Merriweather Black",
+    "categorie": "Altele",
+    "weight": 900,
+    "italic": true,
+    "eticheta": "Black Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Merriweather-800.ttf",
+    "familie": "Merriweather ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": false,
+    "eticheta": "ExtraBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Merriweather-800italic.ttf",
+    "familie": "Merriweather ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": true,
+    "eticheta": "ExtraBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Merriweather-300.ttf",
+    "familie": "Merriweather Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": false,
+    "eticheta": "Light",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Merriweather-300italic.ttf",
+    "familie": "Merriweather Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": true,
+    "eticheta": "Light Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Merriweather-500.ttf",
+    "familie": "Merriweather Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": false,
+    "eticheta": "Medium",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Merriweather-500italic.ttf",
+    "familie": "Merriweather Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": true,
+    "eticheta": "Medium Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Merriweather-600.ttf",
+    "familie": "Merriweather SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": false,
+    "eticheta": "SemiBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Merriweather-600italic.ttf",
+    "familie": "Merriweather SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": true,
+    "eticheta": "SemiBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Mitr-Regular.ttf",
+    "familie": "Mitr",
+    "categorie": "Decorative",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Mitr-700.ttf",
+    "familie": "Mitr",
+    "categorie": "Decorative",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Mitr-200.ttf",
+    "familie": "Mitr ExtraLight",
+    "categorie": "Altele",
+    "weight": 275,
+    "italic": false,
+    "eticheta": "275",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Mitr-300.ttf",
+    "familie": "Mitr Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": false,
+    "eticheta": "Light",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Mitr-500.ttf",
+    "familie": "Mitr Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": false,
+    "eticheta": "Medium",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Mitr-600.ttf",
+    "familie": "Mitr SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": false,
+    "eticheta": "SemiBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Montserrat-Regular.ttf",
+    "familie": "Montserrat",
+    "categorie": "Neutre",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Montserrat-Italic.ttf",
+    "familie": "Montserrat",
+    "categorie": "Neutre",
+    "weight": 400,
+    "italic": true,
+    "eticheta": "Regular Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Montserrat-700.ttf",
+    "familie": "Montserrat",
+    "categorie": "Neutre",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Montserrat-700italic.ttf",
+    "familie": "Montserrat",
+    "categorie": "Neutre",
+    "weight": 700,
+    "italic": true,
+    "eticheta": "Bold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Montserrat-900.ttf",
+    "familie": "Montserrat Black",
+    "categorie": "Altele",
+    "weight": 900,
+    "italic": false,
+    "eticheta": "Black",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Montserrat-900italic.ttf",
+    "familie": "Montserrat Black",
+    "categorie": "Altele",
+    "weight": 900,
+    "italic": true,
+    "eticheta": "Black Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Montserrat-800.ttf",
+    "familie": "Montserrat ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": false,
+    "eticheta": "ExtraBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Montserrat-800italic.ttf",
+    "familie": "Montserrat ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": true,
+    "eticheta": "ExtraBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Montserrat-200.ttf",
+    "familie": "Montserrat ExtraLight",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": false,
+    "eticheta": "250",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Montserrat-200italic.ttf",
+    "familie": "Montserrat ExtraLight",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": true,
+    "eticheta": "250 Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Montserrat-300.ttf",
+    "familie": "Montserrat Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": false,
+    "eticheta": "Light",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Montserrat-300italic.ttf",
+    "familie": "Montserrat Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": true,
+    "eticheta": "Light Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Montserrat-500.ttf",
+    "familie": "Montserrat Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": false,
+    "eticheta": "Medium",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Montserrat-500italic.ttf",
+    "familie": "Montserrat Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": true,
+    "eticheta": "Medium Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Montserrat-600.ttf",
+    "familie": "Montserrat SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": false,
+    "eticheta": "SemiBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Montserrat-600italic.ttf",
+    "familie": "Montserrat SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": true,
+    "eticheta": "SemiBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Montserrat-100.ttf",
+    "familie": "Montserrat Thin",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": false,
+    "eticheta": "250",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Montserrat-100italic.ttf",
+    "familie": "Montserrat Thin",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": true,
+    "eticheta": "250 Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "MrsSaintDelafield-Regular.ttf",
+    "familie": "Mrs Saint Delafield",
+    "categorie": "Cursiv",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "NanumPenScript-Regular.ttf",
+    "familie": "Nanum Pen",
+    "categorie": "Altele",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă",
+      "Î",
+      "î",
+      "Â",
+      "â"
+    ]
+  },
+  {
+    "fisier": "NewRocker-Regular.ttf",
+    "familie": "New Rocker",
+    "categorie": "Decorative",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Norican-Regular.ttf",
+    "familie": "Norican",
+    "categorie": "Cursiv",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSans-Regular.ttf",
+    "familie": "Noto Sans",
+    "categorie": "Neutre",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSans-Italic.ttf",
+    "familie": "Noto Sans",
+    "categorie": "Neutre",
+    "weight": 400,
+    "italic": true,
+    "eticheta": "Regular Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSans-700.ttf",
+    "familie": "Noto Sans",
+    "categorie": "Neutre",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSans-700italic.ttf",
+    "familie": "Noto Sans",
+    "categorie": "Neutre",
+    "weight": 700,
+    "italic": true,
+    "eticheta": "Bold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSans-900.ttf",
+    "familie": "Noto Sans Black",
+    "categorie": "Altele",
+    "weight": 900,
+    "italic": false,
+    "eticheta": "Black",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSans-900italic.ttf",
+    "familie": "Noto Sans Black",
+    "categorie": "Altele",
+    "weight": 900,
+    "italic": true,
+    "eticheta": "Black Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSans-800.ttf",
+    "familie": "Noto Sans ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": false,
+    "eticheta": "ExtraBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSans-800italic.ttf",
+    "familie": "Noto Sans ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": true,
+    "eticheta": "ExtraBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSans-200.ttf",
+    "familie": "Noto Sans ExtraLight",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": false,
+    "eticheta": "250",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSans-200italic.ttf",
+    "familie": "Noto Sans ExtraLight",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": true,
+    "eticheta": "250 Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSans-300.ttf",
+    "familie": "Noto Sans Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": false,
+    "eticheta": "Light",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSans-300italic.ttf",
+    "familie": "Noto Sans Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": true,
+    "eticheta": "Light Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSans-500.ttf",
+    "familie": "Noto Sans Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": false,
+    "eticheta": "Medium",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSans-500italic.ttf",
+    "familie": "Noto Sans Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": true,
+    "eticheta": "Medium Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSans-600.ttf",
+    "familie": "Noto Sans SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": false,
+    "eticheta": "SemiBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSans-600italic.ttf",
+    "familie": "Noto Sans SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": true,
+    "eticheta": "SemiBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSans-100.ttf",
+    "familie": "Noto Sans Thin",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": false,
+    "eticheta": "250",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSans-100italic.ttf",
+    "familie": "Noto Sans Thin",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": true,
+    "eticheta": "250 Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSerif-Regular.ttf",
+    "familie": "Noto Serif",
+    "categorie": "Neutre",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSerif-Italic.ttf",
+    "familie": "Noto Serif",
+    "categorie": "Neutre",
+    "weight": 400,
+    "italic": true,
+    "eticheta": "Regular Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSerif-700.ttf",
+    "familie": "Noto Serif",
+    "categorie": "Neutre",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSerif-700italic.ttf",
+    "familie": "Noto Serif",
+    "categorie": "Neutre",
+    "weight": 700,
+    "italic": true,
+    "eticheta": "Bold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSerif-900.ttf",
+    "familie": "Noto Serif Black",
+    "categorie": "Altele",
+    "weight": 900,
+    "italic": false,
+    "eticheta": "Black",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSerif-900italic.ttf",
+    "familie": "Noto Serif Black",
+    "categorie": "Altele",
+    "weight": 900,
+    "italic": true,
+    "eticheta": "Black Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSerif-800.ttf",
+    "familie": "Noto Serif ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": false,
+    "eticheta": "ExtraBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSerif-800italic.ttf",
+    "familie": "Noto Serif ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": true,
+    "eticheta": "ExtraBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSerif-200.ttf",
+    "familie": "Noto Serif ExtraLight",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": false,
+    "eticheta": "250",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSerif-200italic.ttf",
+    "familie": "Noto Serif ExtraLight",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": true,
+    "eticheta": "250 Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSerif-300.ttf",
+    "familie": "Noto Serif Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": false,
+    "eticheta": "Light",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSerif-300italic.ttf",
+    "familie": "Noto Serif Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": true,
+    "eticheta": "Light Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSerif-500.ttf",
+    "familie": "Noto Serif Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": false,
+    "eticheta": "Medium",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSerif-500italic.ttf",
+    "familie": "Noto Serif Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": true,
+    "eticheta": "Medium Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSerif-600.ttf",
+    "familie": "Noto Serif SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": false,
+    "eticheta": "SemiBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSerif-600italic.ttf",
+    "familie": "Noto Serif SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": true,
+    "eticheta": "SemiBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSerif-100.ttf",
+    "familie": "Noto Serif Thin",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": false,
+    "eticheta": "250",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "NotoSerif-100italic.ttf",
+    "familie": "Noto Serif Thin",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": true,
+    "eticheta": "250 Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Nunito-Regular.ttf",
+    "familie": "Nunito",
+    "categorie": "Sans display",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Nunito-Italic.ttf",
+    "familie": "Nunito",
+    "categorie": "Sans display",
+    "weight": 400,
+    "italic": true,
+    "eticheta": "Regular Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Nunito-700.ttf",
+    "familie": "Nunito",
+    "categorie": "Sans display",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Nunito-700italic.ttf",
+    "familie": "Nunito",
+    "categorie": "Sans display",
+    "weight": 700,
+    "italic": true,
+    "eticheta": "Bold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Nunito-900.ttf",
+    "familie": "Nunito Black",
+    "categorie": "Altele",
+    "weight": 900,
+    "italic": false,
+    "eticheta": "Black",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Nunito-900italic.ttf",
+    "familie": "Nunito Black",
+    "categorie": "Altele",
+    "weight": 900,
+    "italic": true,
+    "eticheta": "Black Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Nunito-800.ttf",
+    "familie": "Nunito ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": false,
+    "eticheta": "ExtraBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Nunito-800italic.ttf",
+    "familie": "Nunito ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": true,
+    "eticheta": "ExtraBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Nunito-200.ttf",
+    "familie": "Nunito ExtraLight",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": false,
+    "eticheta": "250",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Nunito-200italic.ttf",
+    "familie": "Nunito ExtraLight",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": true,
+    "eticheta": "250 Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Nunito-300.ttf",
+    "familie": "Nunito Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": false,
+    "eticheta": "Light",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Nunito-300italic.ttf",
+    "familie": "Nunito Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": true,
+    "eticheta": "Light Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Nunito-500.ttf",
+    "familie": "Nunito Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": false,
+    "eticheta": "Medium",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Nunito-500italic.ttf",
+    "familie": "Nunito Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": true,
+    "eticheta": "Medium Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Nunito-600.ttf",
+    "familie": "Nunito SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": false,
+    "eticheta": "SemiBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Nunito-600italic.ttf",
+    "familie": "Nunito SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": true,
+    "eticheta": "SemiBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "OpenSans-Regular.ttf",
+    "familie": "Open Sans",
+    "categorie": "Neutre",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "OpenSans-Italic.ttf",
+    "familie": "Open Sans",
+    "categorie": "Neutre",
+    "weight": 400,
+    "italic": true,
+    "eticheta": "Regular Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "OpenSans-700.ttf",
+    "familie": "Open Sans",
+    "categorie": "Neutre",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "OpenSans-700italic.ttf",
+    "familie": "Open Sans",
+    "categorie": "Neutre",
+    "weight": 700,
+    "italic": true,
+    "eticheta": "Bold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "OpenSans-800.ttf",
+    "familie": "Open Sans ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": false,
+    "eticheta": "ExtraBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "OpenSans-800italic.ttf",
+    "familie": "Open Sans ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": true,
+    "eticheta": "ExtraBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "OpenSans-300.ttf",
+    "familie": "Open Sans Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": false,
+    "eticheta": "Light",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "OpenSans-300italic.ttf",
+    "familie": "Open Sans Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": true,
+    "eticheta": "Light Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "OpenSans-500.ttf",
+    "familie": "Open Sans Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": false,
+    "eticheta": "Medium",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "OpenSans-500italic.ttf",
+    "familie": "Open Sans Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": true,
+    "eticheta": "Medium Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "OpenSans-600.ttf",
+    "familie": "Open Sans SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": false,
+    "eticheta": "SemiBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "OpenSans-600italic.ttf",
+    "familie": "Open Sans SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": true,
+    "eticheta": "SemiBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Orbitron-Regular.ttf",
+    "familie": "Orbitron",
+    "categorie": "Decorative",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "Orbitron-700.ttf",
+    "familie": "Orbitron",
+    "categorie": "Decorative",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "Orbitron-900.ttf",
+    "familie": "Orbitron Black",
+    "categorie": "Altele",
+    "weight": 900,
+    "italic": false,
+    "eticheta": "Black",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "Orbitron-800.ttf",
+    "familie": "Orbitron ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": false,
+    "eticheta": "ExtraBold",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "Orbitron-500.ttf",
+    "familie": "Orbitron Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": false,
+    "eticheta": "Medium",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "Orbitron-600.ttf",
+    "familie": "Orbitron SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": false,
+    "eticheta": "SemiBold",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "Oswald-Regular.ttf",
+    "familie": "Oswald",
+    "categorie": "Sans display",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Oswald-700.ttf",
+    "familie": "Oswald",
+    "categorie": "Sans display",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Oswald-200.ttf",
+    "familie": "Oswald ExtraLight",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": false,
+    "eticheta": "250",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Oswald-300.ttf",
+    "familie": "Oswald Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": false,
+    "eticheta": "Light",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Oswald-500.ttf",
+    "familie": "Oswald Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": false,
+    "eticheta": "Medium",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Oswald-600.ttf",
+    "familie": "Oswald SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": false,
+    "eticheta": "SemiBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Pacifico-Regular.ttf",
+    "familie": "Pacifico",
+    "categorie": "Cursiv",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Parisienne-Regular.ttf",
+    "familie": "Parisienne",
+    "categorie": "Cursiv",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț"
+    ]
+  },
+  {
+    "fisier": "PassionOne-Regular.ttf",
+    "familie": "Passion One",
+    "categorie": "Sans display",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "PassionOne-700.ttf",
+    "familie": "Passion One",
+    "categorie": "Sans display",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "PassionOne-900.ttf",
+    "familie": "Passion One Black",
+    "categorie": "Altele",
+    "weight": 900,
+    "italic": false,
+    "eticheta": "Black",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "PermanentMarker-Regular.ttf",
+    "familie": "Permanent Marker",
+    "categorie": "Cursiv",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "PetitFormalScript-Regular.ttf",
+    "familie": "Petit Formal Script",
+    "categorie": "Cursiv",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "PinyonScript-Regular.ttf",
+    "familie": "Pinyon Script",
+    "categorie": "Cursiv",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "PixelifySans-Regular.ttf",
+    "familie": "Pixelify Sans",
+    "categorie": "Decorative",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "PixelifySans-700.ttf",
+    "familie": "Pixelify Sans",
+    "categorie": "Decorative",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "PixelifySans-500.ttf",
+    "familie": "Pixelify Sans Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": false,
+    "eticheta": "Medium",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "PixelifySans-600.ttf",
+    "familie": "Pixelify Sans SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": false,
+    "eticheta": "SemiBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Playball-Regular.ttf",
+    "familie": "Playball",
+    "categorie": "Cursiv",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț"
+    ]
+  },
+  {
+    "fisier": "PlayfairDisplay-Regular.ttf",
+    "familie": "Playfair Display",
+    "categorie": "Serif display",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "PlayfairDisplay-Italic.ttf",
+    "familie": "Playfair Display",
+    "categorie": "Serif display",
+    "weight": 400,
+    "italic": true,
+    "eticheta": "Regular Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "PlayfairDisplay-700.ttf",
+    "familie": "Playfair Display",
+    "categorie": "Serif display",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "PlayfairDisplay-700italic.ttf",
+    "familie": "Playfair Display",
+    "categorie": "Serif display",
+    "weight": 700,
+    "italic": true,
+    "eticheta": "Bold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "PlayfairDisplay-900.ttf",
+    "familie": "Playfair Display Black",
+    "categorie": "Altele",
+    "weight": 900,
+    "italic": false,
+    "eticheta": "Black",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "PlayfairDisplay-900italic.ttf",
+    "familie": "Playfair Display Black",
+    "categorie": "Altele",
+    "weight": 900,
+    "italic": true,
+    "eticheta": "Black Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "PlayfairDisplay-800.ttf",
+    "familie": "Playfair Display ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": false,
+    "eticheta": "ExtraBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "PlayfairDisplay-800italic.ttf",
+    "familie": "Playfair Display ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": true,
+    "eticheta": "ExtraBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "PlayfairDisplay-500.ttf",
+    "familie": "Playfair Display Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": false,
+    "eticheta": "Medium",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "PlayfairDisplay-500italic.ttf",
+    "familie": "Playfair Display Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": true,
+    "eticheta": "Medium Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "PlayfairDisplay-600.ttf",
+    "familie": "Playfair Display SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": false,
+    "eticheta": "SemiBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "PlayfairDisplay-600italic.ttf",
+    "familie": "Playfair Display SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": true,
+    "eticheta": "SemiBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "PoetsenOne-Regular.ttf",
+    "familie": "PoetsenOne",
+    "categorie": "Decorative",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Poppins-Regular.ttf",
+    "familie": "Poppins",
+    "categorie": "Neutre",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Poppins-Italic.ttf",
+    "familie": "Poppins",
+    "categorie": "Neutre",
+    "weight": 400,
+    "italic": true,
+    "eticheta": "Regular Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Poppins-700.ttf",
+    "familie": "Poppins",
+    "categorie": "Neutre",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Poppins-700italic.ttf",
+    "familie": "Poppins",
+    "categorie": "Neutre",
+    "weight": 700,
+    "italic": true,
+    "eticheta": "Bold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Poppins-900.ttf",
+    "familie": "Poppins Black",
+    "categorie": "Altele",
+    "weight": 900,
+    "italic": false,
+    "eticheta": "Black",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Poppins-900italic.ttf",
+    "familie": "Poppins Black",
+    "categorie": "Altele",
+    "weight": 900,
+    "italic": true,
+    "eticheta": "Black Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Poppins-800.ttf",
+    "familie": "Poppins ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": false,
+    "eticheta": "ExtraBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Poppins-800italic.ttf",
+    "familie": "Poppins ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": true,
+    "eticheta": "ExtraBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Poppins-200.ttf",
+    "familie": "Poppins ExtraLight",
+    "categorie": "Altele",
+    "weight": 275,
+    "italic": false,
+    "eticheta": "275",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Poppins-200italic.ttf",
+    "familie": "Poppins ExtraLight",
+    "categorie": "Altele",
+    "weight": 275,
+    "italic": true,
+    "eticheta": "275 Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Poppins-300.ttf",
+    "familie": "Poppins Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": false,
+    "eticheta": "Light",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Poppins-300italic.ttf",
+    "familie": "Poppins Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": true,
+    "eticheta": "Light Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Poppins-500.ttf",
+    "familie": "Poppins Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": false,
+    "eticheta": "Medium",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Poppins-500italic.ttf",
+    "familie": "Poppins Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": true,
+    "eticheta": "Medium Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Poppins-600.ttf",
+    "familie": "Poppins SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": false,
+    "eticheta": "SemiBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Poppins-600italic.ttf",
+    "familie": "Poppins SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": true,
+    "eticheta": "SemiBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Poppins-100.ttf",
+    "familie": "Poppins Thin",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": false,
+    "eticheta": "250",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Poppins-100italic.ttf",
+    "familie": "Poppins Thin",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": true,
+    "eticheta": "250 Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "PTSerif-Regular.ttf",
+    "familie": "PT Serif",
+    "categorie": "Neutre",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "PTSerif-Italic.ttf",
+    "familie": "PT Serif",
+    "categorie": "Neutre",
+    "weight": 400,
+    "italic": true,
+    "eticheta": "Regular Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "PTSerif-700.ttf",
+    "familie": "PT Serif",
+    "categorie": "Neutre",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "PTSerif-700italic.ttf",
+    "familie": "PT Serif",
+    "categorie": "Neutre",
+    "weight": 700,
+    "italic": true,
+    "eticheta": "Bold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Raleway-Regular.ttf",
+    "familie": "Raleway",
+    "categorie": "Neutre",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Raleway-Italic.ttf",
+    "familie": "Raleway",
+    "categorie": "Neutre",
+    "weight": 400,
+    "italic": true,
+    "eticheta": "Regular Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Raleway-700.ttf",
+    "familie": "Raleway",
+    "categorie": "Neutre",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Raleway-700italic.ttf",
+    "familie": "Raleway",
+    "categorie": "Neutre",
+    "weight": 700,
+    "italic": true,
+    "eticheta": "Bold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Raleway-900.ttf",
+    "familie": "Raleway Black",
+    "categorie": "Altele",
+    "weight": 900,
+    "italic": false,
+    "eticheta": "Black",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Raleway-900italic.ttf",
+    "familie": "Raleway Black",
+    "categorie": "Altele",
+    "weight": 900,
+    "italic": true,
+    "eticheta": "Black Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Raleway-800.ttf",
+    "familie": "Raleway ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": false,
+    "eticheta": "ExtraBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Raleway-800italic.ttf",
+    "familie": "Raleway ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": true,
+    "eticheta": "ExtraBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Raleway-200.ttf",
+    "familie": "Raleway ExtraLight",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": false,
+    "eticheta": "250",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Raleway-200italic.ttf",
+    "familie": "Raleway ExtraLight",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": true,
+    "eticheta": "250 Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Raleway-300.ttf",
+    "familie": "Raleway Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": false,
+    "eticheta": "Light",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Raleway-300italic.ttf",
+    "familie": "Raleway Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": true,
+    "eticheta": "Light Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Raleway-500.ttf",
+    "familie": "Raleway Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": false,
+    "eticheta": "Medium",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Raleway-500italic.ttf",
+    "familie": "Raleway Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": true,
+    "eticheta": "Medium Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Raleway-600.ttf",
+    "familie": "Raleway SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": false,
+    "eticheta": "SemiBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Raleway-600italic.ttf",
+    "familie": "Raleway SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": true,
+    "eticheta": "SemiBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Raleway-100.ttf",
+    "familie": "Raleway Thin",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": false,
+    "eticheta": "250",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Raleway-100italic.ttf",
+    "familie": "Raleway Thin",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": true,
+    "eticheta": "250 Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Righteous-Regular.ttf",
+    "familie": "Righteous",
+    "categorie": "Sans display",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț"
+    ]
+  },
+  {
+    "fisier": "Roboto-Regular.ttf",
+    "familie": "Roboto",
+    "categorie": "Neutre",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Roboto-Italic.ttf",
+    "familie": "Roboto",
+    "categorie": "Neutre",
+    "weight": 400,
+    "italic": true,
+    "eticheta": "Regular Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Roboto-700.ttf",
+    "familie": "Roboto",
+    "categorie": "Neutre",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Roboto-700italic.ttf",
+    "familie": "Roboto",
+    "categorie": "Neutre",
+    "weight": 700,
+    "italic": true,
+    "eticheta": "Bold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Roboto-900.ttf",
+    "familie": "Roboto Black",
+    "categorie": "Altele",
+    "weight": 900,
+    "italic": false,
+    "eticheta": "Black",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Roboto-900italic.ttf",
+    "familie": "Roboto Black",
+    "categorie": "Altele",
+    "weight": 900,
+    "italic": true,
+    "eticheta": "Black Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Roboto-800.ttf",
+    "familie": "Roboto ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": false,
+    "eticheta": "ExtraBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Roboto-800italic.ttf",
+    "familie": "Roboto ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": true,
+    "eticheta": "ExtraBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Roboto-200.ttf",
+    "familie": "Roboto ExtraLight",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": false,
+    "eticheta": "250",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Roboto-200italic.ttf",
+    "familie": "Roboto ExtraLight",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": true,
+    "eticheta": "250 Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Roboto-300.ttf",
+    "familie": "Roboto Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": false,
+    "eticheta": "Light",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Roboto-300italic.ttf",
+    "familie": "Roboto Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": true,
+    "eticheta": "Light Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Roboto-500.ttf",
+    "familie": "Roboto Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": false,
+    "eticheta": "Medium",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Roboto-500italic.ttf",
+    "familie": "Roboto Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": true,
+    "eticheta": "Medium Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Roboto-600.ttf",
+    "familie": "Roboto SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": false,
+    "eticheta": "SemiBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Roboto-600italic.ttf",
+    "familie": "Roboto SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": true,
+    "eticheta": "SemiBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Roboto-100.ttf",
+    "familie": "Roboto Thin",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": false,
+    "eticheta": "250",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Roboto-100italic.ttf",
+    "familie": "Roboto Thin",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": true,
+    "eticheta": "250 Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "RozhaOne-Regular.ttf",
+    "familie": "Rozha One",
+    "categorie": "Serif display",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ț",
+      "ț"
+    ]
+  },
+  {
+    "fisier": "RubikMoonrocks-Regular.ttf",
+    "familie": "Rubik Moonrocks",
+    "categorie": "Decorative",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "RubikWetPaint-Regular.ttf",
+    "familie": "Rubik Wet Paint",
+    "categorie": "Decorative",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Sacramento-Regular.ttf",
+    "familie": "Sacramento",
+    "categorie": "Cursiv",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț"
+    ]
+  },
+  {
+    "fisier": "Satisfy-Regular.ttf",
+    "familie": "Satisfy",
+    "categorie": "Cursiv",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "ShadowsIntoLight-Regular.ttf",
+    "familie": "Shadows Into Light",
+    "categorie": "Cursiv",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ț",
+      "ț"
+    ]
+  },
+  {
+    "fisier": "Shrikhand-Regular.ttf",
+    "familie": "Shrikhand",
+    "categorie": "Decorative",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ț",
+      "ț"
+    ]
+  },
+  {
+    "fisier": "SourceSans3-Regular.ttf",
+    "familie": "Source Sans 3",
+    "categorie": "Neutre",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "SourceSans3-Italic.ttf",
+    "familie": "Source Sans 3",
+    "categorie": "Neutre",
+    "weight": 400,
+    "italic": true,
+    "eticheta": "Regular Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "SourceSans3-700.ttf",
+    "familie": "Source Sans 3",
+    "categorie": "Neutre",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "SourceSans3-700italic.ttf",
+    "familie": "Source Sans 3",
+    "categorie": "Neutre",
+    "weight": 700,
+    "italic": true,
+    "eticheta": "Bold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "SourceSans3-900.ttf",
+    "familie": "Source Sans 3 Black",
+    "categorie": "Altele",
+    "weight": 900,
+    "italic": false,
+    "eticheta": "Black",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "SourceSans3-900italic.ttf",
+    "familie": "Source Sans 3 Black",
+    "categorie": "Altele",
+    "weight": 900,
+    "italic": true,
+    "eticheta": "Black Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "SourceSans3-800.ttf",
+    "familie": "Source Sans 3 ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": false,
+    "eticheta": "ExtraBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "SourceSans3-800italic.ttf",
+    "familie": "Source Sans 3 ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": true,
+    "eticheta": "ExtraBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "SourceSans3-200.ttf",
+    "familie": "Source Sans 3 ExtraLight",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": false,
+    "eticheta": "250",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "SourceSans3-200italic.ttf",
+    "familie": "Source Sans 3 ExtraLight",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": true,
+    "eticheta": "250 Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "SourceSans3-300.ttf",
+    "familie": "Source Sans 3 Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": false,
+    "eticheta": "Light",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "SourceSans3-300italic.ttf",
+    "familie": "Source Sans 3 Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": true,
+    "eticheta": "Light Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "SourceSans3-500.ttf",
+    "familie": "Source Sans 3 Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": false,
+    "eticheta": "Medium",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "SourceSans3-500italic.ttf",
+    "familie": "Source Sans 3 Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": true,
+    "eticheta": "Medium Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "SourceSans3-600.ttf",
+    "familie": "Source Sans 3 SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": false,
+    "eticheta": "SemiBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "SourceSans3-600italic.ttf",
+    "familie": "Source Sans 3 SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": true,
+    "eticheta": "SemiBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Spectral-Regular.ttf",
+    "familie": "Spectral",
+    "categorie": "Serif display",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Spectral-Italic.ttf",
+    "familie": "Spectral",
+    "categorie": "Serif display",
+    "weight": 400,
+    "italic": true,
+    "eticheta": "Regular Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Spectral-700.ttf",
+    "familie": "Spectral",
+    "categorie": "Serif display",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Spectral-700italic.ttf",
+    "familie": "Spectral",
+    "categorie": "Serif display",
+    "weight": 700,
+    "italic": true,
+    "eticheta": "Bold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Spectral-800.ttf",
+    "familie": "Spectral ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": false,
+    "eticheta": "ExtraBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Spectral-800italic.ttf",
+    "familie": "Spectral ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": true,
+    "eticheta": "ExtraBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Spectral-200.ttf",
+    "familie": "Spectral ExtraLight",
+    "categorie": "Altele",
+    "weight": 200,
+    "italic": false,
+    "eticheta": "ExtraLight",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Spectral-200italic.ttf",
+    "familie": "Spectral ExtraLight",
+    "categorie": "Altele",
+    "weight": 200,
+    "italic": true,
+    "eticheta": "ExtraLight Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Spectral-300.ttf",
+    "familie": "Spectral Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": false,
+    "eticheta": "Light",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Spectral-300italic.ttf",
+    "familie": "Spectral Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": true,
+    "eticheta": "Light Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Spectral-500.ttf",
+    "familie": "Spectral Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": false,
+    "eticheta": "Medium",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Spectral-500italic.ttf",
+    "familie": "Spectral Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": true,
+    "eticheta": "Medium Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Spectral-600.ttf",
+    "familie": "Spectral SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": false,
+    "eticheta": "SemiBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Spectral-600italic.ttf",
+    "familie": "Spectral SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": true,
+    "eticheta": "SemiBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "SpicyRice-Regular.ttf",
+    "familie": "Spicy Rice",
+    "categorie": "Decorative",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț"
+    ]
+  },
+  {
+    "fisier": "StardosStencil-Regular.ttf",
+    "familie": "Stardos Stencil",
+    "categorie": "Decorative",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "StardosStencil-700.ttf",
+    "familie": "Stardos Stencil",
+    "categorie": "Decorative",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "Tangerine-Regular.ttf",
+    "familie": "Tangerine",
+    "categorie": "Cursiv",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "Tangerine-700.ttf",
+    "familie": "Tangerine",
+    "categorie": "Cursiv",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "TitanOne-Regular.ttf",
+    "familie": "Titan One",
+    "categorie": "Sans display",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț"
+    ]
+  },
+  {
+    "fisier": "TradeWinds-Regular.ttf",
+    "familie": "Trade Winds",
+    "categorie": "Decorative",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț",
+      "Ă",
+      "ă"
+    ]
+  },
+  {
+    "fisier": "Ultra-Regular.ttf",
+    "familie": "Ultra",
+    "categorie": "Sans display",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț"
+    ]
+  },
+  {
+    "fisier": "WorkSans-Regular.ttf",
+    "familie": "Work Sans",
+    "categorie": "Neutre",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "WorkSans-Italic.ttf",
+    "familie": "Work Sans",
+    "categorie": "Neutre",
+    "weight": 400,
+    "italic": true,
+    "eticheta": "Regular Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "WorkSans-700.ttf",
+    "familie": "Work Sans",
+    "categorie": "Neutre",
+    "weight": 700,
+    "italic": false,
+    "eticheta": "Bold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "WorkSans-700italic.ttf",
+    "familie": "Work Sans",
+    "categorie": "Neutre",
+    "weight": 700,
+    "italic": true,
+    "eticheta": "Bold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "WorkSans-900.ttf",
+    "familie": "Work Sans Black",
+    "categorie": "Altele",
+    "weight": 900,
+    "italic": false,
+    "eticheta": "Black",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "WorkSans-900italic.ttf",
+    "familie": "Work Sans Black",
+    "categorie": "Altele",
+    "weight": 900,
+    "italic": true,
+    "eticheta": "Black Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "WorkSans-800.ttf",
+    "familie": "Work Sans ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": false,
+    "eticheta": "ExtraBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "WorkSans-800italic.ttf",
+    "familie": "Work Sans ExtraBold",
+    "categorie": "Altele",
+    "weight": 800,
+    "italic": true,
+    "eticheta": "ExtraBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "WorkSans-200.ttf",
+    "familie": "Work Sans ExtraLight",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": false,
+    "eticheta": "250",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "WorkSans-200italic.ttf",
+    "familie": "Work Sans ExtraLight",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": true,
+    "eticheta": "250 Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "WorkSans-300.ttf",
+    "familie": "Work Sans Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": false,
+    "eticheta": "Light",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "WorkSans-300italic.ttf",
+    "familie": "Work Sans Light",
+    "categorie": "Altele",
+    "weight": 300,
+    "italic": true,
+    "eticheta": "Light Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "WorkSans-500.ttf",
+    "familie": "Work Sans Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": false,
+    "eticheta": "Medium",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "WorkSans-500italic.ttf",
+    "familie": "Work Sans Medium",
+    "categorie": "Altele",
+    "weight": 500,
+    "italic": true,
+    "eticheta": "Medium Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "WorkSans-600.ttf",
+    "familie": "Work Sans SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": false,
+    "eticheta": "SemiBold",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "WorkSans-600italic.ttf",
+    "familie": "Work Sans SemiBold",
+    "categorie": "Altele",
+    "weight": 600,
+    "italic": true,
+    "eticheta": "SemiBold Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "WorkSans-100.ttf",
+    "familie": "Work Sans Thin",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": false,
+    "eticheta": "250",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "WorkSans-100italic.ttf",
+    "familie": "Work Sans Thin",
+    "categorie": "Altele",
+    "weight": 250,
+    "italic": true,
+    "eticheta": "250 Italic",
+    "lipsaDiacritice": []
+  },
+  {
+    "fisier": "Yellowtail-Regular.ttf",
+    "familie": "Yellowtail",
+    "categorie": "Cursiv",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": [
+      "Ș",
+      "ș",
+      "Ț",
+      "ț"
+    ]
+  },
+  {
+    "fisier": "YesevaOne-Regular.ttf",
+    "familie": "Yeseva One",
+    "categorie": "Serif display",
+    "weight": 400,
+    "italic": false,
+    "eticheta": "Regular",
+    "lipsaDiacritice": []
+  }
+]

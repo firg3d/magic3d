@@ -1,0 +1,55 @@
+{
+  "id": "iphone-17",
+  "brand": "Apple",
+  "model": "iPhone 17",
+  "an": 2025,
+  "corp": {
+    "lungime": null,
+    "latime": null,
+    "grosime": null,
+    "razaColt": null,
+    "profilMargine": null,
+    "razaMuchie": null,
+    "grosimeMaxHusaSpate": null
+  },
+  "ecran": {
+    "proeminentaFataDeCorp": null
+  },
+  "insulaCamera": {
+    "forma": null,
+    "x": null,
+    "y": null,
+    "latime": null,
+    "inaltime": null,
+    "razaColt": null,
+    "proeminenta": null,
+    "lentile": [],
+    "blit": {
+      "x": null,
+      "y": null,
+      "diametru": null,
+      "con": null
+    }
+  },
+  "butoane": [],
+  "port": {
+    "latura": "jos",
+    "x": null,
+    "latime": null,
+    "inaltime": null,
+    "tip": null
+  },
+  "decupajeJos": [],
+  "decupajeSus": [],
+  "keepOut": [],
+  "sursa": {
+    "document": "Apple Dimensional Drawings (developer.apple.com/accessories/dimensional-drawings)",
+    "fisier": "",
+    "versiune": "",
+    "pagina": 0,
+    "foaie": ""
+  },
+  "verificat": false,
+  "verificatLa": null,
+  "note": ""
+}

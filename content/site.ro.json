@@ -1,0 +1,641 @@
+{
+  "limba": "ro",
+  "eticheta": "Română",
+  "radacina": "/",
+  "site": {
+    "nume": "Magic3D",
+    "domeniu": "https://magic3d.ro",
+    "autor": "Firg3D",
+    "descriereOrganizatie": "Generatoare parametrice 3D pentru producție de obiecte personalizate."
+  },
+  "nav": {
+    "aplicatii": "Aplicații",
+    "cum": "Cum funcționează",
+    "comparatie": "De ce nu CAD",
+    "parcurs": "Parcurs",
+    "preturi": "Prețuri",
+    "intrebari": "Întrebări",
+    "deschide": "Deschide aplicația",
+    "spreLimba": "English",
+    "sugestieLimba": "This site is also available in English.",
+    "sugestieDa": "Switch to English",
+    "sugestieNu": "Rămân pe română"
+  },
+  "meta": {
+    "titlu": "Generator de litere 3D personalizate — Magic3D",
+    "descriere": "Unsprezece generatoare parametrice pentru litere 3D, brelocuri, plăcuțe, cutii cadou și obiecte luminoase. Configurezi în minute, primești fișiere 3MF gata de printat.",
+    "og": "Unsprezece generatoare parametrice care produc fișiere gata de printat. Configurezi în minute, printezi în aceeași zi."
+  },
+  "hero": {
+    "h1Inainte": "Transformă o comandă de o oră în",
+    "h1Accent": "trei minute",
+    "lead": "Platformă de generatoare parametrice pentru ateliere de printare 3D. Toate cele unsprezece aplicații funcționează acum, gratuit pentru uz personal, fără cont și fără instalare.",
+    "ctaPrimar": "Deschide gratuit",
+    "ctaSecundar": "Cum funcționează",
+    "consolaTitlu": "Generare în timp real",
+    "consolaNume": [
+      "Maria",
+      "Mateo",
+      "Andrei"
+    ],
+    "consolaParametri": [
+      {
+        "eticheta": "font",
+        "valori": [
+          "Alex Brush",
+          "Archivo Black",
+          "Pacifico"
+        ]
+      },
+      {
+        "eticheta": "grosime",
+        "valori": [
+          "18 mm",
+          "25 mm",
+          "32 mm"
+        ]
+      },
+      {
+        "eticheta": "culoare",
+        "valori": [
+          "albastru",
+          "violet",
+          "chihlimbar"
+        ]
+      },
+      {
+        "eticheta": "postament",
+        "valori": [
+          "fără",
+          "drept",
+          "înclinat"
+        ]
+      }
+    ],
+    "incredere": [
+      {
+        "cifra": "11/22",
+        "text": "aplicații livrate"
+      },
+      {
+        "cifra": "780000",
+        "text": "combinații",
+        "numara": true
+      },
+      {
+        "cifra": "3MF",
+        "text": "gata de printat"
+      }
+    ]
+  },
+  "beneficii": {
+    "titlu": "Trei lucruri pe care le simți din prima comandă",
+    "carduri": [
+      {
+        "titlu": "Timp: ore → minute",
+        "text": "Alegi litera, fontul și cotele din panouri. Geometria se generează singură, fără schițe și fără constrângeri."
+      },
+      {
+        "titlu": "Filament: mai puține rebuturi",
+        "text": "Piesele se verifică înainte de export: intră inlay-ul, ține peretele, stă litera în picioare."
+      },
+      {
+        "titlu": "Predare: oricine poate printa",
+        "text": "Lângă fișier primești o fișă de producție cu tabelul de culori și pașii de montaj."
+      }
+    ]
+  },
+  "aplicatii": {
+    "titlu": "Treisprezece generatoare, gata de folosit",
+    "sub": "Fiecare produs are ecranul lui, cu exact controalele de care are nevoie. Fără meniuri pline de opțiuni care nu te privesc.",
+    "etichetaGata": "Disponibil",
+    "etichetaLucru": "În Curând",
+    "deschide": "Deschide aplicația",
+    "afla": "Află mai multe",
+    "inDezvoltare": "În dezvoltare",
+    "inLucru": [
+      {
+        "titlu": "Module noi în curând",
+        "text": "Susține dezvoltarea cu un token — deblochezi mai repede următoarele generatoare.",
+        "thumb": "/produse/brelocuri.png",
+        "cta": "Vezi tokenii",
+        "link": "/token.html"
+      }
+    ]
+  },
+  "cum": {
+    "titlu": "De la idee la fișier, în trei pași",
+    "pasi": [
+      {
+        "titlu": "Configurezi",
+        "text": "Alegi caracterul, fontul, înălțimea și grosimea. Adaugi un nume gravat sau o decorațiune din bibliotecă."
+      },
+      {
+        "titlu": "Verifici",
+        "text": "Aplicația măsoară singură: contactul dintre piese, grosimea pereților, stabilitatea, încadrarea pe placă."
+      },
+      {
+        "titlu": "Exporți",
+        "text": "Primești 3MF cu culoare per corp, piesele orientate pentru print, plus fișa de producție."
+      }
+    ]
+  },
+  "comparatie": {
+    "titlu": "De ce nu pur și simplu un program CAD",
+    "capCad": "Program CAD",
+    "capNoi": "Magic3D",
+    "randuri": [
+      {
+        "criteriu": "Ca să începi",
+        "cad": "Săptămâni de învățat",
+        "noi": "Cinci minute"
+      },
+      {
+        "criteriu": "O literă nouă",
+        "cad": "Schiță, constrângeri, extrudare",
+        "noi": "O alegere din listă"
+      },
+      {
+        "criteriu": "Locașul de inlay",
+        "cad": "Îl construiești manual",
+        "noi": "Se taie singur, cu joc reglabil"
+      },
+      {
+        "criteriu": "Verificarea piesei",
+        "cad": "Cu ochiul, sau la print",
+        "noi": "Măsurată înainte de export"
+      },
+      {
+        "criteriu": "Pregătirea pentru print",
+        "cad": "Orientezi și aranjezi tu",
+        "noi": "Orientate și așezate pe plăci"
+      }
+    ]
+  },
+  "academia": {
+    "eticheta": "ACADEMIA 3D",
+    "titlu": "Academia 3D. Gratuit pentru toți.",
+    "sub": "Patru capitole despre ce se strică la printare și de ce, scrise dintr-un atelier cu 20 de imprimante care rulează zilnic. Fără cont, fără abonament, fără email cerut la intrare.",
+    "carduri": [
+      {
+        "capitol": 1,
+        "titlu": "Primul print care iese prost",
+        "text": "Cele șapte defecte care se repetă, recunoscute după cum arată piesa. Cauza reală și fixul, pentru fiecare.",
+        "link": "academia/primul-print-care-iese-prost",
+        "gata": true
+      },
+      {
+        "capitol": 2,
+        "titlu": "Ce filament alegi",
+        "text": "Se decide dintr-o singură întrebare: unde ajunge obiectul. De ce PLA nu rezistă în mașină vara.",
+        "link": "academia/ce-filament-alegi",
+        "gata": true
+      },
+      {
+        "capitol": 3,
+        "titlu": "Ce imprimantă să îți iei",
+        "text": "Trei categorii, nu douăzeci de modele. Ce costă de fapt multicolorul.",
+        "link": "academia",
+        "gata": false
+      },
+      {
+        "capitol": 4,
+        "titlu": "De la o bucată la o comandă",
+        "text": "Ce se schimbă la cincizeci de bucăți și cum calculezi prețul ca să nu lucrezi degeaba.",
+        "link": "academia",
+        "gata": false
+      }
+    ],
+    "ctaPrimar": "Intră în Academie",
+    "ctaSecundar": "Începe cu primul capitol",
+    "linkHub": "academia",
+    "linkPrimulCapitol": "academia/primul-print-care-iese-prost",
+    "incheiere": "Scrisă de Firg3D Printing SRL — 20 de imprimante, București, Sectorul 5, din 2022.",
+    "scurt": "Academia 3D",
+    "capitol": "Capitolul",
+    "din": "din",
+    "minute": "minute",
+    "citeste": "Citește",
+    "curand": "În curând",
+    "anterior": "Capitolul anterior",
+    "urmator": "Capitolul următor",
+    "navCapitole": "Navigare între capitole",
+    "firimituri": "Unde te afli",
+    "citit": "citit",
+    "fotoLipsa": "fotografie în pregătire",
+    "autorTitlu": "Cine a scris asta",
+    "autorText": "Firg3D Printing SRL — atelierul din Sectorul 5, București, care operează magazinul Praktik3D și platforma Magic3D. Printăm comercial din 2022, cu 20 de imprimante FDM, printare SLA cu rășină, scanare 3D și gravare laser. Tot ce citești aici vine din comenzi reale, nu din documentație de producător.",
+    "autorLink": "Despre atelier și echipă"
+  },
+  "parcurs": {
+    "titlu": "11 livrate, platforma crește",
+    "sub": "Nucleul e construit și testat — generarea din font, verificările de geometrie, exportul, aranjarea pe plăci. Fiecare aplicație nouă se ridică peste el, deci apar din ce în ce mai repede.",
+    "stadiu": "Stadiul platformei",
+    "procent": 50,
+    "etichetaBara": "11 din 22 · restul în lucru",
+    "versiune": "versiunea 1.0",
+    "gata": "Gata",
+    "urmeaza": "Urmează",
+    "etape": [
+      {
+        "stare": "gata",
+        "titlu": "Nucleul",
+        "text": "Geometrie, export, verificări. 15 suite de teste automate."
+      },
+      {
+        "stare": "gata",
+        "titlu": "Primele șapte aplicații",
+        "text": "Litere Decor, Brelocuri, Litere Fagure, Cutii Litere, Litere LED, Nume 3D, Cuvinte Decor."
+      },
+      {
+        "stare": "gata",
+        "titlu": "Încă două generatoare",
+        "text": "Brelocuri Articulate, cu balamale printate pe loc, și Plăcuțe & Etichete — acum funcționale."
+      },
+      {
+        "stare": "urmeaza",
+        "titlu": "Aplicație Windows",
+        "text": "Instalare locală, actualizări automate, limba engleză."
+      }
+    ]
+  },
+  "preturi": {
+    "titlu": "Gratuit pentru tine. Cu licență, dacă vinzi.",
+    "sub": "Aplicația e completă în ambele cazuri. Nu există funcții blocate și nici filigran.",
+    "recomandat": "Recomandat",
+    "planuri": [
+      {
+        "cheie": "gratuit",
+        "nume": "Gratuit",
+        "pret": "0",
+        "produs": "",
+        "moneda": "RON",
+        "perioada": "",
+        "text": "Uz personal",
+        "puncte": [
+          "Toate cele 12 aplicații",
+          "Fără cont, fără instalare",
+          "Generatoarele de litere: fără niciun marcaj",
+          "Generatoarele noi poartă semnătura Praktik3D, gravată discret",
+          "Fișă de producție inclusă"
+        ],
+        "cta": "Deschide aplicația",
+        "ctaCumpara": "",
+        "ctaDetalii": "",
+        "link": "/litere.html"
+      },
+      {
+        "cheie": "comercial",
+        "nume": "Comercial",
+        "pret": "",
+        "produs": "licenta",
+        "moneda": "RON",
+        "perioada": "achiziție unică",
+        "text": "Vinzi ce produci",
+        "puncte": [
+          "Achiziție unică — fără expirare",
+          "Drept de vânzare, fără limită de cantitate",
+          "Pe oricâte calculatoare",
+          "Numărul licenței pe fișa de producție",
+          "Logo-ul tău în locul semnăturii, sau fără marcaj"
+        ],
+        "cta": "Vezi licența comercială",
+        "ctaCumpara": "Cumpără licența",
+        "ctaDetalii": "vezi detaliile",
+        "link": "/token.html#comercial"
+      },
+      {
+        "cheie": "suporter",
+        "nume": "Suporter",
+        "pret": "",
+        "produs": "suporter",
+        "moneda": "RON",
+        "perioada": "o dată",
+        "text": "Susții dezvoltarea",
+        "puncte": [
+          "Fișierele token3d, STL și 3MF",
+          "Insignă de suporter în randări",
+          "NU acordă drept comercial",
+          "Rămâi în regim de uz personal"
+        ],
+        "cta": "Vezi tokenul de suporter",
+        "ctaCumpara": "Cumpără tokenul",
+        "ctaDetalii": "vezi detaliile",
+        "link": "/token.html#suporter"
+      }
+    ],
+    "notaV2": "Orice achiziție — comercială sau de suporter — primește 25% reducere la versiunea Windows, pentru achizițiile efectuate până la lansarea ei. Codul se trimite pe emailul comenzii.",
+    "incurajare": "Fiecare licență sau token de suporter finanțează direct următoarele module. Mulțumim că susții dezvoltarea Magic3D!"
+  },
+  "intrebari": {
+    "titlu": "Ce vrei să știi înainte să începi",
+    "lista": [
+      {
+        "q": "Ce produce Magic3D?",
+        "a": "Fișiere 3MF gata de printat, cu piesele deja orientate pentru imprimantă și așezate pe plăci. Lângă fiecare export primești o fișă de producție în format text, cu tabelul de culori, pașii de montaj și lista de verificare înainte de livrare."
+      },
+      {
+        "q": "Trebuie să știu modelare 3D?",
+        "a": "Nu. Alegi litera, fontul și dimensiunile din panouri, iar geometria se generează singură. Nu există schițe, constrângeri sau arbore de operații ca într-un program CAD."
+      },
+      {
+        "q": "Când am nevoie de licență comercială?",
+        "a": "Când vinzi ce produci cu aplicația — printuri, obiecte fizice sau fișiere. Pentru proiectele tale, pentru familie sau ca daruri, aplicația e gratuită și completă. Licența nu deblochează funcții; îți dă dreptul de vânzare și un număr de licență care apare pe fișa de producție."
+      },
+      {
+        "q": "Ce înseamnă tokenul de suporter?",
+        "a": "E un mod de a susține dezvoltarea, nu o licență. Primești fișierele token3d pentru printare proprie și o insignă pe care o poți afișa în randările tale. NU acordă drept de utilizare comercială: rămâi în regim de uz personal."
+      },
+      {
+        "q": "Cu ce imprimantă merge?",
+        "a": "Cu orice imprimantă FDM. Exportul e 3MF standard, deschis de Bambu Studio, OrcaSlicer, PrusaSlicer și Cura. Dimensiunea plăcii se alege din aplicație, iar piesele care nu încap se împart automat pe mai multe plăci."
+      },
+      {
+        "q": "Funcționează fără internet?",
+        "a": "Da. Toată generarea rulează local, pe calculatorul tău. Nu se trimite nimic pe niciun server și nu ai nevoie de conexiune ca să lucrezi sau să exporți."
+      },
+      {
+        "q": "Ce e semnătura Praktik3D?",
+        "a": "Un marcaj mic, gravat, cu textul praktik3d.ro, pe generatoarele noi — nu și pe cele de litere, care rămân fără niciun marcaj. E felul nostru de a ne semna munca la exportul gratuit. Cu licența comercială îl înlocuiești cu logo-ul tău sau îl scoți."
+      }
+    ]
+  },
+  "final": {
+    "titlu": "Gratuit pentru tine. Cu licență, dacă vinzi.",
+    "text": "Toate cele unsprezece aplicații funcționează chiar acum, fără cont și fără instalare. Pentru proiectele tale sunt gratuite. Dacă vinzi ce produci cu ele, ai nevoie de o Licență Comercială.",
+    "cta": "Deschide Litere Decor"
+  },
+  "subsol": {
+    "semnatura": "Magic3D powered by Firg3D · versiunea 1.0",
+    "rezumat": "Generare locală · export 3MF · fișă de producție inclusă",
+    "licenta": "Licență comercială",
+    "suporter": "Suporter"
+  },
+  "aplicatiiLista": [
+    {
+      "slug": "litere-decor",
+      "app": "/litere.html",
+      "nume": "Litere Decor",
+      "rezumat": "Litere cu nume gravat și decorațiuni tematice, cu locaș de inlay și postament.",
+      "thumb": "/produse/litere-decor.png",
+      "altThumb": "Randare a unei litere decorative printate 3D"
+    },
+    {
+      "slug": "nume-3d",
+      "app": "/nume.html",
+      "nume": "Nume 3D",
+      "rezumat": "Numele întreg în cursiv, cu contur colorat, care stă singur în picioare.",
+      "thumb": "/produse/nume-3d.png",
+      "altThumb": "Nume 3D cursiv printat, care stă în picioare"
+    },
+    {
+      "slug": "brelocuri",
+      "app": "/brelocuri.html",
+      "nume": "Brelocuri",
+      "rezumat": "Brelocuri cu nume sau inițială, plăcuță colorată și inel de agățare.",
+      "thumb": "/produse/brelocuri.png",
+      "altThumb": "Breloc personalizat printat 3D cu nume"
+    },
+    {
+      "slug": "brelocuri-decor",
+      "app": "/breloc-decor.html",
+      "nume": "Brelocuri Decor",
+      "rezumat": "Inițiala ca tăviță, cu numele ca inserție colorată în locaș. Breloc bicolor, cu inel de agățare.",
+      "thumb": "/produse/breloc-decor.png",
+      "altThumb": "Breloc cu inițiala C și numele Cristi ca inserție colorată, cu inel de agățare"
+    },
+    {
+      "slug": "litere-fagure",
+      "app": "/fagure.html",
+      "nume": "Litere Fagure",
+      "rezumat": "Litere umplute cu pattern hexagonal, diagonal sau triunghiular.",
+      "thumb": "/produse/litere-fagure.png",
+      "altThumb": "Literă cu umplutură fagure printată 3D"
+    },
+    {
+      "slug": "cutii-litere",
+      "app": "/cutii.html",
+      "nume": "Cutii Litere",
+      "rezumat": "Litere-cutie pentru flori, lichen artificial, dulciuri sau cadouri.",
+      "thumb": "/produse/cutii-litere.png",
+      "altThumb": "Cutie-literă printată 3D pentru aranjamente"
+    },
+    {
+      "slug": "cuvinte-decor",
+      "app": "/cuvinte.html",
+      "nume": "Cuvinte Decor",
+      "rezumat": "Cuvinte cu literele lipite și un simbol în locul unei litere.",
+      "thumb": "/produse/cuvinte-decor.png",
+      "altThumb": "Cuvânt decorativ printat 3D cu simbol"
+    },
+    {
+      "slug": "litere-led",
+      "app": "/led.html",
+      "nume": "Litere LED",
+      "rezumat": "Literă luminoasă din corp opac și față translucidă, cu bandă LED.",
+      "thumb": "/produse/litere-led.png",
+      "altThumb": "Literă LED printată 3D, luminată"
+    },
+    {
+      "slug": "nume-led",
+      "app": "/nume-led.html",
+      "nume": "Nume LED",
+      "rezumat": "Un nume întreg, luminat pe dinăuntru: corp opac, față translucidă și o singură bandă LED prin tot cuvântul.",
+      "thumb": "/produse/nume-led.png",
+      "altThumb": "Numele Ana printat 3D, cu corp opac și față translucidă luminoasă"
+    },
+    {
+      "slug": "articulat",
+      "app": "/articulat.html",
+      "nume": "Brelocuri Articulate",
+      "rezumat": "Nume din litere legate prin balamale printate pe loc. Se pliază în palmă, se printează dintr-o bucată.",
+      "thumb": "/produse/articulat.png",
+      "altThumb": "Breloc articulat printat 3D, cu litere legate prin balamale"
+    },
+    {
+      "slug": "placute",
+      "app": "/placute.html",
+      "nume": "Plăcuțe & Etichete",
+      "rezumat": "O singură aplicație pentru breloc, etichetă de cablu, tăbliță de plante, marcaj de pahar sau magnet.",
+      "thumb": "/produse/placute.png",
+      "altThumb": "Plăcuță personalizată printată 3D cu prindere aleasă"
+    },
+    {
+      "slug": "rame-tematice",
+      "app": "/rame.html",
+      "nume": "Rame Tematice",
+      "rezumat": "Pânză de păianjen, stea sau inimă, cu numele peste ea, pe o bază ovală. Trei piese, trei culori, niciun suport.",
+      "thumb": "/produse/rame-tematice.png",
+      "altThumb": "Ramă pânză de păianjen printată 3D, cu numele Maria, pe bază ovală"
+    },
+    {
+      "slug": "huse-iphone",
+      "app": "/huse.html",
+      "nume": "Huse iPhone",
+      "rezumat": "Husă compatibilă cu iPhone, la cotele din documentația Apple pentru accesorii. Rama de probă se printează prima, în zece minute, ca să confirmi jocul înainte de husa întreagă.",
+      "thumb": "/produse/huse-iphone.png",
+      "altThumb": "Husă pentru iPhone printată 3D, cu decupaj de cameră și nume decupat pe spate",
+      "pagina": "/aplicatii/huse-iphone/",
+      "ascuns": true
+    }
+  ],
+  "contact": {
+    "titluSeo": "Contact și contribuții — Magic3D",
+    "metaDescriere": "Scrie-ne: probleme întâlnite, propuneri de tematici și baze, idei de generatoare care lipsesc, întrebări despre licența comercială. Poți atașa capturi de ecran și fișiere.",
+    "h1": "Scrie-ne",
+    "intro": "Platforma crește din ce ne spuneți voi. Mesajele de mai jos ajung direct la atelier, iar la cele cu adresă de email primești răspuns.",
+    "utileTitlu": "Ce ne ajută cel mai mult",
+    "utile": [
+      {
+        "titlu": "Probleme întâlnite",
+        "text": "Ce ai încercat să faci și ce a ieșit în schimb. O captură de ecran ne scutește de zece întrebări."
+      },
+      {
+        "titlu": "Tematici și decorațiuni",
+        "text": "Ce model ți-ar trebui și nu e în bibliotecă. Dacă ai o poză a obiectului, atașeaz-o."
+      },
+      {
+        "titlu": "Generatoare care lipsesc",
+        "text": "Ce produs printezi des și ai vrea să se configureze singur, ca literele sau brelocurile."
+      },
+      {
+        "titlu": "Baze și postamente",
+        "text": "Forme de postament pe care le folosești la comenzi și pe care le-am putea adăuga în bibliotecă."
+      },
+      {
+        "titlu": "Licența comercială",
+        "text": "Orice întrebare despre ce ai voie să vinzi și cum obții tokenul."
+      }
+    ],
+    "formTitlu": "Formularul",
+    "etichetaCategorie": "Despre ce e vorba",
+    "categorii": [
+      {
+        "valoare": "problema",
+        "eticheta": "Ceva nu funcționează"
+      },
+      {
+        "valoare": "tematica",
+        "eticheta": "Propunere de tematică nouă"
+      },
+      {
+        "valoare": "generator",
+        "eticheta": "Idee de generator nou"
+      },
+      {
+        "valoare": "baza",
+        "eticheta": "Propunere de bază / postament"
+      },
+      {
+        "valoare": "licenta",
+        "eticheta": "Întrebare despre licență"
+      },
+      {
+        "valoare": "altele",
+        "eticheta": "Altceva"
+      }
+    ],
+    "etichetaAplicatie": "La ce aplicație",
+    "aplicatii": [
+      {
+        "valoare": "litere-decor",
+        "eticheta": "Litere Decor"
+      },
+      {
+        "valoare": "nume-3d",
+        "eticheta": "Nume 3D"
+      },
+      {
+        "valoare": "brelocuri",
+        "eticheta": "Brelocuri"
+      },
+      {
+        "valoare": "litere-fagure",
+        "eticheta": "Litere Fagure"
+      },
+      {
+        "valoare": "cutii-litere",
+        "eticheta": "Cutii Litere"
+      },
+      {
+        "valoare": "cuvinte-decor",
+        "eticheta": "Cuvinte Decor"
+      },
+      {
+        "valoare": "litere-led",
+        "eticheta": "Litere LED"
+      },
+      {
+        "valoare": "brelocuri-articulate",
+        "eticheta": "Brelocuri Articulate"
+      },
+      {
+        "valoare": "placute-etichete",
+        "eticheta": "Plăcuțe & Etichete"
+      },
+      {
+        "valoare": "platforma",
+        "eticheta": "Platforma în ansamblu"
+      },
+      {
+        "valoare": "nu-se-aplica",
+        "eticheta": "Nu se aplică"
+      }
+    ],
+    "etichetaNume": "Numele tău",
+    "placeholderNume": "cum să ți ne adresăm",
+    "etichetaEmail": "Email",
+    "placeholderEmail": "ca să îți putem răspunde",
+    "etichetaMesaj": "Mesajul",
+    "placeholderMesaj": "Scrie pe îndelete. Dacă e o problemă: ce ai încercat, ce s-a întâmplat și ce te așteptai să se întâmple.",
+    "etichetaFisiere": "Fișiere (opțional)",
+    "dropzone": "Trage fișierele aici",
+    "dropzoneSau": "sau",
+    "butonFisiere": "alege de pe disc",
+    "notaFisiere": "cel mult {max} fișiere, {mb} MB fiecare · imagini, STL, 3MF, OBJ, ZIP, PDF",
+    "contorFisiere": "{n} din {max}",
+    "stergeFisier": "scoate fișierul",
+    "trimite": "Trimite mesajul",
+    "seTrimite": "Se trimite…",
+    "succes": "Trimis. Îți mulțumim — citim tot ce primim, iar dacă ai lăsat o adresă de email, îți răspundem.",
+    "erori": {
+      "categorie": "Alege despre ce e vorba.",
+      "campuri": "Completează numele, emailul și mesajul.",
+      "mesajScurt": "Descrie puțin mai detaliat — cel puțin {min} de caractere. Acum sunt {are}.",
+      "email": "Adresa de email nu pare validă.",
+      "recaptcha": "Bifează căsuța de verificare anti-robot.",
+      "preaMulte": "Poți atașa cel mult {max} fișiere, iar „{nume}” nu a mai încăput.",
+      "preaMare": "„{nume}” are {mb} MB. Fiecare fișier trebuie să fie sub {max} MB — pentru fișiere mari, trimite un link în mesaj.",
+      "extensie": "„{nume}” nu e un tip acceptat. Folosește imagini, STL, 3MF, OBJ, ZIP sau PDF.",
+      "retea": "Nu am putut trimite mesajul ({eroare}). Scrie-ne direct pe contact@firg3d.com."
+    },
+    "recaptchaCheie": "",
+    "recaptchaLipsa": "Verificarea anti-spam nu e încă configurată pe acest server, iar fără ea trimiterea va fi respinsă. Până atunci, scrie-ne direct pe contact@firg3d.com.",
+    "endpoint": "/contact-magic3d.php",
+    "navContact": "Contact"
+  },
+  "paginaHuse": {
+    "titlu": "Huse iPhone",
+    "descriere": "Husă compatibilă cu iPhone, generată la cotele din documentația publică Apple pentru accesorii.",
+    "sectiuni": [
+      {
+        "titlu": "Rama de probă se printează prima",
+        "text": "Un inel de 3 mm, zece minute de print. Îl pui pe telefon și afli dacă jocul e bun înainte să consumi o husă întreagă. Poartă gravat modelul și jocul cu care a fost generat, ca patru rame printate în aceeași după-amiază să nu fie patru inele identice la ochi."
+      },
+      {
+        "titlu": "Cotele nu se inventează",
+        "text": "Fiecare model are cotele transcrise din desenele cotate Apple, cu sursa scrisă în fișier. Ce lipsește rămâne necompletat, iar modelul nu apare în listă. Modelele neconfirmate încă în atelier sunt marcate „din desenele Apple, neverificat fizic”."
+      },
+      {
+        "titlu": "Subțire, nu un bloc",
+        "text": "Husa se construiește în jurul insulei camerei, cu buză de protecție locală, nu ridicând tot spatele. Măsurat pe modelele-pilot: husa adaugă 2,40 mm peste fața telefonului, iar buza camerei stă mai sus doar în dreptul ei."
+      },
+      {
+        "titlu": "Spatele, cum îl vrei",
+        "text": "Plin, model gravat, perforat, nume gravat sau nume decupat. Perforatul străpunge peretele; gravatul îl lasă închis. Inelul de încărcare rămâne plin, oricât de des ai pune găurile."
+      }
+    ],
+    "nota": "Compatibil cu iPhone. Magic3D nu este afiliat cu Apple. Denumirile de modele sunt folosite doar ca referință de compatibilitate.",
+    "cta": "Deschide generatorul"
+  }
+}

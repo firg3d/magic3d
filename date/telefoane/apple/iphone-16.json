@@ -1,0 +1,183 @@
+{
+  "id": "iphone-16",
+  "brand": "Apple",
+  "model": "iPhone 16",
+  "an": 2024,
+  "corp": {
+    "lungime": 147.64,
+    "latime": 71.63,
+    "grosime": 7.81,
+    "razaColt": 17.4,
+    "profilMargine": "plat",
+    "razaMuchie": 2.41,
+    "grosimeMaxHusaSpate": 2.1,
+    "zonaIncarcare": {
+      "x": 0.0,
+      "y": 0.0,
+      "diametru": 57.5
+    }
+  },
+  "ecran": {
+    "proeminentaFataDeCorp": 0.0
+  },
+  "insulaCamera": {
+    "forma": "pilula-verticala",
+    "x": -22.19,
+    "y": 51.33,
+    "latime": 25.07,
+    "inaltime": 42.47,
+    "razaColt": 12.54,
+    "proeminenta": 1.85,
+    "lentile": [
+      {
+        "x": -22.2,
+        "y": 60.2,
+        "diametru": 16.0,
+        "proeminentaSuplimentara": 1.63,
+        "con": {
+          "unghi": 123.0,
+          "distanta": 8.33,
+          "referinta": "sticla-fata"
+        }
+      },
+      {
+        "x": -22.2,
+        "y": 42.48,
+        "diametru": 16.0,
+        "proeminentaSuplimentara": 1.63,
+        "con": {
+          "unghi": 84.0,
+          "distanta": 6.9,
+          "referinta": "sticla-fata"
+        }
+      }
+    ],
+    "blit": {
+      "x": -5.8,
+      "y": 51.34,
+      "diametru": 6.28,
+      "con": {
+        "unghi": 112.0,
+        "distanta": 7.71,
+        "referinta": "sticla-fata"
+      }
+    }
+  },
+  "butoane": [
+    {
+      "tip": "actiune",
+      "latura": "dreapta",
+      "y": 39.74,
+      "lungime": 6.9,
+      "latime": 2.66,
+      "acoperibil": true,
+      "keepout": null
+    },
+    {
+      "tip": "volum+",
+      "latura": "dreapta",
+      "y": 25.59,
+      "lungime": 11.2,
+      "latime": 2.66,
+      "acoperibil": true,
+      "keepout": null
+    },
+    {
+      "tip": "volum-",
+      "latura": "dreapta",
+      "y": 11.39,
+      "lungime": 11.2,
+      "latime": 2.66,
+      "acoperibil": true,
+      "keepout": null
+    },
+    {
+      "tip": "pornire",
+      "latura": "stanga",
+      "y": 18.49,
+      "lungime": 17.7,
+      "latime": 2.66,
+      "acoperibil": true,
+      "keepout": null
+    },
+    {
+      "tip": "camera-control",
+      "latura": "stanga",
+      "y": -22.41,
+      "lungime": 17.1,
+      "latime": 3.03,
+      "acoperibil": false,
+      "keepout": {
+        "latime": 8.4,
+        "inaltime": 25.0,
+        "razaColt": 2.2,
+        "unghiDegajare": 55.0,
+        "subtire": {
+          "latime": 12.64,
+          "inaltime": 29.7,
+          "laDistanta": 0.4,
+          "unghiDegajare": 25.0
+        }
+      }
+    }
+  ],
+  "port": {
+    "latura": "jos",
+    "x": 0.0,
+    "latime": 12.45,
+    "inaltime": 6.6,
+    "tip": "usb-c"
+  },
+  "decupajeJos": [
+    {
+      "tip": "microfon",
+      "x": 11.49,
+      "latime": 10.49
+    },
+    {
+      "tip": "microfon",
+      "x": -6.93,
+      "latime": 1.35
+    },
+    {
+      "tip": "difuzor",
+      "x": -16.06,
+      "latime": 10.37
+    }
+  ],
+  "decupajeSus": [
+    {
+      "tip": "microfon",
+      "x": 0.0,
+      "latime": 14.4
+    }
+  ],
+  "keepOut": [
+    {
+      "nume": "blitz în afara insulei",
+      "x": -5.8,
+      "y": 51.34,
+      "latime": 6.28,
+      "inaltime": 6.28,
+      "motiv": "blitzul Ø6,28 stă pe sticla spatelui, lângă pilulă, nu pe platou; decupaj separat, nu se acoperă"
+    },
+    {
+      "nume": "microfon spate",
+      "x": -15.27,
+      "y": 51.34,
+      "latime": 1.0,
+      "inaltime": 1.0,
+      "motiv": "orificiu acustic Ø1,00 pe platoul camerei; nu se acoperă"
+    }
+  ],
+  "sursa": {
+    "document": "Apple Dimensional Drawings (developer.apple.com/accessories/dimensional-drawings)",
+    "fisier": "iphone-16.pdf",
+    "versiune": "2024-09-19",
+    "pagina": 1,
+    "foaie": "SHT 1 OF 4 (Detail A–D); Camera Control keepout pe SHT 2 (Detail E, secțiuni H-H…K-K); receiver 14,40 pe SHT 3"
+  },
+  "verificat": false,
+  "verificatLa": null,
+  "note": "Coordonate convertite din desen: origine în centrul spatelui, X + spre dreapta PRIVIT DIN SPATE, Y + în sus. `butoane[].latura` este de asemenea privit din spate: butoanele de volum (stânga privit din față) apar pe DREAPTA. Cote citite direct: 147,64 × 71,63 × 7,81; pilulă 1,09–26,16 (X) × 1,25–43,72 (Y); lentile 2× Ø16,00 la (13,62;13,62) și (13,62;31,34); blitz Ø6,28 la (30,01;22,48) ÎN AFARA pilulei; microfon Ø1,00 la (20,54;22,48); platou 1,85, sticlă cameră 3,48. DERIVATE: razaColt 17,40 = capătul profilului spline (identic cu iPhone 15); razaMuchie 2,41 (start of flat area); razaColt pilulă 12,54 = jumătate din lățime (capete semicirculare); ecran 0,00 (grosimea include sticla). Lungimi butoane = 2 × jumătățile cotate (2X 3,45; 4X 5,60; 2X 8,85; 2X 8,55). CAMERA CONTROL: buton 17,10 × 3,03, la nivel cu carcasa (0,00); keepout tipic la suprafață 25,00 × 8,40 (2X 4,20), colțuri R2,20; keepout pentru husă subțire 29,70 × 12,64 măsurat la 0,4 mm de suprafață; unghi de degajare 55° tipic / 25° subțire; „avoid narrow edges or acute angles” la marginea decupajului. Sertar SIM pe dreapta (privit din spate), centru Y −30,28, 19,64 × 2,56. Con keepout cameră 1: 123°, baza la 8,33; blitz 112°/157° la 7,71. Grosime maximă husă pe spate 2,1 mm."
+}

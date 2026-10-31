@@ -1,0 +1,133 @@
+{
+  "id": "iphone-se-3",
+  "brand": "Apple",
+  "model": "iPhone SE (a 3-a generație)",
+  "an": 2022,
+  "corp": {
+    "lungime": 138.44,
+    "latime": 67.27,
+    "grosime": 7.31,
+    "razaColt": 14.62,
+    "profilMargine": "curbat",
+    "razaMuchie": 3.66,
+    "grosimeMaxHusaSpate": 5.0,
+    "zonaIncarcare": {
+      "x": 0.0,
+      "y": 0.0,
+      "diametru": 57.42
+    }
+  },
+  "ecran": {
+    "proeminentaFataDeCorp": 0.94
+  },
+  "insulaCamera": {
+    "forma": "lentila-simpla",
+    "x": -23.2,
+    "y": 58.98,
+    "latime": 12.14,
+    "inaltime": 12.14,
+    "razaColt": 6.07,
+    "proeminenta": 0.87,
+    "lentile": [
+      {
+        "x": -23.2,
+        "y": 58.98,
+        "diametru": 8.57,
+        "proeminentaSuplimentara": 0.0,
+        "con": {
+          "unghi": 76.7,
+          "distanta": 2.0,
+          "referinta": "sticla-spate"
+        }
+      }
+    ],
+    "blit": {
+      "x": -10.79,
+      "y": 58.98,
+      "diametru": 3.75,
+      "con": {
+        "unghi": 114.0,
+        "distanta": 1.44,
+        "referinta": "sticla-spate"
+      }
+    }
+  },
+  "butoane": [
+    {
+      "tip": "mut",
+      "latura": "dreapta",
+      "y": 51.66,
+      "lungime": 5.61,
+      "latime": 2.24,
+      "acoperibil": false,
+      "keepout": null
+    },
+    {
+      "tip": "volum+",
+      "latura": "dreapta",
+      "y": 34.66,
+      "lungime": 10.62,
+      "latime": 2.48,
+      "acoperibil": true,
+      "keepout": null
+    },
+    {
+      "tip": "volum-",
+      "latura": "dreapta",
+      "y": 22.05,
+      "lungime": 10.62,
+      "latime": 2.48,
+      "acoperibil": true,
+      "keepout": null
+    },
+    {
+      "tip": "pornire",
+      "latura": "stanga",
+      "y": 34.58,
+      "lungime": 10.62,
+      "latime": 2.48,
+      "acoperibil": true,
+      "keepout": null
+    }
+  ],
+  "port": {
+    "latura": "jos",
+    "x": 0.0,
+    "latime": 13.65,
+    "inaltime": 6.85,
+    "tip": "lightning"
+  },
+  "decupajeJos": [
+    {
+      "tip": "microfon",
+      "x": 17.01,
+      "latime": 14.17
+    },
+    {
+      "tip": "difuzor",
+      "x": -17.02,
+      "latime": 14.17
+    }
+  ],
+  "decupajeSus": [],
+  "keepOut": [
+    {
+      "nume": "microfon spate",
+      "x": -15.5,
+      "y": 58.98,
+      "latime": 1.5,
+      "inaltime": 1.5,
+      "motiv": "orificiu acustic Ø1,50 pe spate, între cameră și blitz; nu se acoperă"
+    }
+  ],
+  "sursa": {
+    "document": "Apple Dimensional Drawings (developer.apple.com/accessories/dimensional-drawings)",
+    "fisier": "iphone-se-3rd-generation.pdf",
+    "versiune": "2022-04-26",
+    "pagina": 1,
+    "foaie": "SHT 1 OF 1 (Detail A–F); desen comun cu iPhone SE (a 2-a generație)"
+  },
+  "verificat": false,
+  "verificatLa": null,
+  "note": "Coordonate convertite din desen: origine în centrul spatelui, X + spre dreapta PRIVIT DIN SPATE, Y + în sus. `butoane[].latura` este de asemenea privit din spate: butoanele de volum (stânga privit din față) apar pe DREAPTA. Cote citite direct: 138,44 × 67,27 × 7,31; cameră Ø8,57 la (10,44;10,24) cu turelă Ø12,14 înaltă 0,87; blitz Ø3,75 la (22,84;10,24); microfon Ø1,50 la (18,13;10,24); conector Lightning keepout 13,65 × 6,85; 0,94 „housing to coverglass” = sticla iese 0,94 peste ramă (2.5D). DERIVATE: razaColt 14,62 = capătul profilului spline al colțului (0,18/14,62 · 3,00/9,10 · 4,84/4,84 · 9,10/3,00 · 14,61/0,18); profil lateral complet rotunjit: bandă plată ±1,76, apoi 0,41/2,60 · 1,02/3,45 · 2,46/3,655, plat de la 4,50 → razaMuchie 3,66 ≈ jumătate din grosime; razaColt insulă 6,07 = raza turelei circulare. Lungimi butoane = 2 × jumătățile cotate (2X 5,31); comutatorul mut 5,61 (cotă directă). Sertar SIM pe stânga (privit din spate), centru Y 16,50, 15,67 × 2,30. Senzor Home/Touch ID pe față, keepout con 100° — irelevant pentru husă. Con keepout cameră: 76,7°, baza la 2,00 de sticla spatelui. Cerință Apple pentru acest model: grosime maximă a husei pe spate 5,0 mm. Desen comun cu SE (a 2-a generație): aceleași cote se aplică și lui. Blitz: con interior 114°, exterior 158°, baza la 1,44 de sticla spatelui."
+}

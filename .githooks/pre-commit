@@ -1,0 +1,35 @@
+#!/bin/sh
+# Hook de pre-commit, VERSIONAT in depozit (.githooks/), nu doar local in .git/hooks.
+# Se instaleaza singur prin `npm install`, care ruleaza scriptul `prepare` din package.json.
+#
+# Ruleaza suitele RAPIDE si mereu relevante. Cele grele — alphabet, led, fagure, cutii,
+# brelocuri — trec prin toate fonturile si dureaza zeci de minute; ele raman pentru CI.
+# Un hook care dureaza o ora nu e o plasa de siguranta, e un motiv sa folosesti --no-verify.
+set -e
+echo "pre-commit: verific regulile si suitele rapide..."
+npm run --silent verifica:reguli
+npm run --silent verifica:telefoane
+
+# Verificarea de tipuri, a noua. Depozitul a stat cu doua erori `tsc` nereparate — semn ca
+# nimeni nu-l rula, deci o eroare de tip noua trecea neobservata. Ruleaza in cateva secunde.
+printf "  %-18s " "tipuri (tsc)"
+if npx --no-install tsc --noEmit >/dev/null 2>&1; then
+  echo "OK"
+else
+  echo "PICAT"
+  echo ""
+  echo "Commit oprit: 'npx tsc --noEmit' are erori. Ruleaza-l ca sa le vezi."
+  exit 1
+fi
+for s in isolation i18n linkuri licenta primitive huse regresie-export semnatura; do
+  printf "  %-18s " "$s"
+  if npx --no-install tsx "src/_tests/$s.test.ts" >/dev/null 2>&1; then
+    echo "OK"
+  else
+    echo "PICAT"
+    echo ""
+    echo "Commit oprit: suita '$s' e rosie. Ruleaza 'npx tsx src/_tests/$s.test.ts' ca sa vezi de ce."
+    exit 1
+  fi
+done
+echo "pre-commit: totul verde."

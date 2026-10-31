@@ -1,0 +1,156 @@
+{
+  "id": "iphone-14-plus",
+  "brand": "Apple",
+  "model": "iPhone 14 Plus",
+  "an": 2022,
+  "corp": {
+    "lungime": 160.8,
+    "latime": 78.1,
+    "grosime": 7.8,
+    "razaColt": 3.72,
+    "profilMargine": "plat",
+    "razaMuchie": 2.41,
+    "grosimeMaxHusaSpate": 2.1,
+    "zonaIncarcare": {
+      "x": 0.0,
+      "y": 0.0,
+      "diametru": 57.5
+    }
+  },
+  "ecran": {
+    "proeminentaFataDeCorp": 0.0
+  },
+  "insulaCamera": {
+    "forma": "patrat",
+    "x": -20.79,
+    "y": 62.14,
+    "latime": 30.13,
+    "inaltime": 30.13,
+    "razaColt": 9.04,
+    "razaEstimata": true,
+    "proeminenta": 1.85,
+    "lentile": [
+      {
+        "x": -27.17,
+        "y": 68.52,
+        "diametru": 14.38,
+        "proeminentaSuplimentara": 1.73,
+        "con": {
+          "unghi": 121.0,
+          "distanta": 8.5,
+          "referinta": "sticla-fata"
+        }
+      },
+      {
+        "x": -14.42,
+        "y": 55.77,
+        "diametru": 14.38,
+        "proeminentaSuplimentara": 1.73,
+        "con": {
+          "unghi": 75.0,
+          "distanta": 7.0,
+          "referinta": "sticla-fata"
+        }
+      }
+    ],
+    "blit": {
+      "x": -12.75,
+      "y": 70.19,
+      "diametru": 6.28,
+      "con": {
+        "unghi": 112.0,
+        "distanta": 8.5,
+        "referinta": "sticla-fata"
+      }
+    },
+    "note_insula": "anvelopa lentilelor+blitz+1,5mm, calculată să cuprindă toate lentilele"
+  },
+  "butoane": [
+    {
+      "tip": "mut",
+      "latura": "dreapta",
+      "y": 54.41,
+      "lungime": 5.7,
+      "latime": 2.85,
+      "acoperibil": false
+    },
+    {
+      "tip": "volum+",
+      "latura": "dreapta",
+      "y": 41.09,
+      "lungime": 11.3,
+      "latime": 2.76,
+      "acoperibil": true
+    },
+    {
+      "tip": "volum-",
+      "latura": "dreapta",
+      "y": 27.09,
+      "lungime": 11.3,
+      "latime": 2.76,
+      "acoperibil": true
+    },
+    {
+      "tip": "pornire",
+      "latura": "stanga",
+      "y": 27.87,
+      "lungime": 18.14,
+      "latime": 2.76,
+      "acoperibil": true
+    }
+  ],
+  "port": {
+    "latura": "jos",
+    "x": 0.0,
+    "latime": 12.45,
+    "inaltime": 6.6,
+    "tip": "lightning"
+  },
+  "decupajeJos": [
+    {
+      "tip": "microfon",
+      "x": -10.0,
+      "latime": 10.0
+    },
+    {
+      "tip": "difuzor",
+      "x": -46.0,
+      "latime": 11.0
+    }
+  ],
+  "decupajeSus": [
+    {
+      "tip": "microfon",
+      "x": 0.0,
+      "latime": 14.4
+    }
+  ],
+  "keepOut": [
+    {
+      "nume": "blitz pe platou",
+      "x": -12.75,
+      "y": 70.19,
+      "latime": 6.28,
+      "inaltime": 6.28,
+      "motiv": "blitz pe platou; decupaj separat"
+    },
+    {
+      "nume": "microfon spate",
+      "x": -27.17,
+      "y": 54.51,
+      "latime": 2.1,
+      "inaltime": 2.1,
+      "motiv": "orificiu acustic; nu se acoperă"
+    }
+  ],
+  "sursa": {
+    "document": "Apple Dimensional Drawings (developer.apple.com/accessories/dimensional-drawings)",
+    "fisier": "iphone-14-plus.pdf",
+    "versiune": "2022-09",
+    "pagina": 1,
+    "foaie": "SHT 1 OF 3"
+  },
+  "verificat": false,
+  "verificatLa": null,
+  "note": "Coordonate din desen: origine centrul spatelui, X + spre dreapta PRIVIT DIN SPATE, Y + în sus. butoane[].latura din spate: volumul apare pe DREAPTA. Cameră ca iPhone 14 (2 lentile diagonale Ø14,38), corp 160,8×78,1 (Plus). Butoane pe pozițiile familiei 14. De confirmat la rama de probă."
+}

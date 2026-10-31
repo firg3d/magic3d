@@ -1,0 +1,250 @@
+{
+  "litere": [
+    {
+      "volum": 143848.062,
+      "triunghiuri": 29332,
+      "bucati": 1,
+      "cx": -0.528,
+      "cy": 5.061
+    },
+    {
+      "volum": 10597.317,
+      "triunghiuri": 3476,
+      "bucati": 2,
+      "cx": -4.105,
+      "cy": 6.729
+    },
+    {
+      "volum": 2449.158,
+      "triunghiuri": 3476,
+      "bucati": 2,
+      "cx": -4.105,
+      "cy": 6.729
+    }
+  ],
+  "nume": [
+    {
+      "volum": 254307.244,
+      "triunghiuri": 12784,
+      "bucati": 1,
+      "cx": -4.95,
+      "cy": 5.464
+    },
+    {
+      "volum": 88964.077,
+      "triunghiuri": 4440,
+      "bucati": 3,
+      "cx": -3.641,
+      "cy": 4.339
+    }
+  ],
+  "brelocuri": [
+    {
+      "volum": 6318.531,
+      "triunghiuri": 1584,
+      "bucati": 1,
+      "cx": -0.144,
+      "cy": 3.109
+    },
+    {
+      "volum": 5402.223,
+      "triunghiuri": 1328,
+      "bucati": 1,
+      "cx": -0.144,
+      "cy": 3.109
+    },
+    {
+      "volum": 916.307,
+      "triunghiuri": 256,
+      "bucati": 1,
+      "cx": -0.202,
+      "cy": 1.553
+    },
+    {
+      "volum": 6.21,
+      "triunghiuri": 512,
+      "bucati": 1,
+      "cx": 0,
+      "cy": 0
+    }
+  ],
+  "fagure": [
+    {
+      "volum": 34099.77,
+      "triunghiuri": 2836,
+      "bucati": 1,
+      "cx": -0.51,
+      "cy": 5.958
+    }
+  ],
+  "cutii": [
+    {
+      "volum": 100004.239,
+      "triunghiuri": 916,
+      "bucati": 1,
+      "cx": -0.598,
+      "cy": 4.657
+    }
+  ],
+  "cuvinte": [
+    {
+      "volum": 135229.546,
+      "triunghiuri": 7084,
+      "bucati": 2,
+      "cx": -4.728,
+      "cy": 5.666
+    },
+    {
+      "volum": 44889.244,
+      "triunghiuri": 2660,
+      "bucati": 1,
+      "cx": -5.978,
+      "cy": 6.085
+    }
+  ],
+  "led": [
+    {
+      "volum": 73246.266,
+      "triunghiuri": 1966,
+      "bucati": 1,
+      "cx": -0.653,
+      "cy": 5.709
+    },
+    {
+      "volum": 8797.514,
+      "triunghiuri": 668,
+      "bucati": 1,
+      "cx": -0.701,
+      "cy": 5.699
+    }
+  ],
+  "articulat": [
+    {
+      "volum": 1016.614,
+      "triunghiuri": 568,
+      "bucati": 1,
+      "cx": -1.18,
+      "cy": 0
+    },
+    {
+      "volum": 1016.614,
+      "triunghiuri": 568,
+      "bucati": 1,
+      "cx": -1.18,
+      "cy": 0
+    },
+    {
+      "volum": 936.504,
+      "triunghiuri": 280,
+      "bucati": 1,
+      "cx": 0.292,
+      "cy": 0
+    },
+    {
+      "volum": 20.32,
+      "triunghiuri": 168,
+      "bucati": 1,
+      "cx": -0.042,
+      "cy": 0.312
+    },
+    {
+      "volum": 16.979,
+      "triunghiuri": 272,
+      "bucati": 1,
+      "cx": 0.295,
+      "cy": 0.143
+    },
+    {
+      "volum": 12.618,
+      "triunghiuri": 136,
+      "bucati": 1,
+      "cx": 0.065,
+      "cy": -0.139
+    }
+  ],
+  "placute": [
+    {
+      "volum": 9431.114,
+      "triunghiuri": 2392,
+      "bucati": 1,
+      "cx": 0.565,
+      "cy": 2.76
+    },
+    {
+      "volum": 1326.331,
+      "triunghiuri": 1020,
+      "bucati": 3,
+      "cx": 0.829,
+      "cy": 2.306
+    }
+  ],
+  "rame": [
+    {
+      "volum": 44544.413,
+      "triunghiuri": 10524,
+      "bucati": 1,
+      "cx": 0,
+      "cy": 1.837
+    },
+    {
+      "volum": 32825.013,
+      "triunghiuri": 220,
+      "bucati": 1,
+      "cx": 0,
+      "cy": 0
+    },
+    {
+      "volum": 3897.839,
+      "triunghiuri": 4380,
+      "bucati": 2,
+      "cx": -2.504,
+      "cy": 1.505
+    },
+    {
+      "volum": 1026.929,
+      "triunghiuri": 1688,
+      "bucati": 1,
+      "cx": -2.381,
+      "cy": 2.436
+    }
+  ],
+  "breloc-decor": [
+    {
+      "volum": 4210.414,
+      "triunghiuri": 3042,
+      "bucati": 1,
+      "cx": -0.325,
+      "cy": 3.769
+    },
+    {
+      "volum": 1325.363,
+      "triunghiuri": 792,
+      "bucati": 1,
+      "cx": -1.068,
+      "cy": 0.53
+    },
+    {
+      "volum": 293.822,
+      "triunghiuri": 1344,
+      "bucati": 1,
+      "cx": -0.963,
+      "cy": 1.017
+    }
+  ],
+  "nume-led": [
+    {
+      "volum": 133453.151,
+      "triunghiuri": 32668,
+      "bucati": 1,
+      "cx": 1.256,
+      "cy": 6.472
+    },
+    {
+      "volum": 13347.549,
+      "triunghiuri": 17632,
+      "bucati": 1,
+      "cx": 9.686,
+      "cy": 8.27
+    }
+  ]
+}

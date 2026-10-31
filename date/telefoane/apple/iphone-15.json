@@ -1,0 +1,155 @@
+{
+  "id": "iphone-15",
+  "brand": "Apple",
+  "model": "iPhone 15",
+  "an": 2023,
+  "corp": {
+    "lungime": 147.64,
+    "latime": 71.63,
+    "grosime": 7.81,
+    "razaColt": 17.4,
+    "profilMargine": "plat",
+    "razaMuchie": 2.41,
+    "grosimeMaxHusaSpate": 2.1,
+    "zonaIncarcare": {
+      "x": 0.0,
+      "y": 0.0,
+      "diametru": 57.5
+    }
+  },
+  "ecran": {
+    "proeminentaFataDeCorp": 0.0
+  },
+  "insulaCamera": {
+    "forma": "patrat",
+    "x": -16.63,
+    "y": 54.63,
+    "latime": 35.93,
+    "inaltime": 35.93,
+    "razaColt": 9.0,
+    "proeminenta": 1.85,
+    "lentile": [
+      {
+        "x": -23.08,
+        "y": 61.09,
+        "diametru": 15.07,
+        "proeminentaSuplimentara": 1.63,
+        "con": {
+          "unghi": 121.83,
+          "distanta": 9.11,
+          "referinta": "sticla-fata"
+        }
+      },
+      {
+        "x": -10.17,
+        "y": 48.18,
+        "diametru": 15.07,
+        "proeminentaSuplimentara": 1.63,
+        "con": {
+          "unghi": 75.55,
+          "distanta": 6.9,
+          "referinta": "sticla-fata"
+        }
+      }
+    ],
+    "blit": {
+      "x": -8.49,
+      "y": 62.76,
+      "diametru": 6.28,
+      "con": {
+        "unghi": 112.0,
+        "distanta": 9.56,
+        "referinta": "sticla-fata"
+      }
+    }
+  },
+  "butoane": [
+    {
+      "tip": "mut",
+      "latura": "dreapta",
+      "y": 40.99,
+      "lungime": 5.92,
+      "latime": 2.35,
+      "acoperibil": false,
+      "keepout": null
+    },
+    {
+      "tip": "volum+",
+      "latura": "dreapta",
+      "y": 27.55,
+      "lungime": 11.2,
+      "latime": 2.66,
+      "acoperibil": true,
+      "keepout": null
+    },
+    {
+      "tip": "volum-",
+      "latura": "dreapta",
+      "y": 13.35,
+      "lungime": 11.2,
+      "latime": 2.66,
+      "acoperibil": true,
+      "keepout": null
+    },
+    {
+      "tip": "pornire",
+      "latura": "stanga",
+      "y": 20.45,
+      "lungime": 17.7,
+      "latime": 2.66,
+      "acoperibil": true,
+      "keepout": null
+    }
+  ],
+  "port": {
+    "latura": "jos",
+    "x": 0.0,
+    "latime": 12.45,
+    "inaltime": 6.6,
+    "tip": "usb-c"
+  },
+  "decupajeJos": [
+    {
+      "tip": "microfon",
+      "x": 11.57,
+      "latime": 10.65
+    },
+    {
+      "tip": "microfon",
+      "x": -6.93,
+      "latime": 1.35
+    },
+    {
+      "tip": "difuzor",
+      "x": -16.23,
+      "latime": 10.37
+    }
+  ],
+  "decupajeSus": [
+    {
+      "tip": "microfon",
+      "x": 0.0,
+      "latime": 14.4
+    }
+  ],
+  "keepOut": [
+    {
+      "nume": "microfon spate",
+      "x": -24.34,
+      "y": 46.92,
+      "latime": 2.1,
+      "inaltime": 2.1,
+      "motiv": "orificiu acustic Ø2,10 în insula camerei; nu se acoperă"
+    }
+  ],
+  "sursa": {
+    "document": "Apple Dimensional Drawings (developer.apple.com/accessories/dimensional-drawings)",
+    "fisier": "iphone-15.pdf",
+    "versiune": "2023-10-10",
+    "pagina": 1,
+    "foaie": "SHT 1 OF 3 (Detail A, B, C, D); receiver 14,40 pe SHT 2"
+  },
+  "verificat": false,
+  "verificatLa": null,
+  "note": "Coordonate convertite din desen: origine în centrul spatelui, X + spre dreapta PRIVIT DIN SPATE, Y + în sus. `butoane[].latura` este de asemenea privit din spate: butoanele de volum (stânga privit din față) apar pe DREAPTA. Cote citite direct: 147,64 × 71,63 × 7,81; insula 1,22–37,15 pe ambele axe (35,93); lentile Ø15,07 la (12,73;-12,73) și (25,64;-25,64); blitz Ø6,28 la (27,32;-11,06); platou 1,85, sticlă cameră 3,48 peste spate. DERIVATE din același desen: razaColt 17,40 = capătul profilului spline al colțului (puncte offset: 0,04/17,40 · 0,59/13,21 · 2,29/9,06 · 5,24/5,24 · 9,06/2,29 · 13,21/0,59 · 17,40/0,04); razaMuchie 2,41 = „exterior of housing to start of flat area”, profil: bandă plată ±1,62 apoi curbă; razaColt insulă 9,00 MĂSURATĂ GRAFIC pe Detail A (necotată, ±1 mm); ecran 0,00 pentru că grosimea 7,81 include sticla și desenul nu cotează o proeminență separată. Lungimile butoanelor = 2 × jumătățile cotate (2X 2,96; 4X 5,60; 2X 8,85). Sertar SIM pe latura dreaptă (privit din spate), centru la Y −36,90, 15,94 × 2,56. Con keepout cameră 1: 121,83°, baza la 9,11 de sticla de acoperire; blitz interior 112°/exterior 157° la 9,56. Cerință Apple: grosime maximă a husei pe spate 2,1 mm pentru funcționalitate completă (MagSafe)."
+}

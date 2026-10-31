@@ -1,0 +1,175 @@
+{
+  "id": "iphone-15-pro-max",
+  "brand": "Apple",
+  "model": "iPhone 15 Pro Max",
+  "an": 2023,
+  "corp": {
+    "lungime": 159.9,
+    "latime": 76.7,
+    "grosime": 8.25,
+    "razaColt": 2.41,
+    "profilMargine": "plat",
+    "razaMuchie": 2.41,
+    "grosimeMaxHusaSpate": 2.1,
+    "zonaIncarcare": {
+      "x": 0.0,
+      "y": 0.0,
+      "diametru": 57.5
+    }
+  },
+  "ecran": {
+    "proeminentaFataDeCorp": 0.0
+  },
+  "insulaCamera": {
+    "forma": "patrat",
+    "x": -15.19,
+    "y": 56.16,
+    "latime": 37.19,
+    "inaltime": 38.44,
+    "razaColt": 11.53,
+    "razaEstimata": true,
+    "proeminenta": 2.05,
+    "lentile": [
+      {
+        "x": -24.18,
+        "y": 65.78,
+        "diametru": 16.2,
+        "proeminentaSuplimentara": 1.73,
+        "con": {
+          "unghi": 123.0,
+          "distanta": 8.29,
+          "referinta": "sticla-fata"
+        }
+      },
+      {
+        "x": -24.18,
+        "y": 46.54,
+        "diametru": 16.2,
+        "proeminentaSuplimentara": 1.73,
+        "con": {
+          "unghi": 86.0,
+          "distanta": 7.59,
+          "referinta": "sticla-fata"
+        }
+      },
+      {
+        "x": -6.19,
+        "y": 56.16,
+        "diametru": 16.2,
+        "proeminentaSuplimentara": 1.73,
+        "con": {
+          "unghi": 33.2,
+          "distanta": 3.51,
+          "referinta": "sticla-fata"
+        }
+      }
+    ],
+    "blit": {
+      "x": -6.19,
+      "y": 69.73,
+      "diametru": 6.92,
+      "con": {
+        "unghi": 112.0,
+        "distanta": 8.35,
+        "referinta": "sticla-fata"
+      }
+    },
+    "note_insula": "anvelopa lentilelor+blitz+1,5mm (Pro, fără platou dreptunghiular cotat)"
+  },
+  "butoane": [
+    {
+      "tip": "mut",
+      "latura": "dreapta",
+      "y": 53.96,
+      "lungime": 5.7,
+      "latime": 2.85,
+      "acoperibil": false
+    },
+    {
+      "tip": "volum+",
+      "latura": "dreapta",
+      "y": 40.64,
+      "lungime": 11.3,
+      "latime": 2.76,
+      "acoperibil": true
+    },
+    {
+      "tip": "volum-",
+      "latura": "dreapta",
+      "y": 26.64,
+      "lungime": 11.3,
+      "latime": 2.76,
+      "acoperibil": true
+    },
+    {
+      "tip": "pornire",
+      "latura": "stanga",
+      "y": 23.78,
+      "lungime": 17.7,
+      "latime": 2.76,
+      "acoperibil": true
+    }
+  ],
+  "port": {
+    "latura": "jos",
+    "x": 0.0,
+    "latime": 12.45,
+    "inaltime": 6.6,
+    "tip": "usb-c"
+  },
+  "decupajeJos": [
+    {
+      "tip": "microfon",
+      "x": -10.0,
+      "latime": 10.0
+    },
+    {
+      "tip": "difuzor",
+      "x": -46.0,
+      "latime": 11.0
+    }
+  ],
+  "decupajeSus": [
+    {
+      "tip": "microfon",
+      "x": 0.0,
+      "latime": 14.4
+    }
+  ],
+  "keepOut": [
+    {
+      "nume": "blitz pe platou",
+      "x": -6.19,
+      "y": 69.73,
+      "latime": 6.92,
+      "inaltime": 6.92,
+      "motiv": "blitz pe platou; decupaj separat"
+    },
+    {
+      "nume": "microfon spate",
+      "x": -0.4,
+      "y": 46.09,
+      "latime": 0.75,
+      "inaltime": 0.75,
+      "motiv": "orificiu acustic; nu se acoperă"
+    },
+    {
+      "nume": "senzor LiDAR",
+      "x": -6.19,
+      "y": 43.33,
+      "latime": 14.37,
+      "inaltime": 14.37,
+      "motiv": "rear sensor keepout, la nivel cu platoul; nu se acoperă"
+    }
+  ],
+  "sursa": {
+    "document": "Apple Dimensional Drawings (developer.apple.com/accessories/dimensional-drawings)",
+    "fisier": "iphone-15-pro-max.pdf",
+    "versiune": "2023-10",
+    "pagina": 1,
+    "foaie": "SHT 1 OF 3"
+  },
+  "verificat": false,
+  "verificatLa": null,
+  "note": "Coordonate din desen: origine centrul spatelui, X + spre dreapta PRIVIT DIN SPATE, Y + în sus. butoane[].latura din spate: volumul pe DREAPTA. Corp 159,9×76,7×8,25, USB-C. Cameră ca 15 Pro (3 lentile Ø16,20; blitz Ø6,92; LiDAR Ø14,37). razaColt corp 2,41 (titan, muchii mai rotunde). Layout de confirmat la rama de probă."
+}

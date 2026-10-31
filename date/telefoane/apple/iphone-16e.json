@@ -1,0 +1,137 @@
+{
+  "id": "iphone-16e",
+  "brand": "Apple",
+  "model": "iPhone 16e",
+  "an": 2025,
+  "corp": {
+    "lungime": 146.71,
+    "latime": 71.52,
+    "grosime": 7.8,
+    "razaColt": 3.72,
+    "profilMargine": "plat",
+    "razaMuchie": 2.41,
+    "grosimeMaxHusaSpate": 2.1,
+    "zonaIncarcare": {
+      "x": 0.0,
+      "y": 0.0,
+      "diametru": 57.5
+    }
+  },
+  "ecran": {
+    "proeminentaFataDeCorp": 0.0
+  },
+  "insulaCamera": {
+    "forma": "lentila-simpla",
+    "x": -17.07,
+    "y": 57.36,
+    "latime": 28.72,
+    "inaltime": 23.34,
+    "razaColt": 7.0,
+    "razaEstimata": true,
+    "proeminenta": 1.63,
+    "lentile": [
+      {
+        "x": -22.44,
+        "y": 60.04,
+        "diametru": 14.97,
+        "proeminentaSuplimentara": 1.5,
+        "con": {
+          "unghi": 100.0,
+          "distanta": 7.0,
+          "referinta": "sticla-fata"
+        }
+      }
+    ],
+    "blit": {
+      "x": -6.08,
+      "y": 49.06,
+      "diametru": 3.75,
+      "con": {
+        "unghi": 112.0,
+        "distanta": 6.0,
+        "referinta": "sticla-fata"
+      }
+    },
+    "note_insula": "anvelopa lentilei simple + blitz + 1,5mm"
+  },
+  "butoane": [
+    {
+      "tip": "volum+",
+      "latura": "dreapta",
+      "y": 25.36,
+      "lungime": 11.2,
+      "latime": 2.66,
+      "acoperibil": true
+    },
+    {
+      "tip": "volum-",
+      "latura": "dreapta",
+      "y": 11.36,
+      "lungime": 11.2,
+      "latime": 2.66,
+      "acoperibil": true
+    },
+    {
+      "tip": "pornire",
+      "latura": "stanga",
+      "y": 20.83,
+      "lungime": 18.14,
+      "latime": 2.66,
+      "acoperibil": true
+    }
+  ],
+  "port": {
+    "latura": "jos",
+    "x": 0.0,
+    "latime": 12.45,
+    "inaltime": 6.6,
+    "tip": "usb-c"
+  },
+  "decupajeJos": [
+    {
+      "tip": "microfon",
+      "x": -9.0,
+      "latime": 10.0
+    },
+    {
+      "tip": "difuzor",
+      "x": -42.0,
+      "latime": 11.0
+    }
+  ],
+  "decupajeSus": [
+    {
+      "tip": "microfon",
+      "x": 0.0,
+      "latime": 14.02
+    }
+  ],
+  "keepOut": [
+    {
+      "nume": "blitz",
+      "x": -6.08,
+      "y": 49.06,
+      "latime": 3.75,
+      "inaltime": 3.75,
+      "motiv": "blitz lângă lentilă; decupaj separat"
+    },
+    {
+      "nume": "microfon spate",
+      "x": -11.46,
+      "y": 49.06,
+      "latime": 1.3,
+      "inaltime": 1.3,
+      "motiv": "orificiu acustic; nu se acoperă"
+    }
+  ],
+  "sursa": {
+    "document": "Apple Dimensional Drawings (developer.apple.com/accessories/dimensional-drawings)",
+    "fisier": "iphone-16e.pdf",
+    "versiune": "2025-02",
+    "pagina": 1,
+    "foaie": "SHT 1 OF 3"
+  },
+  "verificat": false,
+  "verificatLa": null,
+  "note": "Coordonate din desen: origine centrul spatelui, X + spre dreapta PRIVIT DIN SPATE, Y + în sus. butoane[].latura din spate: volumul pe DREAPTA. Single lens Ø14,97 la (13,32;-13,32); blitz Ø3,75 la (29,68;-24,30); mic Ø1,30. Corp 146,71×71,52 (șasiu 14), razaColt R3,72, USB-C. 16e NU are Action button/Camera Control — doar volum+pornire; butoanele de confirmat la rama de probă."
+}

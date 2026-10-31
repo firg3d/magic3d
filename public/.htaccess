@@ -1,0 +1,102 @@
+# ════════════════════════════════════════════════════════════════════════════
+# Magic3D — configurarea Apache pentru magic3d.ro (cPanel / LiteSpeed)
+#
+# Fișierul stă în public/, deci ajunge în dist/ la build și se urcă la rădăcina
+# domeniului (public_html/). Nu se editează pe server: se editează aici și se
+# publică, altfel prima republicare îl șterge.
+#
+# LiteSpeed (ce rulează hostgate) citește directivele Apache, inclusiv mod_deflate
+# și mod_expires. Brotli îl aplică singur, la nivel de server, dacă e activat din
+# cPanel — nu există directivă standard pentru el în .htaccess.
+# ════════════════════════════════════════════════════════════════════════════
+
+# ── O SINGURĂ ADRESĂ CANONICĂ: https://magic3d.ro ──────────────────────────
+# non-www, fiindcă TOATE URL-urile deja scrise în canonical, hreflang, sitemap.xml
+# și JSON-LD sunt fără www. Orice altă alegere ar cere rescrierea lor peste tot.
+# Un singur redirect, 301 permanent, care rezolvă și www și http dintr-un pas.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # www → non-www ȘI http → https, într-o singură regulă: două redirecturi
+  # înlănțuite ar costa un dus-întors în plus la fiecare vizitator care nimerește
+  # varianta greșită.
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC,OR]
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^ https://magic3d.ro%{REQUEST_URI} [R=301,L]
+</IfModule>
+
+# ── Pagina de eroare ────────────────────────────────────────────────────────
+ErrorDocument 404 /404.html
+
+# ── Fără listarea directoarelor ─────────────────────────────────────────────
+# Fără asta, /fonts/ sau /tematici/ ar afișa tot inventarul cui îl cere.
+Options -Indexes
+
+# ── Compresie ───────────────────────────────────────────────────────────────
+# Doar text. Imaginile (AVIF, WebP, PNG), fonturile și .wasm sunt deja comprimate;
+# a le trece prin gzip costă procesor și nu câștigă nimic.
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE application/json application/ld+json
+  AddOutputFilterByType DEFLATE image/svg+xml application/xml application/rss+xml
+</IfModule>
+
+# ── Cache ───────────────────────────────────────────────────────────────────
+<IfModule mod_headers.c>
+  # Fișierele cu HASH în nume sunt imutabile: numele se schimbă odată cu conținutul,
+  # deci un an de cache nu poate servi niciodată ceva vechi.
+  <FilesMatch "\.[0-9a-zA-Z_-]{8,}\.(js|css|wasm|woff2?|png|jpg|jpeg|webp|avif|svg)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # HTML-ul NU se cachează lung: e locul din care pleacă toate celelalte adrese,
+  # iar la o publicare nouă trebuie să se vadă imediat.
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=300, must-revalidate"
+  </FilesMatch>
+
+  # sitemap și robots: scurt, ca un motor de căutare să vadă schimbările repede
+  <FilesMatch "^(sitemap\.xml|robots\.txt)$">
+    Header set Cache-Control "public, max-age=3600"
+  </FilesMatch>
+</IfModule>
+
+# FONTURILE ȘI TEMATICILE sunt IMUTABILE prin conținut: un .ttf sau un .3mf nu se
+# modifică niciodată sub același nume — când se schimbă modelul, se schimbă fișierul.
+# Nu au hash în nume, deci regula de mai sus nu-i prinde; primesc una proprie.
+# Dacă vreodată înlocuiești un fișier PĂSTRÂNDU-I numele, redenumește-l, altfel
+# browserele vor servi luni de zile versiunea veche.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType font/ttf                          "access plus 1 year"
+  ExpiresByType font/otf                          "access plus 1 year"
+  ExpiresByType font/woff2                        "access plus 1 year"
+  ExpiresByType application/vnd.ms-package.3dmanufacturing-3dmodel+xml "access plus 1 year"
+</IfModule>
+<IfModule mod_headers.c>
+  <FilesMatch "^/?(fonts|tematici|base)/">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>
+
+# ── Tipuri de fișiere pe care serverul poate să nu le știe ──────────────────
+<IfModule mod_mime.c>
+  AddType application/wasm                        .wasm
+  AddType font/ttf                                .ttf
+  AddType font/otf                                .otf
+  AddType font/woff2                              .woff2
+  AddType image/avif                              .avif
+  AddType application/vnd.ms-package.3dmanufacturing-3dmodel+xml .3mf
+</IfModule>
+
+# ── Antete de securitate, minime și fără efecte secundare ──────────────────
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# ── Fișierele care nu se servesc niciodată ─────────────────────────────────
+<FilesMatch "(^\.|composer\.json|package\.json|\.env)">
+  Require all denied
+</FilesMatch>

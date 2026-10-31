@@ -1,0 +1,200 @@
+{
+  "id": "iphone-17-pro-max",
+  "brand": "Apple",
+  "model": "iPhone 17 Pro Max",
+  "an": 2025,
+  "corp": {
+    "lungime": 163.43,
+    "latime": 77.98,
+    "grosime": 8.75,
+    "razaColt": 19.43,
+    "profilMargine": "curbat",
+    "razaMuchie": 4.0,
+    "zonaIncarcare": {
+      "x": 0.0,
+      "y": -1.68,
+      "diametru": 57.5
+    },
+    "grosimeMaxHusaSpate": 2.1,
+    "note_muchie": "muchie rotunjită: profil lateral 1,50→4,38 (titan curbat), NU plat. razaMuchie 4,0 aprox din profil."
+  },
+  "ecran": {
+    "proeminentaFataDeCorp": 0.0
+  },
+  "insulaCamera": {
+    "forma": "bara-lata",
+    "x": 0.01,
+    "y": 57.72,
+    "latime": 75.9,
+    "inaltime": 45.9,
+    "razaColt": 11.3,
+    "razaEstimata": true,
+    "proeminenta": 2.55,
+    "lentile": [
+      {
+        "x": -24.62,
+        "y": 67.34,
+        "diametru": 16.2,
+        "proeminentaSuplimentara": 1.88,
+        "con": {
+          "unghi": 123.0,
+          "referinta": "sticla-fata",
+          "distanta": 8.29
+        }
+      },
+      {
+        "x": -24.62,
+        "y": 48.11,
+        "diametru": 16.2,
+        "proeminentaSuplimentara": 1.88,
+        "con": {
+          "unghi": 86.0,
+          "referinta": "sticla-fata",
+          "distanta": 7.59
+        }
+      },
+      {
+        "x": -6.63,
+        "y": 57.73,
+        "diametru": 16.2,
+        "proeminentaSuplimentara": 1.88,
+        "con": {
+          "unghi": 33.2,
+          "referinta": "sticla-fata",
+          "distanta": 3.51
+        }
+      }
+    ],
+    "blit": {
+      "x": 25.17,
+      "y": 67.9,
+      "diametru": 6.8,
+      "con": {
+        "unghi": 112.0,
+        "referinta": "sticla-fata",
+        "distanta": 8.35
+      }
+    }
+  },
+  "butoane": [
+    {
+      "tip": "actiune",
+      "latura": "dreapta",
+      "y": 47.44,
+      "lungime": 6.9,
+      "latime": 2.66,
+      "acoperibil": true
+    },
+    {
+      "tip": "volum+",
+      "latura": "dreapta",
+      "y": 33.29,
+      "lungime": 11.2,
+      "latime": 2.66,
+      "acoperibil": true
+    },
+    {
+      "tip": "volum-",
+      "latura": "dreapta",
+      "y": 19.09,
+      "lungime": 11.2,
+      "latime": 2.66,
+      "acoperibil": true
+    },
+    {
+      "tip": "pornire",
+      "latura": "stanga",
+      "y": 26.19,
+      "lungime": 17.7,
+      "latime": 2.66,
+      "acoperibil": true
+    },
+    {
+      "tip": "camera-control",
+      "latura": "stanga",
+      "y": -20.3,
+      "lungime": 8.75,
+      "latime": 3.13,
+      "acoperibil": false,
+      "keepout": {
+        "latime": 8.4,
+        "inaltime": 25.0,
+        "unghiDegajare": 55.0,
+        "razaColt": 2.2,
+        "subtire": {
+          "latime": 12.64,
+          "inaltime": 29.7,
+          "laDistanta": 0.4,
+          "unghiDegajare": 25.0
+        }
+      }
+    }
+  ],
+  "port": {
+    "latura": "jos",
+    "x": 0.0,
+    "latime": 12.45,
+    "inaltime": 6.6,
+    "tip": "usb-c"
+  },
+  "decupajeJos": [
+    {
+      "tip": "difuzor",
+      "x": 15.26,
+      "latime": 18.18
+    },
+    {
+      "tip": "microfon",
+      "x": -1.01,
+      "latime": 1.53
+    },
+    {
+      "tip": "difuzor",
+      "x": -15.25,
+      "latime": 18.19
+    }
+  ],
+  "decupajeSus": [
+    {
+      "tip": "microfon",
+      "x": 0.0,
+      "latime": 14.4
+    }
+  ],
+  "keepOut": [
+    {
+      "nume": "blitz pe platou",
+      "x": 25.17,
+      "y": 67.9,
+      "latime": 6.8,
+      "inaltime": 6.8,
+      "motiv": "blitz Ø6,80 pe dreapta platoului"
+    },
+    {
+      "nume": "microfon spate",
+      "x": 25.17,
+      "y": 57.73,
+      "latime": 1.15,
+      "inaltime": 1.15,
+      "motiv": "orificiu acustic Ø1,15"
+    },
+    {
+      "nume": "senzor spate",
+      "x": 25.17,
+      "y": 47.56,
+      "latime": 6.65,
+      "inaltime": 6.65,
+      "motiv": "rear sensor Ø6,65; nu se acoperă"
+    }
+  ],
+  "sursa": {
+    "document": "Apple Dimensional Drawings (developer.apple.com/accessories/dimensional-drawings)",
+    "fisier": "iphone-17-pro-max.pdf",
+    "versiune": "2025-09",
+    "foaie": "SHT 1 OF 4",
+    "pagina": 1
+  },
+  "verificat": false,
+  "verificatLa": null,
+  "note": "Coordonate din desen: origine centrul spatelui, X + spre dreapta PRIVIT DIN SPATE, Y + în sus. butoane[].latura din spate: volumul apare pe DREAPTA. CORECTAT din desen (poză utilizator arăta nepotrivire): muchie curbată (nu plat), butoane volum/acțiune pe STÂNGA, power+Camera Control pe DREAPTA (CC la Y −102,01, 8,75×3,13), difuzoare 5X+12X ports, port centrat. Platou lat citit anterior corect. razaEstimata pe insulă rămâne."
+}

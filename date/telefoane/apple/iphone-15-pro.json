@@ -1,0 +1,174 @@
+{
+  "id": "iphone-15-pro",
+  "brand": "Apple",
+  "model": "iPhone 15 Pro",
+  "an": 2023,
+  "corp": {
+    "lungime": 146.61,
+    "latime": 70.6,
+    "grosime": 8.25,
+    "razaColt": 17.24,
+    "profilMargine": "plat",
+    "razaMuchie": 2.41,
+    "grosimeMaxHusaSpate": 2.1,
+    "zonaIncarcare": {
+      "x": 0.0,
+      "y": -1.68,
+      "diametru": 57.5
+    }
+  },
+  "ecran": {
+    "proeminentaFataDeCorp": 0.0
+  },
+  "insulaCamera": {
+    "forma": "patrat",
+    "x": -12.17,
+    "y": 49.52,
+    "latime": 44.18,
+    "inaltime": 45.5,
+    "razaColt": 11.0,
+    "proeminenta": 2.05,
+    "lentile": [
+      {
+        "x": -21.13,
+        "y": 59.14,
+        "diametru": 16.2,
+        "proeminentaSuplimentara": 1.73,
+        "con": {
+          "unghi": 123.0,
+          "distanta": 8.29,
+          "referinta": "sticla-fata"
+        }
+      },
+      {
+        "x": -21.13,
+        "y": 39.9,
+        "diametru": 16.2,
+        "proeminentaSuplimentara": 1.73,
+        "con": {
+          "unghi": 86.0,
+          "distanta": 7.59,
+          "referinta": "sticla-fata"
+        }
+      },
+      {
+        "x": -3.14,
+        "y": 49.52,
+        "diametru": 16.2,
+        "proeminentaSuplimentara": 1.73,
+        "con": {
+          "unghi": 33.2,
+          "distanta": 3.51,
+          "referinta": "sticla-fata"
+        }
+      }
+    ],
+    "blit": {
+      "x": -3.14,
+      "y": 63.09,
+      "diametru": 6.92,
+      "con": {
+        "unghi": 112.0,
+        "distanta": 8.35,
+        "referinta": "sticla-fata"
+      }
+    }
+  },
+  "butoane": [
+    {
+      "tip": "actiune",
+      "latura": "dreapta",
+      "y": 41.64,
+      "lungime": 6.04,
+      "latime": 2.66,
+      "acoperibil": true,
+      "keepout": null
+    },
+    {
+      "tip": "volum+",
+      "latura": "dreapta",
+      "y": 28.09,
+      "lungime": 11.2,
+      "latime": 2.66,
+      "acoperibil": true,
+      "keepout": null
+    },
+    {
+      "tip": "volum-",
+      "latura": "dreapta",
+      "y": 13.89,
+      "lungime": 11.2,
+      "latime": 2.66,
+      "acoperibil": true,
+      "keepout": null
+    },
+    {
+      "tip": "pornire",
+      "latura": "stanga",
+      "y": 17.14,
+      "lungime": 17.7,
+      "latime": 2.66,
+      "acoperibil": true,
+      "keepout": null
+    }
+  ],
+  "port": {
+    "latura": "jos",
+    "x": 0.0,
+    "latime": 12.45,
+    "inaltime": 6.6,
+    "tip": "usb-c"
+  },
+  "decupajeJos": [
+    {
+      "tip": "microfon",
+      "x": 11.31,
+      "latime": 10.14
+    },
+    {
+      "tip": "microfon",
+      "x": -6.93,
+      "latime": 1.35
+    },
+    {
+      "tip": "difuzor",
+      "x": -15.71,
+      "latime": 10.37
+    }
+  ],
+  "decupajeSus": [
+    {
+      "tip": "microfon",
+      "x": 0.0,
+      "latime": 14.54
+    }
+  ],
+  "keepOut": [
+    {
+      "nume": "microfon spate",
+      "x": 2.65,
+      "y": 39.45,
+      "latime": 0.75,
+      "inaltime": 0.75,
+      "motiv": "orificiu acustic Ø0,75 în insula camerei; nu se acoperă"
+    },
+    {
+      "nume": "senzor LiDAR",
+      "x": -3.14,
+      "y": 36.69,
+      "latime": 14.37,
+      "inaltime": 14.37,
+      "motiv": "rear sensor keepout Ø14,37, la nivel cu platoul (SHT 2, Detail F); zonă circulară, nu se acoperă; con keepout 80,75° cu baza la 5,89 de sticla de acoperire"
+    }
+  ],
+  "sursa": {
+    "document": "Apple Dimensional Drawings (developer.apple.com/accessories/dimensional-drawings)",
+    "fisier": "iphone-15-pro.pdf",
+    "versiune": "2023-10-10",
+    "pagina": 1,
+    "foaie": "SHT 1 OF 3 (Detail A, B, C, D); receiver 14,54 pe SHT 1 Detail A"
+  },
+  "verificat": false,
+  "verificatLa": null,
+  "note": "Coordonate convertite din desen: origine în centrul spatelui, X + spre dreapta PRIVIT DIN SPATE, Y + în sus. `butoane[].latura` este de asemenea privit din spate: butoanele de volum (stânga privit din față) apar pe DREAPTA. Cote citite direct: 146,61 × 70,60 × 8,25; insula 1,04–45,22 (X) × 1,04–46,54 (Y); lentile 3× Ø16,20 la (14,17;-14,17), (14,17;-33,41), (32,16;-23,79); blitz Ø6,92 la (32,16;-10,22); platou 2,05, sticlă cameră 3,78. DERIVATE: razaColt 17,24 = capătul profilului spline (0,05/17,24 · 0,90/12,36 · 3,48/7,58 · 7,58/3,48 · 12,36/0,90 · 17,24/0,05); razaMuchie 2,41 (start of flat area), bandă plată ±1,84; razaColt insulă 11,00 MĂSURATĂ GRAFIC (necotată, ±1 mm); ecran 0,00 (grosimea include sticla). Lungimi butoane = 2 × jumătățile cotate (2X 3,02; 4X 5,60; 2X 8,85). Sertar SIM pe dreapta (privit din spate), centru Y −13,75, 16,14 × 2,76. Con keepout cameră 1: 123°, baza la 8,29 de sticla de acoperire; cameră 3 (tele) 33,2° la 3,51; blitz 112°/157° la 8,35. Grosime maximă husă pe spate 2,1 mm. LiDAR (rear sensor) Ø14,37 la (32,16;-36,62), la nivel cu platoul — adăugat ca keepOut circular; e în interiorul decupajului insulei, dar trebuie să rămână liber dacă vreodată buza intră în insulă."
+}

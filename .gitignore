@@ -1,0 +1,15 @@
+node_modules/
+dist/
+out/
+
+# cheia privata de licentiere — NU se comite niciodata
+.licenta/
+
+# configurarea formularului de contact: contine cheia secreta reCAPTCHA si nu intra in git
+config-magic3d.php
+
+# datele de conectare pentru publicare
+.env
+
+# arhivele de publicare, generate cu `npm run publica -- --arhiva`
+magic3d-*.zip

@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Custom 3D letter generator — Magic3D</title>
+<meta name="description" content="Eleven parametric generators for 3D letters, keychains, tags, gift boxes and lit signs. Configure in minutes, get print-ready 3MF files with a production sheet.">
+<meta name="author" content="Firg3D">
+<meta name="theme-color" content="#5b4dd1">
+<link rel="canonical" href="https://magic3d.ro/en/">
+<link rel="alternate" hreflang="en" href="https://magic3d.ro/en/">
+<link rel="alternate" hreflang="ro" href="https://magic3d.ro/">
+<link rel="alternate" hreflang="x-default" href="https://magic3d.ro/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Magic3D">
+<meta property="og:title" content="Custom 3D letter generator — Magic3D">
+<meta property="og:description" content="Eleven parametric generators that output print-ready files. Configure in minutes, print the same day.">
+<meta property="og:url" content="https://magic3d.ro/en/">
+<meta property="og:image" content="https://magic3d.ro/en/landing/og-landing-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Custom 3D letter generator — Magic3D">
+<meta name="twitter:description" content="Eleven parametric generators that output print-ready files. Configure in minutes, print the same day.">
+<link rel="stylesheet" href="/landing/landing.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://magic3d.ro/#org",
+      "name": "Firg3D",
+      "url": "https://magic3d.ro/",
+      "description": "Parametric 3D generators for producing personalised objects."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://magic3d.ro/#site",
+      "url": "https://magic3d.ro/",
+      "name": "Magic3D",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@id": "https://magic3d.ro/#org"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://magic3d.ro/?q={q}"
+        },
+        "query-input": "required name=q"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Magic3D",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Web",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@id": "https://magic3d.ro/#org"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "price": "",
+          "priceCurrency": "RON",
+          "name": "Commercial"
+        },
+        {
+          "@type": "Offer",
+          "price": "",
+          "priceCurrency": "RON",
+          "name": "Supporter"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does Magic3D produce?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Print-ready 3MF files, with the parts already oriented for the printer and laid out on beds. Alongside each export you get a production sheet in plain text, with the colour table, the assembly steps and a checklist to run before delivery."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to know 3D modelling?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. You pick the letter, the font and the dimensions from panels, and the geometry generates itself. There are no sketches, constraints or feature trees like in a CAD program."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When do I need a commercial licence?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When you sell what you make with the app — prints, physical objects or files. For your own projects, for family or as gifts, the app is free and complete. The licence does not unlock features; it grants the right to sell and gives you a licence number that appears on the production sheet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the supporter token?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is a way to back the development, not a licence. You get the token3d files to print yourself and a badge you can show in your renders. It does NOT grant commercial use: you stay in personal-use mode."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which printer does it work with?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Any FDM printer. The export is standard 3MF, opened by Bambu Studio, OrcaSlicer, PrusaSlicer and Cura. You choose the bed size in the app, and parts that don't fit are split across several beds automatically."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work offline?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. All generation runs locally, on your own computer. Nothing is sent to any server and you don't need a connection to work or to export."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the Praktik3D signature?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A small engraved marking reading praktik3d.ro, on the new generators — not on the letter ones, which stay free of any marking. It is how we sign our work on a free export. With the commercial licence you replace it with your own logo, or remove it."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="hd">
+  <a class="skip" href="#continut">Skip to content</a>
+  <div class="wrap hd-in">
+    <a class="logo" href="/en" aria-label="Magic3D">
+      <img src="/brand/magic3d-logo.svg" alt="Magic3D" width="150" height="36">
+    </a>
+    <nav class="nav" aria-label="Apps">
+      <a href="#aplicatii">Apps</a>
+      <a href="#cum">How it works</a>
+      <a href="#comparatie">Why not CAD</a>
+      <a href="#preturi">Pricing</a>
+      <a href="#intrebari">Questions</a>
+    </nav>
+    <div class="hd-act">
+      <a class="lang" href="/" hreflang="ro" lang="ro">Română</a>
+      <a class="btn btn-p" href="/litere.html?lang=en">Open the app</a>
+    </div>
+  </div>
+</header>
+<main id="continut">
+
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div class="hero-txt">
+        <h1>Turn a one-hour order into <em>three minutes</em>.</h1>
+        <p class="lead">A platform of parametric generators for 3D printing workshops. All eleven apps work right now, free for personal use, no account and no install.</p>
+        <div class="cta">
+          <a class="btn btn-p btn-lg" href="/litere.html?lang=en">Open for free →</a>
+          <a class="btn btn-g btn-lg" href="#cum">How it works</a>
+        </div>
+        <ul class="trust"><li><b>11/22</b><span>apps shipped</span></li><li><b data-numara="780000">0</b><span>combinations</span></li><li><b>3MF</b><span>print-ready</span></li></ul>
+      </div>
+      <div class="hero-demo" aria-hidden="true">
+        <img class="hero-img" src="/produse/litere-decor.png" alt="" width="1100" height="825" fetchpriority="high" decoding="async"
+          onerror="this.closest('.hero-demo').classList.add('fara-img')">
+        <div class="consola" data-consola data-nume='[&quot;Maria&quot;,&quot;Mateo&quot;,&quot;Andrei&quot;]'>
+          <div class="consola-ttl">Live generation</div>
+          <div class="consola-nume">Maria</div>
+          <dl class="consola-par"><div><dt>font</dt><dd data-par='[&quot;Alex Brush&quot;,&quot;Archivo Black&quot;,&quot;Pacifico&quot;]'>Alex Brush</dd></div><div><dt>depth</dt><dd data-par='[&quot;18 mm&quot;,&quot;25 mm&quot;,&quot;32 mm&quot;]'>18 mm</dd></div><div><dt>colour</dt><dd data-par='[&quot;blue&quot;,&quot;violet&quot;,&quot;amber&quot;]'>blue</dd></div><div><dt>base</dt><dd data-par='[&quot;none&quot;,&quot;flat&quot;,&quot;angled&quot;]'>none</dd></div></dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-alt">
+    <div class="wrap">
+      <h2 class="reveal">Three things you notice on the first order</h2>
+      <div class="grid-3"><div class="benef reveal"><h3>Time: hours → minutes</h3><p>Pick the letter, the font and the dimensions from panels. The geometry builds itself — no sketches, no constraints.</p></div><div class="benef reveal"><h3>Filament: fewer failed prints</h3><p>Parts are checked before export: the inlay fits, the wall holds, the letter stands on its own.</p></div><div class="benef reveal"><h3>Handover: anyone can print it</h3><p>Alongside the file you get a production sheet with the colour table and the assembly steps.</p></div></div>
+    </div>
+  </section>
+
+  <section class="sec" id="aplicatii">
+    <div class="wrap">
+      <h2 class="reveal">Thirteen generators, ready to use</h2>
+      <p class="sub reveal">Each product has its own screen, with exactly the controls it needs. No menus full of options that don't concern you.</p>
+      <div class="cards">
+        <a class="card" href="/litere.html?lang=en">
+    <div class="card-art"><img src="/produse/litere-decor.png" alt="Render of a 3D printed decorative letter" width="600" height="450" loading="lazy" decoding="async"></div>
+    <div class="card-b">
+      <span class="tag tag-ok">Available</span>
+      <h3>Decor Letters</h3>
+      <p>Letters with an engraved name and themed decorations, with an inlay pocket and base.</p>
+      <span class="card-link">Open the app →</span>
+    </div>
+  </a>
+        <a class="card" href="/nume.html?lang=en">
+    <div class="card-art"><img src="/produse/nume-3d.png" alt="A standing 3D printed cursive name" width="600" height="450" loading="lazy" decoding="async"></div>
+    <div class="card-b">
+      <span class="tag tag-ok">Available</span>
+      <h3>3D Names</h3>
+      <p>A whole name in cursive, with a coloured outline, standing on its own.</p>
+      <span class="card-link">Open the app →</span>
+    </div>
+  </a>
+        <a class="card" href="/brelocuri.html?lang=en">
+    <div class="card-art"><img src="/produse/brelocuri.png" alt="A personalised 3D printed name keychain" width="600" height="450" loading="lazy" decoding="async"></div>
+    <div class="card-b">
+      <span class="tag tag-ok">Available</span>
+      <h3>Keychains</h3>
+      <p>Keychains with a name or initial, a coloured plate and a hanging ring.</p>
+      <span class="card-link">Open the app →</span>
+    </div>
+  </a>
+        <a class="card" href="/breloc-decor.html?lang=en">
+    <div class="card-art"><img src="/produse/breloc-decor.png" alt="A keychain with the initial C and the name Cristi as a coloured inlay, with a hanging ring" width="600" height="450" loading="lazy" decoding="async"></div>
+    <div class="card-b">
+      <span class="tag tag-ok">Available</span>
+      <h3>Decor Keychains</h3>
+      <p>The initial as a tray, with the name as a coloured inlay set into it. A two-colour keychain with a hanging ring.</p>
+      <span class="card-link">Open the app →</span>
+    </div>
+  </a>
+        <a class="card" href="/fagure.html?lang=en">
+    <div class="card-art"><img src="/produse/litere-fagure.png" alt="A 3D printed honeycomb-filled letter" width="600" height="450" loading="lazy" decoding="async"></div>
+    <div class="card-b">
+      <span class="tag tag-ok">Available</span>
+      <h3>Honeycomb Letters</h3>
+      <p>Letters filled with a hexagonal, diagonal or triangular pattern.</p>
+      <span class="card-link">Open the app →</span>
+    </div>
+  </a>
+        <a class="card" href="/cutii.html?lang=en">
+    <div class="card-art"><img src="/produse/cutii-litere.png" alt="A 3D printed box-letter for arrangements" width="600" height="450" loading="lazy" decoding="async"></div>
+    <div class="card-b">
+      <span class="tag tag-ok">Available</span>
+      <h3>Letter Boxes</h3>
+      <p>Box-letters for flowers, artificial moss, sweets or gifts.</p>
+      <span class="card-link">Open the app →</span>
+    </div>
+  </a>
+        <a class="card" href="/cuvinte.html?lang=en">
+    <div class="card-art"><img src="/produse/cuvinte-decor.png" alt="A 3D printed decorative word with a symbol" width="600" height="450" loading="lazy" decoding="async"></div>
+    <div class="card-b">
+      <span class="tag tag-ok">Available</span>
+      <h3>Decor Words</h3>
+      <p>Words with joined letters and a symbol in place of a letter.</p>
+      <span class="card-link">Open the app →</span>
+    </div>
+  </a>
+        <a class="card" href="/led.html?lang=en">
+    <div class="card-art"><img src="/produse/litere-led.png" alt="A lit 3D printed LED letter" width="600" height="450" loading="lazy" decoding="async"></div>
+    <div class="card-b">
+      <span class="tag tag-ok">Available</span>
+      <h3>LED Letters</h3>
+      <p>A lit letter with an opaque body and a translucent face, with an LED strip.</p>
+      <span class="card-link">Open the app →</span>
+    </div>
+  </a>
+        <a class="card" href="/nume-led.html?lang=en">
+    <div class="card-art"><img src="/produse/nume-led.png" alt="The name Ana 3D printed, with an opaque body and a glowing translucent face" width="600" height="450" loading="lazy" decoding="async"></div>
+    <div class="card-b">
+      <span class="tag tag-ok">Available</span>
+      <h3>LED Names</h3>
+      <p>A whole name lit from within: opaque body, translucent face, and one LED strip running through the entire word.</p>
+      <span class="card-link">Open the app →</span>
+    </div>
+  </a>
+        <a class="card" href="/articulat.html?lang=en">
+    <div class="card-art"><img src="/produse/articulat.png" alt="A 3D printed articulated keychain with letters joined by hinges" width="600" height="450" loading="lazy" decoding="async"></div>
+    <div class="card-b">
+      <span class="tag tag-ok">Available</span>
+      <h3>Articulated Keychains</h3>
+      <p>A name made of letters joined by print-in-place hinges. Folds into your palm, prints in one piece.</p>
+      <span class="card-link">Open the app →</span>
+    </div>
+  </a>
+        <a class="card" href="/placute.html?lang=en">
+    <div class="card-art"><img src="/produse/placute.png" alt="A custom 3D printed tag with a chosen fastening" width="600" height="450" loading="lazy" decoding="async"></div>
+    <div class="card-b">
+      <span class="tag tag-ok">Available</span>
+      <h3>Tags &amp; Labels</h3>
+      <p>One app for keychains, cable tags, plant labels, glass markers or fridge magnets.</p>
+      <span class="card-link">Open the app →</span>
+    </div>
+  </a>
+        <a class="card" href="/rame.html?lang=en">
+    <div class="card-art"><img src="/produse/rame-tematice.png" alt="A 3D printed spider web frame with the name Maria, on an oval base" width="600" height="450" loading="lazy" decoding="async"></div>
+    <div class="card-b">
+      <span class="tag tag-ok">Available</span>
+      <h3>Themed Frames</h3>
+      <p>A spider web, star or heart with the name across it, standing on an oval base. Three pieces, three colours, no supports.</p>
+      <span class="card-link">Open the app →</span>
+    </div>
+  </a>
+        <a class="card card-soon" href="/en/token.html"><div class="card-art card-art-soon"><img src="/produse/brelocuri.png" alt="" width="600" height="450" loading="lazy" decoding="async"><span class="soon-badge">Coming Soon</span></div><div class="card-b">
+      <span class="tag tag-soon">Coming Soon</span>
+      <h3>New modules coming soon</h3>
+      <p>Back the work with a token — you unlock the next generators sooner.</p>
+      <span class="card-link">See the tokens →</span>
+    </div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-alt" id="cum">
+    <div class="wrap">
+      <h2 class="reveal">From idea to file, in three steps</h2>
+      <ol class="pasi"><li class="reveal"><span class="pas-n">1</span><h3>Configure</h3><p>Choose the character, the font, the height and the depth. Add an engraved name or a decoration from the library.</p></li><li class="reveal"><span class="pas-n">2</span><h3>Check</h3><p>The app measures on its own: contact between parts, wall thickness, stability, fit on the print bed.</p></li><li class="reveal"><span class="pas-n">3</span><h3>Export</h3><p>You get a 3MF with per-body colour, parts oriented for printing, plus the production sheet.</p></li></ol>
+    </div>
+  </section>
+
+  <section class="sec" id="comparatie">
+    <div class="wrap">
+      <h2 class="reveal">Why not just use a CAD program</h2>
+      <div class="tabel-wrap reveal">
+      <table class="cmp">
+        <thead><tr><th></th><th>CAD program</th><th class="cmp-noi">Magic3D</th></tr></thead>
+        <tbody><tr><th scope="row">To get started</th><td>Weeks of learning</td><td class="cmp-noi">Five minutes</td></tr><tr><th scope="row">A new letter</th><td>Sketch, constraints, extrude</td><td class="cmp-noi">One pick from a list</td></tr><tr><th scope="row">The inlay pocket</th><td>You build it by hand</td><td class="cmp-noi">Cut automatically, with adjustable clearance</td></tr><tr><th scope="row">Checking the part</th><td>By eye, or at the printer</td><td class="cmp-noi">Measured before export</td></tr><tr><th scope="row">Print preparation</th><td>You orient and arrange it</td><td class="cmp-noi">Oriented and laid out on beds</td></tr></tbody>
+      </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-academia" id="academia">
+    <div class="wrap">
+      <span class="ac-eticheta reveal">3D ACADEMY</span>
+      <h2 class="reveal">The 3D Academy. Free for everyone.</h2>
+      <p class="sub reveal">Four chapters on what goes wrong when you print and why, written in a workshop with 20 printers running daily. No account, no subscription, no email at the door. Written in Romanian for now.</p>
+      <div class="ac-grid reveal"><a class="ac-card" href="/en/academy/why-3d-prints-fail/"><span class="ac-card-nr">Chapter 1</span>
+      <h3>The first print that fails</h3>
+      <p>The seven defects that keep coming back, recognised by how the part looks. The real cause and the fix, for each one.</p>
+      <span class="card-link">Read →</span></a><a class="ac-card" href="/en/academy/which-filament-to-choose/"><span class="ac-card-nr">Chapter 2</span>
+      <h3>Which filament to choose</h3>
+      <p>One question settles it: where the object ends up. Why PLA gives up in a car in summer.</p>
+      <span class="card-link">Read →</span></a><a class="ac-card ac-card-soon" href="/en/academy/"><span class="ac-card-nr">Chapter 3</span>
+      <h3>Which printer to buy</h3>
+      <p>Three categories, not twenty models. What multicolour actually costs.</p>
+      <span class="tag tag-soon">Coming soon</span></a><a class="ac-card ac-card-soon" href="/en/academy/"><span class="ac-card-nr">Chapter 4</span>
+      <h3>From one piece to an order</h3>
+      <p>What changes at fifty pieces, and how to price so you are not working for free.</p>
+      <span class="tag tag-soon">Coming soon</span></a></div>
+      <div class="cta reveal">
+        <a class="btn btn-p btn-lg" href="/en/academy/">Enter the Academy →</a>
+        <a class="btn btn-g btn-lg" href="/en/academy/why-3d-prints-fail/">Start with the first chapter</a>
+      </div>
+      <p class="ac-semnatura reveal">Written by Firg3D Printing SRL - 20 printers, Bucharest, District 5, since 2022.</p>
+    </div>
+  </section>
+
+  <section class="sec sec-alt" id="parcurs">
+    <div class="wrap">
+      <h2 class="reveal">11 shipped, the platform is growing</h2>
+      <p class="sub reveal">The core is built and tested — font-to-geometry, the geometric checks, export, bed layout. Every new app stands on top of it, so they arrive faster and faster.</p>
+      <div class="prog reveal">
+        <strong>Platform status</strong>
+        <div class="bara"><i style="--p:50%"></i></div>
+        <div class="bara-lab"><span><b>11 of 22 · more on the way</b></span><span>version 1.0</span></div>
+        <div class="mile"><div class="m m-gata"><div class="m-s">Done</div><h4>The core</h4><p>Geometry, export, checks. 15 automated test suites.</p></div><div class="m m-gata"><div class="m-s">Done</div><h4>The first 7 apps</h4><p>Decor Letters, Keychains, Honeycomb Letters, Letter Boxes, LED Letters, 3D Names, Decor Words.</p></div><div class="m m-gata"><div class="m-s">Done</div><h4>Two more generators</h4><p>Articulated Keychains, with print-in-place hinges, and Tags &amp; Labels — now working.</p></div><div class="m "><div class="m-s">Next</div><h4>Windows app</h4><p>Local install, automatic updates, English interface.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="preturi">
+    <div class="wrap">
+      <h2 class="reveal">Free for you. Licensed, if you sell.</h2>
+      <p class="sub reveal">The app is complete either way. Nothing is locked behind a paywall and there is no watermark.</p>
+      <div class="preturi"><div class="pcard">
+      
+      <h3>Free</h3>
+      <p class="pcard-sub">Personal use</p>
+      <div class="pret"><b>0</b> RON</div>
+      <ul><li>All 12 apps</li><li>No account, no install</li><li>The letter generators: no marking at all</li><li>New generators carry the Praktik3D signature, discreetly engraved</li><li>Production sheet included</li></ul>
+      <a class="btn btn-g" href="/litere.html">Open the app</a>
+    </div><div class="pcard pcard-rec">
+      <span class="pcard-badge">Recommended</span>
+      <h3>Commercial</h3>
+      <p class="pcard-sub">You sell what you make</p>
+      <div class="pret"><b>149</b> RON<span>/one-time</span></div>
+      <ul><li>One-time purchase — no expiration</li><li>The right to sell, with no quantity limit</li><li>On any number of computers</li><li>Licence number on the production sheet</li><li>Your own logo instead of the signature, or no marking at all</li></ul>
+      <a class="btn btn-p" href="https://praktik3d.ro/cart/58784023282009:1?locale=en"
+          target="_blank" rel="noopener noreferrer">Buy the licence — 149 RON</a>
+        <a class="pcard-detalii" href="/en/token.html#comercial">see the details →</a>
+    </div><div class="pcard">
+      
+      <h3>Supporter</h3>
+      <p class="pcard-sub">You back the work</p>
+      <div class="pret"><b>15</b> RON<span>/one-off</span></div>
+      <ul><li>The token3d files, STL and 3MF</li><li>A supporter badge for your renders</li><li>Does NOT grant commercial rights</li><li>You stay in personal-use mode</li></ul>
+      <a class="btn btn-p" href="https://praktik3d.ro/cart/58784804766041:1?locale=en"
+          target="_blank" rel="noopener noreferrer">Buy the token — 15 RON</a>
+        <a class="pcard-detalii" href="/en/token.html#suporter">see the details →</a>
+    </div></div>
+      <p class="pret-v2 reveal">Any purchase — commercial or supporter — gets 25% off the Windows version, for purchases made before it launches. The code is sent to the order's email address.</p>
+      <p class="pret-incurajare reveal">Every licence or supporter token directly funds the next modules. Thank you for supporting Magic3D!</p>
+    </div>
+  </section>
+
+  <section class="sec sec-alt" id="intrebari">
+    <div class="wrap wrap-ingust">
+      <h2 class="reveal">What you want to know before you start</h2>
+      <div class="faq"><details class="reveal"><summary>What does Magic3D produce?</summary><div class="faq-a"><p>Print-ready 3MF files, with the parts already oriented for the printer and laid out on beds. Alongside each export you get a production sheet in plain text, with the colour table, the assembly steps and a checklist to run before delivery.</p></div></details><details class="reveal"><summary>Do I need to know 3D modelling?</summary><div class="faq-a"><p>No. You pick the letter, the font and the dimensions from panels, and the geometry generates itself. There are no sketches, constraints or feature trees like in a CAD program.</p></div></details><details class="reveal"><summary>When do I need a commercial licence?</summary><div class="faq-a"><p>When you sell what you make with the app — prints, physical objects or files. For your own projects, for family or as gifts, the app is free and complete. The licence does not unlock features; it grants the right to sell and gives you a licence number that appears on the production sheet.</p></div></details><details class="reveal"><summary>What is the supporter token?</summary><div class="faq-a"><p>It is a way to back the development, not a licence. You get the token3d files to print yourself and a badge you can show in your renders. It does NOT grant commercial use: you stay in personal-use mode.</p></div></details><details class="reveal"><summary>Which printer does it work with?</summary><div class="faq-a"><p>Any FDM printer. The export is standard 3MF, opened by Bambu Studio, OrcaSlicer, PrusaSlicer and Cura. You choose the bed size in the app, and parts that don't fit are split across several beds automatically.</p></div></details><details class="reveal"><summary>Does it work offline?</summary><div class="faq-a"><p>Yes. All generation runs locally, on your own computer. Nothing is sent to any server and you don't need a connection to work or to export.</p></div></details><details class="reveal"><summary>What is the Praktik3D signature?</summary><div class="faq-a"><p>A small engraved marking reading praktik3d.ro, on the new generators — not on the letter ones, which stay free of any marking. It is how we sign our work on a free export. With the commercial licence you replace it with your own logo, or remove it.</p></div></details></div>
+    </div>
+  </section>
+
+  <section class="sec sec-final">
+    <div class="wrap">
+      <div class="final reveal">
+        <h2>Free for you. Licensed, if you sell.</h2>
+        <p>All eleven apps work right now, with no account and no install. For your own projects they are free. If you sell what you make with them, you need a Commercial Licence.</p>
+        <a class="btn btn-p btn-lg" href="/litere.html?lang=en">Open Decor Letters →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="ft">
+  <div class="wrap ft-in">
+    <span><b>Magic3D powered by Firg3D · version 1.0</b></span>
+    <span>Local generation · 3MF export · production sheet included</span>
+    <span class="ft-lk"><a href="/en/contact/">Contact</a> · <a href="/en/token.html#comercial">Commercial licence</a> · <a href="/en/token.html#suporter">Supporter</a></span>
+  </div>
+</footer>
+<script type="module" src="/landing/landing.js"></script>
+</body>
+</html>

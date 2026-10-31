@@ -1,0 +1,190 @@
+{
+  "id": "iphone-16-pro",
+  "brand": "Apple",
+  "model": "iPhone 16 Pro",
+  "an": 2024,
+  "corp": {
+    "lungime": 149.61,
+    "latime": 71.45,
+    "grosime": 8.25,
+    "razaColt": 17.4,
+    "profilMargine": "plat",
+    "razaMuchie": 2.44,
+    "zonaIncarcare": {
+      "x": 0.0,
+      "y": 0.0,
+      "diametru": 57.5
+    },
+    "grosimeMaxHusaSpate": 2.1
+  },
+  "ecran": {
+    "proeminentaFataDeCorp": 0.0
+  },
+  "insulaCamera": {
+    "forma": "patrat",
+    "x": -12.6,
+    "y": 51.02,
+    "latime": 44.18,
+    "inaltime": 45.5,
+    "razaColt": 14.5,
+    "razaEstimata": true,
+    "proeminenta": 2.05,
+    "lentile": [
+      {
+        "x": -21.55,
+        "y": 60.64,
+        "diametru": 16.2,
+        "proeminentaSuplimentara": 1.85,
+        "con": {
+          "unghi": 123.0,
+          "referinta": "sticla-fata",
+          "distanta": 8.29
+        }
+      },
+      {
+        "x": -21.55,
+        "y": 41.4,
+        "diametru": 16.2,
+        "proeminentaSuplimentara": 1.85,
+        "con": {
+          "unghi": 86.0,
+          "referinta": "sticla-fata",
+          "distanta": 7.59
+        }
+      },
+      {
+        "x": -3.57,
+        "y": 51.02,
+        "diametru": 16.2,
+        "proeminentaSuplimentara": 1.85,
+        "con": {
+          "unghi": 33.2,
+          "referinta": "sticla-fata",
+          "distanta": 3.51
+        }
+      }
+    ],
+    "blit": {
+      "x": -3.57,
+      "y": 64.59,
+      "diametru": 6.92,
+      "con": {
+        "unghi": 112.0,
+        "referinta": "sticla-fata",
+        "distanta": 8.35
+      }
+    }
+  },
+  "butoane": [
+    {
+      "tip": "actiune",
+      "latura": "dreapta",
+      "y": 40.73,
+      "lungime": 6.9,
+      "latime": 2.66,
+      "acoperibil": true
+    },
+    {
+      "tip": "volum+",
+      "latura": "dreapta",
+      "y": 26.58,
+      "lungime": 11.2,
+      "latime": 2.66,
+      "acoperibil": true
+    },
+    {
+      "tip": "volum-",
+      "latura": "dreapta",
+      "y": 12.38,
+      "lungime": 11.2,
+      "latime": 2.66,
+      "acoperibil": true
+    },
+    {
+      "tip": "pornire",
+      "latura": "stanga",
+      "y": 19.48,
+      "lungime": 17.7,
+      "latime": 2.66,
+      "acoperibil": true
+    },
+    {
+      "tip": "camera-control",
+      "latura": "stanga",
+      "y": -23.38,
+      "lungime": 17.1,
+      "latime": 3.03,
+      "acoperibil": false,
+      "keepout": {
+        "latime": 8.4,
+        "unghiDegajare": 55.0,
+        "subtire": {
+          "latime": 12.64,
+          "unghiDegajare": 25.0,
+          "inaltime": 29.7,
+          "laDistanta": 0.4
+        },
+        "inaltime": 25.0
+      }
+    }
+  ],
+  "port": {
+    "latura": "jos",
+    "x": 0.0,
+    "latime": 12.45,
+    "inaltime": 6.6,
+    "tip": "usb-c"
+  },
+  "decupajeJos": [
+    {
+      "tip": "microfon",
+      "x": 11.48,
+      "latime": 10.44
+    },
+    {
+      "tip": "microfon",
+      "x": -6.91,
+      "latime": 1.35
+    },
+    {
+      "tip": "difuzor",
+      "x": -16.01,
+      "latime": 10.37
+    }
+  ],
+  "decupajeSus": [
+    {
+      "tip": "microfon",
+      "x": 0.0,
+      "latime": 14.02
+    }
+  ],
+  "keepOut": [
+    {
+      "nume": "microfon spate",
+      "x": 2.27,
+      "y": 40.67,
+      "latime": 0.75,
+      "inaltime": 0.75,
+      "motiv": "orificiu acustic Ø0,75 pe platou; nu se acoperă"
+    },
+    {
+      "nume": "senzor LiDAR",
+      "x": 2.27,
+      "y": 33.25,
+      "latime": 6.65,
+      "inaltime": 6.65,
+      "motiv": "rear sensor keepout Ø~6,65 la nivel cu platoul; nu se acoperă"
+    }
+  ],
+  "sursa": {
+    "document": "Apple Dimensional Drawings (developer.apple.com/accessories/dimensional-drawings)",
+    "fisier": "iphone-16-pro.pdf",
+    "versiune": "2024-09-19",
+    "foaie": "SHT 1 OF 4; Camera Control keepout SHT 2",
+    "pagina": 1
+  },
+  "verificat": false,
+  "verificatLa": null,
+  "note": "Coordonate din desen: origine centrul spatelui, X + spre dreapta PRIVIT DIN SPATE, Y + în sus. butoane[].latura tot din spate: volumul (stânga din față) apare pe DREAPTA. Corp 149,61×71,45×8,25. Platou pătrat 1,04–45,22 × 1,04–46,54 (ca 15 Pro dar corp 71,45 lat). 3× Ø16,20 la (14,17;-14,17),(14,17;-33,41),(32,16;-23,79); blitz Ø6,92 la (32,16;-10,22); mic Ø0,75 la (38,00;-34,14); LiDAR la (38,00;-41,56). Platou 2,05, sticlă cameră 4,28. razaColt corp 17,40 (spline), razaMuchie 2,44 (start of flat area). razaColt insulă 14,50 = anvelopă lentile (estimată). Camera Control keepout 25×8,4 la suprafață. Grosime max husă spate 2,1 mm."
+}

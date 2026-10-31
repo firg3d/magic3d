@@ -1,0 +1,175 @@
+{
+  "id": "iphone-13-pro",
+  "brand": "Apple",
+  "model": "iPhone 13 Pro",
+  "an": 2021,
+  "corp": {
+    "lungime": 146.71,
+    "latime": 71.54,
+    "grosime": 7.65,
+    "razaColt": 3.8,
+    "profilMargine": "plat",
+    "razaMuchie": 2.41,
+    "grosimeMaxHusaSpate": 2.1,
+    "zonaIncarcare": {
+      "x": 0.0,
+      "y": 0.0,
+      "diametru": 57.5
+    }
+  },
+  "ecran": {
+    "proeminentaFataDeCorp": 0.0
+  },
+  "insulaCamera": {
+    "forma": "patrat",
+    "x": -13.95,
+    "y": 50.97,
+    "latime": 35.31,
+    "inaltime": 36.45,
+    "razaColt": 10.95,
+    "razaEstimata": true,
+    "proeminenta": 1.15,
+    "lentile": [
+      {
+        "x": -22.34,
+        "y": 59.93,
+        "diametru": 15.53,
+        "proeminentaSuplimentara": 1.73,
+        "con": {
+          "unghi": 123.0,
+          "distanta": 8.29,
+          "referinta": "sticla-fata"
+        }
+      },
+      {
+        "x": -22.34,
+        "y": 42.01,
+        "diametru": 15.53,
+        "proeminentaSuplimentara": 1.73,
+        "con": {
+          "unghi": 86.0,
+          "distanta": 7.59,
+          "referinta": "sticla-fata"
+        }
+      },
+      {
+        "x": -5.69,
+        "y": 50.97,
+        "diametru": 15.8,
+        "proeminentaSuplimentara": 1.73,
+        "con": {
+          "unghi": 33.2,
+          "distanta": 3.51,
+          "referinta": "sticla-fata"
+        }
+      }
+    ],
+    "blit": {
+      "x": -5.69,
+      "y": 63.94,
+      "diametru": 6.28,
+      "con": {
+        "unghi": 112.0,
+        "distanta": 8.35,
+        "referinta": "sticla-fata"
+      }
+    },
+    "note_insula": "anvelopa lentilelor+blitz+1,5mm (Pro, fără platou dreptunghiular cotat)"
+  },
+  "butoane": [
+    {
+      "tip": "mut",
+      "latura": "dreapta",
+      "y": 47.37,
+      "lungime": 5.7,
+      "latime": 2.85,
+      "acoperibil": false
+    },
+    {
+      "tip": "volum+",
+      "latura": "dreapta",
+      "y": 34.05,
+      "lungime": 11.3,
+      "latime": 2.76,
+      "acoperibil": true
+    },
+    {
+      "tip": "volum-",
+      "latura": "dreapta",
+      "y": 20.05,
+      "lungime": 11.3,
+      "latime": 2.76,
+      "acoperibil": true
+    },
+    {
+      "tip": "pornire",
+      "latura": "stanga",
+      "y": 20.83,
+      "lungime": 18.14,
+      "latime": 2.76,
+      "acoperibil": true
+    }
+  ],
+  "port": {
+    "latura": "jos",
+    "x": 0.0,
+    "latime": 12.45,
+    "inaltime": 6.6,
+    "tip": "lightning"
+  },
+  "decupajeJos": [
+    {
+      "tip": "microfon",
+      "x": -9.0,
+      "latime": 10.0
+    },
+    {
+      "tip": "difuzor",
+      "x": -42.0,
+      "latime": 11.0
+    }
+  ],
+  "decupajeSus": [
+    {
+      "tip": "microfon",
+      "x": 0.0,
+      "latime": 14.4
+    }
+  ],
+  "keepOut": [
+    {
+      "nume": "blitz pe platou",
+      "x": -5.69,
+      "y": 63.94,
+      "latime": 6.28,
+      "inaltime": 6.28,
+      "motiv": "blitz pe platou; decupaj separat"
+    },
+    {
+      "nume": "microfon spate",
+      "x": -0.77,
+      "y": 45.36,
+      "latime": 1.15,
+      "inaltime": 1.15,
+      "motiv": "orificiu acustic; nu se acoperă"
+    },
+    {
+      "nume": "senzor LiDAR",
+      "x": -5.69,
+      "y": 39.38,
+      "latime": 10.0,
+      "inaltime": 10.0,
+      "motiv": "rear sensor keepout, la nivel cu platoul; nu se acoperă"
+    }
+  ],
+  "sursa": {
+    "document": "Apple Dimensional Drawings (developer.apple.com/accessories/dimensional-drawings)",
+    "fisier": "iphone-13-pro.pdf",
+    "versiune": "2021-09",
+    "pagina": 1,
+    "foaie": "SHT 1 OF 3"
+  },
+  "verificat": false,
+  "verificatLa": null,
+  "note": "Coordonate din desen: origine centrul spatelui, X + spre dreapta PRIVIT DIN SPATE, Y + în sus. butoane[].latura din spate: volumul pe DREAPTA. 3 lentile Ø15,53/15,80 la (13,43;-13,43),(13,43;-31,35),(30,08;-22,39); blitz la (30,08;-9,42); mic Ø1,15. razaColt R3,80. platou 1,15. LiDAR ~Ø10 estimat."
+}

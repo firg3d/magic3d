@@ -1,0 +1,160 @@
+{
+  "id": "fictiv",
+  "brand": "_test",
+  "model": "Model fictiv de dezvoltare",
+  "an": 2026,
+  "fictiv": true,
+  "corp": {
+    "lungime": 147,
+    "latime": 71.5,
+    "grosime": 7.8,
+    "razaColt": 11,
+    "profilMargine": "plat",
+    "razaMuchie": 1.5,
+    "grosimeMaxHusaSpate": 2.1,
+    "zonaIncarcare": {
+      "x": 0.0,
+      "y": 0.0,
+      "diametru": 56.0
+    }
+  },
+  "ecran": {
+    "proeminentaFataDeCorp": 0.3
+  },
+  "insulaCamera": {
+    "forma": "patrat",
+    "x": -18.5,
+    "y": 48,
+    "latime": 32,
+    "inaltime": 32,
+    "razaColt": 8,
+    "proeminenta": 2.2,
+    "lentile": [
+      {
+        "x": -25.5,
+        "y": 55,
+        "diametru": 13.5,
+        "proeminentaSuplimentara": 0.6,
+        "con": {
+          "unghi": 120.0,
+          "distanta": 8.5,
+          "referinta": "sticla-fata"
+        }
+      },
+      {
+        "x": -11.5,
+        "y": 41,
+        "diametru": 13.5,
+        "proeminentaSuplimentara": 0.6,
+        "con": {
+          "unghi": 85.0,
+          "distanta": 7.0,
+          "referinta": "sticla-fata"
+        }
+      }
+    ],
+    "blit": {
+      "x": -11.5,
+      "y": 55,
+      "diametru": 5,
+      "con": {
+        "unghi": 112.0,
+        "distanta": 8.0,
+        "referinta": "sticla-fata"
+      }
+    }
+  },
+  "butoane": [
+    {
+      "tip": "pornire",
+      "latura": "dreapta",
+      "y": 22,
+      "lungime": 22,
+      "latime": 3,
+      "acoperibil": true,
+      "keepout": null
+    },
+    {
+      "tip": "volum+",
+      "latura": "stanga",
+      "y": 30,
+      "lungime": 16,
+      "latime": 3,
+      "acoperibil": true,
+      "keepout": null
+    },
+    {
+      "tip": "volum-",
+      "latura": "stanga",
+      "y": 10,
+      "lungime": 16,
+      "latime": 3,
+      "acoperibil": true,
+      "keepout": null
+    },
+    {
+      "tip": "actiune",
+      "latura": "stanga",
+      "y": 46,
+      "lungime": 9,
+      "latime": 3,
+      "acoperibil": false,
+      "keepout": {
+        "latime": 16,
+        "inaltime": 7,
+        "razaColt": 2,
+        "unghiDegajare": 55,
+        "subtire": {
+          "latime": 20,
+          "inaltime": 10.5,
+          "laDistanta": 0.4,
+          "unghiDegajare": 25
+        }
+      }
+    }
+  ],
+  "port": {
+    "latura": "jos",
+    "x": 0,
+    "latime": 9.5,
+    "inaltime": 3.2,
+    "tip": "usb-c"
+  },
+  "decupajeJos": [
+    {
+      "tip": "difuzor",
+      "x": 18,
+      "latime": 14
+    },
+    {
+      "tip": "microfon",
+      "x": -18,
+      "latime": 6
+    }
+  ],
+  "decupajeSus": [
+    {
+      "tip": "microfon",
+      "x": 0,
+      "latime": 4
+    }
+  ],
+  "keepOut": [
+    {
+      "nume": "antena jos",
+      "x": 0,
+      "y": -70,
+      "latime": 60,
+      "inaltime": 4,
+      "motiv": "banda de antena"
+    }
+  ],
+  "sursa": {
+    "document": "(fictiv — nu are sursa)",
+    "versiune": "-",
+    "pagina": 0
+  },
+  "verificat": false,
+  "verificatLa": null,
+  "note": "Model FICTIV, pentru dezvoltare si teste. Nu corespunde niciunui telefon real."
+}
