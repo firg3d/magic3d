@@ -30,6 +30,8 @@ import { IconTagPanel } from "@/components/workplane/IconTagPanel";
 import { DESCHIDE_LOGO, logoAsset } from "@/magic3d/logo/asset";
 import { construiesteLogo, siluetaCaCorp } from "@/magic3d/logo/constructie";
 import { LogoPanel, type CreeazaLogo } from "@/magic3d/logo/LogoPanel";
+import type { CreeazaTermo } from "@/magic3d/termo/TermoSectiune";
+import { tt } from "@/magic3d/termo/texte";
 import type { CreeazaRelief } from "@/magic3d/logo/ReliefSectiune";
 import type { CreeazaPiesa } from "@/magic3d/logo/MasuratoriSectiune";
 import { tl } from "@/magic3d/logo/texte";
@@ -9445,6 +9447,15 @@ export function LayerlingEditor({
     return { id: shape.id, nume };
   }, [commitShapes]);
 
+  /** Magic3D "Termoformare din poză": plasa si cele doua matrite ca un pachet; apasat din nou, inlocuieste ce a pus panoul. */
+  const creeazaTermo = useCallback<CreeazaTermo>(async (piese, nume, meta, inlocuieste) => {
+    const vechi = inlocuieste ? shapesRef.current.find((shape) => shape.id === inlocuieste) ?? null : null;
+    const shape = pachetGenerat(piese, nume, meta, null);
+    const next = vechi ? shapesRef.current.map((entry) => (entry.id === vechi.id ? shape : entry)) : [...shapesRef.current, shape];
+    commitShapes(next, [shape.id], tt("adaugat", { nume }));
+    return { id: shape.id, nume };
+  }, [commitShapes]);
+
   /** The settings the last cutter was built with, so the next one starts from them; the defaults where none are kept. */
   const storedCookieCutterSettings = useCallback((): CookieCutterSettings => {
     try {
@@ -15431,7 +15442,7 @@ export function LayerlingEditor({
       {iconTagPanelOpen && !historyViewState ? (
         <IconTagPanel onClose={() => setIconTagPanelOpen(false)} onCreate={createIconTag} />
       ) : null}
-      {logoPanelOpen && !historyViewState ? <LogoPanel onClose={() => setLogoPanelOpen(false)} onCreate={creeazaLogo} onCreateRelief={creeazaRelief} onCreatePiesa={creeazaPiesa} /> : null}
+      {logoPanelOpen && !historyViewState ? <LogoPanel onClose={() => setLogoPanelOpen(false)} onCreate={creeazaLogo} onCreateRelief={creeazaRelief} onCreatePiesa={creeazaPiesa} onCreateTermo={creeazaTermo} /> : null}
       {qrCodePanelOpen && !historyViewState ? (
         <QrCodePanel onClose={() => setQrCodePanelOpen(false)} onCreate={createQrCode} />
       ) : null}

@@ -14,6 +14,8 @@ import { ReliefSectiune, type CreeazaRelief } from "@/magic3d/logo/ReliefSectiun
 import { caleSvg } from "@/magic3d/logo/profil";
 import { OPTIUNI_IMPLICITE, type OptiuniTrasare, type TrasareLogo } from "@/magic3d/logo/trasare";
 import { tl, type CheieLogo } from "@/magic3d/logo/texte";
+import { TermoSectiune, type CreeazaTermo } from "@/magic3d/termo/TermoSectiune";
+import { tt } from "@/magic3d/termo/texte";
 
 /*
  * Panoul "Din poză sau logo": 1. imaginea si conturul (in workerul logo.worker.ts, cu
@@ -28,9 +30,9 @@ type Sursa = { fisier: Blob } | { pixeli: RasterPixels };
 
 const ACCEPTA = ".svg,.png,.jpg,.jpeg,image/svg+xml,image/png,image/jpeg";
 
-export function LogoPanel({ onClose, onCreate, onCreateRelief, onCreatePiesa }: { onClose: () => void; onCreate: CreeazaLogo; onCreateRelief: CreeazaRelief; onCreatePiesa: CreeazaPiesa }) {
+export function LogoPanel({ onClose, onCreate, onCreateRelief, onCreatePiesa, onCreateTermo }: { onClose: () => void; onCreate: CreeazaLogo; onCreateRelief: CreeazaRelief; onCreatePiesa: CreeazaPiesa; onCreateTermo: CreeazaTermo }) {
   useLanguage();
-  const [fila, setFila] = useState<"logo" | "relief" | "masuratori">("logo");
+  const [fila, setFila] = useState<"logo" | "relief" | "termo" | "masuratori">("logo");
   const inputRef = useRef<HTMLInputElement>(null);
   const [numeFisier, setNumeFisier] = useState("");
   const [sursa, setSursa] = useState<Sursa | null>(null);
@@ -122,9 +124,9 @@ export function LogoPanel({ onClose, onCreate, onCreateRelief, onCreatePiesa }: 
         </header>
         <div className="top-action-body" data-testid="logo-panel" onKeyDown={(event) => event.key === "Escape" && onClose()}>
           <div className="logo-file" role="tablist" aria-label={tl("titlu")}>
-            {(["logo", "relief", "masuratori"] as const).map((cheie) => (
+            {(["logo", "relief", "termo", "masuratori"] as const).map((cheie) => (
               <button key={cheie} type="button" role="tab" aria-selected={fila === cheie} data-testid={`logo-fila-${cheie}`} className={fila === cheie ? "activ" : ""} onClick={() => setFila(cheie)}>
-                {cheie === "logo" ? tl("filaLogo") : cheie === "relief" ? tl("filaRelief") : tl("filaMasuratori")}
+                {cheie === "logo" ? tl("filaLogo") : cheie === "relief" ? tl("filaRelief") : cheie === "termo" ? tt("fila") : tl("filaMasuratori")}
               </button>
             ))}
           </div>
@@ -268,6 +270,9 @@ export function LogoPanel({ onClose, onCreate, onCreateRelief, onCreatePiesa }: 
           </div>
           <div hidden={fila !== "relief"}>
             <ReliefSectiune onCreate={onCreateRelief} />
+          </div>
+          <div hidden={fila !== "termo"}>
+            <TermoSectiune onCreate={onCreateTermo} />
           </div>
           <div hidden={fila !== "masuratori"}>
             <MasuratoriSectiune onCreate={onCreatePiesa} />
