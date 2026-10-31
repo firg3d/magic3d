@@ -1,0 +1,61 @@
+{
+  "name": "magic3d-desktop",
+  "productName": "Magic3D",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Magic3D - editor CAD 3D gratuit pentru printare 3D, ca aplicatie Windows",
+  "author": "Firg3D Printing <contact@firg3d.com>",
+  "homepage": "https://magic3d.ro",
+  "license": "AGPL-3.0-only",
+  "main": "main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "dist": "node build-installer.mjs"
+  },
+  "devDependencies": {
+    "electron": "44.8.0",
+    "electron-builder": "26.17.0"
+  },
+  "build": {
+    "appId": "ro.magic3d.editor",
+    "productName": "Magic3D",
+    "copyright": "Magic3D (Praktik3D), pe baza layerling. AGPL-3.0-only.",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.cjs"
+    ],
+    "extraResources": [
+      {
+        "from": "../web/.next-export",
+        "to": "site",
+        "filter": [
+          "**/*",
+          "!**/*.php",
+          "!**/.htaccess",
+          "!oferta/config-oferta.example.php"
+        ]
+      },
+      {
+        "from": "../../LICENSE",
+        "to": "LICENSE.txt"
+      }
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.png",
+      "artifactName": "Magic3D-Setup-${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Magic3D",
+      "license": "../../LICENSE"
+    }
+  }
+}
