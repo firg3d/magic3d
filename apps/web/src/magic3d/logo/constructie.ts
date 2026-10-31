@@ -30,10 +30,10 @@ import { tl } from "@/magic3d/logo/texte";
 const MARGINE = 4;
 const r3 = (valoare: number) => Math.round(valoare * 1000) / 1000;
 
-type Cutie = { nume: string; culoare: string; latime: number; adancime: number; inaltime: number; x?: number; z?: number; elevatie?: number; colturi?: number; gaura?: boolean; tip?: "roundedBox" | "cylinder" };
+export type Cutie = { nume: string; culoare: string; latime: number; adancime: number; inaltime: number; x?: number; z?: number; elevatie?: number; colturi?: number; gaura?: boolean; tip?: "roundedBox" | "cylinder" | "cone"; rotatieX?: number; razaJos?: number; razaSus?: number };
 
-/** O forma simpla a editorului (cutie rotunjita sau cilindru), ca in keyringTabAt. */
-function forma(cutie: Cutie): WorkplaneShape {
+/** O forma simpla a editorului (cutie rotunjita, cilindru sau con), ca in keyringTabAt. Folosita si de piesele din masuratori. */
+export function forma(cutie: Cutie): WorkplaneShape {
   const tip = cutie.tip ?? "roundedBox";
   return canonicalizeShape({
     id: createLocalId("logo"),
@@ -47,6 +47,8 @@ function forma(cutie: Cutie): WorkplaneShape {
     z: r3(cutie.z ?? 0),
     elevation: r3(cutie.elevatie ?? 0),
     rotation: 0,
+    ...(cutie.rotatieX ? { rotationX: cutie.rotatieX } : {}),
+    ...(tip === "cone" ? { baseRadius: r3(cutie.razaJos ?? cutie.latime / 2), topRadius: r3(cutie.razaSus ?? 0) } : {}),
     width: r3(cutie.latime),
     depth: r3(cutie.adancime),
     height: r3(cutie.inaltime),

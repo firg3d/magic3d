@@ -324,3 +324,128 @@ html[data-theme="dark"] .logo-file button.activ {
 .relief-avertisment {
   color: #9a6700;
 }
+
+/* Fila "Din masuratori": desenul cu cote, masurile de pe piesa, scanarea. */
+.piese-desen {
+  margin: 10px 0;
+  padding: 8px;
+  border: 1px solid var(--border, #d6dedb);
+  border-radius: 12px;
+  background: color-mix(in srgb, #1f8a5b 4%, transparent);
+}
+
+.desen-piesa {
+  display: block;
+  width: 100%;
+  max-height: 170px;
+}
+
+.desen-corp > * {
+  fill: color-mix(in srgb, #1f8a5b 18%, #ffffff);
+  stroke: #3b4a43;
+  stroke-width: 1.4;
+}
+
+.desen-corp .desen-tub {
+  fill: none;
+  stroke: #9aa7a0;
+  stroke-dasharray: 4 3;
+}
+
+.desen-corp .desen-ax {
+  fill: none;
+  stroke: #9aa7a0;
+  stroke-dasharray: 6 3 1 3;
+}
+
+.desen-corp .desen-gaura {
+  fill: #ffffff;
+}
+
+.desen-cota line {
+  stroke: #5b6b63;
+  stroke-width: 1;
+}
+
+.desen-cota text {
+  fill: #3b4a43;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.desen-piesa marker path {
+  fill: #5b6b63;
+}
+
+.desen-cota.activa line {
+  stroke: #1f8a5b;
+  stroke-width: 2;
+}
+
+.desen-cota.activa text {
+  fill: #1f8a5b;
+  font-size: 14px;
+}
+
+.piese-masuri {
+  margin: 8px 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: color-mix(in srgb, #1f8a5b 8%, transparent);
+  font-size: 13px;
+}
+
+.piese-masuri ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
+}
+
+.piese-masuri small {
+  color: var(--muted-strong);
+}
+
+.piese-scanare {
+  width: 100%;
+  justify-content: center;
+  margin-top: 14px;
+  border-style: dashed;
+}
+
+.logo-lat {
+  grid-column: 1 / -1;
+}
+
+.logo-camp input[type="tel"],
+.logo-camp textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 6px 8px;
+  border: 1px solid var(--border, #d6dedb);
+  border-radius: 8px;
+  background: var(--panel-bg, #ffffff);
+  color: inherit;
+  font: inherit;
+  font-weight: 500;
+}
+
+html[data-theme="dark"] .logo-camp input[type="tel"],
+html[data-theme="dark"] .logo-camp textarea {
+  border-color: #2c3a33;
+  background: #151c19;
+  color: #e8efeb;
+}
+
+html[data-theme="dark"] .desen-corp > * {
+  fill: #1d3329;
+  stroke: #b8c6bf;
+}
+
+html[data-theme="dark"] .desen-cota line,
+html[data-theme="dark"] .desen-piesa marker path {
+  stroke: #b8c6bf;
+  fill: #b8c6bf;
+}
+
+html[data-theme="dark"] .desen-cota text {
+  fill: #e8efeb;
+}

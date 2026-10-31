@@ -31,6 +31,7 @@ import { DESCHIDE_LOGO, logoAsset } from "@/magic3d/logo/asset";
 import { construiesteLogo, siluetaCaCorp } from "@/magic3d/logo/constructie";
 import { LogoPanel, type CreeazaLogo } from "@/magic3d/logo/LogoPanel";
 import type { CreeazaRelief } from "@/magic3d/logo/ReliefSectiune";
+import type { CreeazaPiesa } from "@/magic3d/logo/MasuratoriSectiune";
 import { tl } from "@/magic3d/logo/texte";
 import { QrCodePanel } from "@/components/workplane/QrCodePanel";
 import { meshBounds } from "@/lib/exportUnion";
@@ -9427,6 +9428,14 @@ export function LayerlingEditor({
     return { id: obiect.id, nume: obiect.name };
   }, [commitShapes, makeCookieCutter]);
 
+  /** Magic3D "Din masuratori": piesa ca grup pe mijlocul placii; apasat din nou, inlocuieste ce a pus panoul. */
+  const creeazaPiesa = useCallback<CreeazaPiesa>(async (forma, inlocuieste) => {
+    const vechi = inlocuieste ? shapesRef.current.find((shape) => shape.id === inlocuieste) ?? null : null;
+    const next = vechi ? shapesRef.current.map((entry) => (entry.id === vechi.id ? forma : entry)) : [...shapesRef.current, forma];
+    commitShapes(next, [forma.id], tl("adaugat", { nume: forma.name }));
+    return { id: forma.id, nume: forma.name };
+  }, [commitShapes]);
+
   /** Magic3D "Poza -> relief / litofanie": triunghiurile din worker ca un corp, ca la generatoare; apasat din nou, inlocuieste ce a pus panoul. */
   const creeazaRelief = useCallback<CreeazaRelief>(async (positions, nume, culoare, meta, inlocuieste) => {
     const vechi = inlocuieste ? shapesRef.current.find((shape) => shape.id === inlocuieste) ?? null : null;
@@ -15422,7 +15431,7 @@ export function LayerlingEditor({
       {iconTagPanelOpen && !historyViewState ? (
         <IconTagPanel onClose={() => setIconTagPanelOpen(false)} onCreate={createIconTag} />
       ) : null}
-      {logoPanelOpen && !historyViewState ? <LogoPanel onClose={() => setLogoPanelOpen(false)} onCreate={creeazaLogo} onCreateRelief={creeazaRelief} /> : null}
+      {logoPanelOpen && !historyViewState ? <LogoPanel onClose={() => setLogoPanelOpen(false)} onCreate={creeazaLogo} onCreateRelief={creeazaRelief} onCreatePiesa={creeazaPiesa} /> : null}
       {qrCodePanelOpen && !historyViewState ? (
         <QrCodePanel onClose={() => setQrCodePanelOpen(false)} onCreate={createQrCode} />
       ) : null}

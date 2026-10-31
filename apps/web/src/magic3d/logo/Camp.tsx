@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { parseMeasurementInput } from "@/lib/measurementUnits";
 
 /** Un camp de masura: text, citit ca in restul editorului (virgula, punct, fractii, sume), tinut in limite cand e parasit. */
-export function Camp({ eticheta, valoare, limite, unitate = "mm", onChange, testid }: { eticheta: string; valoare: number; limite: readonly [number, number]; unitate?: string; onChange: (v: number) => void; testid: string }) {
+export function Camp({ eticheta, valoare, limite, unitate = "mm", onChange, testid, onActiv }: { eticheta: string; valoare: number; limite: readonly [number, number]; unitate?: string; onChange: (v: number) => void; testid: string; onActiv?: (activ: boolean) => void }) {
   const [text, setText] = useState(String(valoare));
   const editez = useRef(false);
   // Cat timp se scrie in camp, textul e al omului ("5," ramane "5,"); altfel urmeaza valoarea (alta iesire aleasa).
@@ -30,9 +30,11 @@ export function Camp({ eticheta, valoare, limite, unitate = "mm", onChange, test
           }}
           onFocus={() => {
             editez.current = true;
+            onActiv?.(true);
           }}
           onBlur={() => {
             editez.current = false;
+            onActiv?.(false);
             setText(String(valoare));
           }}
         />
