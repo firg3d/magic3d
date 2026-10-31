@@ -12,8 +12,8 @@ import type { Magic3dGenerat, PiesaGenerata } from "@/magic3d/generatoare/tipuri
  * generatorul sa poata fi redeschis cu aceleasi valori.
  */
 
-/** O piesa ca forma mesh, in acelasi cadru ca restul pieselor (centrul comun in X/Z, baza la Y=0). */
-function corp(piesa: PiesaGenerata, centruX: number, centruZ: number, minY: number): WorkplaneShape | null {
+/** O piesa ca forma mesh, in acelasi cadru ca restul pieselor (centrul comun in X/Z, baza la Y=0). Folosita si de "Din poză sau logo". */
+export function corp(piesa: PiesaGenerata, centruX: number, centruZ: number, minY: number): WorkplaneShape | null {
   const bounds = boundsForPositions(Array.from(piesa.positions));
   if (!bounds) return null;
   const cx = (bounds.minX + bounds.maxX) / 2;

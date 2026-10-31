@@ -7,17 +7,23 @@ import type { TextLayer } from "@/lib/textLayers";
 import { canonicalizeShape } from "@/lib/workplaneShapes";
 import type { SketchProfile, WorkplaneShape } from "@/types/layerling";
 import { LOGO, type SetariIesire } from "@/magic3d/logo/config";
-import { cadruLogo, profilDinInele, type CadruLogo } from "@/magic3d/logo/profil";
+import { getManifoldRuntime } from "@/lib/editorMeshCore";
+import { extrudedRingsWithKernel } from "@/lib/svgImport";
+import { corp as corpMesh } from "@/magic3d/generatoare/forma";
+import { cadruLogo, ineleMm, profilDinMm, type CadruLogo } from "@/magic3d/logo/profil";
+import type { InelPx } from "@/magic3d/logo/trasare";
 import type { TrasareLogo } from "@/magic3d/logo/trasare";
 import { tl } from "@/magic3d/logo/texte";
 
 /*
- * Logo -> obiect: fiecare iesire e un pachet de corpuri obisnuite ale editorului (corpuri-schita
- * construite de nucleul CAD, cutii rotunjite, cilindri), deci se editeaza mai departe cu "Editeaza
- * grupul", iar la export 3MF fiecare culoare ramane un corp separat. Refoloseste ce exista:
- * conturul devine corp prin cadShapeFromSketchProfile, brelocul ia baza si gaura de inel de la
- * eticheta cu iconita (layeredIconShape). Forma de prajitura o face unealta editorului (vezi
- * LogoPanel / LayerlingEditor), din silueta data ca un corp-schita.
+ * Logo -> obiect: fiecare iesire e un pachet de corpuri obisnuite ale editorului, deci se editeaza mai
+ * departe cu "Editeaza grupul", iar la export 3MF fiecare culoare ramane un corp separat.
+ *
+ * Straturile logo-ului sunt ridicate de manifold (extrudedRingsWithKernel, aceeasi cale ca importul
+ * SVG): un contur urmarit dintr-o poza are sute de segmente si colturi care se ating, pe care nucleul
+ * CAD le construieste greu sau le refuza ("invalid sketch topology"). Baza, rama si gaurile sunt
+ * forme ale editorului; baza brelocului si gaura lui de inel vin de la eticheta cu iconita
+ * (layeredIconShape), din silueta curatata. Forma de prajitura o face unealta editorului din silueta.
  */
 
 /** Cat lasa plăcuța libera intre logo si marginea ei, in afara de rama. */
@@ -77,10 +83,45 @@ async function corp(profil: SketchProfile, inaltime: number, elevatie: number, n
   return canonicalizeShape({ ...construit, id: createLocalId("logo"), name: nume, color: culoare, hole: gaura, elevation: r3(elevatie) });
 }
 
+/** Un contur (pixeli) ridicat la `inaltime` de manifold, ca un corp mesh asezat la elevatia data. */
+async function corpRidicat(inele: readonly InelPx[], cadru: CadruLogo, inaltime: number, elevatie: number, nume: string, culoare: string, oglindit = false): Promise<WorkplaneShape> {
+  // extrudedRingsWithKernel citeste y in sus pe desen si il pune ca -z in scena: z-ul nostru (in jos pe poza) intra ca -y.
+  const inele2d = ineleMm(inele, cadru, oglindit).map((inel) => inel.map(([x, z]) => [x, -z] as [number, number]));
+  const positions = extrudedRingsWithKernel(await getManifoldRuntime(), inele2d, inaltime);
+  if (!positions || positions.length < 9) throw new Error(tl("eroareConstructie"));
+  const facut = corpMesh({ nume, culoare, positions: Float32Array.from(positions) }, 0, 0, 0);
+  if (!facut) throw new Error(tl("eroareConstructie"));
+  return canonicalizeShape({ ...facut, id: createLocalId("logo"), elevation: r3(elevatie) });
+}
+
 /** Straturile logo-ului ca relief (sau ca goluri, la gravat), la elevatia data. */
 async function relief(trasare: TrasareLogo, cadru: CadruLogo, inaltime: number, elevatie: number, oglindit = false): Promise<WorkplaneShape[]> {
   const multe = trasare.straturi.length > 1;
-  return Promise.all(trasare.straturi.map((strat, i) => corp(profilDinInele(strat.inele, cadru, oglindit, `logo${i}`), inaltime, elevatie, multe ? `${tl("numeLogo")} ${i + 1}` : tl("numeLogo"), strat.culoare)));
+  return Promise.all(trasare.straturi.map((strat, i) => corpRidicat(strat.inele, cadru, inaltime, elevatie, multe ? `${tl("numeLogo")} ${i + 1}` : tl("numeLogo"), strat.culoare, oglindit)));
+}
+
+/**
+ * Silueta curatata pentru nucleul CAD (baza brelocului, forma de prajitura): colturile care doar se
+ * ating sunt despartite si punctele prea dese unite, ca schita sa fie valida si construita repede.
+ */
+async function siluetaCurata(trasare: TrasareLogo, cadru: CadruLogo): Promise<SketchProfile> {
+  const runtime = await getManifoldRuntime();
+  const facute: Array<{ delete(): void }> = [];
+  try {
+    const zona = new runtime.CrossSection(ineleMm(trasare.silueta, cadru), "EvenOdd");
+    facute.push(zona);
+    const strans = zona.offset(-0.05, "Miter", 2, 0);
+    facute.push(strans);
+    const rotund = strans.offset(0.05, "Round", 2, 8);
+    facute.push(rotund);
+    const simplu = rotund.simplify(0.03);
+    facute.push(simplu);
+    const inele = simplu.toPolygons().map((inel) => inel.map(([x, z]) => [x, z] as [number, number]));
+    if (!inele.length) throw new Error(tl("eroareConstructie"));
+    return profilDinMm(inele, "silueta");
+  } finally {
+    facute.forEach((obiect) => obiect.delete());
+  }
 }
 
 function pachet(piese: WorkplaneShape[], nume: string): WorkplaneShape {
@@ -121,7 +162,7 @@ async function placuta(trasare: TrasareLogo, setari: SetariIesire, cadru: CadruL
 
 /** Brelocul: baza dupa conturul logo-ului (largita cu rama) cu gaura de inel, de la eticheta cu iconita, si logo-ul deasupra. */
 async function breloc(trasare: TrasareLogo, setari: SetariIesire, cadru: CadruLogo): Promise<WorkplaneShape[]> {
-  const silueta = profilDinInele(trasare.silueta, cadru, false, "silueta");
+  const silueta = await siluetaCurata(trasare, cadru);
   const strat: TextLayer = { grow: Math.max(1, setari.rama), height: setari.baza, color: LOGO.culoareBaza, silhouette: true };
   const loc = { x: 0, z: 0, elevation: 0, rotation: 0, rotationX: 0, rotationZ: 0 };
   const inel = setari.gaura > 0 ? { side: "top" as const, diameter: setari.gaura } : null;
@@ -136,7 +177,7 @@ async function stampila(trasare: TrasareLogo, setari: SetariIesire, cadru: Cadru
   const adancime = cadru.adancime + 2 * margine;
   const bloc = forma({ nume: tl("numeBloc"), culoare: LOGO.culoareBaza, latime, adancime, inaltime: setari.baza, colturi: setari.colturi });
   // Stampila se imprima monocrom: relieful e silueta, oglindita ca sa iasa citibila pe hartie.
-  const logo = await corp(profilDinInele(trasare.silueta, cadru, true, "stampila"), setari.relief, setari.baza, tl("numeLogo"), trasare.straturi[0].culoare);
+  const logo = await corpRidicat(trasare.silueta, cadru, setari.relief, setari.baza, tl("numeLogo"), trasare.straturi[0].culoare, true);
   const diametru = Math.min(30, Math.max(15, Math.min(latime, adancime) * 0.5));
   const maner = forma({ nume: tl("numeManer"), culoare: LOGO.culoareBaza, latime: diametru, adancime: diametru, inaltime: 35, x: latime / 2 + diametru / 2 + 8, tip: "cylinder" });
   return [bloc, logo, maner];
@@ -178,5 +219,5 @@ export async function construiesteLogo(trasare: TrasareLogo, setari: SetariIesir
 /** Silueta logo-ului ca un corp-schita subtire: din el unealta "Forma de prajitura" a editorului face forma. */
 export async function siluetaCaCorp(trasare: TrasareLogo, marime: number): Promise<WorkplaneShape> {
   const cadru = cadruLogo(trasare, marime);
-  return corp(profilDinInele(trasare.silueta, cadru, false, "silueta"), 2, 0, tl("numeLogo"), LOGO.culoareRelief);
+  return corp(await siluetaCurata(trasare, cadru), 2, 0, tl("numeLogo"), LOGO.culoareRelief);
 }

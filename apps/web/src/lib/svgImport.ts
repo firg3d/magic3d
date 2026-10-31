@@ -715,49 +715,80 @@ function extrudeShapesWithKernel(runtime: ManifoldToplevel, shapes: readonly THR
     // point (the islands of a traced picture meeting its outline) made edges of four triangles when joined as bodies (#584).
     const joined = sections.length === 1 ? sections[0] : runtime.CrossSection.union(sections);
     made.push(joined);
-    // Areas that meet in a single corner still pinch there and make an edge of four triangles. Shrinking them a hair and
-    // growing them back with rounded corners parts the corner for good.
-    const closeBy = (closing: number) => {
-      const grown = joined.offset(-closing, "Miter", 2, 0);
-      made.push(grown);
-      const rounded = grown.offset(closing, "Round", 2, 8);
-      made.push(rounded);
-      // The rounding leaves points a hair apart; the checks below merge those and see edges of four triangles.
-      const closed = rounded.simplify(SVG_TOUCH_SIMPLIFY);
-      made.push(closed);
-      return closed;
-    };
-    // The same turn as the plain build (extrude along z, then rotate about x by -90 degrees): (x, y, z) -> (x, z, -y).
-    const extrudeArea = (face: InstanceType<typeof runtime.CrossSection>): number[] | null => {
-      const merged = runtime.Manifold.extrude(face, SVG_EXTRUSION_DEPTH);
-      made.push(merged);
-      if (merged.status() !== "NoError" || merged.numTri() < 1) return null;
-      const mesh = merged.getMesh();
-      const stride = mesh.numProp;
-      const result: number[] = [];
-      for (let index = 0; index < mesh.triVerts.length; index += 1) {
-        const base = mesh.triVerts[index] * stride;
-        result.push(mesh.vertProperties[base], mesh.vertProperties[base + 2], -mesh.vertProperties[base + 1]);
-      }
-      return result;
-    };
-    const isClean = (candidate: number[]) => {
-      const analysis = analyzeTriangleSoup(candidate);
-      return analysis.boundaryEdges === 0 && analysis.nonManifoldEdges === 0;
-    };
-    const positions = extrudeArea(closeBy(SVG_TOUCH_CLOSING));
-    if (!positions) return null;
-    if (isClean(positions)) return { positions, skippedShapes };
-    // A drawing traced from a picture has many corners where outlines meet; a little more closing parts those that the
-    // first one left as an edge of four triangles (#584). The picture loses a few hundredths of a millimetre at its thinnest.
-    for (const closing of SVG_TOUCH_CLOSING_LARGER) {
-      const wider = extrudeArea(closeBy(closing));
-      if (wider && isClean(wider)) return { positions: wider, skippedShapes };
+    const positions = extrudedAreaWithKernel(runtime, joined, SVG_EXTRUSION_DEPTH, made);
+    return positions ? { positions, skippedShapes } : null;
+  } catch {
+    return null;
+  } finally {
+    new Set(made).forEach((item) => item.delete());
+  }
+}
+
+/**
+ * A joined flat area extruded `depth` high, as clean as the kernel can make it: corners where outlines only touch are
+ * parted (shrunk a hair and grown back round), more if the first try still leaves edges of four triangles. The turn is
+ * the plain build's, (x, y, z) -> (x, z, -y). Whatever it makes goes into `made`, for the caller to delete.
+ */
+function extrudedAreaWithKernel(runtime: ManifoldToplevel, joined: InstanceType<ManifoldToplevel["CrossSection"]>, depth: number, made: Array<{ delete(): void }>): number[] | null {
+  // Areas that meet in a single corner still pinch there and make an edge of four triangles. Shrinking them a hair and
+  // growing them back with rounded corners parts the corner for good.
+  const closeBy = (closing: number) => {
+    const grown = joined.offset(-closing, "Miter", 2, 0);
+    made.push(grown);
+    const rounded = grown.offset(closing, "Round", 2, 8);
+    made.push(rounded);
+    // The rounding leaves points a hair apart; the checks below merge those and see edges of four triangles.
+    const closed = rounded.simplify(SVG_TOUCH_SIMPLIFY);
+    made.push(closed);
+    return closed;
+  };
+  // The same turn as the plain build (extrude along z, then rotate about x by -90 degrees): (x, y, z) -> (x, z, -y).
+  const extrudeArea = (face: InstanceType<typeof runtime.CrossSection>): number[] | null => {
+    const merged = runtime.Manifold.extrude(face, depth);
+    made.push(merged);
+    if (merged.status() !== "NoError" || merged.numTri() < 1) return null;
+    const mesh = merged.getMesh();
+    const stride = mesh.numProp;
+    const result: number[] = [];
+    for (let index = 0; index < mesh.triVerts.length; index += 1) {
+      const base = mesh.triVerts[index] * stride;
+      result.push(mesh.vertProperties[base], mesh.vertProperties[base + 2], -mesh.vertProperties[base + 1]);
     }
-    // The closing can leave edges of four triangles on an outline with many fine holes (a stencil, #626) that the
-    // plain join does not have. Then the joined outlines are used as they are; if they are no cleaner, the result stays as it was.
-    const plain = extrudeArea(joined);
-    return { positions: plain && isClean(plain) ? plain : positions, skippedShapes };
+    return result;
+  };
+  const isClean = (candidate: number[]) => {
+    const analysis = analyzeTriangleSoup(candidate);
+    return analysis.boundaryEdges === 0 && analysis.nonManifoldEdges === 0;
+  };
+  const positions = extrudeArea(closeBy(SVG_TOUCH_CLOSING));
+  if (!positions) return null;
+  if (isClean(positions)) return positions;
+  // A drawing traced from a picture has many corners where outlines meet; a little more closing parts those that the
+  // first one left as an edge of four triangles (#584). The picture loses a few hundredths of a millimetre at its thinnest.
+  for (const closing of SVG_TOUCH_CLOSING_LARGER) {
+    const wider = extrudeArea(closeBy(closing));
+    if (wider && isClean(wider)) return wider;
+  }
+  // The closing can leave edges of four triangles on an outline with many fine holes (a stencil, #626) that the
+  // plain join does not have. Then the joined outlines are used as they are; if they are no cleaner, the result stays as it was.
+  const plain = extrudeArea(joined);
+  return plain && isClean(plain) ? plain : positions;
+}
+
+/**
+ * Closed rings (even-odd, as a traced picture fills them) as one clean body `depth` high, by the same steps as an SVG
+ * file: x to the right, y up the drawing; the body stands on y = 0 of the scene with the drawing's y as -z. Null when the
+ * kernel cannot make it.
+ */
+export function extrudedRingsWithKernel(runtime: ManifoldToplevel, rings: ReadonlyArray<ReadonlyArray<readonly [number, number]>>, depth: number): number[] | null {
+  const made: Array<{ delete(): void }> = [];
+  try {
+    const usable = rings.filter((ring) => ring.length >= 3).map((ring) => ring.map(([x, y]) => [x, y] as [number, number]));
+    if (!usable.length) return null;
+    const area = new runtime.CrossSection(usable, "EvenOdd");
+    made.push(area);
+    if (area.isEmpty()) return null;
+    return extrudedAreaWithKernel(runtime, area, depth, made);
   } catch {
     return null;
   } finally {

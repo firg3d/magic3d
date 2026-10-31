@@ -269,3 +269,58 @@ html[data-theme="dark"] .logo-camp input[type="text"] {
 html[data-theme="dark"] .logo-fisier {
   border-color: #2c4a3b;
 }
+
+/* Filele panoului: logo -> obiect, poza -> relief / litofanie. */
+.logo-file {
+  display: flex;
+  gap: 4px;
+  margin: 0 0 10px;
+  padding: 4px;
+  border-radius: 12px;
+  background: color-mix(in srgb, #1f8a5b 8%, transparent);
+}
+
+.logo-file button {
+  flex: 1;
+  padding: 7px 8px;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.logo-file button.activ {
+  background: var(--panel-bg, #ffffff);
+  color: #15734c;
+  box-shadow: 0 1px 4px rgba(15, 90, 59, 0.15);
+}
+
+html[data-theme="dark"] .logo-file button.activ {
+  background: #151c19;
+  color: #7fd3a9;
+}
+
+.relief-previzualizare canvas {
+  width: 100%;
+  max-height: 260px;
+  object-fit: contain;
+  border-radius: 8px;
+  image-rendering: auto;
+}
+
+/* Litofania se vede pe fundal intunecat, ca in fata unei lumini. */
+.relief-lumina {
+  background: #1b1d1c;
+}
+
+.relief-lumina figcaption {
+  color: #dfe7e2;
+}
+
+.relief-avertisment {
+  color: #9a6700;
+}

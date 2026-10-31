@@ -46,6 +46,19 @@ export function profilDinInele(inele: readonly InelPx[], cadru: CadruLogo, oglin
   return { points: schita.points, segments: schita.segments };
 }
 
+/** Inelele in mm, ca perechi (x, z) in cadrul logo-ului; `oglindit` le intoarce stanga-dreapta. */
+export function ineleMm(inele: readonly InelPx[], cadru: CadruLogo, oglindit = false): Array<Array<[number, number]>> {
+  const semn = oglindit ? -1 : 1;
+  return inele.map((inel) => inel.map((p) => [semn * (p.x - cadru.cx) * cadru.scara, (p.y - cadru.cy) * cadru.scara] as [number, number]));
+}
+
+/** Inele in mm (x, z) ca profil de schita. */
+export function profilDinMm(inele: ReadonlyArray<ReadonlyArray<readonly [number, number]>>, prefix = "logo"): SketchProfile {
+  const bucati = inele.map((inel) => inel.map(([x, y], i) => ({ start: { x, y }, end: { x: inel[(i + 1) % inel.length][0], y: inel[(i + 1) % inel.length][1] } })));
+  const schita = sketchFromPieceRings(bucati, ({ x, y }) => ({ x: rotunjit(x), z: rotunjit(y) }), prefix);
+  return { points: schita.points, segments: schita.segments };
+}
+
 /** Inelele ca un desen SVG (pentru previzualizarea 2D), in pixeli, cu umplere evenodd. */
 export function caleSvg(inele: readonly InelPx[]): string {
   return inele.map((inel) => `M${inel.map((p) => `${Math.round(p.x * 10) / 10} ${Math.round(p.y * 10) / 10}`).join("L")}Z`).join("");

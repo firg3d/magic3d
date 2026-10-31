@@ -3,12 +3,13 @@
 import { ImageUp, Printer, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { MovableToolPanel } from "@/components/workplane/MovableToolPanel";
-import { parseMeasurementInput } from "@/lib/measurementUnits";
 import { RASTER_TRACE_EMPTY, type RasterPixels } from "@/lib/rasterTrace";
 import { useLanguage } from "@/lib/useLanguage";
 import { deschideOferta } from "@/magic3d/oferta/OfertaButton";
 import { pixeliDinSvg, traseaza } from "@/magic3d/logo/client";
 import { IESIRI, LIMITE, LOGO, SETARI_IMPLICITE, type SetariIesire, type TipIesire } from "@/magic3d/logo/config";
+import { Camp } from "@/magic3d/logo/Camp";
+import { ReliefSectiune, type CreeazaRelief } from "@/magic3d/logo/ReliefSectiune";
 import { caleSvg } from "@/magic3d/logo/profil";
 import { OPTIUNI_IMPLICITE, type OptiuniTrasare, type TrasareLogo } from "@/magic3d/logo/trasare";
 import { tl, type CheieLogo } from "@/magic3d/logo/texte";
@@ -26,47 +27,9 @@ type Sursa = { fisier: Blob } | { pixeli: RasterPixels };
 
 const ACCEPTA = ".svg,.png,.jpg,.jpeg,image/svg+xml,image/png,image/jpeg";
 
-/** Un camp de masura: text, citit ca in restul editorului (virgula, punct, fractii, sume), tinut in limite cand e parasit. */
-function Camp({ eticheta, valoare, limite, unitate = "mm", onChange, testid }: { eticheta: string; valoare: number; limite: readonly [number, number]; unitate?: string; onChange: (v: number) => void; testid: string }) {
-  const [text, setText] = useState(String(valoare));
-  const editez = useRef(false);
-  // Cat timp se scrie in camp, textul e al omului ("5," ramane "5,"); altfel urmeaza valoarea (alta iesire aleasa).
-  useEffect(() => {
-    if (!editez.current) setText(String(valoare));
-  }, [valoare]);
-  const aplica = (scris: string) => {
-    const numar = parseMeasurementInput(scris);
-    if (Number.isFinite(numar)) onChange(Math.round(Math.min(limite[1], Math.max(limite[0], numar)) * 100) / 100);
-  };
-  return (
-    <label className="logo-camp">
-      <span>{eticheta}</span>
-      <span className="logo-camp-valoare">
-        <input
-          type="text"
-          inputMode="decimal"
-          data-testid={testid}
-          value={text}
-          onChange={(event) => {
-            setText(event.target.value);
-            aplica(event.target.value);
-          }}
-          onFocus={() => {
-            editez.current = true;
-          }}
-          onBlur={() => {
-            editez.current = false;
-            setText(String(valoare));
-          }}
-        />
-        <small>{unitate}</small>
-      </span>
-    </label>
-  );
-}
-
-export function LogoPanel({ onClose, onCreate }: { onClose: () => void; onCreate: CreeazaLogo }) {
+export function LogoPanel({ onClose, onCreate, onCreateRelief }: { onClose: () => void; onCreate: CreeazaLogo; onCreateRelief: CreeazaRelief }) {
   useLanguage();
+  const [fila, setFila] = useState<"logo" | "relief">("logo");
   const inputRef = useRef<HTMLInputElement>(null);
   const [numeFisier, setNumeFisier] = useState("");
   const [sursa, setSursa] = useState<Sursa | null>(null);
@@ -157,6 +120,15 @@ export function LogoPanel({ onClose, onCreate }: { onClose: () => void; onCreate
           </div>
         </header>
         <div className="top-action-body" data-testid="logo-panel" onKeyDown={(event) => event.key === "Escape" && onClose()}>
+          <div className="logo-file" role="tablist" aria-label={tl("titlu")}>
+            {(["logo", "relief"] as const).map((cheie) => (
+              <button key={cheie} type="button" role="tab" aria-selected={fila === cheie} data-testid={`logo-fila-${cheie}`} className={fila === cheie ? "activ" : ""} onClick={() => setFila(cheie)}>
+                {cheie === "logo" ? tl("filaLogo") : tl("filaRelief")}
+              </button>
+            ))}
+          </div>
+          {/* Fila logo ramane montata cand e ascunsa, ca imaginea si setarile ei sa nu se piarda la o trecere pe relief. */}
+          <div hidden={fila !== "logo"}>
           <p className="logo-descriere">{tl("descriere")}</p>
 
           <section className="logo-sectiune">
@@ -292,6 +264,10 @@ export function LogoPanel({ onClose, onCreate }: { onClose: () => void; onCreate
           ) : null}
 
           {eroare ? <p className="logo-eroare" role="alert">{eroare}</p> : null}
+          </div>
+          <div hidden={fila !== "relief"}>
+            <ReliefSectiune onCreate={onCreateRelief} />
+          </div>
         </div>
       </>)}
     </MovableToolPanel>
