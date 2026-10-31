@@ -24,6 +24,7 @@ import type { ShapeAsset, SketchOperation, WorkplaneWorkspaceSettings } from "@/
 import { TopPanel } from "./TopActionPanel";
 import { useToolbarCollapse } from "./useToolbarCollapse";
 import { OfertaButton } from "@/magic3d/oferta/OfertaButton";
+import { GeneratoareButton } from "@/magic3d/generatoare/GeneratoareButton";
 
 
 /** Die Befehle der Suche, die im Verlaufsblick wach bleiben: sie aendern nichts am Entwurf. */
@@ -1498,7 +1499,8 @@ export function SecondaryToolbar({
           </label>
         </div>
         <div className="toolbar-title-row-actions">
-          {/* Magic3D: print quote from Praktik3D, visible in every mode. */}
+          {/* Magic3D: the generators and the print quote from Praktik3D, visible in every mode. */}
+          <GeneratoareButton />
           <OfertaButton />
           {simpleMode ? null : (
             <button

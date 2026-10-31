@@ -55,6 +55,9 @@ const nextConfig: NextConfig = {
       config.cache.maxAge = 3 * 24 * 60 * 60 * 1000;
       if (!dev) config.cache.compression = "gzip";
     }
+    // Magic3D: the generator code (src/magic3d) imports its TypeScript files as "./x.js", the way
+    // Node ESM wants them; webpack looks for the .ts file behind such a name.
+    config.resolve.extensionAlias = { ...config.resolve.extensionAlias, ".js": [".ts", ".tsx", ".js"] };
     return config;
   },
   ...(isStaticExport

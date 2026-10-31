@@ -1195,6 +1195,11 @@ export type WorkplaneShape = {
    */
   qrCode?: QrCodeSettings;
   /**
+   * Magic3D: a body or bundle made by one of the Magic3D generators (magic3d/generatoare), with the
+   * values it was made with, so the generator panel can open it again and build it anew.
+   */
+  magic3d?: { generator: string; versiune: number; parametri: Record<string, string | number | boolean> };
+  /**
    * Set on a body made by wrapping around a cylinder (#106): its box is
    * centred on the cylinder's axis, and aligning, snapping and centring use
    * that box rather than the arc the mesh actually covers.

@@ -1,0 +1,160 @@
+/* Magic3D: butonul si panoul generatoarelor. */
+
+.magic3d-generatoare-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 12px;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--primary);
+  font: 600 13px var(--font-ui);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.magic3d-generatoare-button:hover {
+  background: color-mix(in srgb, var(--primary) 10%, transparent);
+}
+
+.top-action-panel.generatoare-panel {
+  display: flex;
+  flex-direction: column;
+  width: min(400px, calc(100vw - 32px));
+  max-height: calc(100vh - var(--editor-toolbar-height, 120px) - 24px);
+}
+
+.top-action-panel.generatoare-panel .top-action-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: none;
+  overflow-y: auto;
+}
+
+.generatoare-panel .top-action-heading {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gen-inapoi {
+  display: inline-flex;
+  padding: 2px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.gen-lista {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.gen-card {
+  padding: 14px 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--tile);
+  color: var(--foreground);
+  font: 600 13px var(--font-ui);
+  text-align: left;
+  cursor: pointer;
+}
+
+.gen-card:hover {
+  border-color: var(--primary);
+  background: var(--tile-hover);
+}
+
+.gen-sectiune {
+  margin: 10px 0;
+}
+
+.gen-sectiune h3 {
+  margin: 0 0 6px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted-strong);
+}
+
+.gen-campuri {
+  display: grid;
+  gap: 8px;
+}
+
+.gen-campuri label {
+  display: grid;
+  gap: 3px;
+  font-size: 13px;
+}
+
+.gen-campuri input:not([type="range"]):not([type="checkbox"]):not([type="color"]),
+.gen-campuri select {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  font: inherit;
+}
+
+.gen-numar-rand {
+  display: grid;
+  grid-template-columns: 1fr 64px;
+  gap: 8px;
+  align-items: center;
+}
+
+.gen-campuri .gen-culoare,
+.gen-campuri .gen-bifa {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.gen-nota {
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: var(--muted-strong);
+}
+
+.gen-avertizari {
+  display: grid;
+  gap: 4px;
+  margin: 8px 0;
+  padding: 0;
+  list-style: none;
+  font-size: 13px;
+  color: #b45309;
+}
+
+.gen-avertizari li {
+  display: flex;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+.gen-eroare {
+  color: #b42318;
+}
+
+.gen-adauga {
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--primary);
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.gen-adauga:disabled {
+  opacity: 0.5;
+}

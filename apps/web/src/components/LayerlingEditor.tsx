@@ -32,6 +32,10 @@ import { meshBounds } from "@/lib/exportUnion";
 import { DESCHIDE_OFERTA } from "@/magic3d/oferta/OfertaButton";
 import { muchiiDeschise, peretiSubtiri } from "@/magic3d/oferta/oferta";
 import { OfertaPanel, type PachetOferta } from "@/magic3d/oferta/OfertaPanel";
+import { DESCHIDE_GENERATOARE } from "@/magic3d/generatoare/GeneratoareButton";
+import { GeneratoarePanel, type AplicaGenerare } from "@/magic3d/generatoare/GeneratoarePanel";
+import { pachetGenerat } from "@/magic3d/generatoare/forma";
+import { t as tMagic3d } from "@/magic3d/core/i18n/index";
 import { qrCodeOf, qrCodeShape, regeneratedQrCodeShape } from "@/lib/editorQrCode";
 import { DEFAULT_QR_WIDTH, MAX_QR_HEIGHT, MAX_QR_WIDTH, MIN_QR_HEIGHT, MIN_QR_WIDTH, QR_BYTE_CAPACITY, QR_ERROR_CORRECTIONS, QR_STYLES, normalizeQrSettings, qrByteLength, qrMatrix, qrModuleSize, qrModuleTooSmall, qrTextFits, type QrCodeSettings, type QrErrorCorrection, type QrStyle } from "@/lib/qrCode";
 import { iconSourceFromFile, PICTURE_FILE_ACCEPT, picturePixels, type IconSource } from "@/lib/pictureIcon";
@@ -2845,6 +2849,8 @@ export function LayerlingEditor({
   const [qrCodePanelOpen, setQrCodePanelOpen] = useState(false);
   // Magic3D: "Printeaza in Romania - cere oferta", deschis din butonul din bara de titlu.
   const [ofertaOpen, setOfertaOpen] = useState(false);
+  // Magic3D: the generators panel, with the generated bundle that was selected when it opened (to edit it).
+  const [generatoare, setGeneratoare] = useState<{ editat: { id: string; meta: NonNullable<WorkplaneShape["magic3d"]> } | null } | null>(null);
   useEffect(() => {
     const open = () => setOfertaOpen(true);
     window.addEventListener(DESCHIDE_OFERTA, open);
@@ -9928,6 +9934,27 @@ export function LayerlingEditor({
     setQrCodePanelOpen(false);
   }, [commitShapes]);
 
+  /**
+   * Magic3D generators: the panel opens on the generated bundle that is selected (to change it), or
+   * on the list. Each build puts a new bundle on the plate or replaces the one being edited, where it stands.
+   */
+  useEffect(() => {
+    const open = () => {
+      const ids = selectedIdsRef.current;
+      const shape = ids.length === 1 ? shapesRef.current.find((entry) => entry.id === ids[0]) : undefined;
+      setGeneratoare({ editat: shape?.magic3d && !shape.locked ? { id: shape.id, meta: shape.magic3d } : null });
+    };
+    window.addEventListener(DESCHIDE_GENERATOARE, open);
+    return () => window.removeEventListener(DESCHIDE_GENERATOARE, open);
+  }, []);
+  const aplicaGenerare = useCallback<AplicaGenerare>((rezultat, def, meta, tinta) => {
+    const vechi = tinta ? shapesRef.current.find((shape) => shape.id === tinta) ?? null : null;
+    const shape = pachetGenerat(rezultat.piese, tMagic3d(def.titlu), meta, vechi);
+    const next = vechi ? shapesRef.current.map((entry) => (entry.id === vechi.id ? shape : entry)) : [...shapesRef.current, shape];
+    commitShapes(next, [shape.id], tMagic3d(def.titlu));
+    return shape.id;
+  }, [commitShapes]);
+
   /** The QR code card's "Make again": the selected code with a new text, where it stood and as wide as it is. */
   const regenerateSelectedQrCode = useCallback(async (text: string) => {
     const current = selectedShapes.length === 1 ? selectedShape : null;
@@ -15317,6 +15344,7 @@ export function LayerlingEditor({
         <QrCodePanel onClose={() => setQrCodePanelOpen(false)} onCreate={createQrCode} />
       ) : null}
       {ofertaOpen ? <OfertaPanel onClose={() => setOfertaOpen(false)} pregateste={pregatesteOferta} /> : null}
+      {generatoare ? <GeneratoarePanel editat={generatoare.editat} aplica={aplicaGenerare} onClose={() => setGeneratoare(null)} /> : null}
       {topPanel ? (
         <TopActionPanel
           panel={topPanel}

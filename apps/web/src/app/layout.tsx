@@ -13,6 +13,7 @@ import "./sketchImage.css";
 import "./sketchLock.css";
 import "./dashboardSelect.css";
 import "@/magic3d/oferta/oferta.css";
+import "@/magic3d/generatoare/generatoare.css";
 import { DiagnoseStrip } from "@/components/DiagnoseStrip";
 import { HtmlSettingsRestore } from "@/components/HtmlSettingsRestore";
 import { NewVersionNotice } from "@/components/NewVersionNotice";

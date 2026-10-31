@@ -31,6 +31,7 @@ import { isThreadProfile } from "@/lib/threadProfiles";
 import { PORT_PROFILES } from "@/lib/portGeometry";
 import type { PortProfile } from "@/types/layerling";
 import { normalizeSnapGrid, normalizeWorkspaceSettings } from "@/lib/workplaneSettings";
+import { esteMagic3dGenerat } from "@/magic3d/generatoare/tipuri";
 import type { CadDisplayEdge, GridSize, ProjectAsset, ProjectAssetSourceFormat, ProjectAttachment, SketchOperation, SketchRevolveSettings, WorkplaneNote, WorkplaneShape, WorkplaneWorkspaceSettings } from "@/types/layerling";
 
 export const LYL_SCHEMA_ID = "com.layerling.project";
@@ -1402,6 +1403,10 @@ function validateShapeDefinition(definition: Record<string, unknown>, label: str
   // A reference image's see-through (#680): 0.1 to 1, or none on an old picture plate.
   if (definition.imagePlate !== undefined && !isReferenceImageOpacity((definition.imagePlate as { opacity?: unknown } | null)?.opacity)) {
     throw new Error(`${label}.imagePlate.opacity must be a number from 0.1 to 1`);
+  }
+  // Magic3D: a generator's name, version and values; nothing else.
+  if (definition.magic3d !== undefined && !esteMagic3dGenerat(definition.magic3d)) {
+    throw new Error(`${label}.magic3d must hold a generator name, a version and its values`);
   }
   // A QR code's settings (#553): a text and known choices. Old projects have none.
   if (definition.qrCode !== undefined && !normalizeQrSettings(definition.qrCode)) {
