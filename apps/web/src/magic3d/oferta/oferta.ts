@@ -51,6 +51,8 @@ export const OFERTA_IMPLICIT: OfertaConfig = {
     "Volum estimat: {volum}",
     "Greutate estimată: {greutate}",
     "Generator: {generator}",
+    "Detalii: {detalii}",
+    "Servicii: {servicii}",
     "Firmă: {firma}",
     "Observații: {observatii}",
     "",
@@ -183,6 +185,10 @@ export type DateOferta = {
   generator?: string;
   /** Comanda pentru firma: mai multe bucati sau factura pe firma. */
   firma?: boolean;
+  /** Ce stie generatorul despre piesa, pe un rand ("Bol · 120 × 110 mm · adâncime 23 mm"). */
+  detalii?: string;
+  /** Serviciile bifate in formular, fiecare cu textul lui pentru mesaj. */
+  servicii?: string[];
 };
 
 /** Pagina atelierului pentru comenzile firmelor, pusa in mesaj langa mentiunea B2B. */
@@ -214,6 +220,8 @@ export function mesajOferta(sablon: readonly string[], date: DateOferta): string
     zileText: zileText(date.zile),
     generator: (date.generator ?? "").trim(),
     firma: date.firma ? `da — mai multe bucăți / factură pe firmă (B2B), ${LINK_FIRME}` : "",
+    detalii: (date.detalii ?? "").trim(),
+    servicii: (date.servicii ?? []).map((s) => s.trim()).filter(Boolean).join("; "),
   };
   return sablon
     .filter((line) => {

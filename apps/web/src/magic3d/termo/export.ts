@@ -1,6 +1,7 @@
 import { zipSync } from "fflate";
 import type { PiesaGenerata } from "@/magic3d/generatoare/tipuri";
-import type { PlacaBambu, ProiectBambu } from "@/magic3d/termo/bambu3mf";
+import type { ContextOferta } from "@/magic3d/oferta/OfertaPanel";
+import { proiectBambu, type PlacaBambu, type ProiectBambu } from "@/magic3d/termo/bambu3mf";
 import { EXTRUDER, FORMARE, jocMatrite, SETARI_PRINT, TERMO, type SetariTermo } from "@/magic3d/termo/config";
 import type { CheiePiesa, InfoTermo, PieseTermo } from "@/magic3d/termo/geometrie";
 import { tt, type CheieTermo } from "@/magic3d/termo/texte";
@@ -103,4 +104,46 @@ export function arhivaStl(piese: PieseTermo, text: string, limba?: string): Uint
     ...Object.fromEntries(piese.map(({ cheie, corp }) => [fisier(cheie), stl(corp)])),
     "instructiuni.txt": new TextEncoder().encode(text),
   }, { level: 6 });
+}
+
+/** Cutia celei mai mari piese (fiecare se printeaza pe placa ei), mm. */
+export function piesaMaxima(piese: PieseTermo): { x: number; y: number; z: number } {
+  const max = { x: 0, y: 0, z: 0 };
+  for (const { corp } of piese) {
+    const min = [Infinity, Infinity, Infinity];
+    const sus = [-Infinity, -Infinity, -Infinity];
+    for (let i = 0; i < corp.length; i += 3) for (let a = 0; a < 3; a += 1) { min[a] = Math.min(min[a], corp[i + a]); sus[a] = Math.max(sus[a], corp[i + a]); }
+    max.x = Math.max(max.x, sus[0] - min[0]);
+    max.y = Math.max(max.y, sus[1] - min[1]);
+    max.z = Math.max(max.z, sus[2] - min[2]);
+  }
+  return max;
+}
+
+/**
+ * Cererea de oferta pentru termoformare: piesele ca proiect Bambu (placi si setari, ca atelierul sa
+ * nu le refaca), detaliile pe un rand si serviciul "formare in atelier", bifat cand a fost ales.
+ * Randurile din mesaj sunt in limba sablonului (romana); eticheta bifei, in limba paginii.
+ */
+export function contextOferta(piese: PieseTermo, info: InfoTermo, setari: SetariTermo, nume: string, atelier: boolean, limbaMesaj = "ro"): ContextOferta {
+  const model = setari.model === "gyroid" ? tt("modelGyroid", { densitate: setari.densitate }, limbaMesaj) : tt("modelFagure", { densitate: setari.densitate }, limbaMesaj);
+  const cutie = setari.mod === "cutie" ? tt("detaliiCutie", { n: info.cleme, seturi: tt(info.seturi === 2 ? "douaSeturi" : "unSet", {}, limbaMesaj) }, limbaMesaj) : "";
+  const detalii = tt("detaliiOferta", {
+    mod: tt(setari.mod === "cutie" ? "modCutie" : "modBol", {}, limbaMesaj),
+    material: setari.material,
+    model,
+    l: info.latime,
+    a: info.inaltime,
+    d: info.adancime,
+    cutie,
+    placi: piese.length,
+  }, limbaMesaj);
+  return {
+    generator: `${tt("titlu", {}, limbaMesaj)} → ${nume}`,
+    firma: true,
+    detalii,
+    servicii: [{ id: "formare", eticheta: tt("serviciuFormare"), nota: tt("serviciuFormareNota"), mesaj: tt("mesajFormare", {}, limbaMesaj), bifat: atelier }],
+    threeMf: proiectBambu(proiectTermo(piese, setari, limbaMesaj, nume, info)),
+    piesaMaxima: piesaMaxima(piese),
+  };
 }

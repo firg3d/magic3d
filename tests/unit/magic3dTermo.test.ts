@@ -6,7 +6,8 @@ import { proiectBambu } from "@/magic3d/termo/bambu3mf";
 import { jocMatrite, SETARI_IMPLICITE, TERMO, type SetariTermo } from "@/magic3d/termo/config";
 import { FORME, formaExemplu, type Inel } from "@/magic3d/termo/forme";
 import { clema, construiesteTermo, latimeIngusta, type CheiePiesa, type RezultatTermo } from "@/magic3d/termo/geometrie";
-import { piesePrint, proiectTermo } from "@/magic3d/termo/export";
+import { contextOferta, piesePrint, proiectTermo } from "@/magic3d/termo/export";
+import { mesajOferta, OFERTA_IMPLICIT, seIncadreaza } from "@/magic3d/oferta/oferta";
 import { ineleCuYSus, siluetaDinPixeli } from "@/magic3d/termo/silueta";
 import { manifold } from "./magic3dGenUtil";
 
@@ -338,5 +339,29 @@ describe("Termoformare din poză", { timeout: 60_000 }, () => {
     expect(config).toContain('value="Plasă B"');
     expect(config).toContain('key="sparse_infill_density" value="100%"');
     expect(strFromU8(fisiere["Metadata/instructiuni.txt"])).toContain("cleme");
+  });
+
+  it("oferta: proiectul Bambu, detaliile, piesa cea mai mare si formarea in atelier ajung in mesaj", () => {
+    const s = setari({ mod: "cutie" });
+    const { piese, info } = cu(formaExemplu("inima"), s, (rez) => ({ piese: piesePrint(rez), info: rez.info }));
+    const atelier = contextOferta(piese, info, s, "Inimă", true);
+    const doarPrint = contextOferta(piese, info, s, "Inimă", false);
+    expect(atelier.servicii?.[0].bifat).toBe(true);
+    expect(doarPrint.servicii?.[0].bifat).toBe(false);
+    expect(atelier.detalii).toContain("120 × 109.9 mm");
+    expect(atelier.detalii).toContain(`${info.cleme} cleme`);
+    // Fiecare piesa incape singura in volumul atelierului, desi toate impreuna nu ar incapea.
+    expect(seIncadreaza(atelier.piesaMaxima!, OFERTA_IMPLICIT.volumMaxMm)).toBe(true);
+    expect(atelier.piesaMaxima!.x).toBeLessThan(TERMO.placa);
+    const config = strFromU8(unzipSync(atelier.threeMf!)["Metadata/model_settings.config"]);
+    expect(config.match(/<plate>/g)).toHaveLength(piese.length);
+    const baza = { nume: "Ana", telefon: "0700000000", oras: "Cluj", material: "PLA", culoare: "", cantitate: 2, student: false, observatii: "", dimensiuni: "", volum: "", greutate: "", link: "https://magic3d.ro/oferta/d.php?id=x", zile: 20 };
+    const mesaj = mesajOferta(OFERTA_IMPLICIT.mesaj, { ...baza, generator: atelier.generator, detalii: atelier.detalii, servicii: atelier.servicii!.filter((x) => x.bifat).map((x) => x.mesaj) });
+    expect(mesaj).toContain("Generator: Termoformare din poză → Inimă");
+    expect(mesaj).toContain(`Detalii: ${atelier.detalii}`);
+    expect(mesaj).toContain("Servicii: Formare în atelier: da");
+    const faraServicii = mesajOferta(OFERTA_IMPLICIT.mesaj, { ...baza, servicii: [] });
+    expect(faraServicii).not.toContain("Servicii:");
+    expect(faraServicii).not.toContain("Detalii:");
   });
 });

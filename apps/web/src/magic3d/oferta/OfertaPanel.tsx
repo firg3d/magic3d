@@ -24,8 +24,23 @@ import {
 } from "@/magic3d/oferta/oferta";
 import { to } from "@/magic3d/oferta/texte";
 
-/** De unde vine cererea: generatorul care a facut piesa (scris in mesaj) si daca se ofera optiunea pentru firme. */
-export type ContextOferta = { generator?: string; firma?: boolean };
+/** Un serviciu pe care generatorul il ofera in plus (de pilda formarea in atelier): bifa din formular si randul din mesaj. */
+export type ServiciuOferta = { id: string; eticheta: string; nota?: string; mesaj: string; bifat?: boolean };
+
+/**
+ * De unde vine cererea: generatorul care a facut piesa (scris in mesaj), daca se ofera optiunea
+ * pentru firme, detaliile piesei, serviciile in plus si, cand generatorul are un 3MF mai bun decat
+ * exportul scenei (placi, setari de print), acel 3MF.
+ */
+export type ContextOferta = {
+  generator?: string;
+  firma?: boolean;
+  detalii?: string;
+  servicii?: ServiciuOferta[];
+  threeMf?: Uint8Array;
+  /** Cea mai mare piesa, cand piesele se printeaza separat (fiecare pe placa ei): pe ea se verifica incadrarea. */
+  piesaMaxima?: DimensiuniMm;
+};
 
 /** Ce pregateste editorul pentru o oferta: fisierele si masuratorile piesei. */
 export type PachetOferta = {
@@ -69,6 +84,7 @@ export function OfertaPanel({ onClose, pregateste, context }: { onClose: () => v
   const [observatii, setObservatii] = useState("");
   const [student, setStudent] = useState(false);
   const [firma, setFirma] = useState(false);
+  const [servicii, setServicii] = useState<Record<string, boolean>>(() => Object.fromEntries((context?.servicii ?? []).map((s) => [s.id, Boolean(s.bifat)])));
   const [trimit, setTrimit] = useState(false);
   const [eroare, setEroare] = useState("");
   const [gata, setGata] = useState<{ url: string; mesaj: string; link: string; zile: number } | null>(null);
@@ -95,7 +111,7 @@ export function OfertaPanel({ onClose, pregateste, context }: { onClose: () => v
   }, [material, pachet]);
   const volumText = formatDimensiuni(config.volumMaxMm, (value) => numar(value, 0));
   const inchis = pachet ? pachet.muchiiDeschise === 0 : false;
-  const incape = pachet ? seIncadreaza(pachet.dimensiuni, config.volumMaxMm) : false;
+  const incape = pachet ? seIncadreaza(context?.piesaMaxima ?? pachet.dimensiuni, config.volumMaxMm) : false;
   const subtiri = useMemo(() => (pachet ? pachet.subtiri(config.peretiMinimMm) : null), [config.peretiMinimMm, pachet]);
   const subtire = subtiri ? subtiri.suprafataSubtire > PRAG_AVERTIZARE_SUBTIRE : false;
   const cantitateNumar = Math.max(1, Math.round(Number(cantitate) || 1));
@@ -108,8 +124,9 @@ export function OfertaPanel({ onClose, pregateste, context }: { onClose: () => v
       setEroare(to("campObligatoriu"));
       return;
     }
-    const totalMb = (pachet.threeMf.length + pachet.stl.length + (pachet.png?.size ?? 0)) / 1024 / 1024;
-    if (Math.max(pachet.threeMf.length, pachet.stl.length) / 1024 / 1024 > config.maxMbFisier) {
+    const threeMf = context?.threeMf ?? pachet.threeMf;
+    const totalMb = (threeMf.length + pachet.stl.length + (pachet.png?.size ?? 0)) / 1024 / 1024;
+    if (Math.max(threeMf.length, pachet.stl.length) / 1024 / 1024 > config.maxMbFisier) {
       setEroare(to("prea_mare", { mb: config.maxMbFisier }));
       return;
     }
@@ -117,7 +134,7 @@ export function OfertaPanel({ onClose, pregateste, context }: { onClose: () => v
     setEroare("");
     try {
       const form = new FormData();
-      form.append("fisiere[]", new Blob([pachet.threeMf as BlobPart], { type: "model/3mf" }), "model.3mf");
+      form.append("fisiere[]", new Blob([threeMf as BlobPart], { type: "model/3mf" }), "model.3mf");
       form.append("fisiere[]", new Blob([pachet.stl as BlobPart], { type: "model/stl" }), "model.stl");
       if (pachet.png) form.append("fisiere[]", pachet.png, "captura.png");
       const response = await fetch(config.uploadUrl, { method: "POST", body: form });
@@ -137,6 +154,8 @@ export function OfertaPanel({ onClose, pregateste, context }: { onClose: () => v
         observatii,
         generator: context?.generator,
         firma: Boolean(context?.firma) && firma,
+        detalii: context?.detalii,
+        servicii: (context?.servicii ?? []).filter((s) => servicii[s.id]).map((s) => s.mesaj),
         dimensiuni: formatDimensiuni(pachet.dimensiuni, (value) => numar(value)),
         volum: estimare ? `${numar(estimare.volumeCm3)} cm³` : "",
         greutate: estimare ? `≈ ${numar(estimare.grams, 0)} g (${materialAles})` : "",
@@ -254,6 +273,15 @@ export function OfertaPanel({ onClose, pregateste, context }: { onClose: () => v
                   <span>{to("student")}</span>
                 </label>
                 <p className="oferta-lat oferta-nota">{to("studentNota")}</p>
+                {(context?.servicii ?? []).map((s) => (
+                  <div key={s.id} className="oferta-lat">
+                    <label className="oferta-student">
+                      <input type="checkbox" data-testid={`oferta-serviciu-${s.id}`} checked={Boolean(servicii[s.id])} onChange={(event) => setServicii((v) => ({ ...v, [s.id]: event.target.checked }))} />
+                      <span>{s.eticheta}</span>
+                    </label>
+                    {s.nota ? <p className="oferta-nota">{s.nota}</p> : null}
+                  </div>
+                ))}
                 {context?.firma ? (
                   <label className="oferta-lat oferta-student">
                     <input type="checkbox" data-testid="oferta-firma" checked={firma} onChange={(event) => setFirma(event.target.checked)} />

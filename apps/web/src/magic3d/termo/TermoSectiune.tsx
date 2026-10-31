@@ -11,7 +11,7 @@ import { deschideOferta } from "@/magic3d/oferta/OfertaButton";
 import { proiectBambu } from "@/magic3d/termo/bambu3mf";
 import { construieste, silueta as cereSilueta } from "@/magic3d/termo/client";
 import { LIMITE, latimeMaxima, MATERIALE, SETARI_IMPLICITE, TERMO, type Material, type ModelPlasa, type SetariTermo } from "@/magic3d/termo/config";
-import { arhivaStl, instructiuni, pieseScena, proiectTermo, type PieseTermo } from "@/magic3d/termo/export";
+import { arhivaStl, contextOferta, instructiuni, pieseScena, proiectTermo, type PieseTermo } from "@/magic3d/termo/export";
 import { caleSvgInele, FORME, formaExemplu, type FormaExemplu } from "@/magic3d/termo/forme";
 import type { Inele, InfoTermo, VedereTermo } from "@/magic3d/termo/geometrie";
 import { ineleCuYSus, OPTIUNI_SILUETA, type OptiuniSilueta } from "@/magic3d/termo/silueta";
@@ -32,6 +32,9 @@ type Sursa = { tip: "forma"; forma: FormaExemplu } | { tip: "imagine"; id: numbe
 const ACCEPTA = ".svg,.png,.jpg,.jpeg,image/svg+xml,image/png,image/jpeg";
 const MAX_MB = 15;
 const PASI = [1, 2, 3, 4] as const;
+/** Cine printeaza si cine formeaza: omul singur, atelierul doar printul, atelierul tot. */
+type Alegere = "eu" | "print" | "atelier";
+const ALEGERI: Alegere[] = ["eu", "print", "atelier"];
 
 let urmatoareaSursa = 1;
 
@@ -82,6 +85,7 @@ export function TermoSectiune({ onCreate }: { onCreate: CreeazaTermo }) {
   const [eroare, setEroare] = useState("");
   const [trag, setTrag] = useState(false);
   const [vedere, setVedere] = useState<"rezultat" | "presare">("rezultat");
+  const [alegere, setAlegere] = useState<Alegere>("eu");
   const trimisa = useRef(0);
 
   const alegeFisier = async (fisier: File) => {
@@ -174,14 +178,23 @@ export function TermoSectiune({ onCreate }: { onCreate: CreeazaTermo }) {
   const gata = Boolean(construit && !construiesc);
 
   const pune = async () => {
-    if (!construit) return;
+    if (!construit) return null;
     try {
-      const parametri = { latime: setari.latime, adancime: setari.adancime, material: setari.material, model: setari.model, densitate: setari.densitate };
+      const parametri = { mod: setari.mod, latime: setari.latime, adancime: setari.adancime, material: setari.material, model: setari.model, densitate: setari.densitate };
       const r = await onCreate(pieseScena(construit.piese), tt("numeProiect", { forma: nume }), { generator: "termoformare", versiune: 1, parametri }, pus?.id ?? null);
       setPus(r);
+      return r;
     } catch (error) {
       setEroare(error instanceof Error && error.message ? error.message : tt("eroare"));
+      return null;
     }
+  };
+
+  // Oferta pleaca din scena (verificarile ei de grosime si inchidere), deci piesele se pun intai pe placa.
+  const cereOferta = async () => {
+    if (!construit) return;
+    if (!pus && !(await pune())) return;
+    deschideOferta(contextOferta(construit.piese, construit.info, setari, nume, alegere === "atelier"));
   };
 
   const miniatura = (forma: FormaExemplu) => caleSvgInele(formaExemplu(forma), 40, 3);
@@ -342,8 +355,25 @@ export function TermoSectiune({ onCreate }: { onCreate: CreeazaTermo }) {
               <figcaption>{tt("vedereAjutor")}</figcaption>
             </figure>
           ) : null}
+          <fieldset className="termo-alegeri" data-testid="termo-alegeri">
+            <legend>{tt("alegereTitlu")}</legend>
+            {ALEGERI.map((a) => (
+              <label key={a} className={alegere === a ? "activ" : ""}>
+                <input type="radio" name="termo-alegere" data-testid={`termo-alegere-${a}`} checked={alegere === a} onChange={() => setAlegere(a)} />
+                <span>
+                  <strong>{tt(`alegere_${a}` as CheieTermo)}</strong>
+                  <small>{tt(`alegere_${a}Nota` as CheieTermo)}</small>
+                </span>
+              </label>
+            ))}
+          </fieldset>
           <div className="logo-actiuni">
-            <button type="button" className="logo-buton logo-buton-plin" data-testid="termo-pune" disabled={!gata} onClick={() => void pune()}>
+            {alegere !== "eu" ? (
+              <button type="button" className="logo-buton logo-buton-plin" data-testid="termo-oferta" disabled={!gata} onClick={() => void cereOferta()}>
+                <Printer size={16} aria-hidden="true" /> {tt(alegere === "atelier" ? "ofertaAtelier" : "ofertaPrint")}
+              </button>
+            ) : null}
+            <button type="button" className={`logo-buton${alegere === "eu" ? " logo-buton-plin" : ""}`} data-testid="termo-pune" disabled={!gata} onClick={() => void pune()}>
               {pus ? tt("inlocuieste") : tt("pune")}
             </button>
             <button type="button" className="logo-buton" data-testid="termo-3mf" disabled={!gata} onClick={() => descarca(proiectBambu(proiectTermo(construit.piese, setari, undefined, nume, construit.info)), `termoformare-${numeFisier(nume)}.3mf`, "model/3mf")}>
@@ -352,11 +382,6 @@ export function TermoSectiune({ onCreate }: { onCreate: CreeazaTermo }) {
             <button type="button" className="logo-buton" data-testid="termo-stl" disabled={!gata} onClick={() => descarca(arhivaStl(construit.piese, text), `termoformare-${numeFisier(nume)}-stl.zip`, "application/zip")}>
               <Download size={16} aria-hidden="true" /> {tt("descarcaStl")}
             </button>
-            {pus ? (
-              <button type="button" className="logo-buton" data-testid="termo-oferta" onClick={() => deschideOferta({ generator: tt("titlu"), firma: true })}>
-                <Printer size={16} aria-hidden="true" /> {tt("oferta")}
-              </button>
-            ) : null}
           </div>
           {pus ? <p className="logo-gata" role="status">{tt("adaugat", { nume: pus.nume })}</p> : null}
           <h4>{tt("instructiuniTitlu")}</h4>
