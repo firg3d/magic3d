@@ -37,6 +37,7 @@ import { GeneratoarePanel, type AplicaGenerare } from "@/magic3d/generatoare/Gen
 import { pachetGenerat } from "@/magic3d/generatoare/forma";
 import { IMPORTA_MODEL, type CerereImport } from "@/magic3d/generatoare/Biblioteca";
 import { semnaleazaExport } from "@/magic3d/sustine/config";
+import { preiaFormaInitiala } from "@/magic3d/start/formaInitiala";
 import { t as tMagic3d } from "@/magic3d/core/i18n/index";
 import { qrCodeOf, qrCodeShape, regeneratedQrCodeShape } from "@/lib/editorQrCode";
 import { DEFAULT_QR_WIDTH, MAX_QR_HEIGHT, MAX_QR_WIDTH, MIN_QR_HEIGHT, MIN_QR_WIDTH, QR_BYTE_CAPACITY, QR_ERROR_CORRECTIONS, QR_STYLES, normalizeQrSettings, qrByteLength, qrMatrix, qrModuleSize, qrModuleTooSmall, qrTextFits, type QrCodeSettings, type QrErrorCorrection, type QrStyle } from "@/lib/qrCode";
@@ -5889,6 +5890,20 @@ export function LayerlingEditor({
     },
     [commitShapes, placementWorkplane, shapes],
   );
+
+  // Magic3D: a generator card on the start page opens a new design with its shape already on the plate.
+  const addShapeRef = useRef(addShape);
+  addShapeRef.current = addShape;
+  useEffect(() => {
+    if (!projectId) return;
+    // A moment after the new design has loaded its (empty) shapes, so the hydration does not wipe the new body.
+    const timer = window.setTimeout(() => {
+      if (shapesRef.current.length > 0) return;
+      const asset = preiaFormaInitiala();
+      if (asset) addShapeRef.current(asset);
+    }, 500);
+    return () => window.clearTimeout(timer);
+  }, [projectId]);
 
   /** Sets the parts picked up with C down on the face (or the workplane) that was clicked, as one step. */
   const dropCarried = useCallback((target: { point: PlacementPoint; normal: PlacementPoint; workplane: PlacementWorkplane }) => {

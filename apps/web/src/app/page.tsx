@@ -2,7 +2,7 @@
 
 import { requestPersistentStorage } from "@/lib/persistentStorage";
 import { keepShownSelection, localDesignKey, selectionHasStale, serverDesignKey, toggleDesignSelection } from "@/lib/designSelection";
-import { Archive, ArchiveRestore, Check, CheckSquare, Clock3, Copy, EllipsisVertical, Folder, FolderInput, FolderKanban, FolderPlus, FolderUp, Grid3X3, List, LoaderCircle, Pencil, Plus, RefreshCw, Search, Server, Shapes, SlidersHorizontal, Sparkles, Trash2, X } from "lucide-react";
+import { Archive, ArchiveRestore, Check, CheckSquare, Copy, EllipsisVertical, Folder, FolderInput, FolderKanban, FolderPlus, FolderUp, Grid3X3, List, LoaderCircle, Pencil, RefreshCw, Server, Shapes, SlidersHorizontal, Sparkles, Trash2, X } from "lucide-react";
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState, type DragEvent } from "react";
 import { AppFooter } from "@/components/AppFooter";
 import { LanguageSwitch } from "@/components/LanguageSwitch";
@@ -38,7 +38,7 @@ import { setServerSimpleMode } from "@/lib/simpleMode";
 import { useSimpleMode } from "@/lib/useSimpleMode";
 import { applyAppTheme, getAppThemePreference, hasStoredAppTheme, readStoredAppTheme, resolveAppTheme, setAppTheme, storeAppTheme, subscribeToAppTheme, type AppThemePreference, type ResolvedAppTheme } from "@/lib/appTheme";
 import { hydrateEditorHistoryState, notesForHistoryIndex, type EditorHistoryEntry } from "@/lib/editorHistory";
-import { detectLanguage, setLanguage, t, translate, type Language } from "@/lib/i18n";
+import { detectLanguage, LANGUAGE_INFO, setLanguage, t, translate, type Language } from "@/lib/i18n";
 import { localizedError } from "@/lib/userErrors";
 import { historyTrimSteps, isProjectTooLargeError, isStorageFullError, trimHistoryWindow } from "@/lib/historyTrim";
 import { GuideHelpLink } from "@/components/GuideHelpLink";
@@ -68,7 +68,6 @@ import {
 import { dedupeProjectAssets } from "@/lib/projectAssets";
 import { formatFileSize } from "@/lib/formatFileSize";
 import { hydrateProjectShapeState, reconcileLoadedProjectShapeCacheEntry, type ImportedMeshResource } from "@/lib/projectShapePersistence";
-import { ToolbarImportIcon } from "@/components/toolbarIcons";
 import { writeDesignView, writeSavedViews } from "@/lib/designView";
 import { writeCornerRulers } from "@/lib/cornerRulerStore";
 import { readTape, writeTape } from "@/lib/tapeStore";
@@ -86,6 +85,8 @@ import { designsToRecover, hiddenCopiesOf, isInlineThumbnail, LOST_DESIGNS_RECOV
 import { deleteDesignThumbnail, loadDesignThumbnails, saveDesignThumbnail } from "@/lib/designThumbnailStore";
 import { DEFAULT_SNAP_GRID, DEFAULT_WORKPLANE_WORKSPACE, normalizeSnapGrid, normalizeWorkspaceSettings, readWorkspaceDefault, workplaneSettingsFingerprint } from "@/lib/workplaneSettings";
 import type { GridSize, ProjectAsset, ProjectAttachment, WorkplaneShape, WorkplaneWorkspaceSettings } from "@/types/layerling";
+import { StartCarduri, StartGeneratoare, StartHeader, StartHero, StartLucrari, StartPasi, StartStratImport } from "@/magic3d/start/StartSectiuni";
+import { tst } from "@/magic3d/start/texte";
 
 type AppView = "dashboard" | "editor";
 type ViewMode = "grid" | "list";
@@ -2912,6 +2913,8 @@ export default function Home() {
           onViewModeChange={setViewMode}
           onWorkspace={openLatestProject}
           latestThumbnailUrl={[...projects].sort((a, b) => b.updatedAt - a.updatedAt)[0]?.thumbnailUrl ?? null}
+          ultimaPlansa={[...projects].sort((a, b) => b.updatedAt - a.updatedAt)[0] ?? null}
+          onDropFiles={(files) => void importFilesFromDashboard(files)}
         />
       ) : null}
       {emptyProjectPrompt ? (
@@ -3131,7 +3134,13 @@ function Dashboard({
   onViewModeChange,
   onWorkspace,
   latestThumbnailUrl,
+  ultimaPlansa,
+  onDropFiles,
 }: {
+  /** Magic3D: the most recently changed design, for "Continue the last plate" on the start page. */
+  ultimaPlansa: { name: string; updatedAt: number } | null;
+  /** Magic3D: files dropped anywhere on the start page go through the same import as the import button. */
+  onDropFiles: (files: File[]) => void;
   dashboardSection: DashboardSection;
   dashboardNotice: string;
   hasProjects: boolean;
@@ -3200,6 +3209,8 @@ function Dashboard({
   latestThumbnailUrl: string | null;
 }) {
   const language = useLanguage();
+  // Magic3D: files are being dragged over the start page (shows the drop layer).
+  const [tragFisiere, setTragFisiere] = useState(false);
   // Without a server there are only the browser's designs. When every new design must go to the server and this
   // browser holds none of its own, there are only the server's.
   const showBrowserTab = !sharedProjectsEnabled || !newDesignsOnServerLocked || localDesigns.length > 0;
@@ -3540,24 +3551,33 @@ function Dashboard({
   const designTabs = !sharedProjectsEnabled ? [browserTab] : !showBrowserTab ? [serverTab] : serverTabFirst ? [serverTab, browserTab] : [browserTab, serverTab];
 
   return (
-    <main className="dashboard-shell">
-      <header className="dashboard-topbar">
-        <a className="dashboard-brand" href="./" aria-label={t("brand.home")}>
-          <img src="/assets/magic3d/magic3d-logo.svg" alt="" />
-          <span className="dashboard-brand-text">
-            <span className="dashboard-brand-name">Magic<b>3D</b></span>
-            <span className="dashboard-tagline">{t("brand.tagline")}</span>
-          </span>
-        </a>
-        <div className="dashboard-search">
-          <Search size={18} strokeWidth={2.4} />
-          <input value={query} onChange={(event) => onQueryChange(event.currentTarget.value)} placeholder={t("dashboard.searchPlaceholder")} aria-label={t("dashboard.searchLabel")} />
-        </div>
-        <div className="dashboard-topbar-actions">
-          <ThemeSwitch />
-          <LanguageSwitch />
-        </div>
-      </header>
+    <main
+      className={`dashboard-shell m3d-start${tragFisiere ? " m3d-trage" : ""}`}
+      // Magic3D: files dropped anywhere on the page are imported (a card dragged between folders is not a file).
+      onDragOver={(event) => {
+        if (!Array.from(event.dataTransfer.types).includes("Files")) return;
+        event.preventDefault();
+        event.dataTransfer.dropEffect = "copy";
+        if (!tragFisiere) setTragFisiere(true);
+      }}
+      onDragLeave={(event) => {
+        if (event.currentTarget === event.target || !event.currentTarget.contains(event.relatedTarget as Node | null)) setTragFisiere(false);
+      }}
+      onDrop={(event) => {
+        if (!event.dataTransfer.files.length) return;
+        event.preventDefault();
+        setTragFisiere(false);
+        onDropFiles(Array.from(event.dataTransfer.files));
+      }}
+    >
+      {tragFisiere ? <StartStratImport /> : null}
+      <StartHeader
+        query={query}
+        onQueryChange={onQueryChange}
+        onOpenEditor={onWorkspace}
+        searchLabel={t("dashboard.searchLabel")}
+        searchPlaceholder={t("dashboard.searchPlaceholder")}
+      />
 
       <div className="dashboard-layout">
         <section className={`dashboard-main${hasProjects ? " has-projects" : ""}`} aria-label={activeSection === "shared" ? t("shared.title") : t("dashboard.projects")}>
@@ -3589,31 +3609,22 @@ function Dashboard({
           {welcome.hidden === false && !simpleMode ? (
             <DashboardWelcome open={(!hasProjects && !sharedTotal) || welcomeReopened} offline={offlineOk} onHide={welcome.hide} />
           ) : null}
-          {/* Order follows what someone actually does: start something new,
-              pick up where they left off, open something that exists. The
-              same three on both tabs: they do not depend on where designs live. */}
-          <div className="dashboard-actions-band">
-            <button className="dashboard-action-tile create" type="button" onClick={onCreate}>
-              <span className="dashboard-action-icon">
-                <Plus size={25} strokeWidth={2.8} />
-              </span>
-              <span>{t("dashboard.createDesign")}</span>
-            </button>
-            <button className="dashboard-action-tile" type="button" onClick={onWorkspace}>
-              <span className="dashboard-action-icon">
-                <Clock3 size={24} strokeWidth={2.4} />
-              </span>
-              <span>{t("dashboard.continueWorkplane")}</span>
-              {latestThumbnailUrl ? <img className="dashboard-action-thumb" src={latestThumbnailUrl} alt="" /> : null}
-            </button>
-            <button className="dashboard-action-tile" type="button" onClick={onImportFile}>
-              <span className="dashboard-action-icon">
-                {/* The same picture as the import button in the editor. */}
-                <ToolbarImportIcon width={30} height={30} />
-              </span>
-              <span>{t("dashboard.importGeometry")}</span>
-            </button>
-          </div>
+          {/* Magic3D: start something new, pick up the last plate, open or import - the same three actions as
+              before, in the hero - then the generators, the way to a printed part, and the projects below. */}
+          <StartHero
+            onCreate={onCreate}
+            onContinue={onWorkspace}
+            onImport={onImportFile}
+            ultima={ultimaPlansa ? {
+              nume: ultimaPlansa.name,
+              cand: new Date(ultimaPlansa.updatedAt).toLocaleDateString(LANGUAGE_INFO[language].numberLocale, { day: "numeric", month: "short" }),
+              poza: latestThumbnailUrl,
+            } : null}
+          />
+          <StartGeneratoare onCreate={onCreate} />
+          {simpleMode ? null : <StartPasi />}
+          {simpleMode ? null : <StartLucrari />}
+          {simpleMode ? null : <StartCarduri />}
           {dashboardNotice ? (
             <div className="dashboard-import-notice" role="status">
               {dashboardNotice}
@@ -3622,6 +3633,7 @@ function Dashboard({
           {whatsNew.view && !simpleMode ? <WhatsNewCard view={whatsNew.view} current={LYL_CREATED_WITH_VERSION} onClose={whatsNew.dismiss} /> : null}
           {simpleMode ? null : <InstallAppHint />}
           {simpleMode ? null : <TabletHint />}
+          <div id="proiecte" className="m3d-ancora-proiecte" />
           <DesignTabs tabs={designTabs} active={activeSection} onSelect={onSelectSection}>
             {activeSection === "shared" ? (
               <button className="dashboard-select dashboard-backup-button" type="button" onClick={() => onRefreshSharedProjects()} disabled={sharedProjectsLoading}>

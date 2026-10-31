@@ -1,0 +1,57 @@
+/*
+ * Pagina de start Magic3D: tot ce e de continut sta aici, nu in componente - verdele principal,
+ * navigarea, cifrele atelierului, generatoarele, lucrarile, linkurile. Textele au romana si engleza.
+ * Verdele e un token CSS (--m3d-verde) pus doar pe pagina de start: editorul nu se schimba.
+ */
+
+export type Text = { ro: string; en: string };
+
+export const START = {
+  /** Verdele principal al paginii de start; il vom potrivi cu verdele Praktik3D. */
+  verde: "#1f8a5b",
+  verdeInchis: "#15734c",
+
+  navigare: [
+    { text: { ro: "Generatoare", en: "Generators" }, href: "#generatoare" },
+    { text: { ro: "Printare", en: "Printing" }, href: "https://praktik3d.ro", extern: true },
+    { text: { ro: "Școli", en: "Schools" }, href: "https://lka.ro", extern: true },
+    { text: { ro: "Ghid", en: "Guide" }, href: "ghid" as const },
+  ],
+
+  /** Cifrele atelierului, sub butoanele din hero. */
+  cifre: [
+    { valoare: "500+", text: { ro: "lucrări printate", en: "parts printed" } },
+    { valoare: "★ 5,0", text: { ro: "pe Google", en: "on Google" } },
+    { valoare: { ro: "din 2016", en: "since 2016" }, text: { ro: "în printare 3D", en: "in 3D printing" } },
+  ],
+
+  /**
+   * Cardurile de generatoare: fiecare deschide editorul cu o forma din biblioteca deja pe plansa
+   * (`forma` = id-ul din lib/shapeCatalog.ts). Ordinea de aici e ordinea de pe pagina.
+   */
+  generatoare: [
+    { forma: "nameTag", icon: "Aa", titlu: { ro: "Breloc cu nume", en: "Name keyring" }, text: { ro: "Text, font, ramă și gaură de inel.", en: "Text, font, frame and key ring hole." } },
+    { forma: "box", icon: "▢", titlu: { ro: "Cutie cu capac", en: "Box with lid" }, text: { ro: "Cutia pe placă; capacul îl faci din Modificare → Capac.", en: "The box on the plate; make its lid with Modify → Lid." } },
+    { forma: "gear", icon: "⚙", titlu: { ro: "Roată dințată", en: "Gear" }, text: { ro: "Număr de dinți, modul, ax.", en: "Number of teeth, module, shaft." } },
+    { forma: "qrCode", icon: "QR", titlu: { ro: "Cod QR", en: "QR code" }, text: { ro: "Din link sau text, în relief.", en: "From a link or text, raised." } },
+    { forma: "vase", icon: "◡", titlu: { ro: "Vază și ghiveci", en: "Vase and planter" }, text: { ro: "Formă, răsucire, găuri de drenaj.", en: "Shape, twist, drainage holes." } },
+    { forma: "gridfinity", icon: "#", titlu: { ro: "Gridfinity", en: "Gridfinity" }, text: { ro: "Cutii și plăci de bază pe module.", en: "Bins and baseplates on a grid." } },
+    { forma: "thread", icon: "⌇", titlu: { ro: "Filete și șuruburi", en: "Threads and screws" }, text: { ro: "Metric, cu piuliță potrivită.", en: "Metric, with a matching nut." } },
+    { forma: "hinge", icon: "⟂", titlu: { ro: "Balama print-in-place", en: "Print-in-place hinge" }, text: { ro: "Se printează gata asamblată.", en: "Prints already assembled." } },
+  ],
+
+  /** Numarul WhatsApp al atelierului pentru "Cere ofertă" de pe pagina de start (acelasi ca in oferta/config.json). */
+  whatsapp: "40744330466",
+  mesajWhatsApp: { ro: "Bună ziua! Aș dori o ofertă de print 3D.", en: "Hello! I would like a 3D printing quote." },
+
+  /**
+   * Lucrari reale din atelier: o poza in public/magic3d/lucrari/ si doua randuri de text. Sectiunea
+   * apare doar daca macar o lucrare are poza - nu aratam locuri goale si nici randari drept piese reale.
+   */
+  lucrari: [] as { poza: string; eticheta: Text; titlu: Text }[],
+
+  scoli: { href: "https://lka.ro" },
+  firme: { href: "https://praktik3d.ro" },
+};
+
+export const tx = (text: Text | string, limba: string) => (typeof text === "string" ? text : limba === "ro" ? text.ro : text.en);

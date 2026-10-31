@@ -108,6 +108,7 @@ Generat de `scripts/magic3d-font-licenses.mjs`; nu edita de mână.
 | Lora Medium | OFL-1.1 | Copyright 2011 The Lora Project Authors (https://github.com/cyrealtype/Lora-Cyrillic), with Reserved Font Name "Lora". |
 | Lora SemiBold | OFL-1.1 | Copyright 2011 The Lora Project Authors (https://github.com/cyrealtype/Lora-Cyrillic), with Reserved Font Name "Lora". |
 | Luckiest Guy | Apache-2.0 | Copyright (c) 2010 by Brian J. Bonislawsky DBA Astigmatic (AOETI). All rights reserved. Available under the Apache 2.0 licence. http://www.apache.org/licenses/LICENSE-2.0.html |
+| Manrope ExtraLight | OFL-1.1 | Copyright 2019 The Manrope Project Authors (https://github.com/googlefonts/manrope) |
 | Marcellus | OFL-1.1 | Copyright (c) 2012 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name "Marcellus" |
 | Marck Script | OFL-1.1 | Copyright (c) 2011, Denis Masharov <denis.masharov@gmail.com>, Marck Fogel, with Reserved Font Names "Marck Script". |
 | Merriweather | OFL-1.1 | Copyright 2024 The Merriweather Project Authors (https://github.com/EbenSorkin/Merriweather4) with Reserved Font Name "Merriweather". |

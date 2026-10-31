@@ -15,6 +15,7 @@ import "./dashboardSelect.css";
 import "@/magic3d/oferta/oferta.css";
 import "@/magic3d/generatoare/generatoare.css";
 import "@/magic3d/sustine/sustine.css";
+import "@/magic3d/start/start.css";
 import { DiagnoseStrip } from "@/components/DiagnoseStrip";
 import { HtmlSettingsRestore } from "@/components/HtmlSettingsRestore";
 import { NewVersionNotice } from "@/components/NewVersionNotice";

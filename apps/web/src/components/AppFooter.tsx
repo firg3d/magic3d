@@ -12,6 +12,7 @@ import { InstallAppHint } from "@/components/InstallAppHint";
 import { TabletHint } from "@/components/TabletHint";
 import { PenHoverTips } from "@/components/PenHoverTips";
 import { SustineButon, SustineNota } from "@/magic3d/sustine/SustineButon";
+import { tst } from "@/magic3d/start/texte";
 
 export { SOURCE_CODE_URL };
 
@@ -123,6 +124,7 @@ export function AppFooter({
     <footer className={variant === "editor" ? "dashboard-legal editor-legal" : "dashboard-legal"}>
       <div className="dashboard-legal-group">
         {joinWithDots([
+          variant === "dashboard" ? <span className="m3d-credit" key="credit"><strong>Magic3D</strong> · {tst("credit").replace(/^Magic3D · /, "")}</span> : null,
           <SustineButon loc="support-footer" varianta="subsol" key="sustine" />,
           onShowWelcome ? (
             <a
@@ -200,7 +202,7 @@ export function AppFooter({
           ) : null,
         ])}
       </div>
-      {variant === "dashboard" ? <p className="dashboard-trademark">{t("footer.trademark")}</p> : null}
+      {variant === "dashboard" ? <p className="dashboard-trademark">{tst("bazatPe")} · {t("footer.trademark")}</p> : null}
     </footer>
     </>
   );
