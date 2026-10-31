@@ -158,3 +158,33 @@
 .gen-adauga:disabled {
   opacity: 0.5;
 }
+
+.gen-biblioteca {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.gen-model {
+  display: grid;
+  gap: 4px;
+  justify-items: center;
+  padding: 6px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--tile);
+  color: var(--foreground);
+  font: 12px var(--font-ui);
+  cursor: pointer;
+}
+
+.gen-model:hover {
+  border-color: var(--primary);
+}
+
+.gen-model img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
+}

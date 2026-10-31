@@ -15,6 +15,10 @@ const RO = {
   inapoi: "Înapoi la listă",
   inchide: "Închide",
   editeaza: "Editează în generator",
+  modele: "Modele de pus în scenă",
+  tematici: "Tematici",
+  baze: "Baze",
+  licentaModele: "Modelele sunt ale Magic3D, sub licența",
 } as const;
 
 export type CheieGen = keyof typeof RO;
@@ -32,6 +36,10 @@ const EN: Record<CheieGen, string> = {
   inapoi: "Back to the list",
   inchide: "Close",
   editeaza: "Edit in the generator",
+  modele: "Models to place",
+  tematici: "Themes",
+  baze: "Bases",
+  licentaModele: "The models belong to Magic3D, licensed",
 };
 
 export function tg(cheie: CheieGen, valori: Record<string, string | number> = {}): string {

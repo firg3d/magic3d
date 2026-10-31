@@ -35,6 +35,7 @@ import { OfertaPanel, type PachetOferta } from "@/magic3d/oferta/OfertaPanel";
 import { DESCHIDE_GENERATOARE } from "@/magic3d/generatoare/GeneratoareButton";
 import { GeneratoarePanel, type AplicaGenerare } from "@/magic3d/generatoare/GeneratoarePanel";
 import { pachetGenerat } from "@/magic3d/generatoare/forma";
+import { IMPORTA_MODEL, type CerereImport } from "@/magic3d/generatoare/Biblioteca";
 import { t as tMagic3d } from "@/magic3d/core/i18n/index";
 import { qrCodeOf, qrCodeShape, regeneratedQrCodeShape } from "@/lib/editorQrCode";
 import { DEFAULT_QR_WIDTH, MAX_QR_HEIGHT, MAX_QR_WIDTH, MIN_QR_HEIGHT, MIN_QR_WIDTH, QR_BYTE_CAPACITY, QR_ERROR_CORRECTIONS, QR_STYLES, normalizeQrSettings, qrByteLength, qrMatrix, qrModuleSize, qrModuleTooSmall, qrTextFits, type QrCodeSettings, type QrErrorCorrection, type QrStyle } from "@/lib/qrCode";
@@ -9947,6 +9948,21 @@ export function LayerlingEditor({
     window.addEventListener(DESCHIDE_GENERATOARE, open);
     return () => window.removeEventListener(DESCHIDE_GENERATOARE, open);
   }, []);
+  // Magic3D model library (themes, bases): the file comes through the normal import, as a multi-colour body.
+  useEffect(() => {
+    const importa = (event: Event) => {
+      const { url, nume } = (event as CustomEvent<CerereImport>).detail;
+      void fetch(url)
+        .then((response) => {
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          return response.blob();
+        })
+        .then((blob) => importFilesRef.current?.([new File([blob], nume, { type: "model/3mf" })]))
+        .catch((error: unknown) => setNotice(error instanceof Error ? error.message : String(error), true));
+    };
+    window.addEventListener(IMPORTA_MODEL, importa);
+    return () => window.removeEventListener(IMPORTA_MODEL, importa);
+  }, [setNotice]);
   const aplicaGenerare = useCallback<AplicaGenerare>((rezultat, def, meta, tinta) => {
     const vechi = tinta ? shapesRef.current.find((shape) => shape.id === tinta) ?? null : null;
     const shape = pachetGenerat(rezultat.piese, tMagic3d(def.titlu), meta, vechi);

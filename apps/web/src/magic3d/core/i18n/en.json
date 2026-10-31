@@ -256,7 +256,15 @@
     "scaraY": "scale Y %",
     "scaraZ": "scale Z %",
     "dimensiuneMax": "maximum dimension mm",
-    "grosimeAdancime": "thickness mm (depth)"
+    "grosimeAdancime": "thickness mm (depth)",
+    "fontLitera": "Letter font",
+    "fontScris": "Text font",
+    "adancimeScris": "Text position mm (negative = into the letter)",
+    "scrisX": "Text: left–right offset mm",
+    "scrisY": "Text: up–down offset mm",
+    "scrisRotatie": "Text: rotation °",
+    "glifeLipsa": "Characters without geometry in {sursa}: {litere}",
+    "scrisPluteste": "“{nume}” does not touch the letter: move it or sink it deeper"
   },
   "status": {
     "stabil": "stable · base {aria} mm²{taiat}",
@@ -368,7 +376,9 @@
     "orientarePrint": "flat, tag down",
     "fontNecitit": "The font “{nume}” could not be read ({eroare}).",
     "statusSectiuneMica": "the loop that holds the keys has only {s} mm² of section (below {prag}) — it snaps when pulled; thicken the wall or the tag",
-    "statusFontSeIncarca": "loading the font…"
+    "statusFontSeIncarca": "loading the font…",
+    "numePlacuta": "Tag “{text}”",
+    "numeLitera": "Text “{text}”"
   },
   "fagure": {
     "grupLitera": "The letter",
@@ -452,6 +462,7 @@
     "orientareSpate": "flat, BACK up (the hanging socket opening upwards)",
     "orientareCapac": "flat, separate piece",
     "numeCapac": "Screw cap ({n} pcs.)",
+    "numeModel": "Pattern of the letter “{litera}”",
     "notaCapac": "The cap is pressed into the socket AFTER the letter is fixed to the wall. It goes in with a press fit ({joc} mm clearance) — if it is too tight, one pass of sandpaper on the edge.",
     "notaAgatare": "Hanging: {tip}, a {adanc} mm socket, placed on the vertical through the centre of mass — the letter hangs straight on the wall.",
     "notaAgatareSpate": "The piece is flipped back up for printing, so the socket does not print as a bridge.",
@@ -847,7 +858,8 @@
     "grupBiblioteca": "library",
     "statusSimboluriGauri": "{n} of the {total} positions are symbols, not letters — with {gauri} real holes in them (the eye of the flower, the ring of the key)",
     "notaAmpersandEticheta": "and “&”",
-    "notaAmpersand": "it is typed directly — all 22 fonts have it, so it comes out in the drawing of the chosen font, not in one made by us"
+    "notaAmpersand": "it is typed directly — all 22 fonts have it, so it comes out in the drawing of the chosen font, not in one made by us",
+    "textSimboluri": "text (the symbols ♥ ★ ⌂ ♪ ♫ ❀ ☘ ☾ ☀ ♛ ✈ ⚓ ⚡ ✝ ☕ are typed directly)"
   },
   "placute": {
     "grupText": "Text",
@@ -1152,7 +1164,11 @@
     "notaCuloare": "The insert is one piece in two colours: the outline underneath, the lettering on top — nothing to glue between them.",
     "notaInel": "The Ø{d} mm ring hole is already in the base — do not drill it by hand.",
     "notaFaraInel": "No ring: the keychain hangs another way, or is used as a magnet.",
-    "bazaUrmeaza": "the base also covers the name"
+    "bazaUrmeaza": "the base also covers the name",
+    "numeFundal": "Outline “{nume}”",
+    "numeMiez": "Lettering “{nume}”",
+    "offX": "name offset X mm",
+    "offY": "name offset Y mm"
   },
   "rame": {
     "grupRama": "The frame",
@@ -1243,6 +1259,7 @@
     "fontRespins": "stroke {trasatura} mm, {necesar} needed",
     "fontRespinsInalt": "stroke {trasatura} mm, {necesar} needed; would work from {inaltmin} mm",
     "gasesteIngrosare": "Apply the smallest thickening that works",
+    "ingrosareAuto": "Automatic thickening (smallest that works)",
     "grosimeFata": "Face thickness (mm)",
     "grosimePerete": "Opaque wall (mm)",
     "grosimeSpate": "Back (mm)",

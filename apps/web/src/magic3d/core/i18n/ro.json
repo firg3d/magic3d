@@ -256,7 +256,15 @@
     "scaraY": "scară Y %",
     "scaraZ": "scară Z %",
     "dimensiuneMax": "dimensiune maximă mm",
-    "grosimeAdancime": "grosime mm (adâncime)"
+    "grosimeAdancime": "grosime mm (adâncime)",
+    "fontLitera": "Font literă",
+    "fontScris": "Font scris",
+    "adancimeScris": "Poziție scris mm (negativ = intră în literă)",
+    "scrisX": "Scris: deplasare stânga–dreapta mm",
+    "scrisY": "Scris: deplasare sus–jos mm",
+    "scrisRotatie": "Scris: rotație °",
+    "glifeLipsa": "Caractere fără geometrie în {sursa}: {litere}",
+    "scrisPluteste": "„{nume}” nu atinge litera: mută-l sau adâncește-l"
   },
   "status": {
     "stabil": "stabil · bază {aria} mm²{taiat}",
@@ -368,7 +376,9 @@
     "orientarePrint": "culcat, plăcuța jos",
     "fontNecitit": "Fontul „{nume}\" nu a putut fi citit ({eroare}).",
     "statusSectiuneMica": "bucla care ține cheile are doar {s} mm² secțiune (sub {prag}) — se rupe la tras; îngroașă peretele sau plăcuța",
-    "statusFontSeIncarca": "se încarcă fontul…"
+    "statusFontSeIncarca": "se încarcă fontul…",
+    "numePlacuta": "Plăcuța „{text}”",
+    "numeLitera": "Textul „{text}”"
   },
   "fagure": {
     "grupLitera": "Litera",
@@ -452,6 +462,7 @@
     "orientareSpate": "culcat, SPATELE în sus (locașul de agățare deschis în sus)",
     "orientareCapac": "culcat, piesă separată",
     "numeCapac": "Capac șurub ({n} buc.)",
+    "numeModel": "Modelul literei „{litera}\"",
     "notaCapac": "Capacul se apasă în locaș DUPĂ ce litera e prinsă în perete. Intră cu presiune (joc {joc} mm) — dacă e prea strâns, o trecere de șmirghel pe muchie.",
     "notaAgatare": "Agățare: {tip}, locaș de {adanc} mm, așezat pe verticala centrului de masă — litera stă dreaptă pe perete.",
     "notaAgatareSpate": "Piesa e întoarsă cu spatele în sus la print, ca locașul să nu se printeze în punte.",
@@ -847,7 +858,8 @@
     "grupBiblioteca": "bibliotecă",
     "statusSimboluriGauri": "{n} din cele {total} poziții sunt simboluri, nu litere — cu {gauri} goluri adevărate în ele (ochiul florii, inelul cheii)",
     "notaAmpersandEticheta": "și „&\"",
-    "notaAmpersand": "se scrie direct — toate cele 22 de fonturi îl au, deci iese în chiar desenul fontului ales, nu într-unul făcut de noi"
+    "notaAmpersand": "se scrie direct — toate cele 22 de fonturi îl au, deci iese în chiar desenul fontului ales, nu într-unul făcut de noi",
+    "textSimboluri": "text (simbolurile ♥ ★ ⌂ ♪ ♫ ❀ ☘ ☾ ☀ ♛ ✈ ⚓ ⚡ ✝ ☕ se scriu direct)"
   },
   "placute": {
     "grupText": "Text",
@@ -1152,7 +1164,11 @@
     "notaCuloare": "Inserția e o piesă cu două culori: conturul dedesubt, scrisul deasupra — fără lipit între ele.",
     "notaInel": "Gaura de inel Ø{d} mm e deja în bază — nu se găurește manual.",
     "notaFaraInel": "Fără inel: brelocul se agață altfel sau se folosește ca magnet.",
-    "bazaUrmeaza": "baza cuprinde și numele"
+    "bazaUrmeaza": "baza cuprinde și numele",
+    "numeFundal": "Conturul „{nume}”",
+    "numeMiez": "Scrisul „{nume}”",
+    "offX": "deplasare nume X mm",
+    "offY": "deplasare nume Y mm"
   },
   "rame": {
     "grupRama": "Rama",
@@ -1243,6 +1259,7 @@
     "fontRespins": "trăsătură {trasatura} mm, sunt necesari {necesar}",
     "fontRespinsInalt": "trăsătură {trasatura} mm, sunt necesari {necesar}; ar merge de la {inaltmin} mm",
     "gasesteIngrosare": "Pune îngroșarea minimă care merge",
+    "ingrosareAuto": "Îngroșare automată (cea mai mică care merge)",
     "grosimeFata": "Grosimea feței (mm)",
     "grosimePerete": "Peretele opac (mm)",
     "grosimeSpate": "Spatele (mm)",

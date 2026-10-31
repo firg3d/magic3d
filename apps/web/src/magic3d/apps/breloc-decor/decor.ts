@@ -32,6 +32,8 @@ export function configureManifold(mod: any): void { MOD = mod; configTextSolid(m
 export const FUND_MIN = 1;
 /** secțiunea minimă a inelului care ține cheile: perete × grosime (mm²) */
 export const SECTIUNE_MIN = 4;
+/** Aria sub care o bucata desprinsa e o aschie, nu o piesa (aceeasi valoare ca ASCHIE_MAX din fagure.ts). */
+const ASCHIE_MAX_MM2 = 1;
 /** segmente pe cerc — fix, ca rezultatul să nu depindă de setările globale ale modulului */
 const SEGMENTE = 64;
 /** scobiturile ies puțin peste fața piesei: fețe coplanare = geometrie fragilă */
@@ -231,7 +233,10 @@ export function buildDecor(cfg: DecorConfig): DecorResult {
   // ---------------- VERIFICĂRI ----------------
   // numele care iese în afara literei atârnă peste ramă și nu se mai poate lipi
   const inAfara = +arie(fundal.subtract(zonaTavita)).toFixed(1);
-  const bucatiNume = corpFundal.decompose().length;
+  // Doar bucatile reale: o aschie de 0.18 mm² langa litera nu e o piesa (CLAUDE.md, "decompose().length
+  // nu e un numar de piese"). Pragul e aria unei aschii, inmultita cu grosimea insertiei.
+  const parti: any[] = corpFundal.decompose();
+  const bucatiNume = parti.filter((p) => p.volume() > ASCHIE_MAX_MM2 * cfg.grosimeNume).length;
   // dimensiunea se ia de pe SOLIDUL final, nu de pe contur: inelul e adăugat la solid, deci
   // conturul nu-l cuprinde, iar piesa ar fi raportată mai mică decât e în mână
   const bbB = corpBaza.boundingBox(), bbNume = fundal.bounds();

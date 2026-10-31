@@ -1,15 +1,41 @@
 import opentype from "opentype.js";
-import { buildPlacuta, configureManifold as configPlacute } from "@/magic3d/apps/placute/placute";
-import { t } from "@/magic3d/core/i18n/index";
+import type { Constructor, Construit, Fonturi, PiesaManifold } from "@/magic3d/generatoare/constructori/comun";
+import { articulat } from "@/magic3d/generatoare/constructori/articulat";
+import { brelocDecor } from "@/magic3d/generatoare/constructori/breloc-decor";
+import { brelocuri } from "@/magic3d/generatoare/constructori/brelocuri";
+import { cutii } from "@/magic3d/generatoare/constructori/cutii";
+import { cuvinte } from "@/magic3d/generatoare/constructori/cuvinte";
+import { fagure } from "@/magic3d/generatoare/constructori/fagure";
+import { led } from "@/magic3d/generatoare/constructori/led";
+import { litere } from "@/magic3d/generatoare/constructori/litere";
+import { numeLed } from "@/magic3d/generatoare/constructori/nume-led";
+import { nume } from "@/magic3d/generatoare/constructori/nume";
+import { rame } from "@/magic3d/generatoare/constructori/rame";
+import { placute } from "@/magic3d/generatoare/constructori/placute";
 import type { Parametri, PiesaGenerata } from "@/magic3d/generatoare/tipuri";
 
 /*
- * Partea de worker a generatoarelor: din parametri si un modul manifold, piesele ca manifold-uri.
- * Ruleaza doar in generator.worker.ts, unde manifold-ul si fonturile sunt deja incarcate.
+ * Partea de worker a generatoarelor: registrul constructorilor (unul per fisier in constructori/),
+ * incarcarea fonturilor si trecerea pieselor din manifold in triunghiurile scenei.
+ * Ruleaza doar in generator.worker.ts si in teste.
  */
 
-export type PiesaManifold = { nume: string; culoare: string; manifold: unknown };
-export type Construit = { piese: PiesaManifold[]; avertizari: string[] };
+export type { Construit, PiesaManifold };
+
+const CONSTRUCTORI: Record<string, Constructor> = {
+  articulat,
+  "breloc-decor": brelocDecor,
+  brelocuri,
+  cutii,
+  cuvinte,
+  fagure,
+  led,
+  litere,
+  nume,
+  "nume-led": numeLed,
+  placute,
+  rame,
+};
 
 const fonturi = new Map<string, Promise<unknown>>();
 
@@ -29,56 +55,19 @@ export function incarcaFont(assetBase: string, fisier: string): Promise<unknown>
   return font;
 }
 
-const num = (p: Parametri, cheie: string) => Number(p[cheie]);
-const str = (p: Parametri, cheie: string) => String(p[cheie] ?? "");
-
-/** Codurile de avertizare din geometrie ("tip:a:b") in text, cu traducerile Magic3D. */
-function avertPlacuta(cod: string): string {
-  const [tip, a, b] = cod.split(":");
-  if (tip === "perete") return t("placute.avertPerete", { mm: a, min: b });
-  if (tip === "terusIngust") return t("placute.avertTerus", { mm: a, min: b });
-  if (tip === "magnetSubtire") return t("placute.avertMagnet", { mm: a });
-  return cod;
+/** Toate fonturile cerute de parametri: fiecare cheie care incepe cu "font" si are un nume de fisier. */
+export async function incarcaFonturi(assetBase: string, p: Parametri): Promise<Fonturi> {
+  const chei = Object.keys(p).filter((cheie) => /^font/.test(cheie) && typeof p[cheie] === "string" && p[cheie]);
+  const parsate = await Promise.all(chei.map((cheie) => incarcaFont(assetBase, String(p[cheie]))));
+  return Object.fromEntries(chei.map((cheie, i) => [cheie, parsate[i]]));
 }
-
-type Constructor = (p: Parametri, mod: unknown, font: unknown) => Construit;
-
-const CONSTRUCTORI: Record<string, Constructor> = {
-  placute(p, mod, font) {
-    configPlacute(mod);
-    const text = str(p, "text").trim() || " ";
-    const r = buildPlacuta({
-      text,
-      font,
-      inaltimeText: num(p, "inaltimeText"),
-      reliefText: num(p, "reliefText"),
-      latimePlacuta: num(p, "latimePlacuta"),
-      netezire: num(p, "netezire"),
-      grosimePlacuta: num(p, "grosimePlacuta"),
-      prindere: str(p, "prindere") as Parameters<typeof buildPlacuta>[0]["prindere"],
-      diametruGaura: num(p, "diametruGaura"),
-      lungimeTerus: num(p, "lungimeTerus"),
-      culoarePlacuta: str(p, "culoarePlacuta"),
-      culoareText: str(p, "culoareText"),
-    });
-    const avertizari = [r.diagnostice.avert ? avertPlacuta(r.diagnostice.avert) : ""];
-    if (r.diagnostice.glifeLipsa.length) avertizari.push(t("placute.statusGlifa", { litere: r.diagnostice.glifeLipsa.join(" ") }));
-    return {
-      piese: [
-        { nume: t("placute.numePlacuta", { text }), culoare: str(p, "culoarePlacuta"), manifold: r.corpPlacuta },
-        ...(r.corpText ? [{ nume: t("placute.numeText", { text }), culoare: str(p, "culoareText"), manifold: r.corpText }] : []),
-      ],
-      avertizari: avertizari.filter(Boolean),
-    };
-  },
-};
 
 export const areConstructor = (id: string) => id in CONSTRUCTORI;
 
-export function construieste(id: string, p: Parametri, mod: unknown, font: unknown): Construit {
+export function construieste(id: string, p: Parametri, mod: unknown, fonturiCerute: Fonturi): Construit {
   const constructor = CONSTRUCTORI[id];
   if (!constructor) throw new Error(`generator necunoscut: ${id}`);
-  return constructor(p, mod, font);
+  return constructor(p, mod, fonturiCerute);
 }
 
 /**
@@ -108,8 +97,8 @@ export function manifoldInTriunghiuri(manifold: { getMesh(): { vertProperties: F
   return out;
 }
 
-export function triunghiuri(piese: PiesaManifold[]): PiesaGenerata[] {
-  return piese.map((piesa) => ({
+export function triunghiuri(lista: PiesaManifold[]): PiesaGenerata[] {
+  return lista.map((piesa) => ({
     nume: piesa.nume,
     culoare: piesa.culoare,
     positions: manifoldInTriunghiuri(piesa.manifold as Parameters<typeof manifoldInTriunghiuri>[0]),

@@ -33,7 +33,7 @@ function limite(piesa: PiesaGenerata) {
 
 function genereaza(id: string, parametri: Record<string, string | number | boolean>, fisierFont: string) {
   return inArena(() => {
-    const construit = construieste(id, parametri, mod, font(fisierFont));
+    const construit = construieste(id, parametri, mod, { font: font(fisierFont) });
     return { piese: triunghiuri(construit.piese), avertizari: construit.avertizari };
   }, () => []);
 }

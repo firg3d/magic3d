@@ -1,0 +1,4178 @@
+[
+  {
+    "fisier": "As Inima Neagra.3mf",
+    "format": "3mf",
+    "nume": "As Inima Neagra",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 50,
+          "y": 66.568,
+          "z": 2
+        }
+      },
+      {
+        "index": 1,
+        "nume": "corp 2",
+        "dimensiuni": {
+          "x": 5.893,
+          "y": 6.166,
+          "z": 1
+        }
+      },
+      {
+        "index": 2,
+        "nume": "corp 3",
+        "dimensiuni": {
+          "x": 13.629,
+          "y": 16.822,
+          "z": 1
+        }
+      },
+      {
+        "index": 3,
+        "nume": "corp 4",
+        "dimensiuni": {
+          "x": 4.51,
+          "y": 5.416,
+          "z": 1
+        }
+      },
+      {
+        "index": 4,
+        "nume": "corp 5",
+        "dimensiuni": {
+          "x": 5.833,
+          "y": 6.175,
+          "z": 1
+        }
+      },
+      {
+        "index": 5,
+        "nume": "corp 6",
+        "dimensiuni": {
+          "x": 4.487,
+          "y": 5.441,
+          "z": 1
+        }
+      },
+      {
+        "index": 6,
+        "nume": "corp 7",
+        "dimensiuni": {
+          "x": 50,
+          "y": 66.568,
+          "z": 1
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 50,
+      "y": 66.568,
+      "z": 3
+    },
+    "thumb": "As Inima Neagra.thumb.png"
+  },
+  {
+    "fisier": "As inima rosie.3mf",
+    "format": "3mf",
+    "nume": "As inima rosie",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 50,
+          "y": 66.718,
+          "z": 2
+        }
+      },
+      {
+        "index": 1,
+        "nume": "corp 2",
+        "dimensiuni": {
+          "x": 5.815,
+          "y": 6.088,
+          "z": 1
+        }
+      },
+      {
+        "index": 2,
+        "nume": "corp 3",
+        "dimensiuni": {
+          "x": 13.605,
+          "y": 14.348,
+          "z": 1
+        }
+      },
+      {
+        "index": 3,
+        "nume": "corp 4",
+        "dimensiuni": {
+          "x": 5.325,
+          "y": 5.651,
+          "z": 1
+        }
+      },
+      {
+        "index": 4,
+        "nume": "corp 5",
+        "dimensiuni": {
+          "x": 5.877,
+          "y": 6.088,
+          "z": 1
+        }
+      },
+      {
+        "index": 5,
+        "nume": "corp 6",
+        "dimensiuni": {
+          "x": 5.349,
+          "y": 5.568,
+          "z": 1
+        }
+      },
+      {
+        "index": 6,
+        "nume": "corp 7",
+        "dimensiuni": {
+          "x": 50,
+          "y": 66.718,
+          "z": 1
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 50,
+      "y": 66.718,
+      "z": 3
+    },
+    "thumb": "As inima rosie.thumb.png"
+  },
+  {
+    "fisier": "As romb.3mf",
+    "format": "3mf",
+    "nume": "As romb",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 50,
+          "y": 67.151,
+          "z": 2
+        }
+      },
+      {
+        "index": 1,
+        "nume": "corp 2",
+        "dimensiuni": {
+          "x": 12.875,
+          "y": 16.526,
+          "z": 1
+        }
+      },
+      {
+        "index": 2,
+        "nume": "corp 3",
+        "dimensiuni": {
+          "x": 50,
+          "y": 67.151,
+          "z": 1
+        }
+      },
+      {
+        "index": 3,
+        "nume": "corp 4",
+        "dimensiuni": {
+          "x": 4.447,
+          "y": 5.634,
+          "z": 1
+        }
+      },
+      {
+        "index": 4,
+        "nume": "corp 5",
+        "dimensiuni": {
+          "x": 4.35,
+          "y": 5.625,
+          "z": 1
+        }
+      },
+      {
+        "index": 5,
+        "nume": "corp 6",
+        "dimensiuni": {
+          "x": 5.833,
+          "y": 6.068,
+          "z": 1
+        }
+      },
+      {
+        "index": 6,
+        "nume": "corp 7",
+        "dimensiuni": {
+          "x": 5.814,
+          "y": 6.161,
+          "z": 1
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 50,
+      "y": 67.151,
+      "z": 3
+    },
+    "thumb": "As romb.thumb.png"
+  },
+  {
+    "fisier": "As trefla.3mf",
+    "format": "3mf",
+    "nume": "As trefla",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 50,
+          "y": 66.742,
+          "z": 2
+        }
+      },
+      {
+        "index": 1,
+        "nume": "corp 2",
+        "dimensiuni": {
+          "x": 15.549,
+          "y": 16.889,
+          "z": 1
+        }
+      },
+      {
+        "index": 2,
+        "nume": "corp 3",
+        "dimensiuni": {
+          "x": 50,
+          "y": 66.742,
+          "z": 1
+        }
+      },
+      {
+        "index": 3,
+        "nume": "corp 4",
+        "dimensiuni": {
+          "x": 5.917,
+          "y": 6.167,
+          "z": 1
+        }
+      },
+      {
+        "index": 4,
+        "nume": "corp 5",
+        "dimensiuni": {
+          "x": 5.889,
+          "y": 6.167,
+          "z": 1
+        }
+      },
+      {
+        "index": 5,
+        "nume": "corp 6",
+        "dimensiuni": {
+          "x": 5.052,
+          "y": 5.576,
+          "z": 1
+        }
+      },
+      {
+        "index": 6,
+        "nume": "corp 7",
+        "dimensiuni": {
+          "x": 5.073,
+          "y": 5.582,
+          "z": 1
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 50,
+      "y": 66.742,
+      "z": 3
+    },
+    "thumb": "As trefla.thumb.png"
+  },
+  {
+    "fisier": "Balon aer cald.3mf",
+    "format": "3mf",
+    "nume": "Balon aer cald",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 49.367,
+          "y": 51.497,
+          "z": 4
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 49.367,
+      "y": 51.497,
+      "z": 4
+    },
+    "thumb": "Balon aer cald.thumb.png"
+  },
+  {
+    "fisier": "balon aer cald 2.3mf",
+    "format": "3mf",
+    "nume": "balon aer cald 2",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 28.899,
+          "y": 40.027,
+          "z": 2
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 28.899,
+      "y": 40.027,
+      "z": 2
+    },
+    "thumb": "balon aer cald 2.thumb.png"
+  },
+  {
+    "fisier": "biberon.3mf",
+    "format": "3mf",
+    "nume": "biberon",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 18.5,
+          "y": 39.994,
+          "z": 2
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 18.5,
+      "y": 39.994,
+      "z": 2
+    },
+    "thumb": "biberon.thumb.png"
+  },
+  {
+    "fisier": "butoane 2.3mf",
+    "format": "3mf",
+    "nume": "butoane 2",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 31.998,
+          "y": 31.999,
+          "z": 2
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 31.998,
+      "y": 31.999,
+      "z": 2
+    },
+    "thumb": "butoane 2.thumb.png"
+  },
+  {
+    "fisier": "butoane1.3mf",
+    "format": "3mf",
+    "nume": "butoane1",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 30,
+          "y": 30,
+          "z": 2
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 30,
+      "y": 30,
+      "z": 2
+    },
+    "thumb": "butoane1.thumb.png"
+  },
+  {
+    "fisier": "cablu.3mf",
+    "format": "3mf",
+    "nume": "cablu",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 53.954,
+          "y": 58.018,
+          "z": 3.744
+        }
+      },
+      {
+        "index": 1,
+        "nume": "corp 2",
+        "dimensiuni": {
+          "x": 57.074,
+          "y": 58.08,
+          "z": 3.91
+        }
+      },
+      {
+        "index": 2,
+        "nume": "corp 3",
+        "dimensiuni": {
+          "x": 3.294,
+          "y": 0.959,
+          "z": 0.883
+        }
+      },
+      {
+        "index": 3,
+        "nume": "corp 4",
+        "dimensiuni": {
+          "x": 3.591,
+          "y": 1.005,
+          "z": 0.883
+        }
+      },
+      {
+        "index": 4,
+        "nume": "corp 5",
+        "dimensiuni": {
+          "x": 1.632,
+          "y": 2.146,
+          "z": 1.042
+        }
+      },
+      {
+        "index": 5,
+        "nume": "corp 6",
+        "dimensiuni": {
+          "x": 1.543,
+          "y": 1.928,
+          "z": 1.041
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 57.351,
+      "y": 59.667,
+      "z": 3.972
+    },
+    "thumb": "cablu.thumb.png"
+  },
+  {
+    "fisier": "cartonase.3mf",
+    "format": "3mf",
+    "nume": "cartonase",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 1,
+          "y": 12.867,
+          "z": 16.403
+        }
+      },
+      {
+        "index": 1,
+        "nume": "corp 2",
+        "dimensiuni": {
+          "x": 1,
+          "y": 12.867,
+          "z": 16.403
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 2,
+      "y": 16.576,
+      "z": 16.403
+    },
+    "thumb": "cartonase.thumb.png"
+  },
+  {
+    "fisier": "Controller.3mf",
+    "format": "3mf",
+    "nume": "Controller",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 76.027,
+          "y": 57.948,
+          "z": 4.038
+        }
+      },
+      {
+        "index": 1,
+        "nume": "corp 2",
+        "dimensiuni": {
+          "x": 25.463,
+          "y": 51.109,
+          "z": 2.019
+        }
+      },
+      {
+        "index": 2,
+        "nume": "corp 3",
+        "dimensiuni": {
+          "x": 25.518,
+          "y": 51.073,
+          "z": 2.019
+        }
+      },
+      {
+        "index": 3,
+        "nume": "corp 4",
+        "dimensiuni": {
+          "x": 26.426,
+          "y": 17.003,
+          "z": 1.346
+        }
+      },
+      {
+        "index": 4,
+        "nume": "corp 5",
+        "dimensiuni": {
+          "x": 8.404,
+          "y": 8.408,
+          "z": 1.346
+        }
+      },
+      {
+        "index": 5,
+        "nume": "corp 6",
+        "dimensiuni": {
+          "x": 8.404,
+          "y": 8.408,
+          "z": 1.346
+        }
+      },
+      {
+        "index": 6,
+        "nume": "corp 7",
+        "dimensiuni": {
+          "x": 10.095,
+          "y": 10.095,
+          "z": 1.01
+        }
+      },
+      {
+        "index": 7,
+        "nume": "corp 8",
+        "dimensiuni": {
+          "x": 10.095,
+          "y": 10.095,
+          "z": 1.01
+        }
+      },
+      {
+        "index": 8,
+        "nume": "corp 9",
+        "dimensiuni": {
+          "x": 3.952,
+          "y": 5.816,
+          "z": 0.337
+        }
+      },
+      {
+        "index": 9,
+        "nume": "corp 10",
+        "dimensiuni": {
+          "x": 5.952,
+          "y": 4.047,
+          "z": 0.337
+        }
+      },
+      {
+        "index": 10,
+        "nume": "corp 11",
+        "dimensiuni": {
+          "x": 5.952,
+          "y": 4.047,
+          "z": 0.337
+        }
+      },
+      {
+        "index": 11,
+        "nume": "corp 12",
+        "dimensiuni": {
+          "x": 4.108,
+          "y": 5.848,
+          "z": 0.337
+        }
+      },
+      {
+        "index": 12,
+        "nume": "corp 13",
+        "dimensiuni": {
+          "x": 5.452,
+          "y": 5.433,
+          "z": 0.337
+        }
+      },
+      {
+        "index": 13,
+        "nume": "corp 14",
+        "dimensiuni": {
+          "x": 5.452,
+          "y": 5.433,
+          "z": 0.337
+        }
+      },
+      {
+        "index": 14,
+        "nume": "corp 15",
+        "dimensiuni": {
+          "x": 5.452,
+          "y": 5.433,
+          "z": 0.337
+        }
+      },
+      {
+        "index": 15,
+        "nume": "corp 16",
+        "dimensiuni": {
+          "x": 5.452,
+          "y": 5.433,
+          "z": 0.337
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 76.027,
+      "y": 57.948,
+      "z": 6.057
+    },
+    "thumb": "Controller.thumb.png"
+  },
+  {
+    "fisier": "creioane.3mf",
+    "format": "3mf",
+    "nume": "creioane",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 32.997,
+          "y": 151.172,
+          "z": 17.321
+        }
+      },
+      {
+        "index": 1,
+        "nume": "corp 2",
+        "dimensiuni": {
+          "x": 19.924,
+          "y": 16.076,
+          "z": 17.321
+        }
+      },
+      {
+        "index": 2,
+        "nume": "corp 3",
+        "dimensiuni": {
+          "x": 5.972,
+          "y": 5.286,
+          "z": 6
+        }
+      },
+      {
+        "index": 3,
+        "nume": "corp 4",
+        "dimensiuni": {
+          "x": 45.743,
+          "y": 151.194,
+          "z": 17.321
+        }
+      },
+      {
+        "index": 4,
+        "nume": "corp 5",
+        "dimensiuni": {
+          "x": 19.696,
+          "y": 17.03,
+          "z": 17.321
+        }
+      },
+      {
+        "index": 5,
+        "nume": "corp 6",
+        "dimensiuni": {
+          "x": 5.903,
+          "y": 5.531,
+          "z": 6
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 72.323,
+      "y": 181.395,
+      "z": 17.321
+    },
+    "thumb": "creioane.thumb.png"
+  },
+  {
+    "fisier": "disc.3mf",
+    "format": "3mf",
+    "nume": "disc",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 39.986,
+          "y": 39.993,
+          "z": 2
+        }
+      },
+      {
+        "index": 1,
+        "nume": "corp 2",
+        "dimensiuni": {
+          "x": 100,
+          "y": 100,
+          "z": 2
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 100,
+      "y": 100,
+      "z": 2
+    },
+    "thumb": "disc.thumb.png"
+  },
+  {
+    "fisier": "disc vinyl.3mf",
+    "format": "3mf",
+    "nume": "disc vinyl",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 16.549,
+          "y": 16.552,
+          "z": 1.379
+        }
+      },
+      {
+        "index": 1,
+        "nume": "corp 2",
+        "dimensiuni": {
+          "x": 41.387,
+          "y": 41.387,
+          "z": 1.379
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 41.387,
+      "y": 41.387,
+      "z": 1.379
+    },
+    "thumb": "disc vinyl.thumb.png"
+  },
+  {
+    "fisier": "fulger.3mf",
+    "format": "3mf",
+    "nume": "fulger",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 37.262,
+          "y": 72.136,
+          "z": 7.753
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 37.262,
+      "y": 72.136,
+      "z": 7.753
+    },
+    "thumb": "fulger.thumb.png"
+  },
+  {
+    "fisier": "inima.3mf",
+    "format": "3mf",
+    "nume": "inima",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 28.369,
+          "y": 27.39,
+          "z": 2
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 28.369,
+      "y": 27.39,
+      "z": 2
+    },
+    "thumb": "inima.thumb.png"
+  },
+  {
+    "fisier": "Joker mic negru.3mf",
+    "format": "3mf",
+    "nume": "Joker mic negru",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 4.021,
+          "y": 4.401,
+          "z": 1
+        }
+      },
+      {
+        "index": 1,
+        "nume": "corp 2",
+        "dimensiuni": {
+          "x": 2.173,
+          "y": 2.175,
+          "z": 1
+        }
+      },
+      {
+        "index": 2,
+        "nume": "corp 3",
+        "dimensiuni": {
+          "x": 2.723,
+          "y": 2.959,
+          "z": 1
+        }
+      },
+      {
+        "index": 3,
+        "nume": "corp 4",
+        "dimensiuni": {
+          "x": 2.069,
+          "y": 2.907,
+          "z": 1
+        }
+      },
+      {
+        "index": 4,
+        "nume": "corp 5",
+        "dimensiuni": {
+          "x": 2.786,
+          "y": 2.934,
+          "z": 1
+        }
+      },
+      {
+        "index": 5,
+        "nume": "corp 6",
+        "dimensiuni": {
+          "x": 1.558,
+          "y": 1.796,
+          "z": 1
+        }
+      },
+      {
+        "index": 6,
+        "nume": "corp 7",
+        "dimensiuni": {
+          "x": 4.009,
+          "y": 3.899,
+          "z": 1
+        }
+      },
+      {
+        "index": 7,
+        "nume": "corp 8",
+        "dimensiuni": {
+          "x": 2.736,
+          "y": 2.932,
+          "z": 1
+        }
+      },
+      {
+        "index": 8,
+        "nume": "corp 9",
+        "dimensiuni": {
+          "x": 50,
+          "y": 74.729,
+          "z": 1
+        }
+      },
+      {
+        "index": 9,
+        "nume": "corp 10",
+        "dimensiuni": {
+          "x": 2.522,
+          "y": 2.968,
+          "z": 1
+        }
+      },
+      {
+        "index": 10,
+        "nume": "corp 11",
+        "dimensiuni": {
+          "x": 50,
+          "y": 74.729,
+          "z": 2
+        }
+      },
+      {
+        "index": 11,
+        "nume": "corp 12",
+        "dimensiuni": {
+          "x": 3.852,
+          "y": 3.619,
+          "z": 1
+        }
+      },
+      {
+        "index": 12,
+        "nume": "corp 13",
+        "dimensiuni": {
+          "x": 2.155,
+          "y": 2.053,
+          "z": 1
+        }
+      },
+      {
+        "index": 13,
+        "nume": "corp 14",
+        "dimensiuni": {
+          "x": 2.418,
+          "y": 2.957,
+          "z": 1
+        }
+      },
+      {
+        "index": 14,
+        "nume": "corp 15",
+        "dimensiuni": {
+          "x": 3.545,
+          "y": 3.364,
+          "z": 1
+        }
+      },
+      {
+        "index": 15,
+        "nume": "corp 16",
+        "dimensiuni": {
+          "x": 2.508,
+          "y": 2.916,
+          "z": 1
+        }
+      },
+      {
+        "index": 16,
+        "nume": "corp 17",
+        "dimensiuni": {
+          "x": 34.442,
+          "y": 56.001,
+          "z": 1
+        }
+      },
+      {
+        "index": 17,
+        "nume": "corp 18",
+        "dimensiuni": {
+          "x": 2.22,
+          "y": 2.115,
+          "z": 1
+        }
+      },
+      {
+        "index": 18,
+        "nume": "corp 19",
+        "dimensiuni": {
+          "x": 2.398,
+          "y": 3.011,
+          "z": 1
+        }
+      },
+      {
+        "index": 19,
+        "nume": "corp 20",
+        "dimensiuni": {
+          "x": 3.52,
+          "y": 3.254,
+          "z": 1
+        }
+      },
+      {
+        "index": 20,
+        "nume": "corp 21",
+        "dimensiuni": {
+          "x": 2.059,
+          "y": 2.934,
+          "z": 1
+        }
+      },
+      {
+        "index": 21,
+        "nume": "corp 22",
+        "dimensiuni": {
+          "x": 2.717,
+          "y": 2.934,
+          "z": 1
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 50,
+      "y": 74.729,
+      "z": 3
+    },
+    "thumb": "Joker mic negru.thumb.png"
+  },
+  {
+    "fisier": "Joker mic rosu.3mf",
+    "format": "3mf",
+    "nume": "Joker mic rosu",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 4.021,
+          "y": 4.401,
+          "z": 1
+        }
+      },
+      {
+        "index": 1,
+        "nume": "corp 2",
+        "dimensiuni": {
+          "x": 2.173,
+          "y": 2.175,
+          "z": 1
+        }
+      },
+      {
+        "index": 2,
+        "nume": "corp 3",
+        "dimensiuni": {
+          "x": 2.723,
+          "y": 2.959,
+          "z": 1
+        }
+      },
+      {
+        "index": 3,
+        "nume": "corp 4",
+        "dimensiuni": {
+          "x": 2.069,
+          "y": 2.907,
+          "z": 1
+        }
+      },
+      {
+        "index": 4,
+        "nume": "corp 5",
+        "dimensiuni": {
+          "x": 2.786,
+          "y": 2.934,
+          "z": 1
+        }
+      },
+      {
+        "index": 5,
+        "nume": "corp 6",
+        "dimensiuni": {
+          "x": 1.558,
+          "y": 1.796,
+          "z": 1
+        }
+      },
+      {
+        "index": 6,
+        "nume": "corp 7",
+        "dimensiuni": {
+          "x": 4.009,
+          "y": 3.899,
+          "z": 1
+        }
+      },
+      {
+        "index": 7,
+        "nume": "corp 8",
+        "dimensiuni": {
+          "x": 2.736,
+          "y": 2.932,
+          "z": 1
+        }
+      },
+      {
+        "index": 8,
+        "nume": "corp 9",
+        "dimensiuni": {
+          "x": 50,
+          "y": 74.729,
+          "z": 1
+        }
+      },
+      {
+        "index": 9,
+        "nume": "corp 10",
+        "dimensiuni": {
+          "x": 2.522,
+          "y": 2.968,
+          "z": 1
+        }
+      },
+      {
+        "index": 10,
+        "nume": "corp 11",
+        "dimensiuni": {
+          "x": 50,
+          "y": 74.729,
+          "z": 2
+        }
+      },
+      {
+        "index": 11,
+        "nume": "corp 12",
+        "dimensiuni": {
+          "x": 3.852,
+          "y": 3.619,
+          "z": 1
+        }
+      },
+      {
+        "index": 12,
+        "nume": "corp 13",
+        "dimensiuni": {
+          "x": 2.155,
+          "y": 2.053,
+          "z": 1
+        }
+      },
+      {
+        "index": 13,
+        "nume": "corp 14",
+        "dimensiuni": {
+          "x": 2.418,
+          "y": 2.957,
+          "z": 1
+        }
+      },
+      {
+        "index": 14,
+        "nume": "corp 15",
+        "dimensiuni": {
+          "x": 3.545,
+          "y": 3.364,
+          "z": 1
+        }
+      },
+      {
+        "index": 15,
+        "nume": "corp 16",
+        "dimensiuni": {
+          "x": 2.508,
+          "y": 2.916,
+          "z": 1
+        }
+      },
+      {
+        "index": 16,
+        "nume": "corp 17",
+        "dimensiuni": {
+          "x": 34.442,
+          "y": 56.001,
+          "z": 1
+        }
+      },
+      {
+        "index": 17,
+        "nume": "corp 18",
+        "dimensiuni": {
+          "x": 2.22,
+          "y": 2.115,
+          "z": 1
+        }
+      },
+      {
+        "index": 18,
+        "nume": "corp 19",
+        "dimensiuni": {
+          "x": 2.398,
+          "y": 3.011,
+          "z": 1
+        }
+      },
+      {
+        "index": 19,
+        "nume": "corp 20",
+        "dimensiuni": {
+          "x": 3.52,
+          "y": 3.254,
+          "z": 1
+        }
+      },
+      {
+        "index": 20,
+        "nume": "corp 21",
+        "dimensiuni": {
+          "x": 2.059,
+          "y": 2.934,
+          "z": 1
+        }
+      },
+      {
+        "index": 21,
+        "nume": "corp 22",
+        "dimensiuni": {
+          "x": 2.717,
+          "y": 2.934,
+          "z": 1
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 50,
+      "y": 74.729,
+      "z": 3
+    },
+    "thumb": "Joker mic rosu.thumb.png"
+  },
+  {
+    "fisier": "K inima neagra.3mf",
+    "format": "3mf",
+    "nume": "K inima neagra",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 50,
+          "y": 66.677,
+          "z": 2
+        }
+      },
+      {
+        "index": 1,
+        "nume": "corp 2",
+        "dimensiuni": {
+          "x": 1.861,
+          "y": 0.875,
+          "z": 1
+        }
+      },
+      {
+        "index": 2,
+        "nume": "corp 3",
+        "dimensiuni": {
+          "x": 1.082,
+          "y": 0.993,
+          "z": 1
+        }
+      },
+      {
+        "index": 3,
+        "nume": "corp 4",
+        "dimensiuni": {
+          "x": 1.005,
+          "y": 1.049,
+          "z": 1
+        }
+      },
+      {
+        "index": 4,
+        "nume": "corp 5",
+        "dimensiuni": {
+          "x": 1.084,
+          "y": 1.034,
+          "z": 1
+        }
+      },
+      {
+        "index": 5,
+        "nume": "corp 6",
+        "dimensiuni": {
+          "x": 0.992,
+          "y": 1.082,
+          "z": 1
+        }
+      },
+      {
+        "index": 6,
+        "nume": "corp 7",
+        "dimensiuni": {
+          "x": 1.55,
+          "y": 0.275,
+          "z": 1
+        }
+      },
+      {
+        "index": 7,
+        "nume": "corp 8",
+        "dimensiuni": {
+          "x": 5.502,
+          "y": 6.169,
+          "z": 1
+        }
+      },
+      {
+        "index": 8,
+        "nume": "corp 9",
+        "dimensiuni": {
+          "x": 5.519,
+          "y": 6.178,
+          "z": 1
+        }
+      },
+      {
+        "index": 9,
+        "nume": "corp 10",
+        "dimensiuni": {
+          "x": 1.842,
+          "y": 0.941,
+          "z": 1
+        }
+      },
+      {
+        "index": 10,
+        "nume": "corp 11",
+        "dimensiuni": {
+          "x": 1.063,
+          "y": 1,
+          "z": 1
+        }
+      },
+      {
+        "index": 11,
+        "nume": "corp 12",
+        "dimensiuni": {
+          "x": 50,
+          "y": 66.677,
+          "z": 1
+        }
+      },
+      {
+        "index": 12,
+        "nume": "corp 13",
+        "dimensiuni": {
+          "x": 1.049,
+          "y": 1.068,
+          "z": 1
+        }
+      },
+      {
+        "index": 13,
+        "nume": "corp 14",
+        "dimensiuni": {
+          "x": 1.026,
+          "y": 1.065,
+          "z": 1
+        }
+      },
+      {
+        "index": 14,
+        "nume": "corp 15",
+        "dimensiuni": {
+          "x": 1.084,
+          "y": 1.043,
+          "z": 1
+        }
+      },
+      {
+        "index": 15,
+        "nume": "corp 16",
+        "dimensiuni": {
+          "x": 1.529,
+          "y": 0.272,
+          "z": 1
+        }
+      },
+      {
+        "index": 16,
+        "nume": "corp 17",
+        "dimensiuni": {
+          "x": 6.374,
+          "y": 7.92,
+          "z": 1
+        }
+      },
+      {
+        "index": 17,
+        "nume": "corp 18",
+        "dimensiuni": {
+          "x": 3.44,
+          "y": 1.154,
+          "z": 1
+        }
+      },
+      {
+        "index": 18,
+        "nume": "corp 19",
+        "dimensiuni": {
+          "x": 1.007,
+          "y": 0.998,
+          "z": 1
+        }
+      },
+      {
+        "index": 19,
+        "nume": "corp 20",
+        "dimensiuni": {
+          "x": 1.017,
+          "y": 1.08,
+          "z": 1
+        }
+      },
+      {
+        "index": 20,
+        "nume": "corp 21",
+        "dimensiuni": {
+          "x": 1.025,
+          "y": 1.005,
+          "z": 1
+        }
+      },
+      {
+        "index": 21,
+        "nume": "corp 22",
+        "dimensiuni": {
+          "x": 0.996,
+          "y": 1.086,
+          "z": 1
+        }
+      },
+      {
+        "index": 22,
+        "nume": "corp 23",
+        "dimensiuni": {
+          "x": 2.389,
+          "y": 0.362,
+          "z": 1
+        }
+      },
+      {
+        "index": 23,
+        "nume": "corp 24",
+        "dimensiuni": {
+          "x": 6.452,
+          "y": 7.896,
+          "z": 1
+        }
+      },
+      {
+        "index": 24,
+        "nume": "corp 25",
+        "dimensiuni": {
+          "x": 3.46,
+          "y": 1.147,
+          "z": 1
+        }
+      },
+      {
+        "index": 25,
+        "nume": "corp 26",
+        "dimensiuni": {
+          "x": 4.506,
+          "y": 5.527,
+          "z": 1
+        }
+      },
+      {
+        "index": 26,
+        "nume": "corp 27",
+        "dimensiuni": {
+          "x": 4.543,
+          "y": 5.419,
+          "z": 1
+        }
+      },
+      {
+        "index": 27,
+        "nume": "corp 28",
+        "dimensiuni": {
+          "x": 1.005,
+          "y": 1.049,
+          "z": 1
+        }
+      },
+      {
+        "index": 28,
+        "nume": "corp 29",
+        "dimensiuni": {
+          "x": 0.996,
+          "y": 0.999,
+          "z": 1
+        }
+      },
+      {
+        "index": 29,
+        "nume": "corp 30",
+        "dimensiuni": {
+          "x": 1.004,
+          "y": 1.006,
+          "z": 1
+        }
+      },
+      {
+        "index": 30,
+        "nume": "corp 31",
+        "dimensiuni": {
+          "x": 1.057,
+          "y": 0.984,
+          "z": 1
+        }
+      },
+      {
+        "index": 31,
+        "nume": "corp 32",
+        "dimensiuni": {
+          "x": 2.418,
+          "y": 0.392,
+          "z": 1
+        }
+      },
+      {
+        "index": 32,
+        "nume": "corp 33",
+        "dimensiuni": {
+          "x": 30.346,
+          "y": 47.812,
+          "z": 1
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 50,
+      "y": 66.677,
+      "z": 3
+    },
+    "thumb": "K inima neagra.thumb.png"
+  },
+  {
+    "fisier": "K inima rosie.3mf",
+    "format": "3mf",
+    "nume": "K inima rosie",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 50,
+          "y": 66.925,
+          "z": 2.654
+        }
+      },
+      {
+        "index": 1,
+        "nume": "corp 2",
+        "dimensiuni": {
+          "x": 5.347,
+          "y": 5.677,
+          "z": 0.837
+        }
+      },
+      {
+        "index": 2,
+        "nume": "corp 3",
+        "dimensiuni": {
+          "x": 1.794,
+          "y": 0.835,
+          "z": 0.837
+        }
+      },
+      {
+        "index": 3,
+        "nume": "corp 4",
+        "dimensiuni": {
+          "x": 0.977,
+          "y": 1.014,
+          "z": 0.837
+        }
+      },
+      {
+        "index": 4,
+        "nume": "corp 5",
+        "dimensiuni": {
+          "x": 0.995,
+          "y": 0.999,
+          "z": 0.837
+        }
+      },
+      {
+        "index": 5,
+        "nume": "corp 6",
+        "dimensiuni": {
+          "x": 0.997,
+          "y": 1.001,
+          "z": 0.837
+        }
+      },
+      {
+        "index": 6,
+        "nume": "corp 7",
+        "dimensiuni": {
+          "x": 0.969,
+          "y": 0.988,
+          "z": 0.837
+        }
+      },
+      {
+        "index": 7,
+        "nume": "corp 8",
+        "dimensiuni": {
+          "x": 5.326,
+          "y": 5.583,
+          "z": 0.837
+        }
+      },
+      {
+        "index": 8,
+        "nume": "corp 9",
+        "dimensiuni": {
+          "x": 1.502,
+          "y": 0.217,
+          "z": 0.837
+        }
+      },
+      {
+        "index": 9,
+        "nume": "corp 10",
+        "dimensiuni": {
+          "x": 1.835,
+          "y": 0.871,
+          "z": 0.837
+        }
+      },
+      {
+        "index": 10,
+        "nume": "corp 11",
+        "dimensiuni": {
+          "x": 0.994,
+          "y": 0.986,
+          "z": 0.837
+        }
+      },
+      {
+        "index": 11,
+        "nume": "corp 12",
+        "dimensiuni": {
+          "x": 3.381,
+          "y": 1.126,
+          "z": 0.837
+        }
+      },
+      {
+        "index": 12,
+        "nume": "corp 13",
+        "dimensiuni": {
+          "x": 1.001,
+          "y": 1.001,
+          "z": 0.837
+        }
+      },
+      {
+        "index": 13,
+        "nume": "corp 14",
+        "dimensiuni": {
+          "x": 0.973,
+          "y": 0.989,
+          "z": 0.837
+        }
+      },
+      {
+        "index": 14,
+        "nume": "corp 15",
+        "dimensiuni": {
+          "x": 0.987,
+          "y": 1.001,
+          "z": 0.837
+        }
+      },
+      {
+        "index": 15,
+        "nume": "corp 16",
+        "dimensiuni": {
+          "x": 1.501,
+          "y": 0.25,
+          "z": 0.837
+        }
+      },
+      {
+        "index": 16,
+        "nume": "corp 17",
+        "dimensiuni": {
+          "x": 6.897,
+          "y": 7.41,
+          "z": 0.837
+        }
+      },
+      {
+        "index": 17,
+        "nume": "corp 18",
+        "dimensiuni": {
+          "x": 50,
+          "y": 66.925,
+          "z": 0.837
+        }
+      },
+      {
+        "index": 18,
+        "nume": "corp 19",
+        "dimensiuni": {
+          "x": 30.259,
+          "y": 47.706,
+          "z": 0.837
+        }
+      },
+      {
+        "index": 19,
+        "nume": "corp 20",
+        "dimensiuni": {
+          "x": 2.336,
+          "y": 0.362,
+          "z": 0.837
+        }
+      },
+      {
+        "index": 20,
+        "nume": "corp 21",
+        "dimensiuni": {
+          "x": 1.004,
+          "y": 0.995,
+          "z": 0.837
+        }
+      },
+      {
+        "index": 21,
+        "nume": "corp 22",
+        "dimensiuni": {
+          "x": 0.987,
+          "y": 0.987,
+          "z": 0.837
+        }
+      },
+      {
+        "index": 22,
+        "nume": "corp 23",
+        "dimensiuni": {
+          "x": 6.927,
+          "y": 7.301,
+          "z": 0.837
+        }
+      },
+      {
+        "index": 23,
+        "nume": "corp 24",
+        "dimensiuni": {
+          "x": 0.973,
+          "y": 0.994,
+          "z": 0.837
+        }
+      },
+      {
+        "index": 24,
+        "nume": "corp 25",
+        "dimensiuni": {
+          "x": 0.986,
+          "y": 1.007,
+          "z": 0.837
+        }
+      },
+      {
+        "index": 25,
+        "nume": "corp 26",
+        "dimensiuni": {
+          "x": 5.43,
+          "y": 6.088,
+          "z": 0.837
+        }
+      },
+      {
+        "index": 26,
+        "nume": "corp 27",
+        "dimensiuni": {
+          "x": 2.311,
+          "y": 0.29,
+          "z": 0.837
+        }
+      },
+      {
+        "index": 27,
+        "nume": "corp 28",
+        "dimensiuni": {
+          "x": 0.993,
+          "y": 0.997,
+          "z": 0.837
+        }
+      },
+      {
+        "index": 28,
+        "nume": "corp 29",
+        "dimensiuni": {
+          "x": 1.004,
+          "y": 0.995,
+          "z": 0.837
+        }
+      },
+      {
+        "index": 29,
+        "nume": "corp 30",
+        "dimensiuni": {
+          "x": 0.947,
+          "y": 0.995,
+          "z": 0.837
+        }
+      },
+      {
+        "index": 30,
+        "nume": "corp 31",
+        "dimensiuni": {
+          "x": 0.948,
+          "y": 1.006,
+          "z": 0.837
+        }
+      },
+      {
+        "index": 31,
+        "nume": "corp 32",
+        "dimensiuni": {
+          "x": 3.373,
+          "y": 1.093,
+          "z": 0.837
+        }
+      },
+      {
+        "index": 32,
+        "nume": "corp 33",
+        "dimensiuni": {
+          "x": 5.405,
+          "y": 6.172,
+          "z": 0.837
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 50,
+      "y": 66.925,
+      "z": 3
+    },
+    "thumb": "K inima rosie.thumb.png"
+  },
+  {
+    "fisier": "K romb.3mf",
+    "format": "3mf",
+    "nume": "K romb",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 50,
+          "y": 66.883,
+          "z": 0.63
+        }
+      },
+      {
+        "index": 1,
+        "nume": "corp 2",
+        "dimensiuni": {
+          "x": 4.354,
+          "y": 5.574,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 2,
+        "nume": "corp 3",
+        "dimensiuni": {
+          "x": 1.777,
+          "y": 0.844,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 3,
+        "nume": "corp 4",
+        "dimensiuni": {
+          "x": 0.965,
+          "y": 1.014,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 4,
+        "nume": "corp 5",
+        "dimensiuni": {
+          "x": 0.989,
+          "y": 0.973,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 5,
+        "nume": "corp 6",
+        "dimensiuni": {
+          "x": 0.988,
+          "y": 1.007,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 6,
+        "nume": "corp 7",
+        "dimensiuni": {
+          "x": 0.969,
+          "y": 0.988,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 7,
+        "nume": "corp 8",
+        "dimensiuni": {
+          "x": 2.419,
+          "y": 0.336,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 8,
+        "nume": "corp 9",
+        "dimensiuni": {
+          "x": 4.504,
+          "y": 5.538,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 9,
+        "nume": "corp 10",
+        "dimensiuni": {
+          "x": 3.394,
+          "y": 1.154,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 10,
+        "nume": "corp 11",
+        "dimensiuni": {
+          "x": 0.998,
+          "y": 0.991,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 11,
+        "nume": "corp 12",
+        "dimensiuni": {
+          "x": 5.586,
+          "y": 7.148,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 12,
+        "nume": "corp 13",
+        "dimensiuni": {
+          "x": 0.997,
+          "y": 0.999,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 13,
+        "nume": "corp 14",
+        "dimensiuni": {
+          "x": 0.99,
+          "y": 0.988,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 14,
+        "nume": "corp 15",
+        "dimensiuni": {
+          "x": 0.984,
+          "y": 1.001,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 15,
+        "nume": "corp 16",
+        "dimensiuni": {
+          "x": 1.501,
+          "y": 0.219,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 16,
+        "nume": "corp 17",
+        "dimensiuni": {
+          "x": 5.606,
+          "y": 7.176,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 17,
+        "nume": "corp 18",
+        "dimensiuni": {
+          "x": 50,
+          "y": 66.883,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 18,
+        "nume": "corp 19",
+        "dimensiuni": {
+          "x": 30.258,
+          "y": 47.706,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 19,
+        "nume": "corp 20",
+        "dimensiuni": {
+          "x": 2.41,
+          "y": 0.361,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 20,
+        "nume": "corp 21",
+        "dimensiuni": {
+          "x": 1.001,
+          "y": 0.987,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 21,
+        "nume": "corp 22",
+        "dimensiuni": {
+          "x": 1.005,
+          "y": 0.994,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 22,
+        "nume": "corp 23",
+        "dimensiuni": {
+          "x": 1.493,
+          "y": 0.262,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 23,
+        "nume": "corp 24",
+        "dimensiuni": {
+          "x": 0.968,
+          "y": 0.982,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 24,
+        "nume": "corp 25",
+        "dimensiuni": {
+          "x": 0.969,
+          "y": 1.02,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 25,
+        "nume": "corp 26",
+        "dimensiuni": {
+          "x": 1.735,
+          "y": 0.847,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 26,
+        "nume": "corp 27",
+        "dimensiuni": {
+          "x": 5.363,
+          "y": 6.18,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 27,
+        "nume": "corp 28",
+        "dimensiuni": {
+          "x": 0.99,
+          "y": 0.99,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 28,
+        "nume": "corp 29",
+        "dimensiuni": {
+          "x": 1.004,
+          "y": 0.995,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 29,
+        "nume": "corp 30",
+        "dimensiuni": {
+          "x": 0.942,
+          "y": 0.997,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 30,
+        "nume": "corp 31",
+        "dimensiuni": {
+          "x": 0.948,
+          "y": 1.006,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 31,
+        "nume": "corp 32",
+        "dimensiuni": {
+          "x": 3.375,
+          "y": 1.091,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 32,
+        "nume": "corp 33",
+        "dimensiuni": {
+          "x": 5.405,
+          "y": 6.172,
+          "z": 0.315
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 50,
+      "y": 66.883,
+      "z": 0.946
+    },
+    "thumb": "K romb.thumb.png"
+  },
+  {
+    "fisier": "K trefla.3mf",
+    "format": "3mf",
+    "nume": "K trefla",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 50,
+          "y": 66.677,
+          "z": 0.63
+        }
+      },
+      {
+        "index": 1,
+        "nume": "corp 2",
+        "dimensiuni": {
+          "x": 5.041,
+          "y": 5.586,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 2,
+        "nume": "corp 3",
+        "dimensiuni": {
+          "x": 1.861,
+          "y": 0.875,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 3,
+        "nume": "corp 4",
+        "dimensiuni": {
+          "x": 1.082,
+          "y": 0.993,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 4,
+        "nume": "corp 5",
+        "dimensiuni": {
+          "x": 1.005,
+          "y": 1.049,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 5,
+        "nume": "corp 6",
+        "dimensiuni": {
+          "x": 1.084,
+          "y": 1.034,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 6,
+        "nume": "corp 7",
+        "dimensiuni": {
+          "x": 0.992,
+          "y": 1.082,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 7,
+        "nume": "corp 8",
+        "dimensiuni": {
+          "x": 2.389,
+          "y": 0.362,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 8,
+        "nume": "corp 9",
+        "dimensiuni": {
+          "x": 5.044,
+          "y": 5.6,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 9,
+        "nume": "corp 10",
+        "dimensiuni": {
+          "x": 3.46,
+          "y": 1.147,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 10,
+        "nume": "corp 11",
+        "dimensiuni": {
+          "x": 1.063,
+          "y": 1,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 11,
+        "nume": "corp 12",
+        "dimensiuni": {
+          "x": 6.814,
+          "y": 7.377,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 12,
+        "nume": "corp 13",
+        "dimensiuni": {
+          "x": 1.049,
+          "y": 1.068,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 13,
+        "nume": "corp 14",
+        "dimensiuni": {
+          "x": 1.026,
+          "y": 1.065,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 14,
+        "nume": "corp 15",
+        "dimensiuni": {
+          "x": 1.084,
+          "y": 1.043,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 15,
+        "nume": "corp 16",
+        "dimensiuni": {
+          "x": 1.529,
+          "y": 0.272,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 16,
+        "nume": "corp 17",
+        "dimensiuni": {
+          "x": 6.741,
+          "y": 7.336,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 17,
+        "nume": "corp 18",
+        "dimensiuni": {
+          "x": 50,
+          "y": 66.677,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 18,
+        "nume": "corp 19",
+        "dimensiuni": {
+          "x": 30.346,
+          "y": 47.812,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 19,
+        "nume": "corp 20",
+        "dimensiuni": {
+          "x": 2.418,
+          "y": 0.392,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 20,
+        "nume": "corp 21",
+        "dimensiuni": {
+          "x": 1.057,
+          "y": 0.984,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 21,
+        "nume": "corp 22",
+        "dimensiuni": {
+          "x": 1.004,
+          "y": 1.006,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 22,
+        "nume": "corp 23",
+        "dimensiuni": {
+          "x": 1.55,
+          "y": 0.275,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 23,
+        "nume": "corp 24",
+        "dimensiuni": {
+          "x": 0.996,
+          "y": 0.999,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 24,
+        "nume": "corp 25",
+        "dimensiuni": {
+          "x": 1.005,
+          "y": 1.049,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 25,
+        "nume": "corp 26",
+        "dimensiuni": {
+          "x": 1.842,
+          "y": 0.941,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 26,
+        "nume": "corp 27",
+        "dimensiuni": {
+          "x": 5.519,
+          "y": 6.178,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 27,
+        "nume": "corp 28",
+        "dimensiuni": {
+          "x": 0.996,
+          "y": 1.086,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 28,
+        "nume": "corp 29",
+        "dimensiuni": {
+          "x": 1.025,
+          "y": 1.005,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 29,
+        "nume": "corp 30",
+        "dimensiuni": {
+          "x": 1.017,
+          "y": 1.08,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 30,
+        "nume": "corp 31",
+        "dimensiuni": {
+          "x": 1.007,
+          "y": 0.998,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 31,
+        "nume": "corp 32",
+        "dimensiuni": {
+          "x": 3.44,
+          "y": 1.154,
+          "z": 0.315
+        }
+      },
+      {
+        "index": 32,
+        "nume": "corp 33",
+        "dimensiuni": {
+          "x": 5.502,
+          "y": 6.169,
+          "z": 0.315
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 50,
+      "y": 66.677,
+      "z": 0.945
+    },
+    "thumb": "K trefla.thumb.png"
+  },
+  {
+    "fisier": "Locomotiva.3mf",
+    "format": "3mf",
+    "nume": "Locomotiva",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 58.391,
+          "y": 38.213,
+          "z": 2
+        }
+      },
+      {
+        "index": 1,
+        "nume": "corp 2",
+        "dimensiuni": {
+          "x": 2.922,
+          "y": 4.303,
+          "z": 2
+        }
+      },
+      {
+        "index": 2,
+        "nume": "corp 3",
+        "dimensiuni": {
+          "x": 2.292,
+          "y": 2.674,
+          "z": 2
+        }
+      },
+      {
+        "index": 3,
+        "nume": "corp 4",
+        "dimensiuni": {
+          "x": 7.014,
+          "y": 8.146,
+          "z": 2
+        }
+      },
+      {
+        "index": 4,
+        "nume": "corp 5",
+        "dimensiuni": {
+          "x": 2.202,
+          "y": 1.083,
+          "z": 2
+        }
+      },
+      {
+        "index": 5,
+        "nume": "corp 6",
+        "dimensiuni": {
+          "x": 58.391,
+          "y": 38.213,
+          "z": 2
+        }
+      },
+      {
+        "index": 6,
+        "nume": "corp 7",
+        "dimensiuni": {
+          "x": 6.862,
+          "y": 6.294,
+          "z": 2
+        }
+      },
+      {
+        "index": 7,
+        "nume": "corp 8",
+        "dimensiuni": {
+          "x": 2.336,
+          "y": 2.737,
+          "z": 2
+        }
+      },
+      {
+        "index": 8,
+        "nume": "corp 9",
+        "dimensiuni": {
+          "x": 6.939,
+          "y": 8.127,
+          "z": 2
+        }
+      },
+      {
+        "index": 9,
+        "nume": "corp 10",
+        "dimensiuni": {
+          "x": 3.634,
+          "y": 6.262,
+          "z": 2
+        }
+      },
+      {
+        "index": 10,
+        "nume": "corp 11",
+        "dimensiuni": {
+          "x": 2.386,
+          "y": 2.985,
+          "z": 2
+        }
+      },
+      {
+        "index": 11,
+        "nume": "corp 12",
+        "dimensiuni": {
+          "x": 2.267,
+          "y": 2.652,
+          "z": 2
+        }
+      },
+      {
+        "index": 12,
+        "nume": "corp 13",
+        "dimensiuni": {
+          "x": 13.129,
+          "y": 15.276,
+          "z": 2
+        }
+      },
+      {
+        "index": 13,
+        "nume": "corp 14",
+        "dimensiuni": {
+          "x": 7.778,
+          "y": 4.971,
+          "z": 2
+        }
+      },
+      {
+        "index": 14,
+        "nume": "corp 15",
+        "dimensiuni": {
+          "x": 9.744,
+          "y": 13.796,
+          "z": 2
+        }
+      },
+      {
+        "index": 15,
+        "nume": "corp 16",
+        "dimensiuni": {
+          "x": 4.165,
+          "y": 4.821,
+          "z": 2
+        }
+      },
+      {
+        "index": 16,
+        "nume": "corp 17",
+        "dimensiuni": {
+          "x": 7,
+          "y": 8.081,
+          "z": 2
+        }
+      },
+      {
+        "index": 17,
+        "nume": "corp 18",
+        "dimensiuni": {
+          "x": 1.508,
+          "y": 4.528,
+          "z": 2
+        }
+      },
+      {
+        "index": 18,
+        "nume": "corp 19",
+        "dimensiuni": {
+          "x": 2.32,
+          "y": 5.269,
+          "z": 2
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 58.391,
+      "y": 38.213,
+      "z": 4
+    },
+    "thumb": "Locomotiva.thumb.png"
+  },
+  {
+    "fisier": "microfon.3mf",
+    "format": "3mf",
+    "nume": "microfon",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 2,
+          "y": 1,
+          "z": 1
+        }
+      },
+      {
+        "index": 1,
+        "nume": "corp 2",
+        "dimensiuni": {
+          "x": 6.016,
+          "y": 11.115,
+          "z": 3.006
+        }
+      },
+      {
+        "index": 2,
+        "nume": "corp 3",
+        "dimensiuni": {
+          "x": 6.952,
+          "y": 0.785,
+          "z": 3.477
+        }
+      },
+      {
+        "index": 3,
+        "nume": "corp 4",
+        "dimensiuni": {
+          "x": 8.89,
+          "y": 2.4,
+          "z": 4.444
+        }
+      },
+      {
+        "index": 4,
+        "nume": "corp 5",
+        "dimensiuni": {
+          "x": 9.2,
+          "y": 0.4,
+          "z": 4.6
+        }
+      },
+      {
+        "index": 5,
+        "nume": "corp 6",
+        "dimensiuni": {
+          "x": 8.999,
+          "y": 4.8,
+          "z": 4.5
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 9.2,
+      "y": 20.5,
+      "z": 4.6
+    },
+    "thumb": "microfon.thumb.png"
+  },
+  {
+    "fisier": "nor 1.3mf",
+    "format": "3mf",
+    "nume": "nor 1",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 40.36,
+          "y": 23.68,
+          "z": 2
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 40.36,
+      "y": 23.68,
+      "z": 2
+    },
+    "thumb": "nor 1.thumb.png"
+  },
+  {
+    "fisier": "nor 2.3mf",
+    "format": "3mf",
+    "nume": "nor 2",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 30.572,
+          "y": 19.713,
+          "z": 2
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 30.572,
+      "y": 19.713,
+      "z": 2
+    },
+    "thumb": "nor 2.thumb.png"
+  },
+  {
+    "fisier": "nor 3.3mf",
+    "format": "3mf",
+    "nume": "nor 3",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 39.996,
+          "y": 24.971,
+          "z": 5
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 39.996,
+      "y": 24.971,
+      "z": 5
+    },
+    "thumb": "nor 3.thumb.png"
+  },
+  {
+    "fisier": "Nori pufosti.3mf",
+    "format": "3mf",
+    "nume": "Nori pufosti",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 28.799,
+          "y": 34.734,
+          "z": 4
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 28.799,
+      "y": 34.734,
+      "z": 4
+    },
+    "thumb": "Nori pufosti.thumb.png"
+  },
+  {
+    "fisier": "note muzicale.3mf",
+    "format": "3mf",
+    "nume": "note muzicale",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 57.551,
+          "y": 79.382,
+          "z": 2
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 57.551,
+      "y": 79.382,
+      "z": 2
+    },
+    "thumb": "note muzicale.thumb.png"
+  },
+  {
+    "fisier": "paleta de culori.3mf",
+    "format": "3mf",
+    "nume": "paleta de culori",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 76.355,
+          "y": 76.039,
+          "z": 2
+        }
+      },
+      {
+        "index": 1,
+        "nume": "corp 2",
+        "dimensiuni": {
+          "x": 14.989,
+          "y": 14.994,
+          "z": 2
+        }
+      },
+      {
+        "index": 2,
+        "nume": "corp 3",
+        "dimensiuni": {
+          "x": 14.989,
+          "y": 14.994,
+          "z": 2
+        }
+      },
+      {
+        "index": 3,
+        "nume": "corp 4",
+        "dimensiuni": {
+          "x": 14.989,
+          "y": 14.994,
+          "z": 2
+        }
+      },
+      {
+        "index": 4,
+        "nume": "corp 5",
+        "dimensiuni": {
+          "x": 14.989,
+          "y": 14.994,
+          "z": 2
+        }
+      },
+      {
+        "index": 5,
+        "nume": "corp 6",
+        "dimensiuni": {
+          "x": 14.989,
+          "y": 14.994,
+          "z": 2
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 76.355,
+      "y": 76.039,
+      "z": 4
+    },
+    "thumb": "paleta de culori.thumb.png"
+  },
+  {
+    "fisier": "Patent.3mf",
+    "format": "3mf",
+    "nume": "Patent",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 19.451,
+          "y": 7.8,
+          "z": 3.36
+        }
+      },
+      {
+        "index": 1,
+        "nume": "corp 2",
+        "dimensiuni": {
+          "x": 32.897,
+          "y": 9.802,
+          "z": 5.234
+        }
+      },
+      {
+        "index": 2,
+        "nume": "corp 3",
+        "dimensiuni": {
+          "x": 32.897,
+          "y": 9.802,
+          "z": 5.234
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 49.589,
+      "y": 20.272,
+      "z": 5.317
+    },
+    "thumb": "Patent.thumb.png"
+  },
+  {
+    "fisier": "pensula.3mf",
+    "format": "3mf",
+    "nume": "pensula",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 3.099,
+          "y": 13.756,
+          "z": 1.55
+        }
+      },
+      {
+        "index": 1,
+        "nume": "corp 2",
+        "dimensiuni": {
+          "x": 2.192,
+          "y": 2.154,
+          "z": 1.096
+        }
+      },
+      {
+        "index": 2,
+        "nume": "corp 3",
+        "dimensiuni": {
+          "x": 4.35,
+          "y": 7.053,
+          "z": 2.175
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 4.35,
+      "y": 22.962,
+      "z": 2.175
+    },
+    "thumb": "pensula.thumb.png"
+  },
+  {
+    "fisier": "Poarta teren.3mf",
+    "format": "3mf",
+    "nume": "Poarta teren",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 40,
+          "y": 20,
+          "z": 20
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 40,
+      "y": 20,
+      "z": 20
+    },
+    "thumb": "Poarta teren.thumb.png"
+  },
+  {
+    "fisier": "Q inima neagra.3mf",
+    "format": "3mf",
+    "nume": "Q inima neagra",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 50,
+          "y": 66.836,
+          "z": 2
+        }
+      },
+      {
+        "index": 1,
+        "nume": "corp 2",
+        "dimensiuni": {
+          "x": 0.666,
+          "y": 0.686,
+          "z": 1
+        }
+      },
+      {
+        "index": 2,
+        "nume": "corp 3",
+        "dimensiuni": {
+          "x": 4.481,
+          "y": 5.433,
+          "z": 1
+        }
+      },
+      {
+        "index": 3,
+        "nume": "corp 4",
+        "dimensiuni": {
+          "x": 2.865,
+          "y": 1.662,
+          "z": 1
+        }
+      },
+      {
+        "index": 4,
+        "nume": "corp 5",
+        "dimensiuni": {
+          "x": 1.737,
+          "y": 0.573,
+          "z": 1
+        }
+      },
+      {
+        "index": 5,
+        "nume": "corp 6",
+        "dimensiuni": {
+          "x": 0.616,
+          "y": 0.705,
+          "z": 1
+        }
+      },
+      {
+        "index": 6,
+        "nume": "corp 7",
+        "dimensiuni": {
+          "x": 6.333,
+          "y": 7.916,
+          "z": 1
+        }
+      },
+      {
+        "index": 7,
+        "nume": "corp 8",
+        "dimensiuni": {
+          "x": 50,
+          "y": 66.836,
+          "z": 1
+        }
+      },
+      {
+        "index": 8,
+        "nume": "corp 9",
+        "dimensiuni": {
+          "x": 30.182,
+          "y": 47.757,
+          "z": 1
+        }
+      },
+      {
+        "index": 9,
+        "nume": "corp 10",
+        "dimensiuni": {
+          "x": 1.482,
+          "y": 0.81,
+          "z": 1
+        }
+      },
+      {
+        "index": 10,
+        "nume": "corp 11",
+        "dimensiuni": {
+          "x": 6.425,
+          "y": 7.916,
+          "z": 1
+        }
+      },
+      {
+        "index": 11,
+        "nume": "corp 12",
+        "dimensiuni": {
+          "x": 2.494,
+          "y": 0.801,
+          "z": 1
+        }
+      },
+      {
+        "index": 12,
+        "nume": "corp 13",
+        "dimensiuni": {
+          "x": 1.47,
+          "y": 0.755,
+          "z": 1
+        }
+      },
+      {
+        "index": 13,
+        "nume": "corp 14",
+        "dimensiuni": {
+          "x": 5.816,
+          "y": 6.625,
+          "z": 1
+        }
+      },
+      {
+        "index": 14,
+        "nume": "corp 15",
+        "dimensiuni": {
+          "x": 2.589,
+          "y": 0.817,
+          "z": 1
+        }
+      },
+      {
+        "index": 15,
+        "nume": "corp 16",
+        "dimensiuni": {
+          "x": 2.583,
+          "y": 0.78,
+          "z": 1
+        }
+      },
+      {
+        "index": 16,
+        "nume": "corp 17",
+        "dimensiuni": {
+          "x": 2.485,
+          "y": 0.863,
+          "z": 1
+        }
+      },
+      {
+        "index": 17,
+        "nume": "corp 18",
+        "dimensiuni": {
+          "x": 5.894,
+          "y": 6.663,
+          "z": 1
+        }
+      },
+      {
+        "index": 18,
+        "nume": "corp 19",
+        "dimensiuni": {
+          "x": 4.507,
+          "y": 5.416,
+          "z": 1
+        }
+      },
+      {
+        "index": 19,
+        "nume": "corp 20",
+        "dimensiuni": {
+          "x": 2.919,
+          "y": 1.641,
+          "z": 1
+        }
+      },
+      {
+        "index": 20,
+        "nume": "corp 21",
+        "dimensiuni": {
+          "x": 1.75,
+          "y": 0.567,
+          "z": 1
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 50,
+      "y": 66.836,
+      "z": 3
+    },
+    "thumb": "Q inima neagra.thumb.png"
+  },
+  {
+    "fisier": "Q inima rosie.3mf",
+    "format": "3mf",
+    "nume": "Q inima rosie",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 50,
+          "y": 66.965,
+          "z": 2
+        }
+      },
+      {
+        "index": 1,
+        "nume": "corp 2",
+        "dimensiuni": {
+          "x": 1.412,
+          "y": 0.748,
+          "z": 1
+        }
+      },
+      {
+        "index": 2,
+        "nume": "corp 3",
+        "dimensiuni": {
+          "x": 5.35,
+          "y": 5.653,
+          "z": 1
+        }
+      },
+      {
+        "index": 3,
+        "nume": "corp 4",
+        "dimensiuni": {
+          "x": 2.474,
+          "y": 0.841,
+          "z": 1
+        }
+      },
+      {
+        "index": 4,
+        "nume": "corp 5",
+        "dimensiuni": {
+          "x": 2.591,
+          "y": 0.765,
+          "z": 1
+        }
+      },
+      {
+        "index": 5,
+        "nume": "corp 6",
+        "dimensiuni": {
+          "x": 0.515,
+          "y": 0.685,
+          "z": 1
+        }
+      },
+      {
+        "index": 6,
+        "nume": "corp 7",
+        "dimensiuni": {
+          "x": 6.21,
+          "y": 6.668,
+          "z": 1
+        }
+      },
+      {
+        "index": 7,
+        "nume": "corp 8",
+        "dimensiuni": {
+          "x": 50,
+          "y": 66.965,
+          "z": 1
+        }
+      },
+      {
+        "index": 8,
+        "nume": "corp 9",
+        "dimensiuni": {
+          "x": 30.256,
+          "y": 47.759,
+          "z": 1
+        }
+      },
+      {
+        "index": 9,
+        "nume": "corp 10",
+        "dimensiuni": {
+          "x": 1.407,
+          "y": 0.808,
+          "z": 1
+        }
+      },
+      {
+        "index": 10,
+        "nume": "corp 11",
+        "dimensiuni": {
+          "x": 1.767,
+          "y": 0.505,
+          "z": 1
+        }
+      },
+      {
+        "index": 11,
+        "nume": "corp 12",
+        "dimensiuni": {
+          "x": 6.206,
+          "y": 6.66,
+          "z": 1
+        }
+      },
+      {
+        "index": 12,
+        "nume": "corp 13",
+        "dimensiuni": {
+          "x": 2.909,
+          "y": 1.553,
+          "z": 1
+        }
+      },
+      {
+        "index": 13,
+        "nume": "corp 14",
+        "dimensiuni": {
+          "x": 5.876,
+          "y": 6.619,
+          "z": 1
+        }
+      },
+      {
+        "index": 14,
+        "nume": "corp 15",
+        "dimensiuni": {
+          "x": 0.521,
+          "y": 0.657,
+          "z": 1
+        }
+      },
+      {
+        "index": 15,
+        "nume": "corp 16",
+        "dimensiuni": {
+          "x": 2.5,
+          "y": 0.7,
+          "z": 1
+        }
+      },
+      {
+        "index": 16,
+        "nume": "corp 17",
+        "dimensiuni": {
+          "x": 2.484,
+          "y": 0.811,
+          "z": 1
+        }
+      },
+      {
+        "index": 17,
+        "nume": "corp 18",
+        "dimensiuni": {
+          "x": 5.905,
+          "y": 6.621,
+          "z": 1
+        }
+      },
+      {
+        "index": 18,
+        "nume": "corp 19",
+        "dimensiuni": {
+          "x": 5.314,
+          "y": 5.668,
+          "z": 1
+        }
+      },
+      {
+        "index": 19,
+        "nume": "corp 20",
+        "dimensiuni": {
+          "x": 2.86,
+          "y": 1.584,
+          "z": 1
+        }
+      },
+      {
+        "index": 20,
+        "nume": "corp 21",
+        "dimensiuni": {
+          "x": 1.716,
+          "y": 0.547,
+          "z": 1
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 50,
+      "y": 66.965,
+      "z": 3
+    },
+    "thumb": "Q inima rosie.thumb.png"
+  },
+  {
+    "fisier": "Q romb.3mf",
+    "format": "3mf",
+    "nume": "Q romb",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 50,
+          "y": 66.965,
+          "z": 2
+        }
+      },
+      {
+        "index": 1,
+        "nume": "corp 2",
+        "dimensiuni": {
+          "x": 1.412,
+          "y": 0.738,
+          "z": 1
+        }
+      },
+      {
+        "index": 2,
+        "nume": "corp 3",
+        "dimensiuni": {
+          "x": 4.35,
+          "y": 5.61,
+          "z": 1
+        }
+      },
+      {
+        "index": 3,
+        "nume": "corp 4",
+        "dimensiuni": {
+          "x": 2.474,
+          "y": 0.841,
+          "z": 1
+        }
+      },
+      {
+        "index": 4,
+        "nume": "corp 5",
+        "dimensiuni": {
+          "x": 2.591,
+          "y": 0.765,
+          "z": 1
+        }
+      },
+      {
+        "index": 5,
+        "nume": "corp 6",
+        "dimensiuni": {
+          "x": 0.515,
+          "y": 0.685,
+          "z": 1
+        }
+      },
+      {
+        "index": 6,
+        "nume": "corp 7",
+        "dimensiuni": {
+          "x": 30.256,
+          "y": 47.759,
+          "z": 1
+        }
+      },
+      {
+        "index": 7,
+        "nume": "corp 8",
+        "dimensiuni": {
+          "x": 50,
+          "y": 66.965,
+          "z": 1
+        }
+      },
+      {
+        "index": 8,
+        "nume": "corp 9",
+        "dimensiuni": {
+          "x": 5.596,
+          "y": 7.114,
+          "z": 1
+        }
+      },
+      {
+        "index": 9,
+        "nume": "corp 10",
+        "dimensiuni": {
+          "x": 1.397,
+          "y": 0.818,
+          "z": 1
+        }
+      },
+      {
+        "index": 10,
+        "nume": "corp 11",
+        "dimensiuni": {
+          "x": 1.767,
+          "y": 0.505,
+          "z": 1
+        }
+      },
+      {
+        "index": 11,
+        "nume": "corp 12",
+        "dimensiuni": {
+          "x": 5.634,
+          "y": 7.194,
+          "z": 1
+        }
+      },
+      {
+        "index": 12,
+        "nume": "corp 13",
+        "dimensiuni": {
+          "x": 2.868,
+          "y": 1.53,
+          "z": 1
+        }
+      },
+      {
+        "index": 13,
+        "nume": "corp 14",
+        "dimensiuni": {
+          "x": 5.876,
+          "y": 6.619,
+          "z": 1
+        }
+      },
+      {
+        "index": 14,
+        "nume": "corp 15",
+        "dimensiuni": {
+          "x": 0.521,
+          "y": 0.657,
+          "z": 1
+        }
+      },
+      {
+        "index": 15,
+        "nume": "corp 16",
+        "dimensiuni": {
+          "x": 2.5,
+          "y": 0.708,
+          "z": 1
+        }
+      },
+      {
+        "index": 16,
+        "nume": "corp 17",
+        "dimensiuni": {
+          "x": 2.484,
+          "y": 0.811,
+          "z": 1
+        }
+      },
+      {
+        "index": 17,
+        "nume": "corp 18",
+        "dimensiuni": {
+          "x": 5.905,
+          "y": 6.621,
+          "z": 1
+        }
+      },
+      {
+        "index": 18,
+        "nume": "corp 19",
+        "dimensiuni": {
+          "x": 4.434,
+          "y": 5.628,
+          "z": 1
+        }
+      },
+      {
+        "index": 19,
+        "nume": "corp 20",
+        "dimensiuni": {
+          "x": 2.86,
+          "y": 1.584,
+          "z": 1
+        }
+      },
+      {
+        "index": 20,
+        "nume": "corp 21",
+        "dimensiuni": {
+          "x": 1.716,
+          "y": 0.547,
+          "z": 1
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 50,
+      "y": 66.965,
+      "z": 3
+    },
+    "thumb": "Q romb.thumb.png"
+  },
+  {
+    "fisier": "Q trefla.3mf",
+    "format": "3mf",
+    "nume": "Q trefla",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 50,
+          "y": 66.966,
+          "z": 2
+        }
+      },
+      {
+        "index": 1,
+        "nume": "corp 2",
+        "dimensiuni": {
+          "x": 0.622,
+          "y": 0.711,
+          "z": 1
+        }
+      },
+      {
+        "index": 2,
+        "nume": "corp 3",
+        "dimensiuni": {
+          "x": 5.884,
+          "y": 6.745,
+          "z": 1
+        }
+      },
+      {
+        "index": 3,
+        "nume": "corp 4",
+        "dimensiuni": {
+          "x": 1.765,
+          "y": 0.569,
+          "z": 1
+        }
+      },
+      {
+        "index": 4,
+        "nume": "corp 5",
+        "dimensiuni": {
+          "x": 2.9,
+          "y": 1.662,
+          "z": 1
+        }
+      },
+      {
+        "index": 5,
+        "nume": "corp 6",
+        "dimensiuni": {
+          "x": 1.431,
+          "y": 0.831,
+          "z": 1
+        }
+      },
+      {
+        "index": 6,
+        "nume": "corp 7",
+        "dimensiuni": {
+          "x": 6.809,
+          "y": 7.39,
+          "z": 1
+        }
+      },
+      {
+        "index": 7,
+        "nume": "corp 8",
+        "dimensiuni": {
+          "x": 5.03,
+          "y": 5.573,
+          "z": 1
+        }
+      },
+      {
+        "index": 8,
+        "nume": "corp 9",
+        "dimensiuni": {
+          "x": 30.259,
+          "y": 47.784,
+          "z": 1
+        }
+      },
+      {
+        "index": 9,
+        "nume": "corp 10",
+        "dimensiuni": {
+          "x": 0.582,
+          "y": 0.707,
+          "z": 1
+        }
+      },
+      {
+        "index": 10,
+        "nume": "corp 11",
+        "dimensiuni": {
+          "x": 2.504,
+          "y": 0.796,
+          "z": 1
+        }
+      },
+      {
+        "index": 11,
+        "nume": "corp 12",
+        "dimensiuni": {
+          "x": 6.76,
+          "y": 7.367,
+          "z": 1
+        }
+      },
+      {
+        "index": 12,
+        "nume": "corp 13",
+        "dimensiuni": {
+          "x": 2.606,
+          "y": 0.722,
+          "z": 1
+        }
+      },
+      {
+        "index": 13,
+        "nume": "corp 14",
+        "dimensiuni": {
+          "x": 5.033,
+          "y": 5.544,
+          "z": 1
+        }
+      },
+      {
+        "index": 14,
+        "nume": "corp 15",
+        "dimensiuni": {
+          "x": 1.495,
+          "y": 0.818,
+          "z": 1
+        }
+      },
+      {
+        "index": 15,
+        "nume": "corp 16",
+        "dimensiuni": {
+          "x": 2.917,
+          "y": 1.692,
+          "z": 1
+        }
+      },
+      {
+        "index": 16,
+        "nume": "corp 17",
+        "dimensiuni": {
+          "x": 1.765,
+          "y": 0.55,
+          "z": 1
+        }
+      },
+      {
+        "index": 17,
+        "nume": "corp 18",
+        "dimensiuni": {
+          "x": 50,
+          "y": 66.966,
+          "z": 1
+        }
+      },
+      {
+        "index": 18,
+        "nume": "corp 19",
+        "dimensiuni": {
+          "x": 5.896,
+          "y": 6.598,
+          "z": 1
+        }
+      },
+      {
+        "index": 19,
+        "nume": "corp 20",
+        "dimensiuni": {
+          "x": 2.606,
+          "y": 0.829,
+          "z": 1
+        }
+      },
+      {
+        "index": 20,
+        "nume": "corp 21",
+        "dimensiuni": {
+          "x": 2.495,
+          "y": 0.839,
+          "z": 1
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 50,
+      "y": 66.966,
+      "z": 3
+    },
+    "thumb": "Q trefla.thumb.png"
+  },
+  {
+    "fisier": "Siguranta.3mf",
+    "format": "3mf",
+    "nume": "Siguranta",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 41.354,
+          "y": 29.315,
+          "z": 8.995
+        }
+      },
+      {
+        "index": 1,
+        "nume": "corp 2",
+        "dimensiuni": {
+          "x": 10.084,
+          "y": 4.246,
+          "z": 8.996
+        }
+      },
+      {
+        "index": 2,
+        "nume": "corp 3",
+        "dimensiuni": {
+          "x": 3.066,
+          "y": 1.014,
+          "z": 2.284
+        }
+      },
+      {
+        "index": 3,
+        "nume": "corp 4",
+        "dimensiuni": {
+          "x": 3.066,
+          "y": 1.015,
+          "z": 2.284
+        }
+      },
+      {
+        "index": 4,
+        "nume": "corp 5",
+        "dimensiuni": {
+          "x": 3.068,
+          "y": 1.014,
+          "z": 2.284
+        }
+      },
+      {
+        "index": 5,
+        "nume": "corp 6",
+        "dimensiuni": {
+          "x": 3.068,
+          "y": 1.014,
+          "z": 2.284
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 41.354,
+      "y": 29.434,
+      "z": 8.996
+    },
+    "thumb": "Siguranta.thumb.png"
+  },
+  {
+    "fisier": "SOCCER ball.3mf",
+    "format": "3mf",
+    "nume": "SOCCER ball",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 34.682,
+          "y": 34.696,
+          "z": 19.812
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 34.682,
+      "y": 34.696,
+      "z": 19.812
+    },
+    "thumb": "SOCCER ball.thumb.png"
+  },
+  {
+    "fisier": "steag corner.3mf",
+    "format": "3mf",
+    "nume": "steag corner",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 1,
+          "y": 7,
+          "z": 1
+        }
+      },
+      {
+        "index": 1,
+        "nume": "corp 2",
+        "dimensiuni": {
+          "x": 6.991,
+          "y": 3.516,
+          "z": 1
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 6.991,
+      "y": 10,
+      "z": 1
+    },
+    "thumb": "steag corner.thumb.png"
+  },
+  {
+    "fisier": "stele.3mf",
+    "format": "3mf",
+    "nume": "stele",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 32.808,
+          "y": 48.603,
+          "z": 5
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 32.808,
+      "y": 48.603,
+      "z": 5
+    },
+    "thumb": "stele.thumb.png"
+  },
+  {
+    "fisier": "stelute.3mf",
+    "format": "3mf",
+    "nume": "stelute",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 8.416,
+          "y": 8.54,
+          "z": 4
+        }
+      },
+      {
+        "index": 1,
+        "nume": "corp 2",
+        "dimensiuni": {
+          "x": 8.416,
+          "y": 8.54,
+          "z": 4
+        }
+      },
+      {
+        "index": 2,
+        "nume": "corp 3",
+        "dimensiuni": {
+          "x": 8.416,
+          "y": 8.54,
+          "z": 4
+        }
+      },
+      {
+        "index": 3,
+        "nume": "corp 4",
+        "dimensiuni": {
+          "x": 8.416,
+          "y": 8.54,
+          "z": 4
+        }
+      },
+      {
+        "index": 4,
+        "nume": "corp 5",
+        "dimensiuni": {
+          "x": 8.416,
+          "y": 8.54,
+          "z": 4
+        }
+      },
+      {
+        "index": 5,
+        "nume": "corp 6",
+        "dimensiuni": {
+          "x": 8.416,
+          "y": 8.54,
+          "z": 4
+        }
+      },
+      {
+        "index": 6,
+        "nume": "corp 7",
+        "dimensiuni": {
+          "x": 8.416,
+          "y": 8.54,
+          "z": 4
+        }
+      },
+      {
+        "index": 7,
+        "nume": "corp 8",
+        "dimensiuni": {
+          "x": 8.416,
+          "y": 8.54,
+          "z": 4
+        }
+      },
+      {
+        "index": 8,
+        "nume": "corp 9",
+        "dimensiuni": {
+          "x": 8.416,
+          "y": 8.54,
+          "z": 4
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 20.897,
+      "y": 55.523,
+      "z": 4
+    },
+    "thumb": "stelute.thumb.png"
+  },
+  {
+    "fisier": "Surubelnita.3mf",
+    "format": "3mf",
+    "nume": "Surubelnita",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 13.817,
+          "y": 48.8,
+          "z": 6.908
+        }
+      },
+      {
+        "index": 1,
+        "nume": "corp 2",
+        "dimensiuni": {
+          "x": 3.979,
+          "y": 42.61,
+          "z": 1.99
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 13.817,
+      "y": 91.401,
+      "z": 6.908
+    },
+    "thumb": "Surubelnita.thumb.png"
+  },
+  {
+    "fisier": "Zmeu.3mf",
+    "format": "3mf",
+    "nume": "Zmeu",
+    "tema": "general",
+    "corpuri": [
+      {
+        "index": 0,
+        "nume": "corp 1",
+        "dimensiuni": {
+          "x": 49.796,
+          "y": 91.73,
+          "z": 4
+        }
+      }
+    ],
+    "dimensiuniTotale": {
+      "x": 49.796,
+      "y": 91.73,
+      "z": 4
+    },
+    "thumb": "Zmeu.thumb.png"
+  }
+]

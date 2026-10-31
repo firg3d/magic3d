@@ -11,6 +11,7 @@ import { genereaza } from "@/magic3d/generatoare/client";
 import { grupuriFonturi, incarcaManifestFonturi, type FontItem } from "@/magic3d/generatoare/fonturi";
 import type { GeneratorDef, Magic3dGenerat, ParamDef, Parametri, RezultatGenerare } from "@/magic3d/generatoare/tipuri";
 import { tg } from "@/magic3d/generatoare/texte";
+import { Biblioteca, type Colectie } from "@/magic3d/generatoare/Biblioteca";
 
 /** Ce face editorul cu o constructie: o pune pe placa (tinta null) sau inlocuieste pachetul `tinta`. Intoarce id-ul pachetului. */
 export type AplicaGenerare = (rezultat: RezultatGenerare, def: GeneratorDef, meta: Magic3dGenerat, tinta: string | null) => string;
@@ -37,6 +38,7 @@ export function GeneratoarePanel({ onClose, editat, aplica }: {
   const [eroare, setEroare] = useState("");
   const [rezultat, setRezultat] = useState<RezultatGenerare | null>(null);
   const [fonturi, setFonturi] = useState<FontItem[]>([]);
+  const [colectie, setColectie] = useState<Colectie | null>(null);
   const versiune = useRef(0);
 
   useEffect(() => {
@@ -100,7 +102,8 @@ export function GeneratoarePanel({ onClose, editat, aplica }: {
         return (
           <label key={param.cheie}><span>{eticheta}</span>
             <select value={String(v)} onChange={(e) => schimba(param.cheie, e.target.value)}>
-              {param.optiuni.map((o) => <option key={o.valoare} value={o.valoare}>{tm(o.eticheta)}</option>)}
+              {/* Cheile i18n au puncte ("placute.prindGaura"); o eticheta fara punct (litera "A") se arata ca atare. */}
+              {param.optiuni.map((o) => <option key={o.valoare} value={o.valoare}>{o.eticheta.includes(".") ? tm(o.eticheta) : o.eticheta}</option>)}
             </select>
           </label>
         );
@@ -156,17 +159,19 @@ export function GeneratoarePanel({ onClose, editat, aplica }: {
       {(handleProps) => (<>
         <header className="movable" {...handleProps}>
           <div className="top-action-heading">
-            {def && !editat ? (
-              <button type="button" className="gen-inapoi" aria-label={tg("inapoi")} onClick={() => setDef(null)}><ArrowLeft size={16} /></button>
+            {(def && !editat) || colectie ? (
+              <button type="button" className="gen-inapoi" aria-label={tg("inapoi")} onClick={() => { setDef(null); setColectie(null); }}><ArrowLeft size={16} /></button>
             ) : null}
-            <strong>{def ? tm(def.titlu) : tg("titlu")}</strong>
+            <strong>{def ? tm(def.titlu) : colectie ? tg(colectie === "base" ? "baze" : "tematici") : tg("titlu")}</strong>
           </div>
           <div className="panel-header-actions">
             <button type="button" aria-label={tg("inchide")} onClick={onClose}><X size={18} /></button>
           </div>
         </header>
         <div className="top-action-body" onKeyDown={(event) => event.key === "Escape" && onClose()}>
-          {!def ? (
+          {!def && colectie ? (
+            <Biblioteca colectie={colectie} />
+          ) : !def ? (
             <>
               <p>{tg("alege")}</p>
               <div className="gen-lista">
@@ -174,7 +179,13 @@ export function GeneratoarePanel({ onClose, editat, aplica }: {
                   <button key={g.id} type="button" className="gen-card" onClick={() => alege(g)}>{tm(g.titlu)}</button>
                 ))}
               </div>
-              <p className="gen-nota">{tg("inCurand")}</p>
+              <section className="gen-sectiune">
+                <h3>{tg("modele")}</h3>
+                <div className="gen-lista">
+                  <button type="button" className="gen-card" onClick={() => setColectie("tematici")}>{tg("tematici")}</button>
+                  <button type="button" className="gen-card" onClick={() => setColectie("base")}>{tg("baze")}</button>
+                </div>
+              </section>
             </>
           ) : (
             <>
