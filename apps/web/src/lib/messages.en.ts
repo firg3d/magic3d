@@ -81,7 +81,7 @@ export const MESSAGES_EN = {
   "dashboard.updateBannerText": "A newer version of Magic3D is available: {latest} (installed: {current})",
   "dashboard.updateBannerLink": "Release notes & download",
   "tabs.newerVersion": "Another tab already runs Magic3D {version}, this one is still {current}. Reload it, or it keeps saving with the old version.",
-  "tabs.alreadyOpen": "Magic3D is already open in another tab. Best keep working there and close this one.",
+  "tabs.alreadyOpen": "Magic3D is also open in another tab.",
   "tabs.closeRefused": "The browser does not let this tab close itself. Close it with Ctrl+W or the cross on the tab.",
   "tabs.closeThis": "Close this tab",
   "tabs.keepHere": "Keep working here",

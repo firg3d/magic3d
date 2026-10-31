@@ -80,7 +80,6 @@ summary: 卷尺、标尺与角尺，到原点的距离，附着在零件上的�
 - 卷尺也能标记点：{{ui:camera.tapeMarkMiddle}}，即测量正中那个半填充的标记，会在测量中间放置一个点，例如圆孔的中心。它也能从一个点开始测量：卷尺吸附参考点就像吸附角一样。
 - 拖动形状时，它的边和中心会吸附到点，就像吸附到其他形状一样（{{ui:workspace.objectSnap}}）。角尺也会吸附到点。
 - 点保存在设计中，不出现在任何导出里，并随备注一起由 {{ui:visibility.notes}}（[[Shift]]+[[N]]）显示或隐藏。
-- AI 可以用 `layerling_add_reference_points`、`layerling_list_reference_points` 和 `layerling_remove_reference_points` 标记、列出和移除它们。
 
 ## 参考图片
 
@@ -92,4 +91,3 @@ summary: 卷尺、标尺与角尺，到原点的距离，附着在零件上的�
 - {{ui:referenceImage.calibrate}} 让它恢复真实尺寸，与草图中相同：单击图片上两个你知道实际距离的点——例如电路板的两个安装孔——并在 {{ui:referenceImage.distance}} 中输入该距离。图片会保持比例和中心不变。
 - 用设置标题栏中的锁将它锁定，它就会固定不动：点击会穿过它落到底板上。在对象列表中选中它即可解锁。
 - 无论复制或撤销多少次，图片在设计文件中只保存一次。大图片会让文件相应变大；添加时的提示会说明它的大小。
-- AI 可以用 `layerling_reference_image` 添加、移动、校准、淡化和锁定参考图片。使用 `trace` 可将图片描摹为立在其上的草图实体，与草图中的 {{ui:sketch.traceImageButton}} 相同。

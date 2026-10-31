@@ -83,7 +83,7 @@ O seletor **mm | in**, junto de {{ui:inspector.snapGrid}}, altera a unidade, a g
 
 ### O rodapé
 
-No fundo da janela: {{ui:dashboard.sponsor}} abre a página onde podes apoiar o projeto; {{ui:dashboard.userGuide}} abre este guia; {{ui:dashboard.forum}} leva ao espaço para perguntas, ideias e comunicação de erros (as discussões no GitHub ou, em alemão, o fórum do drucktipps3d); {{ui:editor.bugReport}} cria um ZIP para comunicar um erro; {{ui:dashboard.projectOnGitHub}} abre o projeto no GitHub; e o número da versão abre as notas da versão. As ligações para as informações legais e a política de privacidade dizem respeito à entidade responsável pela cópia do Magic3D que utilizas.
+No fundo da janela: {{ui:dashboard.sponsor}} abre a página onde podes apoiar o projeto; {{ui:dashboard.userGuide}} abre este guia; {{ui:editor.bugReport}} cria um ZIP para comunicar um erro; {{ui:dashboard.projectOnGitHub}} abre o projeto no GitHub; e o número da versão abre as notas da versão. As ligações para as informações legais e a política de privacidade dizem respeito à entidade responsável pela cópia do Magic3D que utilizas.
 
 ## A tua primeira peça
 

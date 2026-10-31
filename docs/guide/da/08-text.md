@@ -41,7 +41,7 @@ Arabisk, persisk, urdu og hebraisk skrives højre mod venstre: det første bogst
 
 | Browser | Vælg en fontfil | Font fra computeren |
 | --- | --- | --- |
-| Chrome og Edge på en computer, også den installerede layerling-app | ja | ja, efter at browseren spørger |
+| Chrome og Edge på en computer, også den installerede Magic3D-app | ja | ja, efter at browseren spørger |
 | Firefox | ja | nej |
 | Safari på en Mac | ja | nej |
 | Tablet og telefon | ja, fra enhedens filer | nej |
@@ -65,7 +65,7 @@ Så:
 - **Designet åbner korrekt alle steder**, også på en computer uden fonten. Teksterne ser ens ud og kan flyttes, vendes, skaleres og rundes.
 - **Nye bogstaver kræver fonten.** Hvis en person uden fonten taster et bogstav designet ikke tog med, tegner Magic3D det fra Sans. Under {{ui:prop.font}} er fonten så markeret {{ui:font.fromDesign}}. Tilføj fontfilen og alle bogstaver kommer tilbage.
 - **Eksporter holder kun geometri.** STL, 3MF, OBJ, STEP og SVG indeholder former og omrids, ingen font.
-- **Ældre layerling-versioner** kender ikke egne fonte endnu og tegner sådanne tekster i Multilanguage.
+- **Ældre Magic3D-versioner** kender ikke egne fonte endnu og tegner sådanne tekster i Multilanguage.
 
 **Licenser:** Fonte er beskyttet af ophavsret, og deres licens siger hvad du må gøre med dem. De indlejrede bogstavomrids er hvad PDF-filer tager med fra en font, og de fleste licenser tillader det. Nogle kommercielle fonte forbyder dog at give selv enkelte bogstaver videre. Før du giver et design med en font du selv har videre, tjek fontens licens. Gratis fonte som dem fra Google Fonts (for det meste under SIL Open Font License) kan gives videre uden problemer. For en printet del eller en eksporteret STL er det ligegyldigt: de indeholder ingen font længere, kun geometri.
 

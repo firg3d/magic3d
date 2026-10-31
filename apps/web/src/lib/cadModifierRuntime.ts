@@ -362,7 +362,7 @@ export function cadModifierUserErrorMessage(rawError: string | null | undefined)
   if (rawError.includes("This body cannot be hollowed with any wall thickness")) {
     return t("shell.errorCannotHollow");
   }
-  if (rawError.includes("This revolved body is a mesh from an older layerling")) {
+  if (rawError.includes("This revolved body is a mesh from an older Magic3D")) {
     return t("edge.errorOldRevolve");
   }
   if (rawError.includes("no flat bottom face to leave open")) {

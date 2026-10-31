@@ -3,7 +3,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { encodePng } from "./png";
 
 /*
- * Zeichnet die Symbole der Marke aus layerling-icon.svg - dasselbe Bild, das
+ * Zeichnet die Symbole der Marke aus magic3d-icon.svg - dasselbe Bild, das
  * im Browserreiter steht, nur als PNG in den Groessen, die ein SVG nicht
  * abdeckt: iOS nimmt fuer den Home-Bildschirm ausschliesslich PNG, ein
  * Webmanifest verlangt Pixelmasse, und wer im Vorbeigehen /favicon.ico
@@ -178,11 +178,11 @@ function encodeIco(images: { size: number; png: Buffer }[]) {
   return Buffer.concat([directory, ...images.map((image) => image.png)]);
 }
 
-const BRAND = "apps/web/public/assets/layerling";
+const BRAND = "apps/web/public/assets/magic3d";
 
 describe("Marken-Symbole", () => {
   it("zeichnet sie aus dem SVG", () => {
-    const icon = readBrandSvg(`${BRAND}/layerling-icon.svg`);
+    const icon = readBrandSvg(`${BRAND}/magic3d-icon.svg`);
 
     // Das Rechteck, das die ganze Flaeche deckt, ist der Grund. Fuer Apple und
     // fuer Android muss es randlos sein: Beide schneiden das Symbol selbst
@@ -211,9 +211,9 @@ describe("Marken-Symbole", () => {
 
     // Fuers Webmanifest: "any" so, wie das Symbol gedacht ist, "maskable" mit
     // Luft bis in die Ecken, weil Android bis auf einen Kreis beschneiden darf.
-    write(`${BRAND}/layerling-icon-192.png`, asDesigned(192), 192);
-    write(`${BRAND}/layerling-icon-512.png`, asDesigned(512), 512);
-    write(`${BRAND}/layerling-icon-maskable-512.png`, fullBleed(512, 0.44), 512);
+    write(`${BRAND}/magic3d-icon-192.png`, asDesigned(192), 192);
+    write(`${BRAND}/magic3d-icon-512.png`, asDesigned(512), 512);
+    write(`${BRAND}/magic3d-icon-maskable-512.png`, fullBleed(512, 0.44), 512);
 
     // Das Bild fuer Linkvorschauen entsteht nicht hier, sondern in
     // scripts/render-social-card.mjs: Auf der Karte steht Schrift, und dafuer

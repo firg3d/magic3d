@@ -117,8 +117,6 @@ Voor ventilatieopeningen, luidsprekerroosters, mandjes en behuizingen verdeelt h
 
 De gaten zijn gewone gaten, gegroepeerd met het lichaam, net als na {{ui:editor.tool.group}}: er wordt niets vastgebakken. {{ui:editor.tool.ungroup}} heft de groep weer op en maakt elk gat los, zodat je het daarna een voor een kunt verplaatsen, veranderen of verwijderen. Het geheel is één stap voor {{ui:editor.tool.undo}}. Het gereedschap maakt niet meer dan 400 gaten tegelijk; maak de gaten dan groter of de afstand wijder.
 
-Een AI kan hetzelfde via de MCP-brug met `layerling_perforate_face` (zie het hoofdstuk [AI met MCP](chapter:ai-met-mcp)).
-
 ## Een vlak naar buiten of naar binnen trekken
 
 Voor een dikkere wand, een verhoogd plateau op een vlak of een kamer erin werkt het gereedschap {{ui:faceTool.title}} op één plat vlak. Het werkt ook op een geïmporteerde STL, waar geen schets is om te veranderen. Selecteer precies één lichaam en klik op {{ui:faceTool.title}} in de groep {{ui:editor.group.modify}} van de werkbalk, naast het gatenpatroon. Je kunt ook met rechts op het lichaam klikken, of het vinden met [[Ctrl]]+[[K]].
@@ -133,8 +131,6 @@ Voor een dikkere wand, een verhoogd plateau op een vlak of een kamer erin werkt 
 4. Pas {{ui:faceTool.apply}} maakt het.
 
 Wat het gereedschap toevoegt, is een gewoon schetslichaam, gegroepeerd met het lichaam: er wordt niets vastgebakken. {{ui:group.edit}} opent de groep, en {{ui:inspector.editSketch}} op het nieuwe deel toont de omtrek die het volgt. Op de boven- of onderkant van een eenvoudig schetslichaam - één gebied, niet gegroepeerd, gespiegeld, taps, gedraaid of scheef, zonder lijn, sleutelring, afschuining of afronding - is dat de eigen omtrek van het lichaam, bij het bouwen naar binnen verschoven, zodat de lijnen en bogen exact blijven waar de CAD-kern ze kan verschuiven, voor de randgereedschappen en de STEP-export. Later van grootte veranderd, houdt het deel zijn inspringing. Op elk ander vlak, ook op een geïmporteerd net, volgt de omtrek de driehoeken van het vlak, en bestaat een kromme uit korte rechte stukjes. Het geheel is één stap voor {{ui:editor.tool.undo}}. Om inspringing of straal later te veranderen, maak je de stap ongedaan en gebruik je het gereedschap opnieuw. Om de bovenrand daarna af te ronden, gebruik je {{ui:editor.tool.fillet}} met {{ui:edge.topEdges}} op de groep als laatste stap: zoals elke randbewerking op een groep maakt het de groep tot één lichaam.
-
-Een AI kan hetzelfde via de MCP-brug met `layerling_push_face` (zie het hoofdstuk [AI met MCP](chapter:ai-met-mcp)).
 
 ## Meerdere onderdelen tegelijk veranderen
 

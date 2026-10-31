@@ -83,7 +83,7 @@ Comutatorul **mm | in** de lângă {{ui:inspector.snapGrid}} schimbă unitatea, 
 
 ### Subsolul
 
-În partea de jos a ferestrei: {{ui:dashboard.sponsor}} te duce la pagina unde poți susține proiectul; {{ui:dashboard.userGuide}} deschide acest ghid; {{ui:dashboard.forum}} te duce la locul pentru întrebări, idei și raportări de erori (discuțiile de pe GitHub, iar în germană forumul drucktipps3d); {{ui:editor.bugReport}} creează o arhivă ZIP pentru un raport de eroare; {{ui:dashboard.projectOnGitHub}} te duce la proiectul de pe GitHub, iar numărul versiunii deschide notele de lansare. Linkurile către pagina de informații legale (impressum) și politica de confidențialitate aparțin celui care rulează copia de Magic3D pe care o folosești.
+În partea de jos a ferestrei: {{ui:dashboard.sponsor}} te duce la pagina unde poți susține proiectul; {{ui:dashboard.userGuide}} deschide acest ghid; {{ui:editor.bugReport}} creează o arhivă ZIP pentru un raport de eroare; {{ui:dashboard.projectOnGitHub}} te duce la proiectul de pe GitHub, iar numărul versiunii deschide notele de lansare. Linkurile către pagina de informații legale (impressum) și politica de confidențialitate aparțin celui care rulează copia de Magic3D pe care o folosești.
 
 ## Prima ta piesă
 

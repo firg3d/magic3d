@@ -130,8 +130,6 @@ For vents, speaker grilles, baskets and enclosures the {{ui:holePattern.title}} 
 
 The holes are ordinary holes grouped with the body, just as after {{ui:editor.tool.group}}: nothing is baked in. {{ui:editor.tool.ungroup}} dissolves the group again and frees every hole, which you can then move, change or delete one by one. The whole thing is one step for {{ui:editor.tool.undo}}. The tool does not make more than 400 holes at once; make the holes bigger or the spacing wider then.
 
-An AI can do the same through the MCP bridge with `layerling_perforate_face` (see the chapter [AI with MCP](chapter:ai-with-mcp)).
-
 ## Pushing a face out or in
 
 For a thicker wall, a raised pad on a face or a pocket cut into it, the {{ui:faceTool.title}} tool works on one flat face. It works on an imported STL too, where there is no sketch to change. Select exactly one body and click {{ui:faceTool.title}} in the {{ui:editor.group.modify}} group of the toolbar, next to the hole pattern. You can also right-click the body, or find it with [[Ctrl]]+[[K]].
@@ -147,8 +145,6 @@ For a thicker wall, a raised pad on a face or a pocket cut into it, the {{ui:fac
 4. Only {{ui:faceTool.apply}} makes it.
 
 What the tool adds is an ordinary sketch body, grouped with the body unless {{ui:faceTool.separate}} is on (then {{ui:group.edit}} has nothing to open, and the part is free): nothing is baked in. {{ui:group.edit}} opens the group, and {{ui:inspector.editSketch}} on the new part shows the outline it follows. On the top or the bottom of a plain sketch body - one area, not grouped, mirrored, tapered, twisted or leaning, and without a stroke, key ring, fillet or chamfer - that is the body's own outline, set in when it is built, so its lines and arcs stay exact wherever the CAD kernel can set them in, for the edge tools and the STEP export. Resized later, the part keeps its inset. On any other face, and on every face of an imported mesh, the outline follows the face's triangles, and a curve is made of short straight pieces. The whole thing is one step for {{ui:editor.tool.undo}}. To change the inset or the radius later, undo and run the tool again. To round the top edge afterwards, use {{ui:editor.tool.fillet}} with {{ui:edge.topEdges}} on the group as the last step: like every edge treatment on a group, it joins the group into one body.
-
-An AI can do the same through the MCP bridge with `layerling_push_face` (see the chapter [AI with MCP](chapter:ai-with-mcp)).
 
 ## Changing several parts at once
 

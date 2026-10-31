@@ -1,7 +1,7 @@
 import type { MessageKey } from "@/lib/messages.en";
 
 /**
- * French catalogue for layerling interface.
+ * French catalogue for the Magic3D interface.
  */
 export const MESSAGES_FR: Partial<Record<MessageKey, string>> = {
   "common.cancel": "Annuler",

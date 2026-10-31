@@ -83,7 +83,7 @@ A {{ui:inspector.snapGrid}} melletti **mm | in** kapcsoló átváltja a mérték
 
 ### Az oldal alja
 
-Az ablak alján: a {{ui:dashboard.sponsor}} arra az oldalra vezet, ahol támogathatod a projektet; a {{ui:dashboard.userGuide}} megnyitja ezt az útmutatót; a {{ui:dashboard.forum}} a kérdések, ötletek és hibajelentések helyére vezet (a GitHub-beszélgetésekre, németül a drucktipps3d fórumára); a {{ui:editor.bugReport}} ZIP-et készít a hibajelentéshez; a {{ui:dashboard.projectOnGitHub}} a projekthez vezet a GitHubon, a verziószám pedig megnyitja a kiadási jegyzeteket. A impresszumra és az adatvédelemre mutató hivatkozások azé, aki a használt layerling-példányt üzemelteti.
+Az ablak alján: a {{ui:dashboard.sponsor}} arra az oldalra vezet, ahol támogathatod a projektet; a {{ui:dashboard.userGuide}} megnyitja ezt az útmutatót; a {{ui:editor.bugReport}} ZIP-et készít a hibajelentéshez; a {{ui:dashboard.projectOnGitHub}} a projekthez vezet a GitHubon, a verziószám pedig megnyitja a kiadási jegyzeteket. A impresszumra és az adatvédelemre mutató hivatkozások azé, aki a használt Magic3D-példányt üzemelteti.
 
 ## Az első alkatrészed
 

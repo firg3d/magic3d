@@ -288,7 +288,7 @@
           "en": "SVGs from Adobe Illustrator"
         },
         "body": {
-          "de": "Mit „Speichern unter → SVG“ aus Illustrator gespeicherte Dateien lehnte layerling bisher ab („SVG entities are not supported“). Jetzt lassen sie sich ganz normal importieren. Klappt ein Import nicht, steht der Grund in deiner Sprache da, mit einem Hinweis, was hilft.",
+          "de": "Mit „Speichern unter → SVG“ aus Illustrator gespeicherte Dateien lehnte Magic3D bisher ab („SVG entities are not supported“). Jetzt lassen sie sich ganz normal importieren. Klappt ein Import nicht, steht der Grund in deiner Sprache da, mit einem Hinweis, was hilft.",
           "en": "Files saved from Illustrator with Save As → SVG used to be refused (\"SVG entities are not supported\"). Now they import like any other. When an import does not work, the reason is shown in your language, with a hint at what helps."
         }
       },
@@ -298,8 +298,8 @@
           "en": "Tapped holes the bolt actually fits"
         },
         "body": {
-          "de": "Eine Gewindestange oder Schraube, die du als Aussparung setzt, hat das volle Maß der Schraube und kein Spiel, das Loch wird gedruckt also zu eng. layerling weist jetzt darauf hin und macht mit einem Klick ein Gewindeloch daraus, das das eingestellte Spiel bekommt.",
-          "en": "A threaded rod or screw that you set as a hole has the bolt's full size and no play, so the printed hole comes out too tight. layerling now points this out and turns it into a tapped hole with one click, which gets the clearance you set."
+          "de": "Eine Gewindestange oder Schraube, die du als Aussparung setzt, hat das volle Maß der Schraube und kein Spiel, das Loch wird gedruckt also zu eng. Magic3D weist jetzt darauf hin und macht mit einem Klick ein Gewindeloch daraus, das das eingestellte Spiel bekommt.",
+          "en": "A threaded rod or screw that you set as a hole has the bolt's full size and no play, so the printed hole comes out too tight. Magic3D now points this out and turns it into a tapped hole with one click, which gets the clearance you set."
         }
       }
     ]
@@ -363,8 +363,8 @@
           "en": "Quick tooltips in the installed app"
         },
         "body": {
-          "de": "Als App installiert zeigte layerling die Namen der Knöpfe spät oder gar nicht. Jetzt erscheinen sie dort nach einem kurzen Moment in einer kleinen Blase.",
-          "en": "Installed as an app, layerling showed the names of its buttons late or not at all. There they now come up after a short moment in a small bubble."
+          "de": "Als App installiert zeigte Magic3D die Namen der Knöpfe spät oder gar nicht. Jetzt erscheinen sie dort nach einem kurzen Moment in einer kleinen Blase.",
+          "en": "Installed as an app, Magic3D showed the names of its buttons late or not at all. There they now come up after a short moment in a small bubble."
         }
       }
     ]
@@ -378,8 +378,8 @@
           "en": "Delta printers with a round plate"
         },
         "body": {
-          "de": "Die Druckerliste kennt jetzt Delta-Drucker von FLSun, SeeMeCNC, Anycubic und Rolohaun. Mit einem von ihnen ist die Arbeitsfläche rund wie die Platte, und layerling warnt, wenn ein Körper über den Rand ragt.",
-          "en": "The printer list now has delta printers by FLSun, SeeMeCNC, Anycubic and Rolohaun. With one of them the workplane is round like the plate, and layerling warns when a body reaches past the rim."
+          "de": "Die Druckerliste kennt jetzt Delta-Drucker von FLSun, SeeMeCNC, Anycubic und Rolohaun. Mit einem von ihnen ist die Arbeitsfläche rund wie die Platte, und Magic3D warnt, wenn ein Körper über den Rand ragt.",
+          "en": "The printer list now has delta printers by FLSun, SeeMeCNC, Anycubic and Rolohaun. With one of them the workplane is round like the plate, and Magic3D warns when a body reaches past the rim."
         }
       },
       {
@@ -818,8 +818,8 @@
           "en": "Imported STL files no longer black"
         },
         "body": {
-          "de": "Manche Programme schreiben in eine STL-Datei keine Flächenrichtungen. Solche Modelle kamen schwarz herein; layerling berechnet die Richtungen jetzt wieder selbst aus den Dreiecken, auch für schon gespeicherte Entwürfe.",
-          "en": "Some programs write no face directions into an STL file. Such models came in black; layerling works the directions out from the triangles again, also in designs saved before."
+          "de": "Manche Programme schreiben in eine STL-Datei keine Flächenrichtungen. Solche Modelle kamen schwarz herein; Magic3D berechnet die Richtungen jetzt wieder selbst aus den Dreiecken, auch für schon gespeicherte Entwürfe.",
+          "en": "Some programs write no face directions into an STL file. Such models came in black; Magic3D works the directions out from the triangles again, also in designs saved before."
         }
       }
     ]
@@ -898,8 +898,8 @@
           "en": "A quicker first visit"
         },
         "body": {
-          "de": "Wer layerling zum ersten Mal öffnet, lädt für die Offline-Fassung rund 10 MB weniger: Die Druckseiten und Bilder der Anleitung kommen erst, wenn du sie aufrufst.",
-          "en": "Opening layerling for the first time downloads about 10 MB less for the offline copy: the guide's print pages and pictures only come when you open them."
+          "de": "Wer Magic3D zum ersten Mal öffnet, lädt für die Offline-Fassung rund 10 MB weniger: Die Druckseiten und Bilder der Anleitung kommen erst, wenn du sie aufrufst.",
+          "en": "Opening Magic3D for the first time downloads about 10 MB less for the offline copy: the guide's print pages and pictures only come when you open them."
         }
       },
       {
@@ -983,8 +983,8 @@
           "en": "Server store: a folder for each user"
         },
         "body": {
-          "de": "Wer layerling hinter einem Proxy mit Anmeldung betreibt, kann jedem Benutzer einen eigenen Serverordner geben: mit der Einstellung LAYERLING_USER_HEADER. Ohne sie bleibt alles wie bisher. Große Entwürfe kommen außerdem vom Server, ohne den Speicher zu füllen.",
-          "en": "If you run layerling behind a proxy with sign-in, you can give each user a server folder of their own with the setting LAYERLING_USER_HEADER. Without it everything stays as it was. Large designs also come from the server without filling its memory."
+          "de": "Wer Magic3D hinter einem Proxy mit Anmeldung betreibt, kann jedem Benutzer einen eigenen Serverordner geben: mit der Einstellung LAYERLING_USER_HEADER. Ohne sie bleibt alles wie bisher. Große Entwürfe kommen außerdem vom Server, ohne den Speicher zu füllen.",
+          "en": "If you run Magic3D behind a proxy with sign-in, you can give each user a server folder of their own with the setting LAYERLING_USER_HEADER. Without it everything stays as it was. Large designs also come from the server without filling its memory."
         }
       }
     ]
@@ -1043,8 +1043,8 @@
           "en": "STEP files with several solids"
         },
         "body": {
-          "de": "Eine STEP-Datei aus einem anderen CAD-Programm, etwa eine Baugruppe aus Pfosten, Leisten und Platten, kommt jetzt als je ein Körper herein, unter dem Namen aus der Datei und an der richtigen Stelle zueinander, alle gemeinsam ausgewählt. Farben und Gruppen der Datei übernimmt layerling noch nicht.",
-          "en": "A STEP file from another CAD program, an assembly of posts, rails and panels for example, now comes in as one body each, under the name from the file and in the right place to the others, all selected together. layerling does not take over the colours and groups of the file yet."
+          "de": "Eine STEP-Datei aus einem anderen CAD-Programm, etwa eine Baugruppe aus Pfosten, Leisten und Platten, kommt jetzt als je ein Körper herein, unter dem Namen aus der Datei und an der richtigen Stelle zueinander, alle gemeinsam ausgewählt. Farben und Gruppen der Datei übernimmt Magic3D noch nicht.",
+          "en": "A STEP file from another CAD program, an assembly of posts, rails and panels for example, now comes in as one body each, under the name from the file and in the right place to the others, all selected together. Magic3D does not take over the colours and groups of the file yet."
         }
       },
       {
@@ -1068,8 +1068,8 @@
           "en": "Your default stays on the server"
         },
         "body": {
-          "de": "Läuft layerling mit einem Serverordner, etwa in Docker, landet „Als Vorgabe sichern“ jetzt auch dort. Leerst du den Browser-Speicher oder öffnest layerling in einem anderen Browser, beginnen neue Entwürfe trotzdem mit deinen eigenen Einstellungen.",
-          "en": "When layerling runs with a server folder, for example in Docker, \"Make default\" now saves there too. Clear the browser storage or open layerling in another browser, and new designs still start with your own settings."
+          "de": "Läuft Magic3D mit einem Serverordner, etwa in Docker, landet „Als Vorgabe sichern“ jetzt auch dort. Leerst du den Browser-Speicher oder öffnest Magic3D in einem anderen Browser, beginnen neue Entwürfe trotzdem mit deinen eigenen Einstellungen.",
+          "en": "When Magic3D runs with a server folder, for example in Docker, \"Make default\" now saves there too. Clear the browser storage or open Magic3D in another browser, and new designs still start with your own settings."
         }
       },
       {
@@ -1531,9 +1531,9 @@
           "ar": "المرفقات: التعليمات وقوائم القطع داخل التصميم"
         },
         "body": {
-          "de": "Unter Verwalten gibt es jetzt „Anhänge“ (Büroklammer): Häng Markdown- oder Textdateien an einen Entwurf, etwa eine Montageanleitung oder eine Teileliste. Sie bleiben beim Entwurf, auch in der .lyl-Datei, in der Sicherung und im Serverordner. Ein Entwurf mit Anhängen braucht zum Öffnen diese oder eine neuere layerling-Version.",
-          "en": "Manage now has \"Attachments\" (the paperclip): attach Markdown or text files to a design, such as assembly instructions or a parts list. They stay with the design, also in the .lyl file, the backup and the server folder. A design with attachments needs this layerling version or a newer one to open.",
-          "ar": "في «إدارة» الآن «المرفقات» (مشبك الورق): أرفق ملفات Markdown أو نصية بالتصميم، مثل تعليمات التركيب أو قائمة القطع. تبقى مع التصميم، وفي ملف .lyl والنسخة الاحتياطية ومجلد الخادم أيضًا. والتصميم الذي فيه مرفقات يحتاج إلى هذا الإصدار من layerling أو إصدار أحدث لفتحه."
+          "de": "Unter Verwalten gibt es jetzt „Anhänge“ (Büroklammer): Häng Markdown- oder Textdateien an einen Entwurf, etwa eine Montageanleitung oder eine Teileliste. Sie bleiben beim Entwurf, auch in der .lyl-Datei, in der Sicherung und im Serverordner. Ein Entwurf mit Anhängen braucht zum Öffnen diese oder eine neuere Magic3D-Version.",
+          "en": "Manage now has \"Attachments\" (the paperclip): attach Markdown or text files to a design, such as assembly instructions or a parts list. They stay with the design, also in the .lyl file, the backup and the server folder. A design with attachments needs this Magic3D version or a newer one to open.",
+          "ar": "في «إدارة» الآن «المرفقات» (مشبك الورق): أرفق ملفات Markdown أو نصية بالتصميم، مثل تعليمات التركيب أو قائمة القطع. تبقى مع التصميم، وفي ملف .lyl والنسخة الاحتياطية ومجلد الخادم أيضًا. والتصميم الذي فيه مرفقات يحتاج إلى هذا الإصدار من Magic3D أو إصدار أحدث لفتحه."
         }
       },
       {
@@ -1620,9 +1620,9 @@
           "ar": "يُطلب من المتصفح الاحتفاظ بتصاميمك"
         },
         "body": {
-          "de": "layerling bittet den Browser jetzt einmal, den Speicher mit deinen Entwürfen bei Platzmangel nicht zuerst zu leeren. Safari löscht die Daten einer Website, die sieben Tage nicht besucht wurde, nur bei einer installierten App nicht, die Anleitung (Installieren) sagt es jetzt dazu. Gesichert werden sollten wichtige Entwürfe trotzdem als Datei.",
-          "en": "layerling now asks the browser once not to clear the storage with your designs first when it runs short of room. Safari clears the data of a website that has not been visited for seven days, but not that of an installed app, and the guide (Installing) now says so. Important designs should still be saved as a file.",
-          "ar": "يطلب layerling الآن من المتصفح مرة واحدة ألا يبدأ بمسح التخزين الذي فيه تصاميمك عندما تنفد المساحة. يمسح Safari بيانات الموقع الذي لم يُزَر منذ سبعة أيام، لكن ليس بيانات التطبيق المثبت، والدليل (التثبيت) يذكر ذلك الآن. ومع ذلك يجب حفظ التصاميم المهمة كملف."
+          "de": "Magic3D bittet den Browser jetzt einmal, den Speicher mit deinen Entwürfen bei Platzmangel nicht zuerst zu leeren. Safari löscht die Daten einer Website, die sieben Tage nicht besucht wurde, nur bei einer installierten App nicht, die Anleitung (Installieren) sagt es jetzt dazu. Gesichert werden sollten wichtige Entwürfe trotzdem als Datei.",
+          "en": "Magic3D now asks the browser once not to clear the storage with your designs first when it runs short of room. Safari clears the data of a website that has not been visited for seven days, but not that of an installed app, and the guide (Installing) now says so. Important designs should still be saved as a file.",
+          "ar": "يطلب Magic3D الآن من المتصفح مرة واحدة ألا يبدأ بمسح التخزين الذي فيه تصاميمك عندما تنفد المساحة. يمسح Safari بيانات الموقع الذي لم يُزَر منذ سبعة أيام، لكن ليس بيانات التطبيق المثبت، والدليل (التثبيت) يذكر ذلك الآن. ومع ذلك يجب حفظ التصاميم المهمة كملف."
         }
       },
       {
@@ -1644,9 +1644,9 @@
           "ar": "إغلاق الثقوب الصغيرة في شبكات المثلثات"
         },
         "body": {
-          "de": "Ein importiertes Netz mit Öffnungen, etwa offenen Augen einer Figur, ließ sich nicht teilen, gruppieren oder ausschneiden. layerling schließt solche Öffnungen jetzt zuerst mit einem flachen Deckel und sagt, wie viele es waren. Ist eine Öffnung dafür zu groß und uneben, erklärt die Meldung, was zu tun ist.",
-          "en": "An imported mesh with openings, such as a figure's open eyes, could not be split, grouped or cut. layerling now closes such openings with a flat cap first and says how many there were. If an opening is too large and uneven for that, the message explains what to do.",
-          "ar": "شبكة المثلثات المستوردة التي فيها فتحات، مثل العيون المفتوحة في مجسّم شخصية، لم يكن ممكنًا تقسيمها أو تجميعها أو قطعها. يغلق layerling الآن هذه الفتحات أولًا بغطاء مسطح ويذكر عددها. وإذا كانت الفتحة كبيرة جدًا وغير منتظمة لذلك، فالرسالة تشرح ما يجب فعله."
+          "de": "Ein importiertes Netz mit Öffnungen, etwa offenen Augen einer Figur, ließ sich nicht teilen, gruppieren oder ausschneiden. Magic3D schließt solche Öffnungen jetzt zuerst mit einem flachen Deckel und sagt, wie viele es waren. Ist eine Öffnung dafür zu groß und uneben, erklärt die Meldung, was zu tun ist.",
+          "en": "An imported mesh with openings, such as a figure's open eyes, could not be split, grouped or cut. Magic3D now closes such openings with a flat cap first and says how many there were. If an opening is too large and uneven for that, the message explains what to do.",
+          "ar": "شبكة المثلثات المستوردة التي فيها فتحات، مثل العيون المفتوحة في مجسّم شخصية، لم يكن ممكنًا تقسيمها أو تجميعها أو قطعها. يغلق Magic3D الآن هذه الفتحات أولًا بغطاء مسطح ويذكر عددها. وإذا كانت الفتحة كبيرة جدًا وغير منتظمة لذلك، فالرسالة تشرح ما يجب فعله."
         }
       },
       {
@@ -1685,9 +1685,9 @@
           "ar": "مجلد store أكثر أمانًا على خادمك الخاص"
         },
         "body": {
-          "de": "Wer layerling selbst auf einem Webserver betreibt und den Ordner „store“ nutzt: store.php nimmt jetzt nur noch Exportdateien an, die wirklich das sind, was ihr Name sagt, und der Ordner wird nicht mehr direkt ausgeliefert. Ersetze store.php durch die neue Fassung. Auf layerling.com und im Docker-Image ändert sich nichts.",
-          "en": "If you run layerling on your own web server with a \"store\" folder: store.php now only accepts export files that really are what their name says, and the folder is no longer served directly. Replace store.php with the new one. Nothing changes on layerling.com or in the Docker image.",
-          "ar": "إذا كنت تشغّل layerling على خادم ويب خاص بك مع مجلد \"store\": صار store.php يقبل فقط ملفات التصدير التي هي فعلًا ما يقوله اسمها، ولم يعد المجلد يُقدَّم مباشرة. استبدل store.php بالملف الجديد. لا يتغير شيء على layerling.com ولا في صورة Docker."
+          "de": "Wer Magic3D selbst auf einem Webserver betreibt und den Ordner „store“ nutzt: store.php nimmt jetzt nur noch Exportdateien an, die wirklich das sind, was ihr Name sagt, und der Ordner wird nicht mehr direkt ausgeliefert. Ersetze store.php durch die neue Fassung. Auf magic3d.ro und im Docker-Image ändert sich nichts.",
+          "en": "If you run Magic3D on your own web server with a \"store\" folder: store.php now only accepts export files that really are what their name says, and the folder is no longer served directly. Replace store.php with the new one. Nothing changes on magic3d.ro or in the Docker image.",
+          "ar": "إذا كنت تشغّل Magic3D على خادم ويب خاص بك مع مجلد \"store\": صار store.php يقبل فقط ملفات التصدير التي هي فعلًا ما يقوله اسمها، ولم يعد المجلد يُقدَّم مباشرة. استبدل store.php بالملف الجديد. لا يتغير شيء على magic3d.ro ولا في صورة Docker."
         }
       }
     ]
@@ -1803,9 +1803,9 @@
           "ar": "أفلت التصاميم لإدراجها"
         },
         "body": {
-          "de": "Legst du eine oder mehrere layerling-Dateien (.lyl) im Ablagefeld des Import-Fensters ab, kommen ihre Körper in den offenen Entwurf, wie bei „In diesen Entwurf einfügen“. Praktisch, wenn ein großer Tinkercad-Import in mehrere Dateien zerlegt ist.",
-          "en": "Drop one or more layerling files (.lyl) on the drop zone of the import window and their bodies are added to the open design, as with \"Insert into this design\". Handy when a large Tinkercad import comes in several files.",
-          "ar": "أفلت ملف layerling واحدًا أو أكثر (.lyl) على منطقة الإفلات في نافذة الاستيراد فتُضاف أجسامها إلى التصميم المفتوح، كما مع «إدراج في هذا التصميم». مفيد عندما يأتي استيراد كبير من Tinkercad في عدة ملفات."
+          "de": "Legst du eine oder mehrere Magic3D-Dateien (.lyl) im Ablagefeld des Import-Fensters ab, kommen ihre Körper in den offenen Entwurf, wie bei „In diesen Entwurf einfügen“. Praktisch, wenn ein großer Tinkercad-Import in mehrere Dateien zerlegt ist.",
+          "en": "Drop one or more Magic3D files (.lyl) on the drop zone of the import window and their bodies are added to the open design, as with \"Insert into this design\". Handy when a large Tinkercad import comes in several files.",
+          "ar": "أفلت ملف Magic3D واحدًا أو أكثر (.lyl) على منطقة الإفلات في نافذة الاستيراد فتُضاف أجسامها إلى التصميم المفتوح، كما مع «إدراج في هذا التصميم». مفيد عندما يأتي استيراد كبير من Tinkercad في عدة ملفات."
         }
       },
       {
@@ -1841,9 +1841,9 @@
           "ar": "لا تجمّد بعد الآن مع شبكات المثلثات الكبيرة"
         },
         "body": {
-          "de": "Schneiden, Vereinen und Teilen großer importierter Netze, die Druckschätzung und das Vereinfachen rechnen jetzt im Hintergrund. Statt ein bis zwei Sekunden stillzustehen, bleibt layerling bedienbar, die Statuszeile zeigt „Wird berechnet … du kannst weiterarbeiten“. Auch OBJ-Import, 3MF-Export und das Öffnen von Entwürfen mit importierten Netzen halten dich weniger auf. Das Ergebnis ist genau dasselbe wie vorher.",
-          "en": "Cutting, merging and splitting large imported meshes, the print estimate and Simplify now work in the background. Instead of standing still for a second or two, layerling stays usable, and the status line says \"Calculating… you can keep working\". OBJ import, 3MF export and opening designs with imported meshes hold you up less too. The result is exactly the same as before.",
-          "ar": "صار قطع شبكات المثلثات المستوردة الكبيرة ودمجها وتقسيمها، وتقدير الطباعة، و«تبسيط» تعمل في الخلفية. بدل التوقف لثانية أو ثانيتين، يبقى layerling قابلًا للاستخدام، ويقول سطر الحالة «جارٍ الحساب… يمكنك متابعة العمل». كما صار استيراد OBJ وتصدير 3MF وفتح التصاميم التي فيها شبكات مستوردة يؤخرك أقل. والنتيجة هي نفسها تمامًا كما من قبل."
+          "de": "Schneiden, Vereinen und Teilen großer importierter Netze, die Druckschätzung und das Vereinfachen rechnen jetzt im Hintergrund. Statt ein bis zwei Sekunden stillzustehen, bleibt Magic3D bedienbar, die Statuszeile zeigt „Wird berechnet … du kannst weiterarbeiten“. Auch OBJ-Import, 3MF-Export und das Öffnen von Entwürfen mit importierten Netzen halten dich weniger auf. Das Ergebnis ist genau dasselbe wie vorher.",
+          "en": "Cutting, merging and splitting large imported meshes, the print estimate and Simplify now work in the background. Instead of standing still for a second or two, Magic3D stays usable, and the status line says \"Calculating… you can keep working\". OBJ import, 3MF export and opening designs with imported meshes hold you up less too. The result is exactly the same as before.",
+          "ar": "صار قطع شبكات المثلثات المستوردة الكبيرة ودمجها وتقسيمها، وتقدير الطباعة، و«تبسيط» تعمل في الخلفية. بدل التوقف لثانية أو ثانيتين، يبقى Magic3D قابلًا للاستخدام، ويقول سطر الحالة «جارٍ الحساب… يمكنك متابعة العمل». كما صار استيراد OBJ وتصدير 3MF وفتح التصاميم التي فيها شبكات مستوردة يؤخرك أقل. والنتيجة هي نفسها تمامًا كما من قبل."
         }
       },
       {
@@ -2233,9 +2233,9 @@
           "ar": "لا شريط زائد عند تنعيم قطعة مستوردة"
         },
         "body": {
-          "de": "Beim Verrunden eines importierten Teils mit einem engen Einschnitt konnte bei großem Radius ein dünner Streifen über dem Einschnitt entstehen. Jetzt meldet layerling, dass der Radius für diese Kante zu groß ist, statt den Streifen zu zeigen.",
-          "en": "Rounding an imported part with a narrow bay could leave a thin strip over the bay at a large radius. Now layerling says the radius is too large for that edge instead of showing the strip.",
-          "ar": "تنعيم قطعة مستوردة فيها تجويف ضيق كان قد يترك شريطًا رفيعًا فوق التجويف عند نصف قطر كبير. أما الآن فيقول layerling إن نصف القطر كبير جدًا على تلك الحافة بدل إظهار الشريط."
+          "de": "Beim Verrunden eines importierten Teils mit einem engen Einschnitt konnte bei großem Radius ein dünner Streifen über dem Einschnitt entstehen. Jetzt meldet Magic3D, dass der Radius für diese Kante zu groß ist, statt den Streifen zu zeigen.",
+          "en": "Rounding an imported part with a narrow bay could leave a thin strip over the bay at a large radius. Now Magic3D says the radius is too large for that edge instead of showing the strip.",
+          "ar": "تنعيم قطعة مستوردة فيها تجويف ضيق كان قد يترك شريطًا رفيعًا فوق التجويف عند نصف قطر كبير. أما الآن فيقول Magic3D إن نصف القطر كبير جدًا على تلك الحافة بدل إظهار الشريط."
         }
       },
       {
@@ -2387,22 +2387,22 @@
           "es": "Trae tus diseños de Tinkercad"
         },
         "body": {
-          "de": "Jemand aus der Community hat ein kostenloses Lesezeichen gebaut, Export to layerling, das ein Tinkercad-Design in deinem Browser samt echter Formen in eine layerling-Datei umwandelt. Es ist ein eigenes Projekt, nicht Teil von layerling, und wir haben es selbst noch nicht getestet – wir sind gespannt, wie es bei dir läuft. Du findest es in der Anleitung unter „Dateien und Speichern“ und auf der Startseite.",
-          "en": "A member of the community has made a free bookmark, Export to layerling, that converts a Tinkercad design in your browser into a layerling file with its real shapes. It is a project of its own, not part of layerling, and we have not tested it ourselves yet - we are curious how it works for you. You find it in the guide under Files and saving and on the start page.",
-          "ar": "صنع أحد أفراد المجتمع إشارة مرجعية مجانية باسم Export to layerling، تحوّل تصميم Tinkercad في متصفحك إلى ملف layerling بأشكاله الحقيقية. هو مشروع مستقل وليس جزءًا من layerling، ولم نجرّبه بأنفسنا بعد - نتطلع لمعرفة كيف يعمل معك. ستجده في الدليل ضمن الملفات والحفظ وفي الصفحة الرئيسية.",
-          "cs": "Někdo z komunity vytvořil bezplatnou záložku Export to layerling, která v prohlížeči převede návrh z Tinkercadu i se skutečnými tvary na soubor layerlingu. Je to samostatný projekt, není součástí layerlingu a sami jsme ho ještě nezkoušeli – zajímá nás, jak vám bude fungovat. Najdete ho v průvodci v části Soubory a ukládání a na úvodní stránce.",
-          "da": "Én fra fællesskabet har lavet et gratis bogmærke, Export to layerling, der laver et Tinkercad-design i din browser om til en layerling-fil med de rigtige former. Det er et projekt for sig, ikke en del af layerling, og vi har ikke selv prøvet det endnu – vi er spændte på, hvordan det virker for dig. Du finder det i vejledningen under Filer og gemning og på startsiden.",
-          "fr": "Un membre de la communauté a créé un favori gratuit, Export to layerling, qui convertit un design Tinkercad dans votre navigateur en fichier layerling avec ses vraies formes. C'est un projet à part, qui ne fait pas partie de layerling, et nous ne l'avons pas encore testé nous-mêmes – nous sommes curieux de savoir comment il fonctionne pour vous. Vous le trouvez dans le guide sous Fichiers et enregistrement, et sur la page d'accueil.",
-          "hu": "Valaki a közösségből készített egy ingyenes könyvjelzőt, az Export to layerlinget, amely a böngésződben egy Tinkercad-tervet a valódi formáival együtt layerling-fájllá alakít. Ez önálló projekt, nem része a layerlingnek, és mi magunk még nem próbáltuk ki – kíváncsiak vagyunk, nálad hogyan működik. Megtalálod az útmutatóban a Fájlok és mentés résznél, valamint a kezdőlapon.",
-          "it": "Una persona della community ha creato un segnalibro gratuito, Export to layerling, che converte nel tuo browser un design di Tinkercad in un file layerling con le sue forme reali. È un progetto a sé, non parte di layerling, e non l'abbiamo ancora provato noi: siamo curiosi di sapere come funziona per te. Lo trovi nella guida, sotto File e salvataggio, e nella pagina iniziale.",
-          "ja": "コミュニティの方が、ブラウザ上でTinkercadのデザインを本物の形のままlayerlingのファイルに変換する無料のブックマーク「Export to layerling」を作りました。これは独立したプロジェクトでlayerlingの一部ではなく、私たちもまだ試していません。皆さんの環境でどう動くか楽しみです。ガイドの「ファイルと保存」とスタートページで紹介しています。",
-          "nl": "Iemand uit de community heeft een gratis bladwijzer gemaakt, Export to layerling, die een Tinkercad-ontwerp in je browser met zijn echte vormen omzet naar een layerling-bestand. Het is een eigen project, geen onderdeel van layerling, en we hebben het zelf nog niet getest – we zijn benieuwd hoe het voor jou werkt. Je vindt het in de handleiding onder Bestanden en opslaan en op de startpagina.",
-          "pl": "Ktoś ze społeczności zrobił darmową zakładkę Export to layerling, która w przeglądarce zamienia projekt z Tinkercada wraz z prawdziwymi kształtami na plik layerlinga. To osobny projekt, nie jest częścią layerlinga i sami jeszcze go nie testowaliśmy – jesteśmy ciekawi, jak u Ciebie działa. Znajdziesz go w przewodniku w części Pliki i zapisywanie oraz na stronie startowej.",
-          "pt-br": "Alguém da comunidade criou um favorito gratuito, Export to layerling, que converte um design do Tinkercad no seu navegador em um arquivo do layerling com suas formas reais. É um projeto à parte, não faz parte do layerling, e ainda não o testamos: estamos curiosos para saber como funciona para você. Você o encontra no guia, em Arquivos e salvamento, e na página inicial.",
-          "ru": "Участник сообщества сделал бесплатную закладку Export to layerling, которая в браузере превращает проект Tinkercad вместе с настоящими формами в файл layerling. Это отдельный проект, он не входит в layerling, и мы сами его ещё не проверяли — нам интересно, как он работает у вас. Он описан в руководстве в разделе «Файлы и сохранение» и на стартовой странице.",
-          "sl": "Nekdo iz skupnosti je naredil brezplačen zaznamek Export to layerling, ki v brskalniku pretvori načrt iz Tinkercada z vsemi pravimi oblikami v datoteko layerlinga. Je samostojen projekt, ni del layerlinga in ga sami še nismo preizkusili – zanima nas, kako deluje pri vas. Najdete ga v priročniku v poglavju Datoteke in shranjevanje ter na začetni strani.",
-          "tr": "Topluluktan biri, tarayıcında bir Tinkercad tasarımını gerçek şekilleriyle bir layerling dosyasına dönüştüren ücretsiz bir yer imi yaptı: Export to layerling. Ayrı bir proje, layerling'in parçası değil ve biz henüz kendimiz denemedik – senin için nasıl çalıştığını merak ediyoruz. Kılavuzda Dosyalar ve kaydetme bölümünde ve başlangıç sayfasında bulabilirsin.",
-          "es": "Alguien de la comunidad ha creado un marcador gratuito, Export to layerling, que convierte un diseño de Tinkercad en tu navegador en un archivo de layerling con sus formas reales. Es un proyecto aparte, no forma parte de layerling, y aún no lo hemos probado nosotros: tenemos curiosidad por saber cómo te funciona. Lo encuentras en la guía, en Archivos y guardado, y en la página de inicio."
+          "de": "Jemand aus der Community hat ein kostenloses Lesezeichen gebaut, Export to Magic3D, das ein Tinkercad-Design in deinem Browser samt echter Formen in eine Magic3D-Datei umwandelt. Es ist ein eigenes Projekt, nicht Teil von Magic3D, und wir haben es selbst noch nicht getestet – wir sind gespannt, wie es bei dir läuft. Du findest es in der Anleitung unter „Dateien und Speichern“ und auf der Startseite.",
+          "en": "A member of the community has made a free bookmark, Export to Magic3D, that converts a Tinkercad design in your browser into a Magic3D file with its real shapes. It is a project of its own, not part of Magic3D, and we have not tested it ourselves yet - we are curious how it works for you. You find it in the guide under Files and saving and on the start page.",
+          "ar": "صنع أحد أفراد المجتمع إشارة مرجعية مجانية باسم Export to Magic3D، تحوّل تصميم Tinkercad في متصفحك إلى ملف Magic3D بأشكاله الحقيقية. هو مشروع مستقل وليس جزءًا من Magic3D، ولم نجرّبه بأنفسنا بعد - نتطلع لمعرفة كيف يعمل معك. ستجده في الدليل ضمن الملفات والحفظ وفي الصفحة الرئيسية.",
+          "cs": "Někdo z komunity vytvořil bezplatnou záložku Export to Magic3D, která v prohlížeči převede návrh z Tinkercadu i se skutečnými tvary na soubor Magic3D. Je to samostatný projekt, není součástí Magic3D a sami jsme ho ještě nezkoušeli – zajímá nás, jak vám bude fungovat. Najdete ho v průvodci v části Soubory a ukládání a na úvodní stránce.",
+          "da": "Én fra fællesskabet har lavet et gratis bogmærke, Export to Magic3D, der laver et Tinkercad-design i din browser om til en Magic3D-fil med de rigtige former. Det er et projekt for sig, ikke en del af Magic3D, og vi har ikke selv prøvet det endnu – vi er spændte på, hvordan det virker for dig. Du finder det i vejledningen under Filer og gemning og på startsiden.",
+          "fr": "Un membre de la communauté a créé un favori gratuit, Export to Magic3D, qui convertit un design Tinkercad dans votre navigateur en fichier Magic3D avec ses vraies formes. C'est un projet à part, qui ne fait pas partie de Magic3D, et nous ne l'avons pas encore testé nous-mêmes – nous sommes curieux de savoir comment il fonctionne pour vous. Vous le trouvez dans le guide sous Fichiers et enregistrement, et sur la page d'accueil.",
+          "hu": "Valaki a közösségből készített egy ingyenes könyvjelzőt, az Export to Magic3D-t, amely a böngésződben egy Tinkercad-tervet a valódi formáival együtt Magic3D-fájllá alakít. Ez önálló projekt, nem része a a Magic3D-nek, és mi magunk még nem próbáltuk ki – kíváncsiak vagyunk, nálad hogyan működik. Megtalálod az útmutatóban a Fájlok és mentés résznél, valamint a kezdőlapon.",
+          "it": "Una persona della community ha creato un segnalibro gratuito, Export to Magic3D, che converte nel tuo browser un design di Tinkercad in un file Magic3D con le sue forme reali. È un progetto a sé, non parte di Magic3D, e non l'abbiamo ancora provato noi: siamo curiosi di sapere come funziona per te. Lo trovi nella guida, sotto File e salvataggio, e nella pagina iniziale.",
+          "ja": "コミュニティの方が、ブラウザ上でTinkercadのデザインを本物の形のままMagic3Dのファイルに変換する無料のブックマーク「Export to Magic3D」を作りました。これは独立したプロジェクトでMagic3Dの一部ではなく、私たちもまだ試していません。皆さんの環境でどう動くか楽しみです。ガイドの「ファイルと保存」とスタートページで紹介しています。",
+          "nl": "Iemand uit de community heeft een gratis bladwijzer gemaakt, Export to Magic3D, die een Tinkercad-ontwerp in je browser met zijn echte vormen omzet naar een Magic3D-bestand. Het is een eigen project, geen onderdeel van Magic3D, en we hebben het zelf nog niet getest – we zijn benieuwd hoe het voor jou werkt. Je vindt het in de handleiding onder Bestanden en opslaan en op de startpagina.",
+          "pl": "Ktoś ze społeczności zrobił darmową zakładkę Export to Magic3D, która w przeglądarce zamienia projekt z Tinkercada wraz z prawdziwymi kształtami na plik Magic3D. To osobny projekt, nie jest częścią Magic3D i sami jeszcze go nie testowaliśmy – jesteśmy ciekawi, jak u Ciebie działa. Znajdziesz go w przewodniku w części Pliki i zapisywanie oraz na stronie startowej.",
+          "pt-br": "Alguém da comunidade criou um favorito gratuito, Export to Magic3D, que converte um design do Tinkercad no seu navegador em um arquivo do Magic3D com suas formas reais. É um projeto à parte, não faz parte do Magic3D, e ainda não o testamos: estamos curiosos para saber como funciona para você. Você o encontra no guia, em Arquivos e salvamento, e na página inicial.",
+          "ru": "Участник сообщества сделал бесплатную закладку Export to Magic3D, которая в браузере превращает проект Tinkercad вместе с настоящими формами в файл Magic3D. Это отдельный проект, он не входит в Magic3D, и мы сами его ещё не проверяли — нам интересно, как он работает у вас. Он описан в руководстве в разделе «Файлы и сохранение» и на стартовой странице.",
+          "sl": "Nekdo iz skupnosti je naredil brezplačen zaznamek Export to Magic3D, ki v brskalniku pretvori načrt iz Tinkercada z vsemi pravimi oblikami v datoteko Magic3D. Je samostojen projekt, ni del Magic3D in ga sami še nismo preizkusili – zanima nas, kako deluje pri vas. Najdete ga v priročniku v poglavju Datoteke in shranjevanje ter na začetni strani.",
+          "tr": "Topluluktan biri, tarayıcında bir Tinkercad tasarımını gerçek şekilleriyle bir Magic3D dosyasına dönüştüren ücretsiz bir yer imi yaptı: Export to Magic3D. Ayrı bir proje, Magic3D'in parçası değil ve biz henüz kendimiz denemedik – senin için nasıl çalıştığını merak ediyoruz. Kılavuzda Dosyalar ve kaydetme bölümünde ve başlangıç sayfasında bulabilirsin.",
+          "es": "Alguien de la comunidad ha creado un marcador gratuito, Export to Magic3D, que convierte un diseño de Tinkercad en tu navegador en un archivo de Magic3D con sus formas reales. Es un proyecto aparte, no forma parte de Magic3D, y aún no lo hemos probado nosotros: tenemos curiosidad por saber cómo te funciona. Lo encuentras en la guía, en Archivos y guardado, y en la página de inicio."
         }
       },
       {
@@ -2526,10 +2526,10 @@
     "items": [
       {
         "title": {
-          "de": "layerling spricht Chinesisch",
-          "en": "layerling speaks Chinese",
-          "hu": "A layerling kínaiul is beszél",
-          "ar": "layerling يتكلم الصينية"
+          "de": "Magic3D spricht Chinesisch",
+          "en": "Magic3D speaks Chinese",
+          "hu": "A Magic3D kínaiul is beszél",
+          "ar": "Magic3D يتكلم الصينية"
         },
         "body": {
           "de": "Die Oberfläche und die Anleitung gibt es jetzt auf Chinesisch, vereinfacht und traditionell. Du wählst sie im Sprachmenü; ein chinesischer Browser bekommt sie von selbst. Was noch nicht übersetzt ist, erscheint auf Englisch.",
@@ -2645,10 +2645,10 @@
       },
       {
         "title": {
-          "de": "layerling spricht Spanisch",
-          "en": "layerling speaks Spanish",
-          "hu": "A layerling spanyolul is beszél",
-          "ar": "أصبح layerling يتحدث الإسبانية"
+          "de": "Magic3D spricht Spanisch",
+          "en": "Magic3D speaks Spanish",
+          "hu": "A Magic3D spanyolul is beszél",
+          "ar": "أصبح Magic3D يتحدث الإسبانية"
         },
         "body": {
           "de": "Die Oberfläche und die Anleitung gibt es jetzt auf Spanisch (Spanien). Du wählst sie im Sprachmenü; ein spanischer Browser bekommt sie von selbst. Was noch nicht übersetzt ist, erscheint auf Englisch.",
@@ -2694,9 +2694,9 @@
         },
         "body": {
           "de": "In den Einstellungen schaltest Du einen einfachen Modus ein: weniger Werkzeuge, eine kurze Formenliste, größere Knöpfe und eine Startseite ohne Verweise nach außen. Ausschalten geht nur mit zwei Sekunden Halten. Ein Link mit ?mode=simple schaltet ihn auf dem Gerät ein, ein Server kann ihn vorgeben.",
-          "en": "Switch on a simple mode in the settings: fewer tools, a short list of shapes, larger buttons and a start page without links out of layerling. Leaving it takes a two-second press. A link with ?mode=simple switches it on for that device, and a server can set it.",
+          "en": "Switch on a simple mode in the settings: fewer tools, a short list of shapes, larger buttons and a start page without links out of Magic3D. Leaving it takes a two-second press. A link with ?mode=simple switches it on for that device, and a server can set it.",
           "hu": "A beállításokban bekapcsolhat egy egyszerű módot: kevesebb eszköz, rövid alakzatlista, nagyobb gombok és kifelé mutató hivatkozások nélküli kezdőoldal. Kikapcsolni csak kétmásodperces nyomva tartással lehet. A ?mode=simple hivatkozás bekapcsolja az eszközön, a szerver pedig előírhatja.",
-          "ar": "فعّل «الوضع المبسّط» في الإعدادات: أدوات أقل، وقائمة قصيرة من الأشكال، وأزرار أكبر، وصفحة بداية دون روابط إلى خارج layerling. والخروج منه يحتاج إلى ضغطة مطولة لثانيتين. والرابط الذي فيه ?mode=simple يفعّله على ذلك الجهاز، ويمكن للخادم أن يضبطه أيضًا."
+          "ar": "فعّل «الوضع المبسّط» في الإعدادات: أدوات أقل، وقائمة قصيرة من الأشكال، وأزرار أكبر، وصفحة بداية دون روابط إلى خارج Magic3D. والخروج منه يحتاج إلى ضغطة مطولة لثانيتين. والرابط الذي فيه ?mode=simple يفعّله على ذلك الجهاز، ويمكن للخادم أن يضبطه أيضًا."
         }
       },
       {
@@ -2782,10 +2782,10 @@
           "ar": "ترجمة المتصفح تعمل مجددًا"
         },
         "body": {
-          "de": "Spricht layerling deine Sprache noch nicht, darf der Browser die Seite wieder übersetzen. Deine eigenen Entwurfs-, Ordner- und Formnamen bleiben dabei, wie sie sind.",
-          "en": "If layerling does not speak your language yet, the browser may translate the page again. Your own names for designs, folders and shapes stay as they are.",
-          "hu": "Ha a layerling még nem beszéli a nyelvedet, a böngésző újra lefordíthatja az oldalt. A tervek, mappák és alakzatok saját neveid változatlanok maradnak.",
-          "ar": "إذا لم يكن layerling يتحدث لغتك بعد، فيمكن للمتصفح ترجمة الصفحة مجددًا. وتبقى الأسماء التي أعطيتها أنت للتصاميم والمجلدات والأشكال كما هي."
+          "de": "Spricht Magic3D deine Sprache noch nicht, darf der Browser die Seite wieder übersetzen. Deine eigenen Entwurfs-, Ordner- und Formnamen bleiben dabei, wie sie sind.",
+          "en": "If Magic3D does not speak your language yet, the browser may translate the page again. Your own names for designs, folders and shapes stay as they are.",
+          "hu": "Ha a Magic3D még nem beszéli a nyelvedet, a böngésző újra lefordíthatja az oldalt. A tervek, mappák és alakzatok saját neveid változatlanok maradnak.",
+          "ar": "إذا لم يكن Magic3D يتحدث لغتك بعد، فيمكن للمتصفح ترجمة الصفحة مجددًا. وتبقى الأسماء التي أعطيتها أنت للتصاميم والمجلدات والأشكال كما هي."
         }
       },
       {
@@ -2985,21 +2985,21 @@
       },
       {
         "title": {
-          "de": "layerling spricht brasilianisches Portugiesisch",
-          "en": "layerling speaks Brazilian Portuguese",
-          "pt-br": "O layerling agora fala português do Brasil",
-          "ar": "layerling يتحدث البرتغالية البرازيلية",
-          "cs": "layerling mluví brazilskou portugalštinou",
-          "da": "layerling taler brasiliansk portugisisk",
-          "fr": "layerling parle portugais du Brésil",
-          "hu": "A layerling már brazíliai portugálul is beszél",
-          "it": "layerling parla portoghese brasiliano",
-          "ja": "layerling がブラジルポルトガル語に対応",
-          "nl": "layerling spreekt Braziliaans Portugees",
-          "pl": "layerling mówi po portugalsku (Brazylia)",
-          "ru": "layerling говорит на бразильском португальском",
-          "sl": "layerling govori brazilsko portugalščino",
-          "tr": "layerling artık Brezilya Portekizcesi konuşuyor"
+          "de": "Magic3D spricht brasilianisches Portugiesisch",
+          "en": "Magic3D speaks Brazilian Portuguese",
+          "pt-br": "O Magic3D agora fala português do Brasil",
+          "ar": "Magic3D يتحدث البرتغالية البرازيلية",
+          "cs": "Magic3D mluví brazilskou portugalštinou",
+          "da": "Magic3D taler brasiliansk portugisisk",
+          "fr": "Magic3D parle portugais du Brésil",
+          "hu": "A Magic3D már brazíliai portugálul is beszél",
+          "it": "Magic3D parla portoghese brasiliano",
+          "ja": "Magic3D がブラジルポルトガル語に対応",
+          "nl": "Magic3D spreekt Braziliaans Portugees",
+          "pl": "Magic3D mówi po portugalsku (Brazylia)",
+          "ru": "Magic3D говорит на бразильском португальском",
+          "sl": "Magic3D govori brazilsko portugalščino",
+          "tr": "Magic3D artık Brezilya Portekizcesi konuşuyor"
         },
         "body": {
           "de": "Die ganze Oberfläche gibt es jetzt auf brasilianischem Portugiesisch; du wählst es in der Sprachauswahl. Ein Browser, der „pt-BR“ verlangt, bekommt es von selbst. Die Kapitel der Anleitung folgen und erscheinen bis dahin auf Englisch.",
@@ -3437,9 +3437,9 @@
           "ar": "صور المعاينة تعود تلقائيًا"
         },
         "body": {
-          "de": "Fehlt auf einer Karte der Startseite das Bild, entsteht es jetzt, sobald du den Entwurf öffnest, ohne dass du etwas ändern musst. Wer layerling mit Docker betreibt, behält die Bilder dank eines Volumes auch über ein Update hinweg.",
-          "en": "If a card on the start page has no picture, it is now taken as soon as you open the design, without changing anything. Running layerling with Docker, the pictures now also survive an update, kept in a volume.",
-          "ar": "إذا لم تكن لبطاقة في صفحة البداية صورة، تُلتقط الآن بمجرد فتح التصميم، دون تغيير أي شيء. وعند تشغيل layerling بـDocker، تبقى الصور أيضًا بعد التحديث، محفوظة في وحدة تخزين (volume)."
+          "de": "Fehlt auf einer Karte der Startseite das Bild, entsteht es jetzt, sobald du den Entwurf öffnest, ohne dass du etwas ändern musst. Wer Magic3D mit Docker betreibt, behält die Bilder dank eines Volumes auch über ein Update hinweg.",
+          "en": "If a card on the start page has no picture, it is now taken as soon as you open the design, without changing anything. Running Magic3D with Docker, the pictures now also survive an update, kept in a volume.",
+          "ar": "إذا لم تكن لبطاقة في صفحة البداية صورة، تُلتقط الآن بمجرد فتح التصميم، دون تغيير أي شيء. وعند تشغيل Magic3D بـDocker، تبقى الصور أيضًا بعد التحديث، محفوظة في وحدة تخزين (volume)."
         }
       },
       {
@@ -3634,7 +3634,7 @@
       },
       {
         "title": {
-          "de": "Gezeichnete Bilder mit vielen Berührungsstellen kommen ganz in layerling",
+          "de": "Gezeichnete Bilder mit vielen Berührungsstellen kommen ganz in Magic3D",
           "en": "A traced picture with many touching outlines comes in whole",
           "ar": "صورة مستخرجة بحدود خارجية متلامسة كثيرة تُستورد كاملة"
         },
@@ -3656,9 +3656,9 @@
           "ar": "ملف OBJ من Tinkercad يُستورد بالاتجاه الصحيح"
         },
         "body": {
-          "de": "Tinkercad schreibt seine OBJ-Dateien mit Z nach oben. layerling las sie bisher mit Y nach oben, sodass ein Teil auf der Kante stand. Jetzt erkennt layerling die Tinkercad-Datei und stellt sie richtig hin: ein flaches Teil liegt flach.",
-          "en": "Tinkercad writes its OBJ files with Z up. layerling used to read them with Y up, so a part stood on its edge. layerling now recognises a Tinkercad file and sets it down the right way: a flat part lies flat.",
-          "ar": "يكتب Tinkercad ملفات OBJ والمحور Z إلى الأعلى. وكان layerling يقرؤها والمحور Y إلى الأعلى، فتقف القطعة على حافتها. أما الآن فيتعرف layerling على ملف Tinkercad ويضعه بالاتجاه الصحيح: فالقطعة المسطحة تستلقي مسطحة."
+          "de": "Tinkercad schreibt seine OBJ-Dateien mit Z nach oben. Magic3D las sie bisher mit Y nach oben, sodass ein Teil auf der Kante stand. Jetzt erkennt Magic3D die Tinkercad-Datei und stellt sie richtig hin: ein flaches Teil liegt flach.",
+          "en": "Tinkercad writes its OBJ files with Z up. Magic3D used to read them with Y up, so a part stood on its edge. Magic3D now recognises a Tinkercad file and sets it down the right way: a flat part lies flat.",
+          "ar": "يكتب Tinkercad ملفات OBJ والمحور Z إلى الأعلى. وكان Magic3D يقرؤها والمحور Y إلى الأعلى، فتقف القطعة على حافتها. أما الآن فيتعرف Magic3D على ملف Tinkercad ويضعه بالاتجاه الصحيح: فالقطعة المسطحة تستلقي مسطحة."
         }
       },
       {
@@ -3668,9 +3668,9 @@
           "ar": "ملف ‎.lyl يُفتح بنقرة مزدوجة"
         },
         "body": {
-          "de": "Ist layerling als App auf einem Computer installiert (Chrome oder Edge), meldet es sich beim System als Programm für .lyl-Dateien an. Ein Doppelklick auf einen Entwurf im Dateimanager öffnet ihn gleich in layerling; Strg+S speichert wieder in diese Datei. Das System fragt beim ersten Mal, welches Programm es nehmen soll. Auf Android geht das nicht: dort öffnest du einen Entwurf mit \"Entwurf öffnen oder Geometrie importieren\".",
-          "en": "When layerling is installed as an app on a computer (Chrome or Edge), it registers itself with the system as a program for .lyl files. A double click on a design in the file manager opens it in layerling right away, and Ctrl+S saves back into that file. The system asks once which program to use. On Android this does not work: there, open a design with \"Open a design or import geometry\".",
-          "ar": "عندما يكون layerling مثبّتًا كتطبيق على كمبيوتر (Chrome أو Edge)، يسجّل نفسه في النظام كبرنامج لملفات ‎.lyl. فالنقر المزدوج على تصميم في مدير الملفات يفتحه في layerling فورًا، وCtrl+S يحفظ في ذلك الملف نفسه. ويسأل النظام مرة واحدة عن البرنامج الذي يستخدمه. ولا يعمل ذلك على Android: افتح التصميم هناك بـ«فتح تصميم أو استيراد أشكال هندسية»."
+          "de": "Ist Magic3D als App auf einem Computer installiert (Chrome oder Edge), meldet es sich beim System als Programm für .lyl-Dateien an. Ein Doppelklick auf einen Entwurf im Dateimanager öffnet ihn gleich in Magic3D; Strg+S speichert wieder in diese Datei. Das System fragt beim ersten Mal, welches Programm es nehmen soll. Auf Android geht das nicht: dort öffnest du einen Entwurf mit \"Entwurf öffnen oder Geometrie importieren\".",
+          "en": "When Magic3D is installed as an app on a computer (Chrome or Edge), it registers itself with the system as a program for .lyl files. A double click on a design in the file manager opens it in Magic3D right away, and Ctrl+S saves back into that file. The system asks once which program to use. On Android this does not work: there, open a design with \"Open a design or import geometry\".",
+          "ar": "عندما يكون Magic3D مثبّتًا كتطبيق على كمبيوتر (Chrome أو Edge)، يسجّل نفسه في النظام كبرنامج لملفات ‎.lyl. فالنقر المزدوج على تصميم في مدير الملفات يفتحه في Magic3D فورًا، وCtrl+S يحفظ في ذلك الملف نفسه. ويسأل النظام مرة واحدة عن البرنامج الذي يستخدمه. ولا يعمل ذلك على Android: افتح التصميم هناك بـ«فتح تصميم أو استيراد أشكال هندسية»."
         }
       },
       {
@@ -3692,9 +3692,9 @@
           "ar": "Docker خلف وكيل: الحفظ على الخادم يعمل"
         },
         "body": {
-          "de": "Wer layerling hinter einem Reverse-Proxy mit Domain und HTTPS betreibt, bekam beim Speichern auf dem Server die Meldung \"Der Serverspeicher nimmt nur Anfragen von dieser Seite an\". Jetzt erkennt layerling den Fall, dass der Proxy HTTPS beendet, ohne es weiterzugeben. Verändert der Proxy den Host, trägt man die Domain in LAYERLING_ALLOWED_ORIGINS ein.",
-          "en": "If you run layerling behind a reverse proxy with a domain and HTTPS, saving to the server failed with \"Shared projects only accept requests from this site\". layerling now copes with a proxy that ends HTTPS without passing that on. If the proxy changes the host, list the domain in LAYERLING_ALLOWED_ORIGINS.",
-          "ar": "إذا كنت تشغّل layerling خلف وكيل عكسي (reverse proxy) بنطاق وHTTPS، كان الحفظ على الخادم يفشل برسالة «Shared projects only accept requests from this site». أما الآن فيتعامل layerling مع وكيل ينهي HTTPS دون أن يمرّر ذلك. وإذا كان الوكيل يغيّر اسم المضيف، فاذكر النطاق في LAYERLING_ALLOWED_ORIGINS."
+          "de": "Wer Magic3D hinter einem Reverse-Proxy mit Domain und HTTPS betreibt, bekam beim Speichern auf dem Server die Meldung \"Der Serverspeicher nimmt nur Anfragen von dieser Seite an\". Jetzt erkennt Magic3D den Fall, dass der Proxy HTTPS beendet, ohne es weiterzugeben. Verändert der Proxy den Host, trägt man die Domain in LAYERLING_ALLOWED_ORIGINS ein.",
+          "en": "If you run Magic3D behind a reverse proxy with a domain and HTTPS, saving to the server failed with \"Shared projects only accept requests from this site\". Magic3D now copes with a proxy that ends HTTPS without passing that on. If the proxy changes the host, list the domain in LAYERLING_ALLOWED_ORIGINS.",
+          "ar": "إذا كنت تشغّل Magic3D خلف وكيل عكسي (reverse proxy) بنطاق وHTTPS، كان الحفظ على الخادم يفشل برسالة «Shared projects only accept requests from this site». أما الآن فيتعامل Magic3D مع وكيل ينهي HTTPS دون أن يمرّر ذلك. وإذا كان الوكيل يغيّر اسم المضيف، فاذكر النطاق في LAYERLING_ALLOWED_ORIGINS."
         }
       },
       {
@@ -3918,9 +3918,9 @@
           "ar": "لا وعد بالعمل دون اتصال حيث لا يمكن ذلك"
         },
         "body": {
-          "de": "Die Karte \"layerling als App installieren\" und die Kachel \"Ohne Internet\" auf der Startseite erscheinen nur noch, wo layerling sich wirklich für den Offline-Betrieb ablegen kann. Im Docker-Image, das als Node-Server läuft, und unter einer Adresse mit http fallen sie weg.",
-          "en": "The card \"Install layerling as an app\" and the \"Works offline\" tile on the start page now appear only where layerling can really keep itself for offline use. In the Docker image, which runs as a Node server, and at a plain-http address they are gone.",
-          "ar": "أصبحت البطاقة «ثبّت layerling كتطبيق» وبطاقة «يعمل بدون إنترنت» في صفحة البداية تظهران الآن فقط حيث يستطيع layerling فعلًا حفظ نفسه للعمل دون اتصال. وفي صورة Docker، التي تعمل كخادم Node، وعلى عنوان http عادي، اختفتا."
+          "de": "Die Karte \"Magic3D als App installieren\" und die Kachel \"Ohne Internet\" auf der Startseite erscheinen nur noch, wo Magic3D sich wirklich für den Offline-Betrieb ablegen kann. Im Docker-Image, das als Node-Server läuft, und unter einer Adresse mit http fallen sie weg.",
+          "en": "The card \"Install Magic3D as an app\" and the \"Works offline\" tile on the start page now appear only where Magic3D can really keep itself for offline use. In the Docker image, which runs as a Node server, and at a plain-http address they are gone.",
+          "ar": "أصبحت البطاقة «ثبّت Magic3D كتطبيق» وبطاقة «يعمل بدون إنترنت» في صفحة البداية تظهران الآن فقط حيث يستطيع Magic3D فعلًا حفظ نفسه للعمل دون اتصال. وفي صورة Docker، التي تعمل كخادم Node، وعلى عنوان http عادي، اختفتا."
         }
       },
       {
@@ -4297,16 +4297,16 @@
           "ar": "ملف OBJ المصدَّر يقف منتصبًا في برنامج التقطيع"
         },
         "body": {
-          "de": "STL und 3MF wurden schon mit Z nach oben geschrieben, das OBJ aber mit Y nach oben, und Slicer wie Cura zeigten ein solches Teil auf der Seite liegend. Jetzt schreibt auch das OBJ Z nach oben. layerlings eigener Import stellt solche Dateien wieder richtig hin.",
-          "en": "STL and 3MF were already written with Z up, but the OBJ with Y up, and slicers such as Cura showed such a part lying on its side. Now the OBJ is written with Z up, too. layerling's own import still stands such files upright.",
-          "ar": "كانت ملفات STL و3MF تُكتب أصلًا والمحور Z إلى الأعلى، أما ملف OBJ فكان يُكتب والمحور Y إلى الأعلى، فكانت برامج التقطيع مثل Cura تعرض القطعة ملقاة على جانبها. أما الآن فيُكتب ملف OBJ أيضًا والمحور Z إلى الأعلى. ويبقى استيراد layerling نفسه يوقف هذه الملفات منتصبة."
+          "de": "STL und 3MF wurden schon mit Z nach oben geschrieben, das OBJ aber mit Y nach oben, und Slicer wie Cura zeigten ein solches Teil auf der Seite liegend. Jetzt schreibt auch das OBJ Z nach oben. Magic3D eigener Import stellt solche Dateien wieder richtig hin.",
+          "en": "STL and 3MF were already written with Z up, but the OBJ with Y up, and slicers such as Cura showed such a part lying on its side. Now the OBJ is written with Z up, too. Magic3D's own import still stands such files upright.",
+          "ar": "كانت ملفات STL و3MF تُكتب أصلًا والمحور Z إلى الأعلى، أما ملف OBJ فكان يُكتب والمحور Y إلى الأعلى، فكانت برامج التقطيع مثل Cura تعرض القطعة ملقاة على جانبها. أما الآن فيُكتب ملف OBJ أيضًا والمحور Z إلى الأعلى. ويبقى استيراد Magic3D نفسه يوقف هذه الملفات منتصبة."
         }
       },
       {
         "title": {
-          "de": "layerling gibt es jetzt auf Japanisch",
-          "en": "layerling now speaks Japanese",
-          "ar": "أصبح layerling يتحدث اليابانية"
+          "de": "Magic3D gibt es jetzt auf Japanisch",
+          "en": "Magic3D now speaks Japanese",
+          "ar": "أصبح Magic3D يتحدث اليابانية"
         },
         "body": {
           "de": "Die ganze Oberfläche ist auf Japanisch da, geschrieben für Kinder der oberen Grundschule und ihre Lehrer, mit den japanischen Wörtern von Tinkercad, wo es welche gibt. Die Kapitel der Anleitung sind noch auf Englisch. Du wählst die Sprache im Sprachmenü.",
@@ -4381,9 +4381,9 @@
           "ar": "الشطف والتنعيم على مجموعة يبدآن أسرع في المرة الثانية"
         },
         "body": {
-          "de": "Eine Gruppe, die schon verrundete oder gefaste Teile enthält, musste bei jedem Start des Fase- oder Rundungs-Werkzeugs wieder aus ihrem Netz in einen exakten Körper zurückgerechnet werden, bei einer Tasche in einem verrundeten Körper rund zehn Sekunden. Jetzt merkt sich layerling das Ergebnis, solange das Netz gleich bleibt: Abbrechen und neu starten, oder Rückgängig und wieder vor, geht in einem Drittel der Zeit. Das erste Mal dauert so lange wie bisher.",
-          "en": "A group that already holds filleted or chamfered parts had to be turned from its mesh back into an exact body every time the Chamfer or Fillet tool started, about ten seconds for a pocket in a filleted body. Now layerling keeps the result as long as the mesh stays the same: cancelling and starting again, or Undo and Redo, takes a third of the time. The first time takes as long as before.",
-          "ar": "المجموعة التي تحتوي أصلًا على أجزاء منعّمة أو مشطوفة كان يجب تحويلها من شبكة المثلثات إلى جسم دقيق من جديد في كل مرة تبدأ فيها أداة «شطف» أو «تنعيم»، نحو عشر ثوانٍ لجيب في جسم منعّم. أما الآن فيحتفظ layerling بالنتيجة ما دامت شبكة المثلثات كما هي: فالإلغاء والبدء من جديد، أو «تراجع» و«إعادة»، يستغرق ثلث الوقت. والمرة الأولى تستغرق الوقت نفسه كما كانت."
+          "de": "Eine Gruppe, die schon verrundete oder gefaste Teile enthält, musste bei jedem Start des Fase- oder Rundungs-Werkzeugs wieder aus ihrem Netz in einen exakten Körper zurückgerechnet werden, bei einer Tasche in einem verrundeten Körper rund zehn Sekunden. Jetzt merkt sich Magic3D das Ergebnis, solange das Netz gleich bleibt: Abbrechen und neu starten, oder Rückgängig und wieder vor, geht in einem Drittel der Zeit. Das erste Mal dauert so lange wie bisher.",
+          "en": "A group that already holds filleted or chamfered parts had to be turned from its mesh back into an exact body every time the Chamfer or Fillet tool started, about ten seconds for a pocket in a filleted body. Now Magic3D keeps the result as long as the mesh stays the same: cancelling and starting again, or Undo and Redo, takes a third of the time. The first time takes as long as before.",
+          "ar": "المجموعة التي تحتوي أصلًا على أجزاء منعّمة أو مشطوفة كان يجب تحويلها من شبكة المثلثات إلى جسم دقيق من جديد في كل مرة تبدأ فيها أداة «شطف» أو «تنعيم»، نحو عشر ثوانٍ لجيب في جسم منعّم. أما الآن فيحتفظ Magic3D بالنتيجة ما دامت شبكة المثلثات كما هي: فالإلغاء والبدء من جديد، أو «تراجع» و«إعادة»، يستغرق ثلث الوقت. والمرة الأولى تستغرق الوقت نفسه كما كانت."
         }
       },
       {
@@ -4506,9 +4506,9 @@
           "ar": "الضغط الطويل على iPad لم يعد يبدأ تحديد النص"
         },
         "body": {
-          "de": "Auf dem iPad konnte ein langes Drücken die Textauswahl des Systems starten, etwa auf einem Wort im Menü oder in der Leiste. Danach gingen die Berührungen an die Auswahl und nicht mehr an layerling, es sah aus, als bliebe ein Körper im Bearbeiten stehen. Der Editor lässt sich jetzt nicht mehr markieren, Eingabefelder schon.",
-          "en": "On an iPad a long press could start the system's text selection, for example on a word in the menu or in the toolbar. After that the touches went to the selection and no longer to layerling, and it looked as if an object stayed in edit mode. The editor can no longer be selected, but input fields can.",
-          "ar": "على جهاز iPad كان الضغط الطويل قد يبدأ تحديد النص الخاص بالنظام، مثلًا على كلمة في القائمة أو في شريط الأدوات. وبعدها كانت اللمسات تذهب إلى التحديد لا إلى layerling، فيبدو كأن جسمًا بقي في وضع التحرير. أما الآن فلم يعد من الممكن تحديد المحرر نفسه، لكن حقول الإدخال ما زالت قابلة للتحديد."
+          "de": "Auf dem iPad konnte ein langes Drücken die Textauswahl des Systems starten, etwa auf einem Wort im Menü oder in der Leiste. Danach gingen die Berührungen an die Auswahl und nicht mehr an Magic3D, es sah aus, als bliebe ein Körper im Bearbeiten stehen. Der Editor lässt sich jetzt nicht mehr markieren, Eingabefelder schon.",
+          "en": "On an iPad a long press could start the system's text selection, for example on a word in the menu or in the toolbar. After that the touches went to the selection and no longer to Magic3D, and it looked as if an object stayed in edit mode. The editor can no longer be selected, but input fields can.",
+          "ar": "على جهاز iPad كان الضغط الطويل قد يبدأ تحديد النص الخاص بالنظام، مثلًا على كلمة في القائمة أو في شريط الأدوات. وبعدها كانت اللمسات تذهب إلى التحديد لا إلى Magic3D، فيبدو كأن جسمًا بقي في وضع التحرير. أما الآن فلم يعد من الممكن تحديد المحرر نفسه، لكن حقول الإدخال ما زالت قابلة للتحديد."
         }
       },
       {
@@ -4643,9 +4643,9 @@
           "ar": "القياس المكتوب يُعتمد أيضًا عندما تنقر بجانب المربع"
         },
         "body": {
-          "de": "Wenn du in einem Maßfeld am Körper (oder im Winkelfeld) eine Zahl getippt hast und mit der linken Maustaste ins Leere klickst, übernimmt layerling die Zahl jetzt, wie es der Rechtsklick schon tat. Vorher ging sie bei Linksklick verloren. Esc bricht weiterhin ab.",
-          "en": "If you typed a number into a measure box on a body (or into the angle box) and click on empty space with the left mouse button, layerling now applies the number, as the right click already did. Before, a left click lost it. Esc still cancels.",
-          "ar": "إذا كتبت رقمًا في مربع قياس على جسم (أو في مربع الزاوية) ثم نقرت بزر الفأرة الأيسر على مساحة فارغة، يطبّق layerling الآن الرقم، كما كانت تفعل النقرة بالزر الأيمن من قبل. وسابقًا كانت النقرة بالزر الأيسر تُضيّعه. وما زال Esc يلغيه."
+          "de": "Wenn du in einem Maßfeld am Körper (oder im Winkelfeld) eine Zahl getippt hast und mit der linken Maustaste ins Leere klickst, übernimmt Magic3D die Zahl jetzt, wie es der Rechtsklick schon tat. Vorher ging sie bei Linksklick verloren. Esc bricht weiterhin ab.",
+          "en": "If you typed a number into a measure box on a body (or into the angle box) and click on empty space with the left mouse button, Magic3D now applies the number, as the right click already did. Before, a left click lost it. Esc still cancels.",
+          "ar": "إذا كتبت رقمًا في مربع قياس على جسم (أو في مربع الزاوية) ثم نقرت بزر الفأرة الأيسر على مساحة فارغة، يطبّق Magic3D الآن الرقم، كما كانت تفعل النقرة بالزر الأيمن من قبل. وسابقًا كانت النقرة بالزر الأيسر تُضيّعه. وما زال Esc يلغيه."
         }
       },
       {
@@ -4775,9 +4775,9 @@
           "ar": "قلم Apple Pencil الحائم يعرض أسماء الأزرار"
         },
         "body": {
-          "de": "Auf dem iPad zeigt layerling jetzt den Namen eines Knopfes oder Feldes in einer kleinen Blase, wenn der Apple Pencil einen Moment darüber schwebt, so wie die Maus einen Tooltip zeigt. Das gilt für iPads, deren Pencil schweben kann.",
-          "en": "On an iPad layerling now shows the name of a button or field in a small bubble when the Apple Pencil rests above it for a moment, as a mouse shows a tooltip. This works on iPads whose Pencil can hover.",
-          "ar": "على جهاز iPad يعرض layerling الآن اسم الزر أو الحقل في فقاعة صغيرة عندما يبقى قلم Apple Pencil فوقه للحظة، كما يعرض مؤشر الفأرة تلميح الأداة. ويعمل هذا على أجهزة iPad التي يستطيع قلمها الحوم فوق الشاشة."
+          "de": "Auf dem iPad zeigt Magic3D jetzt den Namen eines Knopfes oder Feldes in einer kleinen Blase, wenn der Apple Pencil einen Moment darüber schwebt, so wie die Maus einen Tooltip zeigt. Das gilt für iPads, deren Pencil schweben kann.",
+          "en": "On an iPad Magic3D now shows the name of a button or field in a small bubble when the Apple Pencil rests above it for a moment, as a mouse shows a tooltip. This works on iPads whose Pencil can hover.",
+          "ar": "على جهاز iPad يعرض Magic3D الآن اسم الزر أو الحقل في فقاعة صغيرة عندما يبقى قلم Apple Pencil فوقه للحظة، كما يعرض مؤشر الفأرة تلميح الأداة. ويعمل هذا على أجهزة iPad التي يستطيع قلمها الحوم فوق الشاشة."
         }
       },
       {
@@ -5061,14 +5061,14 @@
       },
       {
         "title": {
-          "de": "layerling als App installieren",
-          "en": "Install layerling as an app",
-          "ar": "ثبّت layerling كتطبيق"
+          "de": "Magic3D als App installieren",
+          "en": "Install Magic3D as an app",
+          "ar": "ثبّت Magic3D كتطبيق"
         },
         "body": {
-          "de": "Auf der Startseite und im Editor (dort nach einer halben Minute Arbeit) empfiehlt jetzt eine auffällige Karte, layerling als App zu installieren: Sie startet schneller, läuft ohne Internet und muss nicht jedes Mal neu geladen werden. Du verlierst nichts, denn neue Versionen zeigt layerling weiter an. „Jetzt nicht“ blendet die Karte zwei Wochen aus.",
-          "en": "The start page and the editor (there after half a minute of work) now have a card that recommends installing layerling as an app: it starts faster, works without internet and does not have to be loaded each time. You lose nothing, as layerling still tells you about new versions. \"Not now\" hides the card for two weeks.",
-          "ar": "في صفحة البداية والمحرر (هناك بعد نصف دقيقة من العمل) بطاقة الآن تنصح بتثبيت layerling كتطبيق: فهو يبدأ أسرع، ويعمل دون إنترنت، ولا يحتاج إلى التحميل في كل مرة. ولا تخسر شيئًا، فما زال layerling يخبرك بالإصدارات الجديدة. و«ليس الآن» يُخفي البطاقة لمدة أسبوعين."
+          "de": "Auf der Startseite und im Editor (dort nach einer halben Minute Arbeit) empfiehlt jetzt eine auffällige Karte, Magic3D als App zu installieren: Sie startet schneller, läuft ohne Internet und muss nicht jedes Mal neu geladen werden. Du verlierst nichts, denn neue Versionen zeigt Magic3D weiter an. „Jetzt nicht“ blendet die Karte zwei Wochen aus.",
+          "en": "The start page and the editor (there after half a minute of work) now have a card that recommends installing Magic3D as an app: it starts faster, works without internet and does not have to be loaded each time. You lose nothing, as Magic3D still tells you about new versions. \"Not now\" hides the card for two weeks.",
+          "ar": "في صفحة البداية والمحرر (هناك بعد نصف دقيقة من العمل) بطاقة الآن تنصح بتثبيت Magic3D كتطبيق: فهو يبدأ أسرع، ويعمل دون إنترنت، ولا يحتاج إلى التحميل في كل مرة. ولا تخسر شيئًا، فما زال Magic3D يخبرك بالإصدارات الجديدة. و«ليس الآن» يُخفي البطاقة لمدة أسبوعين."
         }
       },
       {
@@ -5119,9 +5119,9 @@
           "ar": "المفتاح Tab يتنقل بين مربعات الأبعاد على الشكل"
         },
         "body": {
-          "de": "Klickst du ein Maß an der Form an und drückst Tab, übernimmt layerling die Zahl und öffnet das nächste Feld: Breite, Tiefe, Höhe. Umschalt+Tab geht zurück. Vorher sprang Tab auf die Eckgriffe.",
-          "en": "If you click a dimension on the shape and press Tab, layerling keeps the number and opens the next box: width, depth, height. Shift+Tab goes back. Before, Tab jumped to the corner handles.",
-          "ar": "إذا نقرت على بُعد على الشكل وضغطت Tab، يحتفظ layerling بالرقم ويفتح المربع التالي: العرض، ثم العمق، ثم الارتفاع. ويعود Shift+Tab إلى الخلف. وسابقًا كان Tab يقفز إلى مقابض الزوايا."
+          "de": "Klickst du ein Maß an der Form an und drückst Tab, übernimmt Magic3D die Zahl und öffnet das nächste Feld: Breite, Tiefe, Höhe. Umschalt+Tab geht zurück. Vorher sprang Tab auf die Eckgriffe.",
+          "en": "If you click a dimension on the shape and press Tab, Magic3D keeps the number and opens the next box: width, depth, height. Shift+Tab goes back. Before, Tab jumped to the corner handles.",
+          "ar": "إذا نقرت على بُعد على الشكل وضغطت Tab، يحتفظ Magic3D بالرقم ويفتح المربع التالي: العرض، ثم العمق، ثم الارتفاع. ويعود Shift+Tab إلى الخلف. وسابقًا كان Tab يقفز إلى مقابض الزوايا."
         }
       },
       {
@@ -5196,9 +5196,9 @@
           "ar": "تبقى الشبكة عند التبديل بين مم وبوصة"
         },
         "body": {
-          "de": "Wer von Millimeter auf Zoll und zurück schaltete, bekam als Raster der Platte wieder 5 mm, auch wenn vorher 1 mm eingestellt war. Jetzt merkt sich layerling das Raster des Einheitensystems, das du verlässt, und stellt es beim Zurückschalten wieder her.",
-          "en": "Switching from millimetres to inches and back set the plate's grid to 5 mm again, even if it was 1 mm before. Now layerling remembers the grid of the unit system you leave and restores it when you switch back.",
-          "ar": "كان التبديل من المليمتر إلى البوصة ثم العودة يعيد شبكة اللوحة إلى 5 مم، حتى لو كانت 1 مم من قبل. أما الآن فيتذكر layerling شبكة نظام الوحدات الذي تتركه ويستعيدها عندما تعود إليه."
+          "de": "Wer von Millimeter auf Zoll und zurück schaltete, bekam als Raster der Platte wieder 5 mm, auch wenn vorher 1 mm eingestellt war. Jetzt merkt sich Magic3D das Raster des Einheitensystems, das du verlässt, und stellt es beim Zurückschalten wieder her.",
+          "en": "Switching from millimetres to inches and back set the plate's grid to 5 mm again, even if it was 1 mm before. Now Magic3D remembers the grid of the unit system you leave and restores it when you switch back.",
+          "ar": "كان التبديل من المليمتر إلى البوصة ثم العودة يعيد شبكة اللوحة إلى 5 مم، حتى لو كانت 1 مم من قبل. أما الآن فيتذكر Magic3D شبكة نظام الوحدات الذي تتركه ويستعيدها عندما تعود إليه."
         }
       },
       {
@@ -5256,9 +5256,9 @@
           "ar": "السؤال عن التصميم الفارغ على الخادم أيضًا"
         },
         "body": {
-          "de": "Gehst du aus einem leeren Entwurf zurück zur Startseite, fragt layerling jetzt auch bei einem Entwurf im gemeinsamen Serverordner, ob er bleiben soll, wie schon bei einem im Browser. „Nein“ entfernt dort die leere Datei vom Server.",
-          "en": "When you go back to the start page from an empty design, layerling now also asks about a design in the shared server folder, as it already did for one in the browser. \"No\" removes the empty file from the server.",
-          "ar": "عندما تعود إلى صفحة البداية من تصميم فارغ، يسأل layerling الآن أيضًا عن تصميم في مجلد الخادم المشترك، كما كان يفعل أصلًا مع تصميم في المتصفح. و«لا» تحذف الملف الفارغ من الخادم."
+          "de": "Gehst du aus einem leeren Entwurf zurück zur Startseite, fragt Magic3D jetzt auch bei einem Entwurf im gemeinsamen Serverordner, ob er bleiben soll, wie schon bei einem im Browser. „Nein“ entfernt dort die leere Datei vom Server.",
+          "en": "When you go back to the start page from an empty design, Magic3D now also asks about a design in the shared server folder, as it already did for one in the browser. \"No\" removes the empty file from the server.",
+          "ar": "عندما تعود إلى صفحة البداية من تصميم فارغ، يسأل Magic3D الآن أيضًا عن تصميم في مجلد الخادم المشترك، كما كان يفعل أصلًا مع تصميم في المتصفح. و«لا» تحذف الملف الفارغ من الخادم."
         }
       }
     ]
@@ -5369,14 +5369,14 @@
     "items": [
       {
         "title": {
-          "de": "Der Browser übersetzt layerling nicht mehr",
-          "en": "The browser no longer translates layerling",
-          "ar": "المتصفح لم يعد يترجم layerling"
+          "de": "Der Browser übersetzt Magic3D nicht mehr",
+          "en": "The browser no longer translates Magic3D",
+          "ar": "المتصفح لم يعد يترجم Magic3D"
         },
         "body": {
-          "de": "Ein deutscher Chrome übersetzte die installierte App und machte aus „Hell“ im Farbmenü „Hölle“. Die Seite sagt dem Browser jetzt, dass sie nicht übersetzt werden soll, denn layerling bringt seine Sprachen selbst mit.",
-          "en": "A German Chrome translated the installed app and turned \"Hell\" in the colour menu into \"Hölle\". The page now tells the browser not to translate it, as layerling brings its languages itself.",
-          "ar": "كان متصفح Chrome الألماني يترجم التطبيق المثبّت، فحوّل كلمة «Hell» (فاتح) في قائمة الألوان إلى «Hölle» (جهنم). أما الآن فتطلب الصفحة من المتصفح ألا يترجمها، لأن layerling يأتي بلغاته بنفسه."
+          "de": "Ein deutscher Chrome übersetzte die installierte App und machte aus „Hell“ im Farbmenü „Hölle“. Die Seite sagt dem Browser jetzt, dass sie nicht übersetzt werden soll, denn Magic3D bringt seine Sprachen selbst mit.",
+          "en": "A German Chrome translated the installed app and turned \"Hell\" in the colour menu into \"Hölle\". The page now tells the browser not to translate it, as Magic3D brings its languages itself.",
+          "ar": "كان متصفح Chrome الألماني يترجم التطبيق المثبّت، فحوّل كلمة «Hell» (فاتح) في قائمة الألوان إلى «Hölle» (جهنم). أما الآن فتطلب الصفحة من المتصفح ألا يترجمها، لأن Magic3D يأتي بلغاته بنفسه."
         }
       },
       {
@@ -5600,9 +5600,9 @@
           "ar": "الدنماركية لغةً"
         },
         "body": {
-          "de": "layerling gibt es jetzt auch auf Dänisch (Dansk): die ganze Oberfläche und die 16 Kapitel der Anleitung. Die Sprache wird für einen Browser mit dänischer Einstellung von selbst gewählt und lässt sich in der Sprachliste ändern. Übersetzt mit KI-Hilfe und von einem Dänischsprachigen durchgelesen; falsche Wörter lassen sich mit einem kleinen Pull Request auf GitHub verbessern.",
-          "en": "layerling now speaks Danish (Dansk): the whole interface and the 16 chapters of the guide. The language is chosen automatically for a browser set to Danish and can be changed in the language list. It was translated with AI help and read through by a Danish speaker; wrong words are fixed with a small pull request on GitHub.",
-          "ar": "أصبح layerling يتحدث الدنماركية (Dansk): الواجهة كلها وفصول الدليل الستة عشر. وتُختار اللغة تلقائيًا في متصفح مضبوط على الدنماركية، ويمكن تغييرها من قائمة اللغات. وقد تُرجمت بمساعدة الذكاء الاصطناعي وراجعها متحدث بالدنماركية؛ والكلمات الخاطئة تُصحَّح بطلب سحب (Pull request) صغير على GitHub."
+          "de": "Magic3D gibt es jetzt auch auf Dänisch (Dansk): die ganze Oberfläche und die 16 Kapitel der Anleitung. Die Sprache wird für einen Browser mit dänischer Einstellung von selbst gewählt und lässt sich in der Sprachliste ändern. Übersetzt mit KI-Hilfe und von einem Dänischsprachigen durchgelesen; falsche Wörter lassen sich mit einem kleinen Pull Request auf GitHub verbessern.",
+          "en": "Magic3D now speaks Danish (Dansk): the whole interface and the 16 chapters of the guide. The language is chosen automatically for a browser set to Danish and can be changed in the language list. It was translated with AI help and read through by a Danish speaker; wrong words are fixed with a small pull request on GitHub.",
+          "ar": "أصبح Magic3D يتحدث الدنماركية (Dansk): الواجهة كلها وفصول الدليل الستة عشر. وتُختار اللغة تلقائيًا في متصفح مضبوط على الدنماركية، ويمكن تغييرها من قائمة اللغات. وقد تُرجمت بمساعدة الذكاء الاصطناعي وراجعها متحدث بالدنماركية؛ والكلمات الخاطئة تُصحَّح بطلب سحب (Pull request) صغير على GitHub."
         }
       }
     ]
@@ -5736,10 +5736,10 @@
           "ar": "المجرية لغةً"
         },
         "body": {
-          "de": "layerling gibt es jetzt auch auf Ungarisch (Magyar): die ganze Oberfläche und die 16 Kapitel der Anleitung. Die Sprache wird für einen Browser mit ungarischer Einstellung von selbst gewählt und lässt sich in der Sprachliste ändern. Übersetzt mit einem KI-Assistenten; falsche Wörter lassen sich mit einem kleinen Pull Request auf GitHub verbessern.",
-          "en": "layerling now speaks Hungarian (Magyar): the whole interface and the 16 chapters of the guide. The language is chosen automatically for a browser set to Hungarian and can be changed in the language list. It was translated with an AI assistant; wrong words are fixed with a small pull request on GitHub.",
-          "hu": "A layerling mostantól magyarul is beszél: a teljes kezelőfelület és az útmutató 16 fejezete magyar. Magyarra állított böngészőben a nyelv magától kiválasztódik, és a nyelvlistában módosítható. A fordítás MI-asszisztenssel készült; a hibás szavakat egy kis pull requesttel lehet javítani a GitHubon.",
-          "ar": "أصبح layerling يتحدث المجرية (Magyar): الواجهة كلها وفصول الدليل الستة عشر. وتُختار اللغة تلقائيًا في متصفح مضبوط على المجرية، ويمكن تغييرها من قائمة اللغات. وقد تُرجمت بمساعدة مساعد ذكاء اصطناعي؛ والكلمات الخاطئة تُصحَّح بطلب سحب (Pull request) صغير على GitHub."
+          "de": "Magic3D gibt es jetzt auch auf Ungarisch (Magyar): die ganze Oberfläche und die 16 Kapitel der Anleitung. Die Sprache wird für einen Browser mit ungarischer Einstellung von selbst gewählt und lässt sich in der Sprachliste ändern. Übersetzt mit einem KI-Assistenten; falsche Wörter lassen sich mit einem kleinen Pull Request auf GitHub verbessern.",
+          "en": "Magic3D now speaks Hungarian (Magyar): the whole interface and the 16 chapters of the guide. The language is chosen automatically for a browser set to Hungarian and can be changed in the language list. It was translated with an AI assistant; wrong words are fixed with a small pull request on GitHub.",
+          "hu": "A Magic3D mostantól magyarul is beszél: a teljes kezelőfelület és az útmutató 16 fejezete magyar. Magyarra állított böngészőben a nyelv magától kiválasztódik, és a nyelvlistában módosítható. A fordítás MI-asszisztenssel készült; a hibás szavakat egy kis pull requesttel lehet javítani a GitHubon.",
+          "ar": "أصبح Magic3D يتحدث المجرية (Magyar): الواجهة كلها وفصول الدليل الستة عشر. وتُختار اللغة تلقائيًا في متصفح مضبوط على المجرية، ويمكن تغييرها من قائمة اللغات. وقد تُرجمت بمساعدة مساعد ذكاء اصطناعي؛ والكلمات الخاطئة تُصحَّح بطلب سحب (Pull request) صغير على GitHub."
         }
       },
       {
@@ -5855,9 +5855,9 @@
           "ar": "التشيكية لغةً"
         },
         "body": {
-          "de": "layerling gibt es jetzt auch auf Tschechisch: die ganze Oberfläche, die 16 Kapitel der Anleitung und die „Was ist neu\"-Karten. Die Sprache wird für einen Browser mit tschechischer Einstellung von selbst gewählt und lässt sich in der Sprachliste ändern. Übersetzt mit einem KI-Assistenten; falsche Wörter lassen sich mit einem kleinen Pull Request auf GitHub verbessern.",
-          "en": "layerling now speaks Czech: the whole interface, the 16 chapters of the guide and the release notes. The language is chosen automatically for a browser set to Czech and can be changed in the language list. It was translated with an AI assistant; wrong words are fixed with a small pull request on GitHub.",
-          "ar": "أصبح layerling يتحدث التشيكية: الواجهة كلها وفصول الدليل الستة عشر وملاحظات الإصدار. وتُختار اللغة تلقائيًا في متصفح مضبوط على التشيكية، ويمكن تغييرها من قائمة اللغات. وقد تُرجمت بمساعدة مساعد ذكاء اصطناعي؛ والكلمات الخاطئة تُصحَّح بطلب سحب (Pull request) صغير على GitHub."
+          "de": "Magic3D gibt es jetzt auch auf Tschechisch: die ganze Oberfläche, die 16 Kapitel der Anleitung und die „Was ist neu\"-Karten. Die Sprache wird für einen Browser mit tschechischer Einstellung von selbst gewählt und lässt sich in der Sprachliste ändern. Übersetzt mit einem KI-Assistenten; falsche Wörter lassen sich mit einem kleinen Pull Request auf GitHub verbessern.",
+          "en": "Magic3D now speaks Czech: the whole interface, the 16 chapters of the guide and the release notes. The language is chosen automatically for a browser set to Czech and can be changed in the language list. It was translated with an AI assistant; wrong words are fixed with a small pull request on GitHub.",
+          "ar": "أصبح Magic3D يتحدث التشيكية: الواجهة كلها وفصول الدليل الستة عشر وملاحظات الإصدار. وتُختار اللغة تلقائيًا في متصفح مضبوط على التشيكية، ويمكن تغييرها من قائمة اللغات. وقد تُرجمت بمساعدة مساعد ذكاء اصطناعي؛ والكلمات الخاطئة تُصحَّح بطلب سحب (Pull request) صغير على GitHub."
         }
       },
       {
@@ -5867,9 +5867,9 @@
           "ar": "السلوفينية لغةً"
         },
         "body": {
-          "de": "layerling gibt es jetzt auch auf Slowenisch: die ganze Oberfläche und die 16 Kapitel der Anleitung. Die Sprache wird für einen Browser mit slowenischer Einstellung von selbst gewählt und lässt sich in der Sprachliste ändern. Übersetzt mit einem KI-Assistenten; falsche Wörter lassen sich mit einem kleinen Pull Request auf GitHub verbessern.",
-          "en": "layerling now speaks Slovenian: the whole interface and the 16 chapters of the guide. The language is chosen automatically for a browser set to Slovenian and can be changed in the language list. It was translated with an AI assistant; wrong words are fixed with a small pull request on GitHub.",
-          "ar": "أصبح layerling يتحدث السلوفينية: الواجهة كلها وفصول الدليل الستة عشر. وتُختار اللغة تلقائيًا في متصفح مضبوط على السلوفينية، ويمكن تغييرها من قائمة اللغات. وقد تُرجمت بمساعدة مساعد ذكاء اصطناعي؛ والكلمات الخاطئة تُصحَّح بطلب سحب (Pull request) صغير على GitHub."
+          "de": "Magic3D gibt es jetzt auch auf Slowenisch: die ganze Oberfläche und die 16 Kapitel der Anleitung. Die Sprache wird für einen Browser mit slowenischer Einstellung von selbst gewählt und lässt sich in der Sprachliste ändern. Übersetzt mit einem KI-Assistenten; falsche Wörter lassen sich mit einem kleinen Pull Request auf GitHub verbessern.",
+          "en": "Magic3D now speaks Slovenian: the whole interface and the 16 chapters of the guide. The language is chosen automatically for a browser set to Slovenian and can be changed in the language list. It was translated with an AI assistant; wrong words are fixed with a small pull request on GitHub.",
+          "ar": "أصبح Magic3D يتحدث السلوفينية: الواجهة كلها وفصول الدليل الستة عشر. وتُختار اللغة تلقائيًا في متصفح مضبوط على السلوفينية، ويمكن تغييرها من قائمة اللغات. وقد تُرجمت بمساعدة مساعد ذكاء اصطناعي؛ والكلمات الخاطئة تُصحَّح بطلب سحب (Pull request) صغير على GitHub."
         }
       },
       {
@@ -5967,10 +5967,10 @@
           "ar": "الفرنسية لغةً"
         },
         "body": {
-          "de": "layerling gibt es jetzt auch auf Französisch: die ganze Oberfläche und die 16 Kapitel der Anleitung. Die Sprache wird für einen Browser mit französischer Einstellung von selbst gewählt und lässt sich in der Sprachliste ändern. Übersetzt mit einem KI-Assistenten; falsche Wörter lassen sich mit einem kleinen Pull Request auf GitHub verbessern.",
-          "en": "layerling now speaks French: the whole interface and the 16 chapters of the guide. The language is chosen automatically for a browser set to French and can be changed in the language list. It was translated with an AI assistant; wrong words are fixed with a small pull request on GitHub.",
-          "cs": "Rozhraní Layerlingu i všech 16 kapitol příručky je nyní dostupných francouzsky. Jazyk se zvolí automaticky podle nastavení prohlížeče a lze jej změnit v jazykové nabídce. Překlad vznikl s pomocí AI asistenta; nepřesné výrazy lze opravit malým pull requestem na GitHubu.",
-          "ar": "أصبح layerling يتحدث الفرنسية: الواجهة كلها وفصول الدليل الستة عشر. وتُختار اللغة تلقائيًا في متصفح مضبوط على الفرنسية، ويمكن تغييرها من قائمة اللغات. وقد تُرجمت بمساعدة مساعد ذكاء اصطناعي؛ والكلمات الخاطئة تُصحَّح بطلب سحب (Pull request) صغير على GitHub."
+          "de": "Magic3D gibt es jetzt auch auf Französisch: die ganze Oberfläche und die 16 Kapitel der Anleitung. Die Sprache wird für einen Browser mit französischer Einstellung von selbst gewählt und lässt sich in der Sprachliste ändern. Übersetzt mit einem KI-Assistenten; falsche Wörter lassen sich mit einem kleinen Pull Request auf GitHub verbessern.",
+          "en": "Magic3D now speaks French: the whole interface and the 16 chapters of the guide. The language is chosen automatically for a browser set to French and can be changed in the language list. It was translated with an AI assistant; wrong words are fixed with a small pull request on GitHub.",
+          "cs": "Rozhraní Magic3D i všech 16 kapitol příručky je nyní dostupných francouzsky. Jazyk se zvolí automaticky podle nastavení prohlížeče a lze jej změnit v jazykové nabídce. Překlad vznikl s pomocí AI asistenta; nepřesné výrazy lze opravit malým pull requestem na GitHubu.",
+          "ar": "أصبح Magic3D يتحدث الفرنسية: الواجهة كلها وفصول الدليل الستة عشر. وتُختار اللغة تلقائيًا في متصفح مضبوط على الفرنسية، ويمكن تغييرها من قائمة اللغات. وقد تُرجمت بمساعدة مساعد ذكاء اصطناعي؛ والكلمات الخاطئة تُصحَّح بطلب سحب (Pull request) صغير على GitHub."
         }
       },
       {
@@ -6042,10 +6042,10 @@
           "ar": "الروسية لغةً"
         },
         "body": {
-          "de": "layerling gibt es jetzt auch auf Russisch: die ganze Oberfläche und die 16 Kapitel der Anleitung. Die Sprache wird für einen Browser mit russischer Einstellung von selbst gewählt und lässt sich in der Sprachliste ändern. Übersetzt mit einem KI-Assistenten; falsche Wörter lassen sich mit einem kleinen Pull Request auf GitHub verbessern.",
-          "en": "layerling now speaks Russian: the whole interface and the 16 chapters of the guide. The language is chosen automatically for a browser set to Russian and can be changed in the language list. It was translated with an AI assistant; wrong words are fixed with a small pull request on GitHub.",
-          "cs": "Rozhraní Layerlingu i všech 16 kapitol příručky je nyní dostupných rusky. Jazyk se zvolí automaticky podle nastavení prohlížeče a lze jej změnit v jazykové nabídce. Překlad vznikl s pomocí AI asistenta; nepřesné výrazy lze opravit malým pull requestem na GitHubu.",
-          "ar": "أصبح layerling يتحدث الروسية: الواجهة كلها وفصول الدليل الستة عشر. وتُختار اللغة تلقائيًا في متصفح مضبوط على الروسية، ويمكن تغييرها من قائمة اللغات. وقد تُرجمت بمساعدة مساعد ذكاء اصطناعي؛ والكلمات الخاطئة تُصحَّح بطلب سحب (Pull request) صغير على GitHub."
+          "de": "Magic3D gibt es jetzt auch auf Russisch: die ganze Oberfläche und die 16 Kapitel der Anleitung. Die Sprache wird für einen Browser mit russischer Einstellung von selbst gewählt und lässt sich in der Sprachliste ändern. Übersetzt mit einem KI-Assistenten; falsche Wörter lassen sich mit einem kleinen Pull Request auf GitHub verbessern.",
+          "en": "Magic3D now speaks Russian: the whole interface and the 16 chapters of the guide. The language is chosen automatically for a browser set to Russian and can be changed in the language list. It was translated with an AI assistant; wrong words are fixed with a small pull request on GitHub.",
+          "cs": "Rozhraní Magic3D i všech 16 kapitol příručky je nyní dostupných rusky. Jazyk se zvolí automaticky podle nastavení prohlížeče a lze jej změnit v jazykové nabídce. Překlad vznikl s pomocí AI asistenta; nepřesné výrazy lze opravit malým pull requestem na GitHubu.",
+          "ar": "أصبح Magic3D يتحدث الروسية: الواجهة كلها وفصول الدليل الستة عشر. وتُختار اللغة تلقائيًا في متصفح مضبوط على الروسية، ويمكن تغييرها من قائمة اللغات. وقد تُرجمت بمساعدة مساعد ذكاء اصطناعي؛ والكلمات الخاطئة تُصحَّح بطلب سحب (Pull request) صغير على GitHub."
         }
       },
       {
@@ -6126,10 +6126,10 @@
           "ar": "الاسم الجديد في تصدير STL يطلب ملفًا جديدًا"
         },
         "body": {
-          "de": "In Chrome und Edge schrieb jeder STL-Export in die Datei, die du beim ersten Mal gewählt hast, und das Dateinamenfeld tat nichts mehr. Tippst du dort jetzt einen anderen Namen, fragt layerling, wo die neue Datei liegen soll. Unter dem Fenster steht, ob in die bisherige Datei geschrieben wird oder gefragt wird.",
-          "en": "In Chrome and Edge every STL export wrote into the file you chose the first time, and the file name field did nothing any more. If you now type another name there, layerling asks where the new file should go. The line under the window says whether the old file is written or you are asked.",
-          "cs": "V Chrome a Edge každý další export STL zapisoval do prvně zvoleného souboru a pole s názvem už nemělo účinek. Po zadání jiného názvu se nyní Layerling zeptá, kam nový soubor uložit. Řádek v okně uvádí, zda se přepíše původní soubor, nebo se otevře výběr.",
-          "ar": "في Chrome وEdge كان كل تصدير STL يكتب في الملف الذي اخترته في المرة الأولى، ولم يعد حقل اسم الملف يفعل شيئًا. أما الآن فإذا كتبت اسمًا آخر هناك، يسألك layerling أين يجب أن يذهب الملف الجديد. ويقول السطر تحت النافذة هل سيُكتب في الملف القديم أم ستُسأل."
+          "de": "In Chrome und Edge schrieb jeder STL-Export in die Datei, die du beim ersten Mal gewählt hast, und das Dateinamenfeld tat nichts mehr. Tippst du dort jetzt einen anderen Namen, fragt Magic3D, wo die neue Datei liegen soll. Unter dem Fenster steht, ob in die bisherige Datei geschrieben wird oder gefragt wird.",
+          "en": "In Chrome and Edge every STL export wrote into the file you chose the first time, and the file name field did nothing any more. If you now type another name there, Magic3D asks where the new file should go. The line under the window says whether the old file is written or you are asked.",
+          "cs": "V Chrome a Edge každý další export STL zapisoval do prvně zvoleného souboru a pole s názvem už nemělo účinek. Po zadání jiného názvu se nyní Magic3D zeptá, kam nový soubor uložit. Řádek v okně uvádí, zda se přepíše původní soubor, nebo se otevře výběr.",
+          "ar": "في Chrome وEdge كان كل تصدير STL يكتب في الملف الذي اخترته في المرة الأولى، ولم يعد حقل اسم الملف يفعل شيئًا. أما الآن فإذا كتبت اسمًا آخر هناك، يسألك Magic3D أين يجب أن يذهب الملف الجديد. ويقول السطر تحت النافذة هل سيُكتب في الملف القديم أم ستُسأل."
         }
       },
       {
@@ -6410,9 +6410,9 @@
     "items": [
       {
         "title": {
-          "de": "layerling spricht jetzt Niederländisch",
-          "en": "layerling speaks Dutch now",
-          "cs": "Layerling nově umí nizozemsky"
+          "de": "Magic3D spricht jetzt Niederländisch",
+          "en": "Magic3D speaks Dutch now",
+          "cs": "Magic3D nově umí nizozemsky"
         },
         "body": {
           "de": "Die Oberfläche und die ganze Anleitung gibt es auf Niederländisch (Nederlands). Die Sprache wird nach deinem Browser gewählt und lässt sich in der Sprachliste ändern. Wer Fehler in einem Wort findet, kann sie in einem kleinen Pull Request verbessern.",
@@ -6700,8 +6700,8 @@
           "cs": "Výchozí barevný motiv serveru"
         },
         "body": {
-          "de": "Wer layerling auf einem eigenen Server oder in Docker betreibt, kann mit der Umgebungsvariablen LAYERLING_DEFAULT_THEME festlegen, welches Farbschema Besucher beim ersten Mal bekommen: system, light, dark oder graphite. Wer schon ein Schema gewählt hat, behält es.",
-          "en": "If you run layerling on your own server or in Docker, the environment variable LAYERLING_DEFAULT_THEME sets which colour theme visitors get the first time: system, light, dark or graphite. Anyone who has already chosen one keeps it.",
+          "de": "Wer Magic3D auf einem eigenen Server oder in Docker betreibt, kann mit der Umgebungsvariablen LAYERLING_DEFAULT_THEME festlegen, welches Farbschema Besucher beim ersten Mal bekommen: system, light, dark oder graphite. Wer schon ein Schema gewählt hat, behält es.",
+          "en": "If you run Magic3D on your own server or in Docker, the environment variable LAYERLING_DEFAULT_THEME sets which colour theme visitors get the first time: system, light, dark or graphite. Anyone who has already chosen one keeps it.",
           "cs": "Na vlastním serveru nebo v Dockeru lze proměnnou LAYERLING_DEFAULT_THEME nastavit výchozí motiv pro nové návštěvníky: system, light, dark nebo graphite. Uložená volba uživatele zůstane zachovaná."
         }
       }
@@ -6746,8 +6746,8 @@
           "cs": "Torus: nastavitelný počet segmentů"
         },
         "body": {
-          "de": "Der Torus hat jetzt zwei Regler in den Eigenschaften: „Seiten am Ring“ und „Stufen am Wulst“. Ohne eigene Angabe folgen sie der Größe, ein großer Torus wird also von selbst glatt. Stellst du sie niedrig, zeichnet layerling den Torus eckig, in der Ansicht und im Export.",
-          "en": "The torus has two sliders in its properties now: “Ring sides” and “Tube steps”. Left alone they follow the size, so a large torus comes out smooth by itself. Set them low and layerling draws the torus faceted, in the view and in the export.",
+          "de": "Der Torus hat jetzt zwei Regler in den Eigenschaften: „Seiten am Ring“ und „Stufen am Wulst“. Ohne eigene Angabe folgen sie der Größe, ein großer Torus wird also von selbst glatt. Stellst du sie niedrig, zeichnet Magic3D den Torus eckig, in der Ansicht und im Export.",
+          "en": "The torus has two sliders in its properties now: “Ring sides” and “Tube steps”. Left alone they follow the size, so a large torus comes out smooth by itself. Set them low and Magic3D draws the torus faceted, in the view and in the export.",
           "cs": "Torus má nové posuvníky pro počet segmentů prstence a jeho průřezu. Bez vlastního nastavení se podrobnost řídí velikostí, takže velký torus je automaticky hladký. Nízké hodnoty vytvoří hranatý tvar v náhledu i exportu."
         }
       },
@@ -6997,8 +6997,8 @@
           "cs": "Oznámení nové verze"
         },
         "body": {
-          "de": "Wird layerling aktualisiert, während du daran arbeitest, meldet sich die offene Seite jetzt selbst: Eine Karte unten rechts sagt, was neu ist, und „Speichern und neu laden“ schreibt den offenen Entwurf weg und lädt die neue Version, ohne dass du etwas verlierst.",
-          "en": "When layerling is updated while you work, the open page now speaks up: a card at the bottom right says what is new, and Save and reload writes the open design to the browser and loads the new version without losing anything.",
+          "de": "Wird Magic3D aktualisiert, während du daran arbeitest, meldet sich die offene Seite jetzt selbst: Eine Karte unten rechts sagt, was neu ist, und „Speichern und neu laden“ schreibt den offenen Entwurf weg und lädt die neue Version, ohne dass du etwas verlierst.",
+          "en": "When Magic3D is updated while you work, the open page now speaks up: a card at the bottom right says what is new, and Save and reload writes the open design to the browser and loads the new version without losing anything.",
           "cs": "Při aktualizaci za běhu se vpravo dole objeví přehled novinek. Uložit a znovu načíst nejprve uloží otevřený projekt v prohlížeči a potom načte novou verzi beze ztráty práce."
         }
       }
@@ -7027,7 +7027,7 @@
         },
         "body": {
           "de": "In Chrome und Edge öffnet „Entwurf speichern“ den Speichern-Dialog deines Systems: Du wählst Ordner und Namen und kannst eine vorhandene Datei ersetzen. Danach speichert Strg+S den Entwurf wieder in genau diese Datei, auch einen aus einer .lyl-Datei geöffneten. Andere Browser laden die Datei wie bisher herunter.",
-          "en": "In Chrome and Edge, Save layerling design now opens your system's save dialog: you choose the folder and name and can replace an existing file. After that Ctrl+S saves the design into that same file again, a design opened from a .lyl file included. Other browsers download the file as before.",
+          "en": "In Chrome and Edge, Save Magic3D design now opens your system's save dialog: you choose the folder and name and can replace an existing file. After that Ctrl+S saves the design into that same file again, a design opened from a .lyl file included. Other browsers download the file as before.",
           "cs": "Chrome a Edge otevřou při uložení systémový dialog pro volbu složky a názvu včetně přepsání souboru. Ctrl+S potom ukládá do stejného souboru, i u otevřeného .lyl. Jiné prohlížeče soubor stáhnou."
         }
       }
@@ -7067,9 +7067,9 @@
           "cs": "AI otevře editor sama"
         },
         "body": {
-          "de": "Wer layerling selbst betreibt und mit einer KI wie Claude verbindet (MCP), muss den Editor nicht mehr vorher öffnen: Ist keiner offen, startet die KI deinen Browser mit einem Editor und arbeitet dann los. Auf layerling.com gibt es die KI-Anbindung nicht.",
-          "en": "If you run layerling yourself and connect it to an AI such as Claude (MCP), you no longer have to open the editor first: when none is open, the AI starts your browser with an editor and gets to work. The AI connection is not available on layerling.com.",
-          "cs": "Při vlastním provozu a připojení AI přes MCP už nemusíte editor otevřít předem. Pokud žádný neběží, AI spustí prohlížeč s editorem. Na layerling.com není toto připojení dostupné."
+          "de": "Wer Magic3D selbst betreibt und mit einer KI wie Claude verbindet (MCP), muss den Editor nicht mehr vorher öffnen: Ist keiner offen, startet die KI deinen Browser mit einem Editor und arbeitet dann los. Auf magic3d.ro gibt es die KI-Anbindung nicht.",
+          "en": "If you run Magic3D yourself and connect it to an AI such as Claude (MCP), you no longer have to open the editor first: when none is open, the AI starts your browser with an editor and gets to work. The AI connection is not available on magic3d.ro.",
+          "cs": "Při vlastním provozu a připojení AI přes MCP už nemusíte editor otevřít předem. Pokud žádný neběží, AI spustí prohlížeč s editorem. Na magic3d.ro není toto připojení dostupné."
         }
       },
       {
@@ -7426,8 +7426,8 @@
           "cs": "npm install bez bezpečnostních upozornění"
         },
         "body": {
-          "de": "Wer layerling selbst aus dem Quelltext baut, bekommt bei npm install keine Meldung über Schwachstellen mehr; Next.js bleibt bei Version 15.",
-          "en": "If you build layerling from the source yourself, npm install no longer reports vulnerabilities; Next.js stays on version 15.",
+          "de": "Wer Magic3D selbst aus dem Quelltext baut, bekommt bei npm install keine Meldung über Schwachstellen mehr; Next.js bleibt bei Version 15.",
+          "en": "If you build Magic3D from the source yourself, npm install no longer reports vulnerabilities; Next.js stays on version 15.",
           "cs": "Při sestavení ze zdrojů už npm install nehlásí zranitelnosti. Next.js zůstává v řadě 15."
         }
       },
@@ -8123,8 +8123,8 @@
           "cs": "Opravy"
         },
         "body": {
-          "de": "Chromes Übersetzer bringt layerling nicht mehr zum Absturz; Entwürfe mit großen Netzen öffnen wieder; liegende Zylinder behalten beim Gruppieren ihre Richtung; die Griffe reichen bis zur Plattengröße; Werkzeugfenster passen auf kleine Bildschirme; der STEP-Export nennt, was er auslässt.",
-          "en": "Chrome's Translate no longer crashes layerling; designs with large meshes open again; cylinders lying on their side keep their direction when grouped; the handles reach as far as the plate; tool panels fit on small screens; the STEP export names what it leaves out.",
+          "de": "Chromes Übersetzer bringt Magic3D nicht mehr zum Absturz; Entwürfe mit großen Netzen öffnen wieder; liegende Zylinder behalten beim Gruppieren ihre Richtung; die Griffe reichen bis zur Plattengröße; Werkzeugfenster passen auf kleine Bildschirme; der STEP-Export nennt, was er auslässt.",
+          "en": "Chrome's Translate no longer crashes Magic3D; designs with large meshes open again; cylinders lying on their side keep their direction when grouped; the handles reach as far as the plate; tool panels fit on small screens; the STEP export names what it leaves out.",
           "cs": "Překladač Chrome už nezpůsobuje pád, velké sítě lze otevřít a položené válce zachovají orientaci při sloučení. Ovládací body dosáhnou přes celou podložku, panely se vejdou na malé obrazovky a STEP hlásí vynechané části."
         }
       }
@@ -8152,8 +8152,8 @@
           "cs": "Obnovení po chybě"
         },
         "body": {
-          "de": "Bleibt layerling mit einem Fehler stehen, erscheint statt einer leeren Seite ein Fenster mit der Fehlermeldung. Darin sicherst du den zuletzt gespeicherten Stand als .lyl, kehrst zur Übersicht zurück oder beginnst einen neuen Entwurf.",
-          "en": "If layerling stops with an error, a window with the error message shows instead of a blank page. From it you can save the last stored state as .lyl, go back to the overview or start a new design.",
+          "de": "Bleibt Magic3D mit einem Fehler stehen, erscheint statt einer leeren Seite ein Fenster mit der Fehlermeldung. Darin sicherst du den zuletzt gespeicherten Stand als .lyl, kehrst zur Übersicht zurück oder beginnst einen neuen Entwurf.",
+          "en": "If Magic3D stops with an error, a window with the error message shows instead of a blank page. From it you can save the last stored state as .lyl, go back to the overview or start a new design.",
           "cs": "Místo prázdné stránky se zobrazí chyba s možností uložit poslední stav jako .lyl, vrátit se do přehledu nebo začít nový projekt."
         }
       }
@@ -8280,8 +8280,8 @@
           "cs": "Úhly v náčrtu"
         },
         "body": {
-          "de": "Klickst du in der Skizze eine Ecke an, an der zwei gerade Linien zusammenlaufen, zeigt layerling den Winkel dazwischen. Ein Klick auf den Wert, und du tippst einen neuen Winkel ein: Eine der beiden Linien dreht sich um die Ecke, mit Tab wählst du, welche.",
-          "en": "Click a corner where two straight lines meet in the sketch and layerling shows the angle between them. Click the value and type a new angle: one of the two lines turns about the corner, and Tab picks which.",
+          "de": "Klickst du in der Skizze eine Ecke an, an der zwei gerade Linien zusammenlaufen, zeigt Magic3D den Winkel dazwischen. Ein Klick auf den Wert, und du tippst einen neuen Winkel ein: Eine der beiden Linien dreht sich um die Ecke, mit Tab wählst du, welche.",
+          "en": "Click a corner where two straight lines meet in the sketch and Magic3D shows the angle between them. Click the value and type a new angle: one of the two lines turns about the corner, and Tab picks which.",
           "cs": "Kliknutím na roh mezi úsečkami zobrazíte úhel. Zadejte novou hodnotu a jedna úsečka se otočí kolem rohu; Tab zvolí kterou."
         }
       },
@@ -8376,8 +8376,8 @@
           "cs": "Prázdné projekty se nehromadí"
         },
         "body": {
-          "de": "Gehst du aus einem leeren Entwurf zur Übersicht zurück, fragt layerling, ob er bleiben soll. Mit „Nein“ verschwindet er.",
-          "en": "When you go back to the overview from an empty design, layerling asks whether it should stay. With No it is removed.",
+          "de": "Gehst du aus einem leeren Entwurf zur Übersicht zurück, fragt Magic3D, ob er bleiben soll. Mit „Nein“ verschwindet er.",
+          "en": "When you go back to the overview from an empty design, Magic3D asks whether it should stay. With No it is removed.",
           "cs": "Při návratu do přehledu z prázdného projektu se aplikace zeptá, zda jej ponechat. Volba Ne jej odstraní."
         }
       },
@@ -8494,8 +8494,8 @@
           "cs": "AI na NAS i přes běžné http"
         },
         "body": {
-          "de": "Die KI-Steuerung für eine selbst betriebene Kopie klappt jetzt auch, wenn du layerling im Heimnetz über eine Adresse wie http://192.168.x.x öffnest. Bisher blieb der Editor dort unsichtbar.",
-          "en": "The AI control for a copy you host yourself now also works when you open layerling at home through an address like http://192.168.x.x. Until now the editor stayed invisible there.",
+          "de": "Die KI-Steuerung für eine selbst betriebene Kopie klappt jetzt auch, wenn du Magic3D im Heimnetz über eine Adresse wie http://192.168.x.x öffnest. Bisher blieb der Editor dort unsichtbar.",
+          "en": "The AI control for a copy you host yourself now also works when you open Magic3D at home through an address like http://192.168.x.x. Until now the editor stayed invisible there.",
           "cs": "Ovládání AI vlastní instalace nyní funguje i při otevření přes domácí adresu http://192.168.x.x. Dříve editor zůstával neviditelný."
         }
       },
@@ -8535,8 +8535,8 @@
           "cs": "Smazání všech měření najednou"
         },
         "body": {
-          "de": "Das Maßband hat einen vierten Knopf, der alle Maße entfernt. Vorher fragt layerling nach, weil sich das nicht rückgängig machen lässt.",
-          "en": "The tape measure has a fourth button that removes every measurement. layerling asks first, because this cannot be undone.",
+          "de": "Das Maßband hat einen vierten Knopf, der alle Maße entfernt. Vorher fragt Magic3D nach, weil sich das nicht rückgängig machen lässt.",
+          "en": "The tape measure has a fourth button that removes every measurement. Magic3D asks first, because this cannot be undone.",
           "cs": "Čtvrté tlačítko měření odstraní všechna měření. Aplikace vyžaduje potvrzení, protože akci nelze vrátit."
         }
       },
@@ -8559,8 +8559,8 @@
           "cs": "Ovládání AI na NAS nebo domácím serveru"
         },
         "body": {
-          "de": "Wer layerling selbst betreibt, auch als Docker-Image, kann einem KI-Client mit einem Zugriffsschlüssel erlauben, die offenen Editoren übers Netz zu steuern. Standardmäßig ist das aus.",
-          "en": "If you host layerling yourself, the Docker image included, you can let an AI client drive the open editors over the network with an access token. It is off by default.",
+          "de": "Wer Magic3D selbst betreibt, auch als Docker-Image, kann einem KI-Client mit einem Zugriffsschlüssel erlauben, die offenen Editoren übers Netz zu steuern. Standardmäßig ist das aus.",
+          "en": "If you host Magic3D yourself, the Docker image included, you can let an AI client drive the open editors over the network with an access token. It is off by default.",
           "cs": "Vlastní instalace včetně Dockeru může povolit ovládání otevřených editorů přes síť pomocí přístupového tokenu. Ve výchozím stavu je vypnuté."
         }
       }
@@ -8653,8 +8653,8 @@
           "cs": "Co je nového?"
         },
         "body": {
-          "de": "Wenn du layerling nach einer Aktualisierung wieder öffnest, zeigt dir diese Karte, was seitdem dazugekommen ist. Über „Was ist neu?“ in der Fußzeile siehst du sie später noch einmal.",
-          "en": "When you open layerling again after an update, this card shows what has been added since. \"What is new?\" in the footer shows it again later.",
+          "de": "Wenn du Magic3D nach einer Aktualisierung wieder öffnest, zeigt dir diese Karte, was seitdem dazugekommen ist. Über „Was ist neu?“ in der Fußzeile siehst du sie später noch einmal.",
+          "en": "When you open Magic3D again after an update, this card shows what has been added since. \"What is new?\" in the footer shows it again later.",
           "cs": "Po aktualizaci karta zobrazí přidané funkce. Později ji otevřete odkazem Co je nového? v zápatí."
         }
       },

@@ -117,8 +117,6 @@ Per creare prese d’aria, griglie per altoparlanti, cestini e involucri, {{ui:h
 
 I fori sono normali forme raggruppate con il corpo, come dopo aver usato {{ui:editor.tool.group}}: non vengono incorporati in modo permanente. {{ui:editor.tool.ungroup}} scioglie di nuovo il gruppo e libera ogni foro, che puoi poi spostare, modificare o eliminare singolarmente. L’intera operazione è un solo passaggio per {{ui:editor.tool.undo}}. Lo strumento crea al massimo 400 fori per volta; se ne servono di più, aumenta la dimensione dei fori o la loro spaziatura.
 
-Un’IA può eseguire la stessa operazione tramite il bridge MCP con `layerling_perforate_face` (vedi il capitolo [Progettare con un’IA (MCP)](chapter:ai-with-mcp)).
-
 ## Estrudere una faccia verso l’esterno o l’interno
 
 Per ispessire una parete, aggiungere una sporgenza su una faccia o ricavarvi una cavità, lo strumento {{ui:faceTool.title}} agisce su una singola faccia piatta. Funziona anche con un file STL importato, che non contiene schizzi modificabili. Seleziona esattamente un corpo e fai clic su {{ui:faceTool.title}} nel gruppo {{ui:editor.group.modify}} della barra degli strumenti, accanto allo schema di fori. Puoi anche fare clic destro sul corpo o cercare lo strumento con [[Ctrl]]+[[K]].
@@ -133,8 +131,6 @@ Per ispessire una parete, aggiungere una sporgenza su una faccia o ricavarvi una
 4. Solo {{ui:faceTool.apply}} applica la modifica.
 
 L’elemento aggiunto è un normale corpo creato da uno schizzo e raggruppato con il corpo originale: non viene incorporato in modo permanente. {{ui:group.edit}} apre il gruppo e {{ui:inspector.editSketch}} sulla nuova parte mostra il contorno seguito. Sulla faccia superiore o inferiore di un corpo creato da uno schizzo semplice — una sola area, non raggruppata, specchiata, rastremata, attorcigliata o inclinata e senza estrusione di contorno, anello portachiavi, raccordo o smusso — viene usato il contorno originale del corpo. Le linee e gli archi restano così esatti, ovunque il kernel CAD possa definirli come tali, per gli strumenti sugli spigoli e per l’esportazione STEP. Se in seguito ridimensioni la parte, l’incasso resta invariato. Su qualsiasi altra faccia, e su tutte le facce di una mesh importata, il contorno segue i triangoli della faccia e le curve diventano una serie di brevi segmenti rettilinei. L’intera operazione è un solo passaggio per {{ui:editor.tool.undo}}. Per modificare in seguito l’incasso o il raggio, annulla l’operazione e usa di nuovo lo strumento. Per arrotondare il bordo superiore, usa {{ui:editor.tool.fillet}} con {{ui:edge.topEdges}} sul gruppo come ultimo passaggio: come ogni trattamento degli spigoli applicato a un gruppo, lo unisce in un unico corpo.
-
-Un’IA può eseguire la stessa operazione tramite il bridge MCP con `layerling_push_face` (vedi il capitolo [Progettare con un’IA (MCP)](chapter:ai-with-mcp)).
 
 ## Modificare più parti insieme
 

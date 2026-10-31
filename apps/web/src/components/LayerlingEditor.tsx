@@ -2691,7 +2691,7 @@ export function LayerlingEditor({
   onProjectNameChange,
   onCreateProjectFromState,
   projectId,
-  projectName = "Layerling design",
+  projectName = "Magic3D design",
   projectCreatedAt = Date.now(),
   projectModifiedAt = Date.now(),
   projectRevision = 0,
@@ -7145,14 +7145,14 @@ export function LayerlingEditor({
     }
     // A body revolved before the exact revolve is a mesh; hollowing or rounding it fails in confusing ways.
     if (partInputs.some((part) => !part.brep && part.shape.sketchOperation === "revolve" && part.shape.sketchProfile)) {
-      throw new Error("This revolved body is a mesh from an older layerling; open Edit sketch and finish it again to make it exact");
+      throw new Error("This revolved body is a mesh from an older Magic3D; open Edit sketch and finish it again to make it exact");
     }
     const meshPart = options.faces ? partInputs.find((part) => part.mesh) : undefined;
     if (meshPart) {
       // A body with an exact B-Rep and its frame that went as a mesh was resized while keeping its edge size.
       throw new Error(meshPart.shape.cadBrep && meshPart.shape.cadBrepFrame
         ? "This body was resized with Keep edge size when resizing on and has no exact faces at this size; undo the resize, delete the faces, then resize it again"
-        : "This body has no exact faces to delete: layerling keeps it as a mesh, as it does an imported STL, OBJ or 3MF, a split, wrapped or simplified body, or a very detailed shape such as a long text. A part imported as STEP has exact faces.");
+        : "This body has no exact faces to delete: Magic3D keeps it as a mesh, as it does an imported STL, OBJ or 3MF, a split, wrapped or simplified body, or a very detailed shape such as a long text. A part imported as STEP has exact faces.");
     }
     if (triangleCount > CAD_MODIFIER_PREPARE_TRIANGLE_LIMIT) {
       throw new Error(`This mesh has ${triangleCount} triangles; interactive edge treatment stops at ${CAD_MODIFIER_PREPARE_TRIANGLE_LIMIT}. For a shape from the catalogue, use its own parameters for now. For an imported part, import it as STEP or with fewer triangles.`);
@@ -12561,7 +12561,7 @@ export function LayerlingEditor({
         // The same clean picture the PNG export saves: only the bodies, the camera already turned to `face`.
         if (clean) image = window.layerlingCaptureImage?.({ plate: params.plate !== false, transparent: params.transparent === true }) ?? "";
         if (!image || image.length < 100) {
-          throw new Error("The Layerling viewport did not return an image");
+          throw new Error("The Magic3D viewport did not return an image");
         }
         return { face, clean, dataUrl: image, bytesApprox: Math.floor(image.length * 0.75) };
       }

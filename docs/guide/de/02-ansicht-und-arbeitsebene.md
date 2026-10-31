@@ -207,4 +207,4 @@ Magic3D rechnet und zeichnet alles in deinem Browser. Auf einem älteren Rechner
 - **Einzelne Schalter:** Ohne Schnellmodus kannst du auch nur {{ui:workspace.showShadows}} oder {{ui:workspace.edgeLines}} ausschalten.
 - **Die Grafikkarte nutzen:** Öffne in Chrome `chrome://gpu` (in Edge `edge://gpu`). Bei „WebGL" sollte „Hardware accelerated" stehen. Steht dort „Software only", ist die Hardwarebeschleunigung in den Browsereinstellungen aus. Unter Windows kannst du außerdem in den Einstellungen unter System → Bildschirm → Grafik für den Browser „Hohe Leistung" wählen, damit er die eigentliche Grafikkarte nimmt und nicht die schwächere im Prozessor.
 - **Große importierte Netze vereinfachen:** Ein Modell aus vielen Hunderttausend Dreiecken bremst jede Ansicht. Wie du es ausdünnst, steht im Kapitel über Dateien unter „Ein importiertes Netz vereinfachen".
-- **Andere Tabs schließen:** Jeder offene layerling-Tab und jede andere 3D-Seite teilt sich dieselbe Grafikkarte.
+- **Andere Tabs schließen:** Jeder offene Magic3D-Tab und jede andere 3D-Seite teilt sich dieselbe Grafikkarte.

@@ -80,7 +80,6 @@ Un punto de referencia es una simple marca en el espacio, como una raya de lápi
 - La cinta métrica también puede marcar un punto: {{ui:camera.tapeMarkMiddle}}, la marca medio rellena en el centro de una medida, pone uno en su centro, por ejemplo en el centro de un orificio redondo. Y mide desde un punto: la cinta se ajusta a los puntos de referencia igual que a los vértices.
 - Cuando arrastras una forma, sus aristas y su centro se ajustan a un punto igual que se ajustan a otras formas ({{ui:workspace.objectSnap}}). La escuadra también se ajusta a los puntos.
 - Los puntos se guardan en el diseño, no aparecen en ninguna exportación y se muestran u ocultan junto con las notas mediante {{ui:visibility.notes}} ([[Mayús]]+[[N]]).
-- Una IA puede marcarlos, listarlos y quitarlos con `layerling_add_reference_points`, `layerling_list_reference_points` y `layerling_remove_reference_points`.
 
 ## Imágenes de referencia
 
@@ -92,4 +91,3 @@ Una imagen de referencia es una imagen sobre la que alinear piezas: coloca la fo
 - {{ui:referenceImage.calibrate}} le da su tamaño real, como en el boceto: haz clic en dos puntos de la imagen cuya distancia real conozcas (por ejemplo, dos orificios de montaje de la placa) y escribe esa distancia en {{ui:referenceImage.distance}}. La imagen conserva sus proporciones y su centro.
 - Bloquéala con el candado de la cabecera de sus ajustes y se quedará en su sitio: los clics la atraviesan hasta la placa. Selecciónala en la lista de objetos para desbloquearla.
 - La imagen se guarda una sola vez en el archivo del diseño, por muchas veces que se copie o se deshaga. Una imagen grande hace crecer el archivo en la misma medida; el mensaje al añadirla indica su tamaño.
-- Una IA la añade, la mueve, la calibra, la difumina y la bloquea con `layerling_reference_image`. Con `trace` calca la imagen en un cuerpo de boceto que se apoya sobre ella, como {{ui:sketch.traceImageButton}} en el boceto.

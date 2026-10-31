@@ -30,13 +30,10 @@ Jezik izbereš zgoraj desno, na seznamu jezikov. Barvna shema ob njem ponuja {{u
 
 ## Lastno upravljanje
 
-Magic3D je prosta programska oprema (AGPL-3.0) in ga lahko upravljaš na lastnem računalniku ali strežniku, na primer v delavnici, društvu ali šoli. Za to je več poti, opisanih v [README na GitHubu](https://github.com/henmedia/layerling/blob/main/README.de.md#loslegen):
+Magic3D je prosta programska oprema (AGPL-3.0) in ga lahko upravljaš na lastnem računalniku ali strežniku, na primer v delavnici, društvu ali šoli. Za to je več poti, opisanih v [README na GitHubu](https://github.com/firg3d/magic3d/blob/main/README.md):
 
-- **Hitri začetek v Windowsih:** Ena sama vrstica v PowerShellu vse namesti in ustvari bližnjico na namizju. Če Magic3D že teče, nov dvoklik ne zažene drugega strežnika, ampak samo odpre stran.
-- **Docker:** Za naprave NAS in domače strežnike, ne da bi moral biti nameščen Node.js. Vsaka izdaja obstaja kot gotova slika `henmedia/layerling` na Docker Hubu (tudi `ghcr.io/henmedia/layerling`) za amd64 in arm64; `docker run -d -p 3000:3000 -v layerling-thumbnails:/app/.codex/project-thumbnails henmedia/layerling:latest` jo zažene, na NAS jo poiščeš v registru upravljanja vsebnikov.
-- **Statični izvoz:** Rezultat sestoji iz samih datotek, ki jih lahko dostavi vsak spletni strežnik. Sodijo na koren naslova (`https://layerling.example.com/` ali `http://192.168.0.5:8080/`), ne v podmapo in ne odprte z diska; koraki so v README. Z zapisljivo mapo `store` ob `index.html` in PHP na strežniku iz tega nastane tudi skupno odlagališče za načrte.
+- **Statični izvoz:** Rezultat sestoji iz samih datotek, ki jih lahko dostavi vsak spletni strežnik. Sodijo na koren naslova (`https://magic3d.example.com/` ali `http://192.168.0.5:8080/`), ne v podmapo in ne odprte z diska; koraki so v README. Z zapisljivo mapo `store` ob `index.html` in PHP na strežniku iz tega nastane tudi skupno odlagališče za načrte.
 
-Most MCP za pomočnike z umetno inteligenco obstaja samo pri razvojnem strežniku, glej [Gradnja z umetno inteligenco](chapter:ai-z-mcp).
 
 ## Pomoč in povratne informacije
 
@@ -44,5 +41,4 @@ Most MCP za pomočnike z umetno inteligenco obstaja samo pri razvojnem strežnik
 
 ![Kratka navodila v urejevalniku. Zgoraj so videoposnetki drugih, vsak razdelek ima vprašaj.](shot:quick-guide)
 
-- Vprašanja, želje in prijave napak so dobrodošle v [forumu](https://forum.drucktipps3d.de/forum/board/127-layerling/) in na [GitHubu](https://github.com/henmedia/layerling/discussions).
 - Kaj se je spremenilo v kateri različici, piše v opombah ob različicah, ki jih najdeš spodaj na začetni strani in v urejevalniku.

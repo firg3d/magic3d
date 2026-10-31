@@ -33,9 +33,9 @@ export function useWelcomeHidden() {
 }
 
 /**
- * The short guide at the top of the start page. Open on a first visit, when there is nothing else
- * to look at, and folded to one line once designs exist; the cross puts it away for good, and the
- * footer link brings it back, open and in view.
+ * The short guide at the top of the start page. Magic3D starts with it folded to one line, also on a
+ * first visit, so the start page shows first; a click unfolds it, the cross puts it away for good, and
+ * the footer link brings it back, open and in view.
  */
 export function DashboardWelcome({ open, offline, onHide }: { open: boolean; offline: boolean; onHide: () => void }) {
   // The cross sits beside the fold, not in it: inside a closed <details> it would be hidden too.

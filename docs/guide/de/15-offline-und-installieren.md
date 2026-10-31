@@ -32,13 +32,10 @@ Die Sprache wählst du oben rechts in der Sprachliste. Das Farbschema daneben bi
 
 ## Selbst betreiben
 
-Magic3D ist freie Software (AGPL-3.0) und lässt sich auf einem eigenen Rechner oder Server betreiben, etwa in der Werkstatt, im Verein oder in der Schule. Dafür gibt es mehrere Wege, die in der [README auf GitHub](https://github.com/henmedia/layerling/blob/main/README.de.md#loslegen) beschrieben sind:
+Magic3D ist freie Software (AGPL-3.0) und lässt sich auf einem eigenen Rechner oder Server betreiben, etwa in der Werkstatt, im Verein oder in der Schule. Dafür gibt es mehrere Wege, die in der [README auf GitHub](https://github.com/firg3d/magic3d/blob/main/README.md) beschrieben sind:
 
-- **Der Schnellstart unter Windows:** Eine einzige Zeile in PowerShell installiert alles und legt eine Verknüpfung auf dem Desktop an. Läuft Magic3D schon, startet ein weiterer Doppelklick keinen zweiten Server, sondern öffnet nur die Seite.
-- **Docker:** Für NAS-Geräte und Heimserver, ohne dass Node.js installiert sein muss. Jedes Release gibt es als fertiges Image `henmedia/layerling` auf Docker Hub (auch `ghcr.io/henmedia/layerling`) für amd64 und arm64; `docker run -d -p 3000:3000 -v layerling-thumbnails:/app/.codex/project-thumbnails henmedia/layerling:latest` startet es, auf einem NAS suchst du es in der Registrierung der Container-Verwaltung. Das Volume `layerling-thumbnails` hält die Vorschaubilder der Startseite über ein Update hinweg; ohne es fehlen sie nach jedem Neuanlegen des Containers, bis du den Entwurf wieder öffnest.
-- **Statischer Export:** Das Ergebnis besteht aus reinen Dateien, die jeder Webserver ausliefern kann. Sie gehören an die Wurzel einer Adresse (`https://layerling.example.com/` oder `http://192.168.0.5:8080/`), nicht in einen Unterordner und nicht von der Festplatte geöffnet; die Schritte stehen in der README. Mit einem beschreibbaren Ordner `store` neben der `index.html` und PHP auf dem Server wird daraus auch die gemeinsame Ablage für Entwürfe.
+- **Statischer Export:** Das Ergebnis besteht aus reinen Dateien, die jeder Webserver ausliefern kann. Sie gehören an die Wurzel einer Adresse (`https://magic3d.example.com/` oder `http://192.168.0.5:8080/`), nicht in einen Unterordner und nicht von der Festplatte geöffnet; die Schritte stehen in der README. Mit einem beschreibbaren Ordner `store` neben der `index.html` und PHP auf dem Server wird daraus auch die gemeinsame Ablage für Entwürfe.
 
-Die MCP-Brücke für KI-Assistenten gibt es nur beim Entwicklungsserver, siehe [Mit einer KI bauen](chapter:ki-mit-mcp).
 
 ## Hilfe und Rückmeldung
 
@@ -46,5 +43,4 @@ Die MCP-Brücke für KI-Assistenten gibt es nur beim Entwicklungsserver, siehe [
 
 ![Die Kurzanleitung im Editor. Oben stehen Videos von anderen, jeder Abschnitt hat ein Fragezeichen.](shot:quick-guide)
 
-- Fragen, Wünsche und Fehlermeldungen sind im [Forum](https://forum.drucktipps3d.de/forum/board/127-layerling/) und auf [GitHub](https://github.com/henmedia/layerling/discussions) willkommen.
 - Was sich in welcher Version geändert hat, steht in den Versionshinweisen, die du unten auf der Startseite und im Editor findest.

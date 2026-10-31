@@ -80,7 +80,6 @@ Un punct de referință este un simplu semn în spațiu, ca un semn de creion sa
 - Și ruleta poate marca un punct: {{ui:camera.tapeMarkMiddle}}, semnul pe jumătate plin din mijlocul unei măsurători, pune unul la mijlocul ei, de exemplu în centrul unei găuri rotunde. Și măsoară dintr-un punct: ruleta se aliniază la punctele de referință ca la colțuri.
 - Când tragi o formă, muchiile și centrul ei se aliniază la un punct, cum se aliniază la alte forme ({{ui:workspace.objectSnap}}). Și echerul se aliniază la puncte.
 - Punctele se salvează în proiect, nu apar în niciun export și se arată sau se ascund împreună cu notele prin {{ui:visibility.notes}} ([[Shift]]+[[N]]).
-- Un AI le poate marca, lista și șterge cu `layerling_add_reference_points`, `layerling_list_reference_points` și `layerling_remove_reference_points`.
 
 ## Imagini de referință
 
@@ -92,4 +91,3 @@ O imagine de referință este o poză după care aliniezi piese: pune o fotograf
 - {{ui:referenceImage.calibrate}} îi dă dimensiunea reală, ca în schiță: dă clic pe două puncte din poză a căror distanță reală o știi - de exemplu două găuri de prindere ale plăcii - și scrie distanța în {{ui:referenceImage.distance}}. Poza își păstrează proporțiile și mijlocul.
 - Blocheaz-o cu lacătul din antetul setărilor ei și rămâne pe loc: clicurile trec atunci prin ea până la placă. Alege-o în lista de obiecte ca s-o deblochezi.
 - Poza se salvează o singură dată în fișierul proiectului, oricât de des ar fi copiată sau anulată. O poză mare mărește fișierul cu tot atât; mesajul de la adăugare spune cât de mare este.
-- Un AI adaugă, mută, calibrează, estompează și blochează o imagine cu `layerling_reference_image`. Cu `trace` transformă poza într-un corp-schiță care stă pe ea, cum face {{ui:sketch.traceImageButton}} din schiță.

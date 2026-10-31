@@ -61,7 +61,7 @@ describe("bug report", () => {
       placementElevation: 0,
       extraFiles: { [BUG_REPORT_FILE]: strToU8(bugReportText(info)) },
     });
-    expect(strFromU8(unzipSync(bytes)[BUG_REPORT_FILE])).toContain("layerling bug report");
+    expect(strFromU8(unzipSync(bytes)[BUG_REPORT_FILE])).toContain("Magic3D bug report");
     const restored = await importLylProject(bytes);
     expect(restored.projectName).toBe("Bericht");
   });

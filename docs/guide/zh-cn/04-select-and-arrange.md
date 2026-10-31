@@ -117,8 +117,6 @@ summary: 选择形状、在对象列表中查找它们、对齐、镜像、旋�
 
 这些孔是与实体分组的普通孔，就像使用 {{ui:editor.tool.group}} 之后一样：没有任何内容被固化。{{ui:editor.tool.ungroup}} 会再次解散分组并释放每个孔，之后你可以逐个移动、修改或删除。整个操作在 {{ui:editor.tool.undo}} 中算一步。该工具一次最多制作 400 个孔；超过时请把孔做大或把间距加宽。
 
-AI 可以通过 MCP 桥接使用 `layerling_perforate_face` 完成同样的事（参见 [AI 与 MCP](chapter:ai-with-mcp) 一章）。
-
 ## 将面推出或推入
 
 要加厚壁、在面上加凸台或在面上挖凹槽，可使用 {{ui:faceTool.title}} 工具处理一个平面。它也可用于导入的 STL，那里没有草图可改。只选中一个实体，然后单击 {{ui:faceTool.title}}，它位于工具栏的 {{ui:editor.group.modify}} 组中、孔阵列旁边。也可以右键单击实体，或用 [[Ctrl]]+[[K]] 找到它。
@@ -133,8 +131,6 @@ AI 可以通过 MCP 桥接使用 `layerling_perforate_face` 完成同样的事�
 4. 只有 {{ui:faceTool.apply}} 才会真正执行。
 
 该工具添加的是一个与实体分组的普通草图实体：没有任何内容被固化。{{ui:group.edit}} 可打开分组，对新零件使用 {{ui:inspector.editSketch}} 可查看它遵循的轮廓。在普通草图实体的顶面或底面上——单一区域、未分组、未镜像、未锥化、未扭曲或倾斜，且没有描边、钥匙环、圆角或倒角——那就是实体自身的轮廓，在构建时嵌入，因此只要 CAD 内核能嵌入，其直线和圆弧就保持精确，可供边工具和 STEP 导出使用。之后调整大小时，该零件会保留其内缩量。在任何其他面上，以及导入网格的每个面上，轮廓都跟随面的三角形，曲线由短直线段组成。整个操作在 {{ui:editor.tool.undo}} 中算一步。之后若要更改内缩量或半径，请撤销并重新运行该工具。若之后要圆化顶边，请在最后一步对分组使用 {{ui:editor.tool.fillet}} 和 {{ui:edge.topEdges}}：与分组上的所有边处理一样，这会将分组合并为一个实体。
-
-AI 可以通过 MCP 桥接使用 `layerling_push_face` 完成同样的事（参见 [AI 与 MCP](chapter:ai-with-mcp) 一章）。
 
 ## 同时修改多个零件
 

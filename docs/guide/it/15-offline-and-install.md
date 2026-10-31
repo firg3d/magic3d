@@ -32,13 +32,9 @@ Scegli la lingua nell’elenco in alto a destra. Accanto trovi il tema: {{ui:the
 
 ## Usare Magic3D sul proprio computer o server
 
-Magic3D è software libero (AGPL-3.0) e puoi usarlo sul tuo computer o server, per esempio in un laboratorio, un’associazione o una scuola. Ci sono diversi metodi, descritti nel [README su GitHub](https://github.com/henmedia/layerling/blob/main/README.md#getting-started):
+Magic3D è software libero (AGPL-3.0) e puoi usarlo sul tuo computer o server, per esempio in un laboratorio, un’associazione o una scuola. Ci sono diversi metodi, descritti nel [README su GitHub](https://github.com/firg3d/magic3d/blob/main/README.md):
 
-- **Avvio rapido su Windows:** una sola riga in PowerShell installa tutto e crea un collegamento sul desktop. Se Magic3D è già in esecuzione, un altro doppio clic non avvia un secondo server: apre semplicemente la pagina.
-- **Docker:** per dispositivi NAS e server domestici, senza bisogno di installare Node.js. Ogni versione viene pubblicata su Docker Hub come immagine pronta all’uso `henmedia/layerling` (disponibile anche come `ghcr.io/henmedia/layerling`) per amd64 e arm64. Per avviarla, usa `docker run -d -p 3000:3000 -v layerling-thumbnails:/app/.codex/project-thumbnails henmedia/layerling:latest`; su un NAS puoi cercarla nel registro del gestore dei container. Il volume `layerling-thumbnails` conserva le immagini di anteprima della pagina iniziale quando aggiorni il programma. Senza il volume, le anteprime scompaiono ogni volta che viene ricreato il container e ricompaiono solo dopo aver aperto il progetto.
-- **Esportazione statica:** il risultato è composto da normali file che qualsiasi server web può pubblicare. Devono trovarsi nella radice dell’indirizzo (`https://layerling.example.com/` oppure `http://192.168.0.5:8080/`), non in una sottocartella e non possono essere aperti direttamente dal disco; nel README trovi i passaggi. Se sul server è presente una cartella `store` scrivibile accanto a `index.html` e PHP è attivo, la cartella diventa anche lo spazio condiviso per i progetti.
-
-Il collegamento MCP per gli assistenti IA è disponibile solo nel server di sviluppo; vedi [Progettare con un’IA](chapter:ai-with-mcp).
+- **Esportazione statica:** il risultato è composto da normali file che qualsiasi server web può pubblicare. Devono trovarsi nella radice dell’indirizzo (`https://magic3d.example.com/` oppure `http://192.168.0.5:8080/`), non in una sottocartella e non possono essere aperti direttamente dal disco; nel README trovi i passaggi. Se sul server è presente una cartella `store` scrivibile accanto a `index.html` e PHP è attivo, la cartella diventa anche lo spazio condiviso per i progetti.
 
 ## Aiuto e commenti
 
@@ -46,5 +42,4 @@ Il collegamento MCP per gli assistenti IA è disponibile solo nel server di svil
 
 ![La guida rapida nell’editor. In alto sono elencati i video realizzati da altri e ogni sezione ha un punto interrogativo.](shot:quick-guide)
 
-- Puoi fare domande, inviare suggerimenti e segnalare problemi nel [forum](https://forum.drucktipps3d.de/forum/board/127-layerling/) o su [GitHub](https://github.com/henmedia/layerling/discussions).
 - Le novità di ciascuna versione sono nelle note di rilascio, in fondo alla pagina iniziale e all’editor.

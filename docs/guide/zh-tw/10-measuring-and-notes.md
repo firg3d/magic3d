@@ -80,7 +80,6 @@ summary: 捲尺、標尺與角尺，到原點的距離，附著在零件上的�
 - 捲尺也能標記點：{{ui:camera.tapeMarkMiddle}}，即量測正中央那個半填滿的標記，會在量測中間放一個點，例如圓孔的中心。它也能從一個點開始量測：捲尺吸附參考點就像吸附角一樣。
 - 拖曳形狀時，它的邊與中心會吸附到點，就像吸附到其他形狀一樣（{{ui:workspace.objectSnap}}）。角尺也會吸附到點。
 - 點會儲存在設計中，不會出現在任何匯出裡，並與備註一起由 {{ui:visibility.notes}}（[[Shift]]+[[N]]）顯示或隱藏。
-- AI 可以用 `layerling_add_reference_points`、`layerling_list_reference_points` 和 `layerling_remove_reference_points` 標記、列出與移除它們。
 
 ## 參考圖片
 
@@ -92,4 +91,3 @@ summary: 捲尺、標尺與角尺，到原點的距離，附著在零件上的�
 - {{ui:referenceImage.calibrate}} 讓它恢復真實尺寸，與草圖中相同：點擊圖片上兩個你知道實際距離的點——例如電路板的兩個安裝孔——並在 {{ui:referenceImage.distance}} 中輸入該距離。圖片會保持比例和中心不變。
 - 用設定標題列中的鎖將它鎖定，它就會固定不動：點擊會穿過它落到底板上。在物件清單中選取它即可解鎖。
 - 無論複製或復原多少次，圖片在設計檔案中只儲存一次。大圖片會讓檔案相應變大；新增時的提示會說明它的大小。
-- AI 可以用 `layerling_reference_image` 新增、移動、校準、淡化和鎖定參考圖片。使用 `trace` 可將圖片描摹為立在其上的草圖實體，與草圖中的 {{ui:sketch.traceImageButton}} 相同。

@@ -76,7 +76,7 @@ export const MESSAGES_RO: Record<MessageKey, string> = {
   "dashboard.updateBannerText": "Este disponibilă o versiune mai nouă de Magic3D: {latest} (instalată: {current})",
   "dashboard.updateBannerLink": "Note de versiune și descărcare",
   "tabs.newerVersion": "O altă filă rulează deja Magic3D {version}, aceasta e încă la {current}. Reîncarc-o, altfel continuă să salveze cu versiunea veche.",
-  "tabs.alreadyOpen": "Magic3D e deja deschis în altă filă. Cel mai bine lucrează acolo și închide-o pe aceasta.",
+  "tabs.alreadyOpen": "Magic3D e deschis și în altă filă.",
   "tabs.closeRefused": "Browserul nu permite acestei file să se închidă singură. Închide-o cu Ctrl+W sau cu crucea de pe filă.",
   "tabs.closeThis": "Închide această filă",
   "tabs.keepHere": "Continuă aici",

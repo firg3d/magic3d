@@ -86,7 +86,6 @@ Et referencepunkt er et bart mærke i rummet, som en blyantsmarkering eller et l
   Og det måler fra et punkt: båndet snapper til referencepunkter som til hjørner.
 - Når du trækker en form, snapper dens kanter og dens centrum til et punkt, ligesom de snapper til andre former ({{ui:workspace.objectSnap}}). Vinkelmåleren snapper også til punkter.
 - Punkter gemmes i designet, optræder i ingen eksport og vises eller skjules sammen med noterne af {{ui:visibility.notes}} ([[Shift]]+[[N]]).
-- En AI kan markere, liste og fjerne dem med `layerling_add_reference_points`, `layerling_list_reference_points` og `layerling_remove_reference_points`.
 
 ## Referencebilleder
 
@@ -98,4 +97,3 @@ Et referencebillede er et billede at rette dele ind efter: læg et foto af et pr
 - {{ui:referenceImage.calibrate}} giver det dets rigtige størrelse, som i skitsen: klik på to punkter på billedet, hvis virkelige afstand du kender - f.eks. to monteringshuller på printkortet - og skriv afstanden i {{ui:referenceImage.distance}}. Billedet beholder sine proportioner og sin midte.
 - Lås det med låsen i overskriften af dets indstillinger, så bliver det liggende: klik går så igennem det til pladen. Vælg det i objektlisten for at låse det op.
 - Billedet gemmes kun én gang i designfilen, uanset hvor ofte det kopieres eller fortrydes. Et stort billede gør filen tilsvarende større; beskeden, når du tilføjer det, siger hvor stort det er.
-- En AI tilføjer, flytter, kalibrerer, falmer og låser et med `layerling_reference_image`. Med `trace` optegner den billedet til et skitselegeme, der står på det, som {{ui:sketch.traceImageButton}} i skitsen.

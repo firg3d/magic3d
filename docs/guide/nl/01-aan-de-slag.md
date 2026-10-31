@@ -11,7 +11,7 @@ Magic3D is een ontwerpprogramma voor 3D-printen dat gewoon in je browser draait.
 
 Open [magic3d.ro](https://magic3d.ro/). Klik op de startpagina op {{ui:dashboard.createDesign}}. De editor opent met een leeg werkvlak, het raster waarop alles vorm krijgt.
 
-Heb je al een bestand waarmee je verder wilt, gebruik dan {{ui:dashboard.importGeometry}}. Dat werkt voor layerling-ontwerpen (`.lyl`) en ook voor STL-, OBJ-, 3MF-, STEP- en SVG-bestanden.
+Heb je al een bestand waarmee je verder wilt, gebruik dan {{ui:dashboard.importGeometry}}. Dat werkt voor Magic3D-ontwerpen (`.lyl`) en ook voor STL-, OBJ-, 3MF-, STEP- en SVG-bestanden.
 
 Al je ontwerpen verschijnen later op de startpagina met een voorbeeldafbeelding. Ze worden bewaard in de opslag van je browser en na elke wijziging automatisch opgeslagen, dus er is geen knop om op te slaan. Hoe je ontwerpen in een bestand verpakt en doorgeeft, lees je in [Bestanden en opslaan](chapter:bestanden-en-opslaan). Wil je een herinnering, zet dan {{ui:workspace.confirmTabClose}} aan in de instellingen (het tandwiel in het lint): de browser vraagt dan om bevestiging voordat een tabblad met een open ontwerp wordt gesloten of herladen.
 
@@ -83,7 +83,7 @@ De schakelaar **mm | in** naast {{ui:inspector.snapGrid}} verandert de eenheid, 
 
 ### De voettekst
 
-Onderaan het venster: {{ui:dashboard.sponsor}} leidt naar de pagina waar je het project kunt steunen; {{ui:dashboard.userGuide}} opent deze handleiding; {{ui:dashboard.forum}} leidt naar de plek voor vragen, ideeën en foutmeldingen (de discussies op GitHub, in het Duits het forum van drucktipps3d); {{ui:editor.bugReport}} maakt een ZIP voor een foutmelding; {{ui:dashboard.projectOnGitHub}} leidt naar het project op GitHub, en het versienummer opent de versienotities. De links naar het impressum en het privacybeleid horen bij wie de kopie van Magic3D beheert die je gebruikt.
+Onderaan het venster: {{ui:dashboard.sponsor}} leidt naar de pagina waar je het project kunt steunen; {{ui:dashboard.userGuide}} opent deze handleiding; {{ui:editor.bugReport}} maakt een ZIP voor een foutmelding; {{ui:dashboard.projectOnGitHub}} leidt naar het project op GitHub, en het versienummer opent de versienotities. De links naar het impressum en het privacybeleid horen bij wie de kopie van Magic3D beheert die je gebruikt.
 
 ## Je eerste onderdeel
 

@@ -1777,7 +1777,7 @@ export default function Home() {
       openEditor(project.id, { allowMissingFromStorage: true });
       return { ok: true, message };
     } catch (error) {
-      const message = error instanceof Error ? localizedError(error.message) : "Could not open layerling project";
+      const message = error instanceof Error ? localizedError(error.message) : "Could not open Magic3D project";
       setDashboardNotice(message);
       return { ok: false, message };
     }
@@ -3607,7 +3607,7 @@ function Dashboard({
             </aside>
           ) : null}
           {welcome.hidden === false && !simpleMode ? (
-            <DashboardWelcome open={(!hasProjects && !sharedTotal) || welcomeReopened} offline={offlineOk} onHide={welcome.hide} />
+            <DashboardWelcome open={welcomeReopened} offline={offlineOk} onHide={welcome.hide} />
           ) : null}
           {/* Magic3D: start something new, pick up the last plate, open or import - the same three actions as
               before, in the hero - then the generators, the way to a printed part, and the projects below. */}
@@ -4720,7 +4720,7 @@ function StaticIntro() {
     // half sits in <noscript>: crawlers and link previews without JavaScript read it as text, a
     // browser never draws it and Chrome's guess no longer sees it.
     <main className="visually-hidden notranslate" translate="no">
-      <h1>layerling - Free 3D CAD for 3D printing in your browser</h1>
+      <h1>Magic3D - CAD 3D gratuit pentru printare 3D, direct în browser</h1>
       <section lang="en">
         <h2>{translate("en", "welcome.teaserTitle")}</h2>
         <WelcomeGuideBody tr={(key) => translate("en", key)} />

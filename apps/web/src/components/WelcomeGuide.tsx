@@ -1,5 +1,4 @@
 import type { MessageKey } from "@/lib/i18n";
-import { LAYERLING_VIDEOS } from "@/lib/layerlingVideos";
 
 type Translate = (key: MessageKey) => string;
 
@@ -73,7 +72,6 @@ const GAPS = [
 ] as const satisfies ReadonlyArray<MessageKey>;
 
 /** A bookmark by a member of the community that turns a Tinkercad design into a .lyl file; not part of layerling. */
-const TINKERCAD_IMPORTER_URL = "https://taylormadearmy.github.io/tinkercad-layerling-importer/";
 
 /** The body of the welcome panel on the start page. */
 export function WelcomeGuideBody({ tr, offline = true }: { tr: Translate; offline?: boolean }) {
@@ -83,10 +81,7 @@ export function WelcomeGuideBody({ tr, offline = true }: { tr: Translate; offlin
     <>
       <p>{tr("welcome.lead")}</p>
       <p className="dashboard-welcome-switch">
-        <strong>{tr("welcome.switchTitle")}</strong> {tr("welcome.switchBody")} {tr("welcome.switchImport")}{" "}
-        <a href={TINKERCAD_IMPORTER_URL} target="_blank" rel="noopener noreferrer">
-          {tr("welcome.switchImportLink")}
-        </a>
+        <strong>{tr("welcome.switchTitle")}</strong> {tr("welcome.switchBody")}
       </p>
       <div className="dashboard-welcome-more">
         <h3>{tr("welcome.gapTitle")}</h3>
@@ -113,22 +108,6 @@ export function WelcomeGuideBody({ tr, offline = true }: { tr: Translate; offlin
             </li>
           ))}
         </ul>
-      </div>
-      <div className="dashboard-welcome-more dashboard-welcome-videos">
-        <h3>{tr("welcome.videosTitle")}</h3>
-        <ul>
-          {LAYERLING_VIDEOS.map((video) => (
-            <li key={video.url}>
-              <a href={video.url} target="_blank" rel="noopener noreferrer">
-                {video.title}
-              </a>{" "}
-              <span className="dashboard-welcome-video-meta">
-                {video.channel} · {video.lang}
-              </span>
-            </li>
-          ))}
-        </ul>
-        <p className="dashboard-welcome-help">{tr("welcome.videosHint")}</p>
       </div>
       <div className="dashboard-welcome-more">
         <h3>{tr("welcome.localTitle")}</h3>

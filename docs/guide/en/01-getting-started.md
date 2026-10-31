@@ -83,7 +83,7 @@ The switch **mm | in** beside {{ui:inspector.snapGrid}} changes the unit, the pl
 
 ### The footer
 
-At the foot of the window: {{ui:dashboard.sponsor}} leads to the page where you can support the project; {{ui:dashboard.userGuide}} opens this guide; {{ui:dashboard.forum}} leads to the place for questions, ideas and bug reports (the discussions on GitHub, in German the forum of drucktipps3d); {{ui:editor.bugReport}} makes a ZIP for a bug report; {{ui:dashboard.projectOnGitHub}} leads to the project on GitHub, and the version number opens the release notes. The links to the imprint and the privacy policy belong to whoever runs the copy of Magic3D you use.
+At the foot of the window: {{ui:dashboard.sponsor}} leads to the page where you can support the project; {{ui:dashboard.userGuide}} opens this guide; {{ui:editor.bugReport}} makes a ZIP for a bug report; {{ui:dashboard.projectOnGitHub}} leads to the project on GitHub, and the version number opens the release notes. The links to the imprint and the privacy policy belong to whoever runs the copy of Magic3D you use.
 
 ## Your first part
 

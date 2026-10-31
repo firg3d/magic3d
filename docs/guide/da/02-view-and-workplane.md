@@ -207,4 +207,4 @@ Magic3D beregner og tegner alt i din browser. På en ældre computer, med et sva
 - **Enkelte kontakter:** Uden hurtig tilstand kan du også bare slå {{ui:workspace.showShadows}} eller {{ui:workspace.edgeLines}} fra.
 - **Brug grafikkortet:** I Chrome åbn `chrome://gpu` (i Edge `edge://gpu`). Ved siden af "WebGL" skal der stå "Hardware accelerated". Hvis der står "Software only", er hardwareacceleration slået fra i browserens indstillinger. På Windows kan du også vælge "Høj ydeevne" for browseren under Indstillinger → System → Skærm → Grafik, så den bruger det rigtige grafikkort og ikke det svagere i processoren.
 - **Forenkl store importerede meshes:** En model med flere hundredtusind trekanter sænker enhver visning. Hvordan du tynder den ud er i kapitlet om filer, under "Forenkling af et importeret mesh".
-- **Luk andre faner:** Hver åben layerling-fane og hver anden 3D-side deler det samme grafikkort.
+- **Luk andre faner:** Hver åben Magic3D-fane og hver anden 3D-side deler det samme grafikkort.

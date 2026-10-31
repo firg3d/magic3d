@@ -41,7 +41,7 @@ Arabisch, Persisch, Urdu und Hebräisch schreibt Magic3D von rechts nach links: 
 
 | Browser | Schriftdatei wählen | Schrift vom Computer |
 | --- | --- | --- |
-| Chrome und Edge am Computer, auch die installierte layerling-App | ja | ja, nach einer Rückfrage des Browsers |
+| Chrome und Edge am Computer, auch die installierte Magic3D-App | ja | ja, nach einer Rückfrage des Browsers |
 | Firefox | ja | nein |
 | Safari am Mac | ja | nein |
 | Tablet und Handy | ja, aus den Dateien des Geräts | nein |
@@ -65,7 +65,7 @@ Daraus folgt:
 - **Der Entwurf öffnet sich überall richtig**, auch auf einem Rechner ohne die Schrift. Die Texte sehen genauso aus und lassen sich verschieben, drehen, skalieren und verrunden.
 - **Neue Buchstaben brauchen die Schrift.** Tippt jemand ohne die Schrift einen Buchstaben, den der Entwurf nicht mitgebracht hat, zeichnet Magic3D ihn aus Sans. Unter {{ui:prop.font}} steht die Schrift dann mit dem Zusatz {{ui:font.fromDesign}}. Wer die Schriftdatei hinzufügt, bekommt wieder alle Buchstaben.
 - **Exporte enthalten nur Geometrie.** STL, 3MF, OBJ, STEP und SVG enthalten Körper und Umrisse, keine Schrift.
-- **Ältere layerling-Versionen** kennen eigene Schriften noch nicht und zeichnen solche Texte in Multilanguage.
+- **Ältere Magic3D-Versionen** kennen eigene Schriften noch nicht und zeichnen solche Texte in Multilanguage.
 
 **Lizenzen:** Schriften sind urheberrechtlich geschützt, und ihre Lizenz regelt, was du damit tun darfst. Die eingebetteten Buchstabenumrisse sind dasselbe, was PDF-Dateien von einer Schrift mitnehmen, und das erlauben die meisten Lizenzen. Manche kaufbaren Schriften verbieten aber jede Weitergabe, auch einzelner Buchstaben. Bevor du einen Entwurf mit eigener Schrift weitergibst oder veröffentlichst, prüfe deshalb die Lizenz der Schrift. Freie Schriften wie die von Google Fonts (meist unter der SIL Open Font License) darfst du ohne Bedenken weitergeben. Für ein gedrucktes Teil oder eine exportierte STL spielt das keine Rolle: Die enthalten keine Schrift mehr, nur noch Geometrie.
 

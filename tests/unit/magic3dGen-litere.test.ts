@@ -7,7 +7,8 @@ beforeAll(async () => {
   await manifold();
 });
 
-describe("Litere Decor in editor", () => {
+// Reuniuni manifold pe litere intregi: singure dureaza 1-2 s, dar in suita completa, cu toate procesele ocupate, trec de 5 s.
+describe("Litere Decor in editor", { timeout: 30_000 }, () => {
   it("are fonturile implicite livrate", () => {
     expect(fontExista(String(LITERE.implicit.fontLitera))).toBe(true);
     expect(fontExista(String(LITERE.implicit.fontScris))).toBe(true);

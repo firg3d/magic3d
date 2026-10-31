@@ -82,7 +82,6 @@ Un’immagine di riferimento è una fotografia da usare per allineare le parti: 
 - {{ui:referenceImage.calibrate}} imposta la dimensione reale, come nello schizzo: fai clic su due punti dell’immagine di cui conosci la distanza reale, per esempio due fori di fissaggio della scheda, poi inseriscila in {{ui:referenceImage.distance}}. L’immagine mantiene le proporzioni e il centro.
 - Blocca l’immagine con il lucchetto nell’intestazione delle sue impostazioni: resterà ferma e i clic passeranno attraverso di essa fino alla piastra. Per sbloccarla, selezionala nell’elenco degli oggetti.
 - L’immagine viene salvata una sola volta nel file del progetto, anche se la copi o annulli l’operazione più volte. Un’immagine grande aumenta il file della stessa quantità; il messaggio che appare quando la aggiungi ne indica la dimensione.
-- Un sistema di IA può aggiungere, spostare, calibrare, rendere trasparente e bloccare un’immagine con `layerling_reference_image`. Con `trace` ricalca l'immagine in un corpo di schizzo appoggiato sopra, come {{ui:sketch.traceImageButton}} nello schizzo.
 
 ## Punti di riferimento
 
@@ -92,4 +91,3 @@ Un punto di riferimento è un semplice segno nello spazio, come una tacca fatta 
 - Anche il metro a nastro può creare un punto: {{ui:camera.tapeMarkMiddle}}, il segno pieno a metà al centro di una misura, lo posiziona al centro; per esempio, al centro di un foro rotondo. Puoi anche misurare a partire da un punto: il metro si aggancia ai punti di riferimento come agli angoli.
 - Quando trascini una forma, i suoi spigoli e il suo centro si agganciano ai punti proprio come si agganciano alle altre forme ({{ui:workspace.objectSnap}}). Anche la squadra si aggancia ai punti.
 - I punti vengono salvati nel progetto, non compaiono nelle esportazioni e possono essere mostrati o nascosti insieme alle note con {{ui:visibility.notes}} ([[Shift]]+[[N]]).
-- Un’IA può crearli, elencarli ed eliminarli con `layerling_add_reference_points`, `layerling_list_reference_points` e `layerling_remove_reference_points`.

@@ -20,8 +20,13 @@ describe("the guide in Graphite", () => {
     expect(THEME_SCRIPT).toContain('dataset.palette="graphite"');
   });
 
-  it("has a grey for every brown of the dark theme", () => {
-    expect(Object.keys(graphite).sort()).toEqual(["accent-ink", "card", "code", "edge", "ground", "ink", "muted", "tint"]);
+  it("has a grey for every warm colour of the dark theme, and only for those", () => {
+    // Magic3D's dark theme is green; the program's Graphite turns only warm hues grey, so it keeps them all.
+    const warm = Object.entries(dark).filter(([, value]) => {
+      const number = parseInt(value.slice(1), 16);
+      return graphiteGrey((number >> 16) & 255, (number >> 8) & 255, number & 255) !== null;
+    }).map(([name]) => name);
+    expect(Object.keys(graphite).sort()).toEqual(warm.sort());
   });
 
   it("uses the greys the program's Graphite works out", () => {

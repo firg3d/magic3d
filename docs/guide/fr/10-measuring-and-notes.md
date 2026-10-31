@@ -78,7 +78,6 @@ Un point de référence est une marque nue dans l'espace, comme une marque de cr
 - Faites glisser un point pour le déplacer, ou cliquez dessus pour voir ses coordonnées et en saisir de nouvelles ; ils utilisent l'unité que vous avez définie. Chaque carte peut être déplacée par son titre si elle recouvre quelque chose, individuellement : les autres restent là où elles sont, et un double-clic sur le titre la remet en place. La carte que vous avez touchée en dernier se trouve devant les autres. **Tout supprimer** dans une carte, ou dans le menu contextuel du clic droit, supprime tous les points en une seule fois. {{ui:common.delete}} le supprime.
 - Lorsque vous faites glisser une forme, ses bords et son centre s'alignent sur un point, comme ils s'alignent sur d'autres formes ({{ui:workspace.objectSnap}}). Le carré de cadrage s'accroche également aux points.
 - Les points sont enregistrés dans la conception, n'apparaissent dans aucune exportation et sont affichés ou masqués avec les notes par {{ui:visibility.notes}} ([[Shift]]+[[N]]).
-- Une IA peut les marquer, les lister et les supprimer avec `layerling_add_reference_points`, `layerling_list_reference_points` et `layerling_remove_reference_points`.
 
 ## Images de référence
 
@@ -90,4 +89,3 @@ Une image de référence est une image sur laquelle aligner des pièces : posez 
 - {{ui:referenceImage.calibrate}} lui donne sa vraie taille, comme dans l'esquisse : cliquez sur deux points de l'image dont vous connaissez la distance réelle - deux trous de fixation de la carte, par exemple - et saisissez cette distance dans {{ui:referenceImage.distance}}. L'image garde ses proportions et son milieu.
 - Verrouillez-la avec le cadenas dans l'en-tête de ses réglages, et elle reste en place : les clics la traversent alors jusqu'au plateau. Choisissez-la dans la liste des objets pour la déverrouiller.
 - L'image est enregistrée une fois dans le fichier du projet, quel que soit le nombre de copies ou d'annulations. Une grande image grossit le fichier d'autant ; le message à l'ajout indique sa taille.
-- Une IA en ajoute une, la déplace, la calibre, l'estompe et la verrouille avec `layerling_reference_image`. Avec `trace`, elle vectorise l'image en un corps d'esquisse posé dessus, comme {{ui:sketch.traceImageButton}} dans l'esquisse.

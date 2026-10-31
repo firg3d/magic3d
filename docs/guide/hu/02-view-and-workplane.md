@@ -123,4 +123,4 @@ A Magic3D mindent a böngésződben számol és rajzol. Régebbi gépen, gyenge 
 - **Egyes kapcsolók:** Gyors mód nélkül csak az {{ui:workspace.showShadows}} vagy az {{ui:workspace.edgeLines}} kapcsolót is kikapcsolhatod.
 - **Használd a videokártyát:** Chrome-ban nyisd meg a `chrome://gpu` oldalt (Edge-ben az `edge://gpu` oldalt). A „WebGL” mellett „Hardware accelerated” kell, hogy álljon. Ha „Software only” áll ott, a hardveres gyorsítás ki van kapcsolva a böngésző beállításaiban. Windowson a Gépház → Rendszer → Kijelző → Grafika alatt a böngészőhöz a „Nagy teljesítmény” lehetőséget is kiválaszthatod, hogy a valódi videokártyát használja, ne a processzorba épített gyengébbet.
 - **Egyszerűsítsd a nagy importált hálókat:** Egy sok százezer háromszögből álló modell bármilyen nézetet lelassít. Hogy hogyan ritkíthatod, az a fájlokról szóló fejezetben van, az „Importált háló egyszerűsítése” résznél.
-- **Zárd be a többi lapot:** Minden nyitott layerling-lap és minden más 3D-s oldal ugyanazon a videokártyán osztozik.
+- **Zárd be a többi lapot:** Minden nyitott Magic3D-lap és minden más 3D-s oldal ugyanazon a videokártyán osztozik.

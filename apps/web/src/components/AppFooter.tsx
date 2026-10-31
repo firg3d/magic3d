@@ -8,7 +8,6 @@ import { useSimpleMode } from "@/lib/useSimpleMode";
 import { SOURCE_CODE_URL, releaseNotesUrl, type AppUpdateInfo } from "@/lib/appUpdate";
 import { useAppUpdate } from "@/lib/useAppUpdate";
 import { SHOW_WHATS_NEW_EVENT } from "@/lib/useWhatsNew";
-import { InstallAppHint } from "@/components/InstallAppHint";
 import { TabletHint } from "@/components/TabletHint";
 import { PenHoverTips } from "@/components/PenHoverTips";
 import { SustineButon, SustineNota } from "@/magic3d/sustine/SustineButon";
@@ -19,14 +18,6 @@ export { SOURCE_CODE_URL };
 /** Der Verweis in der Fußzeile zeigt auf die Anleitung in der gewählten Sprache. */
 function readmeUrl(language: Language) {
   return `${SOURCE_CODE_URL.replace(/\/+$/, "")}/blob/main/${LANGUAGE_INFO[language].readme}`;
-}
-
-// German readers are already gathered in the drucktipps3d forum this project
-// grew out of; everyone else is pointed at GitHub Discussions instead, since
-// a German forum means nothing to them. Which is which sits with the language
-// (languages.ts).
-function communityUrl(language: Language) {
-  return LANGUAGE_INFO[language].communityUrl;
 }
 
 // Whoever operates a layerling installation may be required to publish a legal
@@ -116,7 +107,6 @@ export function AppFooter({
 
   return (
     <>
-    {variant === "editor" ? <InstallAppHint variant="editor" /> : null}
     {variant === "editor" ? <TabletHint variant="editor" /> : null}
     {variant === "editor" ? <PenHoverTips /> : null}
     {/* Magic3D: "Sustine Magic3D" replaces the layerling support link and its reminder card; after an export, a quiet note. */}
@@ -140,9 +130,6 @@ export function AppFooter({
           ) : null,
           <a href={t("welcome.guideUrl")} target="_blank" rel="noreferrer" key="guide">
             {t("dashboard.userGuide")}
-          </a>,
-          <a href={communityUrl(language)} target="_blank" rel="noreferrer" key="community">
-            {t("dashboard.forum")}
           </a>,
           // Ein Link in Knopfrolle: so traegt er die Farben der Fusszeile in
           // jedem Thema, und die Werkzeugleiste wird nicht breiter.

@@ -130,8 +130,6 @@ Pentru aerisiri, grile de difuzor, coșuri și carcase, {{ui:holePattern.title}}
 
 Găurile sunt găuri obișnuite, grupate cu corpul, exact ca după {{ui:editor.tool.group}}: nimic nu e unit definitiv. {{ui:editor.tool.ungroup}} desface din nou grupul și eliberează fiecare gaură, pe care o poți apoi muta, modifica sau șterge separat. Totul e un singur pas pentru {{ui:editor.tool.undo}}. Unealta nu face mai mult de 400 de găuri deodată; în acest caz fă găurile mai mari sau distanța mai mare.
 
-Un AI poate face același lucru prin puntea MCP cu `layerling_perforate_face` (vezi capitolul [AI cu MCP](chapter:ai-with-mcp)).
-
 ## Împingerea unei fețe în afară sau înăuntru
 
 Pentru un perete mai gros, o pernă în relief pe o față sau un locaș tăiat în ea, unealta {{ui:faceTool.title}} lucrează pe o singură față plană. Funcționează și pe un STL importat, unde nu există o schiță de modificat. Selectează exact un corp și dă clic pe {{ui:faceTool.title}} în grupul {{ui:editor.group.modify}} al barei de unelte, lângă modelul de găuri. Poți și să dai clic dreapta pe corp sau s-o găsești cu [[Ctrl]]+[[K]].
@@ -147,8 +145,6 @@ Pentru un perete mai gros, o pernă în relief pe o față sau un locaș tăiat 
 4. Abia {{ui:faceTool.apply}} îl face.
 
 Ce adaugă unealta e un corp-schiță obișnuit, grupat cu corpul dacă {{ui:faceTool.separate}} nu e pornit (altfel {{ui:group.edit}} nu are ce deschide, iar piesa e liberă): nimic nu e unit definitiv. {{ui:group.edit}} deschide grupul, iar {{ui:inspector.editSketch}} pe partea nouă arată conturul pe care îl urmează. Pe fața de sus sau de jos a unui corp-schiță simplu - o singură zonă, negrupat, neoglindit, fără conicitate, nerăsucit și neînclinat, fără contur, inel de breloc, rotunjire sau teșitură - acesta e chiar conturul corpului, preluat la construcție, așa că liniile și arcele lui rămân exacte oriunde nucleul CAD le poate prelua, pentru uneltele de muchii și pentru exportul STEP. Dacă e redimensionată ulterior, partea își păstrează retragerea. Pe orice altă față și pe fiecare față a unui mesh importat, conturul urmează triunghiurile feței, iar o curbă e făcută din bucăți drepte scurte. Totul e un singur pas pentru {{ui:editor.tool.undo}}. Ca să schimbi mai târziu retragerea sau raza, anulează și rulează din nou unealta. Ca să rotunjești apoi muchia de sus, folosește {{ui:editor.tool.fillet}} cu {{ui:edge.topEdges}} pe grup, ca ultim pas: ca orice tratare de muchii pe un grup, unește grupul într-un singur corp.
-
-Un AI poate face același lucru prin puntea MCP cu `layerling_push_face` (vezi capitolul [AI cu MCP](chapter:ai-with-mcp)).
 
 ## Modificarea mai multor piese deodată
 

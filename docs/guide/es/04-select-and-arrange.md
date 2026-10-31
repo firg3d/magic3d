@@ -117,8 +117,6 @@ Para rejillas de ventilación, rejillas de altavoz, cestas y cajas de electróni
 
 Los orificios son orificios normales agrupados con el cuerpo, igual que después de {{ui:editor.tool.group}}: no queda nada fundido para siempre. {{ui:editor.tool.ungroup}} deshace el grupo y libera cada orificio, que entonces puedes mover, cambiar o eliminar uno a uno. Todo ello es un solo paso para {{ui:editor.tool.undo}}. La herramienta no hace más de 400 orificios a la vez; en ese caso, haz los orificios más grandes o aumenta la separación.
 
-Una IA puede hacer lo mismo a través del puente MCP con `layerling_perforate_face` (consulta el capítulo [IA con MCP](chapter:ai-with-mcp)).
-
 ## Empujar una cara hacia fuera o hacia dentro
 
 Para engrosar una pared, poner un resalte sobre una cara o abrir un hueco en ella, la herramienta {{ui:faceTool.title}} trabaja sobre una cara plana. También funciona con un STL importado, donde no hay ningún boceto que cambiar. Selecciona exactamente un cuerpo y haz clic en {{ui:faceTool.title}}, en el grupo {{ui:editor.group.modify}} de la barra de herramientas, junto al patrón de orificios. También puedes hacer clic derecho en el cuerpo o buscarla con [[Ctrl]]+[[K]].
@@ -133,8 +131,6 @@ Para engrosar una pared, poner un resalte sobre una cara o abrir un hueco en ell
 4. Solo {{ui:faceTool.apply}} lo crea.
 
 Lo que añade la herramienta es un cuerpo de boceto normal agrupado con el cuerpo: no queda nada fundido para siempre. {{ui:group.edit}} abre el grupo, y {{ui:inspector.editSketch}} en la pieza nueva muestra el contorno que sigue. En la cara superior o inferior de un cuerpo de boceto sencillo —una sola superficie; sin agrupar, reflejar, estrechar, retorcer ni inclinar, y sin trazo, orificio para llavero, redondeo ni chaflán—, ese contorno es el del propio cuerpo, desfasado hacia dentro al construirlo, así que sus líneas y arcos siguen siendo exactos siempre que el núcleo CAD pueda desfasarlos, para las herramientas de aristas y la exportación a STEP. Si después le cambias el tamaño, la pieza conserva su margen. En cualquier otra cara, y en todas las caras de una malla importada, el contorno sigue los triángulos de la cara, y una curva se compone de tramos rectos cortos. Todo ello es un solo paso para {{ui:editor.tool.undo}}. Para cambiar más tarde el margen o el radio, deshaz y vuelve a usar la herramienta. Para redondear después la arista superior, usa {{ui:editor.tool.fillet}} con {{ui:edge.topEdges}} sobre el grupo como último paso: como cualquier tratamiento de aristas sobre un grupo, une el grupo en un solo cuerpo.
-
-Una IA puede hacer lo mismo a través del puente MCP con `layerling_push_face` (consulta el capítulo [IA con MCP](chapter:ai-with-mcp)).
 
 ## Cambiar varias piezas a la vez
 

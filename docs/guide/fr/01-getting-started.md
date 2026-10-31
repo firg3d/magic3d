@@ -83,7 +83,7 @@ Le commutateur **mm | in** à côté de {{ui:inspector.snapGrid}} change l'unit�
 
 ### Le pied de page
 
-En bas de la fenêtre : {{ui:dashboard.sponsor}} mène à la page où vous pouvez soutenir le projet ; {{ui:dashboard.userGuide}} ouvre ce guide ; {{ui:dashboard.forum}} mène à l'endroit des questions, des idées et des rapports de bogue (les discussions sur GitHub, en allemand le forum de drucktipps3d) ; {{ui:editor.bugReport}} crée un ZIP pour un rapport de bogue ; {{ui:dashboard.projectOnGitHub}} mène au projet sur GitHub, et le numéro de version ouvre les notes de version. Les liens vers les mentions légales et la politique de confidentialité appartiennent à celui qui exploite la copie de Magic3D que vous utilisez.
+En bas de la fenêtre : {{ui:dashboard.sponsor}} mène à la page où vous pouvez soutenir le projet ; {{ui:dashboard.userGuide}} ouvre ce guide ; {{ui:editor.bugReport}} crée un ZIP pour un rapport de bogue ; {{ui:dashboard.projectOnGitHub}} mène au projet sur GitHub, et le numéro de version ouvre les notes de version. Les liens vers les mentions légales et la politique de confidentialité appartiennent à celui qui exploite la copie de Magic3D que vous utilisez.
 
 ## Votre première pièce
 

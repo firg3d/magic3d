@@ -34,13 +34,9 @@ Você escolhe o idioma no canto superior direito, na lista de idiomas. O esquema
 
 ## Rodando por conta própria
 
-Magic3D é software livre (AGPL-3.0) e pode rodar no seu próprio computador ou servidor, por exemplo numa oficina, num clube ou numa escola. Há várias formas, descritas no [README no GitHub](https://github.com/henmedia/layerling/blob/main/README.md#getting-started):
+Magic3D é software livre (AGPL-3.0) e pode rodar no seu próprio computador ou servidor, por exemplo numa oficina, num clube ou numa escola. Há várias formas, descritas no [README no GitHub](https://github.com/firg3d/magic3d/blob/main/README.md):
 
-- **O início rápido no Windows:** uma única linha no PowerShell instala tudo e põe um atalho na área de trabalho. Se o Magic3D já estiver rodando, outro clique duplo não inicia um segundo servidor, só abre a página.
-- **Docker:** para NAS (dispositivos de armazenamento em rede) e servidores domésticos, sem precisar instalar o Node.js. Cada versão sai como uma imagem pronta `henmedia/layerling` no Docker Hub (também `ghcr.io/henmedia/layerling`) para amd64 e arm64; `docker run -d -p 3000:3000 -v layerling-thumbnails:/app/.codex/project-thumbnails henmedia/layerling:latest` inicia o Magic3D, e num NAS você procura a imagem no registro do gerenciador de contêineres. O volume `layerling-thumbnails` mantém as miniaturas da página inicial quando você atualiza; sem ele, elas somem toda vez que o contêiner é criado de novo, até você abrir o projeto.
-- **Exportação estática:** o resultado são arquivos simples que qualquer servidor web consegue servir. Eles precisam ficar na raiz de um endereço (`https://layerling.example.com/` ou `http://192.168.0.5:8080/`), não numa subpasta nem abertos direto do disco; o README traz o passo a passo. Se o servidor tiver PHP e houver uma pasta `store` gravável ao lado do `index.html`, a exportação também passa a ser o armazenamento compartilhado de projetos.
-
-A ponte MCP para assistentes de IA só existe no servidor de desenvolvimento; veja [Construindo com uma IA](chapter:ai-with-mcp).
+- **Exportação estática:** o resultado são arquivos simples que qualquer servidor web consegue servir. Eles precisam ficar na raiz de um endereço (`https://magic3d.example.com/` ou `http://192.168.0.5:8080/`), não numa subpasta nem abertos direto do disco; o README traz o passo a passo. Se o servidor tiver PHP e houver uma pasta `store` gravável ao lado do `index.html`, a exportação também passa a ser o armazenamento compartilhado de projetos.
 
 ## Ajuda e feedback
 
@@ -48,5 +44,4 @@ A ponte MCP para assistentes de IA só existe no servidor de desenvolvimento; ve
 
 ![O guia rápido no editor. Vídeos de outras pessoas aparecem no topo, e cada seção tem um ponto de interrogação.](shot:quick-guide)
 
-- Perguntas, sugestões e relatos de bugs são bem-vindos no [fórum](https://forum.drucktipps3d.de/forum/board/127-layerling/) e no [GitHub](https://github.com/henmedia/layerling/discussions).
 - O que mudou em cada versão está nas notas da versão, que você encontra no rodapé da página inicial e do editor.

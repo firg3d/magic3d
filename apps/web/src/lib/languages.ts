@@ -96,7 +96,6 @@ export type LanguageInfo = {
 };
 
 const GITHUB_DISCUSSIONS = "https://github.com/firg3d/magic3d/discussions";
-const DRUCKTIPPS_FORUM = "https://forum.drucktipps3d.de/forum/board/127-layerling/";
 
 export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
   ro: {
@@ -216,8 +215,8 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
     numberLocale: "de-DE",
     quotes: ["„", "“"],
     guideDir: "anleitung",
-    communityUrl: DRUCKTIPPS_FORUM,
-    readme: "README.de.md",
+    communityUrl: GITHUB_DISCUSSIONS,
+    readme: "README.md",
     quickstartAnchor: "schnellstart-unter-windows",
     legal: { imprint: "Impressum", privacy: "Datenschutz" },
     keyNames: { Ctrl: "Strg", Shift: "Umschalt", Delete: "Entf", Backspace: "Rücktaste", Home: "Pos1", Click: "Klick", RightClick: "Rechtsklick", Drag: "Ziehen" },
@@ -309,7 +308,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
     quotes: ["“", "”"],
     guideDir: "handleiding",
     communityUrl: GITHUB_DISCUSSIONS,
-    readme: "README.nl.md",
+    readme: "README.md",
     quickstartAnchor: "snelstart-op-windows",
     legal: { imprint: "Colofon", privacy: "Privacybeleid" },
     keyNames: { Click: "Klik", RightClick: "Rechtsklik", Drag: "Slepen" },
@@ -760,7 +759,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
     quotes: ["«", "»"],
     guideDir: "dalil",
     communityUrl: GITHUB_DISCUSSIONS,
-    readme: "README.ar.md",
+    readme: "README.md",
     quickstartAnchor: "البدء-السريع-على-windows",
     legal: { imprint: "بيانات الناشر", privacy: "سياسة الخصوصية" },
     keyNames: { Click: "نقرة", RightClick: "نقرة بالزر الأيمن", Drag: "سحب" },
@@ -839,7 +838,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
     quotes: ["“", "”"],
     guideDir: "zh-cn",
     communityUrl: GITHUB_DISCUSSIONS,
-    readme: "README.zh-cn.md",
+    readme: "README.md",
     quickstartAnchor: "windows-快速上手",
     legal: { imprint: "版本说明", privacy: "隐私政策" },
     // Chinese keyboards label the keys in English; only the mouse actions get Chinese names.
@@ -879,7 +878,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
     quotes: ["「", "」"],
     guideDir: "zh-tw",
     communityUrl: GITHUB_DISCUSSIONS,
-    readme: "README.zh-tw.md",
+    readme: "README.md",
     quickstartAnchor: "windows-快速上手",
     legal: { imprint: "版本說明", privacy: "隱私權政策" },
     // Chinese keyboards label the keys in English; only the mouse actions get Chinese names.

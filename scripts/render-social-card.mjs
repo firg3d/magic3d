@@ -15,7 +15,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
  */
 
 const repositoryRoot = dirname(dirname(fileURLToPath(import.meta.url)));
-const OUT = resolve(repositoryRoot, "apps/web/public/assets/layerling/layerling-social.png");
+const OUT = resolve(repositoryRoot, "apps/web/public/assets/magic3d/magic3d-social.png");
 const WIDTH = 1280;
 const HEIGHT = 640;
 
@@ -44,7 +44,7 @@ if (!browser) {
 // eigene Grundflaeche und mit dem dunklen Balken darunter. Das Symbol mit dem
 // braunen Quadrat gehoert aufs Reiterblatt und auf den Home-Bildschirm, wo es
 // keinen hellen Grund unter sich hat.
-const iconPath = resolve(repositoryRoot, "apps/web/public/assets/layerling/layerling-logo.svg");
+const iconPath = resolve(repositoryRoot, "apps/web/public/assets/magic3d/magic3d-logo.svg");
 const icon = readFileSync(iconPath, "utf8");
 const viewBox = /viewBox="0 0 (\d+) (\d+)"/.exec(icon);
 const motif = [...icon.matchAll(/<rect\b[^>]*\/>/g)].map((match) => match[0]);
@@ -75,7 +75,7 @@ const svg =
   motif.map((rect) => `      ${rect}`).join("\n") +
   "\n    </svg>";
 
-const work = mkdtempSync(join(tmpdir(), "layerling-card-"));
+const work = mkdtempSync(join(tmpdir(), "magic3d-card-"));
 const page = join(work, "card.html");
 writeFileSync(page, template.replace("<!--MARKE-->", svg));
 

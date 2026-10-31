@@ -78,7 +78,6 @@ Referenčna točka je zgolj oznaka v prostoru, kot svinčnikova črta ali točka
 - Ko vlečeš obliko, se njeni robovi in sredina zaskočijo na točko, kot se zaskočijo na druge oblike ({{ui:workspace.objectSnap}}). Tudi kotno ravnilo se zaskoči na točke.
 - Tudi merilni trak lahko označi točko: {{ui:camera.tapeMarkMiddle}}, napol polna oznaka na sredini meritve, jo postavi na njeno sredino, na primer v središče okrogle luknje. Od točke tudi meri: trak se zaskoči na referenčne točke kakor na oglišča.
 - Točke se shranijo v načrtu, ne pojavijo se v nobenem izvozu in se skupaj z opombami prikažejo ali skrijejo prek {{ui:visibility.notes}} ([[Shift]]+[[N]]).
-- Umetna inteligenca jih lahko postavi, našteje in odstrani z `layerling_add_reference_points`, `layerling_list_reference_points` in `layerling_remove_reference_points`.
 
 ## Referenčne slike
 
@@ -90,4 +89,3 @@ Referenčna slika je slika, po kateri poravnaš dele: položi fotografijo tiskan
 - {{ui:referenceImage.calibrate}} ji da pravo velikost kot v skici: klikni dve točki na sliki, katerih pravo razdaljo poznaš - na primer dve pritrdilni luknji vezja - in vpiši to razdaljo v {{ui:referenceImage.distance}}. Slika ohrani razmerja in sredino.
 - Zakleni jo s ključavnico v glavi njenih nastavitev in ostane na mestu: kliki gredo tedaj skozi njo na ploščo. Za odklepanje jo izberi v seznamu objektov.
 - Slika je v datoteki načrta shranjena enkrat, kolikorkrat jo kopiraš ali razveljaviš. Velika slika poveča datoteko za toliko; sporočilo ob dodajanju pove njeno velikost.
-- UI jo doda, premakne, umeri, zbledi in zaklene z `layerling_reference_image`. S `trace` sliko obriše v telo skice, ki stoji na njej, kot {{ui:sketch.traceImageButton}} v skici.

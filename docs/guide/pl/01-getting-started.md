@@ -83,7 +83,7 @@ Przełącznik **mm | in** obok {{ui:inspector.snapGrid}} zmienia dla tego projek
 
 ### Stopka
 
-Na dole okna: {{ui:dashboard.sponsor}} prowadzi do strony, na której możesz wesprzeć projekt; {{ui:dashboard.userGuide}} otwiera tę instrukcję; {{ui:dashboard.forum}} prowadzi do miejsca na pytania, pomysły i zgłoszenia błędów (dyskusje na GitHubie, a po niemiecku forum drucktipps3d); {{ui:editor.bugReport}} tworzy plik ZIP do zgłoszenia błędu; {{ui:dashboard.projectOnGitHub}} prowadzi do projektu na GitHubie, a numer wersji otwiera listę zmian. Odnośniki do noty prawnej i polityki prywatności należą do tego, kto prowadzi używaną przez Ciebie kopię Magic3D.
+Na dole okna: {{ui:dashboard.sponsor}} prowadzi do strony, na której możesz wesprzeć projekt; {{ui:dashboard.userGuide}} otwiera tę instrukcję; {{ui:editor.bugReport}} tworzy plik ZIP do zgłoszenia błędu; {{ui:dashboard.projectOnGitHub}} prowadzi do projektu na GitHubie, a numer wersji otwiera listę zmian. Odnośniki do noty prawnej i polityki prywatności należą do tego, kto prowadzi używaną przez Ciebie kopię Magic3D.
 
 ## Twoja pierwsza część
 

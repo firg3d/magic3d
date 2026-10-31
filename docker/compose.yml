@@ -1,8 +1,8 @@
 services:
-  layerling:
-    # The ready-made image from every release. "up -d --build" builds it from
-    # this folder instead, under the same name.
-    image: ghcr.io/henmedia/layerling:latest
+  magic3d:
+    # Magic3D publishes no image: "up -d --build" builds it from
+    # this folder, under this name.
+    image: magic3d:local
     build:
       context: ../
       dockerfile: docker/Dockerfile
@@ -38,8 +38,8 @@ services:
     volumes:
       # The preview pictures of the start page. In a named volume they survive a rebuild or update; Docker
       # fills it from the image the first time, so it belongs to the container's user without a chown.
-      - layerling-thumbnails:/app/.codex/project-thumbnails
+      - magic3d-thumbnails:/app/.codex/project-thumbnails
       # - ./shared-projects:/shared-projects:z
 
 volumes:
-  layerling-thumbnails:
+  magic3d-thumbnails:

@@ -117,8 +117,6 @@ Szellőzőkhöz, hangszórórácsokhoz, kosarakhoz és dobozokhoz a {{ui:holePat
 
 A lyukak közönséges lyukak, a testtel csoportosítva, pont mint a {{ui:editor.tool.group}} után: semmi sincs „beégetve”. A {{ui:editor.tool.ungroup}} újra feloldja a csoportot, és minden lyukat felszabadít, amelyeket ezután egyenként mozgathatsz, módosíthatsz vagy törölhetsz. Az egész egyetlen lépés a {{ui:editor.tool.undo}} számára. Az eszköz egyszerre legfeljebb 400 lyukat készít; ilyenkor legyenek nagyobbak a lyukak, vagy nagyobb a távolság.
 
-Egy MI ugyanezt az MCP-hídon keresztül is meg tudja tenni a `layerling_perforate_face` paranccsal (lásd az [MI MCP-vel](chapter:ai-with-mcp) fejezetet).
-
 ## Lap kitolása vagy benyomása
 
 Vastagabb falhoz, egy lapra emelt párnához vagy egy belevágott zsebhez a {{ui:faceTool.title}} eszköz egyetlen sík lapon dolgozik. Importált STL-en is működik, ahol nincs módosítható vázlat. Jelölj ki pontosan egy testet, és kattints az eszköztár {{ui:editor.group.modify}} csoportjában a {{ui:faceTool.title}} gombra, a lyukminta mellett. A testre jobb gombbal is kattinthatsz, vagy megkeresheted a [[Ctrl]]+[[K]] billentyűkkel.
@@ -134,8 +132,6 @@ Vastagabb falhoz, egy lapra emelt párnához vagy egy belevágott zsebhez a {{ui
 4. Csak a {{ui:faceTool.apply}} hozza létre.
 
 Amit az eszköz hozzáad, az egy közönséges vázlattest, a testtel csoportosítva, hacsak a {{ui:faceTool.separate}} nincs bekapcsolva (ekkor a {{ui:group.edit}} gombnak nincs mit megnyitnia, és a rész szabad): semmi sincs beégetve. A {{ui:group.edit}} megnyitja a csoportot, és az új részen a {{ui:inspector.editSketch}} megmutatja a körvonalat, amelyet követ. Egy egyszerű vázlattest tetején vagy alján (egy terület, nem csoportosított, nem tükrözött, nem kúposított, nem csavart, nem dőlt, és nincs körvonala, kulcstartó-füle, lekerekítése vagy letörése) ez a test saját körvonala, építéskor beljebb húzva, így vonalai és ívei pontosak maradnak, ahol a CAD-kernel be tudja húzni őket, az élszerszámokhoz és a STEP-exporthoz. Később átméretezve a rész megtartja a beljebb húzását. Minden más lapon, és egy importált háló minden lapján, a körvonal a lap háromszögeit követi, és egy görbe rövid egyenes darabokból áll. Az egész egyetlen lépés a {{ui:editor.tool.undo}} számára. A beljebb húzás vagy a sugár későbbi módosításához vond vissza, és futtasd újra az eszközt. A felső él utólagos lekerekítéséhez használd a {{ui:editor.tool.fillet}} eszközt a {{ui:edge.topEdges}} beállítással a csoporton utolsó lépésként: mint minden élkezelés egy csoporton, egyetlen testté egyesíti a csoportot.
-
-Egy MI ugyanezt az MCP-hídon át a `layerling_push_face` eszközzel teheti meg (lásd a [MI MCP-vel](chapter:ai-with-mcp) fejezetet).
 
 ## Több rész módosítása egyszerre
 

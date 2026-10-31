@@ -16,7 +16,6 @@ import {
   webpSize,
   englishHeadingPairs,
 } from "../../scripts/build-guide.mjs";
-import { tools } from "../../scripts/layerling-mcp-tools.mjs";
 import { LANGUAGE_INFO } from "@/lib/languages";
 import { GUIDE_CHAPTERS, GUIDE_SECTIONS, guideChapterForShape, guideHref, guideSectionForShape } from "@/lib/guideLinks";
 
@@ -140,7 +139,7 @@ describe("guide footer", () => {
     expect(full).toContain("v9.9.9");
     const bare = renderFooter({ language: "en", messages: await loadMessages("en"), version: "1.0.0", environment: {} });
     expect(bare).not.toMatch(/Imprint|Privacy|impressum/i);
-    expect(bare).toContain("Discussions");
+    expect(bare).not.toContain("Discussions");
   });
 
   // Magic3D: "Support Magic3D" only when NEXT_PUBLIC_SUPPORT_URL is set; never the layerling support page.
@@ -247,11 +246,13 @@ describe("guide content", () => {
     }
   });
 
-  it("names every MCP tool in the AI chapter, in every language", async () => {
+  it("names and links only Magic3D, in every language (no layerling, no forum, no videos)", async () => {
     for (const language of LANGUAGES) {
-      const chapter = (await readChapters(language)).find((entry: { slug: string }) => entry.slug === GUIDE_CHAPTERS.ai[language]);
-      expect(chapter, language).toBeDefined();
-      for (const tool of tools) expect(chapter.body, `${language}: ${tool.name}`).toContain(`\`${tool.name}\``);
+      for (const chapter of await readChapters(language)) {
+        // Code identifiers that a reader never sees as a name stay out of this check.
+        const text = chapter.body.replace(/`[^`]*`/g, "");
+        expect(text, ).not.toMatch(/layerling|henmedia|drucktipps3d|youtube.com/i);
+      }
     }
   });
 

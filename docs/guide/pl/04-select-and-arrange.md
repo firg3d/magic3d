@@ -130,8 +130,6 @@ Do kratek wentylacyjnych, maskownic głośników, koszyków i obudów {{ui:holeP
 
 Otwory to zwykłe otwory zgrupowane z bryłą, tak jak po {{ui:editor.tool.group}}: nic nie jest wtopione na stałe. {{ui:editor.tool.ungroup}} rozwiązuje grupę i uwalnia każdy otwór, który możesz potem osobno przesunąć, zmienić albo usunąć. Całość to jeden krok dla {{ui:editor.tool.undo}}. Narzędzie nie tworzy naraz więcej niż 400 otworów. W takim przypadku zwiększ otwory albo rozstaw.
 
-AI może zrobić to samo przez most MCP poleceniem `layerling_perforate_face` (zobacz rozdział [AI przez MCP](chapter:ai-with-mcp)).
-
 ## Wypychanie ściany na zewnątrz lub do środka
 
 Do grubszej ścianki, wypukłej podkładki na ścianie albo wyciętej w niej kieszeni służy narzędzie {{ui:faceTool.title}}, które działa na jednej płaskiej ścianie. Działa też na zaimportowanym STL, gdzie nie ma szkicu do zmiany. Zaznacz dokładnie jedną bryłę i kliknij {{ui:faceTool.title}} w grupie {{ui:editor.group.modify}} paska narzędzi, obok wzoru otworów. Możesz też kliknąć bryłę prawym przyciskiem albo znaleźć narzędzie przez [[Ctrl]]+[[K]].
@@ -147,8 +145,6 @@ Do grubszej ścianki, wypukłej podkładki na ścianie albo wyciętej w niej kie
 4. Dopiero {{ui:faceTool.apply}} to tworzy.
 
 To, co dodaje narzędzie, to zwykła bryła ze szkicu, zgrupowana z bryłą, chyba że włączone jest {{ui:faceTool.separate}} (wtedy {{ui:group.edit}} nie ma czego otwierać, a część jest wolna): nic nie jest wtopione na stałe. {{ui:group.edit}} otwiera grupę, a {{ui:inspector.editSketch}} na nowej części pokazuje kontur, za którym podąża. Na górze lub spodzie zwykłej bryły ze szkicu (jedna powierzchnia, nie zgrupowana, nie odbita, nie zwężona, nie skręcona ani nie pochylona, bez obrysu, otworu na kółko do kluczy, zaokrąglenia ani fazki) jest to własny kontur bryły, wstawiany przy jej budowie, więc jej linie i łuki pozostają dokładne wszędzie tam, gdzie jądro CAD może je wstawić, dla narzędzi krawędzi i eksportu STEP. Po późniejszej zmianie rozmiaru część zachowuje odsunięcie. Na każdej innej ścianie i na każdej ścianie zaimportowanej siatki kontur podąża za trójkątami ściany, a krzywa składa się z krótkich prostych odcinków. Całość to jeden krok dla {{ui:editor.tool.undo}}. Aby później zmienić odsunięcie albo promień, cofnij i uruchom narzędzie ponownie. Aby potem zaokrąglić górną krawędź, użyj na grupie jako ostatniego kroku {{ui:editor.tool.fillet}} z opcją {{ui:edge.topEdges}}: jak każda obróbka krawędzi na grupie łączy ona grupę w jedną bryłę.
-
-AI może zrobić to samo przez most MCP poleceniem `layerling_push_face` (zobacz rozdział [AI przez MCP](chapter:ai-with-mcp)).
 
 ## Zmiana kilku części naraz
 

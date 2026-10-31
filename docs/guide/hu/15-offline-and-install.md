@@ -30,13 +30,9 @@ A nyelvet a jobb felső sarokban lévő nyelvlistában választod ki. A mellette
 
 ## Saját üzemeltetés
 
-A Magic3D szabad szoftver (AGPL-3.0), és futtatható a saját számítógépeden vagy szervereden, például egy műhelyben, egy klubban vagy egy iskolában. Erre több mód van, ezeket a [GitHubon lévő README](https://github.com/henmedia/layerling/blob/main/README.md#getting-started) írja le:
+A Magic3D szabad szoftver (AGPL-3.0), és futtatható a saját számítógépeden vagy szervereden, például egy műhelyben, egy klubban vagy egy iskolában. Erre több mód van, ezeket a [GitHubon lévő README](https://github.com/firg3d/magic3d/blob/main/README.md) írja le:
 
-- **Gyorsindítás Windowson:** Egyetlen PowerShell-sor mindent telepít, és parancsikont tesz az asztalra. Ha a Magic3D már fut, egy újabb dupla kattintás nem indít második szervert, csak megnyitja az oldalt.
-- **Docker:** NAS-eszközökhöz és otthoni szerverekhez, anélkül, hogy telepíteni kellene a Node.js-t. Minden kiadás kész image-ként érkezik `henmedia/layerling` néven a Docker Hubon (és `ghcr.io/henmedia/layerling` néven is) amd64-hez és arm64-hez; a `docker run -d -p 3000:3000 -v layerling-thumbnails:/app/.codex/project-thumbnails henmedia/layerling:latest` elindítja, NAS-on pedig a konténerkezelő regisztrijében keresed meg.
-- **Statikus export:** Az eredmény egyszerű fájlok, amelyeket bármely webszerver kiszolgálhat. Egy cím gyökerébe valók (`https://layerling.example.com/` vagy `http://192.168.0.5:8080/`), nem egy almappába, és nem lemezről megnyitva; a lépések a README-ben vannak. Egy írható `store` mappával az `index.html` mellett és PHP-val a szerveren a tervek közös tárolója is lesz belőle.
-
-Az MI-asszisztenseknek szóló MCP-híd csak a fejlesztői szerverben létezik, lásd az [Építés MI-vel](chapter:ai-with-mcp) fejezetet.
+- **Statikus export:** Az eredmény egyszerű fájlok, amelyeket bármely webszerver kiszolgálhat. Egy cím gyökerébe valók (`https://magic3d.example.com/` vagy `http://192.168.0.5:8080/`), nem egy almappába, és nem lemezről megnyitva; a lépések a README-ben vannak. Egy írható `store` mappával az `index.html` mellett és PHP-val a szerveren a tervek közös tárolója is lesz belőle.
 
 ## Segítség és visszajelzés
 
@@ -44,5 +40,4 @@ Az MI-asszisztenseknek szóló MCP-híd csak a fejlesztői szerverben létezik, 
 
 ![A rövid útmutató a szerkesztőben. Felül mások videói vannak felsorolva, és minden résznek van egy kérdőjele.](shot:quick-guide)
 
-- A kérdéseket, kívánságokat és hibajelentéseket szívesen fogadják a [fórumban](https://forum.drucktipps3d.de/forum/board/127-layerling/) (német nyelvű) és a [GitHubon](https://github.com/henmedia/layerling/discussions).
 - Hogy melyik verzióban mi változott, az a kiadási megjegyzésekben olvasható, ezeket a kezdőlap és a szerkesztő alján találod.

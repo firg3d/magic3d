@@ -351,6 +351,12 @@ html[data-theme="dark"]:where([data-palette="graphite"]) .dashboard-trademark {
   background: #d6f5e1;
 }
 
+:where(html[data-theme="dark"][data-palette="graphite"]) .tab-presence-notice.tab-presence-discret {
+  border-color: #b9e8cb;
+  background: rgba(236, 250, 241, 0.94);
+  box-shadow: 0 4px 12px rgba(13, 50, 26, 0.12);
+}
+
 :where(html[data-theme="dark"][data-palette="graphite"]) .dashboard-update-icon {
   color: #2a8334;
 }

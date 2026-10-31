@@ -117,8 +117,6 @@ Kopie jsou nejprve pouze náhled. Vytvoří je až {{ui:array.apply}}. Výřezy 
 
 Výřezy zůstávají běžnými tvary sloučenými s tělesem jako po {{ui:editor.tool.group}}. {{ui:editor.tool.ungroup}} je uvolní pro samostatný posun, změnu nebo smazání. Vše je jediný krok {{ui:editor.tool.undo}}. Najednou lze vytvořit nejvýše 400 otvorů; při překročení zvětšete otvory nebo rozteč.
 
-AI může provést totéž přes `layerling_perforate_face`, viz [Modelování s AI](chapter:ai-with-mcp).
-
 ## Vysunutí plochy ven nebo dovnitř
 
 Pro zesílení stěny, vyvýšenou plošku nebo vyříznutou kapsu pracuje nástroj {{ui:faceTool.title}} s jednou rovinnou plochou. Funguje i u importovaného STL, které nemá náčrt ke změně. Vyberte právě jedno těleso a spusťte {{ui:faceTool.title}} v {{ui:editor.group.modify}} vedle rastru otvorů, pravým tlačítkem nebo vyhledáváním [[Ctrl]]+[[K]].
@@ -133,8 +131,6 @@ Pro zesílení stěny, vyvýšenou plošku nebo vyříznutou kapsu pracuje nást
 4. Teprve {{ui:faceTool.apply}} díl vytvoří.
 
 Nástroj přidá běžné těleso z náčrtu sloučené s tělesem; nic se nezapéká. {{ui:group.edit}} otevře sloučení a {{ui:inspector.editSketch}} u nového dílu ukáže obrys, ze kterého vychází. Na horní nebo spodní ploše jednoduchého tělesa z náčrtu - jedna oblast, nesloučené, nezrcadlené, bez zúžení, zkroucení a naklonění, bez obrysového pásu, kroužku na klíče, zkosení či zaoblení - je to vlastní obrys tělesa, při stavbě odsazený dovnitř, takže jeho čáry a oblouky zůstanou přesné všude, kde je CAD jádro dokáže odsadit, pro nástroje hran a export STEP. Při pozdější změně velikosti si díl odsazení ponechá. Na každé jiné ploše, i u importované sítě, sleduje obrys trojúhelníky plochy a křivka se skládá z krátkých rovných úseků. Vše je jediný krok {{ui:editor.tool.undo}}. Odsazení nebo poloměr později změníte tak, že krok vrátíte zpět a nástroj použijete znovu. Horní hranu potom zaoblíte nástrojem {{ui:editor.tool.fillet}} s volbou {{ui:edge.topEdges}} na sloučení jako posledním krokem: jako každá úprava hran sloučení z něj udělá jedno těleso.
-
-AI může provést totéž přes `layerling_push_face`, viz [Modelování s AI](chapter:ai-with-mcp).
 
 ## Současná změna více dílů
 

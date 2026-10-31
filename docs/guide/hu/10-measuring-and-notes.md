@@ -78,7 +78,6 @@ A referenciapont egy puszta jel a térben, mint egy ceruzajel vagy egy kijelöl�
 - A mérőszalag is meg tud jelölni egy pontot: az {{ui:camera.tapeMarkMiddle}}, a mérés közepén ülő, félig kitöltött jel a közepére tesz egyet, például egy kerek lyuk középpontjába. És egy ponttól is mér: a szalag úgy illeszkedik a referenciapontokhoz, mint a sarkokhoz.
 - Amikor egy alakzatot húzol, az élei és a közepe úgy illeszkednek egy ponthoz, ahogy más alakzatokhoz ({{ui:workspace.objectSnap}}). A derékszögvonalzó is illeszkedik a pontokhoz.
 - A pontok a tervben mentődnek, egyik exportban sem jelennek meg, és a jegyzetekkel együtt a {{ui:visibility.notes}} ([[Shift]]+[[N]]) kapcsolóval jeleníthetők meg vagy rejthetők el.
-- Egy MI a `layerling_add_reference_points`, a `layerling_list_reference_points` és a `layerling_remove_reference_points` paranccsal jelölheti meg, sorolhatja fel és távolíthatja el őket.
 
 ## Mintaképek
 
@@ -90,4 +89,3 @@ A mintakép egy kép, amelyhez a részeket igazíthatod: tedd egy áramköri lap
 - A {{ui:referenceImage.calibrate}} a valódi méretére állítja, mint a vázlatban: kattints a képen két pontra, amelyek valódi távolságát ismered - például a lap két rögzítőfuratára -, és írd be ezt a távolságot a {{ui:referenceImage.distance}} mezőbe. A kép megtartja az arányait és a közepét.
 - A beállításai fejlécében lévő lakattal zárold, és a helyén marad: a kattintások átmennek rajta a tárgyasztalra. Feloldáshoz az objektumlistában válaszd ki újra.
 - A kép egyszer kerül a tervfájlba, akárhányszor másolod vagy vonod vissza. Egy nagy kép ennyivel nagyobbá teszi a fájlt; hozzáadáskor az üzenet megmondja a méretét.
-- Egy MI a `layerling_reference_image` segítségével ad hozzá, mozgat, kalibrál, halványít és zárol egyet. A `trace` a képet egy rajta álló vázlattestté rajzolja körbe, ahogy a vázlatban a {{ui:sketch.traceImageButton}}.

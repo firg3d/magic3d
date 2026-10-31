@@ -83,7 +83,7 @@ A chave **mm | in** ao lado de {{ui:inspector.snapGrid}} troca a unidade, a grad
 
 ### Rodapé
 
-No rodapé você encontra: {{ui:dashboard.sponsor}}, que leva à página onde você pode apoiar o projeto; {{ui:dashboard.userGuide}}, que abre este guia; {{ui:dashboard.forum}}, o lugar para perguntas, ideias e relatos de erros (as discussões no GitHub; em alemão, o fórum do drucktipps3d); {{ui:editor.bugReport}}, que cria um ZIP para um relato de erro; {{ui:dashboard.projectOnGitHub}}, que leva ao projeto no GitHub; e o número da versão, que abre as notas da versão. Os links para as informações legais e a política de privacidade são de quem mantém a cópia do Magic3D que você usa.
+No rodapé você encontra: {{ui:dashboard.sponsor}}, que leva à página onde você pode apoiar o projeto; {{ui:dashboard.userGuide}}, que abre este guia; {{ui:editor.bugReport}}, que cria um ZIP para um relato de erro; {{ui:dashboard.projectOnGitHub}}, que leva ao projeto no GitHub; e o número da versão, que abre as notas da versão. Os links para as informações legais e a política de privacidade são de quem mantém a cópia do Magic3D que você usa.
 
 ## Sua primeira peça
 

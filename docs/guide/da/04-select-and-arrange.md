@@ -125,8 +125,6 @@ Til udluftninger, højttalergitre, kurve og kabinetter spreder {{ui:holePattern.
 
 Hullerne er almindelige huller grupperet med formen, ligesom efter {{ui:editor.tool.group}}: intet er bagt ind. {{ui:editor.tool.ungroup}} opløser gruppen igen og frigør hvert hul, som du så kan flytte, ændre eller slette ét ad gangen. Hele tingen er ét skridt for {{ui:editor.tool.undo}}. Værktøjet laver højst 400 huller ad gangen; gør hullerne større eller afstanden bredere så.
 
-En AI kan gøre det samme gennem MCP-broen med `layerling_perforate_face` (se kapitlet [AI med MCP](chapter:ai-with-mcp)).
-
 ## Skub en flade ud eller ind
 
 Til en tykkere væg, et hævet stykke på en flade eller en lomme skåret ind i den arbejder {{ui:faceTool.title}} på én flad flade. Det virker også på en importeret STL, hvor der ingen skitse er at ændre. Vælg præcis én form og klik på {{ui:faceTool.title}} i {{ui:editor.group.modify}}-gruppen af værktøjsbjælken, ved siden af hulmønsteret. Du kan også højreklikke på formen, eller finde den med [[Ctrl]]+[[K]].
@@ -142,8 +140,6 @@ Til en tykkere væg, et hævet stykke på en flade eller en lomme skåret ind i 
 4. Kun {{ui:faceTool.apply}} laver det.
 
 Det værktøjet tilføjer, er et almindeligt skitselegeme, grupperet med formen med mindre end {{ui:faceTool.separate}} er slået til (så har {{ui:group.edit}} intet at åbne, og delen står frit): intet er bagt ind. {{ui:group.edit}} åbner gruppen, og {{ui:inspector.editSketch}} på den nye del viser det omrids, den følger. På toppen eller bunden af et rent skitselegeme – ét område, ikke grupperet, spejlet, spidst, snoet eller hældende, og uden streg, nøgleringshul, runding eller fas – er det legemets eget omrids, sat ind da det blev bygget, så dets linjer og buer forbliver nøjagtige, hvor CAD-kernen kan sætte dem ind, til kantværktøjerne og STEP-eksporten. Ændres størrelsen senere, beholder delen sit inset. På enhver anden flade, og på alle flader i et importeret mesh, følger omridset fladens trekanter, og en kurve består af korte lige stykker. Hele tingen er ét skridt for {{ui:editor.tool.undo}}. Vil du ændre inset eller radius senere, fortryd og kør værktøjet igen. Vil du runde topkanten bagefter, bruger du {{ui:editor.tool.fillet}} med {{ui:edge.topEdges}} på gruppen som sidste skridt: som enhver kantbehandling på en gruppe fører den gruppen sammen til ét legeme.
-
-En AI kan gøre det samme gennem MCP-broen med `layerling_push_face` (se kapitlet [AI med MCP](chapter:ai-with-mcp)).
 
 ## Ændre flere dele på én gang
 

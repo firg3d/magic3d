@@ -26,7 +26,7 @@ function safeFillColor(value: string) {
   return /^(?:#[0-9a-f]{3,8}|(?:rgb|hsl)a?\([^<>]+\))$/i.test(value.trim()) ? value.trim() : "#0098c7";
 }
 
-export function toSvgProjection(layers: ReadonlyArray<SvgProjectionLayer>, title = "Layerling design") {
+export function toSvgProjection(layers: ReadonlyArray<SvgProjectionLayer>, title = "Magic3D design") {
   const cleanLayers = layers.flatMap((layer) => {
     const polygons = layer.polygons.filter(
       (polygon) => polygon.length >= 3 && polygon.every(([x, y]) => Number.isFinite(x) && Number.isFinite(y)),
@@ -339,7 +339,7 @@ function chainSegments(segments: ReadonlyArray<readonly [DrawingPoint, DrawingPo
  * where a silhouette would only show the outline. In millimetres at 1:1, the plate's x and z as in
  * the silhouette export. Throws where the drawing projection does (too many triangles or edges).
  */
-export function toSvgTopEdges(bodies: ReadonlyArray<SvgEdgeBody>, title = "Layerling design") {
+export function toSvgTopEdges(bodies: ReadonlyArray<SvgEdgeBody>, title = "Magic3D design") {
   const projection = projectDrawingMeshes(bodies.map((body) => body.mesh), TOP_VIEW, true);
   const [centerX, centerY] = projection.center;
   // Back from the drawing's centred coordinates to the plate's: x stays, the page's y is the plate's z.

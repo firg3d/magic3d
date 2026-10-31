@@ -32,13 +32,9 @@ Język wybierasz w prawym górnym rogu, z listy języków. Motyw kolorów obok n
 
 ## Własna instalacja
 
-Magic3D to wolne oprogramowanie (AGPL-3.0) i można go uruchomić na własnym komputerze albo serwerze, na przykład w warsztacie, klubie albo szkole. Jest kilka sposobów, opisanych w [README na GitHubie](https://github.com/henmedia/layerling/blob/main/README.md#getting-started):
+Magic3D to wolne oprogramowanie (AGPL-3.0) i można go uruchomić na własnym komputerze albo serwerze, na przykład w warsztacie, klubie albo szkole. Jest kilka sposobów, opisanych w [README na GitHubie](https://github.com/firg3d/magic3d/blob/main/README.md):
 
-- **Szybki start w Windows:** jeden wiersz w PowerShell instaluje wszystko i kładzie skrót na pulpicie. Gdy Magic3D już działa, kolejne dwukrotne kliknięcie nie uruchamia drugiego serwera, tylko otwiera stronę.
-- **Docker:** dla urządzeń NAS i serwerów domowych, bez potrzeby instalowania Node.js. Każde wydanie jest dostępne jako gotowy obraz `henmedia/layerling` na Docker Hub (także `ghcr.io/henmedia/layerling`) dla amd64 i arm64. `docker run -d -p 3000:3000 -v layerling-thumbnails:/app/.codex/project-thumbnails henmedia/layerling:latest` go uruchamia, a na NAS-ie szukasz go w rejestrze menedżera kontenerów.
-- **Eksport statyczny:** wynikiem są zwykłe pliki, które może serwować każdy serwer WWW. Muszą leżeć w katalogu głównym adresu (`https://layerling.example.com/` albo `http://192.168.0.5:8080/`), a nie w podfolderze ani otwierane z dysku. README podaje kroki. Z zapisywalnym folderem `store` obok `index.html` i PHP na serwerze staje się też wspólnym magazynem projektów.
-
-Most MCP dla asystentów AI istnieje tylko w serwerze deweloperskim, zobacz [Budowanie z AI](chapter:ai-with-mcp).
+- **Eksport statyczny:** wynikiem są zwykłe pliki, które może serwować każdy serwer WWW. Muszą leżeć w katalogu głównym adresu (`https://magic3d.example.com/` albo `http://192.168.0.5:8080/`), a nie w podfolderze ani otwierane z dysku. README podaje kroki. Z zapisywalnym folderem `store` obok `index.html` i PHP na serwerze staje się też wspólnym magazynem projektów.
 
 ## Pomoc i opinie
 
@@ -46,5 +42,4 @@ Most MCP dla asystentów AI istnieje tylko w serwerze deweloperskim, zobacz [Bud
 
 ![Krótki przewodnik w edytorze. Na górze są wymienione filmy innych osób, a każda część ma znak zapytania.](shot:quick-guide)
 
-- Pytania, życzenia i zgłoszenia błędów są mile widziane na [forum](https://forum.drucktipps3d.de/forum/board/127-layerling/) (po niemiecku) i na [GitHubie](https://github.com/henmedia/layerling/discussions).
 - Co zmieniło się w której wersji, jest w liście zmian, którą znajdziesz na dole strony startowej i edytora.

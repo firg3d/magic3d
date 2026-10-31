@@ -32,13 +32,9 @@ Magic3D 在多个标签页中打开时，它们会互相照应：如果另一个
 
 ## 自行运行
 
-Magic3D 是自由软件（AGPL-3.0），可以运行在你自己的电脑或服务器上，例如工坊、俱乐部或学校。有几种方式，见 [GitHub 上的 README](https://github.com/henmedia/layerling/blob/main/README.zh-cn.md#快速上手)：
+Magic3D 是自由软件（AGPL-3.0），可以运行在你自己的电脑或服务器上，例如工坊、俱乐部或学校。有几种方式，见 [GitHub 上的 README](https://github.com/firg3d/magic3d/blob/main/README.md)：
 
-- **Windows 快速开始：** 在 PowerShell 中输入一行命令即可安装全部内容，并在桌面放置快捷方式。当 Magic3D 已在运行时，再次双击不会启动第二个服务器，只会打开页面。
-- **Docker：** 适用于 NAS 设备和家用服务器，无需安装 Node.js。每个版本都提供现成镜像 `henmedia/layerling`（Docker Hub，也在 `ghcr.io/henmedia/layerling`），支持 amd64 和 arm64；`docker run -d -p 3000:3000 -v layerling-thumbnails:/app/.codex/project-thumbnails henmedia/layerling:latest` 可启动它，在 NAS 上可在容器管理器的镜像仓库中搜索。卷 `layerling-thumbnails` 能让起始页的预览图在更新后保留；没有它，每次重新创建容器后预览图都会缺失，直到你打开相应设计。
-- **静态导出：** 结果是普通文件，任何 Web 服务器都能提供。它们应位于地址根目录（`https://layerling.example.com/` 或 `http://192.168.0.5:8080/`），不能放在子文件夹中，也不能从磁盘直接打开；具体步骤见 README。如果 `index.html` 旁边有可写文件夹 `store`，并且服务器装有 PHP，它还会成为设计的共享存储。
-
-用于 AI 助手的 MCP 桥接只存在于开发服务器中，见[用 AI 构建](chapter:ai-with-mcp)。
+- **静态导出：** 结果是普通文件，任何 Web 服务器都能提供。它们应位于地址根目录（`https://magic3d.example.com/` 或 `http://192.168.0.5:8080/`），不能放在子文件夹中，也不能从磁盘直接打开；具体步骤见 README。如果 `index.html` 旁边有可写文件夹 `store`，并且服务器装有 PHP，它还会成为设计的共享存储。
 
 ## 帮助与反馈
 
@@ -46,5 +42,4 @@ Magic3D 是自由软件（AGPL-3.0），可以运行在你自己的电脑或服�
 
 ![编辑器中的快速指南。顶部列出他人的视频，每一节都带有问号。](shot:quick-guide)
 
-- 欢迎在[论坛](https://forum.drucktipps3d.de/forum/board/127-layerling/)和 [GitHub](https://github.com/henmedia/layerling/discussions) 上提出问题、愿望和错误报告。
 - 哪个版本有哪些变化，见发行说明，位于起始页和编辑器的底部。

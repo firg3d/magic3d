@@ -223,13 +223,37 @@ export const scenes = {
   async "curved-text"(ctx) {
     await freshEditor(ctx);
     await create(ctx, { kind: "cylinder", x: 0, z: 0, width: 64, depth: 64, height: 4, color: BLUE });
-    const text = await create(ctx, { kind: "text", x: 0, z: 0, elevation: 4, height: 3, text: "layerling", color: ORANGE });
+    const text = await create(ctx, { kind: "text", x: 0, z: 0, elevation: 4, height: 3, text: "Magic3D", color: ORANGE });
     await ctx.mcp("update_object", { id: text, textCurved: true, textRadius: 20, textSize: 8 });
     await select(ctx, [text]);
     await ctx.click(ctx.t("view.top"));
     await ctx.wait(1500);
     await ctx.reveal(ctx.t("prop.textFlipped"));
     await ctx.shot("curved-text");
+  },
+
+  // Magic3D: the picture at the top of the README (docs/media/magic3d-editor.webp), not used by the guide.
+  async "readme-hero"(ctx) {
+    await freshEditor(ctx);
+    await ctx.evaluate(`(() => {
+      const input = document.querySelector(".toolbar-project-name-field input");
+      if (!input) return false;
+      input.focus();
+      Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "value").set.call(input, "Magic3D Demo");
+      input.dispatchEvent(new Event("input", { bubbles: true }));
+      input.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter", bubbles: true }));
+      input.blur();
+      return true;
+    })()`);
+    await create(ctx, { kind: "roundedBox", x: 0, z: 0, width: 120, depth: 74, height: 5, cornerFillet: 7, color: "#2f3a35" });
+    await create(ctx, { kind: "text", x: -14, z: 14, elevation: 5, height: 4, width: 74, bevel: 0.4, text: "Magic3D", color: "#2fbf71" });
+    await create(ctx, { kind: "gear", x: 34, z: -16, elevation: 5, width: 32, depth: 32, height: 7, teeth: 18, gearType: "helical", color: "#f4f7f5" });
+    await create(ctx, { kind: "thread", threadRole: "screw", threadDiameter: 8, height: 30, x: -40, z: -20, elevation: 5, color: "#c3ccc7" });
+    await create(ctx, { kind: "thread", threadRole: "nut", threadDiameter: 8, x: -18, z: -22, elevation: 5, color: "#c3ccc7" });
+    await select(ctx, []);
+    await ctx.click(ctx.t("camera.home"));
+    await quiet(ctx);
+    await ctx.shot("readme-hero");
   },
 
   async "thread-screw"(ctx) {

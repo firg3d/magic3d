@@ -80,7 +80,6 @@ A reference point is a bare mark in space, like a pencil mark or a layout point 
 - The tape measure can mark a point too: {{ui:camera.tapeMarkMiddle}}, the half-filled mark in the middle of a measurement, puts one in its middle, in the centre of a round hole for example. And it measures from a point: the tape snaps to reference points like to corners.
 - When you drag a shape, its edges and its centre snap to a point, like they snap to other shapes ({{ui:workspace.objectSnap}}). The framing square snaps to points too.
 - Points are saved in the design, appear in no export, and are shown or hidden together with the notes by {{ui:visibility.notes}} ([[Shift]]+[[N]]).
-- An AI can mark, list and remove them with `layerling_add_reference_points`, `layerling_list_reference_points` and `layerling_remove_reference_points`.
 
 ## Reference images
 
@@ -92,4 +91,3 @@ A reference image is a picture to line parts up on: lay a photo of a circuit boa
 - {{ui:referenceImage.calibrate}} gives it its true size, as in the sketch: click two points on the picture whose real distance you know - two mounting holes of the board, say - and type that distance in {{ui:referenceImage.distance}}. The picture keeps its proportions and its middle.
 - Lock it with the lock in the header of its settings, and it stays put: clicks then go through it to the plate. Pick it in the object list to unlock it.
 - The picture is saved once in the design file, however often it is copied or undone. A large picture makes the file larger by as much; the message when you add it says how large it is.
-- An AI adds, moves, calibrates, fades and locks one with `layerling_reference_image`. With `trace` it traces the picture into a sketch body standing on it, as the sketch's {{ui:sketch.traceImageButton}} does.

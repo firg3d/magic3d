@@ -38,7 +38,7 @@ Arabisch, Perzisch, Urdu en Hebreeuws worden van rechts naar links geschreven: d
 
 | Browser | Lettertypebestand kiezen | Lettertype van de computer |
 | --- | --- | --- |
-| Chrome en Edge op een computer, ook de geïnstalleerde layerling-app | ja | ja, nadat de browser het vraagt |
+| Chrome en Edge op een computer, ook de geïnstalleerde Magic3D-app | ja | ja, nadat de browser het vraagt |
 | Firefox | ja | nee |
 | Safari op een Mac | ja | nee |
 | Tablet en telefoon | ja, uit de bestanden van het apparaat | nee |
@@ -62,7 +62,7 @@ Dus:
 - **Het ontwerp opent overal correct**, ook op een computer zonder het lettertype. De teksten zien er hetzelfde uit en kunnen worden verplaatst, gedraaid, geschaald en afgerond.
 - **Nieuwe letters hebben het lettertype nodig.** Typt iemand zonder het lettertype een letter die het ontwerp niet heeft meegebracht, dan tekent Magic3D die uit Sans. Onder {{ui:prop.font}} is het lettertype dan gemarkeerd als {{ui:font.fromDesign}}. Voeg je het lettertypebestand toe, dan komt elke letter terug.
 - **Exports bevatten alleen geometrie.** STL, 3MF, OBJ, STEP en SVG bevatten lichamen en contouren, geen lettertype.
-- **Oudere layerling-versies** kennen eigen lettertypen nog niet en tekenen zulke teksten in Multilanguage.
+- **Oudere Magic3D-versies** kennen eigen lettertypen nog niet en tekenen zulke teksten in Multilanguage.
 
 **Licenties:** Lettertypen zijn auteursrechtelijk beschermd, en hun licentie bepaalt wat je ermee mag. De ingesloten lettercontouren zijn wat PDF-bestanden van een lettertype meenemen, en de meeste licenties staan dat toe. Sommige commerciële lettertypen verbieden echter zelfs het doorgeven van losse letters. Controleer de licentie van het lettertype voordat je een ontwerp met een eigen lettertype doorgeeft of publiceert. Gratis lettertypen zoals die van Google Fonts (meestal onder de SIL Open Font License) kun je zonder zorgen doorgeven. Voor een geprint onderdeel of een geëxporteerde STL maakt het niet uit: die bevatten geen lettertype meer, alleen geometrie.
 

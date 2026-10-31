@@ -772,7 +772,7 @@ html[data-theme="dark"] .m3d-start .m3d-buton-plin:hover {
 }
 
 /* ---------- ecrane mai inguste ---------- */
-@media (max-width: 1200px) {
+@media (max-width: 1340px) {
   .m3d-nav {
     display: none;
   }

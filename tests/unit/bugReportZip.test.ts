@@ -6,7 +6,7 @@ describe("the bug report as a ZIP (#234)", () => {
   const design = new TextEncoder().encode("not a real design, only bytes");
   const zip = packBackup([
     { name: "My design.lyl", bytes: design },
-    { name: BUG_REPORT_FILE, bytes: new TextEncoder().encode("layerling bug report") },
+    { name: BUG_REPORT_FILE, bytes: new TextEncoder().encode("Magic3D bug report") },
   ]);
 
   it("is a ZIP the start page takes for a backup, as it holds a design", () => {

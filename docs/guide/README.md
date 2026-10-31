@@ -1,7 +1,7 @@
 # The user guide
 
-The guide at [layerling.com/guide](https://layerling.com/guide/index.html) (English),
-[layerling.com/anleitung](https://layerling.com/anleitung/index.html) (German) and in fifteen more languages (Arabic,
+The guide at [magic3d.ro/ghid](https://magic3d.ro/ghid/index.html) (Romanian), [magic3d.ro/guide](https://magic3d.ro/guide/index.html) (English)
+and in fifteen more languages (Arabic,
 Brazilian Portuguese, Czech, Danish, Dutch, French, Hungarian, Italian, Polish, Portuguese (Portugal), Russian, Simplified Chinese, Slovenian, Spanish, Traditional Chinese) is written here and built into plain static pages;
 the two interface languages without a guide of their own (Japanese, Turkish) show the English one. It ships with the program: `npm run export` and `npm run dev` build it, nothing else to deploy. The build
 also writes a `search-index.json` per language (one entry per section of every chapter), which the search box in the

@@ -11,7 +11,7 @@ Magic3D er et designprogram til 3D-print der kører direkte i din browser. Du by
 
 Åbn [magic3d.ro](https://magic3d.ro/). Klik på {{ui:dashboard.createDesign}} på startsiden. Editoren åbner med et tomt arbejdsplan, det gitter som alt tager form på.
 
-Har du allerede en fil du vil fortsætte med, så brug {{ui:dashboard.importGeometry}}. Det virker for layerling-designs (`.lyl`) samt STL-, OBJ-, 3MF-, STEP- eller SVG-filer.
+Har du allerede en fil du vil fortsætte med, så brug {{ui:dashboard.importGeometry}}. Det virker for Magic3D-designs (`.lyl`) samt STL-, OBJ-, 3MF-, STEP- eller SVG-filer.
 
 Alle dine designs vises senere på startsiden med et forhåndsbillede. De gemmes i din browsers lager og gemmes automatisk efter hver ændring, så der er ingen gem-knap. Hvordan du pakker designs i en fil og giver dem videre er dækket i [Filer og lagring](chapter:files-and-saving). Hvis du ønsker en påmindelse, så slå {{ui:workspace.confirmTabClose}} til i indstillingerne (tandhjulet i båndet): Browseren spørger så, før en fane med et åbent design lukkes eller genindlæses.
 Men sikkerhedskopiér dine designs ind imellem: en browser kan fejle, og en browseropdatering kan give problemer, og **Magic3D påtager sig intet ansvar for designs, der opbevares i browseren.** Det gør du fra startsiden med {{ui:dashboard.backupAll}}, eller du gemmer designs som filer. En sikkerhedskopi hentes tilbage med {{ui:dashboard.restoreBackup}}.
@@ -84,7 +84,7 @@ Kontakten **mm | in** ved siden af {{ui:inspector.snapGrid}} ændrer enheden, pl
 
 ### Sidefoden
 
-Nederst i vinduet: {{ui:dashboard.sponsor}} fører til siden, hvor du kan støtte projektet; {{ui:dashboard.userGuide}} åbner denne vejledning; {{ui:dashboard.forum}} fører til stedet for spørgsmål, idéer og fejlrapporter (diskussionerne på GitHub, på tysk forummet hos drucktipps3d); {{ui:editor.bugReport}} laver en ZIP til en fejlrapport; {{ui:dashboard.projectOnGitHub}} fører til projektet på GitHub, og versionsnummeret åbner udgivelsesnoterne. Linkene til impressum og privatlivspolitik hører til den, der driver den kopi af Magic3D, du bruger.
+Nederst i vinduet: {{ui:dashboard.sponsor}} fører til siden, hvor du kan støtte projektet; {{ui:dashboard.userGuide}} åbner denne vejledning; {{ui:editor.bugReport}} laver en ZIP til en fejlrapport; {{ui:dashboard.projectOnGitHub}} fører til projektet på GitHub, og versionsnummeret åbner udgivelsesnoterne. Linkene til impressum og privatlivspolitik hører til den, der driver den kopi af Magic3D, du bruger.
 
 ## Din første del
 

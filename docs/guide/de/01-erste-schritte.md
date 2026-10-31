@@ -11,7 +11,7 @@ Magic3D ist ein Konstruktionsprogramm für den 3D-Druck, das direkt im Browser l
 
 Öffne [magic3d.ro](https://magic3d.ro/). Auf der Startseite klickst du auf {{ui:dashboard.createDesign}}. Damit öffnet sich der Editor mit einer leeren Arbeitsebene, dem Gitter, auf dem alles entsteht.
 
-Hast du schon eine Datei, die du weiterbearbeiten willst, nimmst du {{ui:dashboard.importGeometry}}. Das geht mit layerling-Entwürfen (`.lyl`) genauso wie mit STL-, OBJ-, 3MF-, STEP- oder SVG-Dateien.
+Hast du schon eine Datei, die du weiterbearbeiten willst, nimmst du {{ui:dashboard.importGeometry}}. Das geht mit Magic3D-Entwürfen (`.lyl`) genauso wie mit STL-, OBJ-, 3MF-, STEP- oder SVG-Dateien.
 
 Alle deine Entwürfe erscheinen später auf der Startseite mit einem Vorschaubild. Sie liegen im Speicher deines Browsers und werden bei jeder Änderung automatisch gesichert. Ein Knopf zum Speichern gibt es deshalb nicht. **Magic3D übernimmt keine Verantwortung für Entwürfe, die im Browser gespeichert sind.** Ein Browser kann Fehler machen, und ein Update kann Probleme bereiten. Sichere deine Entwürfe deshalb von Zeit zu Zeit mit {{ui:dashboard.backupAll}} auf der Startseite oder speichere sie als Dateien. Eine Sicherung holst du mit {{ui:dashboard.restoreBackup}} zurück. Wie du Entwürfe in eine Datei packst und weitergibst, steht im Kapitel [Dateien und Speichern](chapter:dateien-und-speichern). Wenn du eine Gedächtnisstütze möchtest, schalte in den Einstellungen (Zahnrad im Band) {{ui:workspace.confirmTabClose}} ein: Der Browser fragt dann, bevor ein Tab mit offenem Entwurf geschlossen oder neu geladen wird.
 
@@ -83,7 +83,7 @@ Der Schalter **mm | in** neben {{ui:inspector.snapGrid}} ändert die Einheit, da
 
 ### Die Fußzeile
 
-Am Fuß des Fensters: {{ui:dashboard.sponsor}} führt zur Seite, auf der du das Projekt unterstützen kannst; {{ui:dashboard.userGuide}} öffnet diese Anleitung; {{ui:dashboard.forum}} führt zum Ort für Fragen, Ideen und Fehlermeldungen (die Diskussionen auf GitHub, auf Deutsch das Forum von drucktipps3d); {{ui:editor.bugReport}} macht ein ZIP für eine Fehlermeldung; {{ui:dashboard.projectOnGitHub}} führt zum Projekt auf GitHub, und die Versionsnummer öffnet die Versionshinweise. Die Links zu Impressum und Datenschutz gehören dem, der die Kopie von Magic3D betreibt, die du benutzt.
+Am Fuß des Fensters: {{ui:dashboard.sponsor}} führt zur Seite, auf der du das Projekt unterstützen kannst; {{ui:dashboard.userGuide}} öffnet diese Anleitung; {{ui:editor.bugReport}} macht ein ZIP für eine Fehlermeldung; {{ui:dashboard.projectOnGitHub}} führt zum Projekt auf GitHub, und die Versionsnummer öffnet die Versionshinweise. Die Links zu Impressum und Datenschutz gehören dem, der die Kopie von Magic3D betreibt, die du benutzt.
 
 ## Dein erstes Teil
 

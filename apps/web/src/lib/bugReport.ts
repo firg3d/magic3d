@@ -50,8 +50,8 @@ export function bugReportText(info: BugReportInfo): string {
   const kinds = Object.entries(info.shapeKinds).sort(([a], [b]) => a.localeCompare(b)).map(([kind, count]) => `${kind} ${count}`).join(", ") || "none";
   const events = (list: readonly BugReportEvent[]) => (list.length ? list.map((event) => `  ${clock(event.at)}  ${event.text}`).join("\n") : "  (none)");
   return [
-    "layerling bug report",
-    "====================",
+    "Magic3D bug report",
+    "==================",
     "",
     `Version:      ${info.version}`,
     `Created:      ${clock(info.createdAt)} UTC`,

@@ -123,4 +123,4 @@ Magic3D rekent en tekent alles in je browser. Op een oudere computer, met een zw
 - **Losse schakelaars:** Zonder snelle modus kun je ook alleen {{ui:workspace.showShadows}} of {{ui:workspace.edgeLines}} uitzetten.
 - **Gebruik de videokaart:** Open in Chrome `chrome://gpu` (in Edge `edge://gpu`). Naast "WebGL" hoort "Hardware accelerated" te staan. Staat er "Software only", dan is hardwareversnelling uitgeschakeld in de instellingen van de browser. Op Windows kun je onder Instellingen → Systeem → Beeldscherm → Graphics ook "Hoge prestaties" kiezen voor de browser, zodat hij de echte videokaart gebruikt en niet de zwakkere in de processor.
 - **Vereenvoudig grote geïmporteerde meshes:** Een model van vele honderdduizenden driehoeken vertraagt elke weergave. Hoe je het uitdunt, staat in het hoofdstuk over bestanden, onder "Een geïmporteerde mesh vereenvoudigen".
-- **Sluit andere tabbladen:** Elk open layerling-tabblad en elke andere 3D-pagina deelt dezelfde videokaart.
+- **Sluit andere tabbladen:** Elk open Magic3D-tabblad en elke andere 3D-pagina deelt dezelfde videokaart.

@@ -83,7 +83,7 @@ Stikalo **mm | in** ob {{ui:inspector.snapGrid}} spremeni enoto, mrežo plošče
 
 ### Noga okna
 
-Na dnu okna: {{ui:dashboard.sponsor}} vodi na stran, kjer lahko podprete projekt; {{ui:dashboard.userGuide}} odpre ta priročnik; {{ui:dashboard.forum}} vodi na mesto za vprašanja, zamisli in poročila o napakah (razprave na GitHubu, v nemščini forum drucktipps3d); {{ui:editor.bugReport}} naredi ZIP za poročilo o napaki; {{ui:dashboard.projectOnGitHub}} vodi do projekta na GitHubu, številka različice pa odpre opombe ob izdaji. Povezavi na podatke o ponudniku in na varstvo zasebnosti pripadata tistemu, ki upravlja kopijo Magic3D, ki jo uporabljate.
+Na dnu okna: {{ui:dashboard.sponsor}} vodi na stran, kjer lahko podprete projekt; {{ui:dashboard.userGuide}} odpre ta priročnik; {{ui:editor.bugReport}} naredi ZIP za poročilo o napaki; {{ui:dashboard.projectOnGitHub}} vodi do projekta na GitHubu, številka različice pa odpre opombe ob izdaji. Povezavi na podatke o ponudniku in na varstvo zasebnosti pripadata tistemu, ki upravlja kopijo Magic3D, ki jo uporabljate.
 
 ## Tvoj prvi del
 

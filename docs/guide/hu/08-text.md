@@ -60,7 +60,7 @@ Tehát:
 - **A terv bárhol helyesen nyílik meg**, olyan számítógépen is, ahol nincs meg a betűtípus. A szövegek ugyanúgy néznek ki, és mozgathatók, forgathatók, méretezhetők és lekerekíthetők.
 - **Az új betűkhöz kell a betűtípus.** Ha valaki, akinél nincs meg a betűtípus, olyan betűt gépel, amelyet a terv nem hozott magával, a Magic3D a Sans-ból rajzolja meg. A {{ui:prop.font}} alatt a betűtípus ilyenkor {{ui:font.fromDesign}} jelölést kap. A betűtípusfájl hozzáadása minden betűt visszahoz.
 - **Az exportok csak geometriát tartalmaznak.** Az STL, a 3MF, az OBJ, a STEP és az SVG testeket és körvonalakat tartalmaz, betűtípust nem.
-- **A régebbi layerling-verziók** még nem ismerik a saját betűtípusokat, és az ilyen szövegeket Multilanguage betűtípussal rajzolják.
+- **A régebbi Magic3D-verziók** még nem ismerik a saját betűtípusokat, és az ilyen szövegeket Multilanguage betűtípussal rajzolják.
 
 **Licencek:** A betűtípusokat szerzői jog védi, és a licencük mondja meg, mit tehetsz velük. A beágyazott betűkörvonalak ugyanazok, amelyeket a PDF-fájlok is magukkal visznek egy betűtípusból, és a legtöbb licenc ezt megengedi. Egyes kereskedelmi betűtípusok viszont még egyes betűk továbbadását is tiltják. Mielőtt egy saját betűtípusos tervet továbbadsz vagy közzéteszel, nézd meg a betűtípus licencét. Az ingyenes betűtípusok, például a Google Fonts betűtípusai (többnyire SIL Open Font License alatt), gond nélkül továbbadhatók. Egy kinyomtatott alkatrésznél vagy egy exportált STL-nél ez nem számít: ezekben már nincs betűtípus, csak geometria.
 

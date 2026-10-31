@@ -32,13 +32,9 @@ Limba o alegi în dreapta sus, din lista de limbi. Schema de culori de lângă e
 
 ## Rularea pe propriul calculator
 
-Magic3D e software liber (AGPL-3.0) și poate fi rulat pe propriul calculator sau server, de exemplu într-un atelier, un club sau o școală. Există mai multe variante, descrise în [README pe GitHub](https://github.com/henmedia/layerling/blob/main/README.md#getting-started):
+Magic3D e software liber (AGPL-3.0) și poate fi rulat pe propriul calculator sau server, de exemplu într-un atelier, un club sau o școală. Există mai multe variante, descrise în [README pe GitHub](https://github.com/firg3d/magic3d/blob/main/README.md):
 
-- **Pornirea rapidă pe Windows:** O singură linie în PowerShell instalează tot și pune o scurtătură pe desktop. Când Magic3D rulează deja, încă un dublu clic nu pornește un al doilea server, ci doar deschide pagina.
-- **Docker:** Pentru dispozitive NAS și servere de acasă, fără să fie nevoie de Node.js instalat. Fiecare versiune vine ca imagine gata făcută `henmedia/layerling` pe Docker Hub (și `ghcr.io/henmedia/layerling`) pentru amd64 și arm64; `docker run -d -p 3000:3000 -v layerling-thumbnails:/app/.codex/project-thumbnails henmedia/layerling:latest` o pornește, iar pe un NAS o cauți în registrul managerului de containere. Volumul `layerling-thumbnails` păstrează imaginile de previzualizare de pe pagina de start la o actualizare; fără el, acestea lipsesc de fiecare dată când containerul e creat din nou, până când deschizi proiectul.
-- **Export static:** Rezultatul sunt fișiere simple pe care le poate servi orice server web. Locul lor e la rădăcina unei adrese (`https://layerling.example.com/` sau `http://192.168.0.5:8080/`), nu într-un subdosar și nu deschise de pe disc; pașii sunt în README. Cu un dosar `store` în care se poate scrie, lângă `index.html`, și cu PHP pe server, devine și stocarea comună pentru proiecte.
-
-Puntea MCP pentru asistenții AI există doar în serverul de dezvoltare; vezi [Construiește cu un AI](chapter:ai-with-mcp).
+- **Export static:** Rezultatul sunt fișiere simple pe care le poate servi orice server web. Locul lor e la rădăcina unei adrese (`https://magic3d.example.com/` sau `http://192.168.0.5:8080/`), nu într-un subdosar și nu deschise de pe disc; pașii sunt în README. Cu un dosar `store` în care se poate scrie, lângă `index.html`, și cu PHP pe server, devine și stocarea comună pentru proiecte.
 
 ## Ajutor și feedback
 
@@ -46,5 +42,4 @@ Puntea MCP pentru asistenții AI există doar în serverul de dezvoltare; vezi [
 
 ![Ghidul rapid din editor. Videoclipurile făcute de alții sunt listate sus, iar fiecare secțiune are un semn al întrebării.](shot:quick-guide)
 
-- Întrebările, dorințele și raportările de erori sunt binevenite pe [forum](https://forum.drucktipps3d.de/forum/board/127-layerling/) și pe [GitHub](https://github.com/henmedia/layerling/discussions).
 - Ce s-a schimbat în fiecare versiune găsești în notele de versiune, din partea de jos a paginii de start și a editorului.

@@ -78,7 +78,6 @@ Referenční bod je samostatná značka v prostoru, podobná rysce při práci v
 - Bod vytvoří i měřicí nástroj: {{ui:camera.tapeMarkMiddle}}, napůl vyplněná značka uprostřed měření, označí jeho střed, například střed kruhového otvoru. Měřit lze také od takového bodu: pásmo se k referenčním bodům přichytává stejně jako k rohům.
 - Při tažení se na body přichytávají hrany i středy tvarů, stejně jako na jiná tělesa při {{ui:workspace.objectSnap}}. Přichytává se i úhelník.
 - Body se ukládají do projektu, neexportují se a zobrazují či skrývají se společně s poznámkami přes {{ui:visibility.notes}} ([[Shift]]+[[N]]).
-- AI je může vytvářet, vypisovat a odstraňovat pomocí `layerling_add_reference_points`, `layerling_list_reference_points` a `layerling_remove_reference_points`.
 
 ## Referenční obrázky
 
@@ -90,4 +89,3 @@ Referenční obrázek je obrázek, podle kterého zarovnáte díly: položte fot
 - {{ui:referenceImage.calibrate}} mu dá skutečnou velikost jako ve skice: klikněte na dva body obrázku, jejichž skutečnou vzdálenost znáte - třeba dva montážní otvory desky - a zadejte tuto vzdálenost do pole {{ui:referenceImage.distance}}. Obrázek si zachová proporce i střed.
 - Zamkněte ho zámkem v záhlaví jeho nastavení a zůstane na místě: kliknutí pak jím procházejí na podložku. K odemčení ho vyberte v seznamu objektů.
 - Obrázek je v souboru návrhu uložen jednou, ať se kopíruje nebo vrací kolikrát chce. Velký obrázek zvětší soubor o tolik; hlášení při přidání uvede jeho velikost.
-- AI ho přidá, posune, kalibruje, zeslabí a zamkne pomocí `layerling_reference_image`. S `trace` obrázek obkreslí do tělesa náčrtu, které na něm stojí, jako {{ui:sketch.traceImageButton}} v náčrtu.

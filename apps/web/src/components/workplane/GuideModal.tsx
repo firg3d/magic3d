@@ -7,7 +7,6 @@ import { useMovablePanel } from "@/lib/useMovablePanel";
 import { guideHref, type GuideChapter } from "@/lib/guideLinks";
 import { t, type MessageKey } from "@/lib/i18n";
 import { useLanguage } from "@/lib/useLanguage";
-import { LAYERLING_VIDEOS } from "@/lib/layerlingVideos";
 
 /**
  * The short version of the manual, in the same shell as the shortcut list:
@@ -162,16 +161,6 @@ export function GuideModal({ onClose, sharedStore = false, sketchMode = false }:
         </header>
         <div className="workspace-modal-content">
           <div className="workspace-modal-body shortcuts-modal-body">
-            <div className="guide-videos">
-              <strong>{t("guide.videos")}</strong>
-              <ul>
-                {LAYERLING_VIDEOS.map((video) => (
-                  <li key={video.url}>
-                    <a href={video.url} target="_blank" rel="noopener noreferrer">{video.title}</a> ({video.lang})
-                  </li>
-                ))}
-              </ul>
-            </div>
             <div className="shortcuts-groups">
               {sections.map((section) => (
                 <section className="shortcuts-group guide-section" key={section.title}>

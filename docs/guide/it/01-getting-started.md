@@ -83,7 +83,7 @@ L’interruttore **mm | in** accanto a {{ui:inspector.snapGrid}} cambia l’unit
 
 ### Piè di pagina
 
-In fondo alla finestra trovi {{ui:dashboard.sponsor}}, che porta alla pagina per sostenere il progetto; {{ui:dashboard.userGuide}}, che apre questa guida; {{ui:dashboard.forum}}, per domande, idee e segnalazioni di problemi (le discussioni su GitHub oppure, in tedesco, il forum di drucktipps3d); {{ui:editor.bugReport}}, che crea un file ZIP per segnalare un problema; e {{ui:dashboard.projectOnGitHub}}, che porta al progetto su GitHub. Il numero di versione apre le note di rilascio. I collegamenti alle note legali e all’informativa sulla privacy dipendono da chi gestisce la copia di Magic3D che stai usando.
+In fondo alla finestra trovi {{ui:dashboard.sponsor}}, che porta alla pagina per sostenere il progetto; {{ui:dashboard.userGuide}}, che apre questa guida; {{ui:editor.bugReport}}, che crea un file ZIP per segnalare un problema; e {{ui:dashboard.projectOnGitHub}}, che porta al progetto su GitHub. Il numero di versione apre le note di rilascio. I collegamenti alle note legali e all’informativa sulla privacy dipendono da chi gestisce la copia di Magic3D che stai usando.
 
 ## Il tuo primo pezzo
 

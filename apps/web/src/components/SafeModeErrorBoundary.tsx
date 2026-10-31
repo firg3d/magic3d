@@ -44,7 +44,7 @@ function saveBytes(bytes: Uint8Array, name: string) {
   const url = URL.createObjectURL(blob);
   const anchor = document.createElement("a");
   anchor.href = url;
-  anchor.download = `${name.replace(/[\\/:*?"<>|\u0000-\u001f]/g, "-").trim() || "layerling"}.lyl`;
+  anchor.download = `${name.replace(/[\\/:*?"<>|\u0000-\u001f]/g, "-").trim() || "magic3d"}.lyl`;
   document.body.appendChild(anchor);
   anchor.click();
   anchor.remove();
@@ -73,7 +73,7 @@ export function SafeModeScreen({ error, projectId, projectName, onGoToDashboard,
     setBackup("busy");
     const bytes = await storedProjectPackage(projectId);
     if (bytes && bytes.byteLength > 0) {
-      saveBytes(bytes, projectName || "layerling");
+      saveBytes(bytes, projectName || "magic3d");
       setBackup("idle");
     } else {
       setBackup("missing");

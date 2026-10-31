@@ -30,13 +30,10 @@ De taal kies je rechtsboven in de taallijst. Het kleurenschema ernaast biedt {{u
 
 ## Zelf draaien
 
-Magic3D is vrije software (AGPL-3.0) en kan op je eigen computer of server draaien, bijvoorbeeld in een werkplaats, een vereniging of een school. Daarvoor zijn er meerdere manieren, beschreven in de [README op GitHub](https://github.com/henmedia/layerling/blob/main/README.nl.md#aan-de-slag):
+Magic3D is vrije software (AGPL-3.0) en kan op je eigen computer of server draaien, bijvoorbeeld in een werkplaats, een vereniging of een school. Daarvoor zijn er meerdere manieren, beschreven in de [README op GitHub](https://github.com/firg3d/magic3d/blob/main/README.md):
 
-- **De snelstart op Windows:** Eén regel in PowerShell installeert alles en zet een snelkoppeling op het bureaublad. Draait Magic3D al, dan start een volgende dubbelklik geen tweede server, maar opent alleen de pagina.
-- **Docker:** Voor NAS-apparaten en thuisservers, zonder dat Node.js geïnstalleerd hoeft te zijn. Elke release komt als kant-en-klare image `henmedia/layerling` op Docker Hub (ook `ghcr.io/henmedia/layerling`) voor amd64 en arm64; `docker run -d -p 3000:3000 -v layerling-thumbnails:/app/.codex/project-thumbnails henmedia/layerling:latest` start hem, en op een NAS zoek je hem op in het register van de containerbeheerder.
-- **Statische export:** Het resultaat bestaat uit gewone bestanden die elke webserver kan uitleveren. Ze horen in de root van een adres (`https://layerling.example.com/` of `http://192.168.0.5:8080/`), niet in een submap en niet vanaf de schijf geopend; de README beschrijft de stappen. Met een beschrijfbare map `store` naast `index.html` en PHP op de server wordt het ook de gedeelde opslag voor ontwerpen.
+- **Statische export:** Het resultaat bestaat uit gewone bestanden die elke webserver kan uitleveren. Ze horen in de root van een adres (`https://magic3d.example.com/` of `http://192.168.0.5:8080/`), niet in een submap en niet vanaf de schijf geopend; de README beschrijft de stappen. Met een beschrijfbare map `store` naast `index.html` en PHP op de server wordt het ook de gedeelde opslag voor ontwerpen.
 
-De MCP-brug voor AI-assistenten bestaat alleen in de ontwikkelserver, zie [Bouwen met een AI](chapter:ai-met-mcp).
 
 ## Hulp en feedback
 
@@ -44,5 +41,4 @@ De MCP-brug voor AI-assistenten bestaat alleen in de ontwikkelserver, zie [Bouwe
 
 ![De beknopte handleiding in de editor. Video's van anderen staan bovenaan, en elk onderdeel heeft een vraagteken.](shot:quick-guide)
 
-- Vragen, wensen en foutmeldingen zijn welkom op het [forum](https://forum.drucktipps3d.de/forum/board/127-layerling/) en op [GitHub](https://github.com/henmedia/layerling/discussions).
 - Wat er in welke versie veranderd is, staat in de release notes, die je onderaan de startpagina en de editor vindt.

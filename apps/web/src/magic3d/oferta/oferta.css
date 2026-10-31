@@ -210,3 +210,14 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Butoanele Magic3D din bara de sus (Generatoare, Cere oferta) iau loc de la numele proiectului: la latimi
+   mici, campul cu numele se strange in spatiul lui in loc sa treaca peste butonul de langa. */
+.toolbar-project-name {
+  overflow: hidden;
+}
+
+.toolbar-project-name-field,
+.toolbar-project-name-field input {
+  max-width: 100%;
+}

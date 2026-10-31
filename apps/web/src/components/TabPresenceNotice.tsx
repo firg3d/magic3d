@@ -82,6 +82,9 @@ export function TabPresenceNotice({ version, projectId }: { version: string; pro
   const showOpenedAfter = openedAfterAnother && !keepHere;
   if (!newerVersion && !sameProjectElsewhere && !showOpenedAfter) return null;
 
+  // Magic3D: only an earlier tab, nothing at risk - a quiet pill that announces itself politely.
+  const quiet = !newerVersion && !sameProjectElsewhere;
+
   const closeThisTab = () => {
     // Browsers let a page close itself only when it is a fresh tab with nothing
     // to go back to; otherwise nothing happens, and then the note says so.
@@ -90,7 +93,7 @@ export function TabPresenceNotice({ version, projectId }: { version: string; pro
   };
 
   return (
-    <aside className="tab-presence-notice" role="alert">
+    <aside className={`tab-presence-notice${quiet ? " tab-presence-discret" : ""}`} role={quiet ? "status" : "alert"}>
       <TriangleAlert size={18} aria-hidden="true" className="tab-presence-icon" />
       <span>
         {newerVersion

@@ -83,7 +83,7 @@ Přepínač **mm | in** vedle {{ui:inspector.snapGrid}} mění jednotku, mříž
 
 ### Zápatí
 
-Dole v okně: {{ui:dashboard.sponsor}} vede na stránku, kde můžete projekt podpořit; {{ui:dashboard.userGuide}} otevře tuto příručku; {{ui:dashboard.forum}} vede na místo pro otázky, nápady a hlášení chyb (diskuse na GitHubu, v němčině fórum drucktipps3d); {{ui:editor.bugReport}} vytvoří ZIP pro hlášení chyby; {{ui:dashboard.projectOnGitHub}} vede na projekt na GitHubu a číslo verze otevře poznámky k vydání. Odkazy na provozovatele a ochranu osobních údajů patří tomu, kdo provozuje kopii Magic3D, kterou používáte.
+Dole v okně: {{ui:dashboard.sponsor}} vede na stránku, kde můžete projekt podpořit; {{ui:dashboard.userGuide}} otevře tuto příručku; {{ui:editor.bugReport}} vytvoří ZIP pro hlášení chyby; {{ui:dashboard.projectOnGitHub}} vede na projekt na GitHubu a číslo verze otevře poznámky k vydání. Odkazy na provozovatele a ochranu osobních údajů patří tomu, kdo provozuje kopii Magic3D, kterou používáte.
 
 ## První díl
 

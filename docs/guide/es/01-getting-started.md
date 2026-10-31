@@ -83,7 +83,7 @@ El interruptor **mm | in**, junto a {{ui:inspector.snapGrid}}, cambia en este di
 
 ### El pie de página
 
-En la parte de abajo de la ventana: {{ui:dashboard.sponsor}} lleva a la página donde puedes apoyar el proyecto; {{ui:dashboard.userGuide}} abre esta guía; {{ui:dashboard.forum}} lleva al sitio para preguntas, ideas e informes de errores (las discusiones de GitHub; en alemán, el foro de drucktipps3d); {{ui:editor.bugReport}} genera un ZIP para un informe de error; {{ui:dashboard.projectOnGitHub}} lleva al proyecto en GitHub, y el número de versión abre las notas de la versión. Los enlaces al aviso legal y a la política de privacidad son responsabilidad de quien gestiona la copia de Magic3D que usas.
+En la parte de abajo de la ventana: {{ui:dashboard.sponsor}} lleva a la página donde puedes apoyar el proyecto; {{ui:dashboard.userGuide}} abre esta guía; {{ui:editor.bugReport}} genera un ZIP para un informe de error; {{ui:dashboard.projectOnGitHub}} lleva al proyecto en GitHub, y el número de versión abre las notas de la versión. Los enlaces al aviso legal y a la política de privacidad son responsabilidad de quien gestiona la copia de Magic3D que usas.
 
 ## Tu primera pieza
 

@@ -83,7 +83,7 @@ Magic3D 是一款直接在瀏覽器中執行的 3D 列印設計程式。你用�
 
 ### 頁尾
 
-視窗底部：{{ui:dashboard.sponsor}} 通往可以贊助本專案的頁面；{{ui:dashboard.userGuide}} 開啟本指南；{{ui:dashboard.forum}} 通往提問、分享想法與回報錯誤的地方（GitHub 上的討論區，德語使用者則是 drucktipps3d 論壇）；{{ui:editor.bugReport}} 會產生一份回報錯誤用的 ZIP；{{ui:dashboard.projectOnGitHub}} 通往 GitHub 上的專案，版本號則會開啟版本說明。法律聲明與隱私權政策的連結，屬於你所使用的那份 Magic3D 的營運者。
+視窗底部：{{ui:dashboard.sponsor}} 通往可以贊助本專案的頁面；{{ui:dashboard.userGuide}} 開啟本指南；{{ui:editor.bugReport}} 會產生一份回報錯誤用的 ZIP；{{ui:dashboard.projectOnGitHub}} 通往 GitHub 上的專案，版本號則會開啟版本說明。法律聲明與隱私權政策的連結，屬於你所使用的那份 Magic3D 的營運者。
 
 ## 你的第一個零件
 

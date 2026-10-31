@@ -117,8 +117,6 @@ Za prezračevalne reže, zvočniške mreže, košare in ohišja {{ui:holePattern
 
 Luknje so čisto navadne luknje in združene v skupino s telesom, popolnoma tako kot po {{ui:editor.tool.group}}: nič ni vpečeno. {{ui:editor.tool.ungroup}} skupino spet razpusti in sprosti vsako luknjo, ki jo potem lahko posebej premakneš, spremeniš ali izbrišeš. Celota je en korak za {{ui:editor.tool.undo}}. Več kot 400 lukenj naenkrat orodje ne ustvari; potem naredi luknje večje ali razmik širši.
 
-Umetna inteligenca lahko isto naredi prek vmesnika MCP, z `layerling_perforate_face` (glej poglavje [Umetna inteligenca z MCP](chapter:ai-z-mcp)).
-
 ## Vlečenje ploskve navzven ali navznoter
 
 Za debelejšo steno, dvignjeno ploščico na ploskvi ali vanjo izrezan žep orodje {{ui:faceTool.title}} dela na eni ravni ploskvi. Deluje tudi na uvoženem STL, ki nima skice za spreminjanje. Izberi natanko eno telo in v skupini {{ui:editor.group.modify}} orodne vrstice klikni {{ui:faceTool.title}}, tik ob vzorcu lukenj. Lahko tudi z desnim gumbom klikneš na telo ali ga poiščeš s [[Ctrl]]+[[K]].
@@ -133,8 +131,6 @@ Za debelejšo steno, dvignjeno ploščico na ploskvi ali vanjo izrezan žep orod
 4. Šele {{ui:faceTool.apply}} ga ustvari.
 
 Kar orodje doda, je čisto navadno telo iz skice, združeno v skupino s telesom: nič ni vpečeno. {{ui:group.edit}} odpre skupino, {{ui:inspector.editSketch}} na novem delu pa pokaže obris, ki mu sledi. Na zgornji ali spodnji ploskvi preprostega telesa iz skice - eno območje, ne združeno, ne zrcaljeno, brez zožitve, zasuka in nagiba, brez poteze, obeska, posnetja ali zaokrožitve - je to lastni obris telesa, ob gradnji zamaknjen navznoter, zato njegove črte in loki ostanejo natančni povsod, kjer jih CAD-jedro lahko zamakne, za orodja za robove in izvoz STEP. Ob poznejši spremembi velikosti del obdrži svoj odmik. Na vsaki drugi ploskvi, tudi na uvoženi mreži, obris sledi trikotnikom ploskve, krivulja pa je iz kratkih ravnih kosov. Celota je en korak za {{ui:editor.tool.undo}}. Če želiš odmik ali polmer pozneje spremeniti, korak razveljavi in orodje uporabi znova. Zgornji rob potem zaokroži z {{ui:editor.tool.fillet}} in {{ui:edge.topEdges}} na skupini kot zadnji korak: kot vsaka obdelava robov skupine iz nje naredi eno telo.
-
-Umetna inteligenca lahko isto naredi prek vmesnika MCP, z `layerling_push_face` (glej poglavje [Umetna inteligenca z MCP](chapter:ai-z-mcp)).
 
 ## Sprememba več delov naenkrat
 

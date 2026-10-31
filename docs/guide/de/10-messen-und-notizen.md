@@ -80,7 +80,6 @@ Ein Bezugspunkt ist eine bloße Markierung im Raum, wie ein Bleistiftstrich oder
 - Das Maßband kann auch einen Punkt setzen: {{ui:camera.tapeMarkMiddle}}, die halb gefüllte Marke in der Mitte einer Messung, legt einen in ihre Mitte, etwa in den Mittelpunkt einer runden Bohrung. Und es misst von einem Punkt aus: Das Maßband rastet an Bezugspunkten ein wie an Ecken.
 - Ziehst du eine Form, rasten ihre Kanten und ihre Mitte an einem Punkt ein, wie sie an anderen Formen einrasten ({{ui:workspace.objectSnap}}). Auch das Winkellineal rastet an Punkten ein.
 - Punkte werden im Entwurf gespeichert, tauchen in keinem Export auf und werden zusammen mit den Notizen über {{ui:visibility.notes}} ([[Umschalt]]+[[N]]) ein- und ausgeblendet.
-- Eine KI kann sie mit `layerling_add_reference_points`, `layerling_list_reference_points` und `layerling_remove_reference_points` setzen, auflisten und entfernen.
 
 ## Referenzbilder
 
@@ -92,4 +91,3 @@ Ein Referenzbild ist ein Bild, an dem du Teile ausrichtest: Leg das Foto einer P
 - {{ui:referenceImage.calibrate}} gibt ihm seine wirkliche Größe wie in der Skizze: Klicke zwei Punkte auf dem Bild an, deren wirklichen Abstand du kennst - zwei Befestigungslöcher der Platine etwa - und gib diesen Abstand unter {{ui:referenceImage.distance}} ein. Das Bild behält seine Proportionen und seine Mitte.
 - Sperre es mit dem Schloss im Kopf seiner Einstellungen, dann bleibt es liegen: Klicks gehen durch es hindurch auf die Platte. In der Objektliste wählst du es wieder aus, um es zu entsperren.
 - Das Bild liegt einmal in der Entwurfsdatei, egal wie oft es kopiert oder rückgängig gemacht wird. Ein großes Bild macht die Datei um so viel größer; die Meldung beim Hinzufügen nennt seine Größe.
-- Eine KI legt eines mit `layerling_reference_image` an, verschiebt, kalibriert, blendet und sperrt es. Mit `trace` zeichnet sie das Bild zu einem Skizzenkörper nach, der darauf steht, wie {{ui:sketch.traceImageButton}} in der Skizze.

@@ -5,7 +5,6 @@ import { GUIDE_SECTIONS, guideHref, type GuideSection } from "@/lib/guideLinks";
 // @ts-expect-error the guide build is a plain .mjs module
 import { effectiveChapters, headingIds, loadMessages, loadValues, readChapters, renderBlocks } from "../../scripts/build-guide.mjs";
 // @ts-expect-error the tool list is a plain .mjs module
-import { tools } from "../../scripts/layerling-mcp-tools.mjs";
 
 // These read every language's chapters; under a full parallel run that can take more than the 5 s default.
 vi.setConfig({ testTimeout: 30_000 });
@@ -22,7 +21,6 @@ const LANGUAGES = readdirSync(guideRoot).filter((name) => name !== "images" && s
 
 type Chapter = { file: string; number: string; slug: string; body: string };
 
-const AI_CHAPTER_NUMBER = "14";
 
 describe("the guide in every language", () => {
   it("covers the seventeen guide languages", () => {
@@ -53,15 +51,6 @@ describe("the guide in every language", () => {
           expect(ids.has(match[1]), `${language}/${chapter.file}: #${match[1]}`).toBe(true);
         }
       }
-    }
-  });
-
-  it("names every MCP tool in the AI chapter each language builds", async () => {
-    const chaptersByLanguage = Object.fromEntries(await Promise.all(LANGUAGES.map(async (language) => [language, await readChapters(language)])));
-    for (const language of LANGUAGES) {
-      const builtAiChapter = (effectiveChapters(language, chaptersByLanguage) as Chapter[]).find((entry) => entry.number === AI_CHAPTER_NUMBER);
-      expect(builtAiChapter, language).toBeDefined();
-      for (const tool of tools as { name: string }[]) expect(builtAiChapter!.body, `${language}: ${tool.name}`).toContain(`\`${tool.name}\``);
     }
   });
 
