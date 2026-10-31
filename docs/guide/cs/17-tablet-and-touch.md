@@ -5,7 +5,7 @@ summary: Práce prsty nebo stylusem: výběr více těles, otáčení a přibli�
 
 ## Prsty a stylus
 
-layerling běží v prohlížeči tabletu i jako aplikace z domovské obrazovky. Prst dělá to, co levé tlačítko myši. Tři věci, které tablet nemá, pravé tlačítko myši, klávesu Shift a kolečko, mají vlastní cestu:
+Magic3D běží v prohlížeči tabletu i jako aplikace z domovské obrazovky. Prst dělá to, co levé tlačítko myši. Tři věci, které tablet nemá, pravé tlačítko myši, klávesu Shift a kolečko, mají vlastní cestu:
 
 | Chcete | Na tabletu |
 | --- | --- |
@@ -32,7 +32,7 @@ Krychle pohledu vlevo nahoře otáčí pohled, když za ni táhnete, a klepnutí
 
 ## Úchyty, malé body a stylus
 
-Špička prstu zakrývá to, na co míří. layerling nechá prst dosáhnout na úchyty, body, čáry a hrany o kousek dál než ukazatel myši, ale stylus je jemnější. To platí pro pero, které tablet zná jako pero, například Apple Pencil nebo S Pen. Obyčejný stylus s gumovým hrotem se pro obrazovku počítá jako prst a není jemnější než on, pracujte s ním tedy jako s prstem. Když se Apple Pencil na iPadu vznáší nad tlačítkem, po chvíli se v malé bublině objeví jeho název, jako nápověda u myši.
+Špička prstu zakrývá to, na co míří. Magic3D nechá prst dosáhnout na úchyty, body, čáry a hrany o kousek dál než ukazatel myši, ale stylus je jemnější. To platí pro pero, které tablet zná jako pero, například Apple Pencil nebo S Pen. Obyčejný stylus s gumovým hrotem se pro obrazovku počítá jako prst a není jemnější než on, pracujte s ním tedy jako s prstem. Když se Apple Pencil na iPadu vznáší nad tlačítkem, po chvíli se v malé bublině objeví jeho název, jako nápověda u myši.
 
 Pokud se tělesa posouvají, protože se jich dotknou děti nebo spěchající ruce, zapněte v nastavení {{ui:workspace.selectBeforeMoving}}: těleso pak musí být nejprve vybráno a teprve další tažení ho přesune.
 

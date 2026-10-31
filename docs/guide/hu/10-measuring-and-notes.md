@@ -3,7 +3,7 @@ title: Mérés és jegyzetek
 summary: Mérőszalag, vonalzó és derékszögvonalzó, távolságok az origótól, egy alkatrészhez rögzített jegyzetek és referenciapontok, amelyekhez a dolgok illeszkednek.
 ---
 
-Egy alkatrész pontos megépítéséhez mérni kell. A layerlingben erre több eszköz van. Egyik sem kerül bele az exportba. A falvastagságot és az alkatrészen belüli réseket legjobb a [metszeti nézetben](chapter:view-and-workplane) mérni a {{ui:camera.sectionMeasure}} eszközzel.
+Egy alkatrész pontos megépítéséhez mérni kell. A Magic3D erre több eszköz van. Egyik sem kerül bele az exportba. A falvastagságot és az alkatrészen belüli réseket legjobb a [metszeti nézetben](chapter:view-and-workplane) mérni a {{ui:camera.sectionMeasure}} eszközzel.
 
 ## A mérőszalag
 
@@ -15,7 +15,7 @@ A mérőszalag a bal szélen lévő kamerasáv alsó végén van ({{ui:camera.ta
 2. **{{ui:camera.moveMeasurement}}:** Fogd meg a pontokat, és mozgasd őket, a szám követi.
 3. **{{ui:camera.deleteMeasurement}}:** Utána kattints egy mérésre, hogy eltávolítsd.
 4. **{{ui:camera.tapeWholeEdges}}:** Egy élre kattintva az egészet méri, például egy kör kerületét. Ha ez ki van kapcsolva, a kattintás ehelyett egy pontot tesz az élre, a második pont pedig bárhová kerülhet, így az átmérőt vagy bármilyen más távolságot mérheted. Az [[Alt]] egy kattintás erejéig megfordítja a kapcsolót. Körön az elsővel szemközti pont beugrik, amikor a mutató a közelébe ér, és a pontok a valódi körön ülnek, így az átmérő pontosan jön ki.
-5. **{{ui:camera.deleteAllMeasurements}}:** Egyszerre eltávolít minden mérést. Mivel ez nem vonható vissza, a layerling előbb rákérdez; ha nincs mérés, nincs mit tenni.
+5. **{{ui:camera.deleteAllMeasurements}}:** Egyszerre eltávolít minden mérést. Mivel ez nem vonható vissza, a Magic3D előbb rákérdez; ha nincs mérés, nincs mit tenni.
 6. **{{ui:camera.tapeMarkMiddle}}:** Minden mérés közepén egy kis kerek jel ül, az alsó fele kitöltve. [Referenciapontot](#referenciapontok) tesz a mérés közepére: egy kerek élre, például egy lyuk peremére kattintva annak a körnek a középpontjába – importált hálón is, ahol semmi más nem jelöli egy lyuk közepét –, átmérőnél vagy bármilyen egyenes mérésnél pedig a felénél. Az az alakzat, amelyet ezután húzol, a középpontjával a ponthoz illeszkedik. Egy már meglévő pontot nem készít el kétszer. A mérőszalag úgy illeszkedik egy referenciaponthoz, mint egy sarokhoz, így egy kör középpontjától vagy egy vonal közepétől is mérhetsz: jelöld meg, majd kattints a pontra.
 7. **{{ui:camera.tapeTypeLength}}:** Ha egy egyenes mérés legalább egyik vége egy testen van, a száma rákattintható. Írj be új hosszt, és nyomd meg az [[Enter]] billentyűt: a második pontnál lévő test a mért vonal mentén addig mozdul, amíg a távolság pontosan ennyi nem lesz, mint a Tinkercad vonalzójánál. Ha csak az első pontnál lévő test van kijelölve, az mozdul. A mérési pontok a testen maradnak, így a mérés követi. Mérj sarokból, élről vagy [referenciapontból](#referenciapontok), például egy kör közepéből, hogy az alkatrészeket pontos távolságra tedd. Negatív hossz ennyivel az első ponton túlra viszi, például 5 mm-rel egy doboz élén belülre.
 

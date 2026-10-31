@@ -26,7 +26,7 @@ Además de las ocho fuentes incluidas, puedes usar cualquier fuente propia: un a
 
 - **{{ui:font.addFile}}** admite un archivo TrueType (`.ttf`), OpenType (`.otf`) o WOFF (`.woff`). También puedes arrastrar el archivo a la ventana sin más.
 - **En Windows**, las fuentes instaladas están en la carpeta Fuentes (`C:\Windows\Fonts`), que el cuadro de diálogo de archivos del navegador oculta. Ábrela en el Explorador y arrastra la fuente desde allí a la ventana {{ui:font.title}}. Las fuentes instaladas solo para tu usuario están en `%LOCALAPPDATA%\Microsoft\Windows\Fonts`, una carpeta que el cuadro de diálogo sí muestra. En un Mac, las fuentes están en `/Library/Fonts` y `~/Library/Fonts`.
-- **{{ui:font.fromSystem}}** muestra las fuentes instaladas en tu ordenador. La primera vez, el navegador pregunta si layerling puede leerlas. Con el campo de búsqueda encuentras una fuente enseguida, y un clic la elige.
+- **{{ui:font.fromSystem}}** muestra las fuentes instaladas en tu ordenador. La primera vez, el navegador pregunta si Magic3D puede leerlas. Con el campo de búsqueda encuentras una fuente enseguida, y un clic la elige.
 
 Si hay un texto seleccionado, recibe la nueva fuente al instante. Si no, la fuente aparece en {{ui:prop.font}}, en el grupo {{ui:font.customGroup}}, y {{ui:font.use}}, en la ventana, la aplica a los textos seleccionados. Las fuentes propias se comportan como las incluidas: el texto en arco, los chaflanes y redondeos de las aristas y la exportación a STEP funcionan igual. Las letras que le faltan a una fuente se toman de Sans.
 
@@ -38,16 +38,16 @@ El árabe, el persa, el urdu y el hebreo se escriben de derecha a izquierda: la 
 
 | Navegador | Elegir un archivo de fuente | Fuente del ordenador |
 | --- | --- | --- |
-| Chrome y Edge en un ordenador, también la aplicación de layerling instalada | sí | sí, después de que el navegador pregunte |
+| Chrome y Edge en un ordenador, también la aplicación de Magic3D instalada | sí | sí, después de que el navegador pregunte |
 | Firefox | sí | no |
 | Safari en un Mac | sí | no |
 | Tableta y móvil | sí, desde los archivos del dispositivo | no |
 
-Las páginas web no pueden leer sin más las fuentes instaladas. Solo Chrome y Edge tienen un permiso para ello, y solo en páginas seguras, por `https`, como en layerling.com. Cuando layerling funciona por `http`, por ejemplo en tu propio servidor o como instalación de Docker en la red de tu casa, no aparece {{ui:font.fromSystem}}; en ese caso, arrastra la fuente desde el Explorador. En los demás navegadores eliges el archivo de fuente en la carpeta de fuentes, con el mismo resultado. Si rechazaste la pregunta en Chrome o Edge, vuelve a dar el permiso en la configuración del sitio, en el candado que hay a la izquierda de la dirección.
+Las páginas web no pueden leer sin más las fuentes instaladas. Solo Chrome y Edge tienen un permiso para ello, y solo en páginas seguras, por `https`, como en magic3d.ro. Cuando Magic3D funciona por `http`, por ejemplo en tu propio servidor o como instalación de Docker en la red de tu casa, no aparece {{ui:font.fromSystem}}; en ese caso, arrastra la fuente desde el Explorador. En los demás navegadores eliges el archivo de fuente en la carpeta de fuentes, con el mismo resultado. Si rechazaste la pregunta en Chrome o Edge, vuelve a dar el permiso en la configuración del sitio, en el candado que hay a la izquierda de la dirección.
 
-layerling no puede leer archivos WOFF2 (casi siempre hay una versión TTF u OTF), colecciones de fuentes (`.ttc`, varias fuentes en un mismo archivo) ni fuentes de emojis en color. De las fuentes muy grandes, como las chinas, layerling toma los primeros 8000 caracteres. Una fuente variable se lee con su ajuste predeterminado, normalmente el peso normal.
+Magic3D no puede leer archivos WOFF2 (casi siempre hay una versión TTF u OTF), colecciones de fuentes (`.ttc`, varias fuentes en un mismo archivo) ni fuentes de emojis en color. De las fuentes muy grandes, como las chinas, Magic3D toma los primeros 8000 caracteres. Una fuente variable se lee con su ajuste predeterminado, normalmente el peso normal.
 
-Algunas fuentes, sobre todo las caligráficas y las variables, dibujan una letra con trazos que se superponen. layerling los fusiona en un único contorno limpio al leer la fuente, para que el cuerpo se pueda imprimir. Esas letras quedan formadas por tramos rectos muy cortos en lugar de curvas, pero no se nota.
+Algunas fuentes, sobre todo las caligráficas y las variables, dibujan una letra con trazos que se superponen. Magic3D los fusiona en un único contorno limpio al leer la fuente, para que el cuerpo se pueda imprimir. Esas letras quedan formadas por tramos rectos muy cortos en lugar de curvas, pero no se nota.
 
 ### Dónde se guardan las fuentes
 
@@ -60,9 +60,9 @@ Un diseño **no guarda el archivo de la fuente**, sino solo los contornos de las
 Por tanto:
 
 - **El diseño se abre bien en cualquier parte**, también en un ordenador que no tenga la fuente. Los textos se ven igual y se pueden mover, girar, escalar y redondear.
-- **Las letras nuevas necesitan la fuente.** Si alguien que no tiene la fuente escribe una letra que el diseño no traía, layerling la dibuja con Sans. En {{ui:prop.font}}, la fuente aparece entonces marcada como {{ui:font.fromDesign}}. Al añadir el archivo de la fuente vuelven todas las letras.
+- **Las letras nuevas necesitan la fuente.** Si alguien que no tiene la fuente escribe una letra que el diseño no traía, Magic3D la dibuja con Sans. En {{ui:prop.font}}, la fuente aparece entonces marcada como {{ui:font.fromDesign}}. Al añadir el archivo de la fuente vuelven todas las letras.
 - **Las exportaciones solo contienen geometría.** STL, 3MF, OBJ, STEP y SVG contienen cuerpos y contornos, no la fuente.
-- **Las versiones antiguas de layerling** todavía no admiten fuentes propias y dibujan esos textos en Multilanguage.
+- **Las versiones antiguas de Magic3D** todavía no admiten fuentes propias y dibujan esos textos en Multilanguage.
 
 **Licencias:** Las fuentes están protegidas por derechos de autor, y su licencia dice qué puedes hacer con ellas. Los contornos de letras incrustados son lo mismo que los archivos PDF se llevan de una fuente, y la mayoría de las licencias lo permiten. Sin embargo, algunas fuentes comerciales prohíben distribuir incluso letras sueltas. Antes de compartir o publicar un diseño con una fuente propia, comprueba la licencia de la fuente. Las fuentes libres, como las de Google Fonts (casi siempre con la SIL Open Font License), se pueden compartir sin problema. Para una pieza impresa o un STL exportado da igual: ya no contienen ninguna fuente, solo geometría.
 
@@ -88,7 +88,7 @@ Con una línea exterior, una línea centrada o «Más ancho», el recuadro del t
 
 ## Capas y placas con nombre
 
-Una placa con nombre para impresión multicolor es un texto en capas: arriba, las letras; debajo, el mismo texto un poco más ancho en un segundo color, y abajo del todo, una placa sin huecos en un tercero. layerling la hace con un clic:
+Una placa con nombre para impresión multicolor es un texto en capas: arriba, las letras; debajo, el mismo texto un poco más ancho en un segundo color, y abajo del todo, una placa sin huecos en un tercero. Magic3D la hace con un clic:
 
 - **Una placa con nombre nueva:** Elige {{ui:shape.nameTag}} en la biblioteca de formas y colócala. Pone «Nombre» en letras blancas sobre un borde rojo y una placa oscura.
 - **A partir de un texto:** Selecciona el texto y haz clic en {{ui:nameTag.makeLayers}}, en la parte de arriba de sus ajustes.

@@ -3,16 +3,16 @@ title: Mit einer KI bauen (MCP)
 summary: Wie ein KI-Assistent wie Gemini, Claude oder Codex in deinem geöffneten Editor Formen anlegt, ändert, gruppiert und Bilder der Ansicht aufnimmt.
 ---
 
-layerling bringt einen MCP-Server mit. MCP ist ein Standard, über den ein KI-Assistent Werkzeuge in anderen Programmen benutzen kann. Damit sieht ein KI-Client wie Gemini, Claude oder Codex einen offenen Editor-Tab und arbeitet darin: Er legt Formen an, ändert Maße, gruppiert, schneidet, rundet Kanten, liest die Szene aus und nimmt Bilder der Ansicht auf. Du beschreibst das Teil, die KI baut es, du siehst zu und greifst jederzeit ein.
+Magic3D bringt einen MCP-Server mit. MCP ist ein Standard, über den ein KI-Assistent Werkzeuge in anderen Programmen benutzen kann. Damit sieht ein KI-Client wie Gemini, Claude oder Codex einen offenen Editor-Tab und arbeitet darin: Er legt Formen an, ändert Maße, gruppiert, schneidet, rundet Kanten, liest die Szene aus und nimmt Bilder der Ansicht auf. Du beschreibst das Teil, die KI baut es, du siehst zu und greifst jederzeit ein.
 
 Die Brücke zwischen KI-Client und Editor läuft **lokal auf deinem Rechner**. Bedenke aber: Was die KI liest, also die Szene und die Bilder der Ansicht, geht an den Anbieter deines KI-Clients, so wie jede andere Eingabe dort auch.
 
-> **Wichtig:** Die MCP-Brücke gibt es im Entwicklungsserver, den du selbst auf deinem Rechner startest. Auf layerling.com und in Installationen mit statischem Hosting ist sie abgeschaltet. Eine Kopie, die du selbst betreibst, etwa das Docker-Image auf einer NAS, kann sie mit einem Zugriffsschlüssel einschalten; siehe „Eine Kopie auf NAS oder Server“ unten.
+> **Wichtig:** Die MCP-Brücke gibt es im Entwicklungsserver, den du selbst auf deinem Rechner startest. Auf magic3d.ro und in Installationen mit statischem Hosting ist sie abgeschaltet. Eine Kopie, die du selbst betreibst, etwa das Docker-Image auf einer NAS, kann sie mit einem Zugriffsschlüssel einschalten; siehe „Eine Kopie auf NAS oder Server“ unten.
 
 ## Einrichten
 
-1. Lade layerling von [GitHub](https://github.com/henmedia/layerling) und starte es im Projektordner mit `npm run dev`. Node.js muss installiert sein. Unter Windows erledigt das die Schnellstart-Zeile in der README.
-2. Öffne einen Editor-Tab, zum Beispiel `http://127.0.0.1:3000/?editor=1`. Das kannst du auch der KI überlassen: Ist kein Editor offen, startet das erste Werkzeug, das einen braucht, deinen Browser mit einem Editor und wartet, bis er verbunden ist. Das geht bei einem layerling auf deinem eigenen Rechner; bei einer Kopie auf einem NAS oder Server öffnest du den Editor selbst. Mit `LAYERLING_MCP_OPEN_EDITOR=0` am MCP-Server schaltest du es ab.
+1. Lade Magic3D von [GitHub](https://github.com/henmedia/layerling) und starte es im Projektordner mit `npm run dev`. Node.js muss installiert sein. Unter Windows erledigt das die Schnellstart-Zeile in der README.
+2. Öffne einen Editor-Tab, zum Beispiel `http://127.0.0.1:3000/?editor=1`. Das kannst du auch der KI überlassen: Ist kein Editor offen, startet das erste Werkzeug, das einen braucht, deinen Browser mit einem Editor und wartet, bis er verbunden ist. Das geht bei einem Magic3D auf deinem eigenen Rechner; bei einer Kopie auf einem NAS oder Server öffnest du den Editor selbst. Mit `LAYERLING_MCP_OPEN_EDITOR=0` am MCP-Server schaltest du es ab.
 3. Verbinde deinen KI-Client mit dem MCP-Server. Er wird vom Client selbst mit `node scripts/layerling-mcp-server.mjs` gestartet.
 
 ### Claude Code
@@ -41,7 +41,7 @@ Nur ein Client mit dem Schlüssel kann die Editoren auflisten oder steuern. Die 
 
 ## Was die KI kann
 
-Die KI arbeitet mit denselben Funktionen wie du, sie läuft über denselben Weg wie deine Bedienung im Editor. Neue Funktionen von layerling bekommen ihre MCP-Aktion gleich mit. Die Werkzeuge:
+Die KI arbeitet mit denselben Funktionen wie du, sie läuft über denselben Weg wie deine Bedienung im Editor. Neue Funktionen von Magic3D bekommen ihre MCP-Aktion gleich mit. Die Werkzeuge:
 
 | Werkzeug | Was es tut |
 | --- | --- |

@@ -38,16 +38,16 @@ Arabština, perština, urdština a hebrejština se píší zprava doleva. První
 
 | Prohlížeč | Soubor písma | Nainstalované písmo |
 | --- | --- | --- |
-| Chrome a Edge na počítači včetně nainstalovaného Layerlingu | ano | ano, po udělení přístupu |
+| Chrome a Edge na počítači včetně nainstalovaného Magic3D | ano | ano, po udělení přístupu |
 | Firefox | ano | ne |
 | Safari na Macu | ano | ne |
 | Tablet a telefon | ano, ze souborů zařízení | ne |
 
-Web nemůže libovolně číst nainstalovaná písma. Odpovídající oprávnění mají jen Chrome a Edge na bezpečné stránce přes `https`, jako na layerling.com. Při provozu přes `http`, například na vlastním serveru nebo domácím Dockeru, {{ui:font.fromSystem}} chybí. Písmo pak přetáhněte z Průzkumníku. V ostatních prohlížečích vyberte jeho soubor ze složky písem. Pokud jste přístup v Chrome či Edge odmítli, můžete jej znovu povolit v nastavení webu u adresního řádku.
+Web nemůže libovolně číst nainstalovaná písma. Odpovídající oprávnění mají jen Chrome a Edge na bezpečné stránce přes `https`, jako na magic3d.ro. Při provozu přes `http`, například na vlastním serveru nebo domácím Dockeru, {{ui:font.fromSystem}} chybí. Písmo pak přetáhněte z Průzkumníku. V ostatních prohlížečích vyberte jeho soubor ze složky písem. Pokud jste přístup v Chrome či Edge odmítli, můžete jej znovu povolit v nastavení webu u adresního řádku.
 
-Layerling neumí WOFF2, kolekce `.ttc` ani barevná emoji písma. Pro WOFF2 bývá dostupná varianta TTF nebo OTF. Z velmi velkých písem, například čínských, načítá prvních 8000 znaků. Proměnné písmo používá výchozí řez, obvykle běžnou tloušťku.
+Magic3D neumí WOFF2, kolekce `.ttc` ani barevná emoji písma. Pro WOFF2 bývá dostupná varianta TTF nebo OTF. Z velmi velkých písem, například čínských, načítá prvních 8000 znaků. Proměnné písmo používá výchozí řez, obvykle běžnou tloušťku.
 
-Některá písma, zejména psací a proměnná, skládají znaky z překrývajících se tahů. Při načtení je Layerling sjednotí do čistého obrysu, aby bylo těleso tisknutelné. Obrys se pak skládá z krátkých úseček místo křivek, což není běžně vidět.
+Některá písma, zejména psací a proměnná, skládají znaky z překrývajících se tahů. Při načtení je Magic3D sjednotí do čistého obrysu, aby bylo těleso tisknutelné. Obrys se pak skládá z krátkých úseček místo křivek, což není běžně vidět.
 
 ### Uložení písem
 
@@ -60,7 +60,7 @@ Projekt **neukládá soubor písma**, jen obrysy použitých znaků včetně tě
 - **Projekt se všude zobrazí správně**, i bez nainstalovaného písma. Texty lze přesouvat, otáčet, měnit velikost i zaoblovat.
 - **Nové znaky potřebují písmo.** Pokud někdo zadá znak, jehož obrys projekt neobsahuje, použije se Sans. V {{ui:prop.font}} je písmo označené {{ui:font.fromDesign}}. Přidání původního souboru obnoví všechny znaky.
 - **Exporty přenášejí geometrii.** STL, 3MF, OBJ, STEP a SVG obsahují tělesa či obrysy, nikoli písmo.
-- **Starší verze Layerlingu** vlastní písma neznají a takový text zobrazují v Multilanguage.
+- **Starší verze Magic3D** vlastní písma neznají a takový text zobrazují v Multilanguage.
 
 **Licence:** Písmo je autorské dílo a jeho licence určuje povolené použití. Vložené obrysy jednotlivých znaků se přenášejí podobně jako v PDF a většina licencí to umožňuje. Některá komerční písma ale zakazují i sdílení jednotlivých znaků. Před zveřejněním projektu licenci ověřte. Volná písma, například z Google Fonts převážně pod SIL Open Font License, takové předávání běžně umožňují. Samotný výtisk či STL už obsahuje pouze geometrii, nikoli soubor písma.
 
@@ -86,7 +86,7 @@ Vnější nebo souměrná čára a rozšíření zvětší ohraničení textu, a
 
 ## Vrstvy a jmenovky
 
-Vícebarevná jmenovka má nahoře písmena, pod nimi rozšířený text druhé barvy a dole souvislou podložku třetí barvy. Layerling ji vytvoří jedním příkazem:
+Vícebarevná jmenovka má nahoře písmena, pod nimi rozšířený text druhé barvy a dole souvislou podložku třetí barvy. Magic3D ji vytvoří jedním příkazem:
 
 - **Nová jmenovka:** vložte {{ui:shape.nameTag}} z knihovny. Výchozí je „Name“ bílými písmeny na červeném okraji a tmavé podložce.
 - **Z existujícího textu:** vyberte jej a zvolte {{ui:nameTag.makeLayers}} nahoře v nastavení.

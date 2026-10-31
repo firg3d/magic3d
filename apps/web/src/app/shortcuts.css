@@ -43,7 +43,7 @@
 .shortcuts-search-icon {
   position: absolute;
   left: 10px;
-  color: #a3917f;
+  color: #88988e;
   pointer-events: none;
 }
 
@@ -52,7 +52,7 @@
   padding: 7px 32px 7px 34px;
   color: inherit;
   background: #ffffff;
-  border: 1px solid #e2d9cd;
+  border: 1px solid #d3ddd7;
   border-radius: 6px;
   outline: none;
   font-size: 13px;
@@ -60,7 +60,7 @@
 }
 
 .shortcuts-search-input:focus {
-  border-color: #d46b08;
+  border-color: #279b51;
 }
 
 .shortcuts-search-clear {
@@ -72,7 +72,7 @@
   width: 22px;
   height: 22px;
   padding: 0;
-  color: #a3917f;
+  color: #88988e;
   background: transparent;
   border: none;
   border-radius: 50%;
@@ -80,13 +80,13 @@
 }
 
 .shortcuts-search-clear:hover {
-  color: #563e24;
-  background: #f3ece2;
+  color: #33473b;
+  background: #e8eeea;
 }
 
 .shortcuts-no-matches {
   margin: 0;
-  color: #a3917f;
+  color: #88988e;
   font-size: 12.5px;
   font-weight: 600;
 }
@@ -97,7 +97,7 @@
 
 .shortcuts-intro {
   margin: 0;
-  color: #7a6550;
+  color: #5a6d61;
   font-size: 12.5px;
   font-weight: 600;
 }
@@ -118,8 +118,8 @@
 .shortcuts-group h3 {
   margin: 0;
   padding-bottom: 7px;
-  color: #543b21;
-  border-bottom: 1px solid #f0eae0;
+  color: #314438;
+  border-bottom: 1px solid #e5ece8;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -144,7 +144,7 @@
   min-width: 0;
   margin: 0;
   flex: 1 1 auto;
-  color: #6c5a48;
+  color: #516157;
   font-size: 12.5px;
   font-weight: 600;
   line-height: 1.4;
@@ -169,16 +169,16 @@
 
 .shortcuts-plus,
 .shortcuts-or {
-  color: #a4917c;
+  color: #86988d;
   font-size: 10.5px;
   font-weight: 700;
 }
 
 .shortcuts-row kbd {
   padding: 2px 6px;
-  color: #5f4529;
-  background: #f6f3ed;
-  border: 1px solid #dacfc2;
+  color: #394f41;
+  background: #f0f4f2;
+  border: 1px solid #c8d3cc;
   border-bottom-width: 2px;
   border-radius: 4px;
   font-family: inherit;
@@ -188,39 +188,39 @@
 }
 
 html[data-theme="dark"] .shortcuts-search-input {
-  color: #e5ded5;
-  background: #1e1a16;
-  border-color: #443a30;
+  color: #dae1dc;
+  background: #181c19;
+  border-color: #353e38;
 }
 
 html[data-theme="dark"] .shortcuts-search-input:focus {
-  border-color: #f6ad55;
+  border-color: #51d381;
 }
 
 html[data-theme="dark"] .shortcuts-search-clear:hover {
-  color: #f1eadd;
-  background: #3a2e22;
+  color: #e5ece8;
+  background: #28332c;
 }
 
 html[data-theme="dark"] .shortcuts-intro,
 html[data-theme="dark"] .shortcuts-row dt {
-  color: #cbbba6;
+  color: #b1c1b7;
 }
 
 html[data-theme="dark"] .shortcuts-group h3 {
-  color: #f1e6d4;
-  border-bottom-color: #4a3b2c;
+  color: #ceefda;
+  border-bottom-color: #344138;
 }
 
 html[data-theme="dark"] .shortcuts-row kbd {
-  color: #f1eadd;
-  background: #322518;
-  border-color: #635241;
+  color: #e5ece8;
+  background: #1f2a23;
+  border-color: #49594f;
 }
 
 html[data-theme="dark"] .shortcuts-plus,
 html[data-theme="dark"] .shortcuts-or {
-  color: #9b8a76;
+  color: #809186;
 }
 
 /* The printed list of shortcuts (Print button of the window, or Ctrl+P while it is open): black on

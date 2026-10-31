@@ -13,7 +13,7 @@ S tem se zgodijo tri stvari:
 
 - Delovna ravnina dobi velikost tiskalne postelje.
 - V kotu delovne površine stojita ime tiskalnika in njegov delovni prostor. Komur napis moti, ga izklopi pod {{ui:workspace.workplane}} z {{ui:workspace.showPlateLabels}}; to velja tudi za ime načrta spredaj levo.
-- layerling **opozori**, če kaj ne ustreza.
+- Magic3D **opozori**, če kaj ne ustreza.
 
 Profili tiskalnikov izvirajo iz OrcaSlicerja, torej so enaki, kot jih pozna tudi tvoj rezalnik. Če želiš delati brez tiskalnika, izberi {{ui:workspace.printerNone}}. Velikost delovne ravnine lahko nastaviš tudi ročno.
 
@@ -44,7 +44,7 @@ Nekaj ravnil za smer:
 
 V meniju ob očesu ({{ui:editor.group.visibility}}) **Pokaži previse** vklopi previse. Vsaka ploskev, ki kaže strmeje kot 45° navzdol, se potem pokaže rdeče-belo šrafirana – tam bi tiskalnik potreboval podpore. Kar leži na plošči, ostane prosto. Tako že med konstruiranjem vidiš, ali krogla, lok ali vodoravna izvrtina gre brez podpor; [kapljična izvrtina](chapter:navoji-in-mehanika) je natanko za to. Če del zavrtiš ali ga z {{ui:editor.tool.layFlat}} položiš drugače, šrafura takoj potuje zraven.
 
-Kako strmo zmore tvoj tiskalnik, nastaviš v nastavitvah pod {{ui:workspace.appearance}}: od 30° (previdno) do 70° (za tiskalnike z dobrim hlajenjem dela). Ploskev, ki leži na drugem telesu, se vseeno označi – layerling vidi samo ploskev samo.
+Kako strmo zmore tvoj tiskalnik, nastaviš v nastavitvah pod {{ui:workspace.appearance}}: od 30° (previdno) do 70° (za tiskalnike z dobrim hlajenjem dela). Ploskev, ki leži na drugem telesu, se vseeno označi – Magic3D vidi samo ploskev samo.
 
 ## Debelina stene, zračnost in posnetja
 

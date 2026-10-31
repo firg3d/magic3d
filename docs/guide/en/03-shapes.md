@@ -3,7 +3,7 @@ title: Placing and adjusting shapes
 summary: The shape library, dimensions by number and by handle, colour, rotating, tapering and twisting.
 ---
 
-Every part in layerling starts with a shape. From them you build everything else: shapes complement each other, cut each other out or are joined into a new shape.
+Every part in Magic3D starts with a shape. From them you build everything else: shapes complement each other, cut each other out or are joined into a new shape.
 
 ## Adding a shape
 
@@ -32,7 +32,7 @@ The {{ui:shape.slot}} can be narrower at one end than at the other, say for a gu
 
 ## The shape's settings
 
-As soon as a shape is selected, its settings appear on the right. At the top is the name; the pencil beside it ({{ui:outliner.rename}}) lets you type a new one. [[Enter]] keeps it, [[Esc]] cancels, and an empty name brings back the shape's default name. Further right, the padlock locks the shape against accidental moving and the eye hides it. The arrow on the far left folds the settings down to their title bar. The cards below fold open and shut with a click on their title ({{ui:inspector.properties}}, {{ui:inspector.position}}, {{ui:inspector.rotation}}, {{ui:inspector.taper}}, {{ui:inspector.twist}} and the cards of the special shapes); layerling remembers which ones you left open, for the next shape and the next visit.
+As soon as a shape is selected, its settings appear on the right. At the top is the name; the pencil beside it ({{ui:outliner.rename}}) lets you type a new one. [[Enter]] keeps it, [[Esc]] cancels, and an empty name brings back the shape's default name. Further right, the padlock locks the shape against accidental moving and the eye hides it. The arrow on the far left folds the settings down to their title bar. The cards below fold open and shut with a click on their title ({{ui:inspector.properties}}, {{ui:inspector.position}}, {{ui:inspector.rotation}}, {{ui:inspector.taper}}, {{ui:inspector.twist}} and the cards of the special shapes); Magic3D remembers which ones you left open, for the next shape and the next visit.
 
 The settings sit docked at the right edge. If they cover something you want to see, drag them by their title bar and they float wherever you drop them; they stay there for the next shape too. Drop them back at the top right, or double-click the title bar, and they dock again. While they float or are folded down, the snap step moves from the bottom of the settings to the bottom right of the workplane.
 
@@ -76,7 +76,7 @@ The colours of the work area in the settings have a simpler picker of their own,
 
 ## How round is round? The side count
 
-Round shapes such as cylinder, cone, tube, ellipse or the bores have the switch {{ui:prop.sidesFollowSize}} and the slider {{ui:prop.sides}} in their properties. The {{ui:shape.torus}} has two sliders: {{ui:prop.torusSides}} around the ring and {{ui:prop.torusSteps}} around the tube. They follow the size there too until you hold them, so a large torus shows no facets. The reason: for the view and for STL, 3MF and OBJ, layerling draws a circle as a polygon of many small sides. The more sides, the smoother it is, and the more triangles it takes.
+Round shapes such as cylinder, cone, tube, ellipse or the bores have the switch {{ui:prop.sidesFollowSize}} and the slider {{ui:prop.sides}} in their properties. The {{ui:shape.torus}} has two sliders: {{ui:prop.torusSides}} around the ring and {{ui:prop.torusSteps}} around the tube. They follow the size there too until you hold them, so a large torus shows no facets. The reason: for the view and for STL, 3MF and OBJ, Magic3D draws a circle as a polygon of many small sides. The more sides, the smoother it is, and the more triangles it takes.
 
 The {{ui:prop.torusTube}} sets how thick the tube is seen from above. The height only squashes or stretches the tube, so a flat ring keeps its hole; at half the outer size the hole closes. Dragging the handles scales the tube along. Only a torus whose tube is as thick as the torus is high stays an exact body for chamfers, fillets and STEP.
 
@@ -98,7 +98,7 @@ The {{ui:prop.torusTube}} sets how thick the tube is seen from above. The height
 
 **How to use it**
 
-- **Leave {{ui:prop.sidesFollowSize}} on.** Then layerling picks the side count from the diameter so that the polygon strays at most {{value:ROUND_DEVIATION_TOLERANCE}} mm from the true circle, far below what a printer resolves. Small shapes get at least {{value:MIN_AUTOMATIC_SIDES}} sides, large ones more.
+- **Leave {{ui:prop.sidesFollowSize}} on.** Then Magic3D picks the side count from the diameter so that the polygon strays at most {{value:ROUND_DEVIATION_TOLERANCE}} mm from the true circle, far below what a printer resolves. Small shapes get at least {{value:MIN_AUTOMATIC_SIDES}} sides, large ones more.
 - **Fewer sides** you take when you want a polygon on purpose (but there is the {{ui:shape.polygon}} for that) or when the editor gets slow with very many round shapes.
 - **More sides** you hardly ever need. Only on very large round parts, when you see edges in the STL.
 - **For parts you only treat with edges or hand on as STEP,** the side count does not matter.
@@ -123,7 +123,7 @@ The snap step is at the bottom right of the editor and can be changed at any tim
 
 ## Copying and duplicating
 
-{{ui:editor.tool.copy}}, {{ui:editor.tool.paste}} and {{ui:editor.tool.duplicate}} are in the ribbon ({{ui:editor.group.clipboard}}). [[Ctrl]]+[[D]] duplicates a selection. layerling remembers how you last moved or rotated the copy and applies the same again on the next duplicate. That produces a row of holes or steps in a few key presses. For regular arrangements there is also the pattern, described in [Selecting and arranging](chapter:select-and-arrange).
+{{ui:editor.tool.copy}}, {{ui:editor.tool.paste}} and {{ui:editor.tool.duplicate}} are in the ribbon ({{ui:editor.group.clipboard}}). [[Ctrl]]+[[D]] duplicates a selection. Magic3D remembers how you last moved or rotated the copy and applies the same again on the next duplicate. That produces a row of holes or steps in a few key presses. For regular arrangements there is also the pattern, described in [Selecting and arranging](chapter:select-and-arrange).
 
 > **Tip:** If a shape refuses to take the size you want, it is often the limits for new shapes. Under {{ui:workspace.shapeDefaults}} in the settings you decide how each shape starts and how large it may get.
 
@@ -163,14 +163,14 @@ For an engraving, switch on {{ui:inspector.wrapInward}}: the thickness then goes
 
 A shape that is wrapped already is a mesh of the wrapped thing and cannot be wrapped again: undo the wrapping, or wrap the flat original once more with another diameter.
 
-The result is a mesh like an imported model. Undo lays the shape flat again; for another diameter, undo first and wrap again. It cannot go further than once around the cylinder; then layerling names the smallest diameter that fits.
+The result is a mesh like an imported model. Undo lays the shape flat again; for another diameter, undo first and wrap again. It cannot go further than once around the cylinder; then Magic3D names the smallest diameter that fits.
 
 ## A surface texture
 
 Grooves, knurling, honeycomb or bumps on a body, for a better grip or for looks: open {{ui:inspector.surfaceTexture}} in the shape's settings. The button {{ui:inspector.surfaceTexture}} in the {{ui:editor.group.modify}} group at the top does the same: it opens and closes the card for the selected body and stays lit while the card is open.
 
 1. Choose the {{ui:inspector.surfacePattern}}, its {{ui:inspector.surfaceSpacing}} and its {{ui:inspector.surfaceDepth}}. {{ui:inspector.surfaceDirection}} says whether it goes into the body or stands out of it. For {{ui:surfaceTexture.bumps}}, {{ui:inspector.surfaceBumpShape}} chooses between {{ui:surfaceTexture.bumpDome}}, {{ui:surfaceTexture.bumpCone}}, {{ui:surfaceTexture.bumpSoft}} and {{ui:surfaceTexture.bumpFlat}}. Under {{ui:inspector.surfaceBumpGrid}} they sit {{ui:surfaceTexture.bumpGridStaggered}}, every other row half a spacing along, or in {{ui:surfaceTexture.bumpGridStraight}}.
-2. Under {{ui:inspector.surfaceProjection}}, take {{ui:surfaceTexture.cylinder}} for round bodies such as a cup, a knob or a handle. The pattern runs round the {{ui:inspector.surfaceAxis}}, and the spacing is rounded a little so that a whole number of grooves or cells goes round: the pattern closes without a seam. {{ui:surfaceTexture.allRound}} suits bodies that are not round, {{ui:surfaceTexture.flatProjection}} a lid or a plate seen from above. Leave it at {{ui:surfaceTexture.auto}} and Layerling chooses for you: {{ui:surfaceTexture.cylinder}} on round bodies and on angular ones standing upright such as a box - the pattern then follows the outline and runs round the edges without a seam, a pattern standing out bending round them -, {{ui:surfaceTexture.allRound}} on other angular ones.
+2. Under {{ui:inspector.surfaceProjection}}, take {{ui:surfaceTexture.cylinder}} for round bodies such as a cup, a knob or a handle. The pattern runs round the {{ui:inspector.surfaceAxis}}, and the spacing is rounded a little so that a whole number of grooves or cells goes round: the pattern closes without a seam. {{ui:surfaceTexture.allRound}} suits bodies that are not round, {{ui:surfaceTexture.flatProjection}} a lid or a plate seen from above. Leave it at {{ui:surfaceTexture.auto}} and Magic3D chooses for you: {{ui:surfaceTexture.cylinder}} on round bodies and on angular ones standing upright such as a box - the pattern then follows the outline and runs round the edges without a seam, a pattern standing out bending round them -, {{ui:surfaceTexture.allRound}} on other angular ones.
 3. Click {{ui:inspector.surfaceApply}}. A large body takes a few seconds; you can keep working meanwhile.
 
 To give the pattern to only some faces, say only the top of a box, click {{ui:inspector.surfaceFacesPick}} and then the faces in the view: the top, the bottom or a side. A face reaches up to the body's sharp edges; on a cylinder the mantle is one face, and the top and the bottom are one each. Picked faces light up, a second click takes one out again, and {{ui:inspector.surfaceFacesClear}} gives the pattern the whole body again. Only the picked faces get the pattern; all others stay as they were and keep few triangles. On a top or a bottom the pattern lies flat; on a round top, grooves, rope and knitting run in rings round the middle, like a tree's year rings. {{ui:inspector.surfaceFaceTurn}} turns the pattern on the top and bottom: at 0° the rows run along the front edge, at 90° along the side edge. {{ui:inspector.surfaceCapStyle}} switches grooves, rope and knitting there between rows and rings; on an angular body the rings follow its outline. {{ui:inspector.surfaceCapEdge}} says what happens at the edge between the side and a patterned top or bottom: {{ui:surfaceTexture.edgeSharp}} lets both end at the edge. With {{ui:surfaceTexture.edgeOver}} the side's pattern bends round the edge and takes the whole top: rows of rope, knitting and level grooves run on as rings, upright and slanted grooves as rays almost to the middle. {{ui:surfaceTexture.edgeFold}} does the same as a rim only; inside lies the top's own pattern, as {{ui:inspector.surfaceCapStyle}} sets it. {{ui:surfaceTexture.edgeBead}} lays a border round the edge for every pattern – a cord, a cast-off chain or a round bead. A tight round (a fillet) ends a face as well: on a cup with rounded rims the outside, the rounds, the rim, the inside and the bottom are faces of their own, so a click on the outside takes only the outside. A wide round, about a quarter of the body or more, belongs to the face, as a sphere is one face. With picked faces, {{ui:inspector.surfaceOutside}} and {{ui:inspector.surfaceInside}} do not count.

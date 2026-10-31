@@ -3,7 +3,7 @@ title: Solider og huller
 summary: Hvordan enkle former bliver til boringer, slidser og lommer, og hvordan man ændrer en gruppe igen senere.
 ---
 
-Dette er den vigtigste idé i layerling, og den læres hurtigt: **Enhver form er enten en solid eller et hul.** En solid bliver. Et hul er et værktøj der tager materiale væk.
+Dette er den vigtigste idé i Magic3D, og den læres hurtigt: **Enhver form er enten en solid eller et hul.** En solid bliver. Et hul er et værktøj der tager materiale væk.
 
 ## Solid eller hul
 
@@ -28,7 +28,7 @@ Sådan får du:
 
 Hvis der er flere solider i gruppen, samles de. To solider der rører hinanden bliver til én del.
 
-Med store meshes, som et importeret STL med hundredvis af tusinde trekanter, tager skæringen nogle få sekunder. layerling arbejder så i baggrunden og viser "{{ui:status.computing}}"; imens kan du dreje visningen og bruge grænsefladen. Ændrer du scenen i den tid, kasseres resultatet, og layerling siger det. Det samme gælder {{ui:editor.tool.split}}.
+Med store meshes, som et importeret STL med hundredvis af tusinde trekanter, tager skæringen nogle få sekunder. Magic3D arbejder så i baggrunden og viser "{{ui:status.computing}}"; imens kan du dreje visningen og bruge grænsefladen. Ændrer du scenen i den tid, kasseres resultatet, og Magic3D siger det. Det samme gælder {{ui:editor.tool.split}}.
 
 Du kan behandle en gruppe som en form: flytte, rotere, farve, gruppere igen. {{ui:editor.tool.ungroup}} ([[Ctrl]]+[[Shift]]+[[G]]) opløser den og de enkelte dele er tilbage.
 
@@ -59,7 +59,7 @@ Ved siden af den viser {{ui:editor.tool.intersectPreview}} den fælles del, før
 
 ## Skær et legeme ud af et andet
 
-Til dele, der skal passe sammen, en aksel i en muffe eller en bolt i et hus, laver du den ene del og skærer den ud af den anden. Vælg de to legemer og klik på {{ui:editor.tool.cutOut}} i området {{ui:editor.group.combine}}, eller højreklik og vælg det der. Panelet nævner delen, der bliver, og legemet, der får hulrummet; layerling tager det mindste som delen, og {{ui:cutOut.swap}} vender det om. {{ui:cutOut.clearance}} gør hulrummet så meget større end delen hele vejen rundt: 0 passer præcist, 0,2 mm er et almindeligt spillerum til en printet pasning. {{ui:cutOut.apply}} skærer en kopi af delen ud af det andet legeme og lader delen selv blive, hvor den er. Resultatet er en gruppe: {{ui:editor.tool.ungroup}} tager snittet fra hinanden igen. Et spillerum kræver, at delen er et eksakt legeme, som ved værktøjet {{ui:editor.tool.offset}}, der bruges til det.
+Til dele, der skal passe sammen, en aksel i en muffe eller en bolt i et hus, laver du den ene del og skærer den ud af den anden. Vælg de to legemer og klik på {{ui:editor.tool.cutOut}} i området {{ui:editor.group.combine}}, eller højreklik og vælg det der. Panelet nævner delen, der bliver, og legemet, der får hulrummet; Magic3D tager det mindste som delen, og {{ui:cutOut.swap}} vender det om. {{ui:cutOut.clearance}} gør hulrummet så meget større end delen hele vejen rundt: 0 passer præcist, 0,2 mm er et almindeligt spillerum til en printet pasning. {{ui:cutOut.apply}} skærer en kopi af delen ud af det andet legeme og lader delen selv blive, hvor den er. Resultatet er en gruppe: {{ui:editor.tool.ungroup}} tager snittet fra hinanden igen. Et spillerum kræver, at delen er et eksakt legeme, som ved værktøjet {{ui:editor.tool.offset}}, der bruges til det.
 
 ## Redigering af en gruppe
 
@@ -89,7 +89,7 @@ En bemærkning: fas og rund du har lagt på **hele** gruppen mistes ved genopbyg
 
 Halvdelene er almindelige meshes: indstillinger som en cylinders sider eller en teksts bogstaver er væk, så sæt dem først. [[Ctrl]]+[[Z]] bringer originalen tilbage i ét skridt. Låste og skjulte objekter kan ikke deles.
 
-Et importeret mesh skal have en lukket overflade for at blive delt, grupperet eller skåret. Har det åbninger, som øjnene på en figur der er ladt åbne, eller en revne i et scan, lukker layerling dem først med et fladt låg og siger hvor mange den lukkede. Den lukker små åbninger og flade åbninger af enhver størrelse; en stor åbning hvis kant bøjer, overlader den til dig, og beskeden siger det. Luk den i det program modellen kommer fra, eller med et mesh-reparationsværktøj, og importer den igen.
+Et importeret mesh skal have en lukket overflade for at blive delt, grupperet eller skåret. Har det åbninger, som øjnene på en figur der er ladt åbne, eller en revne i et scan, lukker Magic3D dem først med et fladt låg og siger hvor mange den lukkede. Den lukker små åbninger og flade åbninger af enhver størrelse; en stor åbning hvis kant bøjer, overlader den til dig, og beskeden siger det. Luk den i det program modellen kommer fra, eller med et mesh-reparationsværktøj, og importer den igen.
 
 ## Adskil dele
 

@@ -20,9 +20,9 @@ Rychlost přiblížení nastavuje {{ui:workspace.zoomSpeed}} v části {{ui:work
 
 Na tabletu nebo telefonu dvěma prsty přibližujete a oddalujete a společným posunem prstů posouváte pohled. Jeden prst pracuje s modelem jako levé tlačítko myši. Pro otáčení jedním prstem zapněte {{ui:camera.touchRotate}} v liště pohledu. Volba se zobrazuje jen na dotykových zařízeních.
 
-Grafický tablet s perem se chová jako myš: hrot zastupuje levé tlačítko, boční tlačítko pravé, tedy otáčení a místní nabídku. Tlačítkům tabletu lze v jeho ovladači přiřadit [klávesové zkratky](chapter:shortcuts) Layerlingu.
+Grafický tablet s perem se chová jako myš: hrot zastupuje levé tlačítko, boční tlačítko pravé, tedy otáčení a místní nabídku. Tlačítkům tabletu lze v jeho ovladači přiřadit [klávesové zkratky](chapter:shortcuts) Magic3D.
 
-**Na tabletu používejte pokud možno dotykové pero.** Jeho hrot je přesnější než prst a nezakrývá cíl. Snáze tak zasáhnete malé body, tenké čáry, úchyty náčrtu, měřicí body i hrany a delší práce je méně únavná. Layerling sice pro prst zvětšuje oblast, ve které se tyto prvky dají zachytit, pero však zůstává přesnější.
+**Na tabletu používejte pokud možno dotykové pero.** Jeho hrot je přesnější než prst a nezakrývá cíl. Snáze tak zasáhnete malé body, tenké čáry, úchyty náčrtu, měřicí body i hrany a delší práce je méně únavná. Magic3D sice pro prst zvětšuje oblast, ve které se tyto prvky dají zachytit, pero však zůstává přesnější.
 
 ### Orientační krychle
 
@@ -100,7 +100,7 @@ Rozměry, rozteč a barvu podložky měníte ozubeným kolem v pásu nástrojů.
 
 {{ui:workspace.showAxes}}, výchozí zapnuto, kreslí v rohu podložky tři šipky: **X** červeně doprava, **Y** zeleně dozadu a **Z** modře vzhůru, podle údajů polohy. Jde o pravotočivou soustavu jako v Tinkercadu, CAD programech a slicerech. Na pracovní rovině umístěné na ploše se osy přizpůsobí její orientaci. Pokud překážejí, vypněte je.
 
-V {{ui:workspace.appearance}} upravujete i osvětlení. {{ui:workspace.shadowStrength}} určuje tmavost vržených stínů. {{ui:workspace.shadeContrast}} mění poměr rovnoměrného okolního a hlavního světla: výraznější nastavení ztmaví odvrácené strany a zvýrazní stíny, měkčí je zploští. Na horním konci je kontrast velmi silný. {{ui:workspace.shadowSoftness}} změkčí okraje stínů. {{ui:workspace.lightAzimuth}} otáčí hlavním světlem kolem podložky, 0° zepředu a 90° zprava. {{ui:workspace.lightElevation}} mění jeho výšku; při 90° svítí shora jako v Tinkercadu a stíny leží přímo pod tělesy. {{ui:workspace.lightReset}} vše obnoví. {{ui:workspace.classicLook}} nastaví bílou podložku, světle modrou milimetrovou mřížku s tmavší centimetrovou čárou, černé obrysy a horní světlo s měkkými stíny. Každou hodnotu můžete následně změnit samostatně. Výchozí hodnoty odpovídají původnímu vzhledu Layerlingu; vhodné nastavení záleží i na monitoru. Náčrt má vlastní barvy světlého motivu: {{ui:workspace.sketchBackground}} pro okolí listu, {{ui:workspace.sketchPlateColor}} pro list a {{ui:workspace.sketchGridColor}} pro mřížku. {{ui:workspace.sketchMatch}} převezme všechny tři barvy z 3D plochy jedním kliknutím.
+V {{ui:workspace.appearance}} upravujete i osvětlení. {{ui:workspace.shadowStrength}} určuje tmavost vržených stínů. {{ui:workspace.shadeContrast}} mění poměr rovnoměrného okolního a hlavního světla: výraznější nastavení ztmaví odvrácené strany a zvýrazní stíny, měkčí je zploští. Na horním konci je kontrast velmi silný. {{ui:workspace.shadowSoftness}} změkčí okraje stínů. {{ui:workspace.lightAzimuth}} otáčí hlavním světlem kolem podložky, 0° zepředu a 90° zprava. {{ui:workspace.lightElevation}} mění jeho výšku; při 90° svítí shora jako v Tinkercadu a stíny leží přímo pod tělesy. {{ui:workspace.lightReset}} vše obnoví. {{ui:workspace.classicLook}} nastaví bílou podložku, světle modrou milimetrovou mřížku s tmavší centimetrovou čárou, černé obrysy a horní světlo s měkkými stíny. Každou hodnotu můžete následně změnit samostatně. Výchozí hodnoty odpovídají původnímu vzhledu Magic3D; vhodné nastavení záleží i na monitoru. Náčrt má vlastní barvy světlého motivu: {{ui:workspace.sketchBackground}} pro okolí listu, {{ui:workspace.sketchPlateColor}} pro list a {{ui:workspace.sketchGridColor}} pro mřížku. {{ui:workspace.sketchMatch}} převezme všechny tři barvy z 3D plochy jedním kliknutím.
 
 ![Nastavení vzhledu: barvy pozadí a pracovní roviny pro světlý motiv a zapnutí obrysů těles.](shot:settings-appearance)
 
@@ -114,7 +114,7 @@ V {{ui:workspace.appearance}} upravujete i osvětlení. {{ui:workspace.shadowStr
 
 > **Tip:** Při přesném lícování dílů přestaňte pohledem otáčet. Číselnou klávesou zvolte pohled shora nebo zepředu a [[O]] přepněte na rovnoběžné promítání. Snadněji pak poznáte, zda jsou hrany skutečně v jedné rovině.
 
-## Když je Layerling pomalý
+## Když je Magic3D pomalý
 
 Vše se počítá a vykresluje v prohlížeči. Starší počítač, slabší grafika nebo více velkých monitorů mohou pohled zpomalit. Pomůže:
 
@@ -123,4 +123,4 @@ Vše se počítá a vykresluje v prohlížeči. Starší počítač, slabší gr
 - **Jednotlivé volby:** bez rychlého režimu můžete vypnout pouze {{ui:workspace.showShadows}} nebo {{ui:workspace.edgeLines}}.
 - **Grafická karta:** v Chrome otevřete `chrome://gpu`, v Edge `edge://gpu`. U WebGL má být „Hardware accelerated“. „Software only“ znamená vypnutou hardwarovou akceleraci. Ve Windows lze také v Nastavení → Systém → Obrazovka → Grafika nastavit pro prohlížeč vysoký výkon, aby používal samostatnou grafiku místo slabší integrované.
 - **Zjednodušení importované sítě:** stovky tisíc trojúhelníků zpomalí každý pohled. Postup je v kapitole o souborech v části o zjednodušení sítě.
-- **Zavření ostatních karet:** všechny otevřené karty Layerlingu i jiné 3D stránky sdílejí stejnou grafickou kartu.
+- **Zavření ostatních karet:** všechny otevřené karty Magic3D i jiné 3D stránky sdílejí stejnou grafickou kartu.

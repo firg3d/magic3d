@@ -13,7 +13,7 @@ Succedono tre cose:
 
 - Il piano di lavoro assume le dimensioni del piatto di stampa.
 - In un angolo del piano di lavoro compaiono il nome della stampante e il suo volume di stampa. Se le scritte sono d’intralcio, disattivale con {{ui:workspace.showPlateLabels}} nella sezione {{ui:workspace.workplane}}; puoi nascondere anche il nome del progetto, che appare davanti a sinistra.
-- layerling **mostra un avviso** se qualcosa non entra.
+- Magic3D **mostra un avviso** se qualcosa non entra.
 
 I profili delle stampanti provengono da OrcaSlicer, quindi sono gli stessi disponibili nel tuo slicer. Se preferisci lavorare senza una stampante selezionata, scegli {{ui:workspace.printerNone}}. Puoi anche impostare manualmente le dimensioni del piano di lavoro.
 
@@ -46,7 +46,7 @@ Alcune regole pratiche per scegliere l’orientamento:
 
 Nel menu accanto all’occhio ({{ui:editor.group.visibility}}), attiva **Mostra sbalzi** per visualizzarli. Le facce rivolte verso il basso con un’inclinazione superiore a 45° vengono tratteggiate in rosso e bianco: sono le zone in cui la stampante potrebbe aver bisogno di supporti. Le superfici appoggiate sul piatto restano senza tratteggio. Durante la progettazione puoi così verificare se una sfera, un arco o un foro orizzontale si stampa senza supporti; il [foro teardrop](chapter:threads-and-mechanics) è pensato proprio per questo. Ruota il pezzo o appoggialo su un’altra faccia con {{ui:editor.tool.layFlat}}: il tratteggio si aggiorna subito.
 
-Nelle impostazioni, sotto {{ui:workspace.appearance}}, imposta l’inclinazione massima gestita dalla tua stampante: da 30° (prudente) a 70° (per stampanti con un buon raffreddamento del pezzo). Anche una faccia appoggiata a un altro corpo viene segnalata: layerling considera solo la faccia in sé.
+Nelle impostazioni, sotto {{ui:workspace.appearance}}, imposta l’inclinazione massima gestita dalla tua stampante: da 30° (prudente) a 70° (per stampanti con un buon raffreddamento del pezzo). Anche una faccia appoggiata a un altro corpo viene segnalata: Magic3D considera solo la faccia in sé.
 
 ## Spessore delle pareti, gioco e smussi
 

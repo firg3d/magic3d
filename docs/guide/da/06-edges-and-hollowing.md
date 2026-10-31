@@ -33,9 +33,9 @@ I panelet finder du:
 - {{ui:edge.keepSize}} bevarer fasen eller runding som den er, selvom du skalerer formen senere.
 - {{ui:edge.previewQuality}} ({{ui:edge.draft}}, {{ui:edge.standard}} eller {{ui:edge.fine}}) bestemmer hvor fint forhåndsvisningen beregnes. For vanskelige dele er {{ui:edge.draft}} hurtigere.
 
-Mens du justerer størrelsen, genberegner layerling forhåndsvisningen. Det kan tage et øjeblik. Du må blive ved med at justere; den sidste værdi du valgte er det der beregnes.
+Mens du justerer størrelsen, genberegner Magic3D forhåndsvisningen. Det kan tage et øjeblik. Du må blive ved med at justere; den sidste værdi du valgte er det der beregnes.
 
-Hvis størrelsen er for stor til kanten, siger layerling det og foreslår en mindre værdi. Ofte gør et eller to millimeter mindre det. Ved skarpe vinkler har en rund brug for mere plads end dens radius antyder. På en lille skærm ruller panelet selv ned så beskeden er i syne.
+Hvis størrelsen er for stor til kanten, siger Magic3D det og foreslår en mindre værdi. Ofte gør et eller to millimeter mindre det. Ved skarpe vinkler har en rund brug for mere plads end dens radius antyder. På en lille skærm ruller panelet selv ned så beskeden er i syne.
 
 Når en markering der virkede fejler efter du klikker én kant mere, bliver den kant rød og tegnes bredere: det er den der ikke kan behandles sammen med de andre ved denne størrelse. Klik den igen for at tage den ud, eller gør størrelsen mindre. Klikker du flere kanter mens beskeden står, bliver den første ved med at være rød. Når der ikke er en tidligere markering der virkede - det allerførste klik, eller en størrelse du lige hævede - bliver kanterne der fejler selv alene røde, eller alle sammen hvis det kun er deres kombination.
 
@@ -51,7 +51,7 @@ Ved siden af en fas, en rund eller en udhuling er der også {{ui:edge.editAction
 
 På en gruppe, for eksempel en cylinder med et hul, hører den behandlede kant til den færdige form, ikke til en af dens dele. Så bliver gruppen til én form. {{ui:editor.tool.ungroup}} virker alligevel: Det tager først kantbehandlingerne tilbage og opløser derefter gruppen, i ét trin som [[Ctrl]]+[[Z]] fortryder. Tag behandlingen tilbage som beskrevet ovenfor og gruppen vender tilbage med alle sine dele. Den nemmeste måde er at behandle kanter til sidst. Det gælder også gevind: kantværktøjet tager et gevind som dets eksakte form, så en blok med et gevindhul får sine kanter rundet med gevindet på plads. At beregne et gevinds kanter tager længere end for en almindelig form, et par sekunder for en M6 og omkring et halvt minut for et G1/2-rørgevind.
 
-> **Godt at vide:** layerling arbejder med rigtig CAD-geometri til runding og fas, ikke kun et mesh af trekanter. Det er derfor en rundet kant stadig er en rundet kant i STEP-eksporten.
+> **Godt at vide:** Magic3D arbejder med rigtig CAD-geometri til runding og fas, ikke kun et mesh af trekanter. Det er derfor en rundet kant stadig er en rundet kant i STEP-eksporten.
 
 En del importeret som STEP beholder også sin CAD-geometri: fas, rund og udhuling virker på formen fra filen, uanset hvor fint delen er tegnet på skærmen. STL, OBJ og 3MF bringer kun trekanter, og en fint tegnet del kan være for tæt for kantværktøjet. Hvis en del også er tilgængelig som STEP, importér den.
 
@@ -69,20 +69,20 @@ Kasser, krus, kabinetter og låg har én ting til fælles: de er tomme indeni, m
 
 Væggene vokser indad. Ydersiden forbliver som den er.
 
-{{ui:shell.edges}} betyder kun noget hvor de indvendige vægge går fra hinanden - ved et trin i formen eller omkring en åbning. Hjørnerne på hulrummet i en almindelig kasse er altid skarpe, med begge indstillinger. For en rundet inderside, rund formens ydre kanter først (se ovenfor), så hul den ud: indersiden følger med radius minus vægtykkelsen. Hvis den rundede inderside ikke kan bygges, hvilket kan ske med et omrids lavet af meget mange korte lige stykker såsom en tegnet skitse, bygger layerling den samme udhulede form med skarpe indvendige hjørner i stedet.
+{{ui:shell.edges}} betyder kun noget hvor de indvendige vægge går fra hinanden - ved et trin i formen eller omkring en åbning. Hjørnerne på hulrummet i en almindelig kasse er altid skarpe, med begge indstillinger. For en rundet inderside, rund formens ydre kanter først (se ovenfor), så hul den ud: indersiden følger med radius minus vægtykkelsen. Hvis den rundede inderside ikke kan bygges, hvilket kan ske med et omrids lavet af meget mange korte lige stykker såsom en tegnet skitse, bygger Magic3D den samme udhulede form med skarpe indvendige hjørner i stedet.
 
 ![Resultatet: en skal med 3 mm væg, åben foroven.](shot:hollow-result)
 
 ![Den samme kasse med kun forsiden åben: en slids til en skuffe.](shot:hollow-sides)
 
-For hver åben side har formen brug for en flad flade helt ude ved kanten på den side. Kugler og frie former kan derfor ikke udhules på denne måde. Hvis væggen er for tyk til formen, siger layerling det og beder om en tyndere.
+For hver åben side har formen brug for en flad flade helt ude ved kanten på den side. Kugler og frie former kan derfor ikke udhules på denne måde. Hvis væggen er for tyk til formen, siger Magic3D det og beder om en tyndere.
  En rundet kasse, hvis top- og bundkanter også er rundet, er et sådant tilfælde: væggen skal være tydeligt tyndere end den runding, eller sæt rundingen til 0 først.
 
 En form med en lomme - en blok med et hul der ikke går hele vejen igennem, lavet ved at gruppere en kasse med et hævet hul - kan også udhules, med toppen åben: væggene rundt om lommen udhules også, så en ring af hulrum bliver mellem ydervæggen og lommen, åben foroven, og et tyndt hulrum ligger under lommens bund.
 
 **Former der ender i en spids,** såsom en kegle eller en revolvet trekant, har ingen flad flade på toppen der kan forblive åben. Et helt lukket hulrum virker der heller ikke, fordi en spids ikke kan forskydes indad: selv med 1 mm væg får du beskeden om at væggene ikke kan være så tykke. Tegn væggen ind i profilen før du revolverer i stedet: duplikér omridset, skalér kopien ensartet ned, læg den i midten af det store omrids og skær det store med det, så revolver det hele (kapitel Skitser, afsnit Revolver). Afstanden mellem de to omrids er vægtykkelsen.
 
-Hvis du ændrer størrelse på en udhulet form senere, udhuler layerling den igen med det samme ved den nye størrelse. Væggen forbliver så tyk som du valgte, runde former inkluderet. En cylinder du trækker længere den ene vej end den anden bliver til en ellipse. Afrundinginger og affasninger du lagde på den efter udhulingen lægges igen på de samme kanter.
+Hvis du ændrer størrelse på en udhulet form senere, udhuler Magic3D den igen med det samme ved den nye størrelse. Væggen forbliver så tyk som du valgte, runde former inkluderet. En cylinder du trækker længere den ene vej end den anden bliver til en ellipse. Afrundinginger og affasninger du lagde på den efter udhulingen lægges igen på de samme kanter.
 
 > **Tip:** Med en 0,4 mm dyse er 1,2 til 2 mm væg et godt udgangspunkt: tyndt nok til at spare materiale, tykt nok til en solid del.
 
@@ -123,6 +123,6 @@ En runding i vejen, et hul på det forkerte sted, et buldug du ikke har brug for
 
 Fladerne omkring de slettede vokser, indtil hullet er lukket. En kasse med rundede topkanter får sine skarpe kanter tilbage, et hul bliver fyldt, et buldug er væk. Formen bevarer sin eksakte form, så den kan faseres og rundes igen, og STEP-eksporten beholder dens sande flader. [[Ctrl]]+[[Z]] tager sletningen tilbage i ét skridt. Den står også under {{ui:edge.featureHistory}} sammen med runder og faser, hvor {{ui:edge.revertAction}} tager den tilbage; der er ingen {{ui:edge.editAction}} til den. På en gruppe er resultatet ét legeme, som ved en kantbehandling.
 
-Vælg alle fladerne af det der skal væk, og kun dem. Kan fladerne omkring dem ikke lukke hullet, siger layerling det, og intet ændres: en hovedside af en kasse har for eksempel ingen nabo, der kan tage dens plads. Sletter du kun bunden af en lomme, bliver den til et hul lige igennem, fordi lommens vægge løber videre på den anden side.
+Vælg alle fladerne af det der skal væk, og kun dem. Kan fladerne omkring dem ikke lukke hullet, siger Magic3D det, og intet ændres: en hovedside af en kasse har for eksempel ingen nabo, der kan tage dens plads. Sletter du kun bunden af en lomme, bliver den til et hul lige igennem, fordi lommens vægge løber videre på den anden side.
 
-{{ui:editor.tool.deleteFace}} kræver eksakte flader: det virker på dele importeret som STEP og på layerlings egne former. Det layerling gemmer som mesh har ingen: en importeret STL, OBJ eller 3MF, en delt, viklet eller forenklet form, eller en meget detaljeret form som et langt stykke tekst. Importer en del som STEP, hvis du kan. På en detaljeret importeret del kan nogle få flader være for meget for CAD-kernen: efter 45 sekunder stoppes sletningen, og intet ændres. En form der ændres i størrelse efter en kantbehandling, mens kantstørrelsen bevares, har ingen eksakte flader i den nye størrelse, indtil ændringen af størrelsen tages tilbage.
+{{ui:editor.tool.deleteFace}} kræver eksakte flader: det virker på dele importeret som STEP og på Magic3D egne former. Det Magic3D gemmer som mesh har ingen: en importeret STL, OBJ eller 3MF, en delt, viklet eller forenklet form, eller en meget detaljeret form som et langt stykke tekst. Importer en del som STEP, hvis du kan. På en detaljeret importeret del kan nogle få flader være for meget for CAD-kernen: efter 45 sekunder stoppes sletningen, og intet ændres. En form der ændres i størrelse efter en kantbehandling, mens kantstørrelsen bevares, har ingen eksakte flader i den nye størrelse, indtil ændringen af størrelsen tages tilbage.

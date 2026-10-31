@@ -3543,9 +3543,9 @@ function Dashboard({
     <main className="dashboard-shell">
       <header className="dashboard-topbar">
         <a className="dashboard-brand" href="./" aria-label={t("brand.home")}>
-          <img src="/assets/layerling/layerling-logo.svg" alt="" />
+          <img src="/assets/magic3d/magic3d-logo.svg" alt="" />
           <span className="dashboard-brand-text">
-            <span className="dashboard-brand-name">layerling</span>
+            <span className="dashboard-brand-name">Magic<b>3D</b></span>
             <span className="dashboard-tagline">{t("brand.tagline")}</span>
           </span>
         </a>

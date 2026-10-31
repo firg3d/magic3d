@@ -13,7 +13,7 @@ summary: 相互配合的螺钉、螺母与螺纹孔，以及齿轮、弹簧、�
 - **{{ui:thread.screw}}：** 带头部。你可以选择 {{ui:inspector.threadHead}}：{{ui:thread.headCylinder}}、{{ui:thread.headCountersunk}} 或 {{ui:thread.headHex}}。
   再往下可以设置{{ui:prop.headDiameter}}(六角头为{{ui:prop.headAcrossFlats}};沉头的直径随高度而定)以及头部端面的{{ui:inspector.threadDrive}}:{{ui:thread.driveHex}}、{{ui:thread.driveTorx}}、{{ui:thread.drivePhillips}}、{{ui:thread.driveSlot}}、{{ui:thread.driveRobertson}},或用手或扳手拧的螺丝选{{ui:thread.driveNone}}。{{ui:prop.driveSize}}是内六角的对边宽度、梅花星形的外径或十字的跨度;{{ui:prop.driveDepth}}是它的深度,最多为头部的十分之九,0 表示不要。只要不改动,这些值就随尺寸变化;六角头默认没有驱动。驱动属于精确实体,因此也会出现在 STEP 导出中。选择{{ui:thread.driveSlot}}时，{{ui:prop.driveSize}}是槽的长度，宽度为长度的五分之一，一字螺丝刀或硬币都能拧；初始长度为头部允许的最大值。 {{ui:thread.driveRobertson}}是加拿大常见的方头驱动：{{ui:prop.driveSize}}是方孔的对边宽度，默认取与规格相配的批头，M4 和 M5 为 2 号（2.84 毫米）。
 - **{{ui:thread.nut}}：** 配套的螺母。配套的垫圈是一个{{ui:shape.tube}}：在{{ui:prop.washerSize}}中选择螺钉规格，外径、内径和厚度即按 ISO 7089 设置。
-- **{{ui:thread.bore}}：** 螺纹孔。它属于孔。把它拖进零件，将两者分组，零件就有内螺纹。 要做拧螺栓的孔，请始终使用{{ui:thread.bore}}：{{ui:thread.rod}}或{{ui:thread.screw}}作为孔时是螺栓的完整尺寸，没有间隙，会太紧。如果仍把它设为孔，layerling 会提示你，点击{{ui:inspector.threadMakeTappedHole}}即可改为{{ui:thread.bore}}。
+- **{{ui:thread.bore}}：** 螺纹孔。它属于孔。把它拖进零件，将两者分组，零件就有内螺纹。 要做拧螺栓的孔，请始终使用{{ui:thread.bore}}：{{ui:thread.rod}}或{{ui:thread.screw}}作为孔时是螺栓的完整尺寸，没有间隙，会太紧。如果仍把它设为孔，Magic3D 会提示你，点击{{ui:inspector.threadMakeTappedHole}}即可改为{{ui:thread.bore}}。
 
 ![一个带圆柱头的螺钉。右侧：类型和头部形状，往下是规格、螺距和牙型。](shot:thread-screw)
 
@@ -100,7 +100,7 @@ G 规格是符合 ISO 228-1 的平行惠氏管螺纹，常见于水、燃气、�
 
 ## 弯管
 
-一个 {{ui:shape.bentTube}} 最多由十二段组成：一段直管，接着一个弯。每一段你设置 {{ui:prop.bentTubeSegmentLength}}、{{ui:prop.bentTubeBendAngle}}、{{ui:prop.bentTubeBendRadius}} 和 {{ui:prop.bentTubeRoll}}。正在编辑的段会在管上以橙色高亮，方便你跟上顺序。滚转角为 0° 时在工作平面内弯曲，90° 时管子向上弯。轮廓可以是圆形、方形、六边形或八边形，内部同样如此，也可以完全实心。如果管子撞到自己，layerling 会提醒你。
+一个 {{ui:shape.bentTube}} 最多由十二段组成：一段直管，接着一个弯。每一段你设置 {{ui:prop.bentTubeSegmentLength}}、{{ui:prop.bentTubeBendAngle}}、{{ui:prop.bentTubeBendRadius}} 和 {{ui:prop.bentTubeRoll}}。正在编辑的段会在管上以橙色高亮，方便你跟上顺序。滚转角为 0° 时在工作平面内弯曲，90° 时管子向上弯。轮廓可以是圆形、方形、六边形或八边形，内部同样如此，也可以完全实心。如果管子撞到自己，Magic3D 会提醒你。
 
 ## 放样
 
@@ -116,7 +116,7 @@ G 规格是符合 ISO 228-1 的平行惠氏管螺纹，常见于水、燃气、�
 
 ## Gridfinity
 
-{{ui:shape.gridfinity}} 形状用来制作 Zack Freedman 的开放式收纳系统的零件：42 mm 网格上的收纳盒，放在底板里，并且可以彼此堆叠。尺寸遵循已发布的 Gridfinity 规范，所以 layerling 做的收纳盒能装进其他生成器做的底板，反之亦然。在 {{ui:prop.gridfinityType}} 下选择：
+{{ui:shape.gridfinity}} 形状用来制作 Zack Freedman 的开放式收纳系统的零件：42 mm 网格上的收纳盒，放在底板里，并且可以彼此堆叠。尺寸遵循已发布的 Gridfinity 规范，所以 Magic3D 做的收纳盒能装进其他生成器做的底板，反之亦然。在 {{ui:prop.gridfinityType}} 下选择：
 
 - **{{ui:gridfinity.bin}}：** 每个网格单元下方都有支脚的收纳盒。{{ui:prop.gridfinityUnitsX}} 和 {{ui:prop.gridfinityUnitsZ}} 按 42 mm 的网格单元计数（收纳盒小 0.5 mm，一个单元为 41.5 mm）；{{ui:prop.gridfinityUnitsY}} 按 7 mm 的高度单元计数，最多 20。壁顶的 {{ui:prop.gridfinityLip}} 托住下一个收纳盒的支脚，并使收纳盒增高 4.4 mm：3 单元带卡边的收纳盒高 25.4 mm。启用 {{ui:prop.gridfinityMagnets}} 后，每个支脚的每个角都会得到一个用于 6 × 2 mm 磁铁的孔。
 - **{{ui:gridfinity.baseplate}}：** 收纳盒所站的底板，高 5 mm，每个网格单元有一个插槽。它是没有底面、没有磁铁孔的开放框架。
@@ -160,7 +160,7 @@ G 规格是符合 ISO 228-1 的平行惠氏管螺纹，常见于水、燃气、�
 
 {{ui:shape.knurl}} 是布满四周沟槽的圆形握持面，用于旋钮、拨轮和工具手柄。在 {{ui:prop.knurlPattern}} 下选择 {{ui:knurl.straight}}（沿轴线的沟槽，像控制旋钮）、{{ui:knurl.diamond}}（两排斜向沟槽交叉成小菱形），或 {{ui:knurl.round}}（沿轴线的沟槽和凸脊形成柔和的圆弧波纹，握感舒适而没有锐利的棱）。圆形沟槽保持浅于半个齿距，否则凸脊会在根部鼓起；深度过大会自动退让。你设置 {{ui:prop.diameter}} 和 {{ui:prop.height}}、{{ui:prop.knurlCount}} 的数量和 {{ui:prop.knurlDepth}}；交叉滚花还要设置相对轴线的 {{ui:prop.knurlAngle}}。{{ui:prop.knurlChamfer}} 以 45 度断开两端，像车削的旋钮；0 则保持尖锐。
 
-直纹和圆形滚花是精确实体，所以其边可以断开和倒圆。交叉滚花仍是网格，因为作为精确实体，30 条沟槽要计算将近一分钟。要给轴上的旋钮用，把滚花与一个孔分组，例如设为螺纹孔的 {{ui:shape.thread}}。浅于 0.4 mm 的沟槽几乎没有打印机能够干净地打出，而且 layerling 不会让它们沿握持面间隔小于 0.8 mm：细的握持面得到的沟槽更少。
+直纹和圆形滚花是精确实体，所以其边可以断开和倒圆。交叉滚花仍是网格，因为作为精确实体，30 条沟槽要计算将近一分钟。要给轴上的旋钮用，把滚花与一个孔分组，例如设为螺纹孔的 {{ui:shape.thread}}。浅于 0.4 mm 的沟槽几乎没有打印机能够干净地打出，而且 Magic3D 不会让它们沿握持面间隔小于 0.8 mm：细的握持面得到的沟槽更少。
 
 ## 燕尾
 

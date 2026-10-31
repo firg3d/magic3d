@@ -23,7 +23,7 @@ describe("shading contrast and shadow strength", () => {
   it("keeps what was chosen, within range, and takes older settings as the defaults", () => {
     expect(normalizeWorkspaceSettings({ shadeContrast: 40, shadowStrength: 60 })).toMatchObject({ shadeContrast: 40, shadowStrength: 60 });
     expect(normalizeWorkspaceSettings({ shadeContrast: 900, shadowStrength: -5 })).toMatchObject({ shadeContrast: 100, shadowStrength: 0 });
-    expect(normalizeWorkspaceSettings({ gridColor: "#c08a12" })).toMatchObject({ shadeContrast: 0, shadowStrength: 100 });
+    expect(normalizeWorkspaceSettings({ gridColor: "#2aa959" })).toMatchObject({ shadeContrast: 0, shadowStrength: 100 });
   });
 });
 
@@ -55,7 +55,7 @@ describe("soft light (#812)", () => {
 
 describe("sketch colour settings", () => {
   it("start as the sketch always looked, keep a chosen colour and refuse a broken one", () => {
-    expect(DEFAULT_WORKPLANE_WORKSPACE.sketchBackground).toBe("#fcfbf8");
+    expect(DEFAULT_WORKPLANE_WORKSPACE.sketchBackground).toBe("#fafbfa");
     expect(normalizeWorkspaceSettings({ sketchBackground: "#ffffff", sketchGridColor: "#0e69f1" })).toMatchObject({ sketchBackground: "#ffffff", sketchGridColor: "#0e69f1" });
     expect(normalizeWorkspaceSettings({ sketchBackground: "white", sketchGridColor: 3 })).toMatchObject({
       sketchBackground: DEFAULT_WORKPLANE_WORKSPACE.sketchBackground,

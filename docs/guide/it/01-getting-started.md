@@ -3,17 +3,17 @@ title: Primi passi
 summary: Dalla pagina vuota al primo pezzo per la stampante 3D in cinque minuti, senza account e senza installare nulla.
 ---
 
-layerling è un programma di progettazione per la stampa 3D che funziona direttamente nel browser. Puoi creare un pezzo partendo da forme semplici, praticarvi fori, arrotondarne gli spigoli e inviarlo allo slicer. Non devi installare nulla né registrarti. I progetti restano sul tuo computer.
+Magic3D è un programma di progettazione per la stampa 3D che funziona direttamente nel browser. Puoi creare un pezzo partendo da forme semplici, praticarvi fori, arrotondarne gli spigoli e inviarlo allo slicer. Non devi installare nulla né registrarti. I progetti restano sul tuo computer.
 
-![La pagina iniziale di layerling: in alto «Crea un nuovo progetto 3D», sotto i tuoi progetti e la guida rapida.](shot:start-page)
+![La pagina iniziale di Magic3D: in alto «Crea un nuovo progetto 3D», sotto i tuoi progetti e la guida rapida.](shot:start-page)
 
 ## Creare un progetto
 
-Apri [layerling.com](https://layerling.com/). Nella pagina iniziale fai clic su {{ui:dashboard.createDesign}}. Si apre l’editor con il piano di lavoro vuoto: la griglia su cui prenderà forma il progetto.
+Apri [magic3d.ro](https://magic3d.ro/). Nella pagina iniziale fai clic su {{ui:dashboard.createDesign}}. Si apre l’editor con il piano di lavoro vuoto: la griglia su cui prenderà forma il progetto.
 
-Se hai già un file da cui continuare, usa {{ui:dashboard.importGeometry}}. Puoi aprire progetti layerling (`.lyl`) e file STL, OBJ, 3MF, STEP o SVG.
+Se hai già un file da cui continuare, usa {{ui:dashboard.importGeometry}}. Puoi aprire progetti Magic3D (`.lyl`) e file STL, OBJ, 3MF, STEP o SVG.
 
-In seguito, tutti i tuoi progetti compariranno nella pagina iniziale con un’immagine di anteprima. Sono conservati nella memoria del browser e salvati automaticamente dopo ogni modifica: non c’è un pulsante Salva. **layerling non si assume responsabilità per i progetti conservati nel browser.** Il browser potrebbe danneggiarsi o un aggiornamento potrebbe causare problemi; perciò crea periodicamente una copia di sicurezza con {{ui:dashboard.backupAll}} nella pagina iniziale oppure salva i progetti come file. Puoi ripristinare una copia con {{ui:dashboard.restoreBackup}}. Il capitolo [File, salvataggio e condivisione](chapter:files-and-saving) spiega come raccogliere i progetti in un file e condividerli. Se desideri un promemoria, attiva {{ui:workspace.confirmTabClose}} nelle impostazioni (l’ingranaggio nella barra): il browser chiede conferma prima di chiudere o ricaricare una scheda con un progetto aperto.
+In seguito, tutti i tuoi progetti compariranno nella pagina iniziale con un’immagine di anteprima. Sono conservati nella memoria del browser e salvati automaticamente dopo ogni modifica: non c’è un pulsante Salva. **Magic3D non si assume responsabilità per i progetti conservati nel browser.** Il browser potrebbe danneggiarsi o un aggiornamento potrebbe causare problemi; perciò crea periodicamente una copia di sicurezza con {{ui:dashboard.backupAll}} nella pagina iniziale oppure salva i progetti come file. Puoi ripristinare una copia con {{ui:dashboard.restoreBackup}}. Il capitolo [File, salvataggio e condivisione](chapter:files-and-saving) spiega come raccogliere i progetti in un file e condividerli. Se desideri un promemoria, attiva {{ui:workspace.confirmTabClose}} nelle impostazioni (l’ingranaggio nella barra): il browser chiede conferma prima di chiudere o ricaricare una scheda con un progetto aperto.
 
 ## Panoramica dell’editor
 
@@ -47,7 +47,7 @@ Passa il puntatore su un pulsante per vederne il nome. Se non sai a cosa serve, 
 
 ### Tema
 
-{{ui:common.theme}}, in cima alla finestra, permette di scegliere l’aspetto di layerling: come il sistema, chiaro, scuro o grafite.
+{{ui:common.theme}}, in cima alla finestra, permette di scegliere l’aspetto di Magic3D: come il sistema, chiaro, scuro o grafite.
 
 ### Rinominare il progetto
 
@@ -83,7 +83,7 @@ L’interruttore **mm | in** accanto a {{ui:inspector.snapGrid}} cambia l’unit
 
 ### Piè di pagina
 
-In fondo alla finestra trovi {{ui:dashboard.sponsor}}, che porta alla pagina per sostenere il progetto; {{ui:dashboard.userGuide}}, che apre questa guida; {{ui:dashboard.forum}}, per domande, idee e segnalazioni di problemi (le discussioni su GitHub oppure, in tedesco, il forum di drucktipps3d); {{ui:editor.bugReport}}, che crea un file ZIP per segnalare un problema; e {{ui:dashboard.projectOnGitHub}}, che porta al progetto su GitHub. Il numero di versione apre le note di rilascio. I collegamenti alle note legali e all’informativa sulla privacy dipendono da chi gestisce la copia di layerling che stai usando.
+In fondo alla finestra trovi {{ui:dashboard.sponsor}}, che porta alla pagina per sostenere il progetto; {{ui:dashboard.userGuide}}, che apre questa guida; {{ui:dashboard.forum}}, per domande, idee e segnalazioni di problemi (le discussioni su GitHub oppure, in tedesco, il forum di drucktipps3d); {{ui:editor.bugReport}}, che crea un file ZIP per segnalare un problema; e {{ui:dashboard.projectOnGitHub}}, che porta al progetto su GitHub. Il numero di versione apre le note di rilascio. I collegamenti alle note legali e all’informativa sulla privacy dipendono da chi gestisce la copia di Magic3D che stai usando.
 
 ## Il tuo primo pezzo
 
@@ -103,9 +103,9 @@ Come esempio, creiamo un cubo con un foro.
 
 ## Novità dalla tua ultima visita
 
-Quando riapri layerling dopo un aggiornamento, nella pagina iniziale un riquadro elenca tutte le novità introdotte dalla tua ultima visita, dalla versione più recente alla meno recente. Se è passato molto tempo, scorri il contenuto del riquadro. Sotto, {{ui:whatsNew.earlier}} aggiunge anche le versioni precedenti alla tua ultima visita. Chiudi il riquadro con {{ui:whatsNew.dismiss}}: resterà nascosto fino al prossimo aggiornamento. Puoi riaprire in qualsiasi momento l’elenco delle ultime novità con {{ui:whatsNew.footerLink}}, nel piè di pagina della pagina iniziale. Il browser ricorda l’ultima versione che hai visualizzato e nessun dato su di te viene trasmesso.
+Quando riapri Magic3D dopo un aggiornamento, nella pagina iniziale un riquadro elenca tutte le novità introdotte dalla tua ultima visita, dalla versione più recente alla meno recente. Se è passato molto tempo, scorri il contenuto del riquadro. Sotto, {{ui:whatsNew.earlier}} aggiunge anche le versioni precedenti alla tua ultima visita. Chiudi il riquadro con {{ui:whatsNew.dismiss}}: resterà nascosto fino al prossimo aggiornamento. Puoi riaprire in qualsiasi momento l’elenco delle ultime novità con {{ui:whatsNew.footerLink}}, nel piè di pagina della pagina iniziale. Il browser ricorda l’ultima versione che hai visualizzato e nessun dato su di te viene trasmesso.
 
-Se usi una copia di layerling sul tuo computer o server, l’avviso «Aggiornamento disponibile» include un pulsante, {{ui:update.previewShow}}, che mostra le novità prima di installare l’aggiornamento. L’elenco viene scaricato da GitHub solo quando premi il pulsante.
+Se usi una copia di Magic3D sul tuo computer o server, l’avviso «Aggiornamento disponibile» include un pulsante, {{ui:update.previewShow}}, che mostra le novità prima di installare l’aggiornamento. L’elenco viene scaricato da GitHub solo quando premi il pulsante.
 
 ## Dal progetto alla stampa
 

@@ -3,17 +3,17 @@ title: Getting started
 summary: From a blank sheet to your first part for the 3D printer, in five minutes, with no account and nothing to install.
 ---
 
-layerling is a design program for 3D printing that runs right in your browser. You build a part from simple shapes, cut holes into it, round the edges and send it to your slicer. There is nothing to install and nothing to sign up for. What you build stays on your computer.
+Magic3D is a design program for 3D printing that runs right in your browser. You build a part from simple shapes, cut holes into it, round the edges and send it to your slicer. There is nothing to install and nothing to sign up for. What you build stays on your computer.
 
-![The start page of layerling: "Create new 3D design" at the top, your designs and the quick guide below.](shot:start-page)
+![The start page of Magic3D: "Create new 3D design" at the top, your designs and the quick guide below.](shot:start-page)
 
 ## Creating a design
 
-Open [layerling.com](https://layerling.com/). On the start page click {{ui:dashboard.createDesign}}. The editor opens with an empty workplane, the grid on which everything takes shape.
+Open [magic3d.ro](https://magic3d.ro/). On the start page click {{ui:dashboard.createDesign}}. The editor opens with an empty workplane, the grid on which everything takes shape.
 
-If you already have a file to continue with, use {{ui:dashboard.importGeometry}}. That works for layerling designs (`.lyl`) as well as STL, OBJ, 3MF, STEP or SVG files.
+If you already have a file to continue with, use {{ui:dashboard.importGeometry}}. That works for Magic3D designs (`.lyl`) as well as STL, OBJ, 3MF, STEP or SVG files.
 
-All your designs later appear on the start page with a preview picture. They are kept in your browser's storage and saved automatically after every change, so there is no save button. **layerling takes no responsibility for designs kept in the browser.** A browser can fail, or a browser update can cause problems, so back up your designs from time to time with {{ui:dashboard.backupAll}} on the start page, or save them as files. A backup comes back with {{ui:dashboard.restoreBackup}}. How to pack designs into a file and pass them on is covered in [Files and saving](chapter:files-and-saving). If you would like a reminder, switch on {{ui:workspace.confirmTabClose}} in the settings (the cogwheel in the ribbon): the browser then asks before a tab with an open design is closed or reloaded.
+All your designs later appear on the start page with a preview picture. They are kept in your browser's storage and saved automatically after every change, so there is no save button. **Magic3D takes no responsibility for designs kept in the browser.** A browser can fail, or a browser update can cause problems, so back up your designs from time to time with {{ui:dashboard.backupAll}} on the start page, or save them as files. A backup comes back with {{ui:dashboard.restoreBackup}}. How to pack designs into a file and pass them on is covered in [Files and saving](chapter:files-and-saving). If you would like a reminder, switch on {{ui:workspace.confirmTabClose}} in the settings (the cogwheel in the ribbon): the browser then asks before a tab with an open design is closed or reloaded.
 
 ## The editor at a glance
 
@@ -47,7 +47,7 @@ Hover over a button to see its name. If you are not sure what a button does, cli
 
 ### Theme
 
-{{ui:common.theme}} at the very top chooses how layerling looks: as your system, light, dark or graphite.
+{{ui:common.theme}} at the very top chooses how Magic3D looks: as your system, light, dark or graphite.
 
 ### Rename design
 
@@ -83,7 +83,7 @@ The switch **mm | in** beside {{ui:inspector.snapGrid}} changes the unit, the pl
 
 ### The footer
 
-At the foot of the window: {{ui:dashboard.sponsor}} leads to the page where you can support the project; {{ui:dashboard.userGuide}} opens this guide; {{ui:dashboard.forum}} leads to the place for questions, ideas and bug reports (the discussions on GitHub, in German the forum of drucktipps3d); {{ui:editor.bugReport}} makes a ZIP for a bug report; {{ui:dashboard.projectOnGitHub}} leads to the project on GitHub, and the version number opens the release notes. The links to the imprint and the privacy policy belong to whoever runs the copy of layerling you use.
+At the foot of the window: {{ui:dashboard.sponsor}} leads to the page where you can support the project; {{ui:dashboard.userGuide}} opens this guide; {{ui:dashboard.forum}} leads to the place for questions, ideas and bug reports (the discussions on GitHub, in German the forum of drucktipps3d); {{ui:editor.bugReport}} makes a ZIP for a bug report; {{ui:dashboard.projectOnGitHub}} leads to the project on GitHub, and the version number opens the release notes. The links to the imprint and the privacy policy belong to whoever runs the copy of Magic3D you use.
 
 ## Your first part
 
@@ -103,9 +103,9 @@ This is how bores, slots and pockets are made. The chapter [Solids and holes](ch
 
 ## New since your last visit
 
-When you open layerling again after an update, a card on the start page lists what has been added since you were last here: every version since then, the newest first. After a long absence you scroll down inside the card. Below them, {{ui:whatsNew.earlier}} adds the versions from before your last visit too. Close it with {{ui:whatsNew.dismiss}} and it stays away until the next update. {{ui:whatsNew.footerLink}} in the footer of the start page shows the latest additions again at any time. The browser remembers the last version you saw, and nothing about you leaves it.
+When you open Magic3D again after an update, a card on the start page lists what has been added since you were last here: every version since then, the newest first. After a long absence you scroll down inside the card. Below them, {{ui:whatsNew.earlier}} adds the versions from before your last visit too. Close it with {{ui:whatsNew.dismiss}} and it stays away until the next update. {{ui:whatsNew.footerLink}} in the footer of the start page shows the latest additions again at any time. The browser remembers the last version you saw, and nothing about you leaves it.
 
-On a copy of layerling on your own computer or server, the notice "Update available" has a button, {{ui:update.previewShow}}, that lists what the update brings before you install it. The list is fetched from GitHub only when you press the button.
+On a copy of Magic3D on your own computer or server, the notice "Update available" has a button, {{ui:update.previewShow}}, that lists what the update brings before you install it. The list is fetched from GitHub only when you press the button.
 
 ## From design to print
 

@@ -13,7 +13,7 @@ summary: 选择自己的打印机，在部件放不下时收到警告，并正�
 
 - 工作平面采用打印床的尺寸。
 - 工作平面的角落会显示打印机名称及其构建体积。如果这些文字碍事，可以用 {{ui:workspace.showPlateLabels}} 将其关闭，该开关在 {{ui:workspace.workplane}} 下；位于左前方的设计名称也一样。
-- 部件放不下时，layerling 会**警告**。
+- 部件放不下时，Magic3D 会**警告**。
 
 打印机配置来自 OrcaSlicer，因此与你的切片软件所知的完全相同。如果不想使用打印机，选择 {{ui:workspace.printerNone}}。也可以手动设置工作平面的尺寸。
 
@@ -46,7 +46,7 @@ FLSun、SeeMeCNC 等品牌的三角洲（Delta）打印机以及 Anycubic Predat
 
 在眼睛图标旁的下拉菜单（{{ui:editor.group.visibility}}）中，**显示悬垂**会开启悬垂标记。所有向下倾斜超过 45° 的面都会显示红白斜线——这些地方打印机需要支撑。贴在平台上的面不会被标记。这样在设计时就能看出球体、拱形或水平孔能否不加支撑打印；[泪滴孔](chapter:threads-and-mechanics)正是为此而生。转动部件，或用 {{ui:editor.tool.layFlat}} 让它以另一个面朝下，斜线会立即随之更新。
 
-打印机能够应付多陡的倾斜，在设置的 {{ui:workspace.appearance}} 下设置：从 30°（谨慎）到 70°（适合散热良好的打印机）。搭在另一个实体上的面仍会被标记——layerling 只看面本身。
+打印机能够应付多陡的倾斜，在设置的 {{ui:workspace.appearance}} 下设置：从 30°（谨慎）到 70°（适合散热良好的打印机）。搭在另一个实体上的面仍会被标记——Magic3D 只看面本身。
 
 ## 壁厚、间隙与倒角
 

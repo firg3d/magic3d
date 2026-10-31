@@ -107,7 +107,7 @@ Na stejný list kreslíte dvě věci:
 
 - **Dráhu** jako {{ui:sketch.construction}}: zapněte ji a kreslete úsečky nebo křivky, jediný řetězec, otevřený nebo uzavřený (uzavřený řetězec dá prstenec). Dráha leží naplocho v rovině náčrtu.
 
-Nakreslete průřez u toho konce dráhy, kde má začínat; dráha začíná od nejbližšího konce. Pak klikněte na {{ui:sketch.finishSweep}}. Roh z rovných kousků se stane pokosem, křivka zůstane hladká a průřez zůstává po celé délce svislý. Těleso je přesné jako vytažené: zaoblení, zkosení a export STEP fungují. Chybí-li uzavřený obrys nebo dráha, nebo je několik oddělených drah, layerling to řekne. Přes {{ui:inspector.editSketch}} se vrátíte do náčrtu a změníte průřez nebo dráhu.
+Nakreslete průřez u toho konce dráhy, kde má začínat; dráha začíná od nejbližšího konce. Pak klikněte na {{ui:sketch.finishSweep}}. Roh z rovných kousků se stane pokosem, křivka zůstane hladká a průřez zůstává po celé délce svislý. Těleso je přesné jako vytažené: zaoblení, zkosení a export STEP fungují. Chybí-li uzavřený obrys nebo dráha, nebo je několik oddělených drah, Magic3D to řekne. Přes {{ui:inspector.editSketch}} se vrátíte do náčrtu a změníte průřez nebo dráhu.
 
 ## Těleso z rozšířené čáry
 
@@ -129,7 +129,7 @@ Přestavění tělesa zruší předchozí zkosení a zaoblení hran stejně jako
 
 ## Šikmé stěny pro razítka
 
-Vysunutý náčrt má svislé stěny. Razítko, raznice či lisovací nástroj někdy potřebuje sklon vnějších i vnitřních stěn se stejnou tloušťkou. Samostatný úkos vysunutí Layerling nemá, ale u jednoduchých obrysů lze použít {{ui:inspector.taper}}:
+Vysunutý náčrt má svislé stěny. Razítko, raznice či lisovací nástroj někdy potřebuje sklon vnějších i vnitřních stěn se stejnou tloušťkou. Samostatný úkos vysunutí Magic3D nemá, ale u jednoduchých obrysů lze použít {{ui:inspector.taper}}:
 
 1. Nakreslete obrys s otvorem, vytvořte těleso a duplikujte je pomocí [[Ctrl]]+[[D]].
 2. Na prvním zapněte {{ui:prop.sketchSilhouette}}, aby se otvor vyplnil, a přes {{ui:inspector.taper}} nastavte širší spodek než vršek.

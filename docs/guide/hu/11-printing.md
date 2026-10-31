@@ -13,7 +13,7 @@ Három dolog történik:
 
 - A munkasík felveszi a tárgyasztal méretét.
 - A munkasík sarkában megjelenik a nyomtató neve és a nyomtatási tere. Ha a felirat zavar, kapcsold ki a {{ui:workspace.workplane}} alatt a {{ui:workspace.showPlateLabels}} kapcsolóval; ez a terv bal elöl lévő nevére is vonatkozik.
-- A layerling **figyelmeztet**, ha valami nem fér el.
+- A Magic3D **figyelmeztet**, ha valami nem fér el.
 
 A nyomtatóprofilok az OrcaSlicerből származnak, így ugyanazok, amelyeket a szeletelőd is ismer. Ha inkább nyomtató nélkül dolgoznál, válaszd a {{ui:workspace.printerNone}} lehetőséget. A munkasík méretét kézzel is beállíthatod.
 
@@ -44,7 +44,7 @@ Néhány ökölszabály az irányhoz:
 
 A szem melletti menüben ({{ui:editor.group.visibility}}) a **Túlnyúlások mutatása** bekapcsolja a túlnyúlások jelölését. Minden olyan lap, amely 45°-nál meredekebben néz lefelé, ilyenkor piros-fehér sraffozást kap – ott kellene a nyomtatónak támasz. Ami a tárgyasztalon nyugszik, az jelöletlen marad. Így már tervezés közben látod, hogy egy gömb, egy boltív vagy egy vízszintes lyuk kinyomtatható-e támasz nélkül; a [csepp alakú lyuk](chapter:threads-and-mechanics) pont erre való. Fordítsd el az alkatrészt, vagy fektesd egy másik lapjára a {{ui:editor.tool.layFlat}} paranccsal, és a sraffozás azonnal követi.
 
-Hogy a nyomtatód milyen meredeket bír, azt a beállításokban a {{ui:workspace.appearance}} alatt adod meg: 30°-tól (óvatos) 70°-ig (jó alkatrészhűtésű nyomtatókhoz). Egy másik testen nyugvó lap is jelölést kap – a layerling csak magát a lapot nézi.
+Hogy a nyomtatód milyen meredeket bír, azt a beállításokban a {{ui:workspace.appearance}} alatt adod meg: 30°-tól (óvatos) 70°-ig (jó alkatrészhűtésű nyomtatókhoz). Egy másik testen nyugvó lap is jelölést kap – a Magic3D csak magát a lapot nézi.
 
 ## Falvastagság, hézag és letörések
 

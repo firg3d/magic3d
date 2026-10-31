@@ -22,7 +22,7 @@ describe("axis arrows", () => {
   it("are on by default, can be switched off, and old settings take the default", () => {
     expect(DEFAULT_WORKPLANE_WORKSPACE.showAxes).toBe(true);
     expect(normalizeWorkspaceSettings({ showAxes: false }).showAxes).toBe(false);
-    expect(normalizeWorkspaceSettings({ gridColor: "#c08a12" }).showAxes).toBe(true);
+    expect(normalizeWorkspaceSettings({ gridColor: "#2aa959" }).showAxes).toBe(true);
     expect(normalizeWorkspaceSettings({ showAxes: "no" }).showAxes).toBe(true);
   });
 });

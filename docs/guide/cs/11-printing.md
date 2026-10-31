@@ -13,7 +13,7 @@ Projeví se tři změny:
 
 - Pracovní rovina získá rozměry tiskové podložky.
 - V jejím rohu se zobrazí název tiskárny a tiskový prostor. Pokud popisky překážejí, vypněte {{ui:workspace.showPlateLabels}} v části {{ui:workspace.workplane}}. Platí to i pro název projektu vlevo vpředu.
-- Layerling **upozorní**, když se díl nevejde.
+- Magic3D **upozorní**, když se díl nevejde.
 
 Profily tiskáren pocházejí z OrcaSliceru, takže odpovídají profilům známým ze sliceru. Pro práci bez konkrétní tiskárny zvolte {{ui:workspace.printerNone}}. Velikost pracovní roviny lze zadat i ručně.
 
@@ -44,7 +44,7 @@ Několik praktických pravidel:
 
 V nabídce vedle oka v části {{ui:editor.group.visibility}} zapněte **zobrazení převisů**. Plochy mířící dolů pod úhlem větším než 45° se červenobíle vyšrafují. Zde by tiskárna potřebovala podpěry. Plochy ležící na podložce se neoznačují. Už při návrhu tak vidíte, zda se koule, oblouk nebo vodorovný otvor vytiskne bez podpěr. Právě k tomu slouží [kapkovitý otvor](chapter:threads-and-mechanics). Po otočení dílu nebo položení na jinou plochu pomocí {{ui:editor.tool.layFlat}} se šrafování okamžitě přepočítá.
 
-Mezní úhel nastavíte v části {{ui:workspace.appearance}}, od 30° pro opatrnější tisk po 70° pro tiskárny s dobrým chlazením výtisku. Plocha podepřená jiným tělesem se stále označuje, protože Layerling posuzuje pouze samotnou plochu.
+Mezní úhel nastavíte v části {{ui:workspace.appearance}}, od 30° pro opatrnější tisk po 70° pro tiskárny s dobrým chlazením výtisku. Plocha podepřená jiným tělesem se stále označuje, protože Magic3D posuzuje pouze samotnou plochu.
 
 ## Tloušťka stěn, vůle a zkosení
 

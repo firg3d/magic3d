@@ -29,7 +29,7 @@ Oprócz ośmiu wbudowanych krojów możesz użyć dowolnej własnej czcionki: pl
 
 - **{{ui:font.addFile}}** przyjmuje plik TrueType (`.ttf`), OpenType (`.otf`) albo WOFF (`.woff`). Plik możesz też po prostu przeciągnąć do okna.
 - **W Windows** zainstalowane czcionki są w folderze Czcionki (`C:\Windows\Fonts`). Okno wyboru plików w przeglądarce go ukrywa. Otwórz go zamiast tego w Eksploratorze i przeciągnij czcionkę do okna {{ui:font.title}}. Czcionki zainstalowane tylko dla Ciebie są w `%LOCALAPPDATA%\Microsoft\Windows\Fonts`, który okno wyboru plików pokazuje. Na Macu czcionki są w `/Library/Fonts` i `~/Library/Fonts`.
-- **{{ui:font.fromSystem}}** pokazuje listę czcionek zainstalowanych na komputerze. Za pierwszym razem przeglądarka zapyta, czy layerling może je odczytać. Pole wyszukiwania szybko znajduje czcionkę, a kliknięcie ją bierze.
+- **{{ui:font.fromSystem}}** pokazuje listę czcionek zainstalowanych na komputerze. Za pierwszym razem przeglądarka zapyta, czy Magic3D może je odczytać. Pole wyszukiwania szybko znajduje czcionkę, a kliknięcie ją bierze.
 
 Jeśli zaznaczony jest tekst, od razu dostaje nową czcionkę. W przeciwnym razie czcionka pojawia się na liście {{ui:prop.font}} w grupie {{ui:font.customGroup}}, a {{ui:font.use}} w oknie nakłada ją na zaznaczone teksty. Własne czcionki działają jak wbudowane: tekst na łuku okręgu, fazki i zaokrąglenia krawędzi oraz eksport STEP działają tak samo. Litery, których czcionce brakuje, są brane z kroju Sans.
 
@@ -41,16 +41,16 @@ Arabski, perski, urdu i hebrajski pisze się od prawej do lewej: pierwsza litera
 
 | Przeglądarka | Wybór pliku czcionki | Czcionka z komputera |
 | --- | --- | --- |
-| Chrome i Edge na komputerze, także zainstalowana aplikacja layerling | tak | tak, po pytaniu przeglądarki |
+| Chrome i Edge na komputerze, także zainstalowana aplikacja Magic3D | tak | tak, po pytaniu przeglądarki |
 | Firefox | tak | nie |
 | Safari na Macu | tak | nie |
 | Tablet i telefon | tak, z plików urządzenia | nie |
 
-Strony internetowe nie mogą tak po prostu odczytywać zainstalowanych czcionek. Tylko Chrome i Edge mają na to zgodę, i to tylko na bezpiecznych stronach, przez `https`, jak na layerling.com. Gdy layerling działa przez `http`, na przykład na Twoim własnym serwerze albo jako instalacja Docker w sieci domowej, {{ui:font.fromSystem}} nie ma. Wtedy przeciągnij czcionkę z Eksploratora. W innych przeglądarkach wybierasz plik czcionki z folderu czcionek, z tym samym wynikiem. Jeśli w Chrome albo Edge odmówiłeś na pytanie, zezwól ponownie w ustawieniach witryny, za kłódką na lewo od adresu.
+Strony internetowe nie mogą tak po prostu odczytywać zainstalowanych czcionek. Tylko Chrome i Edge mają na to zgodę, i to tylko na bezpiecznych stronach, przez `https`, jak na magic3d.ro. Gdy Magic3D działa przez `http`, na przykład na Twoim własnym serwerze albo jako instalacja Docker w sieci domowej, {{ui:font.fromSystem}} nie ma. Wtedy przeciągnij czcionkę z Eksploratora. W innych przeglądarkach wybierasz plik czcionki z folderu czcionek, z tym samym wynikiem. Jeśli w Chrome albo Edge odmówiłeś na pytanie, zezwól ponownie w ustawieniach witryny, za kłódką na lewo od adresu.
 
-layerling nie odczytuje plików WOFF2 (prawie zawsze jest wersja TTF albo OTF), kolekcji czcionek (`.ttc`, kilka czcionek w jednym pliku) ani kolorowych czcionek emoji. Z bardzo dużych czcionek, na przykład chińskich, layerling bierze pierwsze 8000 znaków. Czcionka zmienna jest odczytywana w ustawieniu domyślnym, zwykle w zwykłej grubości.
+Magic3D nie odczytuje plików WOFF2 (prawie zawsze jest wersja TTF albo OTF), kolekcji czcionek (`.ttc`, kilka czcionek w jednym pliku) ani kolorowych czcionek emoji. Z bardzo dużych czcionek, na przykład chińskich, Magic3D bierze pierwsze 8000 znaków. Czcionka zmienna jest odczytywana w ustawieniu domyślnym, zwykle w zwykłej grubości.
 
-Niektóre czcionki, przede wszystkim pisane i zmienne, rysują literę z nakładających się kresek. layerling łączy je przy odczycie czcionki w jeden czysty kontur, więc bryła nadaje się do druku. Takie litery składają się wtedy z bardzo krótkich prostych odcinków zamiast krzywych, czego nie widać.
+Niektóre czcionki, przede wszystkim pisane i zmienne, rysują literę z nakładających się kresek. Magic3D łączy je przy odczycie czcionki w jeden czysty kontur, więc bryła nadaje się do druku. Takie litery składają się wtedy z bardzo krótkich prostych odcinków zamiast krzywych, czego nie widać.
 
 ### Gdzie przechowywane są czcionki
 
@@ -63,9 +63,9 @@ Projekt **nie przechowuje pliku czcionki**, tylko kontury liter, których używa
 Zatem:
 
 - **Projekt otwiera się poprawnie wszędzie**, także na komputerze bez tej czcionki. Teksty wyglądają tak samo i da się je przesuwać, obracać, skalować i zaokrąglać.
-- **Nowe litery wymagają czcionki.** Jeśli ktoś bez czcionki wpisze literę, której projekt nie przyniósł ze sobą, layerling narysuje ją krojem Sans. Na liście {{ui:prop.font}} czcionka jest wtedy oznaczona jako {{ui:font.fromDesign}}. Dodanie pliku czcionki przywraca wszystkie litery.
+- **Nowe litery wymagają czcionki.** Jeśli ktoś bez czcionki wpisze literę, której projekt nie przyniósł ze sobą, Magic3D narysuje ją krojem Sans. Na liście {{ui:prop.font}} czcionka jest wtedy oznaczona jako {{ui:font.fromDesign}}. Dodanie pliku czcionki przywraca wszystkie litery.
 - **Eksporty zawierają tylko geometrię.** STL, 3MF, OBJ, STEP i SVG zawierają bryły i kontury, bez czcionki.
-- **Starsze wersje layerling** nie znają jeszcze własnych czcionek i rysują takie teksty krojem Multilanguage.
+- **Starsze wersje Magic3D** nie znają jeszcze własnych czcionek i rysują takie teksty krojem Multilanguage.
 
 **Licencje:** czcionki są chronione prawem autorskim, a ich licencja mówi, co wolno z nimi robić. Osadzone kontury liter to to, co z czcionki zabierają pliki PDF, a większość licencji na to pozwala. Niektóre czcionki komercyjne zabraniają jednak przekazywania nawet pojedynczych liter. Zanim przekażesz albo opublikujesz projekt z własną czcionką, sprawdź licencję czcionki. Darmowe czcionki, takie jak te z Google Fonts (przeważnie na licencji SIL Open Font License), możesz przekazywać bez obaw. Dla wydrukowanej części albo wyeksportowanego STL nie ma to znaczenia: nie zawierają już czcionki, tylko geometrię.
 
@@ -91,7 +91,7 @@ Przy linii zewnętrznej, linii na środku albo poszerzeniu prostokąt otaczając
 
 ## Warstwy i plakietki z imieniem
 
-Plakietka z imieniem do druku wielokolorowego to tekst w warstwach: litery na górze, pod nimi ten sam tekst trochę szerszy w drugim kolorze, a na dole płytka bez otworów w trzecim. layerling robi ją jednym kliknięciem:
+Plakietka z imieniem do druku wielokolorowego to tekst w warstwach: litery na górze, pod nimi ten sam tekst trochę szerszy w drugim kolorze, a na dole płytka bez otworów w trzecim. Magic3D robi ją jednym kliknięciem:
 
 - **Nowa plakietka:** wybierz {{ui:shape.nameTag}} w bibliotece kształtów i umieść ją. Ma napis „Imię” białymi literami na czerwonym obrzeżu i ciemnej płytce.
 - **Z tekstu:** zaznacz tekst i kliknij {{ui:nameTag.makeLayers}} na górze jego ustawień.

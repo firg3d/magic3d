@@ -25,9 +25,9 @@ Poleg sedmih priloženih pisav lahko vzameš katerokoli lastno pisavo: datoteko 
 
 - **{{ui:font.addFile}}** sprejme datoteko TrueType (`.ttf`), datoteko OpenType (`.otf`) ali datoteko WOFF (`.woff`). Datoteko lahko tudi preprosto povlečeš v okno.
 - **V Windowsih** so nameščene pisave v mapi »Pisave« (`C:\Windows\Fonts`). Pogovorno okno za datoteke v brskalniku jo skrije. Namesto tega jo odpri v Raziskovalcu in povleci želeno pisavo v okno {{ui:font.title}}. Pisave, ki so nameščene samo zate, ležijo v `%LOCALAPPDATA%\Microsoft\Windows\Fonts`; to mapo pokaže tudi pogovorno okno za datoteke. Na Macu so pisave v `/Library/Fonts` in `~/Library/Fonts`.
-- **{{ui:font.fromSystem}}** našteje pisave, nameščene na tvojem računalniku. Prvič brskalnik vpraša, ali jih sme layerling brati. Prek iskalnega polja hitro najdeš pisavo, klik jo prevzame.
+- **{{ui:font.fromSystem}}** našteje pisave, nameščene na tvojem računalniku. Prvič brskalnik vpraša, ali jih sme Magic3D brati. Prek iskalnega polja hitro najdeš pisavo, klik jo prevzame.
 
-Če je ravno izbrano besedilo, takoj dobi novo pisavo. Sicer je potem pod {{ui:prop.font}} v skupini {{ui:font.customGroup}}, z {{ui:font.use}} v oknu pa jo nastaviš na izbrana besedila. Lastne pisave se obnašajo kot priložene: besedilo na krožnem loku, posnetja in zaokrožitve na robovih ter izvoz STEP delujejo enako. Črke, ki jih pisava nima, layerling vzame iz Sans.
+Če je ravno izbrano besedilo, takoj dobi novo pisavo. Sicer je potem pod {{ui:prop.font}} v skupini {{ui:font.customGroup}}, z {{ui:font.use}} v oknu pa jo nastaviš na izbrana besedila. Lastne pisave se obnašajo kot priložene: besedilo na krožnem loku, posnetja in zaokrožitve na robovih ter izvoz STEP delujejo enako. Črke, ki jih pisava nima, Magic3D vzame iz Sans.
 
 ### Arabščina in hebrejščina
 
@@ -37,16 +37,16 @@ Arabščina, perzijščina, urdujščina in hebrejščina se pišejo od desne pr
 
 | Brskalnik | Izbira datoteke pisave | Pisava z računalnika |
 | --- | --- | --- |
-| Chrome in Edge na računalniku, tudi nameščena aplikacija layerling | da | da, po vprašanju brskalnika |
+| Chrome in Edge na računalniku, tudi nameščena aplikacija Magic3D | da | da, po vprašanju brskalnika |
 | Firefox | da | ne |
 | Safari na Macu | da | ne |
 | Tablica in telefon | da, iz datotek naprave | ne |
 
-Spletne strani ne smejo kar brati nameščenih pisav. Samo Chrome in Edge imata za to lastno dovoljenje, in še to samo na varnih straneh, torej prek `https`, kot pri layerling.com. Če layerling teče prek `http`, na primer na lastnem strežniku ali kot namestitev Docker v domačem omrežju, {{ui:font.fromSystem}} manjka; potem pisavo povlečeš iz Raziskovalca. V drugih brskalnikih izbereš datoteko pisave iz mape s pisavami, rezultat je enak. Če si vprašanje v Chromu ali Edgeu zavrnil, dostop spet omogočiš v nastavitvah spletnega mesta, prek ključavnice levo od naslova.
+Spletne strani ne smejo kar brati nameščenih pisav. Samo Chrome in Edge imata za to lastno dovoljenje, in še to samo na varnih straneh, torej prek `https`, kot pri magic3d.ro. Če Magic3D teče prek `http`, na primer na lastnem strežniku ali kot namestitev Docker v domačem omrežju, {{ui:font.fromSystem}} manjka; potem pisavo povlečeš iz Raziskovalca. V drugih brskalnikih izbereš datoteko pisave iz mape s pisavami, rezultat je enak. Če si vprašanje v Chromu ali Edgeu zavrnil, dostop spet omogočiš v nastavitvah spletnega mesta, prek ključavnice levo od naslova.
 
-Česar layerling ne zna brati, so datoteke WOFF2 (za to skoraj vedno obstaja različica TTF ali OTF), zbirke pisav (`.ttc`, vsebujejo več pisav v eni datoteki) in barvne pisave emojijev. Pri zelo velikih pisavah, na primer za kitajščino, layerling vzame prvih 8000 znakov. Pri spremenljivih pisavah velja osnovna nastavitev pisave, običajno normalna različica.
+Česar Magic3D ne zna brati, so datoteke WOFF2 (za to skoraj vedno obstaja različica TTF ali OTF), zbirke pisav (`.ttc`, vsebujejo več pisav v eni datoteki) in barvne pisave emojijev. Pri zelo velikih pisavah, na primer za kitajščino, Magic3D vzame prvih 8000 znakov. Pri spremenljivih pisavah velja osnovna nastavitev pisave, običajno normalna različica.
 
-Nekatere pisave, predvsem pisane in spremenljive, črko narišejo iz potez, ki se prekrivajo. layerling jih ob branju združi v čist obris, da telo ostane tiskljivo. Take črke potem sestojijo iz zelo kratkih ravnih kosov namesto iz krivulj; vidi se ne.
+Nekatere pisave, predvsem pisane in spremenljive, črko narišejo iz potez, ki se prekrivajo. Magic3D jih ob branju združi v čist obris, da telo ostane tiskljivo. Take črke potem sestojijo iz zelo kratkih ravnih kosov namesto iz krivulj; vidi se ne.
 
 ### Kje ostanejo pisave
 
@@ -59,9 +59,9 @@ Načrt **ne shrani datoteke pisave**, ampak samo obrise črk, ki jih njegova bes
 Iz tega sledi:
 
 - **Načrt se povsod odpre pravilno**, tudi na računalniku brez pisave. Besedila izgledajo enako in jih lahko premikaš, vrtiš, povečuješ in zaokrožaš.
-- **Nove črke potrebujejo pisavo.** Če kdo brez pisave vtipka črko, ki je načrt ni prinesel, jo layerling nariše iz Sans. Pod {{ui:prop.font}} potem piše pisava z dodatkom {{ui:font.fromDesign}}. Kdor doda datoteko pisave, spet dobi vse črke.
+- **Nove črke potrebujejo pisavo.** Če kdo brez pisave vtipka črko, ki je načrt ni prinesel, jo Magic3D nariše iz Sans. Pod {{ui:prop.font}} potem piše pisava z dodatkom {{ui:font.fromDesign}}. Kdor doda datoteko pisave, spet dobi vse črke.
 - **Izvozi vsebujejo samo geometrijo.** STL, 3MF, OBJ, STEP in SVG vsebujejo telesa in obrise, ne pisave.
-- **Starejše različice programa layerling** lastnih pisav še ne poznajo in taka besedila narišejo v Multilanguage.
+- **Starejše različice programa Magic3D** lastnih pisav še ne poznajo in taka besedila narišejo v Multilanguage.
 
 **Licence:** Pisave so zaščitene z avtorskimi pravicami in njihova licenca ureja, kaj smeš z njimi početi. Vdelani obrisi črk so isto, kar datoteke PDF vzamejo od pisave, in to večina licenc dovoljuje. Nekatere pisave, ki jih lahko kupiš, pa prepovedujejo vsako posredovanje, tudi posameznih črk. Preden načrt z lastno pisavo posreduješ ali objaviš, zato preveri licenco pisave. Proste pisave, kot so tiste iz Google Fonts (običajno pod licenco SIL Open Font License), smeš brez pomislekov posredovati. Za natisnjen del ali izvožen STL to ni pomembno: v njem ni več pisave, samo še geometrija.
 
@@ -87,7 +87,7 @@ S črto zunaj, sredinsko črto ali »Širše« raste tudi okvir besedila, črke 
 
 ## Plasti in napisi z imenom
 
-Napis z imenom za večbarvni tisk je besedilo v plasteh: zgoraj črke, pod njimi isto besedilo malo širše v drugi barvi, čisto spodaj plošča brez lukenj v tretji. layerling to naredi z enim klikom:
+Napis z imenom za večbarvni tisk je besedilo v plasteh: zgoraj črke, pod njimi isto besedilo malo širše v drugi barvi, čisto spodaj plošča brez lukenj v tretji. Magic3D to naredi z enim klikom:
 
 - **Nov napis z imenom:** V knjižnici oblik izberi {{ui:shape.nameTag}} in ga odloži. Na njem piše »Ime« z belimi črkami na rdečem robu in temni plošči.
 - **Iz besedila:** Izberi besedilo in zgoraj v njegovih nastavitvah klikni {{ui:nameTag.makeLayers}}.

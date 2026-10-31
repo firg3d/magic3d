@@ -15,7 +15,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const guideSource = join(root, "docs", "guide");
 const publicDirectory = join(root, "apps", "web", "public");
-const SITE = "https://layerling.com";
+const SITE = "https://magic3d.ro";
 
 // The languages and what the guide needs to know about each one live in
 // apps/web/src/lib/languages.ts, which the interface reads too.
@@ -757,14 +757,14 @@ function pageShell({ language, title, description, path, alternates, chapters, c
     ${englishPath || noindex ? '<meta name="robots" content="noindex">\n    ' : ""}${alternateLinks}
     <meta property="og:title" content="${escapeHtml(title)}">
     <meta property="og:description" content="${escapeHtml(description)}">
-    <meta property="og:image" content="${SITE}/assets/layerling/layerling-social.png">
-    <link rel="icon" href="/assets/layerling/layerling-logo.svg">
+    <meta property="og:image" content="${SITE}/assets/magic3d/magic3d-social.png">
+    <link rel="icon" href="/assets/magic3d/magic3d-logo.svg">
     <script>${THEME_SCRIPT}</script>
     <style>${STYLE}</style>
   </head>
   <body${bodyClass ? ` class="${bodyClass}"` : ""}>
     <header class="bar"><div class="bar-inner">
-      <a class="brand" href="/${strings.dir}/index.html"><img src="/assets/layerling/layerling-logo.svg" alt=""><span class="brand-text"><b>layerling</b><span class="brand-note">${escapeHtml(strings.home)}</span></span></a>
+      <a class="brand" href="/${strings.dir}/index.html"><img src="/assets/magic3d/magic3d-logo.svg" alt=""><span class="brand-text"><b>Magic3D</b><span class="brand-note">${escapeHtml(strings.home)}</span></span></a>
       ${searchForm(strings, language)}
       ${languageMenu(languageLinks, language, strings)}
       <a class="button" id="open-editor" href="/">${escapeHtml(strings.openEditor)}</a>

@@ -1415,7 +1415,7 @@ export type CornerRulerInstance = {
   axisModes?: CornerRulerAxisModes;
   /** Whether a body in front of the ruler hides its lines (true when left out); false keeps them always in view. */
   occlude?: boolean;
-  /** The measures of the bodies at the arms are shown only for the selected bodies (false when left out, #831). */
+  /** The measures of the bodies at the arms are shown only for the selected bodies (false when left out, #165a2f). */
   selectedOnly?: boolean;
 };
 
@@ -1772,8 +1772,8 @@ export function syncCornerRulerWorldLines(state: ThreeState, rulers: CornerRuler
   rulers.forEach((ruler) => {
     addLines(ruler, ruler.arrows, { color: "#4caf50", width: 6, opacity: 0.35, order: 1000 });
     addLines(ruler, ruler.guides, { color: "#81c784", width: 1.2, opacity: 0.85, dashed: true, order: 1001 });
-    addLines(ruler, ruler.ticks, { color: "#8a6a45", width: 1.2, opacity: 1, order: 1002 });
-    addLines(ruler, ruler.arms, { color: "#5a3917", width: 2.2, opacity: 1, order: 1003 });
+    addLines(ruler, ruler.ticks, { color: "#587763", width: 1.2, opacity: 1, order: 1002 });
+    addLines(ruler, ruler.arms, { color: "#134a27", width: 2.2, opacity: 1, order: 1003 });
   });
   state.needsRender = true;
 }
@@ -1799,7 +1799,7 @@ export function CornerRulerToolOverlay({
   onToggleAxisMode: (id: string, axis: CornerRulerAxis) => void;
   /** Switches whether a body in front hides the ruler's lines. */
   onToggleOcclude: (id: string) => void;
-  /** Switches whether the bodies at the arms show their measures without being selected (#831). */
+  /** Switches whether the bodies at the arms show their measures without being selected (#165a2f). */
   onToggleSelectedOnly: (id: string) => void;
   onCoordinateClick: (rulerId: string, shapeIds: string[], axis: "x" | "z" | "elevation", value: number, x: number, y: number) => void;
 }) {
@@ -2051,7 +2051,7 @@ function importedShapeProjectionBounds(
 ) {
   // A body wrapped round a cylinder keeps the cylinder as its box, the same one the properties show and the
   // alignment centres; its points cover only an arc and an engraving reaches a hair past it, so measuring
-  // them showed 92.30 by 91.72 for a 92.2 mm wrap, and typing 92.2 changed nothing (#987).
+  // them showed 92.30 by 91.72 for a 92.2 mm wrap, and typing 92.2 changed nothing (#7f8f85).
   if (!shape.importedMesh?.positions.length || shape.cylinderWrap) {
     return null;
   }

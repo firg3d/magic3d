@@ -3,21 +3,21 @@ title: Byg med en AI (MCP)
 summary: Hvordan en AI-assistent som Claude eller Codex skaber og ændrer former, grupperer dem og tager billeder af visningen i din åbne editor.
 ---
 
-layerling leveres med en MCP-server. MCP er en standard hvorigennem en AI-assistent kan bruge værktøjer i andre programmer. Med den ser en AI-klient som Claude eller Codex en åben editor-fane og arbejder i den: den skaber former, ændrer dimensioner, grupperer, skærer, runder kanter, læser scenen op og tager billeder af visningen. Du beskriver delen, AI'en bygger den, du ser med og kan gribe ind når som helst.
+Magic3D leveres med en MCP-server. MCP er en standard hvorigennem en AI-assistent kan bruge værktøjer i andre programmer. Med den ser en AI-klient som Claude eller Codex en åben editor-fane og arbejder i den: den skaber former, ændrer dimensioner, grupperer, skærer, runder kanter, læser scenen op og tager billeder af visningen. Du beskriver delen, AI'en bygger den, du ser med og kan gribe ind når som helst.
 
 Broen mellem AI-klient og editor kører **lokalt på din computer**. Husk dog: hvad AI'en læser, altså scenen og billederne af visningen, går til udbyderen af din AI-klient, som enhver anden input der.
 
-> **Vigtigt:** MCP-broen findes i udviklingsserveren som du selv starter på din computer. På layerling.com og i installationer med statisk hosting er den slået fra. En kopi du selv hoster, såsom Docker-imaget på en NAS, kan slå den til med et adgangstoken; se "En kopi på en NAS eller server" nedenunder.
+> **Vigtigt:** MCP-broen findes i udviklingsserveren som du selv starter på din computer. På magic3d.ro og i installationer med statisk hosting er den slået fra. En kopi du selv hoster, såsom Docker-imaget på en NAS, kan slå den til med et adgangstoken; se "En kopi på en NAS eller server" nedenunder.
 
 ## Opsætning
 
-1. Hent layerling fra [GitHub](https://github.com/henmedia/layerling) og start det i projektmappen med `npm run dev`. Node.js skal være installeret. På Windows tager hurtigstart-linjen i README sig af det.
-2. Åbn en editor-fane, for eksempel `http://127.0.0.1:3000/?editor=1`. Du kan lade AI'en gøre det: når ingen editor er åben, starter det første værktøj der har brug for en din browser med en editor og venter indtil den har forbundet. Det virker for en layerling på din egen computer; en kopi på en NAS eller server kræver at du åbner editoren. Sæt `LAYERLING_MCP_OPEN_EDITOR=0` for at slå det fra i MCP-serveren.
+1. Hent Magic3D fra [GitHub](https://github.com/henmedia/layerling) og start det i projektmappen med `npm run dev`. Node.js skal være installeret. På Windows tager hurtigstart-linjen i README sig af det.
+2. Åbn en editor-fane, for eksempel `http://127.0.0.1:3000/?editor=1`. Du kan lade AI'en gøre det: når ingen editor er åben, starter det første værktøj der har brug for en din browser med en editor og venter indtil den har forbundet. Det virker for en Magic3D på din egen computer; en kopi på en NAS eller server kræver at du åbner editoren. Sæt `LAYERLING_MCP_OPEN_EDITOR=0` for at slå det fra i MCP-serveren.
 3. Forbind din AI-klient til MCP-serveren. Klienten starter den selv med `node scripts/layerling-mcp-server.mjs`.
 
 ### Claude Code
 
-Intet at installere: projektet bringer en `.mcp.json` der registrerer serveren, og skillen under `.claude/skills/layerling-mcp-skill`. Åbn layerling-mappen i Claude Code og spørg for eksempel: "Brug layerling MCP-værktøjerne til at liste mine åbne editorer og inspicere scenen."
+Intet at installere: projektet bringer en `.mcp.json` der registrerer serveren, og skillen under `.claude/skills/layerling-mcp-skill`. Åbn layerling-mappen i Claude Code og spørg for eksempel: "Brug Magic3D MCP-værktøjerne til at liste mine åbne editorer og inspicere scenen."
 
 ### Claude Desktop
 

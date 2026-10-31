@@ -31,9 +31,9 @@ V oknu najdeš:
 - {{ui:edge.keepSize}} ohrani posnetje ali zaokrožitev tako veliko, kot sta, tudi če telo pozneje povečaš.
 - {{ui:edge.previewQuality}} ({{ui:edge.draft}}, {{ui:edge.standard}} ali {{ui:edge.fine}}) določa, kako fino se izračuna predogled. Pri zahtevnih delih je {{ui:edge.draft}} hitrejši.
 
-Medtem ko vrtiš mero, layerling predogled preračuna. To lahko traja trenutek. Lahko nastavljaš naprej, izračuna se vedno nazadnje izbrana vrednost.
+Medtem ko vrtiš mero, Magic3D predogled preračuna. To lahko traja trenutek. Lahko nastavljaš naprej, izračuna se vedno nazadnje izbrana vrednost.
 
-Če je mera prevelika za rob, layerling to pove in predlaga manjšo vrednost. Običajno zadostuje vzeti en do dva milimetra manj. Na ostrih kotih potrebuje zaokrožitev več prostora, kot bi domnevali po polmeru. Na majhnem zaslonu se plošča sama pomakne navzdol, da je sporočilo v vidnem polju.
+Če je mera prevelika za rob, Magic3D to pove in predlaga manjšo vrednost. Običajno zadostuje vzeti en do dva milimetra manj. Na ostrih kotih potrebuje zaokrožitev več prostora, kot bi domnevali po polmeru. Na majhnem zaslonu se plošča sama pomakne navzdol, da je sporočilo v vidnem polju.
 
 Če izbor, ki je deloval, odpove, ko klikneš še en rob, ta rob postane rdeč in se nariše širše: to je rob, ki ga pri tej meri ni mogoče obdelati skupaj z drugimi. Klikni ga znova, da ga odstraniš, ali pa zmanjšaj mero. Če med prikazanim sporočilom klikneš še več robov, prvi ostane rdeč. Kadar ni prejšnjega izbora, ki bi deloval – pri prvem kliku ali pri meri, ki si jo ravnokar povečal – rdeči postanejo robovi, ki odpovedo že sami, ali vsi, če gre le za njihovo kombinacijo.
 
@@ -49,7 +49,7 @@ Ob posnetju, zaokrožitvi ali izdolbljenju je poleg tega {{ui:edge.editAction}}.
 
 Pri skupini, na primer valju z izvrtino, obdelani rob spada k dokončanemu telesu, ne k posameznemu delu. Zato iz skupine pri tem nastane eno samo telo. {{ui:editor.tool.ungroup}} kljub temu deluje: najprej razveljavi obdelave robov in nato skupino razdruži, v enem koraku, ki ga [[Ctrl]]+[[Z]] razveljavi. Če obdelavo prekličeš, kot je opisano zgoraj, je skupina z vsemi deli spet tu. Najlažje je robove obdelati šele čisto na koncu. To velja tudi za navoje: orodje za robove vzame navoj kot natančno telo, blok z navojno izvrtino torej dobi svoje zaokrožitve skupaj z navojem v njem. Ugotavljanje robov navoja traja dlje kot pri preprosti obliki, nekaj sekund pri M6 in približno pol minute pri cevnem navoju G1/2.
 
-> **Dobro je vedeti:** layerling pri zaokrožitvah in posnetjih računa z resnično geometrijo CAD, ne samo z mrežo trikotnikov. Zato zaokrožen rob ostane zaokrožen tudi v izvozu STEP.
+> **Dobro je vedeti:** Magic3D pri zaokrožitvah in posnetjih računa z resnično geometrijo CAD, ne samo z mrežo trikotnikov. Zato zaokrožen rob ostane zaokrožen tudi v izvozu STEP.
 
 Del, uvožen kot STEP, prav tako obdrži svojo geometrijo CAD: posnetja, zaokrožitve in izdolbljenje delujejo na telesu iz datoteke, ne glede na to, kako fino je del narisan na zaslonu. STL, OBJ in 3MF prinesejo samo trikotnike, fino narisan del pa je lahko za obdelavo robov preveč gost. Če del obstaja tudi kot STEP, raje uvozi tega.
 
@@ -67,19 +67,19 @@ Del, uvožen kot STEP, prav tako obdrži svojo geometrijo CAD: posnetja, zaokro�
 
 Stene rastejo navznoter. Zunaj ostane vse, kot je.
 
-{{ui:shell.edges}} štejejo samo tam, kjer se notranje stene razmaknejo: pri stopnici v telesu ali okoli odprtine. Vogali votline preproste škatle so z obema nastavitvama vedno ostri. Za zaobljeno notranjost najprej zaobli zunanje robove telesa (glej zgoraj), nato ga izdolbi: notranjost sledi z radijem, zmanjšanim za debelino stene. Če zaobljene notranjosti ni mogoče zgraditi, kar se lahko zgodi pri obrisu iz zelo veliko kratkih ravnih koščkov, na primer pri izrisani sliki, layerling zgradi isto izdolbeno telo z ostrimi notranjimi vogali.
+{{ui:shell.edges}} štejejo samo tam, kjer se notranje stene razmaknejo: pri stopnici v telesu ali okoli odprtine. Vogali votline preproste škatle so z obema nastavitvama vedno ostri. Za zaobljeno notranjost najprej zaobli zunanje robove telesa (glej zgoraj), nato ga izdolbi: notranjost sledi z radijem, zmanjšanim za debelino stene. Če zaobljene notranjosti ni mogoče zgraditi, kar se lahko zgodi pri obrisu iz zelo veliko kratkih ravnih koščkov, na primer pri izrisani sliki, Magic3D zgradi isto izdolbeno telo z ostrimi notranjimi vogali.
 
 ![Rezultat: lupina s steno 3 mm, zgoraj odprta.](shot:hollow-result)
 
 ![Isti kvader, odprt samo na sprednji strani: reža za predal.](shot:hollow-sides)
 
-Za vsako odprto stran telo potrebuje čisto na zunaj na tej strani ravno ploskev. Krogel in prostih oblik zato na ta način ni mogoče izdolbiti. Če je stena predebela za telo, layerling to javi in prosi za tanjšo. Tak primer je zaobljena škatla, ki ima zaobljene tudi zgornje in spodnje robove: njena stena mora biti jasno tanjša od tega zaobljenja, ali pa zaobljenje prej nastavi na 0.
+Za vsako odprto stran telo potrebuje čisto na zunaj na tej strani ravno ploskev. Krogel in prostih oblik zato na ta način ni mogoče izdolbiti. Če je stena predebela za telo, Magic3D to javi in prosi za tanjšo. Tak primer je zaobljena škatla, ki ima zaobljene tudi zgornje in spodnje robove: njena stena mora biti jasno tanjša od tega zaobljenja, ali pa zaobljenje prej nastavi na 0.
 
 Izdolbiš lahko tudi telo z žepom, na primer kvader z luknjo, ki ne gre skozi do konca in je narejen z združitvijo škatle z dvignjeno luknjo, in sicer z odprtim vrhom: izdolbejo se tudi stene okoli žepa, tako da med zunanjo steno in žepom ostane obroč votline, zgoraj odprt, pod dnom žepa pa tanka votlina.
 
 **Telesa, ki se končajo v konici,** na primer stožec ali zasukan trikotnik, zgoraj nimajo ravne ploskve, ki bi ostala odprta. Tudi povsem zaprta votlina tam ne gre, ker se konice ne da odmakniti navznoter: tudi pri 1 mm stene dobiš sporočilo, da stene ne smejo biti tako debele. Steno raje nariši v profil, preden ga zasukaš: podvoji obris, kopijo enakomerno pomanjšaj, postavi jo v sredino velikega obrisa in z njo izreži velikega, nato zasukaj celoto (poglavje Skice, razdelek Vrtenje). Razdalja med obema obrisoma je debelina stene.
 
-Če pozneje spremeniš velikost izdolbenega telesa, ga layerling takoj znova izdolbe v novi velikosti. Stena ostane tako debela, kot si jo izbral, tudi pri okroglih telesih. Valj, ki ga pri tem v eno smer povlečeš bolj kot v drugo, postane elipsa.
+Če pozneje spremeniš velikost izdolbenega telesa, ga Magic3D takoj znova izdolbe v novi velikosti. Stena ostane tako debela, kot si jo izbral, tudi pri okroglih telesih. Valj, ki ga pri tem v eno smer povlečeš bolj kot v drugo, postane elipsa.
 
 > **Namig:** Pri šobi 0,4 mm je dobro izhodišče debelina stene od 1,2 do 2 mm: dovolj tanka, da prihraniš material, dovolj debela za stabilen del.
 
@@ -120,6 +120,6 @@ Zaokrožitev, ki moti, luknja na napačnem mestu, izboklina, ki je ne potrebuje�
 
 Okoliške ploskve rastejo, dokler se vrzel ne zapre. Kvader z zaobljenimi zgornjimi robovi dobi nazaj ostre robove, luknja se zapolni, izboklina izgine. Telo ostane natančno: lahko ga znova zaokrožiš in posnameš, izvoz STEP pa ohrani njegove prave ploskve. [[Ctrl]]+[[Z]] brisanje prekliče v enem koraku. Poleg tega je pod {{ui:edge.featureHistory}} tako kot zaokrožitve in posnetja, kjer ga prekliče {{ui:edge.revertAction}}; {{ui:edge.editAction}} zanj ni. Pri skupini iz tega nastane eno samo telo, kot pri obdelavi robov.
 
-Izberi vse ploskve tistega, kar naj izgine, in samo te. Če okoliške ploskve vrzeli ne morejo zapreti, ti layerling to pove in nič se ne spremeni: glavna stranica kvadra na primer nima sosednje ploskve, ki bi stopila na njeno mesto. Če izbrišeš samo dno žepa, nastane luknja skoz in skoz, ker se stene žepa nadaljujejo do druge strani.
+Izberi vse ploskve tistega, kar naj izgine, in samo te. Če okoliške ploskve vrzeli ne morejo zapreti, ti Magic3D to pove in nič se ne spremeni: glavna stranica kvadra na primer nima sosednje ploskve, ki bi stopila na njeno mesto. Če izbrišeš samo dno žepa, nastane luknja skoz in skoz, ker se stene žepa nadaljujejo do druge strani.
 
-{{ui:editor.tool.deleteFace}} potrebuje natančne ploskve: deluje na delih, uvoženih kot STEP, in na oblikah layerlinga. Kar layerling hrani kot mrežo, jih nima: uvožen STL, OBJ ali 3MF, razdeljeno, okoli valja ovito ali poenostavljeno telo ali zelo podrobna oblika, na primer dolgo besedilo. Če lahko, uvozi del kot STEP. Pri podrobnem uvoženem delu je lahko nekaj ploskev preveč za jedro CAD: po 45 sekundah se brisanje ustavi in nič se ne spremeni. Telo, ki mu je bila po obdelavi robov z ohranjeno velikostjo robov spremenjena velikost, v novi velikosti nima natančnih ploskev, dokler sprememba velikosti ni preklicana.
+{{ui:editor.tool.deleteFace}} potrebuje natančne ploskve: deluje na delih, uvoženih kot STEP, in na oblikah Magic3D. Kar Magic3D hrani kot mrežo, jih nima: uvožen STL, OBJ ali 3MF, razdeljeno, okoli valja ovito ali poenostavljeno telo ali zelo podrobna oblika, na primer dolgo besedilo. Če lahko, uvozi del kot STEP. Pri podrobnem uvoženem delu je lahko nekaj ploskev preveč za jedro CAD: po 45 sekundah se brisanje ustavi in nič se ne spremeni. Telo, ki mu je bila po obdelavi robov z ohranjeno velikostjo robov spremenjena velikost, v novi velikosti nima natančnih ploskev, dokler sprememba velikosti ni preklicana.

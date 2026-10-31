@@ -3,21 +3,21 @@ title: 用 AI 搭建（MCP）
 summary: Gemini、Claude 或 Codex 等 AI 助手如何在已打开的编辑器中创建和修改形状、对它们分组，并为视图拍照。
 ---
 
-layerling 自带一个 MCP 服务器。MCP 是一项标准，AI 助手可通过它使用其他程序中的工具。借助它，Gemini、Claude 或 Codex 等 AI 客户端能看到一个已打开的编辑器标签页并在其中工作：创建形状、修改尺寸、分组、切割、给边做圆角、读取场景并为视图拍照。你描述零件，AI 负责搭建，你在旁边观看，随时可以接手。
+Magic3D 自带一个 MCP 服务器。MCP 是一项标准，AI 助手可通过它使用其他程序中的工具。借助它，Gemini、Claude 或 Codex 等 AI 客户端能看到一个已打开的编辑器标签页并在其中工作：创建形状、修改尺寸、分组、切割、给边做圆角、读取场景并为视图拍照。你描述零件，AI 负责搭建，你在旁边观看，随时可以接手。
 
 AI 客户端与编辑器之间的桥梁**在你的电脑上本地运行**。但要注意：AI 读取的内容，也就是场景和视图图片，会像其他任何输入一样发送给你的 AI 服务商。
 
-> **重要：** MCP 桥梁只存在于你在自己电脑上启动的开发服务器中。在 layerling.com 以及使用静态托管的安装中，它是关闭的。你自己托管的副本（例如 NAS 上的 Docker 镜像）可以用访问令牌开启它；参见下文“NAS 或服务器上的副本”。
+> **重要：** MCP 桥梁只存在于你在自己电脑上启动的开发服务器中。在 magic3d.ro 以及使用静态托管的安装中，它是关闭的。你自己托管的副本（例如 NAS 上的 Docker 镜像）可以用访问令牌开启它；参见下文“NAS 或服务器上的副本”。
 
 ## 设置
 
-1. 从 [GitHub](https://github.com/henmedia/layerling) 获取 layerling，并在项目文件夹中用 `npm run dev` 启动。必须安装 Node.js。在 Windows 上，README 里的快速开始命令会帮你装好。
-2. 打开一个编辑器标签页，例如 `http://127.0.0.1:3000/?editor=1`。也可以交给 AI：没有编辑器打开时，第一个需要编辑器的工具会启动你的浏览器并打开编辑器，然后等待它连接。这适用于你自己电脑上的 layerling；NAS 或服务器上的副本需要你手动打开编辑器。把 `LAYERLING_MCP_OPEN_EDITOR=0` 设给 MCP 服务器即可关闭这一行为。
+1. 从 [GitHub](https://github.com/henmedia/layerling) 获取 Magic3D，并在项目文件夹中用 `npm run dev` 启动。必须安装 Node.js。在 Windows 上，README 里的快速开始命令会帮你装好。
+2. 打开一个编辑器标签页，例如 `http://127.0.0.1:3000/?editor=1`。也可以交给 AI：没有编辑器打开时，第一个需要编辑器的工具会启动你的浏览器并打开编辑器，然后等待它连接。这适用于你自己电脑上的 Magic3D；NAS 或服务器上的副本需要你手动打开编辑器。把 `LAYERLING_MCP_OPEN_EDITOR=0` 设给 MCP 服务器即可关闭这一行为。
 3. 把你的 AI 客户端连接到 MCP 服务器。客户端会用 `node scripts/layerling-mcp-server.mjs` 自行启动它。
 
 ### Claude Code
 
-无需安装：项目自带一个 `.mcp.json` 来注册服务器，以及 `.claude/skills/layerling-mcp-skill` 下的技能。在 Claude Code 中打开 layerling 文件夹，然后这样提问，例如：“用 layerling MCP 工具列出我打开的编辑器并检查场景。”
+无需安装：项目自带一个 `.mcp.json` 来注册服务器，以及 `.claude/skills/layerling-mcp-skill` 下的技能。在 Claude Code 中打开 Magic3D 文件夹，然后这样提问，例如：“用 Magic3D MCP 工具列出我打开的编辑器并检查场景。”
 
 ### Claude Desktop
 
@@ -41,7 +41,7 @@ Antigravity 会自动发现 `.agents/skills/layerling-mcp-skill` 中的工作区
 
 ## AI 能做什么
 
-AI 使用与你相同的功能，走的是与你在编辑器中的操作相同的路径。layerling 的新功能会立即拥有对应的 MCP 动作。工具如下：
+AI 使用与你相同的功能，走的是与你在编辑器中的操作相同的路径。Magic3D 的新功能会立即拥有对应的 MCP 动作。工具如下：
 
 | 工具 | 作用 |
 | --- | --- |

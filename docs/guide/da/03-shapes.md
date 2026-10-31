@@ -3,7 +3,7 @@ title: Placering og justering af former
 summary: Formbiblioteket, dimensioner med tal og håndtag, farve, rotation, spids og snoing.
 ---
 
-Enhver del i layerling starter med en form. Af dem bygger du alt andet: former supplerer hinanden, skærer hinanden ud eller samles til en ny form.
+Enhver del i Magic3D starter med en form. Af dem bygger du alt andet: former supplerer hinanden, skærer hinanden ud eller samles til en ny form.
 
 ## Tilføj en form
 
@@ -34,7 +34,7 @@ Du får en trekant på to måder: {{ui:shape.polygon}} med tre sider er en ligeb
 ## Formens indstillinger
 
 Så snart en form er valgt, vises dens indstillinger til højre. Øverst er navnet; blyanten ved siden af ({{ui:outliner.rename}}) lader dig taste et nyt. [[Enter]] beholder det, [[Esc]] annullerer, og et tomt navn bringer formens standardnavn tilbage. Længere til højre, hængelåsen låser formen mod utilsigtet flytning og øjet skjuler den. Pilen yderst til venstre folder indstillingerne ned til deres titellinje.
-Kortene nedenfor folder ud og ind ved et klik på deres titel ({{ui:inspector.properties}}, {{ui:inspector.position}}, {{ui:inspector.rotation}}, {{ui:inspector.taper}}, {{ui:inspector.twist}} og kortene til de særlige former); layerling husker hvilke du lod åbne, til næste form og næste besøg.
+Kortene nedenfor folder ud og ind ved et klik på deres titel ({{ui:inspector.properties}}, {{ui:inspector.position}}, {{ui:inspector.rotation}}, {{ui:inspector.taper}}, {{ui:inspector.twist}} og kortene til de særlige former); Magic3D husker hvilke du lod åbne, til næste form og næste besøg.
 
 Indstillingerne sidder docket ved højre kant. Hvis de dækker noget du vil se, så træk dem i deres titellinje og de flyder hvor du slipper dem; de bliver der for den næste form også. Slip dem tilbage øverst til højre, eller dobbeltklik titellinjen, og de docker igen. Mens de flyder eller er foldet ned, flytter snap-trinnet sig fra bunden af indstillingerne til nederst til højre på arbejdsplanet.
 
@@ -75,7 +75,7 @@ Farverne i arbejdsområdet i indstillingerne har deres egen enklere vælger, med
 
 ## Hvor rund er rund? Antal sider
 
-Runde former som cylinder, kegle, rør, ellipse eller boringer har kontakten {{ui:prop.sidesFollowSize}} og skyderen {{ui:prop.sides}} i deres egenskaber. {{ui:shape.torus}} har to skydere: {{ui:prop.torusSides}} rundt om ringen og {{ui:prop.torusSteps}} rundt om røret. De følger størrelsen der også indtil du holder dem, så en stor torus viser ingen flader. Årsagen: til visning og til STL, 3MF og OBJ tegner layerling en cirkel som en polygon af mange små sider. Jo flere sider, jo glattere er den, og jo flere trekanter bruger den.
+Runde former som cylinder, kegle, rør, ellipse eller boringer har kontakten {{ui:prop.sidesFollowSize}} og skyderen {{ui:prop.sides}} i deres egenskaber. {{ui:shape.torus}} har to skydere: {{ui:prop.torusSides}} rundt om ringen og {{ui:prop.torusSteps}} rundt om røret. De følger størrelsen der også indtil du holder dem, så en stor torus viser ingen flader. Årsagen: til visning og til STL, 3MF og OBJ tegner Magic3D en cirkel som en polygon af mange små sider. Jo flere sider, jo glattere er den, og jo flere trekanter bruger den.
 
 {{ui:prop.torusTube}} bestemmer, hvor tykt røret er set ovenfra. Højden trykker eller strækker kun røret, så en flad ring beholder sit hul; ved halvdelen af det ydre mål lukker hullet. Trækker du i håndtagene, skalerer røret med. Kun en torus, hvis rør er lige så tykt, som torussen er høj, forbliver et eksakt legeme til fas, rund og STEP.
 
@@ -97,7 +97,7 @@ Runde former som cylinder, kegle, rør, ellipse eller boringer har kontakten {{u
 
 **Sådan bruger du det**
 
-- **Lad {{ui:prop.sidesFollowSize}} stå til.** Så vælger layerling antallet af sider ud fra diameteren så polygonen afviger højst {{value:ROUND_DEVIATION_TOLERANCE}} mm fra den sande cirkel, langt under hvad en printer opløser. Små former får mindst {{value:MIN_AUTOMATIC_SIDES}} sider, store flere.
+- **Lad {{ui:prop.sidesFollowSize}} stå til.** Så vælger Magic3D antallet af sider ud fra diameteren så polygonen afviger højst {{value:ROUND_DEVIATION_TOLERANCE}} mm fra den sande cirkel, langt under hvad en printer opløser. Små former får mindst {{value:MIN_AUTOMATIC_SIDES}} sider, store flere.
 - **Færre sider** tager du når du vil have en polygon med vilje (men der er {{ui:shape.polygon}} til det) eller når editoren bliver langsom med meget mange runde former.
 - **Flere sider** har du næsten aldrig brug for. Kun på meget store runde dele, når du ser kanter i STL'en.
 - **For dele du kun behandler med kanter eller giver videre som STEP,** betyder antallet af sider ikke noget.
@@ -123,7 +123,7 @@ Snap-trinnet er nederst til højre i editoren og kan ændres når som helst.
 
 ## Kopiering og duplikering
 
-{{ui:editor.tool.copy}}, {{ui:editor.tool.paste}} og {{ui:editor.tool.duplicate}} er i båndet ({{ui:editor.group.clipboard}}). [[Ctrl]]+[[D]] duplikerer en markering. layerling husker hvordan du sidst flyttede eller roterede kopien og anvender det samme igen ved næste duplikering. Det giver en række huller eller trin i få tastetryk. For regelmæssige arrangementer er der også mønsteret, beskrevet i [Valg og arrangering](chapter:select-and-arrange).
+{{ui:editor.tool.copy}}, {{ui:editor.tool.paste}} og {{ui:editor.tool.duplicate}} er i båndet ({{ui:editor.group.clipboard}}). [[Ctrl]]+[[D]] duplikerer en markering. Magic3D husker hvordan du sidst flyttede eller roterede kopien og anvender det samme igen ved næste duplikering. Det giver en række huller eller trin i få tastetryk. For regelmæssige arrangementer er der også mønsteret, beskrevet i [Valg og arrangering](chapter:select-and-arrange).
 
 > **Tip:** Hvis en form nægter at tage den størrelse du vil have, er det ofte grænserne for nye former. Under {{ui:workspace.shapeDefaults}} i indstillingerne bestemmer du hvordan hver form starter og hvor stor den må blive.
 
@@ -164,14 +164,14 @@ Til en gravering, slå {{ui:inspector.wrapInward}} til: tykkelsen går så ind i
 
 En form der allerede er viklet, er et mesh af det viklede og kan ikke vikles igen: fortryd viklingen, eller vikl den flade original igen med en anden diameter.
 
-Resultatet er et mesh som en importeret model. Fortryd lægger formen fladt ud igen; for en anden diameter, fortryd først og vikl igen. Det kan ikke gå længere end én gang rundt om cylinderen; så navngiver layerling den mindste diameter der passer.
+Resultatet er et mesh som en importeret model. Fortryd lægger formen fladt ud igen; for en anden diameter, fortryd først og vikl igen. Det kan ikke gå længere end én gang rundt om cylinderen; så navngiver Magic3D den mindste diameter der passer.
 
 ## Overfladestruktur
 
 Riller, riflinger, bikager eller knopper på et legeme, for bedre greb eller for udseendet: åbn {{ui:inspector.surfaceTexture}} i legemets indstillinger. Knappen {{ui:inspector.surfaceTexture}} i gruppen {{ui:editor.group.modify}} foroven gør det samme: den åbner og lukker kortet for det valgte legeme og forbliver tændt, mens kortet er åbent.
 
 1. Vælg {{ui:inspector.surfacePattern}}, dets {{ui:inspector.surfaceSpacing}} og dets {{ui:inspector.surfaceDepth}}. {{ui:inspector.surfaceDirection}} siger, om mønsteret går ind i legemet eller ud af det. For {{ui:surfaceTexture.bumps}} vælger {{ui:inspector.surfaceBumpShape}} mellem {{ui:surfaceTexture.bumpDome}}, {{ui:surfaceTexture.bumpCone}}, {{ui:surfaceTexture.bumpSoft}} og {{ui:surfaceTexture.bumpFlat}}. Under {{ui:inspector.surfaceBumpGrid}} sidder de {{ui:surfaceTexture.bumpGridStaggered}}, hver anden række en halv afstand forskudt, eller på {{ui:surfaceTexture.bumpGridStraight}}.
-2. Under {{ui:inspector.surfaceProjection}} vælger du {{ui:surfaceTexture.cylinder}} til runde legemer som en kop, en knob eller et håndtag. Mønsteret løber omkring {{ui:inspector.surfaceAxis}}, og afstanden rundes en smule, så et helt antal riller eller celler går rundt: mønsteret lukkes uden en søm. {{ui:surfaceTexture.allRound}} passer til legemer, der ikke er runde, {{ui:surfaceTexture.flatProjection}} til et låg eller en plade set fra oven. Lad den stå på {{ui:surfaceTexture.auto}}, så vælger layerling for dig: {{ui:surfaceTexture.cylinder}} på runde legemer og på oprejste kantede som en kasse – så følger mønsteret omridset og løber uden søm rundt om kanterne, og et hævet mønster lægger sig rundet om dem –, {{ui:surfaceTexture.allRound}} på andre kantede.
+2. Under {{ui:inspector.surfaceProjection}} vælger du {{ui:surfaceTexture.cylinder}} til runde legemer som en kop, en knob eller et håndtag. Mønsteret løber omkring {{ui:inspector.surfaceAxis}}, og afstanden rundes en smule, så et helt antal riller eller celler går rundt: mønsteret lukkes uden en søm. {{ui:surfaceTexture.allRound}} passer til legemer, der ikke er runde, {{ui:surfaceTexture.flatProjection}} til et låg eller en plade set fra oven. Lad den stå på {{ui:surfaceTexture.auto}}, så vælger Magic3D for dig: {{ui:surfaceTexture.cylinder}} på runde legemer og på oprejste kantede som en kasse – så følger mønsteret omridset og løber uden søm rundt om kanterne, og et hævet mønster lægger sig rundet om dem –, {{ui:surfaceTexture.allRound}} på andre kantede.
 3. Klik på {{ui:inspector.surfaceApply}}. Et stort legeme tager nogle få sekunder; du kan fortsætte med at arbejde imens.
 
 Skal kun nogle af fladerne have mønsteret, for eksempel kun toppen af en kasse, så klik på {{ui:inspector.surfaceFacesPick}} og derefter på fladerne i visningen: toppen, bunden eller en side. En flade går op til legemets skarpe kanter; på en cylinder er kappen én flade, og toppen og bunden er hver én. Valgte flader lyser op, et klik mere tager en ud igen, og {{ui:inspector.surfaceFacesClear}} giver mønsteret hele legemet igen. Kun de valgte flader får mønsteret; alle andre forbliver som de var og beholder få trekanter. På en top eller en bund ligger mønsteret fladt; på en rund top løber riller, reb og strik i ringe om midten, som et træs årringe. {{ui:inspector.surfaceFaceTurn}} drejer mønsteret på toppen og bunden: ved 0° løber rækkerne langs forkanten, ved 90° langs sidekanten. {{ui:inspector.surfaceCapStyle}} skifter riller, reb og strik der mellem rækker og ringe; på et kantet legeme følger ringene omridset. {{ui:inspector.surfaceCapEdge}} afgør, hvad der sker ved kanten mellem siden og en top eller bund med mønster: {{ui:surfaceTexture.edgeSharp}} lader begge slutte ved kanten. Med {{ui:surfaceTexture.edgeOver}} bøjer sidens mønster rundt over kanten og fylder hele toppen: rækker af reb, strik og vandrette riller fortsætter som ringe, lodrette og skrå riller som stråler næsten ind til midten. {{ui:surfaceTexture.edgeFold}} gør det samme kun som en kant; indeni ligger toppens eget mønster, som {{ui:inspector.surfaceCapStyle}} indstiller det. {{ui:surfaceTexture.edgeBead}} lægger ved alle mønstre en indfatning rundt om kanten – en snor, en aflukningskæde eller en rund vulst. En stram afrunding afslutter også en flade: På et krus med afrundede kanter er ydersiden, afrundingerne, kanten, indersiden og bunden hver sin flade, så et klik på ydersiden tager kun ydersiden. En bred afrunding, omkring en fjerdedel af legemet eller mere, hører til fladen, ligesom en kugle er én flade. Med valgte flader tæller {{ui:inspector.surfaceOutside}} og {{ui:inspector.surfaceInside}} ikke.

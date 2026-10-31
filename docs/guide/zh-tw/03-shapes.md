@@ -3,7 +3,7 @@ title: 放置與調整形狀
 summary: 形狀庫、以數字與控制點設定尺寸、顏色、旋轉、錐度與扭曲。
 ---
 
-layerling 的每個零件都從一個形狀開始。其餘一切都是由形狀搭建而成：形狀彼此互補、互相挖空，或合併成一個新形狀。
+Magic3D 的每個零件都從一個形狀開始。其餘一切都是由形狀搭建而成：形狀彼此互補、互相挖空，或合併成一個新形狀。
 
 ## 新增形狀
 
@@ -32,7 +32,7 @@ layerling 的每個零件都從一個形狀開始。其餘一切都是由形狀�
 
 ## 形狀的設定
 
-選取形狀後，它的設定會立刻出現在右側。最上方是名稱，旁邊的鉛筆（{{ui:outliner.rename}}）可讓你輸入新名稱。按 [[Enter]] 保留，按 [[Esc]] 取消，名稱為空則還原形狀的預設名稱。再往右，掛鎖可鎖住形狀、避免誤移動，眼睛圖示則可隱藏它。最左側的箭頭會把設定收合到只剩標題列。下方的卡片點擊標題即可展開與收起（{{ui:inspector.properties}}、{{ui:inspector.position}}、{{ui:inspector.rotation}}、{{ui:inspector.taper}}、{{ui:inspector.twist}} 以及特殊形狀的卡片）；layerling 會記住你留下哪些展開的卡片，下一個形狀與下次造訪都適用。
+選取形狀後，它的設定會立刻出現在右側。最上方是名稱，旁邊的鉛筆（{{ui:outliner.rename}}）可讓你輸入新名稱。按 [[Enter]] 保留，按 [[Esc]] 取消，名稱為空則還原形狀的預設名稱。再往右，掛鎖可鎖住形狀、避免誤移動，眼睛圖示則可隱藏它。最左側的箭頭會把設定收合到只剩標題列。下方的卡片點擊標題即可展開與收起（{{ui:inspector.properties}}、{{ui:inspector.position}}、{{ui:inspector.rotation}}、{{ui:inspector.taper}}、{{ui:inspector.twist}} 以及特殊形狀的卡片）；Magic3D 會記住你留下哪些展開的卡片，下一個形狀與下次造訪都適用。
 
 設定停靠在右側邊緣。如果它擋住你想看的內容，拖曳標題列就能讓它浮動到你放下的位置；下一個形狀也會留在那裡。把它拖回右上角，或按兩下標題列，它就會重新停靠。浮動或收合時，吸附步距會從設定底部移到工作平面的右下角。
 
@@ -72,7 +72,7 @@ layerling 的每個零件都從一個形狀開始。其餘一切都是由形狀�
 
 ## 圓有多圓？邊數
 
-圓柱、圓錐、管、橢圓或內孔等圓形形狀，屬性中有 {{ui:prop.sidesFollowSize}} 開關與 {{ui:prop.sides}} 滑桿。{{ui:shape.torus}} 有兩個滑桿：沿圓環的 {{ui:prop.torusSides}} 與沿管身的 {{ui:prop.torusSteps}}。它們在那裡也會跟著尺寸變動，直到你手動固定，因此大型圓環不會出現切面。原因在於：在檢視以及 STL、3MF 與 OBJ 中，layerling 把圓畫成由許多小邊組成的多邊形。邊越多越平滑，佔用的三角形也越多。
+圓柱、圓錐、管、橢圓或內孔等圓形形狀，屬性中有 {{ui:prop.sidesFollowSize}} 開關與 {{ui:prop.sides}} 滑桿。{{ui:shape.torus}} 有兩個滑桿：沿圓環的 {{ui:prop.torusSides}} 與沿管身的 {{ui:prop.torusSteps}}。它們在那裡也會跟著尺寸變動，直到你手動固定，因此大型圓環不會出現切面。原因在於：在檢視以及 STL、3MF 與 OBJ 中，Magic3D 把圓畫成由許多小邊組成的多邊形。邊越多越平滑，佔用的三角形也越多。
 
 {{ui:prop.torusTube}}設定從上方看時管有多粗。高度只會壓扁或拉伸管，所以扁平的圓環會保留中間的孔；當管粗達到外徑的一半時孔會閉合。拖曳控點時，管會隨形狀一起縮放。只有管粗等於圓環高度的圓環，才會在倒角、圓角與 STEP 中保持為精確實體。
 
@@ -94,7 +94,7 @@ layerling 的每個零件都從一個形狀開始。其餘一切都是由形狀�
 
 **如何使用**
 
-- **保持 {{ui:prop.sidesFollowSize}} 開啟。** 這樣 layerling 會依直徑選擇邊數，使多邊形與真實圓的偏差最多 {{value:ROUND_DEVIATION_TOLERANCE}} mm，遠低於印表機解析得到的程度。小形狀至少有 {{value:MIN_AUTOMATIC_SIDES}} 邊，大形狀則更多。
+- **保持 {{ui:prop.sidesFollowSize}} 開啟。** 這樣 Magic3D 會依直徑選擇邊數，使多邊形與真實圓的偏差最多 {{value:ROUND_DEVIATION_TOLERANCE}} mm，遠低於印表機解析得到的程度。小形狀至少有 {{value:MIN_AUTOMATIC_SIDES}} 邊，大形狀則更多。
 - **減少邊數**：只在你刻意想要多邊形時（不過那種情況有 {{ui:shape.polygon}}），或是編輯器因大量圓形形狀而變慢時。
 - **增加邊數**：幾乎不需要。只有在非常大的圓形零件上、在 STL 中看到稜邊時才需要。
 - **對於只用邊緣工具處理，或以 STEP 交付的零件，** 邊數無關緊要。
@@ -119,7 +119,7 @@ layerling 的每個零件都從一個形狀開始。其餘一切都是由形狀�
 
 ## 複製與重複
 
-{{ui:editor.tool.copy}}、{{ui:editor.tool.paste}} 與 {{ui:editor.tool.duplicate}} 位於功能區（{{ui:editor.group.clipboard}}）。[[Ctrl]]+[[D]] 會重複選取項。layerling 會記住你上次如何移動或旋轉副本，並在下次重複時再套用相同的方式。這樣幾個按鍵就能做出一排孔或一排階梯。規則排列還可以使用陣列，說明見[選取與排列](chapter:select-and-arrange)。
+{{ui:editor.tool.copy}}、{{ui:editor.tool.paste}} 與 {{ui:editor.tool.duplicate}} 位於功能區（{{ui:editor.group.clipboard}}）。[[Ctrl]]+[[D]] 會重複選取項。Magic3D 會記住你上次如何移動或旋轉副本，並在下次重複時再套用相同的方式。這樣幾個按鍵就能做出一排孔或一排階梯。規則排列還可以使用陣列，說明見[選取與排列](chapter:select-and-arrange)。
 
 > **提示：** 如果某個形狀不肯接受你想要的尺寸，通常是新形狀的限制所致。在設定中的 {{ui:workspace.shapeDefaults}} 下，你可以決定每種形狀如何開始，以及最大能有多大。
 
@@ -159,14 +159,14 @@ layerling 的每個零件都從一個形狀開始。其餘一切都是由形狀�
 
 已經包覆過的形狀是包覆後物件的網格，不能再次包覆：復原這次包覆，或用另一個直徑重新包覆原來的平面形狀。
 
-結果像匯入的模型一樣是網格。復原會把形狀重新攤平；想換直徑，先復原再重新包覆。包覆範圍不能超過圓柱一圈；超過時 layerling 會指出能夠容納的最小直徑。
+結果像匯入的模型一樣是網格。復原會把形狀重新攤平；想換直徑，先復原再重新包覆。包覆範圍不能超過圓柱一圈；超過時 Magic3D 會指出能夠容納的最小直徑。
 
 ## 表面紋理
 
 在實體上加凹槽、滾花、蜂巢或凸點，讓它更好握或更好看：在形狀設定中開啟 {{ui:inspector.surfaceTexture}}。上方 {{ui:editor.group.modify}} 群組裡的 {{ui:inspector.surfaceTexture}} 按鈕作用相同：它為選取的實體開啟或關閉這張卡片，卡片開啟時按鈕保持亮起。
 
 1. 選擇 {{ui:inspector.surfacePattern}}、它的 {{ui:inspector.surfaceSpacing}} 和 {{ui:inspector.surfaceDepth}}。{{ui:inspector.surfaceDirection}} 決定紋理是壓進實體還是凸出實體。對於 {{ui:surfaceTexture.bumps}}，{{ui:inspector.surfaceBumpShape}} 可在 {{ui:surfaceTexture.bumpDome}}、{{ui:surfaceTexture.bumpCone}}、{{ui:surfaceTexture.bumpSoft}} 和 {{ui:surfaceTexture.bumpFlat}} 之間選擇。在 {{ui:inspector.surfaceBumpGrid}} 下，它們可以 {{ui:surfaceTexture.bumpGridStaggered}}（每隔一列錯開半個間距），或排成 {{ui:surfaceTexture.bumpGridStraight}}。
-2. 在 {{ui:inspector.surfaceProjection}} 下，杯子、旋鈕或把手等圓形實體選 {{ui:surfaceTexture.cylinder}}。圖案繞 {{ui:inspector.surfaceAxis}} 一圈，間距會略作取整，使一圈正好是整數個凹槽或單元：圖案閉合，沒有接縫。{{ui:surfaceTexture.allRound}} 適合不是圓形的實體，{{ui:surfaceTexture.flatProjection}} 適合從上方看的蓋子或平板。保持 {{ui:surfaceTexture.auto}}，Layerling 會替你選擇：圓形實體以及像盒子這樣直立的稜角實體用 {{ui:surfaceTexture.cylinder}}（圖案沿外輪廓走，無接縫地繞過稜邊，凸起的圖案會順著稜邊彎過去），其他稜角實體用 {{ui:surfaceTexture.allRound}}。
+2. 在 {{ui:inspector.surfaceProjection}} 下，杯子、旋鈕或把手等圓形實體選 {{ui:surfaceTexture.cylinder}}。圖案繞 {{ui:inspector.surfaceAxis}} 一圈，間距會略作取整，使一圈正好是整數個凹槽或單元：圖案閉合，沒有接縫。{{ui:surfaceTexture.allRound}} 適合不是圓形的實體，{{ui:surfaceTexture.flatProjection}} 適合從上方看的蓋子或平板。保持 {{ui:surfaceTexture.auto}}，Magic3D 會替你選擇：圓形實體以及像盒子這樣直立的稜角實體用 {{ui:surfaceTexture.cylinder}}（圖案沿外輪廓走，無接縫地繞過稜邊，凸起的圖案會順著稜邊彎過去），其他稜角實體用 {{ui:surfaceTexture.allRound}}。
 3. 點擊 {{ui:inspector.surfaceApply}}。大的實體需要幾秒鐘，期間可以繼續工作。
 
 如果只想給部分面加圖案，例如只給盒子的頂面，點擊 {{ui:inspector.surfaceFacesPick}}，再在檢視中點擊這些面：頂面、底面或某個側面。一個面一直延伸到實體的銳利稜邊；圓柱的側面是一個面，頂面和底面各是一個面。選取的面會亮起，再點擊一次可以取消，{{ui:inspector.surfaceFacesClear}} 讓圖案重新覆蓋整個實體。只有選取的面得到圖案，其他面保持原樣，三角形也很少。在頂面或底面上圖案是平鋪的；在圓形頂面上，凹槽、繩紋和針織紋繞中心排成一圈圈，像樹的年輪。{{ui:inspector.surfaceFaceTurn}} 轉動頂面和底面上的圖案：0° 時各列沿前緣，90° 時沿側緣。{{ui:inspector.surfaceCapStyle}} 讓那裡的凹槽、繩紋和針織紋在列與環之間切換；在稜角實體上，環會沿外輪廓走。{{ui:inspector.surfaceCapEdge}} 決定側面與帶圖案的頂面或底面之間的稜邊怎麼處理：{{ui:surfaceTexture.edgeSharp}} 讓兩者都止於稜邊。選 {{ui:surfaceTexture.edgeOver}} 時，側面的圖案繞過稜邊鋪滿整個頂面：繩紋、針織紋和水平凹槽的各列以環的形式延續，垂直和斜向的凹槽則作為射線幾乎延伸到中心。{{ui:surfaceTexture.edgeFold}} 效果相同，但只作為一圈邊；裡面是頂面自己的圖案，依 {{ui:inspector.surfaceCapStyle}} 的設定。{{ui:surfaceTexture.edgeBead}} 為任何圖案在稜邊加一圈飾邊：一條繩、一道收針鏈或一道圓珠邊。較窄的圓角也會結束一個面：杯緣有圓角的杯子，其外側、圓角、杯緣、內側和杯底各自是獨立的面，所以點擊外側只會選到外側。較寬的圓角（約占實體四分之一或更多）屬於該面，就像球是一個面。選了面時，{{ui:inspector.surfaceOutside}} 和 {{ui:inspector.surfaceInside}} 不起作用。

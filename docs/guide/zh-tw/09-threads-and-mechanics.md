@@ -13,7 +13,7 @@ summary: 能相互配合的螺絲、螺帽與螺紋孔，以及齒輪、彈簧�
 - **{{ui:thread.screw}}：** 帶頭部。頭部形狀在 {{ui:inspector.threadHead}} 選擇：{{ui:thread.headCylinder}}、{{ui:thread.headCountersunk}} 或 {{ui:thread.headHex}}。
   再往下可以設定{{ui:prop.headDiameter}}(六角頭為{{ui:prop.headAcrossFlats}};沉頭的直徑隨高度而定)以及頭部端面的{{ui:inspector.threadDrive}}:{{ui:thread.driveHex}}、{{ui:thread.driveTorx}}、{{ui:thread.drivePhillips}}、{{ui:thread.driveSlot}}、{{ui:thread.driveRobertson}},或用手或扳手轉的螺絲選{{ui:thread.driveNone}}。{{ui:prop.driveSize}}是內六角的對邊寬度、星型的外徑或十字的跨度;{{ui:prop.driveDepth}}是它的深度,最多為頭部的十分之九,0 表示不要。只要不改動,這些值就隨尺寸變化;六角頭預設沒有驅動。驅動屬於精確實體,因此也會出現在 STEP 匯出中。選擇{{ui:thread.driveSlot}}時，{{ui:prop.driveSize}}是槽的長度，寬度為長度的五分之一，一字起子或硬幣都能轉；初始長度為頭部允許的最大值。 {{ui:thread.driveRobertson}}是加拿大常見的方頭驅動：{{ui:prop.driveSize}}是方孔的對邊寬度，預設取與規格相配的起子頭，M4 和 M5 為 2 號（2.84 公釐）。
 - **{{ui:thread.nut}}：** 對應的螺帽。配套的墊圈是一個{{ui:shape.tube}}：在{{ui:prop.washerSize}}中選擇螺絲規格，外徑、內徑和厚度即依 ISO 7089 設定。
-- **{{ui:thread.bore}}：** 螺紋孔。它是一個孔。把它拖進零件、將兩者群組，零件就有內螺紋。 要做鎖螺栓的孔，請一律使用{{ui:thread.bore}}：{{ui:thread.rod}}或{{ui:thread.screw}}作為孔時是螺栓的完整尺寸，沒有間隙，會太緊。如果仍把它設為孔，layerling 會提示你，點選{{ui:inspector.threadMakeTappedHole}}即可改為{{ui:thread.bore}}。
+- **{{ui:thread.bore}}：** 螺紋孔。它是一個孔。把它拖進零件、將兩者群組，零件就有內螺紋。 要做鎖螺栓的孔，請一律使用{{ui:thread.bore}}：{{ui:thread.rod}}或{{ui:thread.screw}}作為孔時是螺栓的完整尺寸，沒有間隙，會太緊。如果仍把它設為孔，Magic3D 會提示你，點選{{ui:inspector.threadMakeTappedHole}}即可改為{{ui:thread.bore}}。
 
 ![帶圓柱頭的螺絲。右側：類型與頭部形狀，往下是規格、螺距與牙型。](shot:thread-screw)
 
@@ -100,7 +100,7 @@ G 規格是符合 ISO 228-1 的平行惠氏管螺紋，常見於水、瓦斯、�
 
 ## 彎管
 
-一個 {{ui:shape.bentTube}} 最多由十二段組成：一段直管，接著一個彎。每一段你設定 {{ui:prop.bentTubeSegmentLength}}、{{ui:prop.bentTubeBendAngle}}、{{ui:prop.bentTubeBendRadius}} 與 {{ui:prop.bentTubeRoll}}。正在編輯的那一段會以橘色亮起，方便你掌握順序。滾轉角為 0° 時在工作平面內彎曲，90° 時管子向上彎。輪廓可以是圓形、方形、六邊形或八邊形，內部同樣如此，也可以完全實心。如果管子撞到自己，layerling 會警告你。
+一個 {{ui:shape.bentTube}} 最多由十二段組成：一段直管，接著一個彎。每一段你設定 {{ui:prop.bentTubeSegmentLength}}、{{ui:prop.bentTubeBendAngle}}、{{ui:prop.bentTubeBendRadius}} 與 {{ui:prop.bentTubeRoll}}。正在編輯的那一段會以橘色亮起，方便你掌握順序。滾轉角為 0° 時在工作平面內彎曲，90° 時管子向上彎。輪廓可以是圓形、方形、六邊形或八邊形，內部同樣如此，也可以完全實心。如果管子撞到自己，Magic3D 會警告你。
 
 ## 放樣
 
@@ -116,7 +116,7 @@ G 規格是符合 ISO 228-1 的平行惠氏管螺紋，常見於水、瓦斯、�
 
 ## Gridfinity
 
-{{ui:shape.gridfinity}} 形狀用來製作 Zack Freedman 的開放式收納系統零件：42 mm 網格上的收納盒，可放在底板裡，也能彼此堆疊。尺寸遵循公開的 Gridfinity 規格，所以 layerling 做的收納盒能裝進其他產生器做的底板，反之亦然。在 {{ui:prop.gridfinityType}} 下選擇：
+{{ui:shape.gridfinity}} 形狀用來製作 Zack Freedman 的開放式收納系統零件：42 mm 網格上的收納盒，可放在底板裡，也能彼此堆疊。尺寸遵循公開的 Gridfinity 規格，所以 Magic3D 做的收納盒能裝進其他產生器做的底板，反之亦然。在 {{ui:prop.gridfinityType}} 下選擇：
 
 - **{{ui:gridfinity.bin}}：** 每個網格單元下方都有支腳的收納盒。{{ui:prop.gridfinityUnitsX}} 與 {{ui:prop.gridfinityUnitsZ}} 以 42 mm 的網格單元計數（收納盒小 0.5 mm，一個單元為 41.5 mm）；{{ui:prop.gridfinityUnitsY}} 以 7 mm 的高度單元計數，最多 20。壁頂的 {{ui:prop.gridfinityLip}} 托住下一個收納盒的支腳，並使收納盒增高 4.4 mm：3 單元帶唇緣的收納盒高 25.4 mm。啟用 {{ui:prop.gridfinityMagnets}} 後，每個支腳的每個角都會有一個 6 × 2 mm 磁鐵孔。
 - **{{ui:gridfinity.baseplate}}：** 收納盒所站的底板，高 5 mm，每個網格單元有一個插槽。它是沒有底面、沒有磁鐵孔的開放框架。
@@ -160,7 +160,7 @@ G 規格是符合 ISO 228-1 的平行惠氏管螺紋，常見於水、瓦斯、�
 
 {{ui:shape.knurl}} 是四周佈滿溝槽的圓形握持面，用於旋鈕、撥輪與工具握把。在 {{ui:prop.knurlPattern}} 下選擇 {{ui:knurl.straight}}（沿軸線的溝槽，像控制旋鈕）、{{ui:knurl.diamond}}（兩排斜向溝槽交叉成小菱形），或 {{ui:knurl.round}}（沿軸線的溝槽與凸脊形成柔和的圓弧波浪，握感舒適而沒有銳利稜線）。圓弧溝槽保持淺於半個節距，否則凸脊會在根部鼓起；深度過大會自動退讓。你設定 {{ui:prop.diameter}} 與 {{ui:prop.height}}、{{ui:prop.knurlCount}} 的數量與 {{ui:prop.knurlDepth}}；交叉滾花還要設定相對軸線的 {{ui:prop.knurlAngle}}。{{ui:prop.knurlChamfer}} 以 45 度切開兩端，像車削的旋鈕；0 則保持尖銳。
 
-直紋與圓弧滾花是精確實體，所以邊可以斷開與倒圓。交叉滾花仍是網格，因為當作精確實體時，30 條溝槽要計算將近一分鐘。要給軸上的旋鈕用，把滾花與一個孔群組，例如設為螺紋孔的 {{ui:shape.thread}}。淺於 0.4 mm 的溝槽幾乎沒有印表機能乾淨印出，而且 layerling 不會讓它們沿握持面間隔小於 0.8 mm：細的握持面得到的溝槽更少。
+直紋與圓弧滾花是精確實體，所以邊可以斷開與倒圓。交叉滾花仍是網格，因為當作精確實體時，30 條溝槽要計算將近一分鐘。要給軸上的旋鈕用，把滾花與一個孔群組，例如設為螺紋孔的 {{ui:shape.thread}}。淺於 0.4 mm 的溝槽幾乎沒有印表機能乾淨印出，而且 Magic3D 不會讓它們沿握持面間隔小於 0.8 mm：細的握持面得到的溝槽更少。
 
 ## 燕尾
 

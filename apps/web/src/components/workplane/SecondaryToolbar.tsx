@@ -1427,9 +1427,9 @@ export function SecondaryToolbar({
         {/* The brand, in the same corner as on the start page. Not a link:
             leaving the editor is not something to trigger by accident. */}
         <div className="toolbar-brand">
-          <img src="/assets/layerling/layerling-logo.svg" alt="Layerling" />
+          <img src="/assets/magic3d/magic3d-logo.svg" alt="Magic3D" />
           <span className="toolbar-brand-text">
-            <span className="toolbar-brand-name">layerling</span>
+            <span className="toolbar-brand-name">Magic<b>3D</b></span>
             <span className="toolbar-brand-tagline">{t("brand.tagline")}</span>
           </span>
         </div>

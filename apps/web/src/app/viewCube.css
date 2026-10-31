@@ -53,13 +53,13 @@
   width: 82px;
   height: 82px;
   perspective: 420px;
-  color: #afa294;
+  color: #9ba79f;
   font-size: 10px;
   font-weight: 600;
   line-height: 1;
   text-align: center;
   text-transform: uppercase;
-  filter: drop-shadow(0 2px 3px rgba(82, 64, 45, 0.14));
+  filter: drop-shadow(0 2px 3px rgba(55, 71, 61, 0.14));
   opacity: 0.9;
   pointer-events: auto;
   /* Touch drags orbit the camera instead of scrolling the page. */
@@ -89,7 +89,7 @@
   width: 58px;
   height: 58px;
   background: rgba(255, 255, 255, 0.9);
-  border: 2px solid #d7cdc3;
+  border: 2px solid #c8d1cb;
   padding: 0;
   color: inherit;
   font: inherit;
@@ -101,33 +101,33 @@
 
 .cube-face:hover,
 .cube-face:focus-visible {
-  color: #796148;
-  border-color: #b68f65;
+  color: #556a5d;
+  border-color: #7a9f87;
   outline: none;
   box-shadow:
     inset 0 0 0 1px rgba(255, 255, 255, 0.72),
-    0 0 0 2px rgba(185, 118, 46, 0.18);
+    0 0 0 2px rgba(38, 152, 80, 0.18);
 }
 
 .cube-top {
   transform: rotateX(-90deg) translateZ(29px);
-  background: rgba(252, 250, 248, 0.94);
+  background: rgba(249, 251, 250, 0.94);
 }
 
 .cube-bottom {
   transform: rotateX(90deg) translateZ(29px);
-  color: #bcb1a6;
-  background: rgba(247, 243, 238, 0.9);
+  color: #abb5af;
+  background: rgba(241, 245, 242, 0.9);
 }
 
 .cube-front {
   transform: translateZ(29px);
-  color: #a49686;
+  color: #8e9b93;
 }
 
 .cube-back {
   transform: rotateY(180deg) translateZ(29px);
-  color: #bcb1a6;
+  color: #abb5af;
 }
 
 .cube-right {
@@ -145,7 +145,7 @@
 }
 
 .cube-zone:hover {
-  background: rgba(185, 118, 46, 0.26);
+  background: rgba(38, 152, 80, 0.26);
 }
 
 /* A narrow window: the cube shrinks a little and moves closer to the edge. */
@@ -166,31 +166,31 @@
 }
 
 html[data-theme="dark"] .cube-face {
-  color: #c1a991;
-  background: rgba(56, 44, 31, 0.94);
-  border-color: #736353;
-  box-shadow: inset 0 0 0 1px rgba(221, 198, 173, 0.08);
+  color: #9cb2a4;
+  background: rgba(38, 49, 42, 0.94);
+  border-color: #5b6960;
+  box-shadow: inset 0 0 0 1px rgba(188, 206, 194, 0.08);
 }
 
 html[data-theme="dark"] .cube-top {
-  color: #eee6d7;
-  background: rgba(70, 56, 42, 0.96);
+  color: #e0e9e4;
+  background: rgba(49, 61, 54, 0.96);
 }
 
 html[data-theme="dark"] .cube-bottom {
-  color: #8c7761;
-  background: rgba(42, 32, 21, 0.94);
+  color: #6c7f73;
+  background: rgba(27, 36, 30, 0.94);
 }
 
 html[data-theme="dark"] .cube-face:hover,
 html[data-theme="dark"] .cube-face:focus-visible {
-  color: #faf7f2;
-  border-color: #d48636;
-  box-shadow: inset 0 0 0 1px rgba(218, 141, 57, 0.2), 0 0 0 2px rgba(199, 122, 40, 0.16);
+  color: #f5f8f6;
+  border-color: #2bad5b;
+  box-shadow: inset 0 0 0 1px rgba(45, 181, 95, 0.2), 0 0 0 2px rgba(40, 160, 84, 0.16);
 }
 
 html[data-theme="dark"] .cube-zone:hover {
-  background: rgba(212, 134, 54, 0.34);
+  background: rgba(43, 173, 91, 0.34);
 }
 
 /* ---------------------------------------------------------------------------

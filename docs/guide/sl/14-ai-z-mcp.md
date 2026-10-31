@@ -3,21 +3,21 @@ title: Gradnja z umetno inteligenco (MCP)
 summary: Kako pomočnik z umetno inteligenco, kot je Claude ali Codex, v tvojem odprtem urejevalniku ustvarja, spreminja in združuje oblike ter posname slike pogleda.
 ---
 
-layerling prinaša strežnik MCP. MCP je standard, prek katerega lahko pomočnik z umetno inteligenco uporablja orodja v drugih programih. S tem odjemalec z umetno inteligenco, kot je Claude ali Codex, vidi odprt zavihek urejevalnika in v njem dela: ustvarja oblike, spreminja mere, združuje v skupine, reže, zaokroža robove, bere prizor in snema slike pogleda. Ti opišeš del, umetna inteligenca ga zgradi, ti gledaš in kadarkoli posežeš vmes.
+Magic3D prinaša strežnik MCP. MCP je standard, prek katerega lahko pomočnik z umetno inteligenco uporablja orodja v drugih programih. S tem odjemalec z umetno inteligenco, kot je Claude ali Codex, vidi odprt zavihek urejevalnika in v njem dela: ustvarja oblike, spreminja mere, združuje v skupine, reže, zaokroža robove, bere prizor in snema slike pogleda. Ti opišeš del, umetna inteligenca ga zgradi, ti gledaš in kadarkoli posežeš vmes.
 
 Most med odjemalcem z umetno inteligenco in urejevalnikom teče **lokalno na tvojem računalniku**. Vseeno upoštevaj: kar umetna inteligenca prebere, torej prizor in slike pogleda, gre ponudniku tvojega odjemalca z umetno inteligenco, tako kot vsak drug vnos tam.
 
-> **Pomembno:** Most MCP je v razvojnem strežniku, ki ga sam zaženeš na svojem računalniku. Na layerling.com in v namestitvah s statičnim gostovanjem je izklopljen. Kopija, ki jo upravljaš sam, na primer slika Docker na NAS, ga lahko vklopi z dostopnim ključem; glej »Kopija na NAS ali strežniku« spodaj.
+> **Pomembno:** Most MCP je v razvojnem strežniku, ki ga sam zaženeš na svojem računalniku. Na magic3d.ro in v namestitvah s statičnim gostovanjem je izklopljen. Kopija, ki jo upravljaš sam, na primer slika Docker na NAS, ga lahko vklopi z dostopnim ključem; glej »Kopija na NAS ali strežniku« spodaj.
 
 ## Nastavitev
 
-1. Prenesi layerling z [GitHuba](https://github.com/henmedia/layerling) in ga v mapi projekta zaženi z `npm run dev`. Nameščen mora biti Node.js. V Windowsih to opravi hitra vrstica za začetek v README.
-2. Odpri zavihek urejevalnika, na primer `http://127.0.0.1:3000/?editor=1`. To lahko prepustiš umetni inteligenci: ko urejevalnik ni odprt, prvo orodje, ki ga potrebuje, zažene brskalnik z urejevalnikom in počaka, da se poveže. To velja za layerling na tvojem računalniku; kopija na NAS-u ali strežniku zahteva, da urejevalnik odpreš sam. Z `LAYERLING_MCP_OPEN_EDITOR=0` za strežnik MCP to izklopiš.
+1. Prenesi Magic3D z [GitHuba](https://github.com/henmedia/layerling) in ga v mapi projekta zaženi z `npm run dev`. Nameščen mora biti Node.js. V Windowsih to opravi hitra vrstica za začetek v README.
+2. Odpri zavihek urejevalnika, na primer `http://127.0.0.1:3000/?editor=1`. To lahko prepustiš umetni inteligenci: ko urejevalnik ni odprt, prvo orodje, ki ga potrebuje, zažene brskalnik z urejevalnikom in počaka, da se poveže. To velja za Magic3D na tvojem računalniku; kopija na NAS-u ali strežniku zahteva, da urejevalnik odpreš sam. Z `LAYERLING_MCP_OPEN_EDITOR=0` za strežnik MCP to izklopiš.
 3. Poveži svojega odjemalca z umetno inteligenco s strežnikom MCP. Odjemalec ga zažene sam z `node scripts/layerling-mcp-server.mjs`.
 
 ### Claude Code
 
-Nič ni treba nameščati: projekt prinaša `.mcp.json`, ki vpiše strežnik, in veščino v `.claude/skills/layerling-mcp-skill`. Odpri mapo layerling v Claude Code in na primer prosi: »Uporabi orodja layerling MCP, naštej moje odprte urejevalnike in poglej prizor.«
+Nič ni treba nameščati: projekt prinaša `.mcp.json`, ki vpiše strežnik, in veščino v `.claude/skills/layerling-mcp-skill`. Odpri mapo Magic3D v Claude Code in na primer prosi: »Uporabi orodja Magic3D MCP, naštej moje odprte urejevalnike in poglej prizor.«
 
 ### Claude Desktop
 
@@ -37,7 +37,7 @@ Samo odjemalec s ključem lahko našteje ali upravlja urejevalnike. Strani ureje
 
 ## Kaj zna umetna inteligenca
 
-Umetna inteligenca dela z istimi funkcijami kot ti, teče po isti poti kot tvoje upravljanje v urejevalniku. Nove funkcije programa layerling dobijo svoje dejanje MCP kar zraven. Orodja:
+Umetna inteligenca dela z istimi funkcijami kot ti, teče po isti poti kot tvoje upravljanje v urejevalniku. Nove funkcije programa Magic3D dobijo svoje dejanje MCP kar zraven. Orodja:
 
 | Orodje | Kaj naredi |
 | --- | --- |

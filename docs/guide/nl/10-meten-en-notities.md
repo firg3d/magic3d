@@ -3,7 +3,7 @@ title: Meten en notities
 summary: Meetlint, liniaal en winkelhaak, afstanden tot de oorsprong, notities die aan een onderdeel vast blijven zitten, en referentiepunten waarop dingen uitlijnen.
 ---
 
-Om een onderdeel precies te bouwen, moet je meten. layerling heeft daar verschillende hulpmiddelen voor. Geen daarvan komt in een export terecht. Wanddiktes en tussenruimtes binnen een onderdeel meet je het best in de [doorsnedeweergave](chapter:weergave-en-werkvlak) met {{ui:camera.sectionMeasure}}.
+Om een onderdeel precies te bouwen, moet je meten. Magic3D heeft daar verschillende hulpmiddelen voor. Geen daarvan komt in een export terecht. Wanddiktes en tussenruimtes binnen een onderdeel meet je het best in de [doorsnedeweergave](chapter:weergave-en-werkvlak) met {{ui:camera.sectionMeasure}}.
 
 ## Het meetlint
 
@@ -15,7 +15,7 @@ Het meetlint zit aan de onderkant van de camerabalk aan de linkerrand ({{ui:came
 2. **{{ui:camera.moveMeasurement}}:** Pak de punten en verplaats ze, het getal volgt mee.
 3. **{{ui:camera.deleteMeasurement}}:** Klik daarna op een meting om die te verwijderen.
 4. **{{ui:camera.tapeWholeEdges}}:** Een klik op een rand meet de hele rand, bij een cirkel bijvoorbeeld de omtrek. Staat dit uit, dan zet een klik in plaats daarvan een punt op de rand, en het tweede punt mag overal liggen, zodat je de diameter of een andere afstand kunt meten. [[Alt]] draait de schakelaar voor één klik om. Op een cirkel klikt het punt tegenover het eerste vast zodra de aanwijzer in de buurt komt, en de punten liggen op de echte cirkel, zodat de diameter precies klopt.
-5. **{{ui:camera.deleteAllMeasurements}}:** Verwijdert alle metingen in één keer. Omdat dit niet ongedaan kan worden gemaakt, vraagt layerling het eerst; zijn er geen metingen, dan is er niets te doen.
+5. **{{ui:camera.deleteAllMeasurements}}:** Verwijdert alle metingen in één keer. Omdat dit niet ongedaan kan worden gemaakt, vraagt Magic3D het eerst; zijn er geen metingen, dan is er niets te doen.
 6. **{{ui:camera.tapeMarkMiddle}}:** In het midden van elke meting zit een klein rond merkteken, de onderste helft gevuld. Het zet een [referentiepunt](#referentiepunten) in het midden van de meting: na een klik op een ronde rand, zoals de rand van een gat, in het middelpunt van die cirkel - ook bij een geïmporteerd net, waar anders niets het midden van een gat markeert - en bij een diameter of elke rechte meting halverwege. Een vorm die je sleept snapt dan met zijn midden op het punt. Een punt dat er al is, wordt niet dubbel gemaakt. Het meetlint klikt vast aan een referentiepunt zoals aan een hoek: zo meet je vanaf het middelpunt van een cirkel of vanaf het midden van een lijn - punt zetten, dan aanklikken.
 7. **{{ui:camera.tapeTypeLength}}:** Ligt minstens één uiteinde van een rechte meting op een lichaam, dan is het getal aan te klikken. Typ een nieuwe lengte en druk op [[Enter]]: het lichaam bij het tweede punt schuift langs de gemeten lijn tot de afstand precies zo groot is, zoals met de liniaal in Tinkercad. Is alleen het lichaam bij het eerste punt geselecteerd, dan schuift dat. De meetpunten blijven op het lichaam, dus de meting gaat mee. Meet vanaf een hoek, een rand of een [referentiepunt](#referentiepunten), zoals het midden van een cirkel, om onderdelen op een exacte afstand te zetten. Een negatieve lengte schuift het zo ver voorbij het eerste punt, bijvoorbeeld 5 mm binnen de rand van een doos.
 

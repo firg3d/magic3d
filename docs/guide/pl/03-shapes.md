@@ -3,7 +3,7 @@ title: Umieszczanie i dopasowywanie kształtów
 summary: Biblioteka kształtów, wymiary liczbami i uchwytami, kolor, obracanie, zwężanie i skręcanie.
 ---
 
-Każda część w layerling zaczyna się od kształtu. Z kształtów budujesz wszystko inne: uzupełniają się, wycinają nawzajem albo łączą w nowy kształt.
+Każda część w Magic3D zaczyna się od kształtu. Z kształtów budujesz wszystko inne: uzupełniają się, wycinają nawzajem albo łączą w nowy kształt.
 
 ## Dodawanie kształtu
 
@@ -32,7 +32,7 @@ Trójkąt dostaniesz na dwa sposoby: {{ui:shape.polygon}} z trzema bokami to tr�
 
 ## Ustawienia kształtu
 
-Gdy tylko kształt jest zaznaczony, po prawej pojawiają się jego ustawienia. Na górze jest nazwa, a ołówek obok niej ({{ui:outliner.rename}}) pozwala wpisać nową. [[Enter]] ją zachowuje, [[Esc]] anuluje, a pusta nazwa przywraca domyślną nazwę kształtu. Dalej po prawej kłódka blokuje kształt przed przypadkowym przesunięciem, a oko go ukrywa. Strzałka po lewej zwija ustawienia do samego paska tytułu. Karty poniżej rozwijają się i zwijają kliknięciem ich tytułu ({{ui:inspector.properties}}, {{ui:inspector.position}}, {{ui:inspector.rotation}}, {{ui:inspector.taper}}, {{ui:inspector.twist}} i karty kształtów specjalnych). layerling pamięta, które zostawiłeś otwarte, dla następnego kształtu i następnej wizyty.
+Gdy tylko kształt jest zaznaczony, po prawej pojawiają się jego ustawienia. Na górze jest nazwa, a ołówek obok niej ({{ui:outliner.rename}}) pozwala wpisać nową. [[Enter]] ją zachowuje, [[Esc]] anuluje, a pusta nazwa przywraca domyślną nazwę kształtu. Dalej po prawej kłódka blokuje kształt przed przypadkowym przesunięciem, a oko go ukrywa. Strzałka po lewej zwija ustawienia do samego paska tytułu. Karty poniżej rozwijają się i zwijają kliknięciem ich tytułu ({{ui:inspector.properties}}, {{ui:inspector.position}}, {{ui:inspector.rotation}}, {{ui:inspector.taper}}, {{ui:inspector.twist}} i karty kształtów specjalnych). Magic3D pamięta, które zostawiłeś otwarte, dla następnego kształtu i następnej wizyty.
 
 Ustawienia są zadokowane przy prawej krawędzi. Jeśli zasłaniają coś, co chcesz widzieć, przeciągnij je za pasek tytułu, a będą unosić się tam, gdzie je upuścisz, także dla następnego kształtu. Upuść je z powrotem w prawym górnym rogu albo kliknij dwukrotnie pasek tytułu, a znów się zadokują. Gdy unoszą się albo są zwinięte, krok przyciągania przenosi się z dołu ustawień do prawego dolnego rogu płaszczyzny roboczej.
 
@@ -76,7 +76,7 @@ Kolory obszaru roboczego w ustawieniach mają własny, prostszy wybór koloru, z
 
 ## Jak okrągłe jest okrągłe? Liczba boków
 
-Okrągłe kształty, takie jak walec, stożek, rura, elipsa albo otwory, mają we właściwościach przełącznik {{ui:prop.sidesFollowSize}} i suwak {{ui:prop.sides}}. {{ui:shape.torus}} ma dwa suwaki: {{ui:prop.torusSides}} wokół pierścienia i {{ui:prop.torusSteps}} wokół rury. Także tam zależą od rozmiaru, dopóki ich nie ustawisz, więc duży torus nie pokazuje płaskich ścianek. Powód: do widoku oraz do STL, 3MF i OBJ layerling rysuje okrąg jako wielokąt z wielu małych boków. Im więcej boków, tym gładszy, ale tym więcej trójkątów potrzebuje.
+Okrągłe kształty, takie jak walec, stożek, rura, elipsa albo otwory, mają we właściwościach przełącznik {{ui:prop.sidesFollowSize}} i suwak {{ui:prop.sides}}. {{ui:shape.torus}} ma dwa suwaki: {{ui:prop.torusSides}} wokół pierścienia i {{ui:prop.torusSteps}} wokół rury. Także tam zależą od rozmiaru, dopóki ich nie ustawisz, więc duży torus nie pokazuje płaskich ścianek. Powód: do widoku oraz do STL, 3MF i OBJ Magic3D rysuje okrąg jako wielokąt z wielu małych boków. Im więcej boków, tym gładszy, ale tym więcej trójkątów potrzebuje.
 
 {{ui:prop.torusTube}} określa, jak gruba jest rura widziana z góry. Wysokość tylko spłaszcza lub rozciąga rurę, więc płaski pierścień zachowuje otwór; przy połowie wymiaru zewnętrznego otwór się zamyka. Przeciąganie uchwytów skaluje rurę razem z kształtem. Dokładną bryłą do fazowania, zaokrąglania i STEP pozostaje tylko torus, którego rura jest tak gruba, jak wysoki jest torus.
 
@@ -98,7 +98,7 @@ Okrągłe kształty, takie jak walec, stożek, rura, elipsa albo otwory, mają w
 
 **Jak z tego korzystać**
 
-- **Zostaw włączone {{ui:prop.sidesFollowSize}}.** Wtedy layerling dobiera liczbę boków do średnicy tak, żeby wielokąt odbiegał od prawdziwego okręgu najwyżej o {{value:ROUND_DEVIATION_TOLERANCE}} mm, dużo mniej, niż rozróżni drukarka. Małe kształty dostają co najmniej {{value:MIN_AUTOMATIC_SIDES}} boków, duże więcej.
+- **Zostaw włączone {{ui:prop.sidesFollowSize}}.** Wtedy Magic3D dobiera liczbę boków do średnicy tak, żeby wielokąt odbiegał od prawdziwego okręgu najwyżej o {{value:ROUND_DEVIATION_TOLERANCE}} mm, dużo mniej, niż rozróżni drukarka. Małe kształty dostają co najmniej {{value:MIN_AUTOMATIC_SIDES}} boków, duże więcej.
 - **Mniej boków** wybierasz, gdy celowo chcesz wielokąt (ale do tego jest {{ui:shape.polygon}}) albo gdy edytor zwalnia przy bardzo wielu okrągłych kształtach.
 - **Więcej boków** prawie nigdy nie jest potrzebne. Tylko przy bardzo dużych okrągłych częściach, gdy widzisz krawędzie w STL.
 - **Dla części, które tylko obrabiasz na krawędziach albo przekazujesz jako STEP,** liczba boków nie ma znaczenia.
@@ -123,7 +123,7 @@ Krok przyciągania jest w prawym dolnym rogu edytora i możesz go zmienić w ka�
 
 ## Kopiowanie i duplikowanie
 
-{{ui:editor.tool.copy}}, {{ui:editor.tool.paste}} i {{ui:editor.tool.duplicate}} są na wstążce ({{ui:editor.group.clipboard}}). [[Ctrl]]+[[D]] duplikuje zaznaczenie. layerling pamięta, jak ostatnio przesunąłeś lub obróciłeś kopię, i przy następnym duplikowaniu robi to samo. Tak w kilku naciśnięciach powstaje rząd otworów albo schodków. Do regularnych układów jest też szyk, opisany w rozdziale [Zaznaczanie i rozmieszczanie](chapter:select-and-arrange).
+{{ui:editor.tool.copy}}, {{ui:editor.tool.paste}} i {{ui:editor.tool.duplicate}} są na wstążce ({{ui:editor.group.clipboard}}). [[Ctrl]]+[[D]] duplikuje zaznaczenie. Magic3D pamięta, jak ostatnio przesunąłeś lub obróciłeś kopię, i przy następnym duplikowaniu robi to samo. Tak w kilku naciśnięciach powstaje rząd otworów albo schodków. Do regularnych układów jest też szyk, opisany w rozdziale [Zaznaczanie i rozmieszczanie](chapter:select-and-arrange).
 
 > **Wskazówka:** Jeśli kształt nie chce przyjąć żądanego rozmiaru, często winne są limity dla nowych kształtów. W sekcji {{ui:workspace.shapeDefaults}} w ustawieniach decydujesz, jak każdy kształt zaczyna i jak duży może być.
 
@@ -163,14 +163,14 @@ Do grawerowania włącz {{ui:inspector.wrapInward}}: grubość wchodzi wtedy w �
 
 Kształtu, który jest już owinięty, nie da się owinąć ponownie, bo jest siatką owiniętego obiektu. Cofnij owinięcie albo owiń jeszcze raz płaski oryginał z inną średnicą.
 
-Wynikiem jest siatka, jak zaimportowany model. Cofnij kładzie kształt z powrotem płasko, więc aby zmienić średnicę, najpierw cofnij, a potem owiń ponownie. Owinięcie nie może sięgać dalej niż jedno okrążenie walca, a wtedy layerling podaje najmniejszą średnicę, która się zmieści.
+Wynikiem jest siatka, jak zaimportowany model. Cofnij kładzie kształt z powrotem płasko, więc aby zmienić średnicę, najpierw cofnij, a potem owiń ponownie. Owinięcie nie może sięgać dalej niż jedno okrążenie walca, a wtedy Magic3D podaje najmniejszą średnicę, która się zmieści.
 
 ## Tekstura powierzchni
 
 Rowki, radełko, plaster miodu albo wypukłości na bryle, dla lepszego chwytu albo dla wyglądu: otwórz {{ui:inspector.surfaceTexture}} w ustawieniach kształtu. Przycisk {{ui:inspector.surfaceTexture}} w grupie {{ui:editor.group.modify}} na górze robi to samo: otwiera i zamyka kartę dla zaznaczonej bryły i pozostaje podświetlony, dopóki karta jest otwarta.
 
 1. Wybierz {{ui:inspector.surfacePattern}}, jego {{ui:inspector.surfaceSpacing}} i {{ui:inspector.surfaceDepth}}. {{ui:inspector.surfaceDirection}} mówi, czy wzór wchodzi w bryłę, czy z niej wystaje. Dla wzoru {{ui:surfaceTexture.bumps}} {{ui:inspector.surfaceBumpShape}} wybiera między {{ui:surfaceTexture.bumpDome}}, {{ui:surfaceTexture.bumpCone}}, {{ui:surfaceTexture.bumpSoft}} i {{ui:surfaceTexture.bumpFlat}}. W polu {{ui:inspector.surfaceBumpGrid}} są {{ui:surfaceTexture.bumpGridStaggered}}, co drugi rząd przesunięty o pół odstępu, albo w układzie {{ui:surfaceTexture.bumpGridStraight}}.
-2. W {{ui:inspector.surfaceProjection}} weź {{ui:surfaceTexture.cylinder}} dla brył okrągłych, takich jak kubek, pokrętło albo rękojeść. Wzór biegnie wokół osi ({{ui:inspector.surfaceAxis}}), a rozstaw jest trochę zaokrąglany, żeby dookoła mieściła się całkowita liczba rowków albo komórek: wzór zamyka się bez szwu. {{ui:surfaceTexture.allRound}} pasuje do brył, które nie są okrągłe, a {{ui:surfaceTexture.flatProjection}} do pokrywki albo płytki widzianej z góry. Zostaw {{ui:surfaceTexture.auto}}, a layerling wybierze za Ciebie: {{ui:surfaceTexture.cylinder}} na bryłach okrągłych i na stojących kanciastych, takich jak prostopadłościan (wzór podąża wtedy za konturem i biegnie wokół krawędzi bez szwu, a wystający wzór się wokół nich zagina), oraz {{ui:surfaceTexture.allRound}} na pozostałych kanciastych.
+2. W {{ui:inspector.surfaceProjection}} weź {{ui:surfaceTexture.cylinder}} dla brył okrągłych, takich jak kubek, pokrętło albo rękojeść. Wzór biegnie wokół osi ({{ui:inspector.surfaceAxis}}), a rozstaw jest trochę zaokrąglany, żeby dookoła mieściła się całkowita liczba rowków albo komórek: wzór zamyka się bez szwu. {{ui:surfaceTexture.allRound}} pasuje do brył, które nie są okrągłe, a {{ui:surfaceTexture.flatProjection}} do pokrywki albo płytki widzianej z góry. Zostaw {{ui:surfaceTexture.auto}}, a Magic3D wybierze za Ciebie: {{ui:surfaceTexture.cylinder}} na bryłach okrągłych i na stojących kanciastych, takich jak prostopadłościan (wzór podąża wtedy za konturem i biegnie wokół krawędzi bez szwu, a wystający wzór się wokół nich zagina), oraz {{ui:surfaceTexture.allRound}} na pozostałych kanciastych.
 3. Kliknij {{ui:inspector.surfaceApply}}. Duża bryła zajmuje kilka sekund. W tym czasie możesz pracować dalej.
 
 Aby dać wzór tylko niektórym ścianom, na przykład tylko górze prostopadłościanu, kliknij {{ui:inspector.surfaceFacesPick}}, a potem ściany w widoku: górę, spód albo bok. Ściana sięga do ostrych krawędzi bryły. Na walcu pobocznica to jedna ściana, a góra i spód to po jednej. Wybrane ściany się podświetlają, drugie kliknięcie wyłącza ścianę, a {{ui:inspector.surfaceFacesClear}} znów daje wzór całej bryle. Wzór dostają tylko wybrane ściany, a pozostałe zostają bez zmian i mają mało trójkątów. Na górze albo na spodzie wzór leży płasko, a na okrągłej górze rowki, lina i dzianina biegną w pierścieniach wokół środka, jak słoje drzewa. {{ui:inspector.surfaceFaceTurn}} obraca wzór na górze i na dole: przy 0° rzędy biegną wzdłuż przedniej krawędzi, przy 90° wzdłuż bocznej. {{ui:inspector.surfaceCapStyle}} przełącza tam rowki, linę i dzianinę między rzędami a pierścieniami, a na kanciastej bryle pierścienie podążają za jej konturem. {{ui:inspector.surfaceCapEdge}} mówi, co dzieje się na krawędzi między bokiem a górą albo spodem ze wzorem: {{ui:surfaceTexture.edgeSharp}} kończy oba na krawędzi. Przy {{ui:surfaceTexture.edgeOver}} wzór boku zagina się na krawędzi i obejmuje całą górę: rzędy liny, dzianiny i poziomych rowków biegną dalej jako pierścienie, a pionowe i skośne rowki jako promienie prawie do środka. {{ui:surfaceTexture.edgeFold}} robi to samo tylko jako brzeg, a w środku leży własny wzór góry, ustawiony przez {{ui:inspector.surfaceCapStyle}}. {{ui:surfaceTexture.edgeBead}} kładzie wokół krawędzi obwódkę dla każdego wzoru: sznurek, łańcuszek zakańczający dzianinę albo okrągły wałek. Ciasne zaokrąglenie również kończy ścianę: w kubku z zaokrąglonymi krawędziami strona zewnętrzna, zaokrąglenia, brzeg, wnętrze i dno są osobnymi ścianami, więc kliknięcie strony zewnętrznej bierze tylko ją. Szerokie zaokrąglenie, mniej więcej ćwierć bryły lub więcej, należy do ściany, tak jak kula jest jedną ścianą. Przy wybranych ścianach {{ui:inspector.surfaceOutside}} i {{ui:inspector.surfaceInside}} się nie liczą.

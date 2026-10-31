@@ -13,7 +13,7 @@ V knjižnici oblik izberi {{ui:shape.thread}}. Pod {{ui:inspector.threadRole}} s
 - **{{ui:thread.screw}}:** z glavo. {{ui:inspector.threadHead}} izbereš: {{ui:thread.headCylinder}}, {{ui:thread.headCountersunk}} ali {{ui:thread.headHex}}.
   Nižje nastaviš {{ui:prop.headDiameter}} (pri šestrobi glavi {{ui:prop.headAcrossFlats}}; pri ugreznjeni glavi premer sledi višini) in {{ui:inspector.threadDrive}} v čelu glave: {{ui:thread.driveHex}}, {{ui:thread.driveTorx}}, {{ui:thread.drivePhillips}}, {{ui:thread.driveSlot}}, {{ui:thread.driveRobertson}} ali {{ui:thread.driveNone}} za vijak, ki ga vrtiš z roko ali ključem. {{ui:prop.driveSize}} je velikost ključa notranjega šestroba, zunanji premer zvezde Torx ali razpon križa; {{ui:prop.driveDepth}} pove, kako globoko seže, največ devet desetin glave, 0 pa ga izpusti. Dokler jih ne spremeniš, sledijo velikosti; šestroba glava se začne brez pogona. Pogon je del natančnega telesa, zato pride tudi v izvoz STEP. Pri {{ui:thread.driveSlot}} je {{ui:prop.driveSize}} dolžina zareze, njena širina pa petina dolžine, da se prilega ploski izvijač ali kovanec; na začetku je tako dolga, kot dopušča glava. {{ui:thread.driveRobertson}} je kvadratni pogon, običajen v Kanadi: {{ui:prop.driveSize}} je razdalja med ploskvama kvadrata, začne pa z nastavkom, ki ustreza velikosti, št. 2 (2,84 mm) pri M4 in M5.
 - **{{ui:thread.nut}}:** ustrezna matica. Podložka zanjo je {{ui:shape.tube}}: pod {{ui:prop.washerSize}} izberi velikost vijaka, pa zunanji in notranji premer ter debelina sledijo ISO 7089.
-- **{{ui:thread.bore}}:** navojna luknja. To je luknja. Povleci jo v del, oboje združi v skupino in del ima notranji navoj. Za luknjo, v katero se privije vijak, vedno uporabi {{ui:thread.bore}}: {{ui:thread.rod}} ali {{ui:thread.screw}} kot luknja ima polno mero vijaka brez zračnosti in je pretesna. Če jo vseeno nastaviš kot luknjo, te layerling opozori, {{ui:inspector.threadMakeTappedHole}} pa iz nje naredi {{ui:thread.bore}}.
+- **{{ui:thread.bore}}:** navojna luknja. To je luknja. Povleci jo v del, oboje združi v skupino in del ima notranji navoj. Za luknjo, v katero se privije vijak, vedno uporabi {{ui:thread.bore}}: {{ui:thread.rod}} ali {{ui:thread.screw}} kot luknja ima polno mero vijaka brez zračnosti in je pretesna. Če jo vseeno nastaviš kot luknjo, te Magic3D opozori, {{ui:inspector.threadMakeTappedHole}} pa iz nje naredi {{ui:thread.bore}}.
 
 ![Vijak z valjasto glavo. Desno sta vrsta in oblika glave, nižje velikost, korak in profil.](shot:thread-screw)
 
@@ -100,7 +100,7 @@ Robno orodje in izvoz STEP vzameta vzmet kot natančno telo: okrogla žica vzdol
 
 ## Ukrivljene cevi
 
-{{ui:shape.bentTube}} sestoji iz do dvanajst odsekov: raven kos, ki mu sledi ovinek. Za vsakega nastaviš {{ui:prop.bentTubeSegmentLength}}, {{ui:prop.bentTubeBendAngle}}, {{ui:prop.bentTubeBendRadius}} in {{ui:prop.bentTubeRoll}}. Odsek, ki ga ravno urejaš, se na cevi oranžno posveti, tako imaš zaporedje pod nadzorom. Kot kotaljenja 0° ukrivi v ravnini delovne površine, pri 90° se cev ukrivi navzgor. Profil je lahko okrogel, kvadraten, šest- ali osemkoten, notranji prav tako, ali povsem poln. Če cev teče sama vase, te layerling opozori.
+{{ui:shape.bentTube}} sestoji iz do dvanajst odsekov: raven kos, ki mu sledi ovinek. Za vsakega nastaviš {{ui:prop.bentTubeSegmentLength}}, {{ui:prop.bentTubeBendAngle}}, {{ui:prop.bentTubeBendRadius}} in {{ui:prop.bentTubeRoll}}. Odsek, ki ga ravno urejaš, se na cevi oranžno posveti, tako imaš zaporedje pod nadzorom. Kot kotaljenja 0° ukrivi v ravnini delovne površine, pri 90° se cev ukrivi navzgor. Profil je lahko okrogel, kvadraten, šest- ali osemkoten, notranji prav tako, ali povsem poln. Če cev teče sama vase, te Magic3D opozori.
 
 ## Prehod
 
@@ -116,7 +116,7 @@ Prehod je natančno telo, tudi zasukan in nagnjen: njegove robove lahko posname�
 
 ## Gridfinity
 
-Oblika {{ui:shape.gridfinity}} izdela dele za odprti sistem za shranjevanje Zacka Freedmana: posode na mreži po 42 mm, ki stojijo v podstavku in se zlagajo druga na drugo. Mere sledijo objavljeni specifikaciji Gridfinity, zato posoda iz layerlinga ustreza podstavku iz drugega generatorja in obratno. Pod {{ui:prop.gridfinityType}} izbereš:
+Oblika {{ui:shape.gridfinity}} izdela dele za odprti sistem za shranjevanje Zacka Freedmana: posode na mreži po 42 mm, ki stojijo v podstavku in se zlagajo druga na drugo. Mere sledijo objavljeni specifikaciji Gridfinity, zato posoda iz Magic3D ustreza podstavku iz drugega generatorja in obratno. Pod {{ui:prop.gridfinityType}} izbereš:
 
 - **{{ui:gridfinity.bin}}:** posodo z nogo pod vsako enoto mreže. {{ui:prop.gridfinityUnitsX}} in {{ui:prop.gridfinityUnitsZ}} štejeta enote mreže po 42 mm (posoda je za 0,5 mm manjša, 41,5 mm za eno enoto); vsaka višinska enota ({{ui:prop.gridfinityUnitsY}}) meri 7 mm, največ 20. {{ui:prop.gridfinityLip}} na vrhu stene sprejme noge naslednje posode in posodo zviša za 4,4 mm: posoda s 3 enotami in obrobo je visoka 25,4 mm. Če vklopiš {{ui:prop.gridfinityMagnets}}, dobi vsaka noga v vsakem kotu luknjo za magnet 6 × 2 mm.
 - **{{ui:gridfinity.baseplate}}:** podstavek, v katerem stojijo posode, visok 5 mm, z ležiščem za vsako enoto mreže. Je odprt okvir brez dna in brez lukenj za magnete.
@@ -174,7 +174,7 @@ Rezultat je sveženj členov (mrež), ki ga natisneš, kot leži. Če ti razdeli
 
 {{ui:shape.knurl}} je okrogel ročaj z žlebiči naokrog, za vrtljive gumbe, nastavitvena kolesca in ročaje orodja. Pod {{ui:prop.knurlPattern}} izbereš {{ui:knurl.straight}}, torej žlebiče vzdolž osi kot na vrtljivem gumbu, {{ui:knurl.diamond}}: dve poševni vrsti žlebičev se križata v majhne rombe, ali {{ui:knurl.round}}: žlebiči in rebra vzdolž osi kot mehek valovit rob iz krožnih lokov, prijeten prijem brez ostrih grebenov. Okrogli žlebiči ostanejo plitvejši od polovice delitve, sicer bi rebra pri vznožju postala trebušasta; prevelika globina zato popusti. Nastaviš {{ui:prop.diameter}} in {{ui:prop.height}}, število {{ui:prop.knurlCount}} in {{ui:prop.knurlDepth}}; pri križnem narebričenju poleg tega {{ui:prop.knurlAngle}} glede na os. {{ui:prop.knurlChamfer}} posname oba konca pod 45°, kot pri stružnem gumbu; 0 jih pusti ostre.
 
-Ravno in okroglo narebričenje sta natančni telesi, njuni robovi se lahko posnamejo in zaobljijo. Križno ostane mreža, saj bi ga kot natančno telo pri 30 žlebičih izračunavala skoraj minuto. Za gumb na osi narebričenje združiš v skupino z izvrtino, na primer z {{ui:shape.thread}} kot navojno luknjo. Žlebičev pod 0,4 mm globine skoraj noben tiskalnik ne natisne čisto, ožje od 0,8 mm na obodu pa layerling žlebičev sploh ne pusti: tanek ročaj dobi ustrezno manj.
+Ravno in okroglo narebričenje sta natančni telesi, njuni robovi se lahko posnamejo in zaobljijo. Križno ostane mreža, saj bi ga kot natančno telo pri 30 žlebičih izračunavala skoraj minuto. Za gumb na osi narebričenje združiš v skupino z izvrtino, na primer z {{ui:shape.thread}} kot navojno luknjo. Žlebičev pod 0,4 mm globine skoraj noben tiskalnik ne natisne čisto, ožje od 0,8 mm na obodu pa Magic3D žlebičev sploh ne pusti: tanek ročaj dobi ustrezno manj.
 
 ## Lastovičji rep
 

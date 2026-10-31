@@ -3,7 +3,7 @@ title: Měření a poznámky
 summary: Měření vzdáleností, pravítko a úhelník, vzdálenosti od počátku, poznámky připojené k dílu a referenční body pro přichytávání.
 ---
 
-Přesné modelování vyžaduje měření. Layerling nabízí několik nástrojů, které se do exportu nezahrnují. Tloušťku stěn a mezery uvnitř dílu nejsnáze změříte v [pohledu v řezu](chapter:view-and-workplane) pomocí {{ui:camera.sectionMeasure}}.
+Přesné modelování vyžaduje měření. Magic3D nabízí několik nástrojů, které se do exportu nezahrnují. Tloušťku stěn a mezery uvnitř dílu nejsnáze změříte v [pohledu v řezu](chapter:view-and-workplane) pomocí {{ui:camera.sectionMeasure}}.
 
 ## Měření vzdáleností
 

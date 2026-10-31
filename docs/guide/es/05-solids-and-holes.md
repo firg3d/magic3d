@@ -3,7 +3,7 @@ title: Sólidos y orificios
 summary: Cómo las formas sencillas se convierten en taladros, ranuras y huecos, y cómo cambiar un grupo más adelante.
 ---
 
-Esta es la idea más importante de layerling, y se aprende enseguida: **toda forma es un sólido o un orificio.** Un sólido se queda tal cual. Un orificio es una herramienta que quita material.
+Esta es la idea más importante de Magic3D, y se aprende enseguida: **toda forma es un sólido o un orificio.** Un sólido se queda tal cual. Un orificio es una herramienta que quita material.
 
 ## Sólido u orificio
 
@@ -53,7 +53,7 @@ A veces las piezas solo tienen que ir juntas sin convertirse en una sola: por ej
 
 ## Recortar un cuerpo de otro
 
-En piezas que tienen que encajar, un eje en un casquillo o un tornillo en una carcasa, haces una pieza y la recortas de la otra. Selecciona los dos cuerpos y haz clic en {{ui:editor.tool.cutOut}} en la zona {{ui:editor.group.combine}}, o haz clic derecho y elígelo ahí. El panel nombra la pieza que se queda y el cuerpo que recibe la cavidad; layerling toma el más pequeño como pieza, y {{ui:cutOut.swap}} lo invierte. {{ui:cutOut.clearance}} hace la cavidad tanto más grande que la pieza por todos lados: 0 encaja exacto, 0,2 mm es un margen habitual para un ajuste impreso. {{ui:cutOut.apply}} recorta una copia de la pieza del otro cuerpo y deja la pieza donde está. El resultado es un grupo: {{ui:editor.tool.ungroup}} vuelve a separar el recorte. Un margen exige que la pieza sea un cuerpo exacto, como en la herramienta {{ui:editor.tool.offset}}, que se usa para ello.
+En piezas que tienen que encajar, un eje en un casquillo o un tornillo en una carcasa, haces una pieza y la recortas de la otra. Selecciona los dos cuerpos y haz clic en {{ui:editor.tool.cutOut}} en la zona {{ui:editor.group.combine}}, o haz clic derecho y elígelo ahí. El panel nombra la pieza que se queda y el cuerpo que recibe la cavidad; Magic3D toma el más pequeño como pieza, y {{ui:cutOut.swap}} lo invierte. {{ui:cutOut.clearance}} hace la cavidad tanto más grande que la pieza por todos lados: 0 encaja exacto, 0,2 mm es un margen habitual para un ajuste impreso. {{ui:cutOut.apply}} recorta una copia de la pieza del otro cuerpo y deja la pieza donde está. El resultado es un grupo: {{ui:editor.tool.ungroup}} vuelve a separar el recorte. Un margen exige que la pieza sea un cuerpo exacto, como en la herramienta {{ui:editor.tool.offset}}, que se usa para ello.
 
 ## Editar un grupo
 

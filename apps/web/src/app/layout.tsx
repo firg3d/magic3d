@@ -24,27 +24,27 @@ import { SIMPLE_MODE_BOOT_SCRIPT } from "@/lib/simpleMode";
 import { TOOLBAR_SIZE_BOOT_SCRIPT } from "@/lib/toolbarSize";
 import { VIEW_CUBE_POSITION_BOOT_SCRIPT } from "@/lib/viewCubePosition";
 
-const NAME = "layerling";
-const TITLE = "layerling - Free 3D CAD for 3D printing in your browser";
-const DESCRIPTION = "Free 3D CAD in your browser, no account, easy for people coming from Tinkercad: fillets, chamfers, hollowing and threads. Export to STL, 3MF and STEP.";
+const NAME = "Magic3D";
+const TITLE = "Magic3D - CAD 3D gratuit pentru printare 3D, direct în browser";
+const DESCRIPTION = "CAD 3D gratuit în browser, fără cont, ușor pentru cine vine din Tinkercad: rotunjiri, teșituri, corpuri golite și filete. Export în STL, 3MF și STEP.";
 
-// Tells search engines what layerling is: a free web application, not an
+// Tells search engines what Magic3D is: a free web application, not an
 // article about one.
 const STRUCTURED_DATA = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   name: NAME,
-  url: "https://layerling.com/",
+  url: "https://magic3d.ro/",
   description: DESCRIPTION,
   applicationCategory: "DesignApplication",
   operatingSystem: "Any (web browser)",
   inLanguage: [...LANGUAGES],
   isAccessibleForFree: true,
   offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
-  image: "https://layerling.com/assets/layerling/layerling-social.png",
-  sameAs: ["https://github.com/henmedia/layerling"],
+  image: "https://magic3d.ro/assets/magic3d/magic3d-social.png",
+  sameAs: ["https://github.com/firg3d/magic3d"],
 };
-const SOCIAL_CARD = "/assets/layerling/layerling-social.png";
+const SOCIAL_CARD = "/assets/magic3d/magic3d-social.png";
 
 // Chrome and Edge announce "this can be installed" once, often before React is
 // running. The event is kept for the start page's install button
@@ -54,7 +54,7 @@ const INSTALL_PROMPT_SCRIPT = `window.addEventListener("beforeinstallprompt",fun
 export const metadata: Metadata = {
   // Damit die Bilder fuer Linkvorschauen als volle Adresse im Kopf stehen -
   // relative Angaben liest kein Forum und kein Messenger aus.
-  metadataBase: new URL("https://layerling.com"),
+  metadataBase: new URL("https://magic3d.ro"),
   alternates: { canonical: "/" },
   title: TITLE,
   description: DESCRIPTION,
@@ -64,12 +64,12 @@ export const metadata: Metadata = {
     // Das SVG ist das eigentliche Symbol; die .ico steht daneben fuer alles,
     // was stur /favicon.ico abholt, statt in den Kopf zu sehen.
     icon: [
-      { url: "/assets/layerling/layerling-logo.svg", type: "image/svg+xml" },
+      { url: "/assets/magic3d/magic3d-icon.svg", type: "image/svg+xml" },
       { url: "/favicon.ico", sizes: "48x48" },
     ],
     // iOS nimmt hier ausschliesslich PNG. Stand da ein SVG, legte
     // "Zum Home-Bildschirm" einen Schnappschuss der Seite ab statt des Symbols.
-    apple: { url: "/assets/layerling/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    apple: { url: "/assets/magic3d/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
   },
   openGraph: {
     type: "website",
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     title: TITLE,
     description: DESCRIPTION,
     url: "/",
-    locale: "en",
+    locale: "ro_RO",
     images: [{ url: SOCIAL_CARD, width: 1280, height: 640, type: "image/png", alt: TITLE }],
   },
   twitter: {
@@ -93,7 +93,7 @@ export const viewport: Viewport = {
   // Titelzeile. Die Werte sind die der Werkzeugleiste, hell wie dunkel.
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#fafaf9" },
-    { media: "(prefers-color-scheme: dark)", color: "#2b2116" },
+    { media: "(prefers-color-scheme: dark)", color: "#1c251f" },
   ],
 };
 
@@ -106,7 +106,7 @@ export default function RootLayout({
     // Translate tools add classes such as translated-ltr to <html>; that must not end in a hydration error (#191).
     // The browser may translate into a language layerling does not speak (#681); the page's language is set first
     // thing, so it does not translate a language into itself, and names people gave stay out of it (translate="no").
-    <html lang="en" style={{ colorScheme: "light" }} suppressHydrationWarning>
+    <html lang="ro" style={{ colorScheme: "light" }} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: LANGUAGE_BOOT_SCRIPT }} />
         {/* Before any of React's scripts: a page rearranged by Translate must not crash it (#186). */}

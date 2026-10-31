@@ -3,7 +3,7 @@ title: Tělesa a výřezy
 summary: Jak z jednoduchých tvarů vznikají otvory, drážky a kapsy a jak později upravit sloučený celek.
 ---
 
-Nejdůležitější princip Layerlingu je jednoduchý: **Každý tvar je buď plné těleso, nebo výřez.** Plné těleso zůstává. Výřez slouží jako nástroj pro odebrání materiálu.
+Nejdůležitější princip Magic3D je jednoduchý: **Každý tvar je buď plné těleso, nebo výřez.** Plné těleso zůstává. Výřez slouží jako nástroj pro odebrání materiálu.
 
 ## Plné těleso nebo výřez
 
@@ -53,7 +53,7 @@ Někdy mají díly jen držet pohromadě, aniž by se spojila jejich geometrie. 
 
 ## Vyříznutí jednoho tělesa z druhého
 
-U dílů, které k sobě musí pasovat, hřídele v objímce nebo šroubu ve skříňce, vytvoříš jeden díl a vyřízneš ho z druhého. Vyber obě tělesa a klikni na {{ui:editor.tool.cutOut}} v oblasti {{ui:editor.group.combine}}, nebo klikni pravým tlačítkem a vyber to tam. Panel uvádí díl, který zůstane, a těleso, které dostane dutinu; layerling bere menší těleso jako díl a {{ui:cutOut.swap}} to otočí. {{ui:cutOut.clearance}} udělá dutinu ze všech stran o tolik větší než díl: 0 sedí přesně, 0,2 mm je obvyklá vůle pro tištěné spojení. {{ui:cutOut.apply}} vyřízne kopii dílu z druhého tělesa a samotný díl nechá, kde je. Výsledkem je skupina: {{ui:editor.tool.ungroup}} řez zase rozloží. Vůle vyžaduje, aby díl byl přesné těleso, jako u nástroje {{ui:editor.tool.offset}}, který se k tomu používá.
+U dílů, které k sobě musí pasovat, hřídele v objímce nebo šroubu ve skříňce, vytvoříš jeden díl a vyřízneš ho z druhého. Vyber obě tělesa a klikni na {{ui:editor.tool.cutOut}} v oblasti {{ui:editor.group.combine}}, nebo klikni pravým tlačítkem a vyber to tam. Panel uvádí díl, který zůstane, a těleso, které dostane dutinu; Magic3D bere menší těleso jako díl a {{ui:cutOut.swap}} to otočí. {{ui:cutOut.clearance}} udělá dutinu ze všech stran o tolik větší než díl: 0 sedí přesně, 0,2 mm je obvyklá vůle pro tištěné spojení. {{ui:cutOut.apply}} vyřízne kopii dílu z druhého tělesa a samotný díl nechá, kde je. Výsledkem je skupina: {{ui:editor.tool.ungroup}} řez zase rozloží. Vůle vyžaduje, aby díl byl přesné těleso, jako u nástroje {{ui:editor.tool.offset}}, který se k tomu používá.
 
 ## Úprava sloučení
 

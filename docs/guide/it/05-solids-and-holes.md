@@ -3,7 +3,7 @@ title: Solidi e fori
 summary: Come le forme semplici diventano fori passanti, asole e cavità, e come modificare un gruppo in seguito.
 ---
 
-È il concetto più importante di layerling e si impara in fretta: **ogni forma è un solido oppure un foro.** Un solido viene mantenuto. Un foro è uno strumento che sottrae materiale.
+È il concetto più importante di Magic3D e si impara in fretta: **ogni forma è un solido oppure un foro.** Un solido viene mantenuto. Un foro è uno strumento che sottrae materiale.
 
 ## Solido o foro
 
@@ -53,7 +53,7 @@ A volte vuoi tenere insieme più parti senza fonderle, per esempio un logo bianc
 
 ## Ritagliare un corpo da un altro
 
-Per parti che devono combaciare, un albero in un manicotto o una vite in un alloggiamento, fai una parte e la ritagli dall'altra. Seleziona i due corpi e clicca su {{ui:editor.tool.cutOut}} nell'area {{ui:editor.group.combine}}, oppure fai clic destro e sceglilo lì. Il pannello nomina la parte che resta e il corpo che riceve la cavità; layerling prende il più piccolo come parte, e {{ui:cutOut.swap}} lo inverte. {{ui:cutOut.clearance}} rende la cavità più grande della parte di altrettanto tutto intorno: 0 combacia esattamente, 0,2 mm è un gioco abituale per un accoppiamento stampato. {{ui:cutOut.apply}} ritaglia una copia della parte dall'altro corpo e lascia la parte dov'è. Il risultato è un gruppo: {{ui:editor.tool.ungroup}} separa di nuovo il taglio. Un gioco richiede che la parte sia un corpo esatto, come per lo strumento {{ui:editor.tool.offset}}, che viene usato per questo.
+Per parti che devono combaciare, un albero in un manicotto o una vite in un alloggiamento, fai una parte e la ritagli dall'altra. Seleziona i due corpi e clicca su {{ui:editor.tool.cutOut}} nell'area {{ui:editor.group.combine}}, oppure fai clic destro e sceglilo lì. Il pannello nomina la parte che resta e il corpo che riceve la cavità; Magic3D prende il più piccolo come parte, e {{ui:cutOut.swap}} lo inverte. {{ui:cutOut.clearance}} rende la cavità più grande della parte di altrettanto tutto intorno: 0 combacia esattamente, 0,2 mm è un gioco abituale per un accoppiamento stampato. {{ui:cutOut.apply}} ritaglia una copia della parte dall'altro corpo e lascia la parte dov'è. Il risultato è un gruppo: {{ui:editor.tool.ungroup}} separa di nuovo il taglio. Un gioco richiede che la parte sia un corpo esatto, come per lo strumento {{ui:editor.tool.offset}}, che viene usato per questo.
 
 ## Modificare un gruppo
 

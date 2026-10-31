@@ -29,7 +29,7 @@ Ud over de otte indbyggede fonte kan du bruge enhver font du selv har: en fontfi
 
 - **{{ui:font.addFile}}** tager en TrueType-fil (`.ttf`), en OpenType-fil (`.otf`) eller en WOFF-fil (`.woff`). Du kan også bare trække filen ind i vinduet.
 - **På Windows** ligger de installerede fonte i Fonts-mappen (`C:\Windows\Fonts`). Browserens fildialog skjuler den. Åbn den i Stifinder i stedet og træk fonten ind i vinduet {{ui:font.title}}. Fonte der kun er installeret for dig ligger i `%LOCALAPPDATA%\Microsoft\Windows\Fonts`, som fildialogen også viser. På en Mac ligger fonte i `/Library/Fonts` og `~/Library/Fonts`.
-- **{{ui:font.fromSystem}}** viser de fonte der er installeret på din computer. Første gang spørger browseren om layerling må læse dem. Søgefeltet finder hurtigt en font, et klik tager den.
+- **{{ui:font.fromSystem}}** viser de fonte der er installeret på din computer. Første gang spørger browseren om Magic3D må læse dem. Søgefeltet finder hurtigt en font, et klik tager den.
 
 Hvis en tekst er valgt, får den den nye font med det samme. Ellers dukker fonten op under {{ui:prop.font}} i gruppen {{ui:font.customGroup}}, og {{ui:font.use}} i vinduet lægger den på de valgte tekster. Dine egne fonte virker som de indbyggede: tekst på en cirkelbue, faser og rundinger på kanterne og STEP-eksporten virker alle ens. Bogstaver en font mangler tages fra Sans.
 
@@ -46,11 +46,11 @@ Arabisk, persisk, urdu og hebraisk skrives højre mod venstre: det første bogst
 | Safari på en Mac | ja | nej |
 | Tablet og telefon | ja, fra enhedens filer | nej |
 
-Websider kan ikke bare læse de installerede fonte. Kun Chrome og Edge har en tilladelse til det, og kun på sikre sider, over `https` som på layerling.com. Når layerling kører over `http`, for eksempel på din egen server eller som en Docker-installation i dit hjemmenetværk, mangler {{ui:font.fromSystem}}; træk fonten over fra Stifinder i stedet. I de andre browsere vælger du fontfilen fra Fonts-mappen, med samme resultat. Hvis du afviste spørgsmålet i Chrome eller Edge, så tillad det igen i site-indstillingerne, bag hængelåsen til venstre for adressen.
+Websider kan ikke bare læse de installerede fonte. Kun Chrome og Edge har en tilladelse til det, og kun på sikre sider, over `https` som på magic3d.ro. Når Magic3D kører over `http`, for eksempel på din egen server eller som en Docker-installation i dit hjemmenetværk, mangler {{ui:font.fromSystem}}; træk fonten over fra Stifinder i stedet. I de andre browsere vælger du fontfilen fra Fonts-mappen, med samme resultat. Hvis du afviste spørgsmålet i Chrome eller Edge, så tillad det igen i site-indstillingerne, bag hængelåsen til venstre for adressen.
 
-layerling kan ikke læse WOFF2-filer (der er næsten altid en TTF- eller OTF-version), font-samlinger (`.ttc`, flere fonte i én fil) eller farve-emoji-fonte. Fra meget store fonte, såsom kinesiske, tager layerling de første 8000 tegn. En variabel font læses i dens standardindstilling, normalt regular.
+Magic3D kan ikke læse WOFF2-filer (der er næsten altid en TTF- eller OTF-version), font-samlinger (`.ttc`, flere fonte i én fil) eller farve-emoji-fonte. Fra meget store fonte, såsom kinesiske, tager Magic3D de første 8000 tegn. En variabel font læses i dens standardindstilling, normalt regular.
 
-Nogle fonte, især script- og variable fonte, tegner et bogstav fra streger der overlapper. layerling fletter dem til et rent omrids når den læser fonten, så formen forbliver printbar. Sådanne bogstaver består så af meget korte lige stykker i stedet for kurver; det ses ikke.
+Nogle fonte, især script- og variable fonte, tegner et bogstav fra streger der overlapper. Magic3D fletter dem til et rent omrids når den læser fonten, så formen forbliver printbar. Sådanne bogstaver består så af meget korte lige stykker i stedet for kurver; det ses ikke.
 
 ### Hvor fontene opbevares
 
@@ -63,7 +63,7 @@ Et design gemmer **ikke fontfilen**, kun omridset af de bogstaver dets tekster b
 Så:
 
 - **Designet åbner korrekt alle steder**, også på en computer uden fonten. Teksterne ser ens ud og kan flyttes, vendes, skaleres og rundes.
-- **Nye bogstaver kræver fonten.** Hvis en person uden fonten taster et bogstav designet ikke tog med, tegner layerling det fra Sans. Under {{ui:prop.font}} er fonten så markeret {{ui:font.fromDesign}}. Tilføj fontfilen og alle bogstaver kommer tilbage.
+- **Nye bogstaver kræver fonten.** Hvis en person uden fonten taster et bogstav designet ikke tog med, tegner Magic3D det fra Sans. Under {{ui:prop.font}} er fonten så markeret {{ui:font.fromDesign}}. Tilføj fontfilen og alle bogstaver kommer tilbage.
 - **Eksporter holder kun geometri.** STL, 3MF, OBJ, STEP og SVG indeholder former og omrids, ingen font.
 - **Ældre layerling-versioner** kender ikke egne fonte endnu og tegner sådanne tekster i Multilanguage.
 
@@ -91,7 +91,7 @@ Med en linje udenpå, en centreret linje eller "Bredere" vokser tekstens boks, m
 
 ## Lag og navneskilte
 
-Et navneskilt til et flerfarvet print er en tekst i lag: bogstaverne øverst, under dem den samme tekst lidt bredere i en anden farve, nederst en plade uden huller i en tredje. layerling laver det i ét klik:
+Et navneskilt til et flerfarvet print er en tekst i lag: bogstaverne øverst, under dem den samme tekst lidt bredere i en anden farve, nederst en plade uden huller i en tredje. Magic3D laver det i ét klik:
 
 - **Et nyt navneskilt:** vælg {{ui:shape.nameTag}} i formbiblioteket og placér det. Det står "Navn" i hvide bogstaver på en rød kant og en mørk plade.
 - **Fra en tekst:** vælg teksten og klik på {{ui:nameTag.makeLayers}} øverst i dens indstillinger.

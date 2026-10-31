@@ -5,7 +5,7 @@ summary: Travailler avec les doigts ou un stylet : sélectionner plusieurs corps
 
 ## Doigts et stylet
 
-layerling fonctionne dans le navigateur d'une tablette, et comme application depuis son écran d'accueil. Un doigt fait ce que fait le bouton gauche de la souris. Trois choses qu'une tablette n'a pas, un bouton droit, une touche Maj et une molette, ont leur propre chemin :
+Magic3D fonctionne dans le navigateur d'une tablette, et comme application depuis son écran d'accueil. Un doigt fait ce que fait le bouton gauche de la souris. Trois choses qu'une tablette n'a pas, un bouton droit, une touche Maj et une molette, ont leur propre chemin :
 
 | Vous voulez | Sur une tablette |
 | --- | --- |
@@ -32,7 +32,7 @@ Le cube de la vue en haut à gauche tourne la vue quand vous le faites glisser, 
 
 ## Poignées, petits points et stylet
 
-Le bout d'un doigt cache ce qu'il vise. layerling laisse un doigt atteindre un peu plus loin qu'un pointeur de souris les poignées, les points, les lignes et les arêtes, mais un stylet est plus fin. Cela vaut pour un stylet que la tablette connaît comme stylet, par exemple un Apple Pencil ou un S Pen. Un simple stylet à pointe en caoutchouc compte pour l'écran comme un doigt et n'est pas plus fin : travaillez avec comme avec un doigt. Lorsqu'un Apple Pencil survole un bouton sur l'iPad, son nom apparaît après un instant dans une petite bulle, comme l'info-bulle avec la souris.
+Le bout d'un doigt cache ce qu'il vise. Magic3D laisse un doigt atteindre un peu plus loin qu'un pointeur de souris les poignées, les points, les lignes et les arêtes, mais un stylet est plus fin. Cela vaut pour un stylet que la tablette connaît comme stylet, par exemple un Apple Pencil ou un S Pen. Un simple stylet à pointe en caoutchouc compte pour l'écran comme un doigt et n'est pas plus fin : travaillez avec comme avec un doigt. Lorsqu'un Apple Pencil survole un bouton sur l'iPad, son nom apparaît après un instant dans une petite bulle, comme l'info-bulle avec la souris.
 
 Si des corps glissent parce que des enfants ou des mains pressées les touchent, activez {{ui:workspace.selectBeforeMoving}} dans les réglages : un corps doit alors d'abord être sélectionné, et seul le glissement suivant le déplace.
 

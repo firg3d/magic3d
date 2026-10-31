@@ -29,13 +29,13 @@ Neben den acht mitgelieferten Schriften kannst du jede eigene Schrift nehmen: ei
 
 - **{{ui:font.addFile}}** nimmt eine TrueType-Datei (`.ttf`), eine OpenType-Datei (`.otf`) oder eine WOFF-Datei (`.woff`). Du kannst die Datei auch einfach in das Fenster ziehen.
 - **Unter Windows** liegen die installierten Schriften im Ordner „Schriftarten“ (`C:\Windows\Fonts`). Den blendet der Dateidialog des Browsers aus. Öffne ihn stattdessen im Explorer und zieh die gewünschte Schrift in das Fenster {{ui:font.title}}. Schriften, die nur für dich installiert sind, liegen in `%LOCALAPPDATA%\Microsoft\Windows\Fonts`; diesen Ordner zeigt auch der Dateidialog. Am Mac liegen Schriften in `/Library/Fonts` und `~/Library/Fonts`.
-- **{{ui:font.fromSystem}}** listet die Schriften, die auf deinem Computer installiert sind. Beim ersten Mal fragt der Browser, ob layerling sie lesen darf. Über das Suchfeld findest du eine Schrift schnell, ein Klick übernimmt sie.
+- **{{ui:font.fromSystem}}** listet die Schriften, die auf deinem Computer installiert sind. Beim ersten Mal fragt der Browser, ob Magic3D sie lesen darf. Über das Suchfeld findest du eine Schrift schnell, ein Klick übernimmt sie.
 
-Ist gerade ein Text ausgewählt, bekommt er die neue Schrift sofort. Sonst steht sie danach unter {{ui:prop.font}} in der Gruppe {{ui:font.customGroup}}, und mit {{ui:font.use}} im Fenster setzt du sie auf die ausgewählten Texte. Eigene Schriften verhalten sich wie die mitgelieferten: Text auf dem Kreisbogen, Fasen und Rundungen an den Kanten und der STEP-Export gehen genauso. Buchstaben, die eine Schrift nicht hat, nimmt layerling aus Sans.
+Ist gerade ein Text ausgewählt, bekommt er die neue Schrift sofort. Sonst steht sie danach unter {{ui:prop.font}} in der Gruppe {{ui:font.customGroup}}, und mit {{ui:font.use}} im Fenster setzt du sie auf die ausgewählten Texte. Eigene Schriften verhalten sich wie die mitgelieferten: Text auf dem Kreisbogen, Fasen und Rundungen an den Kanten und der STEP-Export gehen genauso. Buchstaben, die eine Schrift nicht hat, nimmt Magic3D aus Sans.
 
 ### Arabisch und Hebräisch
 
-Arabisch, Persisch, Urdu und Hebräisch schreibt layerling von rechts nach links: Der erste Buchstabe steht rechts, und in einem gemischten Text wie „Name عربي“ läuft nur das arabische Wort rückwärts, Ziffern bleiben wie gewohnt. Arabische Buchstaben verbinden sich dabei mit ihren Nachbarn, so wie die Schrift es vorsieht, und Lam-Alif wird zur Ligatur. Dafür braucht es eine Schrift, die diese Buchstaben hat; die mitgelieferten haben sie nicht. Füge eine eigene hinzu, etwa Arial, Tahoma oder Segoe UI unter Windows oder eine freie wie Noto Naskh Arabic, Noto Sans Arabic oder Amiri. Vokalzeichen stehen auf dem Buchstaben, zu dem sie gehören. Text auf dem Kreisbogen, Kontur, Silhouette, Schichten und Namensschilder gehen damit wie mit jedem anderen Text.
+Arabisch, Persisch, Urdu und Hebräisch schreibt Magic3D von rechts nach links: Der erste Buchstabe steht rechts, und in einem gemischten Text wie „Name عربي“ läuft nur das arabische Wort rückwärts, Ziffern bleiben wie gewohnt. Arabische Buchstaben verbinden sich dabei mit ihren Nachbarn, so wie die Schrift es vorsieht, und Lam-Alif wird zur Ligatur. Dafür braucht es eine Schrift, die diese Buchstaben hat; die mitgelieferten haben sie nicht. Füge eine eigene hinzu, etwa Arial, Tahoma oder Segoe UI unter Windows oder eine freie wie Noto Naskh Arabic, Noto Sans Arabic oder Amiri. Vokalzeichen stehen auf dem Buchstaben, zu dem sie gehören. Text auf dem Kreisbogen, Kontur, Silhouette, Schichten und Namensschilder gehen damit wie mit jedem anderen Text.
 
 ### Was in welchem Browser geht
 
@@ -46,11 +46,11 @@ Arabisch, Persisch, Urdu und Hebräisch schreibt layerling von rechts nach links
 | Safari am Mac | ja | nein |
 | Tablet und Handy | ja, aus den Dateien des Geräts | nein |
 
-Webseiten dürfen die installierten Schriften nicht einfach lesen. Nur Chrome und Edge haben dafür eine eigene Erlaubnis, und auch die nur auf sicheren Seiten, also über `https` wie bei layerling.com. Läuft layerling über `http`, etwa auf einem eigenen Server oder als Docker-Installation im Heimnetz, fehlt {{ui:font.fromSystem}}; dann ziehst du die Schrift aus dem Explorer herüber. In den anderen Browsern wählst du die Schriftdatei aus dem Schriftenordner, das Ergebnis ist dasselbe. Hast du die Rückfrage in Chrome oder Edge abgelehnt, gibst du den Zugriff in den Einstellungen der Website wieder frei, über das Schloss links neben der Adresse.
+Webseiten dürfen die installierten Schriften nicht einfach lesen. Nur Chrome und Edge haben dafür eine eigene Erlaubnis, und auch die nur auf sicheren Seiten, also über `https` wie bei magic3d.ro. Läuft Magic3D über `http`, etwa auf einem eigenen Server oder als Docker-Installation im Heimnetz, fehlt {{ui:font.fromSystem}}; dann ziehst du die Schrift aus dem Explorer herüber. In den anderen Browsern wählst du die Schriftdatei aus dem Schriftenordner, das Ergebnis ist dasselbe. Hast du die Rückfrage in Chrome oder Edge abgelehnt, gibst du den Zugriff in den Einstellungen der Website wieder frei, über das Schloss links neben der Adresse.
 
-Nicht lesen kann layerling WOFF2-Dateien (dafür gibt es fast immer eine TTF- oder OTF-Fassung), Schriftsammlungen (`.ttc`, sie enthalten mehrere Schriften in einer Datei) und farbige Emoji-Schriften. Bei sehr großen Schriften, etwa für Chinesisch, nimmt layerling die ersten 8000 Zeichen. Bei variablen Schriften gilt die Grundeinstellung der Schrift, meist der normale Schnitt.
+Nicht lesen kann Magic3D WOFF2-Dateien (dafür gibt es fast immer eine TTF- oder OTF-Fassung), Schriftsammlungen (`.ttc`, sie enthalten mehrere Schriften in einer Datei) und farbige Emoji-Schriften. Bei sehr großen Schriften, etwa für Chinesisch, nimmt Magic3D die ersten 8000 Zeichen. Bei variablen Schriften gilt die Grundeinstellung der Schrift, meist der normale Schnitt.
 
-Manche Schriften, vor allem Schreibschriften und variable Schriften, zeichnen einen Buchstaben aus Strichen, die sich überlappen. layerling vereinigt sie beim Einlesen zu einem sauberen Umriss, damit der Körper druckbar bleibt. Solche Buchstaben bestehen dann aus sehr kurzen geraden Stücken statt aus Kurven; zu sehen ist das nicht.
+Manche Schriften, vor allem Schreibschriften und variable Schriften, zeichnen einen Buchstaben aus Strichen, die sich überlappen. Magic3D vereinigt sie beim Einlesen zu einem sauberen Umriss, damit der Körper druckbar bleibt. Solche Buchstaben bestehen dann aus sehr kurzen geraden Stücken statt aus Kurven; zu sehen ist das nicht.
 
 ### Wo die Schriften bleiben
 
@@ -63,7 +63,7 @@ Ein Entwurf speichert **nicht die Schriftdatei**, sondern nur die Umrisse der Bu
 Daraus folgt:
 
 - **Der Entwurf öffnet sich überall richtig**, auch auf einem Rechner ohne die Schrift. Die Texte sehen genauso aus und lassen sich verschieben, drehen, skalieren und verrunden.
-- **Neue Buchstaben brauchen die Schrift.** Tippt jemand ohne die Schrift einen Buchstaben, den der Entwurf nicht mitgebracht hat, zeichnet layerling ihn aus Sans. Unter {{ui:prop.font}} steht die Schrift dann mit dem Zusatz {{ui:font.fromDesign}}. Wer die Schriftdatei hinzufügt, bekommt wieder alle Buchstaben.
+- **Neue Buchstaben brauchen die Schrift.** Tippt jemand ohne die Schrift einen Buchstaben, den der Entwurf nicht mitgebracht hat, zeichnet Magic3D ihn aus Sans. Unter {{ui:prop.font}} steht die Schrift dann mit dem Zusatz {{ui:font.fromDesign}}. Wer die Schriftdatei hinzufügt, bekommt wieder alle Buchstaben.
 - **Exporte enthalten nur Geometrie.** STL, 3MF, OBJ, STEP und SVG enthalten Körper und Umrisse, keine Schrift.
 - **Ältere layerling-Versionen** kennen eigene Schriften noch nicht und zeichnen solche Texte in Multilanguage.
 
@@ -91,7 +91,7 @@ Mit einer Linie außen, einer mittigen Linie oder „Breiter“ wächst der Kast
 
 ## Schichten und Namensschilder
 
-Ein Namensschild für den Mehrfarbdruck ist ein Text in Schichten: oben die Buchstaben, darunter derselbe Text etwas breiter in einer zweiten Farbe, zuunterst eine Platte ohne Löcher in einer dritten. layerling macht es mit einem Klick:
+Ein Namensschild für den Mehrfarbdruck ist ein Text in Schichten: oben die Buchstaben, darunter derselbe Text etwas breiter in einer zweiten Farbe, zuunterst eine Platte ohne Löcher in einer dritten. Magic3D macht es mit einem Klick:
 
 - **Ein neues Namensschild:** Wähle in der Formenbibliothek {{ui:shape.nameTag}} und setze es ab. Darauf steht „Name“ in weißen Buchstaben auf einem roten Rand und einer dunklen Platte.
 - **Aus einem Text:** Wähle den Text aus und klicke oben in seinen Einstellungen auf {{ui:nameTag.makeLayers}}.

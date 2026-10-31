@@ -272,7 +272,7 @@ export function createThreeScene(host: HTMLDivElement): ThreeState {
     if (event.pointerType !== "touch" && (event.button === 1 || event.button === 2 || (event.button === 0 && (event.ctrlKey || event.metaKey)))) {
       cameraPointers.set(event.pointerId, event);
     }
-    // Ctrl or Cmd with the left button moves the view (#654), see leftButtonCameraAction.
+    // Ctrl or Cmd with the left button moves the view (#4c5c52), see leftButtonCameraAction.
     controls.mouseButtons.LEFT = leftButtonCameraAction(event);
     Object.assign(controls.mouseButtons, cameraButtonsFor(state.mouseScheme));
   };
@@ -1105,7 +1105,7 @@ export function syncSplitPlane(state: ThreeState | null, plane: ModelSplitPlane 
   const surface = new THREE.Mesh(
     new THREE.PlaneGeometry(size, size),
     new THREE.MeshBasicMaterial({
-      color: "#d07313",
+      color: "#289f53",
       transparent: true,
       opacity: 0.24,
       side: THREE.DoubleSide,
@@ -1118,7 +1118,7 @@ export function syncSplitPlane(state: ThreeState | null, plane: ModelSplitPlane 
 
   const border = new THREE.LineSegments(
     new THREE.EdgesGeometry(surface.geometry),
-    new THREE.LineBasicMaterial({ color: "#b35f07", transparent: true, opacity: 0.95, depthTest: false }),
+    new THREE.LineBasicMaterial({ color: "#218646", transparent: true, opacity: 0.95, depthTest: false }),
   );
   border.renderOrder = 901;
   root.add(border);
@@ -1140,7 +1140,7 @@ export function syncSplitPlane(state: ThreeState | null, plane: ModelSplitPlane 
     new THREE.Vector3(0, 0, 1),
     new THREE.Vector3(0, 0, -normalLength / 2),
     normalLength,
-    handleActive ? 0xff9a2e : 0xb35f07,
+    handleActive ? 0x33cb6b : 0x218646,
     headLength,
     Math.max(1.5, normalLength * 0.1),
   );

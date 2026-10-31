@@ -3,7 +3,7 @@ title: Postavljanje in nastavljanje oblik
 summary: Knjižnica oblik, mere s številko in z ročico, barva, vrtenje, zožanje in zasukanost.
 ---
 
-Vsak del v programu layerling se začne z obliko. Iz njih zgradiš vse drugo: oblike se dopolnjujejo, izrezujejo druga drugo ali se povežejo v novo obliko.
+Vsak del v programu Magic3D se začne z obliko. Iz njih zgradiš vse drugo: oblike se dopolnjujejo, izrezujejo druga drugo ali se povežejo v novo obliko.
 
 ## Dodaj obliko
 
@@ -63,7 +63,7 @@ Vpisovanje je natančnejše od vlečenja. Vsa številska polja sprejemajo milime
 
 ## Kako okroglo je okroglo? Število stranic
 
-Okrogle oblike, kot so valj, stožec, cev, elipsa ali izvrtine, imajo v lastnostih stikalo {{ui:prop.sidesFollowSize}} in drsnik {{ui:prop.sides}}. {{ui:shape.torus}} ima dva drsnika: {{ui:prop.torusSides}} okoli obroča in {{ui:prop.torusSteps}} okoli cevi. Tudi tam sledita velikosti, dokler ju ne primeš, zato velik torus ne kaže robov. Ozadje: za prikaz ter za STL, 3MF in OBJ layerling krog nariše kot večkotnik iz mnogo majhnih stranic. Več stranic, bolj gladko, a več trikotnikov.
+Okrogle oblike, kot so valj, stožec, cev, elipsa ali izvrtine, imajo v lastnostih stikalo {{ui:prop.sidesFollowSize}} in drsnik {{ui:prop.sides}}. {{ui:shape.torus}} ima dva drsnika: {{ui:prop.torusSides}} okoli obroča in {{ui:prop.torusSteps}} okoli cevi. Tudi tam sledita velikosti, dokler ju ne primeš, zato velik torus ne kaže robov. Ozadje: za prikaz ter za STL, 3MF in OBJ Magic3D krog nariše kot večkotnik iz mnogo majhnih stranic. Več stranic, bolj gladko, a več trikotnikov.
 
 {{ui:prop.torusTube}} določa, kako debela je cev, gledano od zgoraj. Višina cev le stisne ali raztegne, zato plosk obroč obdrži luknjo; pri polovici zunanje mere se luknja zapre. Ko vlečeš ročaje, se cev skalira skupaj z obliko. Natančno telo za posnetja, zaokrožitve in STEP ostane le torus, katerega cev je tako debela, kot je torus visok.
 
@@ -85,7 +85,7 @@ Okrogle oblike, kot so valj, stožec, cev, elipsa ali izvrtine, imajo v lastnost
 
 **Kako to uporabiš**
 
-- **Pusti {{ui:prop.sidesFollowSize}} vklopljeno.** Potem layerling izbere število stranic glede na premer, tako da se večkotnik od pravega kroga razlikuje za največ {{value:ROUND_DEVIATION_TOLERANCE}} mm, kar je daleč pod tem, kar tiskalnik loči. Majhne oblike dobijo vsaj {{value:MIN_AUTOMATIC_SIDES}} stranic, velike več.
+- **Pusti {{ui:prop.sidesFollowSize}} vklopljeno.** Potem Magic3D izbere število stranic glede na premer, tako da se večkotnik od pravega kroga razlikuje za največ {{value:ROUND_DEVIATION_TOLERANCE}} mm, kar je daleč pod tem, kar tiskalnik loči. Majhne oblike dobijo vsaj {{value:MIN_AUTOMATIC_SIDES}} stranic, velike več.
 - **Manj stranic** vzameš, kadar namenoma želiš večkotnik (a za to je {{ui:shape.polygon}}) ali kadar urejevalnik postane počasen zaradi zelo veliko okroglih oblik.
 - **Več stranic** skoraj nikoli ne potrebuješ. Samo pri zelo velikih okroglih delih, če v STL vidiš robove.
 - **Za dele, ki jih obdelaš samo z robovi ali predaš kot STEP,** je število stranic vseeno.
@@ -110,7 +110,7 @@ Korak mreže je spodaj desno v urejevalniku in ga lahko kadarkoli spremeniš.
 
 ## Kopiranje in podvajanje
 
-{{ui:editor.tool.copy}}, {{ui:editor.tool.paste}} in {{ui:editor.tool.duplicate}} so v orodni vrstici ({{ui:editor.group.clipboard}}). Z [[Ctrl]]+[[D]] podvojiš izbor. layerling si pri tem zapomni, kako si kopijo nazadnje premaknil ali zavrtel, in isto uporabi ob naslednjem podvajanju. Tako z nekaj pritiski tipk nastane vrsta lukenj ali stopnic. Za pravilne razporeditve je poleg tega polje, ki je opisano v poglavju [Izbiranje in razporejanje](chapter:izbiranje-in-razporejanje).
+{{ui:editor.tool.copy}}, {{ui:editor.tool.paste}} in {{ui:editor.tool.duplicate}} so v orodni vrstici ({{ui:editor.group.clipboard}}). Z [[Ctrl]]+[[D]] podvojiš izbor. Magic3D si pri tem zapomni, kako si kopijo nazadnje premaknil ali zavrtel, in isto uporabi ob naslednjem podvajanju. Tako z nekaj pritiski tipk nastane vrsta lukenj ali stopnic. Za pravilne razporeditve je poleg tega polje, ki je opisano v poglavju [Izbiranje in razporejanje](chapter:izbiranje-in-razporejanje).
 
 > **Namig:** Če oblika ne zavzame želene velikosti, je razlog pogosto v mejah za nove oblike. Pod {{ui:workspace.shapeDefaults}} v nastavitvah določiš, kako se vsaka oblika začne in kako velika lahko največ postane.
 
@@ -150,14 +150,14 @@ Za gravuro vklopi {{ui:inspector.wrapInward}}: potem gre debelina v steno. Oblik
 
 Oblika, ki je že ovita, je mreža ovitega predmeta in je ni mogoče ovijati znova: razveljavi ovijanje ali pa ponovno ovij ravno izvirnik z drugim premerom.
 
-Rezultat je mreža kot uvožen model. Z Razveljavi je oblika spet ravna; za drug premer najprej nazaj in nato znova ovij. Daljše od enega kroga okoli valja ne gre, tedaj layerling navede najmanjši premer, ki ustreza.
+Rezultat je mreža kot uvožen model. Z Razveljavi je oblika spet ravna; za drug premer najprej nazaj in nato znova ovij. Daljše od enega kroga okoli valja ne gre, tedaj Magic3D navede najmanjši premer, ki ustreza.
 
 ## Površinska tekstura
 
 Utori, narebričenje, satovje ali izbokline na telesu, za boljši oprijem ali za lepši videz: v nastavitvah oblike razprite {{ui:inspector.surfaceTexture}}. Enako naredi gumb {{ui:inspector.surfaceTexture}} zgoraj v skupini {{ui:editor.group.modify}}: kartico za izbrano telo razpre in spet zapre ter sveti, dokler je odprta.
 
 1. Izberite {{ui:inspector.surfacePattern}}, njegov {{ui:inspector.surfaceSpacing}} in {{ui:inspector.surfaceDepth}}. {{ui:inspector.surfaceDirection}} pove, ali gre vzorec v telo ali iz njega izstopa. Pri vzorcu {{ui:surfaceTexture.bumps}} pri {{ui:inspector.surfaceBumpShape}} izberete med {{ui:surfaceTexture.bumpDome}}, {{ui:surfaceTexture.bumpCone}}, {{ui:surfaceTexture.bumpSoft}} in {{ui:surfaceTexture.bumpFlat}}. Pod {{ui:inspector.surfaceBumpGrid}} so {{ui:surfaceTexture.bumpGridStaggered}}, vsaka druga vrsta za pol razmika zamaknjena, ali v {{ui:surfaceTexture.bumpGridStraight}}.
-2. Pri {{ui:inspector.surfaceProjection}} vzemite {{ui:surfaceTexture.cylinder}} za okrogla telesa, kot so lonček, gumb ali ročaj. Vzorec teče okoli izbrane {{ui:inspector.surfaceAxis}}, razmik pa se nekoliko zaokroži, da gre naokoli celo število utorov ali celic: vzorec se sklene brez šiva. {{ui:surfaceTexture.allRound}} je primeren za telesa, ki niso okrogla, {{ui:surfaceTexture.flatProjection}} za pokrov ali ploščo, gledano od zgoraj. Če pustite {{ui:surfaceTexture.auto}}, Layerling izbere sam: {{ui:surfaceTexture.cylinder}} pri okroglih telesih in pri pokončnih oglatih, kot je škatla – vzorec tedaj sledi obrisu in brez šiva teče okoli robov, dvignjen vzorec se okoli njih zaobli –, {{ui:surfaceTexture.allRound}} pri drugih oglatih.
+2. Pri {{ui:inspector.surfaceProjection}} vzemite {{ui:surfaceTexture.cylinder}} za okrogla telesa, kot so lonček, gumb ali ročaj. Vzorec teče okoli izbrane {{ui:inspector.surfaceAxis}}, razmik pa se nekoliko zaokroži, da gre naokoli celo število utorov ali celic: vzorec se sklene brez šiva. {{ui:surfaceTexture.allRound}} je primeren za telesa, ki niso okrogla, {{ui:surfaceTexture.flatProjection}} za pokrov ali ploščo, gledano od zgoraj. Če pustite {{ui:surfaceTexture.auto}}, Magic3D izbere sam: {{ui:surfaceTexture.cylinder}} pri okroglih telesih in pri pokončnih oglatih, kot je škatla – vzorec tedaj sledi obrisu in brez šiva teče okoli robov, dvignjen vzorec se okoli njih zaobli –, {{ui:surfaceTexture.allRound}} pri drugih oglatih.
 3. Kliknite {{ui:inspector.surfaceApply}}. Veliko telo potrebuje nekaj sekund; medtem lahko delate naprej.
 
 Če naj vzorec dobi le del ploskev, na primer samo zgornja stran škatle, kliknite {{ui:inspector.surfaceFacesPick}} in nato v pogledu ploskve: zgornjo, spodnjo ali stransko. Ploskev sega do ostrih robov telesa; pri valju je plašč ena ploskev, zgornja in spodnja stran pa sta vsaka ena. Izbrane ploskve zasvetijo, drugi klik eno spet odstrani, {{ui:inspector.surfaceFacesClear}} pa vzorcu spet da celo telo. Vzorec dobijo samo izbrane ploskve; vse druge ostanejo, kot so bile, in obdržijo malo trikotnikov. Na zgornji ali spodnji strani leži vzorec ravno; na okrogli zgornji strani tečejo utori, vrv in pletenina v krogih okoli sredine, kot letnice drevesa. {{ui:inspector.surfaceFaceTurn}} zavrti vzorec na zgornji in spodnji strani: pri 0° tečejo vrste vzdolž sprednjega roba, pri 90° vzdolž stranskega. {{ui:inspector.surfaceCapStyle}} tam preklaplja utore, vrv in pletenino med vrstami in krogi; pri oglatem telesu krogi sledijo obrisu. {{ui:inspector.surfaceCapEdge}} pove, kaj se zgodi na robu med stranico in zgornjo ali spodnjo stranjo z vzorcem: {{ui:surfaceTexture.edgeSharp}} pusti, da se oboje konča pri robu. Pri {{ui:surfaceTexture.edgeOver}} se vzorec stranice zaobljeno prevesi čez rob in zavzame vso zgornjo stran: vrste vrvi, pletenine in vodoravnih utorov se nadaljujejo kot krogi, navpični in poševni utori kot žarki skoraj do sredine. {{ui:surfaceTexture.edgeFold}} naredi isto le kot rob; znotraj leži lastni vzorec zgornje strani po nastavitvi {{ui:inspector.surfaceCapStyle}}. {{ui:surfaceTexture.edgeBead}} pri vsakem vzorcu položi okoli roba obrobo – vrvico, zaključno verižico ali okrogel valj. Tudi tesna zaokrožitev konča ploskev: pri lončku z zaobljenimi robovi so zunanjost, zaokrožitve, rob, notranjost in dno vsak svoja ploskev, zato klik na zunanjost vzame le zunanjost. Široka zaokrožitev, približno četrtina telesa ali več, spada k ploskvi, tako kot je krogla ena ploskev. Pri izbranih ploskvah {{ui:inspector.surfaceOutside}} in {{ui:inspector.surfaceInside}} ne štejeta.

@@ -3,21 +3,21 @@ title: Budowanie z AI (MCP)
 summary: Jak asystent AI, taki jak Gemini, Claude albo Codex, tworzy i zmienia kształty, grupuje je i robi zdjęcia widoku w Twoim otwartym edytorze.
 ---
 
-layerling ma wbudowany serwer MCP. MCP to standard, przez który asystent AI może używać narzędzi w innych programach. Dzięki niemu klient AI, taki jak Gemini, Claude albo Codex, widzi otwartą kartę edytora i w niej pracuje: tworzy kształty, zmienia wymiary, grupuje, tnie, zaokrągla krawędzie, odczytuje scenę i robi zdjęcia widoku. Ty opisujesz część, AI ją buduje, a Ty patrzysz i w każdej chwili możesz się wtrącić.
+Magic3D ma wbudowany serwer MCP. MCP to standard, przez który asystent AI może używać narzędzi w innych programach. Dzięki niemu klient AI, taki jak Gemini, Claude albo Codex, widzi otwartą kartę edytora i w niej pracuje: tworzy kształty, zmienia wymiary, grupuje, tnie, zaokrągla krawędzie, odczytuje scenę i robi zdjęcia widoku. Ty opisujesz część, AI ją buduje, a Ty patrzysz i w każdej chwili możesz się wtrącić.
 
 Most między klientem AI a edytorem działa **lokalnie na Twoim komputerze**. Pamiętaj jednak: to, co odczytuje AI, czyli scena i zdjęcia widoku, trafia do dostawcy Twojego klienta AI, jak każde inne dane, które tam wpisujesz.
 
-> **Ważne:** most MCP istnieje w serwerze deweloperskim, który uruchamiasz sam na swoim komputerze. Na layerling.com i w instalacjach ze statycznym hostingiem jest wyłączony. Kopia, którą hostujesz sam, na przykład obraz Docker na NAS-ie, może go włączyć z tokenem dostępu. Zobacz niżej „Kopia na NAS-ie albo serwerze”.
+> **Ważne:** most MCP istnieje w serwerze deweloperskim, który uruchamiasz sam na swoim komputerze. Na magic3d.ro i w instalacjach ze statycznym hostingiem jest wyłączony. Kopia, którą hostujesz sam, na przykład obraz Docker na NAS-ie, może go włączyć z tokenem dostępu. Zobacz niżej „Kopia na NAS-ie albo serwerze”.
 
 ## Konfiguracja
 
-1. Pobierz layerling z [GitHuba](https://github.com/henmedia/layerling) i uruchom go w folderze projektu poleceniem `npm run dev`. Musi być zainstalowany Node.js. W Windows zajmuje się tym wiersz szybkiego startu z README.
-2. Otwórz kartę edytora, na przykład `http://127.0.0.1:3000/?editor=1`. Możesz to zostawić AI: gdy żaden edytor nie jest otwarty, pierwsze narzędzie, które go potrzebuje, uruchamia przeglądarkę z edytorem i czeka, aż się połączy. Działa to dla layerling na Twoim własnym komputerze. Na kopii na NAS-ie albo serwerze edytor otwierasz sam. Ustaw `LAYERLING_MCP_OPEN_EDITOR=0` dla serwera MCP, aby to wyłączyć.
+1. Pobierz Magic3D z [GitHuba](https://github.com/henmedia/layerling) i uruchom go w folderze projektu poleceniem `npm run dev`. Musi być zainstalowany Node.js. W Windows zajmuje się tym wiersz szybkiego startu z README.
+2. Otwórz kartę edytora, na przykład `http://127.0.0.1:3000/?editor=1`. Możesz to zostawić AI: gdy żaden edytor nie jest otwarty, pierwsze narzędzie, które go potrzebuje, uruchamia przeglądarkę z edytorem i czeka, aż się połączy. Działa to dla Magic3D na Twoim własnym komputerze. Na kopii na NAS-ie albo serwerze edytor otwierasz sam. Ustaw `LAYERLING_MCP_OPEN_EDITOR=0` dla serwera MCP, aby to wyłączyć.
 3. Połącz swojego klienta AI z serwerem MCP. Klient uruchamia go sam poleceniem `node scripts/layerling-mcp-server.mjs`.
 
 ### Claude Code
 
-Nic do instalowania: projekt zawiera plik `.mcp.json`, który rejestruje serwer, oraz umiejętność w `.claude/skills/layerling-mcp-skill`. Otwórz folder layerling w Claude Code i poproś na przykład: „Use the layerling MCP tools to list my open editors and inspect the scene.”
+Nic do instalowania: projekt zawiera plik `.mcp.json`, który rejestruje serwer, oraz umiejętność w `.claude/skills/layerling-mcp-skill`. Otwórz folder Magic3D w Claude Code i poproś na przykład: „Use the Magic3D MCP tools to list my open editors and inspect the scene.”
 
 ### Claude Desktop
 
@@ -41,7 +41,7 @@ Tylko klient z tokenem może wypisywać edytory i nimi sterować. Strony edytora
 
 ## Co potrafi AI
 
-AI pracuje tymi samymi funkcjami co Ty, tą samą drogą co Twoja praca w edytorze. Nowe funkcje layerling od razu dostają swoje polecenie MCP. Narzędzia:
+AI pracuje tymi samymi funkcjami co Ty, tą samą drogą co Twoja praca w edytorze. Nowe funkcje Magic3D od razu dostają swoje polecenie MCP. Narzędzia:
 
 | Narzędzie | Co robi |
 | --- | --- |

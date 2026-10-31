@@ -32,9 +32,9 @@ A panelen ezeket találod:
 - Az {{ui:edge.keepSize}} megtartja az élletörés vagy a lekerekítés méretét akkor is, ha később átméretezed a testet.
 - Az {{ui:edge.previewQuality}} ({{ui:edge.draft}}, {{ui:edge.standard}} vagy {{ui:edge.fine}}) dönti el, milyen finoman számolódik az előnézet. Nehéz alkatrészeknél a {{ui:edge.draft}} gyorsabb.
 
-Amíg a méretet állítod, a layerling újraszámolja az előnézetet. Ez eltarthat egy pillanatig. Nyugodtan állíts tovább; az utoljára választott érték számolódik ki.
+Amíg a méretet állítod, a Magic3D újraszámolja az előnézetet. Ez eltarthat egy pillanatig. Nyugodtan állíts tovább; az utoljára választott érték számolódik ki.
 
-Ha a méret túl nagy az élhez, a layerling ezt jelzi, és kisebb értéket javasol. Gyakran egy-két milliméterrel kevesebb is elég. Éles szögeknél egy lekerekítésnek több hely kell, mint amennyit a sugara sejtet. Kis képernyőn a panel magától legörget, hogy az üzenet látható legyen.
+Ha a méret túl nagy az élhez, a Magic3D ezt jelzi, és kisebb értéket javasol. Gyakran egy-két milliméterrel kevesebb is elég. Éles szögeknél egy lekerekítésnek több hely kell, mint amennyit a sugara sejtet. Kis képernyőn a panel magától legörget, hogy az üzenet látható legyen.
 
 Ha egy addig működő kijelölés egy újabb élre kattintva hibára fut, az az él pirosra vált, és vastagabban rajzolódik: ez az, amelyet ekkora méretben nem lehet a többivel együtt megmunkálni. Kattints rá újra, hogy kivedd, vagy csökkentsd a méretet. Ha az üzenet fennállása alatt további élekre kattintasz, az első piros marad. Ha nincs korábbi működő kijelölés – a legelső kattintásnál, vagy egy épp megemelt méretnél –, azok az élek válnak pirossá, amelyek önmagukban sem működnek, vagy mind, ha csak az együttesük a gond.
 
@@ -50,7 +50,7 @@ Egy élletörés, lekerekítés vagy kiüregelés mellett ott van a {{ui:edge.ed
 
 Egy csoportnál, mondjuk egy lyukas hengernél, a megmunkált él a kész testhez tartozik, nem valamelyik részéhez. A csoportból így egyetlen test lesz. A {{ui:editor.tool.ungroup}} mégis működik: előbb visszavonja az élmunkákat, majd feloldja a csoportot, egyetlen lépésben, amelyet a [[Ctrl]]+[[Z]] visszavon. Vedd vissza a műveletet a fent leírt módon, és a csoport minden részével együtt visszatér. A legegyszerűbb, ha az élműveleteket a végére hagyod. Ez a menetekre is érvényes: az élműveleti eszköz a menetet a pontos testeként veszi, így egy menetes furatos hasáb élei a helyén lévő menettel együtt kerekíthetők le. Egy menet éleinek kiszámítása tovább tart, mint egy egyszerű alakzaté, M6-nál néhány másodpercig, egy G1/2-es csőmenetnél nagyjából fél percig.
 
-> **Jó tudni:** a layerling a lekerekítésekhez és élletörésekhez valódi CAD-geometriával dolgozik, nem csak háromszöghálóval. Ezért egy lekerekített él a STEP-exportban is lekerekített él marad.
+> **Jó tudni:** a Magic3D a lekerekítésekhez és élletörésekhez valódi CAD-geometriával dolgozik, nem csak háromszöghálóval. Ezért egy lekerekített él a STEP-exportban is lekerekített él marad.
 
 Egy STEP-ként importált alkatrész is megtartja a CAD-geometriáját: az élletörés, a lekerekítés és a kiüregelés a fájlból származó testen működik, akármilyen finoman rajzolódik is az alkatrész a képernyőn. Az STL, az OBJ és a 3MF csak háromszögeket hoz, és egy finoman rajzolt alkatrész túl sűrű lehet az élműveleti eszközhöz. Ha egy alkatrész STEP-ként is elérhető, azt importáld.
 
@@ -68,19 +68,19 @@ A dobozokban, poharakban, házakban és fedelekben közös, hogy belül üresek,
 
 A falak befelé nőnek. A külső oldal változatlan marad.
 
-A {{ui:shell.edges}} csak ott számítanak, ahol a belső falak eltávolodnak egymástól – a test egy lépcsőjénél vagy egy nyílás körül. Egy egyszerű doboz üregének sarkai mindkét beállításnál élesek. Lekerekített belsőhöz előbb kerekítsd le a test külső éleit (lásd fent), aztán üregeld ki: a belső a sugár mínusz a falvastagság értékével követi. Ha a lekerekített belső nem építhető fel – ez nagyon sok rövid egyenes darabból álló körvonalnál, például egy körvonallá alakított rajznál előfordulhat –, a layerling ugyanazt az üreges testet éles belső sarkokkal építi meg.
+A {{ui:shell.edges}} csak ott számítanak, ahol a belső falak eltávolodnak egymástól – a test egy lépcsőjénél vagy egy nyílás körül. Egy egyszerű doboz üregének sarkai mindkét beállításnál élesek. Lekerekített belsőhöz előbb kerekítsd le a test külső éleit (lásd fent), aztán üregeld ki: a belső a sugár mínusz a falvastagság értékével követi. Ha a lekerekített belső nem építhető fel – ez nagyon sok rövid egyenes darabból álló körvonalnál, például egy körvonallá alakított rajznál előfordulhat –, a Magic3D ugyanazt az üreges testet éles belső sarkokkal építi meg.
 
 ![Az eredmény: 3 mm falú héj, felül nyitva.](shot:hollow-result)
 
 ![Ugyanaz a doboz csak az elülső oldalán nyitva: egy fióknak való nyílás.](shot:hollow-sides)
 
-Minden nyitott oldalhoz a testnek azon az oldalon, a legszélén egy sík lapra van szüksége. A gömbök és a szabad formájú alakzatok ezért így nem üregelhetők ki. Ha a fal túl vastag a testhez, a layerling jelzi, és vékonyabbat kér.
+Minden nyitott oldalhoz a testnek azon az oldalon, a legszélén egy sík lapra van szüksége. A gömbök és a szabad formájú alakzatok ezért így nem üregelhetők ki. Ha a fal túl vastag a testhez, a Magic3D jelzi, és vékonyabbat kér.
 
 Egy zsebes test – egy olyan hasáb, amelyben egy nem teljesen átmenő lyuk van, és egy dobozt egy megemelt lyukkal csoportosítva készült – szintén kiüregelhető, felül nyitva: a zseb körüli falak is kiüregelődnek, így a külső fal és a zseb között egy felül nyitott üreggyűrű marad, a zseb alja alatt pedig egy vékony üreg fekszik.
 
 **A csúcsban végződő testeknek,** mint egy kúpnak vagy egy körbeforgatott háromszögnek, nincs felül sík lapjuk, amely nyitva maradhatna. Egy teljesen zárt üreg sem működik ott, mert egy csúcs nem tolható el befelé: még 1 mm-es falnál is azt az üzenetet kapod, hogy a falak nem lehetnek ilyen vastagok. Ehelyett a forgatás előtt rajzold bele a falat a profilba: készíts másolatot a körvonalról, kicsinyítsd a másolatot egyenletesen, tedd a nagy körvonal közepére, vágd ki vele a nagyot, majd forgasd körbe az egészet (Vázlatok fejezet, Forgatás rész). A két körvonal közötti távolság a falvastagság.
 
-Ha egy kiüregelt testet később átméretezel, a layerling azonnal újra kiüregeli az új méretben. A fal olyan vastag marad, amilyennek választottad, a kerek testeknél is. Egy hengerből, amelyet az egyik irányba jobban húzol, mint a másikba, ellipszis lesz.
+Ha egy kiüregelt testet később átméretezel, a Magic3D azonnal újra kiüregeli az új méretben. A fal olyan vastag marad, amilyennek választottad, a kerek testeknél is. Egy hengerből, amelyet az egyik irányba jobban húzol, mint a másikba, ellipszis lesz.
 
 > **Tipp:** 0,4 mm-es fúvókával 1,2–2 mm-es fal jó kiindulás: elég vékony, hogy anyagot spórolj, és elég vastag egy erős alkatrészhez.
 
@@ -121,4 +121,4 @@ Egy útban lévő lekerekítés, egy rossz helyen lévő lyuk, egy már nem kell
 
 A törölt lapok körüli lapok addig nőnek, amíg a rés be nem zárul. Egy lekerekített felső élű doboz visszakapja éles éleit, egy lyuk betöltődik, egy csap eltűnik. A test pontos marad, így újra lekerekíthető és letörhető, és a STEP-export megőrzi valódi lapjait. A [[Ctrl]]+[[Z]] egy lépésben visszavonja a törlést. Az {{ui:edge.featureHistory}} alatt is szerepel a lekerekítésekkel és letörésekkel együtt, ahol az {{ui:edge.revertAction}} visszavonja; {{ui:edge.editAction}} nincs hozzá. Csoporton az eredmény egyetlen test, mint egy élkezelésnél.
 
-Mindannak a lapjait válaszd ki, aminek el kell tűnnie, és csak azokat. Ha a körülöttük lévő lapok nem tudják bezárni a rést, a layerling jelzi, és semmi sem változik: egy doboz fő oldalának például nincs olyan szomszédja, amely átvehetné a helyét. Ha egy zsebnek csak az alját törlöd, átmenő lyuk lesz belőle, mert a zseb falai a túloldalig futnak tovább.
+Mindannak a lapjait válaszd ki, aminek el kell tűnnie, és csak azokat. Ha a körülöttük lévő lapok nem tudják bezárni a rést, a Magic3D jelzi, és semmi sem változik: egy doboz fő oldalának például nincs olyan szomszédja, amely átvehetné a helyét. Ha egy zsebnek csak az alját törlöd, átmenő lyuk lesz belőle, mert a zseb falai a túloldalig futnak tovább.

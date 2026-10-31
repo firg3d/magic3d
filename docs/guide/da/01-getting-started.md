@@ -3,18 +3,18 @@ title: Kom godt i gang
 summary: Fra en tom plade til din første del til 3D-printeren, på fem minutter, uden konto og uden at installere noget.
 ---
 
-layerling er et designprogram til 3D-print der kører direkte i din browser. Du bygger en del af enkle former, skærer huller i den, runder kanterne og sender den til din slicer. Der er intet at installere og intet at oprette konto til. Det du bygger bliver på din computer.
+Magic3D er et designprogram til 3D-print der kører direkte i din browser. Du bygger en del af enkle former, skærer huller i den, runder kanterne og sender den til din slicer. Der er intet at installere og intet at oprette konto til. Det du bygger bliver på din computer.
 
-![layerlings startside: "Opret nyt 3D-design" øverst, dine designs og den hurtige vejledning nedenunder.](shot:start-page)
+![Magic3D startside: "Opret nyt 3D-design" øverst, dine designs og den hurtige vejledning nedenunder.](shot:start-page)
 
 ## Opret et design
 
-Åbn [layerling.com](https://layerling.com/). Klik på {{ui:dashboard.createDesign}} på startsiden. Editoren åbner med et tomt arbejdsplan, det gitter som alt tager form på.
+Åbn [magic3d.ro](https://magic3d.ro/). Klik på {{ui:dashboard.createDesign}} på startsiden. Editoren åbner med et tomt arbejdsplan, det gitter som alt tager form på.
 
 Har du allerede en fil du vil fortsætte med, så brug {{ui:dashboard.importGeometry}}. Det virker for layerling-designs (`.lyl`) samt STL-, OBJ-, 3MF-, STEP- eller SVG-filer.
 
 Alle dine designs vises senere på startsiden med et forhåndsbillede. De gemmes i din browsers lager og gemmes automatisk efter hver ændring, så der er ingen gem-knap. Hvordan du pakker designs i en fil og giver dem videre er dækket i [Filer og lagring](chapter:files-and-saving). Hvis du ønsker en påmindelse, så slå {{ui:workspace.confirmTabClose}} til i indstillingerne (tandhjulet i båndet): Browseren spørger så, før en fane med et åbent design lukkes eller genindlæses.
-Men sikkerhedskopiér dine designs ind imellem: en browser kan fejle, og en browseropdatering kan give problemer, og **layerling påtager sig intet ansvar for designs, der opbevares i browseren.** Det gør du fra startsiden med {{ui:dashboard.backupAll}}, eller du gemmer designs som filer. En sikkerhedskopi hentes tilbage med {{ui:dashboard.restoreBackup}}.
+Men sikkerhedskopiér dine designs ind imellem: en browser kan fejle, og en browseropdatering kan give problemer, og **Magic3D påtager sig intet ansvar for designs, der opbevares i browseren.** Det gør du fra startsiden med {{ui:dashboard.backupAll}}, eller du gemmer designs som filer. En sikkerhedskopi hentes tilbage med {{ui:dashboard.restoreBackup}}.
 
 ## Editoren overblik
 
@@ -48,7 +48,7 @@ Hold musen over en knap for at se dens navn. Er du i tvivl om, hvad en knap gør
 
 ### Farveskema
 
-{{ui:common.theme}} helt øverst bestemmer, hvordan layerling ser ud: som dit system, lyst, mørkt eller grafit.
+{{ui:common.theme}} helt øverst bestemmer, hvordan Magic3D ser ud: som dit system, lyst, mørkt eller grafit.
 
 ### Omdøb design
 
@@ -84,7 +84,7 @@ Kontakten **mm | in** ved siden af {{ui:inspector.snapGrid}} ændrer enheden, pl
 
 ### Sidefoden
 
-Nederst i vinduet: {{ui:dashboard.sponsor}} fører til siden, hvor du kan støtte projektet; {{ui:dashboard.userGuide}} åbner denne vejledning; {{ui:dashboard.forum}} fører til stedet for spørgsmål, idéer og fejlrapporter (diskussionerne på GitHub, på tysk forummet hos drucktipps3d); {{ui:editor.bugReport}} laver en ZIP til en fejlrapport; {{ui:dashboard.projectOnGitHub}} fører til projektet på GitHub, og versionsnummeret åbner udgivelsesnoterne. Linkene til impressum og privatlivspolitik hører til den, der driver den kopi af layerling, du bruger.
+Nederst i vinduet: {{ui:dashboard.sponsor}} fører til siden, hvor du kan støtte projektet; {{ui:dashboard.userGuide}} åbner denne vejledning; {{ui:dashboard.forum}} fører til stedet for spørgsmål, idéer og fejlrapporter (diskussionerne på GitHub, på tysk forummet hos drucktipps3d); {{ui:editor.bugReport}} laver en ZIP til en fejlrapport; {{ui:dashboard.projectOnGitHub}} fører til projektet på GitHub, og versionsnummeret åbner udgivelsesnoterne. Linkene til impressum og privatlivspolitik hører til den, der driver den kopi af Magic3D, du bruger.
 
 ## Din første del
 
@@ -104,9 +104,9 @@ Sådan laves borehuller, slidser og lommer. Kapitlet [Solider og huller](chapter
 
 ## Nyt siden dit seneste besøg
 
-Når du åbner layerling igen efter en opdatering, viser et kort på startsiden hvad der er tilføjet siden du var her sidst: hver version siden da, den nyeste først. Efter et langt fravær scroller du ned i kortet. Nedenunder tilføjer {{ui:whatsNew.earlier}} også versionerne fra før dit seneste besøg. Luk det med {{ui:whatsNew.dismiss}} og det forbliver væk indtil næste opdatering. {{ui:whatsNew.footerLink}} i sidefoden på startsiden viser de seneste tilføjelser igen til enhver tid. Browseren husker den seneste version du så, og intet om dig forlader den.
+Når du åbner Magic3D igen efter en opdatering, viser et kort på startsiden hvad der er tilføjet siden du var her sidst: hver version siden da, den nyeste først. Efter et langt fravær scroller du ned i kortet. Nedenunder tilføjer {{ui:whatsNew.earlier}} også versionerne fra før dit seneste besøg. Luk det med {{ui:whatsNew.dismiss}} og det forbliver væk indtil næste opdatering. {{ui:whatsNew.footerLink}} i sidefoden på startsiden viser de seneste tilføjelser igen til enhver tid. Browseren husker den seneste version du så, og intet om dig forlader den.
 
-På en kopi af layerling på din egen computer eller server har meddelelsen "Opdatering tilgængelig" en knap, {{ui:update.previewShow}}, der viser hvad opdateringen bringer før du installerer den. Listen hentes fra GitHub først når du trykker på knappen.
+På en kopi af Magic3D på din egen computer eller server har meddelelsen "Opdatering tilgængelig" en knap, {{ui:update.previewShow}}, der viser hvad opdateringen bringer før du installerer den. Listen hentes fra GitHub først når du trykker på knappen.
 
 ## Fra design til print
 

@@ -3,13 +3,13 @@ title: Aan de slag
 summary: Van een leeg vel naar je eerste onderdeel voor de 3D-printer, in vijf minuten, zonder account en zonder iets te installeren.
 ---
 
-layerling is een ontwerpprogramma voor 3D-printen dat gewoon in je browser draait. Je bouwt een onderdeel op uit eenvoudige vormen, snijdt er gaten in, rondt de randen af en stuurt het naar je slicer. Er valt niets te installeren en je hoeft je nergens aan te melden. Wat je bouwt, blijft op je eigen computer.
+Magic3D is een ontwerpprogramma voor 3D-printen dat gewoon in je browser draait. Je bouwt een onderdeel op uit eenvoudige vormen, snijdt er gaten in, rondt de randen af en stuurt het naar je slicer. Er valt niets te installeren en je hoeft je nergens aan te melden. Wat je bouwt, blijft op je eigen computer.
 
-![De startpagina van layerling: bovenaan "Nieuw 3D-ontwerp maken", daaronder je ontwerpen en de snelgids.](shot:start-page)
+![De startpagina van Magic3D: bovenaan "Nieuw 3D-ontwerp maken", daaronder je ontwerpen en de snelgids.](shot:start-page)
 
 ## Een ontwerp maken
 
-Open [layerling.com](https://layerling.com/). Klik op de startpagina op {{ui:dashboard.createDesign}}. De editor opent met een leeg werkvlak, het raster waarop alles vorm krijgt.
+Open [magic3d.ro](https://magic3d.ro/). Klik op de startpagina op {{ui:dashboard.createDesign}}. De editor opent met een leeg werkvlak, het raster waarop alles vorm krijgt.
 
 Heb je al een bestand waarmee je verder wilt, gebruik dan {{ui:dashboard.importGeometry}}. Dat werkt voor layerling-ontwerpen (`.lyl`) en ook voor STL-, OBJ-, 3MF-, STEP- en SVG-bestanden.
 
@@ -47,7 +47,7 @@ Houd de muis boven een knop om de naam te zien. Weet je niet zeker wat een knop 
 
 ### Thema
 
-{{ui:common.theme}} helemaal bovenaan bepaalt hoe layerling eruitziet: zoals je systeem, licht, donker of grafiet.
+{{ui:common.theme}} helemaal bovenaan bepaalt hoe Magic3D eruitziet: zoals je systeem, licht, donker of grafiet.
 
 ### Ontwerp hernoemen
 
@@ -83,7 +83,7 @@ De schakelaar **mm | in** naast {{ui:inspector.snapGrid}} verandert de eenheid, 
 
 ### De voettekst
 
-Onderaan het venster: {{ui:dashboard.sponsor}} leidt naar de pagina waar je het project kunt steunen; {{ui:dashboard.userGuide}} opent deze handleiding; {{ui:dashboard.forum}} leidt naar de plek voor vragen, ideeën en foutmeldingen (de discussies op GitHub, in het Duits het forum van drucktipps3d); {{ui:editor.bugReport}} maakt een ZIP voor een foutmelding; {{ui:dashboard.projectOnGitHub}} leidt naar het project op GitHub, en het versienummer opent de versienotities. De links naar het impressum en het privacybeleid horen bij wie de kopie van layerling beheert die je gebruikt.
+Onderaan het venster: {{ui:dashboard.sponsor}} leidt naar de pagina waar je het project kunt steunen; {{ui:dashboard.userGuide}} opent deze handleiding; {{ui:dashboard.forum}} leidt naar de plek voor vragen, ideeën en foutmeldingen (de discussies op GitHub, in het Duits het forum van drucktipps3d); {{ui:editor.bugReport}} maakt een ZIP voor een foutmelding; {{ui:dashboard.projectOnGitHub}} leidt naar het project op GitHub, en het versienummer opent de versienotities. De links naar het impressum en het privacybeleid horen bij wie de kopie van Magic3D beheert die je gebruikt.
 
 ## Je eerste onderdeel
 
@@ -103,9 +103,9 @@ Zo maak je boringen, sleuven en kamers. Het hoofdstuk [Lichamen en gaten](chapte
 
 ## Nieuw sinds je laatste bezoek
 
-Open je layerling opnieuw na een update, dan toont een kaart op de startpagina wat er is bijgekomen sinds je hier het laatst was: elke versie sindsdien, de nieuwste eerst. Na een lange afwezigheid scrol je binnen de kaart naar beneden. Daaronder voegt {{ui:whatsNew.earlier}} ook de versies van vóór je laatste bezoek toe. Sluit hem met {{ui:whatsNew.dismiss}} en hij blijft weg tot de volgende update. {{ui:whatsNew.footerLink}} onderaan de startpagina toont de nieuwste toevoegingen op elk moment opnieuw. De browser onthoudt de laatste versie die je hebt gezien, en niets over jou verlaat de browser.
+Open je Magic3D opnieuw na een update, dan toont een kaart op de startpagina wat er is bijgekomen sinds je hier het laatst was: elke versie sindsdien, de nieuwste eerst. Na een lange afwezigheid scrol je binnen de kaart naar beneden. Daaronder voegt {{ui:whatsNew.earlier}} ook de versies van vóór je laatste bezoek toe. Sluit hem met {{ui:whatsNew.dismiss}} en hij blijft weg tot de volgende update. {{ui:whatsNew.footerLink}} onderaan de startpagina toont de nieuwste toevoegingen op elk moment opnieuw. De browser onthoudt de laatste versie die je hebt gezien, en niets over jou verlaat de browser.
 
-Op een kopie van layerling op je eigen computer of server heeft de melding "Update beschikbaar" een knop, {{ui:update.previewShow}}, die laat zien wat de update brengt voordat je hem installeert. De lijst wordt pas bij GitHub opgehaald als je op de knop drukt.
+Op een kopie van Magic3D op je eigen computer of server heeft de melding "Update beschikbaar" een knop, {{ui:update.previewShow}}, die laat zien wat de update brengt voordat je hem installeert. De lijst wordt pas bij GitHub opgehaald als je op de knop drukt.
 
 ## Van ontwerp naar print
 

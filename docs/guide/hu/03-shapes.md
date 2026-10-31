@@ -3,7 +3,7 @@ title: Alakzatok elhelyezése és beállítása
 summary: Az alakzattár, méretek számmal és fogantyúval, szín, forgatás, kúposítás és csavarás.
 ---
 
-A layerlingben minden alkatrész egy alakzattal kezdődik. Ezekből építesz fel minden mást: az alakzatok kiegészítik egymást, kivágják egymást, vagy egy új alakzattá egyesülnek.
+A Magic3D minden alkatrész egy alakzattal kezdődik. Ezekből építesz fel minden mást: az alakzatok kiegészítik egymást, kivágják egymást, vagy egy új alakzattá egyesülnek.
 
 ## Alakzat hozzáadása
 
@@ -62,7 +62,7 @@ A begépelés pontosabb, mint a húzás. Minden számmező milliméterben vár �
 
 ## Mennyire kerek a kerek? Az oldalszám
 
-A kerek alakzatok, mint a henger, a kúp, a cső, az ellipszis vagy a furatok, a tulajdonságaik között az {{ui:prop.sidesFollowSize}} kapcsolót és az {{ui:prop.sides}} csúszkát kínálják. A {{ui:shape.torus}} alakzatnak két csúszkája van: {{ui:prop.torusSides}} a gyűrű körül és {{ui:prop.torusSteps}} a cső körül. Ott is a mérettel változnak, amíg nem rögzíted őket, így egy nagy tórusz sem lesz szögletes. Az ok: a nézethez és az STL-hez, 3MF-hez és OBJ-hez a layerling a kört sok kis oldalú sokszögként rajzolja. Minél több az oldal, annál simább, és annál több háromszög kell hozzá.
+A kerek alakzatok, mint a henger, a kúp, a cső, az ellipszis vagy a furatok, a tulajdonságaik között az {{ui:prop.sidesFollowSize}} kapcsolót és az {{ui:prop.sides}} csúszkát kínálják. A {{ui:shape.torus}} alakzatnak két csúszkája van: {{ui:prop.torusSides}} a gyűrű körül és {{ui:prop.torusSteps}} a cső körül. Ott is a mérettel változnak, amíg nem rögzíted őket, így egy nagy tórusz sem lesz szögletes. Az ok: a nézethez és az STL-hez, 3MF-hez és OBJ-hez a Magic3D a kört sok kis oldalú sokszögként rajzolja. Minél több az oldal, annál simább, és annál több háromszög kell hozzá.
 
 A {{ui:prop.torusTube}} adja meg, milyen vastag a cső felülről nézve. A magasság csak összenyomja vagy megnyújtja a csövet, így a lapos gyűrű megtartja a lyukát; a külső méret felénél a lyuk bezárul. A fogantyúk húzásakor a cső is vele méreteződik. Csak az a tórusz marad pontos test élletöréshez, lekerekítéshez és STEP-hez, amelynek csöve olyan vastag, amilyen magas a tórusz.
 
@@ -84,7 +84,7 @@ A {{ui:prop.torusTube}} adja meg, milyen vastag a cső felülről nézve. A maga
 
 **Hogyan használd**
 
-- **Hagyd bekapcsolva az {{ui:prop.sidesFollowSize}} kapcsolót.** Ilyenkor a layerling az átmérőből úgy választja ki az oldalszámot, hogy a sokszög legfeljebb {{value:ROUND_DEVIATION_TOLERANCE}} mm-rel térjen el a valódi körtől, ami jóval kevesebb annál, amit egy nyomtató fel tud bontani. A kis alakzatok legalább {{value:MIN_AUTOMATIC_SIDES}} oldalt kapnak, a nagyok többet.
+- **Hagyd bekapcsolva az {{ui:prop.sidesFollowSize}} kapcsolót.** Ilyenkor a Magic3D az átmérőből úgy választja ki az oldalszámot, hogy a sokszög legfeljebb {{value:ROUND_DEVIATION_TOLERANCE}} mm-rel térjen el a valódi körtől, ami jóval kevesebb annál, amit egy nyomtató fel tud bontani. A kis alakzatok legalább {{value:MIN_AUTOMATIC_SIDES}} oldalt kapnak, a nagyok többet.
 - **Kevesebb oldalt** akkor válassz, ha szándékosan sokszöget szeretnél (de arra ott a {{ui:shape.polygon}}), vagy ha a szerkesztő nagyon sok kerek alakzattal lelassul.
 - **Több oldalra** szinte sosem lesz szükséged. Csak nagyon nagy kerek alkatrészeknél, ha éleket látsz az STL-ben.
 - **Azoknál az alkatrészeknél, amelyeket csak élműveletekkel kezelsz, vagy STEP-ként adsz tovább,** az oldalszám nem számít.
@@ -109,7 +109,7 @@ Az illesztési lépés a szerkesztő jobb alsó sarkában van, és bármikor mó
 
 ## Másolás és másolatkészítés
 
-A {{ui:editor.tool.copy}}, a {{ui:editor.tool.paste}} és a {{ui:editor.tool.duplicate}} a szalagon van ({{ui:editor.group.clipboard}}). A [[Ctrl]]+[[D]] másolatot készít a kijelölésről. A layerling megjegyzi, hogyan mozgattad vagy forgattad legutóbb a másolatot, és a következő másolatnál ugyanezt alkalmazza újra. Így néhány billentyűleütéssel lyuksort vagy lépcsőt kapsz. Szabályos elrendezésekhez ott van még az ismétlés is, amelyről a [Kijelölés és elrendezés](chapter:select-and-arrange) fejezet szól.
+A {{ui:editor.tool.copy}}, a {{ui:editor.tool.paste}} és a {{ui:editor.tool.duplicate}} a szalagon van ({{ui:editor.group.clipboard}}). A [[Ctrl]]+[[D]] másolatot készít a kijelölésről. A Magic3D megjegyzi, hogyan mozgattad vagy forgattad legutóbb a másolatot, és a következő másolatnál ugyanezt alkalmazza újra. Így néhány billentyűleütéssel lyuksort vagy lépcsőt kapsz. Szabályos elrendezésekhez ott van még az ismétlés is, amelyről a [Kijelölés és elrendezés](chapter:select-and-arrange) fejezet szól.
 
 > **Tipp:** Ha egy alakzat nem hajlandó felvenni a kívánt méretet, gyakran az új alakzatok határai az okai. A beállításokban az {{ui:workspace.shapeDefaults}} alatt döntöd el, hogyan induljon az egyes alakzat, és mekkora lehet.
 
@@ -149,14 +149,14 @@ Gravíráshoz kapcsold be a {{ui:inspector.wrapInward}} kapcsolót: ilyenkor a v
 
 Egy már rátekert alakzat a rátekert dolog hálója, és nem tekerhető rá újra: vond vissza a tekerést, vagy tekerd újra a lapos eredetit egy másik átmérővel.
 
-Az eredmény háló, mint egy importált modell. A Visszavonás újra laposra fekteti az alakzatot; másik átmérőhöz előbb vond vissza, majd tekerd újra. Egy körnél többször nem tekerhető a henger köré; ilyenkor a layerling megadja a legkisebb átmérőt, amelyre ráfér.
+Az eredmény háló, mint egy importált modell. A Visszavonás újra laposra fekteti az alakzatot; másik átmérőhöz előbb vond vissza, majd tekerd újra. Egy körnél többször nem tekerhető a henger köré; ilyenkor a Magic3D megadja a legkisebb átmérőt, amelyre ráfér.
 
 ## Felületi textúra
 
 Hornyok, recézés, méhsejt vagy dudorok egy testen, a jobb fogásért vagy a látvány kedvéért: nyisd meg az alakzat beállításaiban a {{ui:inspector.surfaceTexture}} részt. A fenti {{ui:editor.group.modify}} csoport {{ui:inspector.surfaceTexture}} gombja ugyanezt teszi: megnyitja és bezárja a kijelölt test kártyáját, és világít, amíg a kártya nyitva van.
 
 1. Válaszd ki a {{ui:inspector.surfacePattern}}, a {{ui:inspector.surfaceSpacing}} és a {{ui:inspector.surfaceDepth}} értékét. A {{ui:inspector.surfaceDirection}} megmondja, hogy a minta a testbe mélyed vagy kiemelkedik belőle. A {{ui:surfaceTexture.bumps}} esetén a {{ui:inspector.surfaceBumpShape}} választ a {{ui:surfaceTexture.bumpDome}}, a {{ui:surfaceTexture.bumpCone}}, a {{ui:surfaceTexture.bumpSoft}} és a {{ui:surfaceTexture.bumpFlat}} között. A {{ui:inspector.surfaceBumpGrid}} alatt {{ui:surfaceTexture.bumpGridStaggered}} állnak, minden második sor fél osztással eltolva, vagy {{ui:surfaceTexture.bumpGridStraight}}.
-2. A {{ui:inspector.surfaceProjection}} alatt kerek testekhez, például bögréhez, gombhoz vagy fogantyúhoz, válaszd a {{ui:surfaceTexture.cylinder}} lehetőséget. A minta a {{ui:inspector.surfaceAxis}} körül fut, az osztás pedig kissé kerekül, hogy egész számú horony vagy cella férjen körbe: a minta varrat nélkül záródik. A {{ui:surfaceTexture.allRound}} a nem kerek testekhez illik, a {{ui:surfaceTexture.flatProjection}} egy felülről nézett fedélhez vagy lemezhez. Hagyd {{ui:surfaceTexture.auto}} állásban, és a Layerling választ helyetted: kerek testeken és az álló szögletes testeken, például egy dobozon, {{ui:surfaceTexture.cylinder}} (a minta ilyenkor a körvonalat követi, és varrat nélkül fut körbe az éleken; a kiemelkedő minta meghajlik körülöttük), más szögletes testeken {{ui:surfaceTexture.allRound}}.
+2. A {{ui:inspector.surfaceProjection}} alatt kerek testekhez, például bögréhez, gombhoz vagy fogantyúhoz, válaszd a {{ui:surfaceTexture.cylinder}} lehetőséget. A minta a {{ui:inspector.surfaceAxis}} körül fut, az osztás pedig kissé kerekül, hogy egész számú horony vagy cella férjen körbe: a minta varrat nélkül záródik. A {{ui:surfaceTexture.allRound}} a nem kerek testekhez illik, a {{ui:surfaceTexture.flatProjection}} egy felülről nézett fedélhez vagy lemezhez. Hagyd {{ui:surfaceTexture.auto}} állásban, és a Magic3D választ helyetted: kerek testeken és az álló szögletes testeken, például egy dobozon, {{ui:surfaceTexture.cylinder}} (a minta ilyenkor a körvonalat követi, és varrat nélkül fut körbe az éleken; a kiemelkedő minta meghajlik körülöttük), más szögletes testeken {{ui:surfaceTexture.allRound}}.
 3. Kattints a {{ui:inspector.surfaceApply}} gombra. Egy nagy test néhány másodpercig tart; közben tovább dolgozhatsz.
 
 Ha csak néhány lap kapja a mintát, például csak egy doboz teteje, kattints a {{ui:inspector.surfaceFacesPick}} gombra, majd a nézetben a lapokra: a tetejére, az aljára vagy egy oldalra. Egy lap a test éles éléig tart; egy hengeren a palást egy lap, a teteje és az alja pedig egy-egy lap. A kiválasztott lapok kivilágosodnak, egy újabb kattintás kiveszi az egyiket, a {{ui:inspector.surfaceFacesClear}} pedig ismét az egész testnek adja a mintát. Csak a kiválasztott lapok kapják meg a mintát; a többi olyan marad, amilyen volt, és kevés háromszögből áll. A tetején vagy az alján a minta laposan fekszik; kerek tetőn a hornyok, a kötél és a kötött minta gyűrűkben futnak a közép körül, mint egy fa évgyűrűi. A {{ui:inspector.surfaceFaceTurn}} elforgatja a mintát a tetőn és az alján: 0°-nál a sorok az elülső él mentén futnak, 90°-nál az oldalél mentén. A {{ui:inspector.surfaceCapStyle}} ott a hornyokat, a kötelet és a kötést sorok és gyűrűk között váltja; szögletes testen a gyűrűk a körvonalát követik. A {{ui:inspector.surfaceCapEdge}} megmondja, mi történik az oldal és egy mintás tető vagy alj közötti élen: a {{ui:surfaceTexture.edgeSharp}} mindkettőt az élen fejezi be. A {{ui:surfaceTexture.edgeOver}} esetén az oldal mintája átfordul az élen, és az egész tetőt elfoglalja: a kötél, a kötés és a vízszintes hornyok sorai gyűrűkként folytatódnak, a függőleges és ferde hornyok sugarakként majdnem a közepéig. A {{ui:surfaceTexture.edgeFold}} ugyanezt csak szegélyként teszi; belül a tető saját mintája van, ahogy a {{ui:inspector.surfaceCapStyle}} beállítja. A {{ui:surfaceTexture.edgeBead}} minden mintához szegélyt tesz az él köré: zsinórt, láncszemes befejezést vagy kerek gyöngyszegélyt. Egy szűk lekerekítés is lezár egy lapot: egy lekerekített peremű bögrén a külső, a lekerekítések, a perem, a belső és az alj mind külön lapok, így a külsőre kattintva csak a külső lesz kiválasztva. Egy széles lekerekítés, a test nagyjából negyede vagy több, a laphoz tartozik, ahogy egy gömb is egyetlen lap. Kiválasztott lapoknál a {{ui:inspector.surfaceOutside}} és a {{ui:inspector.surfaceInside}} nem számít.

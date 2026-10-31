@@ -24,7 +24,7 @@ A hét beépített betűtípus mellett bármilyen saját betűtípust használha
 
 - A **{{ui:font.addFile}}** TrueType (`.ttf`), OpenType (`.otf`) vagy WOFF (`.woff`) fájlt fogad. A fájlt egyszerűen az ablakba is húzhatod.
 - **Windowson** a telepített betűtípusok a Betűtípusok mappában vannak (`C:\Windows\Fonts`). A böngésző fájlválasztó ablaka ezt elrejti. Nyisd meg inkább a Fájlkezelőben, és húzd a betűtípust a {{ui:font.title}} ablakba. A csak a te felhasználódra telepített betűtípusok a `%LOCALAPPDATA%\Microsoft\Windows\Fonts` mappában vannak, ezt a fájlválasztó ablak is mutatja. Macen a betűtípusok a `/Library/Fonts` és a `~/Library/Fonts` mappában vannak.
-- A **{{ui:font.fromSystem}}** felsorolja a számítógépedre telepített betűtípusokat. Az első alkalommal a böngésző megkérdezi, hogy a layerling beolvashatja-e őket. A keresőmező gyorsan megtalál egy betűtípust, egy kattintás kiválasztja.
+- A **{{ui:font.fromSystem}}** felsorolja a számítógépedre telepített betűtípusokat. Az első alkalommal a böngésző megkérdezi, hogy a Magic3D beolvashatja-e őket. A keresőmező gyorsan megtalál egy betűtípust, egy kattintás kiválasztja.
 
 Ha egy szöveg ki van jelölve, azonnal megkapja az új betűtípust. Különben a betűtípus a {{ui:prop.font}} alatt a {{ui:font.customGroup}} csoportban jelenik meg, és az ablakban a {{ui:font.use}} gomb a kijelölt szövegekre teszi. A saját betűtípusok úgy működnek, mint a beépítettek: a körív menti szöveg, az élek letörése és lekerekítése és a STEP-export ugyanúgy működik. Azokat a betűket, amelyek egy betűtípusból hiányoznak, a Sans-ból veszi.
 
@@ -36,16 +36,16 @@ Az arab, a perzsa, az urdu és a héber jobbról balra íródik: az első betű 
 
 | Böngésző | Betűtípusfájl kiválasztása | Betűtípus a számítógépről |
 | --- | --- | --- |
-| Chrome és Edge számítógépen, a telepített layerling alkalmazás is | igen | igen, miután a böngésző rákérdez |
+| Chrome és Edge számítógépen, a telepített Magic3D alkalmazás is | igen | igen, miután a böngésző rákérdez |
 | Firefox | igen | nem |
 | Safari Macen | igen | nem |
 | Táblagép és telefon | igen, az eszköz fájljai közül | nem |
 
-A weboldalak nem olvashatják be csak úgy a telepített betűtípusokat. Csak a Chrome-nak és az Edge-nek van erre engedélye, és csak biztonságos oldalakon, `https`-en keresztül, mint a layerling.com-on. Ha a layerling `http`-n fut, mondjuk a saját szervereden vagy Docker-telepítésként az otthoni hálózatodban, a {{ui:font.fromSystem}} hiányzik; ilyenkor húzd át a betűtípust a Fájlkezelőből. A többi böngészőben a betűtípusfájlt a betűtípusok mappájából választod ki, ugyanazzal az eredménnyel. Ha a Chrome-ban vagy az Edge-ben elutasítottad a kérdést, engedélyezd újra a webhely beállításaiban, a cím bal oldalán lévő lakat mögött.
+A weboldalak nem olvashatják be csak úgy a telepített betűtípusokat. Csak a Chrome-nak és az Edge-nek van erre engedélye, és csak biztonságos oldalakon, `https`-en keresztül, mint a magic3d.ro-on. Ha a Magic3D `http`-n fut, mondjuk a saját szervereden vagy Docker-telepítésként az otthoni hálózatodban, a {{ui:font.fromSystem}} hiányzik; ilyenkor húzd át a betűtípust a Fájlkezelőből. A többi böngészőben a betűtípusfájlt a betűtípusok mappájából választod ki, ugyanazzal az eredménnyel. Ha a Chrome-ban vagy az Edge-ben elutasítottad a kérdést, engedélyezd újra a webhely beállításaiban, a cím bal oldalán lévő lakat mögött.
 
-A layerling nem tudja olvasni a WOFF2 fájlokat (szinte mindig van TTF vagy OTF változat), a betűtípus-gyűjteményeket (`.ttc`, több betűtípus egy fájlban) és a színes emoji betűtípusokat. A nagyon nagy betűtípusokból, például a kínaiakból a layerling az első 8000 karaktert veszi át. A változó betűtípusokat az alapbeállításukban olvassa be, ez általában a normál vastagság.
+A Magic3D nem tudja olvasni a WOFF2 fájlokat (szinte mindig van TTF vagy OTF változat), a betűtípus-gyűjteményeket (`.ttc`, több betűtípus egy fájlban) és a színes emoji betűtípusokat. A nagyon nagy betűtípusokból, például a kínaiakból a Magic3D az első 8000 karaktert veszi át. A változó betűtípusokat az alapbeállításukban olvassa be, ez általában a normál vastagság.
 
-Egyes betűtípusok, főleg a kézírásos és a változó betűtípusok, egy betűt egymást átfedő vonalakból rajzolnak. A layerling a betűtípus beolvasásakor ezeket egyetlen tiszta körvonallá egyesíti, így a test nyomtatható marad. Az ilyen betűk ezután görbék helyett nagyon rövid egyenes darabokból állnak; ez nem látszik.
+Egyes betűtípusok, főleg a kézírásos és a változó betűtípusok, egy betűt egymást átfedő vonalakból rajzolnak. A Magic3D a betűtípus beolvasásakor ezeket egyetlen tiszta körvonallá egyesíti, így a test nyomtatható marad. Az ilyen betűk ezután görbék helyett nagyon rövid egyenes darabokból állnak; ez nem látszik.
 
 ### Hol tárolódnak a betűtípusok
 
@@ -58,7 +58,7 @@ Egy terv **nem tárolja a betűtípusfájlt**, csak a szövegeiben használt bet
 Tehát:
 
 - **A terv bárhol helyesen nyílik meg**, olyan számítógépen is, ahol nincs meg a betűtípus. A szövegek ugyanúgy néznek ki, és mozgathatók, forgathatók, méretezhetők és lekerekíthetők.
-- **Az új betűkhöz kell a betűtípus.** Ha valaki, akinél nincs meg a betűtípus, olyan betűt gépel, amelyet a terv nem hozott magával, a layerling a Sans-ból rajzolja meg. A {{ui:prop.font}} alatt a betűtípus ilyenkor {{ui:font.fromDesign}} jelölést kap. A betűtípusfájl hozzáadása minden betűt visszahoz.
+- **Az új betűkhöz kell a betűtípus.** Ha valaki, akinél nincs meg a betűtípus, olyan betűt gépel, amelyet a terv nem hozott magával, a Magic3D a Sans-ból rajzolja meg. A {{ui:prop.font}} alatt a betűtípus ilyenkor {{ui:font.fromDesign}} jelölést kap. A betűtípusfájl hozzáadása minden betűt visszahoz.
 - **Az exportok csak geometriát tartalmaznak.** Az STL, a 3MF, az OBJ, a STEP és az SVG testeket és körvonalakat tartalmaz, betűtípust nem.
 - **A régebbi layerling-verziók** még nem ismerik a saját betűtípusokat, és az ilyen szövegeket Multilanguage betűtípussal rajzolják.
 
@@ -86,7 +86,7 @@ Külső vonalnál, középre igazított vonalnál vagy a „Szélesebb” beáll
 
 ## Rétegek és névcímkék
 
-Egy többszínű nyomtatáshoz készült névcímke rétegekből álló szöveg: felül a betűk, alattuk ugyanaz a szöveg kicsit szélesebben egy második színben, legalul pedig egy lyukak nélküli lap egy harmadikban. A layerling egy kattintással elkészíti:
+Egy többszínű nyomtatáshoz készült névcímke rétegekből álló szöveg: felül a betűk, alattuk ugyanaz a szöveg kicsit szélesebben egy második színben, legalul pedig egy lyukak nélküli lap egy harmadikban. A Magic3D egy kattintással elkészíti:
 
 - **Új névcímke:** válaszd az alakzattárban a {{ui:shape.nameTag}} alakzatot, és helyezd el. Fehér betűkkel „Név” áll rajta, piros szegélyen és sötét lapon.
 - **Szövegből:** jelöld ki a szöveget, és kattints a beállításai tetején a {{ui:nameTag.makeLayers}} gombra.

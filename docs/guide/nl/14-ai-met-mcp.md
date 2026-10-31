@@ -3,16 +3,16 @@ title: Bouwen met een AI (MCP)
 summary: Hoe een AI-assistent zoals Claude of Codex in je geopende editor vormen maakt en wijzigt, ze groepeert en afbeeldingen van de weergave maakt.
 ---
 
-layerling heeft een MCP-server aan boord. MCP is een standaard waarmee een AI-assistent gereedschappen in andere programma's kan gebruiken. Daarmee ziet een AI-client zoals Claude of Codex een geopend editortabblad en werkt erin: hij maakt vormen, wijzigt maten, groepeert, snijdt, rondt randen af, leest de scène uit en maakt afbeeldingen van de weergave. Jij beschrijft het onderdeel, de AI bouwt het, jij kijkt mee en kunt op elk moment ingrijpen.
+Magic3D heeft een MCP-server aan boord. MCP is een standaard waarmee een AI-assistent gereedschappen in andere programma's kan gebruiken. Daarmee ziet een AI-client zoals Claude of Codex een geopend editortabblad en werkt erin: hij maakt vormen, wijzigt maten, groepeert, snijdt, rondt randen af, leest de scène uit en maakt afbeeldingen van de weergave. Jij beschrijft het onderdeel, de AI bouwt het, jij kijkt mee en kunt op elk moment ingrijpen.
 
 De brug tussen AI-client en editor draait **lokaal op je computer**. Houd er wel rekening mee: wat de AI leest, dus de scène en de afbeeldingen van de weergave, gaat naar de aanbieder van je AI-client, net als alle andere invoer daar.
 
-> **Belangrijk:** De MCP-brug zit in de ontwikkelserver die je zelf op je computer start. Op layerling.com en in installaties met statische hosting staat hij uit. Een kopie die je zelf host, zoals de Docker-image op een NAS, kan hem aanzetten met een toegangstoken; zie "Een kopie op een NAS of server" hieronder.
+> **Belangrijk:** De MCP-brug zit in de ontwikkelserver die je zelf op je computer start. Op magic3d.ro en in installaties met statische hosting staat hij uit. Een kopie die je zelf host, zoals de Docker-image op een NAS, kan hem aanzetten met een toegangstoken; zie "Een kopie op een NAS of server" hieronder.
 
 ## Instellen
 
-1. Haal layerling op van [GitHub](https://github.com/henmedia/layerling) en start het in de projectmap met `npm run dev`. Node.js moet geïnstalleerd zijn. Op Windows regelt de snelstartregel in de README dat.
-2. Open een editortabblad, bijvoorbeeld `http://127.0.0.1:3000/?editor=1`. Dat kun je aan de AI overlaten: als er geen editor open is, start het eerste gereedschap dat er een nodig heeft je browser met een editor en wacht tot die verbonden is. Dat werkt voor een layerling op je eigen computer; bij een kopie op een NAS of server moet je de editor zelf openen. Zet `LAYERLING_MCP_OPEN_EDITOR=0` voor de MCP-server om dit uit te schakelen.
+1. Haal Magic3D op van [GitHub](https://github.com/henmedia/layerling) en start het in de projectmap met `npm run dev`. Node.js moet geïnstalleerd zijn. Op Windows regelt de snelstartregel in de README dat.
+2. Open een editortabblad, bijvoorbeeld `http://127.0.0.1:3000/?editor=1`. Dat kun je aan de AI overlaten: als er geen editor open is, start het eerste gereedschap dat er een nodig heeft je browser met een editor en wacht tot die verbonden is. Dat werkt voor een Magic3D op je eigen computer; bij een kopie op een NAS of server moet je de editor zelf openen. Zet `LAYERLING_MCP_OPEN_EDITOR=0` voor de MCP-server om dit uit te schakelen.
 3. Verbind je AI-client met de MCP-server. De client start die zelf met `node scripts/layerling-mcp-server.mjs`.
 
 ### Claude Code
@@ -37,7 +37,7 @@ Alleen een client met het token kan de editors opsommen of besturen. De editorpa
 
 ## Wat de AI kan
 
-De AI werkt met dezelfde functies als jij, via dezelfde weg als jouw bediening in de editor. Nieuwe functies van layerling krijgen meteen hun MCP-actie. De gereedschappen:
+De AI werkt met dezelfde functies als jij, via dezelfde weg als jouw bediening in de editor. Nieuwe functies van Magic3D krijgen meteen hun MCP-actie. De gereedschappen:
 
 | Gereedschap | Wat het doet |
 | --- | --- |

@@ -3,21 +3,21 @@ title: Építés MI-vel (MCP)
 summary: Hogyan hoz létre és módosít alakzatokat egy MI-asszisztens, például a Claude vagy a Codex, hogyan csoportosítja őket, és hogyan készít képeket a nézetről a nyitott szerkesztődben.
 ---
 
-A layerling egy MCP-szerverrel érkezik. Az MCP egy szabvány, amelyen keresztül egy MI-asszisztens más programok eszközeit használhatja. Ennek segítségével egy MI-kliens, például a Claude vagy a Codex, látja a nyitott szerkesztőlapot, és dolgozik benne: alakzatokat hoz létre, méreteket változtat, csoportosít, vág, éleket kerekít, kiolvassa a jelenetet, és képeket készít a nézetről. Te leírod az alkatrészt, az MI megépíti, te nézed, és bármikor közbeléphetsz.
+A Magic3D egy MCP-szerverrel érkezik. Az MCP egy szabvány, amelyen keresztül egy MI-asszisztens más programok eszközeit használhatja. Ennek segítségével egy MI-kliens, például a Claude vagy a Codex, látja a nyitott szerkesztőlapot, és dolgozik benne: alakzatokat hoz létre, méreteket változtat, csoportosít, vág, éleket kerekít, kiolvassa a jelenetet, és képeket készít a nézetről. Te leírod az alkatrészt, az MI megépíti, te nézed, és bármikor közbeléphetsz.
 
 Az MI-kliens és a szerkesztő közötti híd **helyben, a számítógépeden** fut. Ne feledd azonban: amit az MI beolvas, vagyis a jelenet és a nézetről készült képek, az az MI-kliensed szolgáltatójához kerül, mint ott bármely más bemenet.
 
-> **Fontos:** Az MCP-híd abban a fejlesztői szerverben létezik, amelyet magad indítasz el a számítógépeden. A layerling.com-on és a statikus tárhelyű telepítésekben ki van kapcsolva. Egy magad üzemeltetett példány, például a NAS-on futó Docker-image, hozzáférési tokennel bekapcsolhatja; lásd lent az „Egy példány NAS-on vagy szerveren” részt.
+> **Fontos:** Az MCP-híd abban a fejlesztői szerverben létezik, amelyet magad indítasz el a számítógépeden. A magic3d.ro-on és a statikus tárhelyű telepítésekben ki van kapcsolva. Egy magad üzemeltetett példány, például a NAS-on futó Docker-image, hozzáférési tokennel bekapcsolhatja; lásd lent az „Egy példány NAS-on vagy szerveren” részt.
 
 ## Beállítás
 
-1. Töltsd le a layerlinget a [GitHubról](https://github.com/henmedia/layerling), és indítsd el a projekt mappájában az `npm run dev` paranccsal. Ehhez telepítve kell lennie a Node.js-nek. Windowson a README gyorsindító sora ezt elintézi.
-2. Nyiss meg egy szerkesztőlapot, például a `http://127.0.0.1:3000/?editor=1` címet. Ezt az MI-re is bízhatod: ha nincs nyitott szerkesztő, az első eszköz, amelynek kell egy, elindítja a böngésződet egy szerkesztővel, és megvárja, amíg csatlakozik. Ez a saját számítógépeden futó layerlingnél működik; egy NAS-on vagy szerveren lévő példánynál a szerkesztőt neked kell megnyitnod. Az MCP-szervernél a `LAYERLING_MCP_OPEN_EDITOR=0` beállítással kikapcsolhatod.
+1. Töltsd le a Magic3D a [GitHubról](https://github.com/henmedia/layerling), és indítsd el a projekt mappájában az `npm run dev` paranccsal. Ehhez telepítve kell lennie a Node.js-nek. Windowson a README gyorsindító sora ezt elintézi.
+2. Nyiss meg egy szerkesztőlapot, például a `http://127.0.0.1:3000/?editor=1` címet. Ezt az MI-re is bízhatod: ha nincs nyitott szerkesztő, az első eszköz, amelynek kell egy, elindítja a böngésződet egy szerkesztővel, és megvárja, amíg csatlakozik. Ez a saját számítógépeden futó Magic3D működik; egy NAS-on vagy szerveren lévő példánynál a szerkesztőt neked kell megnyitnod. Az MCP-szervernél a `LAYERLING_MCP_OPEN_EDITOR=0` beállítással kikapcsolhatod.
 3. Csatlakoztasd az MI-kliensedet az MCP-szerverhez. A kliens maga indítja el a `node scripts/layerling-mcp-server.mjs` paranccsal.
 
 ### Claude Code
 
-Semmit sem kell telepíteni: a projekt hoz egy `.mcp.json` fájlt, amely regisztrálja a szervert, és a skillt a `.claude/skills/layerling-mcp-skill` alatt. Nyisd meg a layerling mappáját a Claude Code-ban, és kérd például ezt: „Use the layerling MCP tools to list my open editors and inspect the scene.”
+Semmit sem kell telepíteni: a projekt hoz egy `.mcp.json` fájlt, amely regisztrálja a szervert, és a skillt a `.claude/skills/layerling-mcp-skill` alatt. Nyisd meg a Magic3D mappáját a Claude Code-ban, és kérd például ezt: „Use the Magic3D MCP tools to list my open editors and inspect the scene.”
 
 ### Claude Desktop
 

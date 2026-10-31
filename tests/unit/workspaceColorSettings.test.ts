@@ -3,8 +3,8 @@ import { DEFAULT_WORKPLANE_WORKSPACE, normalizeWorkspaceSettings } from "@/lib/w
 
 describe("background, workplane and edge line settings", () => {
   it("start as the look layerling always had: cream, no extra edge lines, black when switched on", () => {
-    expect(DEFAULT_WORKPLANE_WORKSPACE.background).toBe("#fbf8f0");
-    expect(DEFAULT_WORKPLANE_WORKSPACE.surfaceColor).toBe("#fdf4dd");
+    expect(DEFAULT_WORKPLANE_WORKSPACE.background).toBe("#f0fbf4");
+    expect(DEFAULT_WORKPLANE_WORKSPACE.surfaceColor).toBe("#e7f9ed");
     expect(DEFAULT_WORKPLANE_WORKSPACE.edgeLines).toBe(false);
     expect(DEFAULT_WORKPLANE_WORKSPACE.edgeColor).toBe("#000000");
   });
@@ -15,18 +15,18 @@ describe("background, workplane and edge line settings", () => {
   });
 
   it("takes settings saved before they existed as the defaults, and refuses a colour that is none", () => {
-    const old = normalizeWorkspaceSettings({ gridColor: "#c08a12" });
-    expect(old.surfaceColor).toBe("#fdf4dd");
+    const old = normalizeWorkspaceSettings({ gridColor: "#2aa959" });
+    expect(old.surfaceColor).toBe("#e7f9ed");
     expect(old.edgeLines).toBe(false);
     const broken = normalizeWorkspaceSettings({ surfaceColor: "red", edgeColor: "#12", edgeLines: "yes" });
-    expect(broken.surfaceColor).toBe("#fdf4dd");
+    expect(broken.surfaceColor).toBe("#e7f9ed");
     expect(broken.edgeColor).toBe("#000000");
     expect(broken.edgeLines).toBe(false);
   });
 
   it("draws holes as before until they are asked to stand out (#662)", () => {
     expect(DEFAULT_WORKPLANE_WORKSPACE.strongHoles).toBe(false);
-    expect(normalizeWorkspaceSettings({ gridColor: "#c08a12" }).strongHoles).toBe(false);
+    expect(normalizeWorkspaceSettings({ gridColor: "#2aa959" }).strongHoles).toBe(false);
     expect(normalizeWorkspaceSettings({ strongHoles: true }).strongHoles).toBe(true);
     expect(normalizeWorkspaceSettings({ strongHoles: "yes" }).strongHoles).toBe(false);
   });

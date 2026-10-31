@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Magic3D">
+  <title>Magic3D</title>
+  <rect width="512" height="512" rx="112" fill="#ffffff"/>
+<g transform="translate(96 100) scale(3.2)">
+  <defs>
+    <linearGradient id="m3d-top" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#0a7a2a"/><stop offset="1" stop-color="#4be85c"/></linearGradient>
+    <linearGradient id="m3d-left" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3ccf4e"/><stop offset="1" stop-color="#0a4a1a"/></linearGradient>
+    <linearGradient id="m3d-vleft" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b6b26"/><stop offset="1" stop-color="#16b83c"/></linearGradient>
+    <linearGradient id="m3d-vright" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3ccf4e"/><stop offset="1" stop-color="#0a7a2a"/></linearGradient>
+    <linearGradient id="m3d-right" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1d6b33"/><stop offset="1" stop-color="#08361a"/></linearGradient>
+    <linearGradient id="m3d-pillar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#062a12"/><stop offset="1" stop-color="#16a33a"/></linearGradient>
+  </defs>
+  <g stroke="#ffffff" stroke-width="1.4" stroke-linejoin="round">
+    <polygon points="0,25.6 50,0 100,25.6 84,33 50,15.4 16,33" fill="url(#m3d-top)"/>
+    <polygon points="0,25.6 16,33 16,96 0,86.6" fill="url(#m3d-left)"/>
+    <polygon points="16,33 50,55.4 50,76 16,59.8" fill="url(#m3d-vleft)"/>
+    <polygon points="50,55.4 84,33 84,59.8 50,76" fill="url(#m3d-vright)"/>
+    <polygon points="84,33 100,25.6 100,86.6 84,96" fill="url(#m3d-right)"/>
+    <polygon points="18.5,62.5 29.5,68.6 29.5,91.5 18.5,97.6" fill="url(#m3d-pillar)"/>
+    <polygon points="70.5,68.6 81.5,62.5 81.5,97.6 70.5,91.5" fill="url(#m3d-pillar)"/>
+  </g>
+</g>
+</svg>

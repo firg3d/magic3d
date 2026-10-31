@@ -24,9 +24,9 @@ På en tablet eller telefon zoomer to fingre (spred og knib) og flytter visninge
 
 Én finger på tom plads drejer visningen, og et tryk dér rydder markeringen.
 
-En tegneplade med en pen opfører sig som en mus: spidsen er venstre knap, sideknappen på pennen er højre knap, til at dreje visningen og til menuen. Pladens genvejstaster kan sættes i dens driver til layerlings [tastaturgenveje](chapter:shortcuts).
+En tegneplade med en pen opfører sig som en mus: spidsen er venstre knap, sideknappen på pennen er højre knap, til at dreje visningen og til menuen. Pladens genvejstaster kan sættes i dens driver til Magic3D [tastaturgenveje](chapter:shortcuts).
 
-**På en tablet: arbejd med en stylus, hvis du kan.** Spidsen er langt finere end en fingertip og dækker ikke det, du sigter på, så små punkter, tynde linjer og håndtag i en skitse samt målepunkter og kanter rammes præcist, og længere arbejde er mindre trættende. layerling lader allerede en finger nå lidt længere ud til punkter, linjer, håndtag og kanter end en musepeger gør, men en stylus er stadig den mest præcise vej. Det gælder en pen, som tabletten kender som en pen (en S Pen, en Apple Pencil og lignende). En almindelig stylus med gummispids tæller som en finger for skærmen og er ikke finere end en.
+**På en tablet: arbejd med en stylus, hvis du kan.** Spidsen er langt finere end en fingertip og dækker ikke det, du sigter på, så små punkter, tynde linjer og håndtag i en skitse samt målepunkter og kanter rammes præcist, og længere arbejde er mindre trættende. Magic3D lader allerede en finger nå lidt længere ud til punkter, linjer, håndtag og kanter end en musepeger gør, men en stylus er stadig den mest præcise vej. Det gælder en pen, som tabletten kender som en pen (en S Pen, en Apple Pencil og lignende). En almindelig stylus med gummispids tæller som en finger for skærmen og er ikke finere end en.
 
 Der er ingen højre museknap på en tablet: hold en finger stille på en form eller på tom plads i et halvt sekund, så åbner den menu, som et højreklik åbner, med **Vælg alle** på tom plads. **Vælg flere** i samme menu erstatter Shift på en tablet: hvert tryk på en form lægger den så til markeringen eller tager den ud igen, indtil du trykker på tom plads eller trykker [[Esc]]; en finger på tom plads drejer stadig visningen. Håndtagene rundt om en valgt form kan du gribe med en finger lidt ved siden af dem.
 
@@ -114,15 +114,15 @@ Tandhjulet i titellinjen ({{ui:editor.workspaceSettings}}) åbner indstillingern
 
 ### Udseende: hurtig tilstand
 
-{{ui:workspace.fastMode}} er til langsommere computere. Den slår skygger, kantlinjer på alle former og kameraets inerti fra og tegner kun visningen i skærmopløsning. Dine egne indstillinger gemmes til senere, og de kontakter den overskriver siger {{ui:workspace.offInFastMode}}, mens den er slået til. Mere om hvad der hjælper på en langsom computer står under "Når layerling føles langsom" nedenfor.
+{{ui:workspace.fastMode}} er til langsommere computere. Den slår skygger, kantlinjer på alle former og kameraets inerti fra og tegner kun visningen i skærmopløsning. Dine egne indstillinger gemmes til senere, og de kontakter den overskriver siger {{ui:workspace.offInFastMode}}, mens den er slået til. Mere om hvad der hjælper på en langsom computer står under "Når Magic3D føles langsom" nedenfor.
 
 ### Udseende: farver i arbejdsområdet og i skitsen
 
-Arbejdsområdets farver sættes under {{ui:workspace.appearance}}: {{ui:workspace.backgroundColor}} og {{ui:workspace.surfaceColor}} for det lyse tema (de mørke temaer beholder deres egne), ved siden af gitterfarven under {{ui:workspace.workplane}}. Hver farve er en knap, der viser farven. Et klik åbner et lille vindue med farvefeltet, en række færdige farver, et felt til hex-værdien og en pil, der sætter farven tilbage til den, layerling startede med. [[Enter]] tager en tastet hex-værdi, og det gør også et klik uden for vinduet.
+Arbejdsområdets farver sættes under {{ui:workspace.appearance}}: {{ui:workspace.backgroundColor}} og {{ui:workspace.surfaceColor}} for det lyse tema (de mørke temaer beholder deres egne), ved siden af gitterfarven under {{ui:workspace.workplane}}. Hver farve er en knap, der viser farven. Et klik åbner et lille vindue med farvefeltet, en række færdige farver, et felt til hex-værdien og en pil, der sætter farven tilbage til den, Magic3D startede med. [[Enter]] tager en tastet hex-værdi, og det gør også et klik uden for vinduet.
 
 Skitsevisningen har sine egne farver: {{ui:workspace.sketchBackground}} for vinduet omkring arket, {{ui:workspace.sketchPlateColor}} for arket under gitteret, og {{ui:workspace.sketchGridColor}}, alle for det lyse tema. {{ui:workspace.sketchMatch}} tager arbejdsområdets tre farver i ét klik.
 
-{{ui:workspace.classicLook}} sætter arbejdsområdet op som Tinkercad viser det: hvid bund, et lyseblåt millimetergitter med en mørkere linje hver centimeter, sorte kantlinjer, lys fra oven med bløde skygger. Hver værdi kan stadig ændres for sig bagefter. Alle starter som layerling altid har set ud, og hvad der passer dig afhænger af din skærm.
+{{ui:workspace.classicLook}} sætter arbejdsområdet op som Tinkercad viser det: hvid bund, et lyseblåt millimetergitter med en mørkere linje hver centimeter, sorte kantlinjer, lys fra oven med bløde skygger. Hver værdi kan stadig ændres for sig bagefter. Alle starter som Magic3D altid har set ud, og hvad der passer dig afhænger af din skærm.
 
 ![Indstillingerne under Udseende: baggrunds- og arbejdsplanfarver for det lyse tema, og kontakten for kantlinjer på alle former.](shot:settings-appearance)
 
@@ -172,7 +172,7 @@ Skitsevisningen har sine egne farver: {{ui:workspace.sketchBackground}} for vind
 
 Under {{ui:workspace.measurement}} sætter du {{ui:workspace.units}}, den enhed mål vises i ({{ui:workspace.scale}}: millimeter, centimeter eller meter i det metriske system, tommer eller fod i det imperative), hvor mange decimaler et tal viser ({{ui:workspace.accuracy}}), det {{ui:workspace.snapGrid}}, som flytning og skalering snapper til, og dine egne snap-trin under {{ui:workspace.customSnapGrids}}.
 
-Under {{ui:workspace.measurement}} i indstillingerne sætter du {{ui:workspace.units}}. Med {{ui:units.imperial}} viser layerling hvert mål i tommer, på formen, i egenskabspanelet, på målebåndet og linealen. Snapgitteret tilbyder så trin fra 1/64 til 1 tomme, og gitteret på pladen tegnes i tommer (1/8 til 1 tomme, 1/4 tomme som standard) med en stærkere linje hver hele tomme. Under {{ui:workspace.inchFormat}} vælger du om tommer vises som brøker som i Tinkercad (1 5/8, afrundet til 1/64 tomme) eller som decimaler (1.625) med så mange decimaler som sat under {{ui:workspace.accuracy}}. Du kan taste begge dele, "1 5/8" inkluderet. Hurtigere skifter du mellem millimeter og tommer med den lille kontakt **mm | in** ved siden af {{ui:inspector.snapGrid}} nederst i egenskabsvinduet: Den ændrer enheden, pladens gitter og fangtrinnet som indstillingerne, for dette design.
+Under {{ui:workspace.measurement}} i indstillingerne sætter du {{ui:workspace.units}}. Med {{ui:units.imperial}} viser Magic3D hvert mål i tommer, på formen, i egenskabspanelet, på målebåndet og linealen. Snapgitteret tilbyder så trin fra 1/64 til 1 tomme, og gitteret på pladen tegnes i tommer (1/8 til 1 tomme, 1/4 tomme som standard) med en stærkere linje hver hele tomme. Under {{ui:workspace.inchFormat}} vælger du om tommer vises som brøker som i Tinkercad (1 5/8, afrundet til 1/64 tomme) eller som decimaler (1.625) med så mange decimaler som sat under {{ui:workspace.accuracy}}. Du kan taste begge dele, "1 5/8" inkluderet. Hurtigere skifter du mellem millimeter og tommer med den lille kontakt **mm | in** ved siden af {{ui:inspector.snapGrid}} nederst i egenskabsvinduet: Den ændrer enheden, pladens gitter og fangtrinnet som indstillingerne, for dette design.
 
 Under {{ui:workspace.customSnapGrids}} samme sted tilføjer du dine egne snap-trin: et navn og en størrelse i millimeter, for eksempel "Pin pitch 2,54 mm" for afstanden mellem DIP-chips, pin headers og perfboard-huller, eller "MX Key Unit" med 19,05 mm for afstanden mellem tastaturtaster. Snap-trinsmenuen tilbyder så det mål helt, halvt og kvart (1 ×, ½ × og ¼ ×), så former kan flyttes med en pitch, en halv pitch eller en kvart pitch. Vil du kun have målet selv, fjerner du flueben ved {{ui:workspace.customSnapGridParts}} ved siden af det; menuen har så kun det ene trin. Brugerdefinerede trin gemmes med designet og følger med {{ui:workspace.makeDefault}}.
 
@@ -198,9 +198,9 @@ Under {{ui:workspace.shapeDefaults}} vælger du en form med {{ui:workspace.shape
 
 Under {{ui:workspace.history}} sætter skyderen {{ui:workspace.savedHistory}}, hvor mange afsluttede handlinger der forbliver tilgængelige for fortryd, efter du har gemt eller genåbnet et design. Standarden er 100 handlinger i et design. En lavere grænse fjerner permanent de ældre fortryd-trin i designet.
 
-## Når layerling føles langsom
+## Når Magic3D føles langsom
 
-layerling beregner og tegner alt i din browser. På en ældre computer, med et svagt grafikkort eller på flere store skærme kan visningen derfor føles sløv. Det her hjælper:
+Magic3D beregner og tegner alt i din browser. På en ældre computer, med et svagt grafikkort eller på flere store skærme kan visningen derfor føles sløv. Det her hjælper:
 
 - **{{ui:workspace.fastMode}}** under {{ui:workspace.appearance}} slår med det samme alt fra hvad visningen koster meget: skygger, kantlinjer på alle former og kameraets inerti. Den tegner også kun visningen ved skærmens egen opløsning, hvilket på højopløsningsskærme er op til fire gange færre pixels. Dine egne indstillinger gemmes og gælder igen så snart du slår det fra.
 - **Kameraet bliver ved med at dreje:** Når du slipper musen efter at have drejet, fortsætter visningen et øjeblik og stopper blødt. Det er med vilje, ikke hakken. Hvis du er vant til Tinkercad eller Fusion 360, så slå {{ui:workspace.cameraInertia}} fra under {{ui:workspace.appearance}}, og visningen stopper med det samme.

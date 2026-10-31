@@ -10,9 +10,9 @@
   gap: 8px;
   margin: 0 0 14px;
   padding: 8px 10px;
-  color: #6f5840;
-  background: #fff4e3;
-  border: 1px solid #e3b77c;
+  color: #4c6154;
+  background: #e9f9ef;
+  border: 1px solid #59d586;
   border-radius: 8px;
 }
 
@@ -24,17 +24,17 @@
 .dashboard-select-bar button {
   height: 34px;
   padding: 0 12px;
-  color: #6f5840;
+  color: #4c6154;
   font: inherit;
   font-size: 14px;
   background: #ffffff;
-  border: 1px solid #e3d7c4;
+  border: 1px solid #cedcd3;
   border-radius: 6px;
   cursor: pointer;
 }
 
 .dashboard-select-bar button:hover:not(:disabled) {
-  border-color: #c9731d;
+  border-color: #279c52;
 }
 
 .dashboard-select-bar button:disabled {
@@ -51,8 +51,8 @@
 /* The button stays pressed while the selection is on. */
 .dashboard-select.active {
   color: #ffffff;
-  background: #c9731d;
-  border-color: #c9731d;
+  background: #279c52;
+  border-color: #279c52;
 }
 
 /* A card in the selection: the whole card is the target, and a tick shows what is chosen. */
@@ -61,8 +61,8 @@
 }
 
 .project-card.selected {
-  border-color: #c9731d;
-  box-shadow: 0 0 0 2px rgba(201, 115, 29, 0.55);
+  border-color: #279c52;
+  box-shadow: 0 0 0 2px rgba(39, 156, 82, 0.55);
 }
 
 .project-card-check {
@@ -75,30 +75,30 @@
   place-items: center;
   color: transparent;
   background: rgba(255, 255, 255, 0.94);
-  border: 2px solid #b59c83;
+  border: 2px solid #8fa697;
   border-radius: 6px;
   pointer-events: none;
 }
 
 .project-card.selected .project-card-check {
   color: #ffffff;
-  background: #c9731d;
-  border-color: #c9731d;
+  background: #279c52;
+  border-color: #279c52;
 }
 
 html[data-theme="dark"] .dashboard-select-bar {
-  color: #e8dccb;
-  background: #3a2c1c;
-  border-color: #7a5a30;
+  color: #d5e0d9;
+  background: #243229;
+  border-color: #4a6654;
 }
 
 html[data-theme="dark"] .dashboard-select-bar button {
-  color: #e8dccb;
-  background: #2a2118;
-  border-color: #5a4630;
+  color: #d5e0d9;
+  background: #1d241f;
+  border-color: #3b4e42;
 }
 
 html[data-theme="dark"] .project-card-check {
-  background: rgba(42, 33, 24, 0.94);
-  border-color: #8b7458;
+  background: rgba(29, 36, 31, 0.94);
+  border-color: #667d6f;
 }

@@ -3,21 +3,21 @@ title: Modelování s AI pomocí MCP
 summary: Jak AI asistent, například Claude nebo Codex, vytváří a upravuje tvary, slučuje je a pořizuje snímky v otevřeném editoru.
 ---
 
-Layerling obsahuje MCP server. MCP je standard, který umožňuje AI asistentovi používat nástroje jiných programů. Claude, Codex a další klienti tak mohou pracovat v otevřeném editoru: vytvářet tvary, měnit rozměry, slučovat, odečítat, zaoblovat hrany, číst scénu a pořizovat snímky. Vy popíšete díl, AI jej sestavuje a vy můžete postup sledovat a kdykoliv zasáhnout.
+Magic3D obsahuje MCP server. MCP je standard, který umožňuje AI asistentovi používat nástroje jiných programů. Claude, Codex a další klienti tak mohou pracovat v otevřeném editoru: vytvářet tvary, měnit rozměry, slučovat, odečítat, zaoblovat hrany, číst scénu a pořizovat snímky. Vy popíšete díl, AI jej sestavuje a vy můžete postup sledovat a kdykoliv zasáhnout.
 
 Most mezi AI klientem a editorem běží **lokálně na vašem počítači**. Co však AI přečte, tedy scénu a snímky, se odesílá poskytovateli AI stejně jako ostatní vstupy v daném klientovi.
 
-> **Důležité:** MCP je dostupné ve vývojovém serveru, který si spustíte sami. Na layerling.com a statickém hostingu je vypnuté. Vlastní server, například Docker na NASu, jej může zpřístupnit s přístupovým tokenem; viz část o instalaci na NASu níže.
+> **Důležité:** MCP je dostupné ve vývojovém serveru, který si spustíte sami. Na magic3d.ro a statickém hostingu je vypnuté. Vlastní server, například Docker na NASu, jej může zpřístupnit s přístupovým tokenem; viz část o instalaci na NASu níže.
 
 ## Nastavení
 
-1. Stáhněte Layerling z [GitHubu](https://github.com/henmedia/layerling) a ve složce projektu spusťte `npm run dev`. Je potřeba Node.js. Ve Windows jeho instalaci zajistí příkaz pro rychlé spuštění z README.
+1. Stáhněte Magic3D z [GitHubu](https://github.com/henmedia/layerling) a ve složce projektu spusťte `npm run dev`. Je potřeba Node.js. Ve Windows jeho instalaci zajistí příkaz pro rychlé spuštění z README.
 2. Otevřete editor, například `http://127.0.0.1:3000/?editor=1`. Může to udělat i AI: první nástroj vyžadující editor otevře prohlížeč a počká na připojení. Funguje to pro místní instalaci; na NASu či serveru musíte editor otevřít sami. Automatické otevření vypnete nastavením `LAYERLING_MCP_OPEN_EDITOR=0` pro MCP server.
 3. Připojte AI klienta k MCP serveru. Klient jej spouští příkazem `node scripts/layerling-mcp-server.mjs`.
 
 ### Claude Code
 
-Projekt obsahuje registraci serveru v `.mcp.json` i dovednost v `.claude/skills/layerling-mcp-skill`. Stačí otevřít jeho složku v Claude Code a požádat například: „Pomocí nástrojů Layerling MCP vypiš otevřené editory a prohlédni scénu.“
+Projekt obsahuje registraci serveru v `.mcp.json` i dovednost v `.claude/skills/layerling-mcp-skill`. Stačí otevřít jeho složku v Claude Code a požádat například: „Pomocí nástrojů Magic3D MCP vypiš otevřené editory a prohlédni scénu.“
 
 ### Claude Desktop
 
@@ -37,7 +37,7 @@ Editory může vypisovat a ovládat jen klient se správným tokenem. Samotné s
 
 ## Co AI dokáže
 
-AI používá stejné funkce a stejné zpracování příkazů jako ruční ovládání editoru. Nové funkce Layerlingu dostávají odpovídající akce MCP. Dostupné nástroje:
+AI používá stejné funkce a stejné zpracování příkazů jako ruční ovládání editoru. Nové funkce Magic3D dostávají odpovídající akce MCP. Dostupné nástroje:
 
 | Nástroj | Funkce |
 | --- | --- |

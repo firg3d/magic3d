@@ -13,7 +13,7 @@ Três coisas acontecem:
 
 - O plano de trabalho assume o tamanho da mesa de impressão.
 - No canto do plano de trabalho aparecem o nome da impressora e o volume de impressão dela. Se o texto atrapalhar, desligue-o com {{ui:workspace.showPlateLabels}} em {{ui:workspace.workplane}}; isso vale também para o nome do projeto, na frente à esquerda.
-- layerling **avisa** quando algo não cabe.
+- Magic3D **avisa** quando algo não cabe.
 
 Os perfis de impressora vêm do OrcaSlicer, então são os mesmos que o seu fatiador conhece. Se preferir trabalhar sem impressora, escolha {{ui:workspace.printerNone}}. Você também pode definir o tamanho do plano de trabalho à mão.
 
@@ -46,7 +46,7 @@ Algumas regras práticas para a direção de impressão:
 
 No menu ao lado do olho ({{ui:editor.group.visibility}}), **Mostrar saliências** liga a exibição das saliências. Toda face que aponta para baixo com inclinação maior que 45° fica então hachurada em vermelho e branco: é ali que a impressora precisaria de suportes. O que está apoiado na mesa fica sem marcação. Assim você vê, enquanto modela, se uma esfera, um arco ou um furo horizontal imprime sem suportes; o [furo em gota](chapter:threads-and-mechanics) foi feito exatamente para isso. Gire a peça ou deite-a sobre outra face com {{ui:editor.tool.layFlat}}, e a hachura acompanha na hora.
 
-A inclinação que a sua impressora aguenta é definida nas configurações, em {{ui:workspace.appearance}}: de 30° (cuidadoso) a 70° (para impressoras com boa refrigeração da peça). Uma face apoiada em outro sólido continua marcada: layerling só olha para a própria face.
+A inclinação que a sua impressora aguenta é definida nas configurações, em {{ui:workspace.appearance}}: de 30° (cuidadoso) a 70° (para impressoras com boa refrigeração da peça). Uma face apoiada em outro sólido continua marcada: Magic3D só olha para a própria face.
 
 ## Espessura de parede, folga e chanfros
 

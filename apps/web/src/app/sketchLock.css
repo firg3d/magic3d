@@ -1,13 +1,13 @@
-/* Locked outlines in a sketch (#653), shown as a locked body in the 3D editor: the same greys
+/* Locked outlines in a sketch (#455d4d), shown as a locked body in the 3D editor: the same greys
    (.transform-overlay.locked), handles that stay put and do nothing, and a padlock on the selection. */
 .sketch-plate {
-  --locked-handle-ink: #a59c92;
-  --locked-handle-fill: #e4e0da;
+  --locked-handle-ink: #979f9a;
+  --locked-handle-fill: #dde2df;
 }
 
 html[data-theme="dark"] .sketch-plate {
-  --locked-handle-ink: #7d7368;
-  --locked-handle-fill: #4a4037;
+  --locked-handle-ink: #6d7771;
+  --locked-handle-fill: #3b443e;
 }
 
 /* A locked outline is paler, in any theme, so it reads as fixed. */

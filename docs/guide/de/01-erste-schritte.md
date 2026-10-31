@@ -3,17 +3,17 @@ title: Erste Schritte
 summary: Vom leeren Blatt zum ersten Teil für den 3D-Drucker – in fünf Minuten, ohne Konto und ohne Installation.
 ---
 
-layerling ist ein Konstruktionsprogramm für den 3D-Druck, das direkt im Browser läuft. Du baust ein Teil aus einfachen Formen, schneidest Löcher hinein, rundest die Kanten und schickst es an den Slicer. Es gibt nichts zu installieren und nichts anzumelden. Was du baust, bleibt auf deinem Rechner.
+Magic3D ist ein Konstruktionsprogramm für den 3D-Druck, das direkt im Browser läuft. Du baust ein Teil aus einfachen Formen, schneidest Löcher hinein, rundest die Kanten und schickst es an den Slicer. Es gibt nichts zu installieren und nichts anzumelden. Was du baust, bleibt auf deinem Rechner.
 
-![Die Startseite von layerling: oben „Neuen 3D-Entwurf anlegen“, darunter die eigenen Entwürfe und die Kurzanleitung.](shot:start-page)
+![Die Startseite von Magic3D: oben „Neuen 3D-Entwurf anlegen“, darunter die eigenen Entwürfe und die Kurzanleitung.](shot:start-page)
 
 ## Einen Entwurf anlegen
 
-Öffne [layerling.com](https://layerling.com/). Auf der Startseite klickst du auf {{ui:dashboard.createDesign}}. Damit öffnet sich der Editor mit einer leeren Arbeitsebene, dem Gitter, auf dem alles entsteht.
+Öffne [magic3d.ro](https://magic3d.ro/). Auf der Startseite klickst du auf {{ui:dashboard.createDesign}}. Damit öffnet sich der Editor mit einer leeren Arbeitsebene, dem Gitter, auf dem alles entsteht.
 
 Hast du schon eine Datei, die du weiterbearbeiten willst, nimmst du {{ui:dashboard.importGeometry}}. Das geht mit layerling-Entwürfen (`.lyl`) genauso wie mit STL-, OBJ-, 3MF-, STEP- oder SVG-Dateien.
 
-Alle deine Entwürfe erscheinen später auf der Startseite mit einem Vorschaubild. Sie liegen im Speicher deines Browsers und werden bei jeder Änderung automatisch gesichert. Ein Knopf zum Speichern gibt es deshalb nicht. **layerling übernimmt keine Verantwortung für Entwürfe, die im Browser gespeichert sind.** Ein Browser kann Fehler machen, und ein Update kann Probleme bereiten. Sichere deine Entwürfe deshalb von Zeit zu Zeit mit {{ui:dashboard.backupAll}} auf der Startseite oder speichere sie als Dateien. Eine Sicherung holst du mit {{ui:dashboard.restoreBackup}} zurück. Wie du Entwürfe in eine Datei packst und weitergibst, steht im Kapitel [Dateien und Speichern](chapter:dateien-und-speichern). Wenn du eine Gedächtnisstütze möchtest, schalte in den Einstellungen (Zahnrad im Band) {{ui:workspace.confirmTabClose}} ein: Der Browser fragt dann, bevor ein Tab mit offenem Entwurf geschlossen oder neu geladen wird.
+Alle deine Entwürfe erscheinen später auf der Startseite mit einem Vorschaubild. Sie liegen im Speicher deines Browsers und werden bei jeder Änderung automatisch gesichert. Ein Knopf zum Speichern gibt es deshalb nicht. **Magic3D übernimmt keine Verantwortung für Entwürfe, die im Browser gespeichert sind.** Ein Browser kann Fehler machen, und ein Update kann Probleme bereiten. Sichere deine Entwürfe deshalb von Zeit zu Zeit mit {{ui:dashboard.backupAll}} auf der Startseite oder speichere sie als Dateien. Eine Sicherung holst du mit {{ui:dashboard.restoreBackup}} zurück. Wie du Entwürfe in eine Datei packst und weitergibst, steht im Kapitel [Dateien und Speichern](chapter:dateien-und-speichern). Wenn du eine Gedächtnisstütze möchtest, schalte in den Einstellungen (Zahnrad im Band) {{ui:workspace.confirmTabClose}} ein: Der Browser fragt dann, bevor ein Tab mit offenem Entwurf geschlossen oder neu geladen wird.
 
 ## Der Editor im Überblick
 
@@ -47,7 +47,7 @@ Fahre mit der Maus über einen Knopf, dann siehst du seinen Namen. Wenn du nicht
 
 ### Farbschema
 
-{{ui:common.theme}} ganz oben bestimmt, wie layerling aussieht: wie dein System, hell, dunkel oder Graphit.
+{{ui:common.theme}} ganz oben bestimmt, wie Magic3D aussieht: wie dein System, hell, dunkel oder Graphit.
 
 ### Entwurf umbenennen
 
@@ -83,7 +83,7 @@ Der Schalter **mm | in** neben {{ui:inspector.snapGrid}} ändert die Einheit, da
 
 ### Die Fußzeile
 
-Am Fuß des Fensters: {{ui:dashboard.sponsor}} führt zur Seite, auf der du das Projekt unterstützen kannst; {{ui:dashboard.userGuide}} öffnet diese Anleitung; {{ui:dashboard.forum}} führt zum Ort für Fragen, Ideen und Fehlermeldungen (die Diskussionen auf GitHub, auf Deutsch das Forum von drucktipps3d); {{ui:editor.bugReport}} macht ein ZIP für eine Fehlermeldung; {{ui:dashboard.projectOnGitHub}} führt zum Projekt auf GitHub, und die Versionsnummer öffnet die Versionshinweise. Die Links zu Impressum und Datenschutz gehören dem, der die Kopie von layerling betreibt, die du benutzt.
+Am Fuß des Fensters: {{ui:dashboard.sponsor}} führt zur Seite, auf der du das Projekt unterstützen kannst; {{ui:dashboard.userGuide}} öffnet diese Anleitung; {{ui:dashboard.forum}} führt zum Ort für Fragen, Ideen und Fehlermeldungen (die Diskussionen auf GitHub, auf Deutsch das Forum von drucktipps3d); {{ui:editor.bugReport}} macht ein ZIP für eine Fehlermeldung; {{ui:dashboard.projectOnGitHub}} führt zum Projekt auf GitHub, und die Versionsnummer öffnet die Versionshinweise. Die Links zu Impressum und Datenschutz gehören dem, der die Kopie von Magic3D betreibt, die du benutzt.
 
 ## Dein erstes Teil
 
@@ -103,9 +103,9 @@ Genau so entstehen Bohrungen, Nuten und Taschen. Das Kapitel [Körper und Ausspa
 
 ## Neu seit deinem letzten Besuch
 
-Wenn du layerling nach einer Aktualisierung wieder öffnest, zeigt dir eine Karte auf der Startseite, was seit deinem letzten Besuch dazugekommen ist: jede Version seitdem, die neueste zuerst. Warst du lange weg, rollst du in der Karte nach unten. Darunter holt {{ui:whatsNew.earlier}} auch die Versionen von vor deinem letzten Besuch dazu. Mit {{ui:whatsNew.dismiss}} schließt du sie, und sie bleibt bis zur nächsten Aktualisierung weg. {{ui:whatsNew.footerLink}} in der Fußzeile der Startseite zeigt die letzten Neuerungen jederzeit wieder. Der Browser merkt sich die zuletzt gesehene Version, und nichts über dich verlässt ihn.
+Wenn du Magic3D nach einer Aktualisierung wieder öffnest, zeigt dir eine Karte auf der Startseite, was seit deinem letzten Besuch dazugekommen ist: jede Version seitdem, die neueste zuerst. Warst du lange weg, rollst du in der Karte nach unten. Darunter holt {{ui:whatsNew.earlier}} auch die Versionen von vor deinem letzten Besuch dazu. Mit {{ui:whatsNew.dismiss}} schließt du sie, und sie bleibt bis zur nächsten Aktualisierung weg. {{ui:whatsNew.footerLink}} in der Fußzeile der Startseite zeigt die letzten Neuerungen jederzeit wieder. Der Browser merkt sich die zuletzt gesehene Version, und nichts über dich verlässt ihn.
 
-Bei einer Kopie von layerling auf deinem eigenen Rechner oder Server hat der Hinweis „Update verfügbar“ einen Knopf, {{ui:update.previewShow}}, der auflistet, was das Update bringt, bevor du es einspielst. Die Liste wird nur beim Drücken des Knopfs von GitHub geholt.
+Bei einer Kopie von Magic3D auf deinem eigenen Rechner oder Server hat der Hinweis „Update verfügbar“ einen Knopf, {{ui:update.previewShow}}, der auflistet, was das Update bringt, bevor du es einspielst. Die Liste wird nur beim Drücken des Knopfs von GitHub geholt.
 
 ## Vom Entwurf zum Druck
 

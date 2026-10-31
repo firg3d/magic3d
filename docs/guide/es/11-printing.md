@@ -13,7 +13,7 @@ Pasan tres cosas:
 
 - El plano de trabajo toma el tamaño de la cama.
 - En la esquina del plano de trabajo aparecen el nombre de la impresora y su volumen de impresión. Si el texto te estorba, desactívalo con {{ui:workspace.showPlateLabels}}, en {{ui:workspace.workplane}}; eso vale también para el nombre del diseño, delante a la izquierda.
-- layerling te **avisa** cuando algo no cabe.
+- Magic3D te **avisa** cuando algo no cabe.
 
 Los perfiles de impresora vienen de OrcaSlicer, así que son los mismos que conoce tu laminador (*slicer*). Si prefieres trabajar sin impresora, elige {{ui:workspace.printerNone}}. También puedes fijar a mano el tamaño del plano de trabajo.
 
@@ -46,7 +46,7 @@ Unas cuantas reglas prácticas para la orientación:
 
 En el menú que hay junto al ojo ({{ui:editor.group.visibility}}), **Mostrar voladizos** marca los voladizos. Toda cara que mire hacia abajo con una inclinación de más de 45° aparece entonces rayada en rojo y blanco: ahí la impresora necesitaría soportes. Lo que se apoya en la cama queda sin marcar. Así ves ya mientras diseñas si una esfera, un arco o un orificio horizontal se imprime sin soportes; el [orificio en lágrima](chapter:threads-and-mechanics) está pensado justo para eso. Gira la pieza o apóyala sobre otra cara con {{ui:editor.tool.layFlat}}, y el rayado se actualiza al momento.
 
-La inclinación que aguanta tu impresora se fija en los ajustes, en {{ui:workspace.appearance}}: de 30° (prudente) a 70° (para impresoras con buena refrigeración de capa). Una cara que se apoya sobre otro cuerpo se marca igualmente: layerling solo mira la propia cara.
+La inclinación que aguanta tu impresora se fija en los ajustes, en {{ui:workspace.appearance}}: de 30° (prudente) a 70° (para impresoras con buena refrigeración de capa). Una cara que se apoya sobre otro cuerpo se marca igualmente: Magic3D solo mira la propia cara.
 
 ## Grosor de pared, holgura y chaflanes
 

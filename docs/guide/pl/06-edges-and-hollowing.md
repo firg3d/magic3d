@@ -33,9 +33,9 @@ W panelu znajdziesz:
 - {{ui:edge.keepSize}} zachowuje fazkę albo zaokrąglenie w obecnym rozmiarze, nawet jeśli później przeskalujesz bryłę.
 - {{ui:edge.previewQuality}} ({{ui:edge.draft}}, {{ui:edge.standard}} albo {{ui:edge.fine}}) decyduje, jak dokładnie liczony jest podgląd. Przy trudnych częściach {{ui:edge.draft}} jest szybsza.
 
-Gdy zmieniasz rozmiar, layerling przelicza podgląd. Może to chwilę potrwać. Możesz dalej zmieniać wartość, a liczona będzie ostatnia wybrana.
+Gdy zmieniasz rozmiar, Magic3D przelicza podgląd. Może to chwilę potrwać. Możesz dalej zmieniać wartość, a liczona będzie ostatnia wybrana.
 
-Jeśli rozmiar jest za duży dla krawędzi, layerling o tym informuje i proponuje mniejszą wartość. Często wystarczy milimetr albo dwa mniej. Przy ostrych kątach zaokrąglenie potrzebuje więcej miejsca, niż sugeruje jego promień. Na małym ekranie panel sam przewija się w dół, żeby komunikat był widoczny.
+Jeśli rozmiar jest za duży dla krawędzi, Magic3D o tym informuje i proponuje mniejszą wartość. Często wystarczy milimetr albo dwa mniej. Przy ostrych kątach zaokrąglenie potrzebuje więcej miejsca, niż sugeruje jego promień. Na małym ekranie panel sam przewija się w dół, żeby komunikat był widoczny.
 
 Gdy wybór, który działał, przestaje działać po kliknięciu jeszcze jednej krawędzi, ta krawędź robi się czerwona i grubsza: to ona nie daje się obrobić razem z pozostałymi w tym rozmiarze. Kliknij ją ponownie, aby ją wyłączyć, albo zmniejsz rozmiar. Jeśli klikasz kolejne krawędzie, gdy komunikat jest widoczny, pierwsza zostaje czerwona. Gdy nie ma wcześniejszego wyboru, który działał (pierwsze kliknięcie albo rozmiar, który właśnie zwiększyłeś), na czerwono robią się krawędzie, które nie działają nawet same, albo wszystkie, jeśli problemem jest tylko ich połączenie.
 
@@ -51,7 +51,7 @@ Obok fazki, zaokrąglenia albo wydrążenia jest też {{ui:edge.editAction}}. Co
 
 Na grupie, na przykład walcu z otworem, obrobiona krawędź należy do gotowej bryły, a nie do jednej z jej części. Grupa staje się więc jedną bryłą. {{ui:editor.tool.ungroup}} nadal na niej działa: najpierw cofa obróbki krawędzi, a potem rozwiązuje grupę, w jednym kroku, który cofa [[Ctrl]]+[[Z]]. Cofnij obróbkę, jak opisano wyżej, a grupa wróci ze wszystkimi częściami. Najprościej obrabiać krawędzie na końcu. Dotyczy to też gwintów: narzędzie krawędzi bierze gwint jako jego dokładną bryłę, więc klocek z otworem gwintowanym dostaje zaokrąglone krawędzie z gwintem na miejscu. Wyliczenie krawędzi gwintu trwa dłużej niż zwykłego kształtu, kilka sekund dla M6 i około pół minuty dla gwintu rurowego G1/2.
 
-> **Warto wiedzieć:** layerling używa do zaokrągleń i fazek prawdziwej geometrii CAD, a nie tylko siatki trójkątów. Dlatego zaokrąglona krawędź pozostaje zaokrągloną krawędzią w eksporcie STEP.
+> **Warto wiedzieć:** Magic3D używa do zaokrągleń i fazek prawdziwej geometrii CAD, a nie tylko siatki trójkątów. Dlatego zaokrąglona krawędź pozostaje zaokrągloną krawędzią w eksporcie STEP.
 
 Część zaimportowana jako STEP też zachowuje geometrię CAD: fazowanie, zaokrąglanie i drążenie działają na bryle z pliku, niezależnie od tego, jak dokładnie część jest rysowana na ekranie. STL, OBJ i 3MF niosą tylko trójkąty, a dokładnie narysowana część może być dla narzędzia krawędzi zbyt gęsta. Jeśli część jest dostępna także jako STEP, zaimportuj STEP.
 
@@ -69,19 +69,19 @@ Pudełka, kubki, obudowy i pokrywy mają jedną cechę wspólną: w środku są 
 
 Ścianki rosną do środka. Zewnętrzna strona zostaje bez zmian.
 
-{{ui:shell.edges}} mają znaczenie tylko tam, gdzie wewnętrzne ścianki się rozchodzą, czyli na stopniu bryły albo wokół otworu. Narożniki wnęki zwykłego prostopadłościanu są zawsze ostre, przy obu ustawieniach. Aby uzyskać zaokrąglone wnętrze, najpierw zaokrąglij zewnętrzne krawędzie bryły (zobacz wyżej), a potem ją wydrąż: wnętrze podąży za nimi z promieniem pomniejszonym o grubość ścianki. Jeśli zaokrąglonego wnętrza nie da się zbudować, co może się zdarzyć przy konturze z bardzo wielu krótkich prostych odcinków, na przykład obrysowanym rysunku, layerling buduje zamiast tego tę samą wydrążoną bryłę z ostrymi narożnikami wewnątrz.
+{{ui:shell.edges}} mają znaczenie tylko tam, gdzie wewnętrzne ścianki się rozchodzą, czyli na stopniu bryły albo wokół otworu. Narożniki wnęki zwykłego prostopadłościanu są zawsze ostre, przy obu ustawieniach. Aby uzyskać zaokrąglone wnętrze, najpierw zaokrąglij zewnętrzne krawędzie bryły (zobacz wyżej), a potem ją wydrąż: wnętrze podąży za nimi z promieniem pomniejszonym o grubość ścianki. Jeśli zaokrąglonego wnętrza nie da się zbudować, co może się zdarzyć przy konturze z bardzo wielu krótkich prostych odcinków, na przykład obrysowanym rysunku, Magic3D buduje zamiast tego tę samą wydrążoną bryłę z ostrymi narożnikami wewnątrz.
 
 ![Wynik: skorupa ze ścianką 3 mm, otwarta u góry.](shot:hollow-result)
 
 ![To samo pudełko z otwartym tylko przodem: wnęka na szufladę.](shot:hollow-sides)
 
-Dla każdej otwartej strony bryła potrzebuje płaskiej ściany na samym brzegu po tej stronie. Kul i kształtów swobodnych nie da się więc w ten sposób wydrążyć. Jeśli ścianka jest za gruba dla bryły, layerling o tym informuje i prosi o cieńszą. Taki przypadek to zaokrąglony prostopadłościan, którego górne i dolne krawędzie też są zaokrąglone: jego ścianka musi być wyraźnie cieńsza niż to zaokrąglenie, albo najpierw ustaw zaokrąglenie na 0.
+Dla każdej otwartej strony bryła potrzebuje płaskiej ściany na samym brzegu po tej stronie. Kul i kształtów swobodnych nie da się więc w ten sposób wydrążyć. Jeśli ścianka jest za gruba dla bryły, Magic3D o tym informuje i prosi o cieńszą. Taki przypadek to zaokrąglony prostopadłościan, którego górne i dolne krawędzie też są zaokrąglone: jego ścianka musi być wyraźnie cieńsza niż to zaokrąglenie, albo najpierw ustaw zaokrąglenie na 0.
 
 Bryłę z kieszenią (klocek z otworem, który nie przechodzi na wylot, zrobiony przez zgrupowanie prostopadłościanu z uniesionym otworem) też da się wydrążyć z otwartą górą: ścianki wokół kieszeni też zostają wydrążone, więc między zewnętrzną ścianką a kieszenią zostaje pierścień wnęki otwarty u góry, a pod dnem kieszeni leży cienka wnęka.
 
 **Bryły zakończone szpicem,** takie jak stożek albo obrócony trójkąt, nie mają na górze płaskiej ściany, która mogłaby zostać otwarta. Całkowicie zamknięta wnęka też tam nie zadziała, bo szpica nie da się odsunąć do środka: nawet przy ściance 1 mm dostaniesz komunikat, że ścianki nie mogą być tak grube. Zamiast tego wrysuj ściankę w profil przed obrotem: zduplikuj kontur, zmniejsz kopię równomiernie, ustaw ją na środku dużego konturu i wytnij nią duży, a potem obróć całość (rozdział Szkice, część o obracaniu szkicu). Odległość między oboma konturami to grubość ścianki.
 
-Jeśli później zmienisz rozmiar wydrążonej bryły, layerling od razu wydrąży ją ponownie w nowym rozmiarze. Ścianka zostaje tak gruba, jak wybrałeś, także w bryłach okrągłych. Walec rozciągnięty w jedną stronę bardziej niż w drugą staje się elipsą. Zaokrąglenia i fazki nałożone po drążeniu wracają na te same krawędzie.
+Jeśli później zmienisz rozmiar wydrążonej bryły, Magic3D od razu wydrąży ją ponownie w nowym rozmiarze. Ścianka zostaje tak gruba, jak wybrałeś, także w bryłach okrągłych. Walec rozciągnięty w jedną stronę bardziej niż w drugą staje się elipsą. Zaokrąglenia i fazki nałożone po drążeniu wracają na te same krawędzie.
 
 > **Wskazówka:** przy dyszy 0,4 mm dobrym początkiem jest ścianka od 1,2 do 2 mm: wystarczająco cienka, żeby oszczędzić materiał, i wystarczająco gruba na solidną część.
 
@@ -122,6 +122,6 @@ Zaokrąglenie, które przeszkadza, otwór w złym miejscu, występ, którego ju�
 
 Ściany wokół usuniętych rosną, aż luka się zamknie. Prostopadłościan z zaokrąglonymi górnymi krawędziami odzyskuje ostre krawędzie, otwór zostaje wypełniony, występ znika. Bryła pozostaje dokładna, więc da się ją znowu zaokrąglać i fazować, a eksport STEP zachowuje jej prawdziwe ściany. [[Ctrl]]+[[Z]] cofa usunięcie jednym krokiem. Jest ono też wymienione w {{ui:edge.featureHistory}} razem z zaokrągleniami i fazkami, gdzie {{ui:edge.revertAction}} je cofa. {{ui:edge.editAction}} dla niego nie ma. Na grupie wynikiem jest jedna bryła, tak jak przy obróbce krawędzi.
 
-Wybierz wszystkie ściany tego, co ma zniknąć, i tylko te. Jeśli ściany wokół nich nie mogą zamknąć luki, layerling o tym informuje i nic się nie zmienia. Na przykład główny bok prostopadłościanu nie ma sąsiada, który mógłby zająć jego miejsce. Usunięcie samego dna kieszeni zmienia ją w otwór na wylot, bo ścianki kieszeni biegną dalej na drugą stronę.
+Wybierz wszystkie ściany tego, co ma zniknąć, i tylko te. Jeśli ściany wokół nich nie mogą zamknąć luki, Magic3D o tym informuje i nic się nie zmienia. Na przykład główny bok prostopadłościanu nie ma sąsiada, który mógłby zająć jego miejsce. Usunięcie samego dna kieszeni zmienia ją w otwór na wylot, bo ścianki kieszeni biegną dalej na drugą stronę.
 
-{{ui:editor.tool.deleteFace}} potrzebuje dokładnych ścian: działa na częściach zaimportowanych jako STEP i na kształtach layerling. To, co layerling trzyma jako siatkę, ich nie ma: zaimportowany STL, OBJ albo 3MF, bryła podzielona, owinięta lub uproszczona albo bardzo szczegółowy kształt, taki jak długi tekst. Jeśli możesz, importuj część jako STEP. Przy szczegółowej zaimportowanej części kilka ścian może być dla jądra CAD za dużo: po 45 sekundach usuwanie zostaje przerwane i nic się nie zmienia. Bryła, której rozmiar zmieniono po obróbce krawędzi z zachowaniem rozmiaru krawędzi, nie ma w nowym rozmiarze dokładnych ścian, dopóki zmiana rozmiaru nie zostanie cofnięta.
+{{ui:editor.tool.deleteFace}} potrzebuje dokładnych ścian: działa na częściach zaimportowanych jako STEP i na kształtach Magic3D. To, co Magic3D trzyma jako siatkę, ich nie ma: zaimportowany STL, OBJ albo 3MF, bryła podzielona, owinięta lub uproszczona albo bardzo szczegółowy kształt, taki jak długi tekst. Jeśli możesz, importuj część jako STEP. Przy szczegółowej zaimportowanej części kilka ścian może być dla jądra CAD za dużo: po 45 sekundach usuwanie zostaje przerwane i nic się nie zmienia. Bryła, której rozmiar zmieniono po obróbce krawędzi z zachowaniem rozmiaru krawędzi, nie ma w nowym rozmiarze dokładnych ścian, dopóki zmiana rozmiaru nie zostanie cofnięta.

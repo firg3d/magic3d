@@ -3,7 +3,7 @@ title: Vormen plaatsen en aanpassen
 summary: De vormenbibliotheek, maten als getal en met grepen, kleur, draaien, taps maken en tordieren.
 ---
 
-Elk onderdeel in layerling begint met een vorm. Daarmee bouw je al het andere: vormen vullen elkaar aan, snijden elkaar weg of worden samengevoegd tot een nieuwe vorm.
+Elk onderdeel in Magic3D begint met een vorm. Daarmee bouw je al het andere: vormen vullen elkaar aan, snijden elkaar weg of worden samengevoegd tot een nieuwe vorm.
 
 ## Een vorm toevoegen
 
@@ -72,7 +72,7 @@ De kleuren van de werkruimte in de instellingen hebben een eigen, eenvoudiger kl
 
 ## Hoe rond is rond? Het aantal zijden
 
-Ronde vormen zoals cilinder, kegel, buis, ellips of de boringen hebben in hun eigenschappen de schakelaar {{ui:prop.sidesFollowSize}} en de schuifregelaar {{ui:prop.sides}}. De {{ui:shape.torus}} heeft er twee: {{ui:prop.torusSides}} rond de ring en {{ui:prop.torusSteps}} rond de buis. Ook daar volgen ze de grootte tot je ze vastzet, zodat een grote torus geen facetten toont. De reden: voor de weergave en voor STL, 3MF en OBJ tekent layerling een cirkel als een veelhoek met veel kleine zijden. Hoe meer zijden, hoe gladder, en hoe meer driehoeken het kost.
+Ronde vormen zoals cilinder, kegel, buis, ellips of de boringen hebben in hun eigenschappen de schakelaar {{ui:prop.sidesFollowSize}} en de schuifregelaar {{ui:prop.sides}}. De {{ui:shape.torus}} heeft er twee: {{ui:prop.torusSides}} rond de ring en {{ui:prop.torusSteps}} rond de buis. Ook daar volgen ze de grootte tot je ze vastzet, zodat een grote torus geen facetten toont. De reden: voor de weergave en voor STL, 3MF en OBJ tekent Magic3D een cirkel als een veelhoek met veel kleine zijden. Hoe meer zijden, hoe gladder, en hoe meer driehoeken het kost.
 
 {{ui:prop.torusTube}} bepaalt hoe dik de buis van bovenaf gezien is. De hoogte drukt de buis alleen samen of rekt hem uit, dus een platte ring houdt zijn gat; bij de helft van de buitenmaat sluit het gat. Trek je aan de grepen, dan schaalt de buis mee. Alleen een torus waarvan de buis even dik is als de torus hoog is, blijft een exact lichaam voor afschuiningen, afrondingen en STEP.
 
@@ -94,7 +94,7 @@ Ronde vormen zoals cilinder, kegel, buis, ellips of de boringen hebben in hun ei
 
 **Zo gebruik je het**
 
-- **Laat {{ui:prop.sidesFollowSize}} aan.** Dan kiest layerling het aantal zijden op basis van de diameter, zodat de veelhoek hooguit {{value:ROUND_DEVIATION_TOLERANCE}} mm van de echte cirkel afwijkt, ver onder wat een printer kan weergeven. Kleine vormen krijgen minstens {{value:MIN_AUTOMATIC_SIDES}} zijden, grote meer.
+- **Laat {{ui:prop.sidesFollowSize}} aan.** Dan kiest Magic3D het aantal zijden op basis van de diameter, zodat de veelhoek hooguit {{value:ROUND_DEVIATION_TOLERANCE}} mm van de echte cirkel afwijkt, ver onder wat een printer kan weergeven. Kleine vormen krijgen minstens {{value:MIN_AUTOMATIC_SIDES}} zijden, grote meer.
 - **Minder zijden** neem je als je bewust een veelhoek wilt (al is daar de {{ui:shape.polygon}} voor) of als de editor traag wordt van heel veel ronde vormen.
 - **Meer zijden** heb je bijna nooit nodig. Alleen bij heel grote ronde onderdelen, als je randen ziet in de STL.
 - **Voor onderdelen die je alleen met randgereedschap bewerkt of als STEP doorgeeft,** maakt het aantal zijden niet uit.
@@ -119,7 +119,7 @@ De snapstap staat rechtsonder in de editor en kun je op elk moment veranderen.
 
 ## Kopiëren en dupliceren
 
-{{ui:editor.tool.copy}}, {{ui:editor.tool.paste}} en {{ui:editor.tool.duplicate}} staan in het lint ({{ui:editor.group.clipboard}}). [[Ctrl]]+[[D]] dupliceert een selectie. layerling onthoudt hoe je de kopie het laatst hebt verplaatst of gedraaid en past bij het volgende dupliceren hetzelfde opnieuw toe. Zo maak je met een paar toetsaanslagen een rij gaten of treden. Voor regelmatige opstellingen is er ook het patroon, beschreven in [Selecteren en schikken](chapter:selecteren-en-schikken).
+{{ui:editor.tool.copy}}, {{ui:editor.tool.paste}} en {{ui:editor.tool.duplicate}} staan in het lint ({{ui:editor.group.clipboard}}). [[Ctrl]]+[[D]] dupliceert een selectie. Magic3D onthoudt hoe je de kopie het laatst hebt verplaatst of gedraaid en past bij het volgende dupliceren hetzelfde opnieuw toe. Zo maak je met een paar toetsaanslagen een rij gaten of treden. Voor regelmatige opstellingen is er ook het patroon, beschreven in [Selecteren en schikken](chapter:selecteren-en-schikken).
 
 > **Tip:** Wil een vorm de gewenste maat niet aannemen, dan ligt het vaak aan de grenzen voor nieuwe vormen. Onder {{ui:workspace.shapeDefaults}} in de instellingen bepaal je hoe elke vorm begint en hoe groot hij mag worden.
 
@@ -159,14 +159,14 @@ Voor een gravure zet je {{ui:inspector.wrapInward}} aan: de dikte gaat dan de wa
 
 Een vorm die al gewikkeld is, is een net van het gewikkelde en laat zich niet nog eens wikkelen: maak het wikkelen ongedaan of wikkel het platte origineel nog eens met een andere diameter.
 
-Het resultaat is een mesh, net als een geïmporteerd model. Ongedaan maken legt de vorm weer plat; voor een andere diameter maak je eerst ongedaan en wikkel je opnieuw. Verder dan één keer rond de cilinder gaat het niet; dan noemt layerling de kleinste diameter die past.
+Het resultaat is een mesh, net als een geïmporteerd model. Ongedaan maken legt de vorm weer plat; voor een andere diameter maak je eerst ongedaan en wikkel je opnieuw. Verder dan één keer rond de cilinder gaat het niet; dan noemt Magic3D de kleinste diameter die past.
 
 ## Een oppervlaktestructuur aanbrengen
 
 Groeven, kartel, honingraat of noppen op een lichaam, voor meer grip of voor het oog: klap in de instellingen van de vorm {{ui:inspector.surfaceTexture}} open. Hetzelfde kan bovenin in de groep {{ui:editor.group.modify}}: de knop {{ui:inspector.surfaceTexture}} klapt de kaart voor het gekozen lichaam open en weer dicht en licht op zolang ze open is.
 
 1. Kies het {{ui:inspector.surfacePattern}}, de {{ui:inspector.surfaceSpacing}} en de {{ui:inspector.surfaceDepth}}. De {{ui:inspector.surfaceDirection}} zegt of het het lichaam in gaat of eruit steekt. Bij {{ui:surfaceTexture.bumps}} kies je onder {{ui:inspector.surfaceBumpShape}} tussen {{ui:surfaceTexture.bumpDome}}, {{ui:surfaceTexture.bumpCone}}, {{ui:surfaceTexture.bumpSoft}} en {{ui:surfaceTexture.bumpFlat}}. Onder {{ui:inspector.surfaceBumpGrid}} staan ze {{ui:surfaceTexture.bumpGridStaggered}}, elke tweede rij een halve afstand opgeschoven, of in {{ui:surfaceTexture.bumpGridStraight}}.
-2. Bij {{ui:inspector.surfaceProjection}} neem je {{ui:surfaceTexture.cylinder}} voor ronde lichamen zoals een beker, een knop of een handvat. Het patroon loopt rond de {{ui:inspector.surfaceAxis}}, en de afstand wordt een beetje afgerond zodat er een heel aantal groeven of cellen rondgaat: het patroon sluit zonder naad. {{ui:surfaceTexture.allRound}} past bij lichamen die niet rond zijn, {{ui:surfaceTexture.flatProjection}} bij een deksel of een plaat, van boven gezien. Laat je {{ui:surfaceTexture.auto}} staan, dan kiest Layerling zelf: {{ui:surfaceTexture.cylinder}} bij ronde lichamen en bij rechtopstaande hoekige zoals een doos – dan volgt het patroon de omtrek en loopt het zonder naad om de randen, een verhoogd patroon buigt er rond omheen –, {{ui:surfaceTexture.allRound}} bij andere hoekige lichamen.
+2. Bij {{ui:inspector.surfaceProjection}} neem je {{ui:surfaceTexture.cylinder}} voor ronde lichamen zoals een beker, een knop of een handvat. Het patroon loopt rond de {{ui:inspector.surfaceAxis}}, en de afstand wordt een beetje afgerond zodat er een heel aantal groeven of cellen rondgaat: het patroon sluit zonder naad. {{ui:surfaceTexture.allRound}} past bij lichamen die niet rond zijn, {{ui:surfaceTexture.flatProjection}} bij een deksel of een plaat, van boven gezien. Laat je {{ui:surfaceTexture.auto}} staan, dan kiest Magic3D zelf: {{ui:surfaceTexture.cylinder}} bij ronde lichamen en bij rechtopstaande hoekige zoals een doos – dan volgt het patroon de omtrek en loopt het zonder naad om de randen, een verhoogd patroon buigt er rond omheen –, {{ui:surfaceTexture.allRound}} bij andere hoekige lichamen.
 3. Klik op {{ui:inspector.surfaceApply}}. Een groot lichaam heeft een paar seconden nodig; je kunt intussen doorwerken.
 
 Wil je het patroon maar op een deel van de vlakken, bijvoorbeeld alleen op de bovenkant van een doos, klik dan op {{ui:inspector.surfaceFacesPick}} en daarna in de weergave op de vlakken: de bovenkant, de onderkant of een zijkant. Een vlak loopt tot aan de scherpe randen van het lichaam; bij een cilinder is de mantel één vlak, en de boven- en onderkant zijn er elk één. Gekozen vlakken lichten op, een tweede klik haalt er een weer uit, en {{ui:inspector.surfaceFacesClear}} geeft het patroon weer het hele lichaam. Alleen de gekozen vlakken krijgen het patroon; alle andere blijven zoals ze waren en houden weinig driehoeken. Op een boven- of onderkant ligt het patroon vlak; op een ronde bovenkant lopen groeven, touw en breiwerk in ringen om het midden, zoals de jaarringen van een boom. {{ui:inspector.surfaceFaceTurn}} draait het patroon op de boven- en onderkant: bij 0° lopen de rijen langs de voorrand, bij 90° langs de zijrand. {{ui:inspector.surfaceCapStyle}} schakelt groeven, touw en breiwerk daar tussen rijen en ringen; bij een hoekig lichaam volgen de ringen de omtrek. {{ui:inspector.surfaceCapEdge}} bepaalt wat er gebeurt bij de rand tussen de zijkant en een boven- of onderkant met patroon: {{ui:surfaceTexture.edgeSharp}} laat beide bij de rand stoppen. Bij {{ui:surfaceTexture.edgeOver}} buigt het patroon van de zijkant rond over de rand en neemt de hele bovenkant in: rijen van touw, breiwerk en horizontale groeven lopen als ringen verder, verticale en schuine groeven als stralen tot vlak bij het midden. {{ui:surfaceTexture.edgeFold}} doet hetzelfde alleen als rand; binnenin ligt het eigen patroon van de bovenkant, zoals {{ui:inspector.surfaceCapStyle}} het instelt. {{ui:surfaceTexture.edgeBead}} legt bij elk patroon een boord om de rand – een koord, een afkantketting of een ronde wulst. Ook een krappe afronding beëindigt een vlak: bij een beker met afgeronde randen zijn de buitenkant, de afrondingen, de rand, de binnenkant en de bodem elk een eigen vlak, dus een klik op de buitenkant neemt alleen de buitenkant. Een brede afronding, ongeveer een kwart van het lichaam of meer, hoort bij het vlak, zoals een bol één vlak is. Bij gekozen vlakken tellen {{ui:inspector.surfaceOutside}} en {{ui:inspector.surfaceInside}} niet mee.

@@ -3,7 +3,7 @@ title: Sólidos e orifícios
 summary: Como formas simples viram furos, rasgos e cavidades, e como alterar um grupo de união depois.
 ---
 
-Esta é a ideia mais importante do layerling, e ela se aprende rápido: **toda forma é um sólido ou um orifício.** Um sólido fica. Um orifício é uma ferramenta que tira material.
+Esta é a ideia mais importante do Magic3D, e ela se aprende rápido: **toda forma é um sólido ou um orifício.** Um sólido fica. Um orifício é uma ferramenta que tira material.
 
 ## Sólido ou orifício
 
@@ -28,7 +28,7 @@ Selecione os sólidos e os orifícios e clique em {{ui:editor.tool.group}} ([[Ct
 
 Se houver vários sólidos no grupo de união, eles se juntam. Dois sólidos que se tocam viram uma única peça.
 
-Com malhas grandes, como um STL importado com centenas de milhares de triângulos, o corte leva alguns segundos. layerling então trabalha em segundo plano e mostra "{{ui:status.computing}}"; enquanto isso, você pode girar a vista e usar a interface. Se você alterar o modelo nesse meio-tempo, o resultado é descartado e layerling avisa. O mesmo vale para {{ui:editor.tool.split}}.
+Com malhas grandes, como um STL importado com centenas de milhares de triângulos, o corte leva alguns segundos. Magic3D então trabalha em segundo plano e mostra "{{ui:status.computing}}"; enquanto isso, você pode girar a vista e usar a interface. Se você alterar o modelo nesse meio-tempo, o resultado é descartado e Magic3D avisa. O mesmo vale para {{ui:editor.tool.split}}.
 
 Um grupo de união pode ser tratado como uma forma: mover, girar, mudar a cor, agrupar de novo. {{ui:editor.tool.ungroup}} ([[Ctrl]]+[[Shift]]+[[G]]) desfaz o grupo de união, e as peças voltam a ficar separadas.
 
@@ -65,7 +65,7 @@ A transição é um sólido CAD exato; as ferramentas de aresta e a exportação
 
 ## Recortando um sólido de outro
 
-Para peças que precisam encaixar, um eixo em uma bucha ou um parafuso em uma caixa, você faz uma peça e a recorta da outra. Selecione os dois sólidos e clique em {{ui:editor.tool.cutOut}} na área {{ui:editor.group.combine}}, ou dê um clique direito e escolha {{ui:editor.tool.cutOut}} no menu. O painel nomeia a peça que é mantida e o sólido que recebe a cavidade; layerling escolhe o menor como peça, e {{ui:cutOut.swap}} inverte. {{ui:cutOut.clearance}} deixa a cavidade maior que a peça nessa medida, de cada lado: com 0, o encaixe é exato; 0,2 mm é uma folga comum para um encaixe impresso. {{ui:cutOut.apply}} recorta uma cópia da peça do outro sólido e deixa a própria peça onde está. O resultado é um grupo de união: {{ui:editor.tool.ungroup}} separa o recorte de novo. Uma folga exige que a peça seja um sólido exato, como na ferramenta {{ui:editor.tool.offset}}, que o recorte usa para isso.
+Para peças que precisam encaixar, um eixo em uma bucha ou um parafuso em uma caixa, você faz uma peça e a recorta da outra. Selecione os dois sólidos e clique em {{ui:editor.tool.cutOut}} na área {{ui:editor.group.combine}}, ou dê um clique direito e escolha {{ui:editor.tool.cutOut}} no menu. O painel nomeia a peça que é mantida e o sólido que recebe a cavidade; Magic3D escolhe o menor como peça, e {{ui:cutOut.swap}} inverte. {{ui:cutOut.clearance}} deixa a cavidade maior que a peça nessa medida, de cada lado: com 0, o encaixe é exato; 0,2 mm é uma folga comum para um encaixe impresso. {{ui:cutOut.apply}} recorta uma cópia da peça do outro sólido e deixa a própria peça onde está. O resultado é um grupo de união: {{ui:editor.tool.ungroup}} separa o recorte de novo. Uma folga exige que a peça seja um sólido exato, como na ferramenta {{ui:editor.tool.offset}}, que o recorte usa para isso.
 
 ## Editando um grupo de união
 
@@ -95,7 +95,7 @@ Uma observação: arredondamentos e chanfros que você aplicou no grupo de uniã
 
 As metades são malhas simples: configurações como os lados de um cilindro ou as letras de um texto se perdem, então ajuste isso antes. [[Ctrl]]+[[Z]] traz o original de volta num só passo. Objetos bloqueados e ocultos não podem ser divididos.
 
-Uma malha importada precisa de uma superfície fechada para ser dividida, agrupada ou recortada. Se ela tiver aberturas, como os olhos de uma figura deixados abertos ou uma rachadura num escaneamento, layerling as fecha antes com uma tampa plana e diz quantas fechou. Ele fecha qualquer abertura pequena e qualquer abertura plana, seja do tamanho que for; uma abertura grande cuja borda não está toda no mesmo plano fica por sua conta, e a mensagem avisa. Feche-a no programa de onde o modelo veio, ou com uma ferramenta de reparo de malha, e importe de novo.
+Uma malha importada precisa de uma superfície fechada para ser dividida, agrupada ou recortada. Se ela tiver aberturas, como os olhos de uma figura deixados abertos ou uma rachadura num escaneamento, Magic3D as fecha antes com uma tampa plana e diz quantas fechou. Ele fecha qualquer abertura pequena e qualquer abertura plana, seja do tamanho que for; uma abertura grande cuja borda não está toda no mesmo plano fica por sua conta, e a mensagem avisa. Feche-a no programa de onde o modelo veio, ou com uma ferramenta de reparo de malha, e importe de novo.
 
 ## Separando peças
 

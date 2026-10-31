@@ -12,7 +12,7 @@
 
 .sketch-image-selection-box {
   fill: none;
-  stroke: #da7409;
+  stroke: #29a356;
   stroke-width: 1.7;
   stroke-dasharray: 5 3;
   vector-effect: non-scaling-stroke;
@@ -20,14 +20,14 @@
 
 .sketch-image-resize-handle {
   fill: #ffffff;
-  stroke: #a3590b;
+  stroke: #1f7b41;
   stroke-width: 1.5;
   vector-effect: non-scaling-stroke;
 }
 
 .sketch-image-resize-handle:hover {
-  fill: #ffb24b;
-  stroke: #9d4d00;
+  fill: #62d88e;
+  stroke: #1c713c;
 }
 
 .sketch-image-resize-handle.handle-nw,
@@ -69,7 +69,7 @@
    heads take their strokes from .rotate-arrow-arc and .rotate-arrow-heads. */
 .sketch-rotate-handle {
   --rotate-handle-axis: #2f6fe0;
-  --rotate-handle-halo: rgba(255, 252, 247, 0.95);
+  --rotate-handle-halo: rgba(249, 253, 251, 0.95);
   color: var(--rotate-handle-axis);
   cursor: grab;
   touch-action: none;
@@ -77,7 +77,7 @@
 
 html[data-theme="dark"] .sketch-rotate-handle {
   --rotate-handle-axis: #6aa0ff;
-  --rotate-handle-halo: rgba(28, 24, 20, 0.9);
+  --rotate-handle-halo: rgba(22, 26, 23, 0.9);
 }
 
 .sketch-rotate-handle-hit {
@@ -96,22 +96,22 @@ html[data-theme="dark"] .sketch-rotate-handle {
 /* The padlock on a locked picture: a click unlocks it. */
 .sketch-lock-badge {
   cursor: pointer;
-  color: #7c6853;
+  color: #5d7064;
 }
 
 .sketch-lock-badge rect {
   fill: rgba(255, 255, 255, 0.95);
-  stroke: #a3590b;
+  stroke: #1f7b41;
   stroke-width: 1.2;
-  filter: drop-shadow(0 1px 2px rgba(76, 51, 25, 0.2));
+  filter: drop-shadow(0 1px 2px rgba(21, 64, 37, 0.2));
 }
 
 .sketch-lock-badge:hover {
-  color: #9d4d00;
+  color: #1c713c;
 }
 
 .sketch-lock-badge:hover rect {
-  fill: #ffb24b;
+  fill: #62d88e;
 }
 
 .sketch-image-calibration circle {
@@ -135,7 +135,7 @@ html[data-theme="dark"] .sketch-rotate-handle {
 
 .sketch-image-hint {
   margin: -2px 0 0;
-  color: #8d7b68;
+  color: #718277;
   font-size: 12px;
   font-weight: 500;
   line-height: 1.4;
@@ -152,19 +152,19 @@ html[data-theme="dark"] .sketch-rotate-handle {
 }
 
 html[data-theme="dark"] .sketch-image-hint {
-  color: #b7a992;
+  color: #9eafa4;
 }
 
 .sketch-image-dimension rect {
   fill: rgba(255, 255, 255, 0.97);
-  stroke: rgba(139, 118, 95, 0.9);
+  stroke: rgba(106, 126, 114, 0.9);
   stroke-width: 1;
   vector-effect: non-scaling-stroke;
-  filter: drop-shadow(0 1px 2px rgba(76, 51, 25, 0.15));
+  filter: drop-shadow(0 1px 2px rgba(21, 64, 37, 0.15));
 }
 
 .sketch-image-dimension text {
-  fill: #5a3917;
+  fill: #134a27;
   font-weight: 700;
   text-anchor: middle;
 }
@@ -191,7 +191,7 @@ html[data-theme="dark"] .sketch-image-hint {
   gap: 8px;
   margin: 10px;
   padding: 14px;
-  color: #907d6a;
+  color: #73847a;
   background: rgba(255, 255, 255, 0.98);
   border-radius: 8px;
   font-size: 12px;
@@ -204,13 +204,13 @@ html[data-theme="dark"] .sketch-image-hint {
   height: 112px;
   object-fit: contain;
   background:
-    linear-gradient(45deg, #f6f3ed 25%, transparent 25%),
-    linear-gradient(-45deg, #f6f3ed 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, #f6f3ed 75%),
-    linear-gradient(-45deg, transparent 75%, #f6f3ed 75%);
+    linear-gradient(45deg, #f0f4f2 25%, transparent 25%),
+    linear-gradient(-45deg, #f0f4f2 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #f0f4f2 75%),
+    linear-gradient(-45deg, transparent 75%, #f0f4f2 75%);
   background-position: 0 0, 0 6px, 6px -6px, -6px 0;
   background-size: 12px 12px;
-  border: 1px solid #e9e1d3;
+  border: 1px solid #dbe4de;
   border-radius: 4px;
 }
 
@@ -219,7 +219,7 @@ html[data-theme="dark"] .sketch-image-hint {
 }
 
 .sketch-image-inspector .property-card-header.static:hover {
-  color: #5d4731;
+  color: #3c5043;
 }
 
 .sketch-image-range-row {
@@ -233,23 +233,23 @@ html[data-theme="dark"] .sketch-image-hint {
   width: 100%;
   height: 31px;
   padding: 0 10px;
-  color: #746352;
+  color: #5a6a60;
   font: 700 14px/1 var(--font-ui);
   background: #ffffff;
-  border: 1px solid #daccbe;
+  border: 1px solid #c4d1c9;
   border-radius: 999px;
   outline: 0;
 }
 
 .sketch-image-number-input:focus,
 .sketch-image-position-field input:focus {
-  border-color: #ea953d;
-  box-shadow: 0 0 0 3px rgba(161, 83, 0, 0.14);
+  border-color: #30c065;
+  box-shadow: 0 0 0 3px rgba(30, 119, 62, 0.14);
 }
 
 .sketch-image-range-row span {
   min-width: 26px;
-  color: #988672;
+  color: #7c8d82;
   font-size: 12px;
 }
 
@@ -264,7 +264,7 @@ html[data-theme="dark"] .sketch-image-hint {
 
 .sketch-image-range > input[type="range"]::-webkit-slider-runnable-track {
   height: 4px;
-  background: linear-gradient(to right, #d27009 0 var(--slider-pos), #e8e3da var(--slider-pos) 100%);
+  background: linear-gradient(to right, #279d53 0 var(--slider-pos), #dfe5e1 var(--slider-pos) 100%);
   border-radius: 999px;
 }
 
@@ -274,9 +274,9 @@ html[data-theme="dark"] .sketch-image-hint {
   margin-top: -4.5px;
   appearance: none;
   background: #ffffff;
-  border: 2px solid #ce6d09;
+  border: 2px solid #269a51;
   border-radius: 999px;
-  box-shadow: 0 1px 3px rgba(90, 58, 23, 0.22);
+  box-shadow: 0 1px 3px rgba(19, 75, 39, 0.22);
 }
 
 .sketch-image-position-field {
@@ -284,7 +284,7 @@ html[data-theme="dark"] .sketch-image-hint {
   grid-template-columns: 82px minmax(0, 1fr);
   align-items: center;
   gap: 9px;
-  color: #867563;
+  color: #6c7c72;
   font-size: 14px;
   font-weight: 650;
 }
@@ -295,9 +295,9 @@ html[data-theme="dark"] .sketch-image-hint {
   align-items: center;
   justify-content: center;
   gap: 7px;
-  color: #7c6853;
-  background: #fcfaf7;
-  border: 1px solid #ded1c4;
+  color: #5d7064;
+  background: #f6fcf8;
+  border: 1px solid #cad6ce;
   border-radius: 5px;
   cursor: pointer;
   font-size: 12px;
@@ -305,9 +305,9 @@ html[data-theme="dark"] .sketch-image-hint {
 }
 
 .sketch-image-aspect-toggle.active {
-  color: #a55808;
-  background: #f8f4ee;
-  border-color: #d59c5f;
+  color: #1f7c41;
+  background: #f2f5f3;
+  border-color: #32bf66;
 }
 
 .sketch-image-aspect-toggle:disabled,

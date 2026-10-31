@@ -3,17 +3,17 @@ title: 快速上手
 summary: 五分鐘內從一張空白頁面做出第一個 3D 列印零件，不需帳號，也不必安裝任何東西。
 ---
 
-layerling 是一款直接在瀏覽器中執行的 3D 列印設計程式。你用簡單的形狀搭出零件，在上面挖孔，把邊緣修圓，再交給切片軟體。不必安裝，也不必註冊。你完成的設計留在自己的電腦上。
+Magic3D 是一款直接在瀏覽器中執行的 3D 列印設計程式。你用簡單的形狀搭出零件，在上面挖孔，把邊緣修圓，再交給切片軟體。不必安裝，也不必註冊。你完成的設計留在自己的電腦上。
 
-![layerling 的起始頁：最上方是「建立新的 3D 設計」，下方是你的設計與快速指南。](shot:start-page)
+![Magic3D 的起始頁：最上方是「建立新的 3D 設計」，下方是你的設計與快速指南。](shot:start-page)
 
 ## 建立設計
 
-開啟 [layerling.com](https://layerling.com/)。在起始頁點擊 {{ui:dashboard.createDesign}}。編輯器會開啟一個空白的工作平面，也就是所有東西成形所在的網格。
+開啟 [magic3d.ro](https://magic3d.ro/)。在起始頁點擊 {{ui:dashboard.createDesign}}。編輯器會開啟一個空白的工作平面，也就是所有東西成形所在的網格。
 
-如果你已經有想接著做的檔案，請用 {{ui:dashboard.importGeometry}}。它支援 layerling 設計（`.lyl`），也支援 STL、OBJ、3MF、STEP 或 SVG 檔案。
+如果你已經有想接著做的檔案，請用 {{ui:dashboard.importGeometry}}。它支援 Magic3D 設計（`.lyl`），也支援 STL、OBJ、3MF、STEP 或 SVG 檔案。
 
-你所有的設計之後都會出現在起始頁，並附有預覽圖。這些設計存放在瀏覽器的儲存空間，每次變更後自動儲存，所以沒有儲存按鈕。**layerling 不對存放在瀏覽器裡的設計負責。** 瀏覽器可能故障，瀏覽器更新也可能帶來問題，所以請不時用起始頁的 {{ui:dashboard.backupAll}} 備份設計，或把它們存成檔案。備份可以用 {{ui:dashboard.restoreBackup}} 還原。如何把設計打包成檔案並轉交他人，見[檔案與儲存](chapter:files-and-saving)。 如果想要一個提醒，請在設定（功能區中的齒輪）中開啟{{ui:workspace.confirmTabClose}}：之後在關閉或重新整理有開啟設計的分頁之前，瀏覽器會先詢問。
+你所有的設計之後都會出現在起始頁，並附有預覽圖。這些設計存放在瀏覽器的儲存空間，每次變更後自動儲存，所以沒有儲存按鈕。**Magic3D 不對存放在瀏覽器裡的設計負責。** 瀏覽器可能故障，瀏覽器更新也可能帶來問題，所以請不時用起始頁的 {{ui:dashboard.backupAll}} 備份設計，或把它們存成檔案。備份可以用 {{ui:dashboard.restoreBackup}} 還原。如何把設計打包成檔案並轉交他人，見[檔案與儲存](chapter:files-and-saving)。 如果想要一個提醒，請在設定（功能區中的齒輪）中開啟{{ui:workspace.confirmTabClose}}：之後在關閉或重新整理有開啟設計的分頁之前，瀏覽器會先詢問。
 
 ## 編輯器一覽
 
@@ -47,7 +47,7 @@ layerling 是一款直接在瀏覽器中執行的 3D 列印設計程式。你用
 
 ### 主題
 
-最上方的 {{ui:common.theme}} 決定 layerling 的外觀：跟隨系統、淺色、深色或石墨色。
+最上方的 {{ui:common.theme}} 決定 Magic3D 的外觀：跟隨系統、淺色、深色或石墨色。
 
 ### 重新命名設計
 
@@ -83,7 +83,7 @@ layerling 是一款直接在瀏覽器中執行的 3D 列印設計程式。你用
 
 ### 頁尾
 
-視窗底部：{{ui:dashboard.sponsor}} 通往可以贊助本專案的頁面；{{ui:dashboard.userGuide}} 開啟本指南；{{ui:dashboard.forum}} 通往提問、分享想法與回報錯誤的地方（GitHub 上的討論區，德語使用者則是 drucktipps3d 論壇）；{{ui:editor.bugReport}} 會產生一份回報錯誤用的 ZIP；{{ui:dashboard.projectOnGitHub}} 通往 GitHub 上的專案，版本號則會開啟版本說明。法律聲明與隱私權政策的連結，屬於你所使用的那份 layerling 的營運者。
+視窗底部：{{ui:dashboard.sponsor}} 通往可以贊助本專案的頁面；{{ui:dashboard.userGuide}} 開啟本指南；{{ui:dashboard.forum}} 通往提問、分享想法與回報錯誤的地方（GitHub 上的討論區，德語使用者則是 drucktipps3d 論壇）；{{ui:editor.bugReport}} 會產生一份回報錯誤用的 ZIP；{{ui:dashboard.projectOnGitHub}} 通往 GitHub 上的專案，版本號則會開啟版本說明。法律聲明與隱私權政策的連結，屬於你所使用的那份 Magic3D 的營運者。
 
 ## 你的第一個零件
 
@@ -103,9 +103,9 @@ layerling 是一款直接在瀏覽器中執行的 3D 列印設計程式。你用
 
 ## 上次造訪後的新內容
 
-更新之後再次開啟 layerling 時，起始頁上會有一張卡片列出你上次造訪以來新增的內容：從那時起的每個版本，最新的排在最上面。隔了很久才回來，就在卡片裡向下捲動。在這些版本下方，{{ui:whatsNew.earlier}} 會把上次造訪之前的版本也加進來。用 {{ui:whatsNew.dismiss}} 關掉它，它就會一直消失到下次更新。起始頁頁尾的 {{ui:whatsNew.footerLink}} 隨時可以再次顯示最新的新增內容。瀏覽器會記住你上次看到的版本，關於你的任何資訊都不會離開瀏覽器。
+更新之後再次開啟 Magic3D 時，起始頁上會有一張卡片列出你上次造訪以來新增的內容：從那時起的每個版本，最新的排在最上面。隔了很久才回來，就在卡片裡向下捲動。在這些版本下方，{{ui:whatsNew.earlier}} 會把上次造訪之前的版本也加進來。用 {{ui:whatsNew.dismiss}} 關掉它，它就會一直消失到下次更新。起始頁頁尾的 {{ui:whatsNew.footerLink}} 隨時可以再次顯示最新的新增內容。瀏覽器會記住你上次看到的版本，關於你的任何資訊都不會離開瀏覽器。
 
-在自己電腦或伺服器上執行的 layerling 副本中，「有可用更新」的提示會有一個按鈕 {{ui:update.previewShow}}，讓你在安裝前先看這次更新帶來什麼。只有在你按下按鈕時，清單才會從 GitHub 取得。
+在自己電腦或伺服器上執行的 Magic3D 副本中，「有可用更新」的提示會有一個按鈕 {{ui:update.previewShow}}，讓你在安裝前先看這次更新帶來什麼。只有在你按下按鈕時，清單才會從 GitHub 取得。
 
 ## 從設計到列印
 

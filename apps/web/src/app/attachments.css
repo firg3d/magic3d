@@ -1,5 +1,5 @@
 /*
- * The attachments (#820): the clip's dot in the Manage toolbar and the panel with the list of files
+ * The attachments (#15522b): the clip's dot in the Manage toolbar and the panel with the list of files
  * kept with a design. The upload button is the Import panel's, and the small buttons are the ones
  * of the My shapes list.
  */
@@ -18,15 +18,15 @@
   right: 3px;
   width: 10px;
   height: 10px;
-  background: #d9730d;
-  border: 2px solid #fffaf2;
+  background: #29a255;
+  border: 2px solid #f5fcf8;
   border-radius: 999px;
-  box-shadow: 0 1px 3px rgba(60, 40, 10, 0.35);
+  box-shadow: 0 1px 3px rgba(13, 51, 27, 0.35);
   pointer-events: none;
 }
 
 html[data-theme="dark"] .attachments-indicator {
-  border-color: #2a2118;
+  border-color: #1d241f;
 }
 
 .attachments-panel {
@@ -49,19 +49,19 @@ html[data-theme="dark"] .attachments-indicator {
   gap: 8px;
   padding: 6px 8px;
   background: #fff;
-  border: 1px solid #ebe1cf;
+  border: 1px solid #dae5de;
   border-radius: 8px;
 }
 
 .attachment-row > svg {
   width: 16px;
   height: 16px;
-  color: #8e7a66;
+  color: #708276;
 }
 
 .attachment-name {
   overflow: hidden;
-  color: #5a3917;
+  color: #134a27;
   font-size: 13px;
   font-weight: 600;
   text-overflow: ellipsis;
@@ -69,7 +69,7 @@ html[data-theme="dark"] .attachments-indicator {
 }
 
 .attachment-row small {
-  color: #8e7a66;
+  color: #708276;
   font-size: 11px;
   font-weight: 700;
 }
@@ -83,7 +83,7 @@ html[data-theme="dark"] .attachments-indicator {
 
 .attachments-note {
   margin: 0;
-  color: #7b6249;
+  color: #566c5e;
   font-size: 12px;
   line-height: 1.4;
 }
@@ -92,9 +92,9 @@ html[data-theme="dark"] .attachments-indicator {
   display: grid;
   gap: 8px;
   padding: 10px 12px;
-  color: #5a3917;
-  background: #fff7ec;
-  border: 1px solid #e3b98f;
+  color: #134a27;
+  background: #effbf3;
+  border: 1px solid #60d78b;
   border-radius: 8px;
 }
 
@@ -107,7 +107,7 @@ html[data-theme="dark"] .attachments-indicator {
 }
 
 .attachment-clash small {
-  color: #8e7a66;
+  color: #708276;
   font-size: 11px;
   font-weight: 700;
 }
@@ -123,32 +123,32 @@ html[data-theme="dark"] .attachments-indicator {
 }
 
 html[data-theme="dark"] .attachment-row {
-  background: #35281b;
-  border-color: #5e4c3a;
+  background: #222d26;
+  border-color: #435349;
 }
 
 html[data-theme="dark"] .attachment-row > svg,
 html[data-theme="dark"] .attachment-row small,
 html[data-theme="dark"] .attachment-clash small {
-  color: #b9a58f;
+  color: #9aada1;
 }
 
 html[data-theme="dark"] .attachment-name {
-  color: #f0e7d9;
+  color: #e2eae5;
 }
 
 html[data-theme="dark"] .attachments-note {
-  color: #cdbca6;
+  color: #b1c3b8;
 }
 
 html[data-theme="dark"] .attachment-clash {
-  color: #f0e7d9;
-  background: #3a2c1f;
-  border-color: #7a5b35;
+  color: #e2eae5;
+  background: #26312a;
+  border-color: #4b6755;
 }
 
 /*
- * The attachment viewer (#820, phase 2): the quick guide's window, narrower because it holds one
+ * The attachment viewer (#15522b, phase 2): the quick guide's window, narrower because it holds one
  * column of reading text, and as tall as the file needs up to the window's own limit.
  */
 .attachment-viewer .shortcuts-modal-card {
@@ -177,7 +177,7 @@ html[data-theme="dark"] .attachment-clash {
 /* A text file is shown exactly as written, its lines wrapped to the window rather than cut off. */
 .attachment-viewer-text {
   margin: 0;
-  color: #3f2e1c;
+  color: #26352b;
   font-size: 13px;
   line-height: 1.5;
   white-space: pre-wrap;
@@ -198,7 +198,7 @@ html[data-theme="dark"] .attachment-clash {
 
 /* A Markdown file, formatted: sizes and spacing for reading, in the colours of the editor's text. */
 .markdown-view {
-  color: #3f2e1c;
+  color: #26352b;
   font-size: 14px;
   line-height: 1.55;
   overflow-wrap: anywhere;
@@ -219,13 +219,13 @@ html[data-theme="dark"] .attachment-clash {
 .markdown-view h5,
 .markdown-view h6 {
   margin: 1.2em 0 0.5em;
-  color: #5a3917;
+  color: #134a27;
   line-height: 1.25;
 }
 
 .markdown-view h1 {
   padding-bottom: 6px;
-  border-bottom: 1px solid #ebe1cf;
+  border-bottom: 1px solid #dae5de;
   font-size: 22px;
 }
 
@@ -284,18 +284,18 @@ html[data-theme="dark"] .attachment-clash {
 .markdown-view li.markdown-task > input {
   margin: 0 6px 0 -20px;
   vertical-align: -1px;
-  accent-color: #d46b08;
+  accent-color: #279b51;
 }
 
 .markdown-view blockquote {
   padding: 2px 0 2px 12px;
-  color: #6f5840;
-  border-left: 3px solid #e3b98f;
+  color: #4c6154;
+  border-left: 3px solid #60d78b;
 }
 
 .markdown-view code {
   padding: 1px 4px;
-  background: #f6f2ed;
+  background: #eff4f1;
   border-radius: 4px;
   font-size: 0.92em;
 }
@@ -303,8 +303,8 @@ html[data-theme="dark"] .attachment-clash {
 .markdown-view pre {
   padding: 10px 12px;
   overflow: auto;
-  background: #f6f2ed;
-  border: 1px solid #ebe1cf;
+  background: #eff4f1;
+  border: 1px solid #dae5de;
   border-radius: 6px;
 }
 
@@ -316,11 +316,11 @@ html[data-theme="dark"] .attachment-clash {
 .markdown-view hr {
   margin: 1.2em 0;
   border: 0;
-  border-top: 1px solid #ebe1cf;
+  border-top: 1px solid #dae5de;
 }
 
 .markdown-view a {
-  color: #8f4700;
+  color: #1a6836;
 }
 
 .markdown-table {
@@ -335,11 +335,11 @@ html[data-theme="dark"] .attachment-clash {
 .markdown-view th,
 .markdown-view td {
   padding: 5px 10px;
-  border: 1px solid #ebe1cf;
+  border: 1px solid #dae5de;
 }
 
 .markdown-view th {
-  background: #fff7ec;
+  background: #effbf3;
 }
 
 /* A picture that is not loaded: its description in a small box, the address in the tooltip. */
@@ -348,9 +348,9 @@ html[data-theme="dark"] .attachment-clash {
   align-items: center;
   gap: 4px;
   padding: 0 6px;
-  color: #7b6249;
-  background: #f6f2ed;
-  border: 1px dashed #d8c7b1;
+  color: #566c5e;
+  background: #eff4f1;
+  border: 1px dashed #bccec3;
   border-radius: 4px;
   font-size: 0.92em;
 }
@@ -363,7 +363,7 @@ html[data-theme="dark"] .attachment-clash {
 
 html[data-theme="dark"] .attachment-viewer-text,
 html[data-theme="dark"] .markdown-view {
-  color: #eee6d7;
+  color: #e0e9e4;
 }
 
 html[data-theme="dark"] .markdown-view h1,
@@ -372,7 +372,7 @@ html[data-theme="dark"] .markdown-view h3,
 html[data-theme="dark"] .markdown-view h4,
 html[data-theme="dark"] .markdown-view h5,
 html[data-theme="dark"] .markdown-view h6 {
-  color: #f0e7d9;
+  color: #e2eae5;
 }
 
 html[data-theme="dark"] .markdown-view h1,
@@ -380,18 +380,18 @@ html[data-theme="dark"] .markdown-view hr,
 html[data-theme="dark"] .markdown-view pre,
 html[data-theme="dark"] .markdown-view th,
 html[data-theme="dark"] .markdown-view td {
-  border-color: #5e4c3a;
+  border-color: #435349;
 }
 
 html[data-theme="dark"] .markdown-view blockquote {
-  color: #cdbca6;
-  border-left-color: #7a5b35;
+  color: #b1c3b8;
+  border-left-color: #4b6755;
 }
 
 html[data-theme="dark"] .markdown-view code,
 html[data-theme="dark"] .markdown-view pre,
 html[data-theme="dark"] .markdown-image {
-  background: #35281b;
+  background: #222d26;
 }
 
 html[data-theme="dark"] .markdown-view pre code {
@@ -399,14 +399,14 @@ html[data-theme="dark"] .markdown-view pre code {
 }
 
 html[data-theme="dark"] .markdown-view th {
-  background: #3a2c1f;
+  background: #26312a;
 }
 
 html[data-theme="dark"] .markdown-view a {
-  color: #f3a452;
+  color: #3bce71;
 }
 
 html[data-theme="dark"] .markdown-image {
-  color: #cdbca6;
-  border-color: #7a5b35;
+  color: #b1c3b8;
+  border-color: #4b6755;
 }

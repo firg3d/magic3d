@@ -21,11 +21,11 @@
   gap: 10px;
   width: min(760px, calc(100vw - 28px));
   padding: 12px 16px 14px;
-  color: #584027;
-  background: rgba(254, 252, 250, 0.98);
-  border: 1px solid #dacbbb;
+  color: #35493c;
+  background: rgba(249, 253, 251, 0.98);
+  border: 1px solid #c3d1c8;
   border-radius: 12px;
-  box-shadow: 0 14px 38px rgba(74, 53, 30, 0.2);
+  box-shadow: 0 14px 38px rgba(44, 61, 50, 0.2);
   backdrop-filter: blur(12px);
 }
 
@@ -60,7 +60,7 @@
 
 .history-view-heading span {
   font-size: 12px;
-  color: #8a7560;
+  color: #6a7d71;
 }
 
 .history-view-head .panel-header-actions button {
@@ -77,7 +77,7 @@
 
 .history-view-head .panel-header-actions button:hover,
 .history-view-head .guide-help-link:hover {
-  background: #f3ece2;
+  background: #e8eeea;
 }
 
 .history-view-slider {
@@ -92,9 +92,9 @@
   width: 32px;
   height: 32px;
   place-items: center;
-  color: #745e48;
+  color: #53675a;
   background: #fff;
-  border: 1px solid #d8c8b7;
+  border: 1px solid #bfcec5;
   border-radius: 999px;
   cursor: pointer;
 }
@@ -109,7 +109,7 @@
 }
 
 .history-view-slider input[type="range"]:focus-visible {
-  outline: 2px solid #d07313;
+  outline: 2px solid #289f53;
   outline-offset: 4px;
   border-radius: 999px;
 }
@@ -134,12 +134,12 @@
 
 .history-view-step > svg {
   flex: none;
-  color: #a08a73;
+  color: #7e9386;
 }
 
 .history-view-step-label {
   flex: none;
-  color: #8a7560;
+  color: #6a7d71;
 }
 
 .history-view-step-text {
@@ -151,7 +151,7 @@
 
 .history-view-step.none .history-view-step-text {
   font-weight: 400;
-  color: #a08a73;
+  color: #7e9386;
 }
 
 @media (max-width: 560px) {
@@ -166,8 +166,8 @@
 
 /* The steps as a list, newest at the top (#1023): a click goes to that state. */
 .history-view-head .panel-header-actions button.active {
-  color: #b35f07;
-  background: #fbead6;
+  color: #218646;
+  background: #d4f4e0;
 }
 
 .history-view-list {
@@ -178,7 +178,7 @@
   overflow-y: auto;
   list-style: none;
   background: #fff;
-  border: 1px solid #e6d9ca;
+  border: 1px solid #d1ded6;
   border-radius: 8px;
 }
 
@@ -200,16 +200,16 @@
 }
 
 .history-view-list button:hover {
-  background: #f6efe6;
+  background: #e2f5e9;
 }
 
 .history-view-list button.shown {
   color: #fff;
-  background: #cc7011;
+  background: #279b51;
 }
 
 .history-view-list button.ahead:not(.shown) {
-  color: #a08a73;
+  color: #7e9386;
   font-style: italic;
 }
 
@@ -262,7 +262,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 4px 14px;
-  color: #8a7560;
+  color: #6a7d71;
 }
 
 .history-view-facts .current {
@@ -283,7 +283,7 @@
   padding: 0 13px;
   align-items: center;
   gap: 7px;
-  border: 1px solid #d8c8b7;
+  border: 1px solid #bfcec5;
   border-radius: 7px;
   font-size: 12px;
   font-weight: 700;
@@ -291,14 +291,14 @@
 }
 
 .history-view-actions .secondary {
-  color: #745e48;
+  color: #53675a;
   background: white;
 }
 
 .history-view-actions .primary {
   color: white;
-  background: #cc7011;
-  border-color: #b35f07;
+  background: #279b51;
+  border-color: #218646;
 }
 
 .history-view-actions button:disabled {
@@ -347,7 +347,7 @@
   padding: 0 13px;
   align-items: center;
   gap: 7px;
-  border: 1px solid #d8c8b7;
+  border: 1px solid #bfcec5;
   border-radius: 7px;
   font-size: 12px;
   font-weight: 700;
@@ -355,7 +355,7 @@
 }
 
 .history-view-confirm-actions .secondary {
-  color: #745e48;
+  color: #53675a;
   background: white;
 }
 
@@ -407,9 +407,9 @@
 }
 
 html[data-theme="dark"] .history-view-bar {
-  color: #ede4d4;
-  background: rgba(40, 30, 20, 0.97);
-  border-color: #5b4b3a;
+  color: #dee7e1;
+  background: rgba(25, 34, 28, 0.97);
+  border-color: #435148;
   box-shadow: 0 14px 38px rgba(0, 0, 0, 0.34);
 }
 
@@ -418,7 +418,7 @@ html[data-theme="dark"] .history-view-step-label,
 html[data-theme="dark"] .history-view-step > svg,
 html[data-theme="dark"] .history-view-step.none .history-view-step-text,
 html[data-theme="dark"] .history-view-facts {
-  color: #b9a68f;
+  color: #9bada1;
 }
 
 html[data-theme="dark"] .history-view-facts .current {
@@ -427,30 +427,30 @@ html[data-theme="dark"] .history-view-facts .current {
 
 html[data-theme="dark"] .history-view-head .panel-header-actions button:hover,
 html[data-theme="dark"] .history-view-head .guide-help-link:hover {
-  background: #3f3022;
+  background: #29362e;
 }
 
 html[data-theme="dark"] .history-view-head .panel-header-actions button.active {
-  color: #f0a95a;
-  background: #4a3622;
+  color: #43d077;
+  background: #2d3e33;
 }
 
 html[data-theme="dark"] .history-view-list {
-  background: #2f2318;
-  border-color: #5b4b3a;
+  background: #1e2821;
+  border-color: #435148;
 }
 
 html[data-theme="dark"] .history-view-list button:hover {
-  background: #3f3022;
+  background: #29362e;
 }
 
 html[data-theme="dark"] .history-view-list button.shown {
   color: #fff;
-  background: #c4670d;
+  background: #24924d;
 }
 
 html[data-theme="dark"] .history-view-list button.ahead:not(.shown) {
-  color: #b9a68f;
+  color: #9bada1;
 }
 
 html[data-theme="dark"] .history-view-list-now {
@@ -460,21 +460,21 @@ html[data-theme="dark"] .history-view-list-now {
 html[data-theme="dark"] .history-view-slider > button,
 html[data-theme="dark"] .history-view-actions .secondary,
 html[data-theme="dark"] .history-view-inside button {
-  color: #f0e7d9;
-  background: #413121;
-  border-color: #65503b;
+  color: #e2eae5;
+  background: #29372e;
+  border-color: #46584c;
 }
 
 html[data-theme="dark"] .history-view-slider .range-control input[type="range"]::-webkit-slider-runnable-track {
-  background: linear-gradient(to right, #e0862a 0 var(--slider-pos), #5b4b3a var(--slider-pos) 100%);
+  background: linear-gradient(to right, #2cb25d 0 var(--slider-pos), #435148 var(--slider-pos) 100%);
 }
 
 html[data-theme="dark"] .history-view-slider .range-control input[type="range"]::-moz-range-track {
-  background: #5b4b3a;
+  background: #435148;
 }
 
 html[data-theme="dark"] .history-view-slider .range-control input[type="range"]::-moz-range-progress {
-  background: #e0862a;
+  background: #2cb25d;
 }
 
 /* The groups opened to look inside, with the way back out. */
@@ -504,9 +504,9 @@ html[data-theme="dark"] .history-view-slider .range-control input[type="range"]:
   padding: 0 10px;
   font: inherit;
   font-weight: 700;
-  color: #745e48;
+  color: #53675a;
   background: #fff;
-  border: 1px solid #d8c8b7;
+  border: 1px solid #bfcec5;
   border-radius: 999px;
   cursor: pointer;
 }

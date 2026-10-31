@@ -3,7 +3,7 @@ title: Merjenje in opombe
 summary: Merilni trak, ravnilo in kotno ravnilo, razdalje do ničle – in opombe, ki visijo na delu.
 ---
 
-Kdor želi del zgraditi natančno, mora znati meriti. layerling ima za to več orodij. Nobeno ne pride v izvoz. Debeline sten in reže v notranjosti najbolje izmeriš v [prereznem pogledu](chapter:pogled-in-delovna-ravnina) z {{ui:camera.sectionMeasure}}.
+Kdor želi del zgraditi natančno, mora znati meriti. Magic3D ima za to več orodij. Nobeno ne pride v izvoz. Debeline sten in reže v notranjosti najbolje izmeriš v [prereznem pogledu](chapter:pogled-in-delovna-ravnina) z {{ui:camera.sectionMeasure}}.
 
 ## Merilni trak
 
@@ -15,7 +15,7 @@ Merilni trak je na spodnjem koncu vrstice kamere ob levem robu ({{ui:camera.tape
 2. **{{ui:camera.moveMeasurement}}:** Primi točke in jih premakni, številka sledi.
 3. **{{ui:camera.deleteMeasurement}}:** Potem klikneš mero, da jo odstraniš.
 4. **{{ui:camera.tapeWholeEdges}}:** Klik na rob izmeri ves rob, na primer obseg kroga. Ko je to stikalo izklopljeno, klik namesto tega postavi točko na rob, druga točka pa je lahko kjer koli, tako da lahko izmeriš premer ali katero koli drugo razdaljo. [[Alt]] stikalo obrne za en klik. Pri krogu se točka čez, nasproti prve, pripne, ko se kazalec približa, točki pa ležita na pravem krogu, zato je premer natančen.
-5. **{{ui:camera.deleteAllMeasurements}}:** Odstrani vse mere naenkrat. Ker se tega ne da razveljaviti, layerling prej vpraša; če mer ni, se nič ne zgodi.
+5. **{{ui:camera.deleteAllMeasurements}}:** Odstrani vse mere naenkrat. Ker se tega ne da razveljaviti, Magic3D prej vpraša; če mer ni, se nič ne zgodi.
 6. **{{ui:camera.tapeMarkMiddle}}:** Na sredini vsake meritve je majhna okrogla oznaka s polno spodnjo polovico. Na sredino meritve postavi [referenčno točko](#referencne-tocke): po kliku na okrogli rob, na primer rob luknje, v središče tega kroga – tudi pri uvoženi mreži, kjer sicer nič ne označuje sredine luknje –, pri premeru ali kateri koli ravni meritvi pa na sredino poti. Oblika, ki jo potem vlečeš, se s sredino zaskoči na točko. Točke, ki že obstaja, ne naredi dvakrat. Merilni trak se zaskoči na referenčno točko kakor na oglišče, zato lahko meriš od središča kroga ali od sredine črte: označi jo, nato klikni točko.
 7. **{{ui:camera.tapeTypeLength}}:** Ko vsaj en konec ravne meritve leži na telesu, lahko kliknete njeno število. Vnesite novo dolžino in pritisnite [[Enter]]: telo pri drugi točki se premakne vzdolž izmerjene črte, dokler razdalja ni točno taka, kot pri ravnilu v Tinkercadu. Če je izbrano le telo pri prvi točki, se premakne to. Merilne točke ostanejo na telesu, zato meritev sledi. Merite od vogala, roba ali [referenčne točke](#referencne-tocke), na primer središča kroga, da dele postavite na točno razdaljo. Negativna dolžina ga premakne toliko čez prvo točko, na primer 5 mm navznoter od roba škatle.
 

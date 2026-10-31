@@ -13,7 +13,7 @@ Tre ting sker:
 
 - Arbejdsplanet får størrelsen af printlejet.
 - I arbejdsplanets hjørne vises printerens navn og dens byggevolumen. Hvis teksten er i vejen, så slå den fra med {{ui:workspace.showPlateLabels}} under {{ui:workspace.workplane}}; det gælder også designets navn forrest til venstre.
-- layerling **advarer** når noget ikke passer.
+- Magic3D **advarer** når noget ikke passer.
 
 Printerprofilerne kommer fra OrcaSlicer, så de er de samme som din slicer kender. Hvis du hellere vil arbejde uden en printer, vælg {{ui:workspace.printerNone}}. Du kan også sætte arbejdsplanets størrelse i hånden.
 
@@ -46,7 +46,7 @@ Et par tommelfingerregler for retning:
 
 I menuen ved siden af øjet ({{ui:editor.group.visibility}}) slår **Vis overhæng** overhængene til. Hver flade der peger nedad stejlere end 45° skraveres så rød og hvid - det er der printeren ville have brug for støtte. Hvad der hviler på pladen forbliver klart. Så ser du mens du designer om en kugle, en bue eller et vandret hul printer uden støtte; [dråbehullet](chapter:threads-and-mechanics) er lavet netop til det. Vend delen eller læg den på en anden flade med {{ui:editor.tool.layFlat}}, og skraveringen følger med det samme.
 
-Hvor stejlt din printer klarer sættes i indstillingerne under {{ui:workspace.appearance}}: fra 30° (forsigtig) til 70° (for printere med god delkøling). En flade der hviler på en anden form markeres stadig - layerling kigger kun på selve fladen.
+Hvor stejlt din printer klarer sættes i indstillingerne under {{ui:workspace.appearance}}: fra 30° (forsigtig) til 70° (for printere med god delkøling). En flade der hviler på en anden form markeres stadig - Magic3D kigger kun på selve fladen.
 
 ## Vægtykkelse, frirum og faser
 

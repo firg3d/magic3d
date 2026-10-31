@@ -3,7 +3,7 @@ title: Måling og noter
 summary: Målebånd, lineal og vinkelmåler, afstande til nulpunktet, noter der følger med en del, og referencepunkter som ting snapper til.
 ---
 
-For at bygge en del præcist skal man måle. layerling har flere værktøjer til det. Ingen af dem ender i en eksport. Vægtykkelse og mellemrum inden i en del måles bedst i [snitvisningen](chapter:view-and-workplane) med {{ui:camera.sectionMeasure}}.
+For at bygge en del præcist skal man måle. Magic3D har flere værktøjer til det. Ingen af dem ender i en eksport. Vægtykkelse og mellemrum inden i en del måles bedst i [snitvisningen](chapter:view-and-workplane) med {{ui:camera.sectionMeasure}}.
 
 ## Målebåndet
 
@@ -17,7 +17,7 @@ Målebåndet sidder for neden i kamerabjælken ved venstre kant ({{ui:camera.tap
 3. **{{ui:camera.deleteMeasurement}}:** Klik bagefter et mål for at fjerne det.
    Mens **{{ui:camera.addMeasurement}}** er aktiv, sletter et klik på et målepunkt eller en mållinje, mens du holder [[Shift]] eller [[Ctrl]] ([[Cmd]] på en Mac), straks målet uden at skifte tilstand.
 4. **{{ui:camera.tapeWholeEdges}}:** Et klik på en kant måler hele den, længden af en cirkel for eksempel. Med denne slået fra sætter et klik et punkt på kanten i stedet, og det andet punkt kan være hvor som helst, så du kan måle diameteren eller enhver anden afstand. [[Alt]] bytter om for ét klik. På en cirkel snapper punktet overfor til når markøren kommer nær, og punkterne sidder på den sande cirkel, så diameteren kommer nøjagtig ud.
-5. **{{ui:camera.deleteAllMeasurements}}:** Fjerner hvert mål på én gang. Da det ikke kan fortrydes, spørger layerling først; uden mål er der intet at gøre.
+5. **{{ui:camera.deleteAllMeasurements}}:** Fjerner hvert mål på én gang. Da det ikke kan fortrydes, spørger Magic3D først; uden mål er der intet at gøre.
 6. **{{ui:camera.tapeMarkMiddle}}:** Midt på hvert mål sidder et lille rundt mærke med den nederste halvdel udfyldt. Den sætter et [referencepunkt](#referencepunkter) midt i målet: efter et klik på en rund kant, såsom kanten af et hul, i midten af den cirkel - også på et importeret mesh, hvor intet andet markerer midten af et hul - og for en diameter eller et hvilket som helst lige mål halvvejs langs det. En form du trækker snapper så til punktet med sit centrum. Et punkt der allerede er der laves ikke to gange.
 7. **{{ui:camera.tapeTypeLength}}:** Når mindst én ende af en lige måling sidder på et legeme, kan tallet klikkes. Skriv en ny længde og tryk [[Enter]]: legemet ved det andet punkt flyttes langs den målte linje, til afstanden er præcis den, som med linealen i Tinkercad. Er kun legemet ved det første punkt valgt, flyttes det i stedet. Målepunkterne bliver på legemet, så målingen følger med. Mål fra et hjørne, en kant eller et [referencepunkt](#referencepunkter), fx midten af en cirkel, for at placere dele i en præcis afstand. En negativ længde flytter det så langt forbi det første punkt, for eksempel 5 mm inden for kanten af en kasse.
    Målebåndet snapper til et referencepunkt som til et hjørne, så du kan måle fra centrum af en cirkel eller fra midten af en linje: markér punktet, og klik så på det.

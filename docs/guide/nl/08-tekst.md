@@ -26,7 +26,7 @@ Naast de zeven ingebouwde lettertypen kun je elk eigen lettertype gebruiken: een
 
 - **{{ui:font.addFile}}** neemt een TrueType-bestand (`.ttf`), een OpenType-bestand (`.otf`) of een WOFF-bestand (`.woff`). Je kunt het bestand ook gewoon in het venster slepen.
 - **Op Windows** staan de geïnstalleerde lettertypen in de map Fonts (`C:\Windows\Fonts`). Het bestandsvenster van de browser verbergt die map. Open hem in plaats daarvan in de Verkenner en sleep het lettertype naar het venster {{ui:font.title}}. Lettertypen die alleen voor jou zijn geïnstalleerd, staan in `%LOCALAPPDATA%\Microsoft\Windows\Fonts`, en die map toont het bestandsvenster wel. Op een Mac staan lettertypen in `/Library/Fonts` en `~/Library/Fonts`.
-- **{{ui:font.fromSystem}}** toont de lettertypen die op je computer zijn geïnstalleerd. De eerste keer vraagt de browser of layerling ze mag lezen. Met het zoekveld vind je snel een lettertype, een klik neemt het over.
+- **{{ui:font.fromSystem}}** toont de lettertypen die op je computer zijn geïnstalleerd. De eerste keer vraagt de browser of Magic3D ze mag lezen. Met het zoekveld vind je snel een lettertype, een klik neemt het over.
 
 Is er een tekst geselecteerd, dan krijgt die meteen het nieuwe lettertype. Anders verschijnt het lettertype onder {{ui:prop.font}} in de groep {{ui:font.customGroup}}, en {{ui:font.use}} in het venster zet het op de geselecteerde teksten. Je eigen lettertypen werken net als de ingebouwde: tekst op een cirkelboog, afschuiningen en afrondingen op de randen en de STEP-export werken allemaal hetzelfde. Letters die een lettertype mist, worden uit Sans genomen.
 
@@ -43,11 +43,11 @@ Arabisch, Perzisch, Urdu en Hebreeuws worden van rechts naar links geschreven: d
 | Safari op een Mac | ja | nee |
 | Tablet en telefoon | ja, uit de bestanden van het apparaat | nee |
 
-Webpagina's mogen de geïnstalleerde lettertypen niet zomaar lezen. Alleen Chrome en Edge hebben daar een toestemming voor, en alleen op beveiligde pagina's, via `https` zoals op layerling.com. Draait layerling via `http`, bijvoorbeeld op je eigen server of als Docker-installatie in je thuisnetwerk, dan ontbreekt {{ui:font.fromSystem}}; sleep het lettertype dan vanuit de Verkenner. In de andere browsers kies je het lettertypebestand uit de map met lettertypen, met hetzelfde resultaat. Heb je de vraag in Chrome of Edge geweigerd, sta het dan opnieuw toe in de site-instellingen, achter het slotje links van het adres.
+Webpagina's mogen de geïnstalleerde lettertypen niet zomaar lezen. Alleen Chrome en Edge hebben daar een toestemming voor, en alleen op beveiligde pagina's, via `https` zoals op magic3d.ro. Draait Magic3D via `http`, bijvoorbeeld op je eigen server of als Docker-installatie in je thuisnetwerk, dan ontbreekt {{ui:font.fromSystem}}; sleep het lettertype dan vanuit de Verkenner. In de andere browsers kies je het lettertypebestand uit de map met lettertypen, met hetzelfde resultaat. Heb je de vraag in Chrome of Edge geweigerd, sta het dan opnieuw toe in de site-instellingen, achter het slotje links van het adres.
 
-layerling kan geen WOFF2-bestanden lezen (er is bijna altijd een TTF- of OTF-versie), geen lettertypecollecties (`.ttc`, meerdere lettertypen in één bestand) en geen lettertypen met kleuremoji. Van heel grote lettertypen, zoals Chinese, neemt layerling de eerste 8000 tekens. Een variabel lettertype wordt in zijn standaardinstelling gelezen, meestal het normale gewicht.
+Magic3D kan geen WOFF2-bestanden lezen (er is bijna altijd een TTF- of OTF-versie), geen lettertypecollecties (`.ttc`, meerdere lettertypen in één bestand) en geen lettertypen met kleuremoji. Van heel grote lettertypen, zoals Chinese, neemt Magic3D de eerste 8000 tekens. Een variabel lettertype wordt in zijn standaardinstelling gelezen, meestal het normale gewicht.
 
-Sommige lettertypen, vooral schrijfletters en variabele lettertypen, tekenen een letter uit streken die elkaar overlappen. layerling voegt die bij het lezen van het lettertype samen tot één schone contour, zodat het lichaam printbaar blijft. Zulke letters bestaan dan uit heel korte rechte stukjes in plaats van bogen; dat zie je niet.
+Sommige lettertypen, vooral schrijfletters en variabele lettertypen, tekenen een letter uit streken die elkaar overlappen. Magic3D voegt die bij het lezen van het lettertype samen tot één schone contour, zodat het lichaam printbaar blijft. Zulke letters bestaan dan uit heel korte rechte stukjes in plaats van bogen; dat zie je niet.
 
 ### Waar de lettertypen bewaard worden
 
@@ -60,7 +60,7 @@ Een ontwerp slaat **niet het lettertypebestand op**, alleen de contouren van de 
 Dus:
 
 - **Het ontwerp opent overal correct**, ook op een computer zonder het lettertype. De teksten zien er hetzelfde uit en kunnen worden verplaatst, gedraaid, geschaald en afgerond.
-- **Nieuwe letters hebben het lettertype nodig.** Typt iemand zonder het lettertype een letter die het ontwerp niet heeft meegebracht, dan tekent layerling die uit Sans. Onder {{ui:prop.font}} is het lettertype dan gemarkeerd als {{ui:font.fromDesign}}. Voeg je het lettertypebestand toe, dan komt elke letter terug.
+- **Nieuwe letters hebben het lettertype nodig.** Typt iemand zonder het lettertype een letter die het ontwerp niet heeft meegebracht, dan tekent Magic3D die uit Sans. Onder {{ui:prop.font}} is het lettertype dan gemarkeerd als {{ui:font.fromDesign}}. Voeg je het lettertypebestand toe, dan komt elke letter terug.
 - **Exports bevatten alleen geometrie.** STL, 3MF, OBJ, STEP en SVG bevatten lichamen en contouren, geen lettertype.
 - **Oudere layerling-versies** kennen eigen lettertypen nog niet en tekenen zulke teksten in Multilanguage.
 
@@ -88,7 +88,7 @@ Met een lijn aan de buitenkant, een gecentreerde lijn of "Breder" groeit het kad
 
 ## Lagen en naambordjes
 
-Een naambordje voor een meerkleurenprint is een tekst in lagen: de letters bovenop, daaronder dezelfde tekst iets breder in een tweede kleur, onderaan een plaat zonder gaten in een derde. layerling maakt het met één klik:
+Een naambordje voor een meerkleurenprint is een tekst in lagen: de letters bovenop, daaronder dezelfde tekst iets breder in een tweede kleur, onderaan een plaat zonder gaten in een derde. Magic3D maakt het met één klik:
 
 - **Een nieuw naambordje:** kies {{ui:shape.nameTag}} in de vormenbibliotheek en plaats het. Er staat "Name" op in witte letters op een rode rand en een donkere plaat.
 - **Vanuit een tekst:** selecteer de tekst en klik op {{ui:nameTag.makeLayers}} bovenaan zijn instellingen.

@@ -25,7 +25,7 @@ Outre les sept polices intégrées, vous pouvez utiliser n'importe quelle police
 
 - **{{ui:font.addFile}}** prend un fichier TrueType (`.ttf`), un fichier OpenType (`.otf`) ou un fichier WOFF (`.woff`). Vous pouvez également simplement faire glisser le fichier dans la fenêtre.
 - **Sous Windows**, les polices installées se trouvent dans le dossier Polices (`C:\Windows\Fonts`). La boîte de dialogue de fichier du navigateur le cache. Ouvrez-le plutôt dans l'Explorateur et faites glisser la police dans la fenêtre {{ui:font.title}}. Les polices installées pour vous seul résident dans `%LOCALAPPDATA%\Microsoft\Windows\Fonts`, que la boîte de dialogue de fichier affiche également. Sur un Mac, les polices résident dans `/Library/Fonts` et `~/Library/Fonts`.
-- **{{ui:font.fromSystem}}** répertorie les polices installées sur votre ordinateur. La première fois, le navigateur demande si layerling peut les lire. Le champ de recherche trouve rapidement une police, un clic la prend.
+- **{{ui:font.fromSystem}}** répertorie les polices installées sur votre ordinateur. La première fois, le navigateur demande si Magic3D peut les lire. Le champ de recherche trouve rapidement une police, un clic la prend.
 
 Si un texte est sélectionné, il obtient immédiatement la nouvelle police. Sinon la police apparaît sous {{ui:prop.font}} dans le groupe {{ui:font.customGroup}}, et {{ui:font.use}} dans la fenêtre la place sur les textes sélectionnés. Les polices de votre choix fonctionnent comme celles intégrées : le texte sur un arc de cercle, les chanfreins et les congés sur les bords et l'exportation STEP fonctionnent tous de la même manière. Les lettres qui manquent à une police sont tirées de Sans.
 
@@ -37,16 +37,16 @@ L'arabe, le persan, l'ourdou et l'hébreu s'écrivent de droite à gauche : la p
 
 | Navigateur | Choisissez un fichier de police | Police de l'ordinateur |
 | --- | --- | --- |
-| Chrome et Edge sur un ordinateur, l'application layerling installée également | oui | oui, après que le navigateur ait demandé |
+| Chrome et Edge sur un ordinateur, l'application Magic3D installée également | oui | oui, après que le navigateur ait demandé |
 | Firefox | oui | non |
 | Safari sur Mac | oui | non |
 | Tablette et téléphone | oui, à partir des fichiers de l'appareil | non |
 
-Les pages Web ne peuvent pas simplement lire les polices installées. Seuls Chrome et Edge en ont l'autorisation, et uniquement sur les pages sécurisées, sur `https` comme sur layerling.com. Lorsque layerling s'exécute sur `http`, par exemple sur votre propre serveur ou en tant qu'installation Docker sur votre réseau domestique, {{ui:font.fromSystem}} est manquant ; faites ensuite glisser la police depuis l'Explorateur. Dans les autres navigateurs, vous choisissez le fichier de police dans le dossier des polices, avec le même résultat. Si vous avez refusé la question dans Chrome ou Edge, autorisez-la à nouveau dans les paramètres du site, derrière le cadenas à gauche de l'adresse.
+Les pages Web ne peuvent pas simplement lire les polices installées. Seuls Chrome et Edge en ont l'autorisation, et uniquement sur les pages sécurisées, sur `https` comme sur magic3d.ro. Lorsque Magic3D s'exécute sur `http`, par exemple sur votre propre serveur ou en tant qu'installation Docker sur votre réseau domestique, {{ui:font.fromSystem}} est manquant ; faites ensuite glisser la police depuis l'Explorateur. Dans les autres navigateurs, vous choisissez le fichier de police dans le dossier des polices, avec le même résultat. Si vous avez refusé la question dans Chrome ou Edge, autorisez-la à nouveau dans les paramètres du site, derrière le cadenas à gauche de l'adresse.
 
-layerling ne peut pas lire les fichiers WOFF2 (il existe presque toujours une version TTF ou OTF), les collections de polices (`.ttc`, plusieurs polices dans un seul fichier) ou les polices emoji de couleur. À partir de très grandes polices, comme les polices chinoises, layerling prend les 8 000 premiers caractères. Une police variable est lue avec son réglage par défaut, généralement le poids normal.
+Magic3D ne peut pas lire les fichiers WOFF2 (il existe presque toujours une version TTF ou OTF), les collections de polices (`.ttc`, plusieurs polices dans un seul fichier) ou les polices emoji de couleur. À partir de très grandes polices, comme les polices chinoises, Magic3D prend les 8 000 premiers caractères. Une police variable est lue avec son réglage par défaut, généralement le poids normal.
 
-Certaines polices, scriptes et variables surtout, dessinent une lettre à partir de traits qui se chevauchent. layerling les fusionne en un seul contour net lors de la lecture de la police, de sorte que le corps reste imprimable. Ces lettres sont alors constituées de pièces droites très courtes au lieu de courbes ; ça ne se voit pas.
+Certaines polices, scriptes et variables surtout, dessinent une lettre à partir de traits qui se chevauchent. Magic3D les fusionne en un seul contour net lors de la lecture de la police, de sorte que le corps reste imprimable. Ces lettres sont alors constituées de pièces droites très courtes au lieu de courbes ; ça ne se voit pas.
 
 ### Où les polices sont conservées
 
@@ -59,9 +59,9 @@ Une conception ne stocke **pas le fichier de police**, uniquement les contours d
 Donc:
 
 - **Le design s'ouvre correctement n'importe où**, également sur un ordinateur sans la police. Les textes se ressemblent et peuvent être déplacés, tournés, mis à l'échelle et arrondis.
-- **Les nouvelles lettres ont besoin de la police.** Si quelqu'un sans la police tape une lettre que le dessin n'a pas apportée, layerling utilise Sans. Sous {{ui:prop.font}}, la police est alors marquée {{ui:font.fromDesign}}. L'ajout du fichier de police ramène chaque lettre.
+- **Les nouvelles lettres ont besoin de la police.** Si quelqu'un sans la police tape une lettre que le dessin n'a pas apportée, Magic3D utilise Sans. Sous {{ui:prop.font}}, la police est alors marquée {{ui:font.fromDesign}}. L'ajout du fichier de police ramène chaque lettre.
 - **Les exportations contiennent uniquement la géométrie.** STL, 3MF, OBJ, STEP et SVG contiennent des corps et des contours, pas de police.
-- **Les anciennes versions de layerling** ne connaissent pas encore leurs propres polices et dessinent de tels textes en multilingue.
+- **Les anciennes versions de Magic3D** ne connaissent pas encore leurs propres polices et dessinent de tels textes en multilingue.
 
 **Licences :** Les polices sont protégées par le droit d'auteur et leur licence indique ce que vous pouvez en faire. Les contours des lettres intégrés sont ce que les fichiers PDF retirent d'une police, et la plupart des licences le permettent. Certaines polices commerciales interdisent cependant de transmettre même des lettres simples. Avant de transmettre ou de publier un design avec votre propre police, vérifiez la licence de la police. Les polices gratuites telles que celles de Google Fonts (pour la plupart sous licence SIL Open Font) peuvent être transmises sans souci. Pour une pièce imprimée ou un STL exporté, cela n'a pas d'importance : ils ne contiennent plus de police, seulement de la géométrie.
 
@@ -87,7 +87,7 @@ Avec une ligne à l'extérieur, une ligne centrée ou "Plus large", la case du t
 
 ## Calques et balises de nom
 
-Une balise pour une impression multicolore est un texte en couches : les lettres en haut, en dessous le même texte un peu plus large dans une deuxième couleur, en bas une plaque sans trous dans une troisième. layerling le fait en un clic :
+Une balise pour une impression multicolore est un texte en couches : les lettres en haut, en dessous le même texte un peu plus large dans une deuxième couleur, en bas une plaque sans trous dans une troisième. Magic3D le fait en un clic :
 
 - **Une nouvelle balise de nom :** choisissez {{ui:shape.nameTag}} dans la bibliothèque de formes et placez-la. Il est écrit « Nom » en lettres blanches sur un bord rouge et une plaque sombre.
 - **À partir d'un texte :** sélectionnez le texte et cliquez sur {{ui:nameTag.makeLayers}} en haut de ses paramètres.

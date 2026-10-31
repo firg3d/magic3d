@@ -5,7 +5,7 @@ summary: Arbejde med fingre eller en pen: at vælge flere legemer, at dreje og z
 
 ## Fingre og pen
 
-layerling kører i browseren på en tablet, og som en app fra hjemmeskærmen. En finger gør det samme som venstre museknap. De tre ting en tablet ikke har, en højre museknap, en Shift-tast og et mus hjul, har hver sin måde:
+Magic3D kører i browseren på en tablet, og som en app fra hjemmeskærmen. En finger gør det samme som venstre museknap. De tre ting en tablet ikke har, en højre museknap, en Shift-tast og et mus hjul, har hver sin måde:
 
 | Du vil | På en tablet |
 | --- | --- |
@@ -34,7 +34,7 @@ Visningskuben øverst til venstre drejer visningen når du trækker i den, og et
 
 ## Håndtag, små punkter og en pen
 
-En fingertip dækker det, den sigter efter. layerling lader en finger nå lidt længere ud til håndtag, punkter, linjer og kanter end en musemarkør gør, men en pen er finere. Det gælder en pen, som tabletten kender som en pen, for eksempel en Apple Pencil eller en S Pen. En almindelig pen med gummispids tæller for skærmen som en finger og er ikke finere end en, så arbejd med den som med en finger. En Apple Pencil der svæver over skærmen på en iPad viser også navnet på en kontrol efter et øjeblik, i en lille boble, som musemarkøren gør med et værktøjstip.
+En fingertip dækker det, den sigter efter. Magic3D lader en finger nå lidt længere ud til håndtag, punkter, linjer og kanter end en musemarkør gør, men en pen er finere. Det gælder en pen, som tabletten kender som en pen, for eksempel en Apple Pencil eller en S Pen. En almindelig pen med gummispids tæller for skærmen som en finger og er ikke finere end en, så arbejd med den som med en finger. En Apple Pencil der svæver over skærmen på en iPad viser også navnet på en kontrol efter et øjeblik, i en lille boble, som musemarkøren gør med et værktøjstip.
 
 Skrider legemer, når børn eller travle hænder rører ved dem, slår du {{ui:workspace.selectBeforeMoving}} til i indstillingerne: et legeme skal så vælges først, og først det næste træk flytter det.
 
@@ -49,4 +49,4 @@ Skrider legemer, når børn eller travle hænder rører ved dem, slår du {{ui:w
 
 Fingre og penne med gummispids virker ens her. To indstillinger gør en klasse lettere: {{ui:workspace.selectBeforeMoving}}, så et tryk ikke flytter et legeme ved et uheld, og {{ui:camera.touchRotate}}, så én finger altid drejer visningen. Spørgsmålstegn-knappen i Hjælp-gruppen i båndet slår {{ui:interactiveHelp.title}} til: et tryk på en vilkårlig knap, et felt eller et håndtag forklarer det så, og den samme knap, eller [[Esc]], slår den fra.
 
-Til en hel klasse slår du {{ui:workspace.simpleMode}} til i indstillingerne. Båndet beholder så kun de værktøjer, et værksted bruger (kopiér, indsæt, duplikér, slet, fortryd, gruppér, spejl, fas, rund, hul, justér, eksportér), formbiblioteket bliver en kort liste, knapperne bliver større, og startsiden viser designs og intet andet: ingen nyheder, ingen velkomsttekst, ingen hjælpeknapper og ingen links ud af layerling. Det er et tryk at slå den til; det er et tryk holdt i to sekunder på den knap, der så tager dens plads, at slå den fra. Et link der ender med `?mode=simple` slår den til for den enhed der åbner det, `?mode=full` slår den fra igen. Den der kører layerling på en server kan starte alle i den med `LAYERLING_SIMPLE_MODE=true`, eller fastsætte den for alle med `always`, så programmet ingen har en kontakt at slå den fra med; se README.
+Til en hel klasse slår du {{ui:workspace.simpleMode}} til i indstillingerne. Båndet beholder så kun de værktøjer, et værksted bruger (kopiér, indsæt, duplikér, slet, fortryd, gruppér, spejl, fas, rund, hul, justér, eksportér), formbiblioteket bliver en kort liste, knapperne bliver større, og startsiden viser designs og intet andet: ingen nyheder, ingen velkomsttekst, ingen hjælpeknapper og ingen links ud af Magic3D. Det er et tryk at slå den til; det er et tryk holdt i to sekunder på den knap, der så tager dens plads, at slå den fra. Et link der ender med `?mode=simple` slår den til for den enhed der åbner det, `?mode=full` slår den fra igen. Den der kører Magic3D på en server kan starte alle i den med `LAYERLING_SIMPLE_MODE=true`, eller fastsætte den for alle med `always`, så programmet ingen har en kontakt at slå den fra med; se README.

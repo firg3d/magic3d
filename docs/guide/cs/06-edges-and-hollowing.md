@@ -33,7 +33,7 @@ Panel nabízí:
 
 Při změně velikosti se náhled přepočítává. Výpočet může chvíli trvat. Hodnotu můžete dál upravovat; použije se poslední zadaná.
 
-Pokud je úprava pro danou hranu příliš velká, Layerling navrhne menší hodnotu. Často stačí ubrat jeden nebo dva milimetry. V ostrých úhlech potřebuje zaoblení více prostoru, než by naznačoval samotný poloměr. Na malém displeji panel sám posune obsah tak, aby bylo hlášení vidět.
+Pokud je úprava pro danou hranu příliš velká, Magic3D navrhne menší hodnotu. Často stačí ubrat jeden nebo dva milimetry. V ostrých úhlech potřebuje zaoblení více prostoru, než by naznačoval samotný poloměr. Na malém displeji panel sám posune obsah tak, aby bylo hlášení vidět.
 
 Jestliže dříve funkční výběr přestane fungovat po přidání další hrany, tato hrana zčervená a zesílí. Při dané velikosti ji nelze upravit společně s ostatními. Odeberte ji dalším kliknutím nebo zmenšete velikost. Přidáváte-li při zobrazené chybě další hrany, červeně zůstává první problémová. Neexistuje-li předchozí funkční výběr, například při prvním kliknutí nebo po zvětšení poloměru, zčervenají hrany selhávající samostatně, případně celý výběr, pokud vadí až jejich kombinace.
 
@@ -49,7 +49,7 @@ Vedle úpravy je i {{ui:edge.editAction}}. Původní úpravu vrátí stejným zp
 
 Na sloučeném celku, například válci s otvorem, patří upravovaná hrana výslednému tělesu, nikoli některé jeho části. Celek se proto změní na jediné těleso. {{ui:editor.tool.ungroup}} přesto funguje: nejdřív vrátí úpravy hran a pak skupinu rozpustí, jedním krokem, který [[Ctrl]]+[[Z]] vrátí zpět. Vrácením úpravy se obnoví i původní části. Nejjednodušší je upravovat hrany až nakonec. Platí to i pro závity: nástroj pracuje s jejich přesnou geometrií, takže lze zaoblit kvádr se závitovým otvorem a závit zachovat. Příprava hran závitu trvá déle než u jednoduchého tvaru, u M6 několik sekund, u trubkového G1/2 přibližně půl minuty.
 
-> **Dobré vědět:** Layerling při zkosení a zaoblení používá skutečnou CAD geometrii. Zaoblená hrana proto zůstává oblou plochou i při exportu STEP.
+> **Dobré vědět:** Magic3D při zkosení a zaoblení používá skutečnou CAD geometrii. Zaoblená hrana proto zůstává oblou plochou i při exportu STEP.
 
 Přesnou geometrii si zachová i import STEP. Úpravy hran a dutiny pracují s tělesem ze souboru bez ohledu na jemnost zobrazení. STL, OBJ a 3MF obsahují pouze trojúhelníky a příliš hustá síť může překročit možnosti nástroje. Je-li díl dostupný i jako STEP, použijte jej.
 
@@ -67,7 +67,7 @@ Krabičky, nádoby a kryty mají uvnitř prázdný prostor a rovnoměrně silné
 
 Stěny vznikají směrem dovnitř. Vnější povrch zůstává zachovaný.
 
-Volba {{ui:shell.edges}} se projeví pouze tam, kde se vnitřní stěny rozestupují, například u stupně nebo kolem otvoru. Rohy dutiny jednoduchého kvádru zůstávají v obou režimech ostré. Pro zaoblený vnitřek nejprve zaoblete vnější hrany a poté vytvořte dutinu. Vnitřní poloměr odpovídá vnějšímu poloměru zmenšenému o tloušťku stěny. Pokud takový vnitřek nelze sestavit, například u obrysu z mnoha krátkých úseček, vytvoří Layerling stejnou dutinu s ostrými rohy.
+Volba {{ui:shell.edges}} se projeví pouze tam, kde se vnitřní stěny rozestupují, například u stupně nebo kolem otvoru. Rohy dutiny jednoduchého kvádru zůstávají v obou režimech ostré. Pro zaoblený vnitřek nejprve zaoblete vnější hrany a poté vytvořte dutinu. Vnitřní poloměr odpovídá vnějšímu poloměru zmenšenému o tloušťku stěny. Pokud takový vnitřek nelze sestavit, například u obrysu z mnoha krátkých úseček, vytvoří Magic3D stejnou dutinu s ostrými rohy.
 
 ![Výsledný kryt se stěnou 3 mm a otevřenou horní stranou.](shot:hollow-result)
 
@@ -120,6 +120,6 @@ Zaoblení, které překáží, otvor na špatném místě, výstupek, který už
 
 Okolní plochy se rozšíří, až se mezera uzavře. Kvádr se zaoblenými horními hranami dostane zpět ostré hrany, otvor se zaplní, výstupek zmizí. Těleso zůstane přesné: lze ho znovu zaoblit a zkosit a export do STEP zachová jeho skutečné plochy. [[Ctrl]]+[[Z]] smazání vrátí jedním krokem. Smazání je také v části {{ui:edge.featureHistory}} stejně jako zaoblení a zkosení, kde ho {{ui:edge.revertAction}} vrátí; {{ui:edge.editAction}} pro něj není. Sloučený celek se přitom změní na jediné těleso, stejně jako při úpravě hran.
 
-Vyberte všechny plochy toho, co má zmizet, a jen ty. Pokud okolní plochy mezeru uzavřít nedokážou, layerling to oznámí a nic se nezmění: například hlavní strana kvádru nemá sousední plochu, která by zaujala její místo. Smažete-li jen dno kapsy, vznikne průchozí otvor, protože stěny kapsy pokračují až na druhou stranu.
+Vyberte všechny plochy toho, co má zmizet, a jen ty. Pokud okolní plochy mezeru uzavřít nedokážou, Magic3D to oznámí a nic se nezmění: například hlavní strana kvádru nemá sousední plochu, která by zaujala její místo. Smažete-li jen dno kapsy, vznikne průchozí otvor, protože stěny kapsy pokračují až na druhou stranu.
 
-{{ui:editor.tool.deleteFace}} potřebuje přesné plochy: funguje u dílů importovaných jako STEP a u tvarů layerlingu. Co layerling vede jako síť, je nemá: importovaný STL, OBJ nebo 3MF, rozdělené, kolem válce obtočené nebo zjednodušené těleso či velmi podrobný tvar, například dlouhý text. Pokud můžete, importujte díl jako STEP. U podrobného importovaného dílu mohou být některé plochy pro CAD jádro příliš náročné: po 45 sekundách se mazání zastaví a nic se nezmění. Těleso, jehož velikost se změnila po úpravě hran se zachovanou velikostí hran, nemá v nové velikosti přesné plochy, dokud se změna velikosti nevrátí.
+{{ui:editor.tool.deleteFace}} potřebuje přesné plochy: funguje u dílů importovaných jako STEP a u tvarů Magic3D. Co Magic3D vede jako síť, je nemá: importovaný STL, OBJ nebo 3MF, rozdělené, kolem válce obtočené nebo zjednodušené těleso či velmi podrobný tvar, například dlouhý text. Pokud můžete, importujte díl jako STEP. U podrobného importovaného dílu mohou být některé plochy pro CAD jádro příliš náročné: po 45 sekundách se mazání zastaví a nic se nezmění. Těleso, jehož velikost se změnila po úpravě hran se zachovanou velikostí hran, nemá v nové velikosti přesné plochy, dokud se změna velikosti nevrátí.

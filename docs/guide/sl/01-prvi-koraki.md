@@ -3,15 +3,15 @@ title: Prvi koraki
 summary: Od praznega lista do prvega dela za 3D-tiskalnik – v petih minutah, brez računa in brez namestitve.
 ---
 
-layerling je program za konstruiranje za 3D-tisk, ki teče kar v brskalniku. Del zgradiš iz preprostih oblik, vanj izrežeš luknje, zaobliš robove in ga pošlješ v rezalnik. Ničesar ni treba nameščati in se nikjer prijavljati. Kar zgradiš, ostane na tvojem računalniku.
+Magic3D je program za konstruiranje za 3D-tisk, ki teče kar v brskalniku. Del zgradiš iz preprostih oblik, vanj izrežeš luknje, zaobliš robove in ga pošlješ v rezalnik. Ničesar ni treba nameščati in se nikjer prijavljati. Kar zgradiš, ostane na tvojem računalniku.
 
-![Začetna stran programa layerling: zgoraj »Ustvari nov 3D-načrt«, pod njim lastni načrti in kratka navodila.](shot:start-page)
+![Začetna stran programa Magic3D: zgoraj »Ustvari nov 3D-načrt«, pod njim lastni načrti in kratka navodila.](shot:start-page)
 
 ## Ustvari načrt
 
-Odpri [layerling.com](https://layerling.com/). Na začetni strani klikni {{ui:dashboard.createDesign}}. Odpre se urejevalnik s prazno delovno ravnino, mrežo, na kateri nastane vse.
+Odpri [magic3d.ro](https://magic3d.ro/). Na začetni strani klikni {{ui:dashboard.createDesign}}. Odpre se urejevalnik s prazno delovno ravnino, mrežo, na kateri nastane vse.
 
-Če že imaš datoteko, ki jo želiš urejati naprej, izberi {{ui:dashboard.importGeometry}}. To deluje z načrti programa layerling (`.lyl`) prav tako kot z datotekami STL, OBJ, 3MF, STEP ali SVG.
+Če že imaš datoteko, ki jo želiš urejati naprej, izberi {{ui:dashboard.importGeometry}}. To deluje z načrti programa Magic3D (`.lyl`) prav tako kot z datotekami STL, OBJ, 3MF, STEP ali SVG.
 
 Vsi tvoji načrti se pozneje pojavijo na začetni strani s sličico predogleda. Shranjeni so v pomnilniku brskalnika in se ob vsaki spremembi samodejno shranijo. Zato gumba za shranjevanje ni. Kako načrte spraviš v datoteko in jih deliš z drugimi, piše v poglavju [Datoteke in shranjevanje](chapter:datoteke-in-shranjevanje). Če želiš opomnik, v nastavitvah (zobnik v traku) vklopi {{ui:workspace.confirmTabClose}}: brskalnik potem vpraša, preden se zavihek z odprtim načrtom zapre ali osveži.
 
@@ -47,7 +47,7 @@ Z miško se ustavite nad gumbom in videli boste njegovo ime. Če niste prepriča
 
 ### Tema
 
-{{ui:common.theme}} čisto na vrhu določa videz layerlinga: kot sistem, svetel, temen ali grafiten.
+{{ui:common.theme}} čisto na vrhu določa videz Magic3D: kot sistem, svetel, temen ali grafiten.
 
 ### Preimenuj projekt
 
@@ -83,7 +83,7 @@ Stikalo **mm | in** ob {{ui:inspector.snapGrid}} spremeni enoto, mrežo plošče
 
 ### Noga okna
 
-Na dnu okna: {{ui:dashboard.sponsor}} vodi na stran, kjer lahko podprete projekt; {{ui:dashboard.userGuide}} odpre ta priročnik; {{ui:dashboard.forum}} vodi na mesto za vprašanja, zamisli in poročila o napakah (razprave na GitHubu, v nemščini forum drucktipps3d); {{ui:editor.bugReport}} naredi ZIP za poročilo o napaki; {{ui:dashboard.projectOnGitHub}} vodi do projekta na GitHubu, številka različice pa odpre opombe ob izdaji. Povezavi na podatke o ponudniku in na varstvo zasebnosti pripadata tistemu, ki upravlja kopijo layerlinga, ki jo uporabljate.
+Na dnu okna: {{ui:dashboard.sponsor}} vodi na stran, kjer lahko podprete projekt; {{ui:dashboard.userGuide}} odpre ta priročnik; {{ui:dashboard.forum}} vodi na mesto za vprašanja, zamisli in poročila o napakah (razprave na GitHubu, v nemščini forum drucktipps3d); {{ui:editor.bugReport}} naredi ZIP za poročilo o napaki; {{ui:dashboard.projectOnGitHub}} vodi do projekta na GitHubu, številka različice pa odpre opombe ob izdaji. Povezavi na podatke o ponudniku in na varstvo zasebnosti pripadata tistemu, ki upravlja kopijo Magic3D, ki jo uporabljate.
 
 ## Tvoj prvi del
 
@@ -103,9 +103,9 @@ Natanko tako nastanejo izvrtine, utori in žepi. Poglavje [Telesa in luknje](cha
 
 ## Novo od tvojega zadnjega obiska
 
-Ko po posodobitvi spet odpreš layerling, ti kartica na začetni strani pokaže, kaj je prišlo zraven od tvojega zadnjega obiska: vsako različico od takrat, najnovejšo na vrhu. Če te dolgo ni bilo, se v kartici pomakni navzdol. Pod njo {{ui:whatsNew.earlier}} doda tudi različice izpred tvojega zadnjega obiska. Z {{ui:whatsNew.dismiss}} jo zapreš in ostane skrita do naslednje posodobitve. {{ui:whatsNew.footerLink}} v nogi začetne strani vedno znova pokaže zadnje novosti. Brskalnik si zapomni nazadnje videno različico in nič o tebi ne zapusti brskalnika.
+Ko po posodobitvi spet odpreš Magic3D, ti kartica na začetni strani pokaže, kaj je prišlo zraven od tvojega zadnjega obiska: vsako različico od takrat, najnovejšo na vrhu. Če te dolgo ni bilo, se v kartici pomakni navzdol. Pod njo {{ui:whatsNew.earlier}} doda tudi različice izpred tvojega zadnjega obiska. Z {{ui:whatsNew.dismiss}} jo zapreš in ostane skrita do naslednje posodobitve. {{ui:whatsNew.footerLink}} v nogi začetne strani vedno znova pokaže zadnje novosti. Brskalnik si zapomni nazadnje videno različico in nič o tebi ne zapusti brskalnika.
 
-Pri kopiji programa layerling na tvojem računalniku ali strežniku ima obvestilo »Na voljo je posodobitev« gumb {{ui:update.previewShow}}, ki našteje, kaj posodobitev prinaša, preden jo namestiš. Seznam se z GitHuba prenese šele, ko pritisneš gumb.
+Pri kopiji programa Magic3D na tvojem računalniku ali strežniku ima obvestilo »Na voljo je posodobitev« gumb {{ui:update.previewShow}}, ki našteje, kaj posodobitev prinaša, preden jo namestiš. Seznam se z GitHuba prenese šele, ko pritisneš gumb.
 
 ## Od načrta do tiska
 

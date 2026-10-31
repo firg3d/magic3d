@@ -3,17 +3,17 @@ title: Primeros pasos
 summary: De la hoja en blanco a tu primera pieza para la impresora 3D en cinco minutos, sin crear ninguna cuenta y sin instalar nada.
 ---
 
-layerling es un programa de diseño para impresión 3D que funciona directamente en el navegador. Construyes una pieza con formas sencillas, le haces orificios, redondeas sus aristas y la envías a tu laminador (*slicer*). No hay que instalar nada ni registrarse. Lo que construyes se queda en tu ordenador.
+Magic3D es un programa de diseño para impresión 3D que funciona directamente en el navegador. Construyes una pieza con formas sencillas, le haces orificios, redondeas sus aristas y la envías a tu laminador (*slicer*). No hay que instalar nada ni registrarse. Lo que construyes se queda en tu ordenador.
 
-![La página de inicio de layerling: arriba, «Crear nuevo diseño 3D»; debajo, tus diseños y la guía rápida.](shot:start-page)
+![La página de inicio de Magic3D: arriba, «Crear nuevo diseño 3D»; debajo, tus diseños y la guía rápida.](shot:start-page)
 
 ## Crear un diseño
 
-Abre [layerling.com](https://layerling.com/). En la página de inicio, haz clic en {{ui:dashboard.createDesign}}. Se abre el editor con un plano de trabajo vacío: la cuadrícula sobre la que va tomando forma todo.
+Abre [magic3d.ro](https://magic3d.ro/). En la página de inicio, haz clic en {{ui:dashboard.createDesign}}. Se abre el editor con un plano de trabajo vacío: la cuadrícula sobre la que va tomando forma todo.
 
-Si ya tienes un archivo con el que quieres seguir trabajando, usa {{ui:dashboard.importGeometry}}. Sirve tanto para diseños de layerling (`.lyl`) como para archivos STL, OBJ, 3MF, STEP o SVG.
+Si ya tienes un archivo con el que quieres seguir trabajando, usa {{ui:dashboard.importGeometry}}. Sirve tanto para diseños de Magic3D (`.lyl`) como para archivos STL, OBJ, 3MF, STEP o SVG.
 
-Todos tus diseños aparecen después en la página de inicio, con una imagen de vista previa. Se guardan en el almacenamiento de tu navegador, automáticamente después de cada cambio, así que no hay botón de guardar. **layerling no se hace responsable de los diseños guardados en el navegador.** Un navegador puede fallar, o una actualización suya puede dar problemas, así que de vez en cuando haz una copia de seguridad de tus diseños con {{ui:dashboard.backupAll}}, en la página de inicio, o guárdalos como archivos. Una copia de seguridad se recupera con {{ui:dashboard.restoreBackup}}. Cómo meter diseños en un archivo y pasárselos a otras personas lo explica [Archivos y guardado](chapter:files-and-saving). Si quieres un aviso, activa {{ui:workspace.confirmTabClose}} en los ajustes (la rueda dentada de la cinta): el navegador preguntará antes de cerrar o recargar una pestaña con un diseño abierto.
+Todos tus diseños aparecen después en la página de inicio, con una imagen de vista previa. Se guardan en el almacenamiento de tu navegador, automáticamente después de cada cambio, así que no hay botón de guardar. **Magic3D no se hace responsable de los diseños guardados en el navegador.** Un navegador puede fallar, o una actualización suya puede dar problemas, así que de vez en cuando haz una copia de seguridad de tus diseños con {{ui:dashboard.backupAll}}, en la página de inicio, o guárdalos como archivos. Una copia de seguridad se recupera con {{ui:dashboard.restoreBackup}}. Cómo meter diseños en un archivo y pasárselos a otras personas lo explica [Archivos y guardado](chapter:files-and-saving). Si quieres un aviso, activa {{ui:workspace.confirmTabClose}} en los ajustes (la rueda dentada de la cinta): el navegador preguntará antes de cerrar o recargar una pestaña con un diseño abierto.
 
 ## El editor de un vistazo
 
@@ -47,7 +47,7 @@ Pasa el ratón por encima de un botón para ver su nombre. Si no tienes claro qu
 
 ### Tema
 
-{{ui:common.theme}}, arriba del todo, elige el aspecto de layerling: como el de tu sistema, claro, oscuro o grafito.
+{{ui:common.theme}}, arriba del todo, elige el aspecto de Magic3D: como el de tu sistema, claro, oscuro o grafito.
 
 ### Cambiar nombre del diseño
 
@@ -83,7 +83,7 @@ El interruptor **mm | in**, junto a {{ui:inspector.snapGrid}}, cambia en este di
 
 ### El pie de página
 
-En la parte de abajo de la ventana: {{ui:dashboard.sponsor}} lleva a la página donde puedes apoyar el proyecto; {{ui:dashboard.userGuide}} abre esta guía; {{ui:dashboard.forum}} lleva al sitio para preguntas, ideas e informes de errores (las discusiones de GitHub; en alemán, el foro de drucktipps3d); {{ui:editor.bugReport}} genera un ZIP para un informe de error; {{ui:dashboard.projectOnGitHub}} lleva al proyecto en GitHub, y el número de versión abre las notas de la versión. Los enlaces al aviso legal y a la política de privacidad son responsabilidad de quien gestiona la copia de layerling que usas.
+En la parte de abajo de la ventana: {{ui:dashboard.sponsor}} lleva a la página donde puedes apoyar el proyecto; {{ui:dashboard.userGuide}} abre esta guía; {{ui:dashboard.forum}} lleva al sitio para preguntas, ideas e informes de errores (las discusiones de GitHub; en alemán, el foro de drucktipps3d); {{ui:editor.bugReport}} genera un ZIP para un informe de error; {{ui:dashboard.projectOnGitHub}} lleva al proyecto en GitHub, y el número de versión abre las notas de la versión. Los enlaces al aviso legal y a la política de privacidad son responsabilidad de quien gestiona la copia de Magic3D que usas.
 
 ## Tu primera pieza
 
@@ -103,9 +103,9 @@ Así se hacen orificios, ranuras y huecos. El capítulo [Sólidos y orificios](c
 
 ## Novedades desde tu última visita
 
-Cuando vuelves a abrir layerling después de una actualización, una tarjeta en la página de inicio muestra lo que se ha añadido desde tu última visita: cada versión publicada desde entonces, empezando por la más reciente. Si llevabas mucho tiempo sin entrar, desplázate hacia abajo dentro de la tarjeta. Debajo, {{ui:whatsNew.earlier}} añade también las versiones anteriores a tu última visita. Ciérrala con {{ui:whatsNew.dismiss}} y no volverá a aparecer hasta la próxima actualización. {{ui:whatsNew.footerLink}}, en el pie de la página de inicio, vuelve a mostrar las últimas novedades cuando quieras. El navegador recuerda la última versión que viste, y nada sobre ti sale de él.
+Cuando vuelves a abrir Magic3D después de una actualización, una tarjeta en la página de inicio muestra lo que se ha añadido desde tu última visita: cada versión publicada desde entonces, empezando por la más reciente. Si llevabas mucho tiempo sin entrar, desplázate hacia abajo dentro de la tarjeta. Debajo, {{ui:whatsNew.earlier}} añade también las versiones anteriores a tu última visita. Ciérrala con {{ui:whatsNew.dismiss}} y no volverá a aparecer hasta la próxima actualización. {{ui:whatsNew.footerLink}}, en el pie de la página de inicio, vuelve a mostrar las últimas novedades cuando quieras. El navegador recuerda la última versión que viste, y nada sobre ti sale de él.
 
-En una copia de layerling instalada en tu propio ordenador o servidor, el aviso «Actualización disponible» tiene un botón, {{ui:update.previewShow}}, que muestra lo que trae la actualización antes de instalarla. La lista se descarga de GitHub solo cuando pulsas el botón.
+En una copia de Magic3D instalada en tu propio ordenador o servidor, el aviso «Actualización disponible» tiene un botón, {{ui:update.previewShow}}, que muestra lo que trae la actualización antes de instalarla. La lista se descarga de GitHub solo cuando pulsas el botón.
 
 ## Del diseño a la impresión
 

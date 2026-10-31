@@ -3,7 +3,7 @@ title: Tömör testek és lyukak
 summary: Hogyan lesznek egyszerű alakzatokból furatok, hornyok és zsebek, és hogyan módosíthatsz később egy csoportot.
 ---
 
-Ez a layerling legfontosabb gondolata, és gyorsan megtanulható: **Minden alakzat vagy tömör test, vagy lyuk.** A tömör test megmarad. A lyuk szerszám, amely anyagot vesz el.
+Ez a Magic3D legfontosabb gondolata, és gyorsan megtanulható: **Minden alakzat vagy tömör test, vagy lyuk.** A tömör test megmarad. A lyuk szerszám, amely anyagot vesz el.
 
 ## Tömör vagy lyuk
 
@@ -53,7 +53,7 @@ A {{ui:editor.tool.intersect}} csak azt tartja meg, ami két vagy több testben 
 
 ## Egy test kivágása egy másikból
 
-Az egymásba illeszkedő alkatrészeknél, például tengely egy hüvelyben vagy csavar egy házban, megcsinálod az egyik alkatrészt, és kivágod a másikból. Jelöld ki a két testet, és kattints a {{ui:editor.tool.cutOut}} gombra a {{ui:editor.group.combine}} területen, vagy kattints jobb gombbal, és válaszd ott. A panel megnevezi az alkatrészt, amely marad, és a testet, amely az üreget kapja; a layerling a kisebbet veszi alkatrésznek, a {{ui:cutOut.swap}} megfordítja. A {{ui:cutOut.clearance}} az üreget minden oldalon ennyivel teszi nagyobbá az alkatrésznél: a 0 pontosan illeszkedik, a 0,2 mm szokásos hézag nyomtatott illesztéshez. Az {{ui:cutOut.apply}} kivágja az alkatrész másolatát a másik testből, magát az alkatrészt pedig ott hagyja, ahol van. Az eredmény egy csoport: az {{ui:editor.tool.ungroup}} újra szétszedi a vágást. A hézaghoz az alkatrésznek pontos testnek kell lennie, mint az {{ui:editor.tool.offset}} eszköznél, amelyet ehhez használ.
+Az egymásba illeszkedő alkatrészeknél, például tengely egy hüvelyben vagy csavar egy házban, megcsinálod az egyik alkatrészt, és kivágod a másikból. Jelöld ki a két testet, és kattints a {{ui:editor.tool.cutOut}} gombra a {{ui:editor.group.combine}} területen, vagy kattints jobb gombbal, és válaszd ott. A panel megnevezi az alkatrészt, amely marad, és a testet, amely az üreget kapja; a Magic3D a kisebbet veszi alkatrésznek, a {{ui:cutOut.swap}} megfordítja. A {{ui:cutOut.clearance}} az üreget minden oldalon ennyivel teszi nagyobbá az alkatrésznél: a 0 pontosan illeszkedik, a 0,2 mm szokásos hézag nyomtatott illesztéshez. Az {{ui:cutOut.apply}} kivágja az alkatrész másolatát a másik testből, magát az alkatrészt pedig ott hagyja, ahol van. Az eredmény egy csoport: az {{ui:editor.tool.ungroup}} újra szétszedi a vágást. A hézaghoz az alkatrésznek pontos testnek kell lennie, mint az {{ui:editor.tool.offset}} eszköznél, amelyet ehhez használ.
 
 ## Csoport szerkesztése
 

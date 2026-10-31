@@ -13,7 +13,7 @@ Dzieją się trzy rzeczy:
 
 - Płaszczyzna robocza przyjmuje rozmiar stołu drukarki.
 - W narożniku płaszczyzny roboczej pojawiają się nazwa drukarki i jej przestrzeń robocza. Jeśli napis przeszkadza, wyłącz go przez {{ui:workspace.showPlateLabels}} w sekcji {{ui:workspace.workplane}}. Dotyczy to też nazwy projektu z przodu po lewej.
-- layerling **ostrzega**, gdy coś się nie mieści.
+- Magic3D **ostrzega**, gdy coś się nie mieści.
 
 Profile drukarek pochodzą z OrcaSlicera, więc są takie same, jakie zna Twój slicer. Jeśli wolisz pracować bez drukarki, wybierz {{ui:workspace.printerNone}}. Rozmiar płaszczyzny roboczej możesz też ustawić ręcznie.
 
@@ -46,7 +46,7 @@ Kilka praktycznych zasad co do kierunku:
 
 W menu obok oka ({{ui:editor.group.visibility}}) pozycja **Pokaż nawisy** włącza nawisy. Każda ściana skierowana w dół bardziej stromo niż 45° jest wtedy kreskowana na czerwono i biało: tam drukarka potrzebowałaby podpór. To, co leży na stole, zostaje bez oznaczeń. Już podczas projektowania widzisz więc, czy kula, łuk albo poziomy otwór wydrukuje się bez podpór. Właśnie do tego służy [otwór łezkowy](chapter:threads-and-mechanics). Obróć część albo połóż ją na innej ścianie przez {{ui:editor.tool.layFlat}}, a kreskowanie od razu podąży za zmianą.
 
-Z jak stromymi nawisami radzi sobie Twoja drukarka, ustawiasz w ustawieniach w sekcji {{ui:workspace.appearance}}: od 30° (ostrożnie) do 70° (dla drukarek z dobrym chłodzeniem wydruku). Ściana opierająca się na innej bryle też jest oznaczana, bo layerling patrzy tylko na samą ścianę.
+Z jak stromymi nawisami radzi sobie Twoja drukarka, ustawiasz w ustawieniach w sekcji {{ui:workspace.appearance}}: od 30° (ostrożnie) do 70° (dla drukarek z dobrym chłodzeniem wydruku). Ściana opierająca się na innej bryle też jest oznaczana, bo Magic3D patrzy tylko na samą ścianę.
 
 ## Grubość ścianek, luz i fazki
 

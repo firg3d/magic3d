@@ -3,15 +3,15 @@ title: Első lépések
 summary: Az üres laptól az első 3D-nyomtatható alkatrészig, öt perc alatt, fiók és telepítés nélkül.
 ---
 
-A layerling egy 3D nyomtatáshoz készült tervezőprogram, amely közvetlenül a böngésződben fut. Egyszerű alakzatokból építesz fel egy alkatrészt, lyukakat vágsz bele, lekerekíted az éleit, és elküldöd a szeletelődnek. Nincs mit telepíteni, és nem kell regisztrálni. Amit építesz, a gépeden marad.
+A Magic3D egy 3D nyomtatáshoz készült tervezőprogram, amely közvetlenül a böngésződben fut. Egyszerű alakzatokból építesz fel egy alkatrészt, lyukakat vágsz bele, lekerekíted az éleit, és elküldöd a szeletelődnek. Nincs mit telepíteni, és nem kell regisztrálni. Amit építesz, a gépeden marad.
 
-![A layerling kezdőlapja: felül „Új 3D terv létrehozása”, alatta a terveid és a rövid útmutató.](shot:start-page)
+![A Magic3D kezdőlapja: felül „Új 3D terv létrehozása”, alatta a terveid és a rövid útmutató.](shot:start-page)
 
 ## Terv létrehozása
 
-Nyisd meg a [layerling.com](https://layerling.com/) oldalt. A kezdőlapon kattints az {{ui:dashboard.createDesign}} gombra. Megnyílik a szerkesztő egy üres munkasíkkal: ez az a rács, amelyen minden elkészül.
+Nyisd meg a [magic3d.ro](https://magic3d.ro/) oldalt. A kezdőlapon kattints az {{ui:dashboard.createDesign}} gombra. Megnyílik a szerkesztő egy üres munkasíkkal: ez az a rács, amelyen minden elkészül.
 
-Ha már van egy fájlod, amellyel folytatnád, használd a {{ui:dashboard.importGeometry}} lehetőséget. Ez layerling tervekkel (`.lyl`) és STL, OBJ, 3MF, STEP vagy SVG fájlokkal is működik.
+Ha már van egy fájlod, amellyel folytatnád, használd a {{ui:dashboard.importGeometry}} lehetőséget. Ez Magic3D tervekkel (`.lyl`) és STL, OBJ, 3MF, STEP vagy SVG fájlokkal is működik.
 
 A terveid később előnézeti képpel jelennek meg a kezdőlapon. A böngésződ tárolójában maradnak, és minden változtatás után automatikusan mentődnek, ezért nincs mentés gomb. Hogy hogyan csomagolhatsz terveket fájlba és adhatod tovább őket, azt a [Fájlok és mentés](chapter:files-and-saving) fejezet írja le. Ha emlékeztetőt szeretnél, kapcsold be a beállításokban (a szalagon lévő fogaskerék) a {{ui:workspace.confirmTabClose}} opciót: a böngésző ilyenkor rákérdez, mielőtt egy nyitott tervet tartalmazó lapot bezárnál vagy újratöltenél.
 
@@ -47,7 +47,7 @@ Vidd az egeret egy gomb fölé, és látod a nevét. Ha nem vagy biztos benne, m
 
 ### Téma
 
-{{ui:common.theme}} egészen fent azt választja ki, hogyan néz ki a layerling: a rendszeredhez igazodva, világos, sötét vagy grafit.
+{{ui:common.theme}} egészen fent azt választja ki, hogyan néz ki a Magic3D: a rendszeredhez igazodva, világos, sötét vagy grafit.
 
 ### Terv átnevezése
 
@@ -103,9 +103,9 @@ Példaként egy lyukas kockát építünk.
 
 ## Újdonságok a legutóbbi látogatásod óta
 
-Ha egy frissítés után újra megnyitod a layerlinget, a kezdőlapon egy kártya felsorolja, mi került be azóta, hogy utoljára itt jártál: minden azóta megjelent verziót, a legújabbal kezdve. Hosszabb távollét után a kártyán belül görgethetsz lefelé. Alattuk a {{ui:whatsNew.earlier}} a legutóbbi látogatásod előtti verziókat is hozzáadja. Az {{ui:whatsNew.dismiss}} gombbal bezárod, és a következő frissítésig nem jelenik meg. A kezdőlap láblécében a {{ui:whatsNew.footerLink}} bármikor újra megmutatja a legutóbbi újdonságokat. A böngésző megjegyzi az utoljára látott verziót, és rólad semmi sem hagyja el.
+Ha egy frissítés után újra megnyitod a Magic3D, a kezdőlapon egy kártya felsorolja, mi került be azóta, hogy utoljára itt jártál: minden azóta megjelent verziót, a legújabbal kezdve. Hosszabb távollét után a kártyán belül görgethetsz lefelé. Alattuk a {{ui:whatsNew.earlier}} a legutóbbi látogatásod előtti verziókat is hozzáadja. Az {{ui:whatsNew.dismiss}} gombbal bezárod, és a következő frissítésig nem jelenik meg. A kezdőlap láblécében a {{ui:whatsNew.footerLink}} bármikor újra megmutatja a legutóbbi újdonságokat. A böngésző megjegyzi az utoljára látott verziót, és rólad semmi sem hagyja el.
 
-A layerling saját gépen vagy szerveren futó példányán a „Frissítés érhető el” értesítésben van egy {{ui:update.previewShow}} gomb, amely telepítés előtt felsorolja, mit hoz a frissítés. A listát csak akkor tölti le a GitHubról, amikor megnyomod a gombot.
+A Magic3D saját gépen vagy szerveren futó példányán a „Frissítés érhető el” értesítésben van egy {{ui:update.previewShow}} gomb, amely telepítés előtt felsorolja, mit hoz a frissítés. A listát csak akkor tölti le a GitHubról, amikor megnyomod a gombot.
 
 ## A tervtől a nyomtatásig
 

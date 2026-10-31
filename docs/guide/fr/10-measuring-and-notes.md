@@ -3,7 +3,7 @@ title: Mesures et notes
 summary: Ruban à mesurer, règle et équerre de cadrage, distances jusqu'à l'origine, notes qui restent attachées à une pièce et points de référence auxquels les objets s'accrochent.
 ---
 
-Pour construire une pièce avec précision, vous devez mesurer. layerling dispose de plusieurs outils pour cela. Aucun d’entre eux ne finit dans une exportation. L'épaisseur de paroi et les espaces à l'intérieur d'une pièce sont mieux mesurés dans la [vue en coupe] (chapter:view-and-workplane) avec {{ui:camera.sectionMeasure}}.
+Pour construire une pièce avec précision, vous devez mesurer. Magic3D dispose de plusieurs outils pour cela. Aucun d’entre eux ne finit dans une exportation. L'épaisseur de paroi et les espaces à l'intérieur d'une pièce sont mieux mesurés dans la [vue en coupe] (chapter:view-and-workplane) avec {{ui:camera.sectionMeasure}}.
 
 ## Le mètre ruban
 
@@ -15,7 +15,7 @@ Le ruban à mesurer se trouve à l'extrémité inférieure de la barre de la cam
 2. **{{ui:camera.moveMeasurement}} :** Saisissez les points et déplacez-les, le nombre suit.
 3. **{{ui:camera.deleteMeasurement}} :** Cliquez ensuite sur une mesure pour la supprimer.
 4. **{{ui:camera.tapeWholeEdges}} :** Un clic sur une arête mesure la totalité de celle-ci, la longueur d'un cercle par exemple. Lorsque cette option est désactivée, un clic place un point sur le bord, et le deuxième point va n'importe où, vous pouvez donc mesurer le diamètre ou toute autre distance. [[Alt]] fait tourner l'interrupteur en un seul clic. Sur un cercle, le point en face du premier s'enclenche lorsque le pointeur s'approche, et les points se trouvent sur le vrai cercle, de sorte que le diamètre ressort exactement.
-5. **{{ui:camera.deleteAllMeasurements}} :** Supprime toutes les mesures en même temps. Comme cela ne peut pas être annulé, layerling vous demande d'abord confirmation ; sans mesures, il n'y a rien à faire.
+5. **{{ui:camera.deleteAllMeasurements}} :** Supprime toutes les mesures en même temps. Comme cela ne peut pas être annulé, Magic3D vous demande d'abord confirmation ; sans mesures, il n'y a rien à faire.
 6. **{{ui:camera.tapeMarkMiddle}} :** Au milieu de chaque mesure se trouve une petite marque ronde, à moitié remplie par le bas. Il place un [point de référence](#points-de-reference) au milieu de la mesure : après un clic sur un bord rond, tel que le rebord d'un trou, au centre de ce cercle — également sur un maillage importé, où rien d'autre ne marque le milieu d'un trou — et pour un diamètre ou toute mesure droite, à mi-chemin. Une forme que vous faites glisser s'enclenche ensuite avec son centre sur le point. Un point déjà existant n'est pas créé en double.
 7. **{{ui:camera.tapeTypeLength}} :** Quand au moins une extrémité d'une mesure droite se trouve sur un corps, son nombre peut être cliqué. Saisis une nouvelle longueur et appuie sur [[Enter]] : le corps au second point se déplace le long de la ligne mesurée jusqu'à ce que la distance soit exactement celle-là, comme avec la règle de Tinkercad. Si seul le corps au premier point est sélectionné, c'est lui qui se déplace. Les points de mesure restent sur le corps, la mesure suit donc. Mesure depuis un coin, une arête ou un [point de référence](#points-de-reference), comme le centre d'un cercle, pour placer des pièces à une distance exacte. Une longueur négative le fait passer d'autant au-delà du premier point, par exemple 5 mm à l'intérieur du bord d'une boîte.
 

@@ -13,7 +13,7 @@ Damit passiert dreierlei:
 
 - Die Arbeitsebene bekommt die Größe des Druckbetts.
 - In der Ecke der Arbeitsfläche stehen der Name des Druckers und sein Bauraum. Wen die Beschriftung stört, schaltet sie unter {{ui:workspace.workplane}} mit {{ui:workspace.showPlateLabels}} ab; das gilt auch für den Namen des Entwurfs vorne links.
-- layerling **warnt**, wenn etwas nicht passt.
+- Magic3D **warnt**, wenn etwas nicht passt.
 
 Die Druckerprofile stammen aus OrcaSlicer, sie sind also dieselben, die auch dein Slicer kennt. Möchtest du ohne Drucker arbeiten, wählst du {{ui:workspace.printerNone}}. Die Größe der Arbeitsebene kannst du auch von Hand einstellen.
 
@@ -46,7 +46,7 @@ Ein paar Faustregeln für die Richtung:
 
 Im Menü neben dem Auge ({{ui:editor.group.visibility}}) schaltet **Überhänge zeigen** die Überhänge ein. Jede Fläche, die steiler als 45° nach unten zeigt, erscheint dann rot-weiß schraffiert – dort bräuchte der Drucker Stützen. Was auf der Platte aufliegt, bleibt frei. So siehst du schon beim Konstruieren, ob eine Kugel, ein Bogen oder eine waagerechte Bohrung ohne Stützen geht; die [Tropfenbohrung](chapter:gewinde-und-mechanik) ist genau dafür da. Drehst du das Teil oder legst es mit {{ui:editor.tool.layFlat}} anders hin, wandert die Schraffur sofort mit.
 
-Wie steil dein Drucker schafft, stellst du in den Einstellungen unter {{ui:workspace.appearance}} ein: von 30° (vorsichtig) bis 70° (für Drucker mit guter Bauteilkühlung). Eine Fläche, die auf einem anderen Körper aufliegt, wird trotzdem markiert – layerling sieht nur die Fläche selbst.
+Wie steil dein Drucker schafft, stellst du in den Einstellungen unter {{ui:workspace.appearance}} ein: von 30° (vorsichtig) bis 70° (für Drucker mit guter Bauteilkühlung). Eine Fläche, die auf einem anderen Körper aufliegt, wird trotzdem markiert – Magic3D sieht nur die Fläche selbst.
 
 ## Wandstärke, Spiel und Fasen
 

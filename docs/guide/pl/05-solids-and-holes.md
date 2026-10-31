@@ -3,7 +3,7 @@ title: Bryły i otwory
 summary: Jak z prostych kształtów powstają otwory, rowki i kieszenie i jak później zmienić grupę.
 ---
 
-To najważniejsza idea w layerling i szybko ją opanujesz: **każdy kształt jest albo bryłą, albo otworem.** Bryła zostaje. Otwór to narzędzie, które usuwa materiał.
+To najważniejsza idea w Magic3D i szybko ją opanujesz: **każdy kształt jest albo bryłą, albo otworem.** Bryła zostaje. Otwór to narzędzie, które usuwa materiał.
 
 ## Bryła czy otwór
 
@@ -28,7 +28,7 @@ Tak powstają:
 
 Jeśli w grupie jest kilka brył, łączą się. Dwie bryły, które się stykają, stają się jedną częścią.
 
-Przy dużych siatkach, takich jak zaimportowany STL z setkami tysięcy trójkątów, cięcie trwa kilka sekund. layerling pracuje wtedy w tle i pokazuje „{{ui:status.computing}}”. W tym czasie możesz obracać widok i korzystać z interfejsu. Jeśli w tym czasie zmienisz scenę, wynik zostaje odrzucony, a layerling o tym informuje. To samo dotyczy {{ui:editor.tool.split}}.
+Przy dużych siatkach, takich jak zaimportowany STL z setkami tysięcy trójkątów, cięcie trwa kilka sekund. Magic3D pracuje wtedy w tle i pokazuje „{{ui:status.computing}}”. W tym czasie możesz obracać widok i korzystać z interfejsu. Jeśli w tym czasie zmienisz scenę, wynik zostaje odrzucony, a Magic3D o tym informuje. To samo dotyczy {{ui:editor.tool.split}}.
 
 Z grupą możesz postępować jak z kształtem: przesuwać, obracać, kolorować, grupować dalej. {{ui:editor.tool.ungroup}} ([[Ctrl]]+[[Shift]]+[[G]]) ją rozwiązuje i pojedyncze części wracają.
 
@@ -65,7 +65,7 @@ Przejście jest dokładną bryłą CAD, a narzędzia krawędzi i eksport STEP bi
 
 ## Wycinanie jednej bryły z drugiej
 
-Przy częściach, które mają do siebie pasować, wał w tulei albo śruba w obudowie, robisz jedną część i wycinasz ją z drugiej. Zaznacz obie bryły i kliknij {{ui:editor.tool.cutOut}} w obszarze {{ui:editor.group.combine}} albo kliknij prawym przyciskiem i wybierz to tam. Panel podaje część, która zostaje, i bryłę, która dostaje wnękę; layerling bierze mniejszą za część, a {{ui:cutOut.swap}} to odwraca. {{ui:cutOut.clearance}} powiększa wnękę wokół części o tyle: 0 pasuje dokładnie, 0,2 mm to zwykły luz dla wydrukowanego pasowania. {{ui:cutOut.apply}} wycina kopię części z drugiej bryły i zostawia samą część tam, gdzie jest. Wynikiem jest grupa: {{ui:editor.tool.ungroup}} znów rozdziela wycięcie. Luz wymaga, żeby część była dokładną bryłą, jak przy narzędziu {{ui:editor.tool.offset}}, którego to używa.
+Przy częściach, które mają do siebie pasować, wał w tulei albo śruba w obudowie, robisz jedną część i wycinasz ją z drugiej. Zaznacz obie bryły i kliknij {{ui:editor.tool.cutOut}} w obszarze {{ui:editor.group.combine}} albo kliknij prawym przyciskiem i wybierz to tam. Panel podaje część, która zostaje, i bryłę, która dostaje wnękę; Magic3D bierze mniejszą za część, a {{ui:cutOut.swap}} to odwraca. {{ui:cutOut.clearance}} powiększa wnękę wokół części o tyle: 0 pasuje dokładnie, 0,2 mm to zwykły luz dla wydrukowanego pasowania. {{ui:cutOut.apply}} wycina kopię części z drugiej bryły i zostawia samą część tam, gdzie jest. Wynikiem jest grupa: {{ui:editor.tool.ungroup}} znów rozdziela wycięcie. Luz wymaga, żeby część była dokładną bryłą, jak przy narzędziu {{ui:editor.tool.offset}}, którego to używa.
 
 ## Edycja grupy
 
@@ -95,7 +95,7 @@ Uwaga: zaokrąglenia i fazki nałożone na **całą** grupę przepadają przy od
 
 Połowy są zwykłymi siatkami: ustawienia takie jak liczba boków walca albo napis tekstu znikają, więc ustaw je wcześniej. [[Ctrl]]+[[Z]] przywraca oryginał jednym krokiem. Zablokowanych i ukrytych obiektów nie da się podzielić.
 
-Zaimportowana siatka potrzebuje zamkniętej powierzchni, żeby dało się ją podzielić, zgrupować albo przyciąć. Jeśli ma otwory, na przykład niezamknięte oczy figurki albo pęknięcie w skanie, layerling najpierw zamyka je płaską zaślepką i mówi, ile ich zamknął. Zamyka małe otwory i płaskie otwory dowolnej wielkości. Duży otwór o wygiętym brzegu zostawia Tobie i informuje o tym komunikat. Zamknij go w programie, z którego pochodzi model, albo narzędziem do naprawy siatek i zaimportuj ponownie.
+Zaimportowana siatka potrzebuje zamkniętej powierzchni, żeby dało się ją podzielić, zgrupować albo przyciąć. Jeśli ma otwory, na przykład niezamknięte oczy figurki albo pęknięcie w skanie, Magic3D najpierw zamyka je płaską zaślepką i mówi, ile ich zamknął. Zamyka małe otwory i płaskie otwory dowolnej wielkości. Duży otwór o wygiętym brzegu zostawia Tobie i informuje o tym komunikat. Zamknij go w programie, z którego pochodzi model, albo narzędziem do naprawy siatek i zaimportuj ponownie.
 
 ## Rozdzielanie części
 

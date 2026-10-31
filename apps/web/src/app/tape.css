@@ -14,7 +14,7 @@
 }
 
 .tape-segment {
-  stroke: #5a3917;
+  stroke: #134a27;
   stroke-width: 2;
   vector-effect: non-scaling-stroke;
   pointer-events: none;
@@ -46,7 +46,7 @@
 .tape-point,
 .tape-hover-point {
   fill: #ffffff;
-  stroke: #b66108;
+  stroke: #228848;
   stroke-width: 2.4;
   vector-effect: non-scaling-stroke;
 }
@@ -64,8 +64,8 @@
 .tape-overlay.move-mode .tape-point:active {
   /* The hand would hide the point it moves; while dragging the crosshair shows where it lands (#943). */
   cursor: crosshair;
-  fill: #f6f1e8;
-  filter: drop-shadow(0 0 4px rgba(129, 67, 0, 0.4));
+  fill: #eef3f0;
+  filter: drop-shadow(0 0 4px rgba(24, 95, 50, 0.4));
 }
 
 .tape-overlay.delete-mode .tape-segment-group:hover .tape-segment,
@@ -83,25 +83,25 @@
 }
 
 .tape-point.pending {
-  fill: #cf6e09;
+  fill: #279b51;
   stroke: #ffffff;
-  filter: drop-shadow(0 0 3px rgba(113, 58, 0, 0.72));
+  filter: drop-shadow(0 0 3px rgba(21, 83, 44, 0.72));
 }
 
 .tape-hover-point {
-  fill: rgba(155, 80, 0, 0.28);
+  fill: rgba(29, 114, 60, 0.28);
   stroke-dasharray: 3 2;
   pointer-events: none;
 }
 
 .tape-hover-edge {
   fill: none;
-  stroke: #e17709;
+  stroke: #2aa858;
   stroke-width: 4;
   stroke-linecap: round;
   stroke-linejoin: round;
   vector-effect: non-scaling-stroke;
-  filter: drop-shadow(0 0 3px rgba(173, 89, 0, 0.48));
+  filter: drop-shadow(0 0 3px rgba(32, 128, 67, 0.48));
   pointer-events: none;
 }
 
@@ -114,11 +114,11 @@
   gap: 6px;
   min-width: 46px;
   padding: 5px 9px;
-  color: #3a2816;
+  color: #13321e;
   background: rgba(255, 255, 255, 0.96);
-  border: 1px solid rgba(224, 208, 190, 0.96);
+  border: 1px solid rgba(199, 214, 204, 0.96);
   border-radius: 999px;
-  box-shadow: 0 1px 4px rgba(58, 40, 20, 0.12);
+  box-shadow: 0 1px 4px rgba(17, 50, 29, 0.12);
   font-size: 13px;
   font-weight: 600;
   line-height: 1;
@@ -152,7 +152,7 @@
 
 /* The axes a measurement runs along: X, XY, 3D. */
 .tape-label-axes {
-  color: #ad5900;
+  color: #208043;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -167,8 +167,8 @@
 
 .tape-label.editable:hover,
 .tape-label.editable:focus-visible {
-  color: #ad5900;
-  border-color: #ad5900;
+  color: #208043;
+  border-color: #208043;
 }
 
 /* Hover tips: a measurement's reach along each axis, a point's coordinates. */
@@ -177,7 +177,7 @@
   z-index: 4;
   padding: 4px 8px;
   color: #ffffff;
-  background: rgba(40, 30, 20, 0.92);
+  background: rgba(25, 34, 28, 0.92);
   border-radius: 6px;
   font-size: 12px;
   font-variant-numeric: tabular-nums;
@@ -198,8 +198,8 @@
   width: 11px;
   height: 11px;
   padding: 0;
-  background: linear-gradient(to bottom, #ffffff 50%, #b66108 50%);
-  border: 2px solid #b66108;
+  background: linear-gradient(to bottom, #ffffff 50%, #228848 50%);
+  border: 2px solid #228848;
   border-radius: 999px;
   cursor: pointer;
   pointer-events: auto;
@@ -216,14 +216,14 @@
 
 .tape-mark:hover,
 .tape-mark:focus-visible {
-  border-color: #e17709;
-  background: linear-gradient(to bottom, #ffffff 50%, #e17709 50%);
-  filter: drop-shadow(0 0 3px rgba(173, 89, 0, 0.48));
+  border-color: #2aa858;
+  background: linear-gradient(to bottom, #ffffff 50%, #2aa858 50%);
+  filter: drop-shadow(0 0 3px rgba(32, 128, 67, 0.48));
 }
 
 /* Dark and graphite: the brown line vanished on the dark workplane. */
 html[data-theme="dark"] .tape-segment {
-  stroke: #f2a65a;
+  stroke: #3fcf74;
 }
 
 html[data-theme="dark"] .tape-segment-casing {
@@ -231,6 +231,6 @@ html[data-theme="dark"] .tape-segment-casing {
 }
 
 html[data-theme="dark"] .tape-tip {
-  color: #1f1a15;
-  background: rgba(250, 246, 240, 0.95);
+  color: #171c19;
+  background: rgba(238, 249, 242, 0.95);
 }

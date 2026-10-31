@@ -5,7 +5,7 @@ summary: Delo s prsti ali pisalom: izbira več teles, vrtenje in približevanje 
 
 ## Prsti in pisalo
 
-layerling teče v brskalniku tablice in kot aplikacija z domačega zaslona. Prst naredi to, kar leva tipka miške. Za tri stvari, ki jih tablica nima, desno tipko miške, tipko Shift in kolesce, obstajajo lastne poti:
+Magic3D teče v brskalniku tablice in kot aplikacija z domačega zaslona. Prst naredi to, kar leva tipka miške. Za tri stvari, ki jih tablica nima, desno tipko miške, tipko Shift in kolesce, obstajajo lastne poti:
 
 | Želite | Na tablici |
 | --- | --- |
@@ -32,7 +32,7 @@ Kocka pogleda zgoraj levo vrti pogled, če jo vlečete, tap na eno od njenih str
 
 ## Ročice, majhne točke in pisalo
 
-Konica prsta zakriva, na kar cilja. layerling pusti prstu seči do ročic, točk, črt in robov malo dlje kot kazalcu miške, vendar je pisalo natančnejše. To velja za pisalo, ki ga tablica pozna kot pisalo, na primer Apple Pencil ali S Pen. Preprosto pisalo z gumijasto konico šteje za zaslon kot prst in ni natančnejše od njega, zato z njim delajte kot s prstom. Če Apple Pencil na iPadu lebdi nad gumbom, se čez trenutek v majhnem oblačku pokaže njegovo ime, kakor namig pri miški.
+Konica prsta zakriva, na kar cilja. Magic3D pusti prstu seči do ročic, točk, črt in robov malo dlje kot kazalcu miške, vendar je pisalo natančnejše. To velja za pisalo, ki ga tablica pozna kot pisalo, na primer Apple Pencil ali S Pen. Preprosto pisalo z gumijasto konico šteje za zaslon kot prst in ni natančnejše od njega, zato z njim delajte kot s prstom. Če Apple Pencil na iPadu lebdi nad gumbom, se čez trenutek v majhnem oblačku pokaže njegovo ime, kakor namig pri miški.
 
 Če se telesa premikajo, ker se jih dotaknejo otroci ali hitre roke, vklopite v nastavitvah {{ui:workspace.selectBeforeMoving}}: telo mora biti potem najprej izbrano in šele naslednji poteg ga premakne.
 

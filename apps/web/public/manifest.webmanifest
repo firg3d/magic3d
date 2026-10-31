@@ -1,45 +1,58 @@
 {
   "id": "/",
-  "name": "layerling - Easy 3D CAD for 3D printing",
-  "short_name": "layerling",
-  "description": "Easy 3D CAD for 3D printing, right in your browser",
-  "lang": "en",
+  "name": "Magic3D - CAD gratuit pentru printare 3D",
+  "short_name": "Magic3D",
+  "description": "CAD 3D gratuit pentru printare 3D, direct în browser",
+  "lang": "ro",
   "dir": "ltr",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "launch_handler": { "client_mode": ["navigate-existing", "auto"] },
+  "launch_handler": {
+    "client_mode": [
+      "navigate-existing",
+      "auto"
+    ]
+  },
   "file_handlers": [
     {
       "action": "./",
-      "accept": { "application/vnd.layerling.project+zip": [".lyl"] }
+      "accept": {
+        "application/vnd.layerling.project+zip": [
+          ".lyl"
+        ]
+      }
     }
   ],
   "orientation": "any",
   "background_color": "#fafafa",
   "theme_color": "#fafaf9",
-  "categories": ["graphics", "productivity", "utilities"],
+  "categories": [
+    "graphics",
+    "productivity",
+    "utilities"
+  ],
   "icons": [
     {
-      "src": "assets/layerling/layerling-icon-192.png",
+      "src": "assets/magic3d/magic3d-icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "assets/layerling/layerling-icon-512.png",
+      "src": "assets/magic3d/magic3d-icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "assets/layerling/layerling-icon-maskable-512.png",
+      "src": "assets/magic3d/magic3d-icon-maskable-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "assets/layerling/layerling-icon.svg",
+      "src": "assets/magic3d/magic3d-icon.svg",
       "sizes": "any",
       "type": "image/svg+xml"
     }

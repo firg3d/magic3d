@@ -38,16 +38,16 @@ Arabo, persiano, urdu ed ebraico si scrivono da destra a sinistra: la prima lett
 
 | Browser | Scegliere un file di font | Usare un font dal computer |
 | --- | --- | --- |
-| Chrome ed Edge su computer, anche nell’app di layerling installata | sì | sì, dopo aver concesso il permesso |
+| Chrome ed Edge su computer, anche nell’app di Magic3D installata | sì | sì, dopo aver concesso il permesso |
 | Firefox | sì | no |
 | Safari su Mac | sì | no |
 | Tablet e telefono | sì, dai file del dispositivo | no |
 
-Le pagine web non possono leggere liberamente i font installati. Solo Chrome ed Edge consentono di farlo, e solo sulle pagine sicure, con indirizzo `https`, come layerling.com. Se layerling viene aperto tramite `http`, per esempio sul tuo server o con un’installazione Docker nella rete di casa, {{ui:font.fromSystem}} non è disponibile: puoi trascinare il font da Esplora file. Negli altri browser scegli il file del font dalla cartella in cui si trova; il risultato è lo stesso. Se hai rifiutato la richiesta di Chrome o Edge, puoi concedere di nuovo il permesso nelle impostazioni del sito, aprendo il lucchetto a sinistra dell’indirizzo.
+Le pagine web non possono leggere liberamente i font installati. Solo Chrome ed Edge consentono di farlo, e solo sulle pagine sicure, con indirizzo `https`, come magic3d.ro. Se Magic3D viene aperto tramite `http`, per esempio sul tuo server o con un’installazione Docker nella rete di casa, {{ui:font.fromSystem}} non è disponibile: puoi trascinare il font da Esplora file. Negli altri browser scegli il file del font dalla cartella in cui si trova; il risultato è lo stesso. Se hai rifiutato la richiesta di Chrome o Edge, puoi concedere di nuovo il permesso nelle impostazioni del sito, aprendo il lucchetto a sinistra dell’indirizzo.
 
-layerling non può leggere i file WOFF2 (di solito è disponibile anche una versione TTF o OTF), le raccolte di font (`.ttc`, che contengono più font in un solo file) o i font emoji a colori. Dei font molto grandi, come quelli cinesi, layerling carica i primi 8000 caratteri. Un font variabile viene letto con la propria impostazione predefinita, che di solito corrisponde allo spessore normale.
+Magic3D non può leggere i file WOFF2 (di solito è disponibile anche una versione TTF o OTF), le raccolte di font (`.ttc`, che contengono più font in un solo file) o i font emoji a colori. Dei font molto grandi, come quelli cinesi, Magic3D carica i primi 8000 caratteri. Un font variabile viene letto con la propria impostazione predefinita, che di solito corrisponde allo spessore normale.
 
-Alcuni font, soprattutto quelli corsivi e variabili, disegnano le lettere con tratti sovrapposti. Quando li importa, layerling unisce i tratti in un contorno pulito affinché il corpo resti stampabile. In questi casi le lettere sono composte da segmenti rettilinei molto brevi invece che da curve; la differenza non è visibile.
+Alcuni font, soprattutto quelli corsivi e variabili, disegnano le lettere con tratti sovrapposti. Quando li importa, Magic3D unisce i tratti in un contorno pulito affinché il corpo resti stampabile. In questi casi le lettere sono composte da segmenti rettilinei molto brevi invece che da curve; la differenza non è visibile.
 
 ### Dove vengono conservati i font
 
@@ -60,9 +60,9 @@ Un progetto **non contiene il file del font**, ma solo i contorni delle lettere 
 Di conseguenza:
 
 - **Il progetto si apre correttamente ovunque**, anche su un computer che non ha il font. Il testo mantiene lo stesso aspetto e puoi spostarlo, ruotarlo, ridimensionarlo e raccordarne gli spigoli.
-- **Per le nuove lettere serve il font.** Se qualcuno che non possiede il font digita una lettera non inclusa nel progetto, layerling la disegna usando Sans. Sotto {{ui:prop.font}} il font viene indicato come {{ui:font.fromDesign}}. Aggiungendo il file del font ricompaiono tutte le lettere.
+- **Per le nuove lettere serve il font.** Se qualcuno che non possiede il font digita una lettera non inclusa nel progetto, Magic3D la disegna usando Sans. Sotto {{ui:prop.font}} il font viene indicato come {{ui:font.fromDesign}}. Aggiungendo il file del font ricompaiono tutte le lettere.
 - **Le esportazioni contengono solo la geometria.** I file STL, 3MF, OBJ, STEP e SVG contengono corpi e contorni, non il font.
-- **Le versioni precedenti di layerling** non supportano ancora i font personalizzati e visualizzano questi testi usando Multilingua.
+- **Le versioni precedenti di Magic3D** non supportano ancora i font personalizzati e visualizzano questi testi usando Multilingua.
 
 **Licenze:** i font sono protetti dal diritto d’autore e la relativa licenza stabilisce come possono essere usati. I contorni delle lettere incorporati nei progetti sono simili a quelli inclusi nei file PDF, pratica consentita dalla maggior parte delle licenze. Alcuni font commerciali, però, vietano la condivisione anche di singole lettere. Prima di condividere o pubblicare un progetto che usa un font personalizzato, controllane la licenza. I font gratuiti, come quelli di Google Fonts (perlopiù rilasciati con licenza SIL Open Font License), si possono condividere liberamente. Per un pezzo stampato o un file STL esportato non ci sono problemi: non contengono più il font, ma solo la geometria.
 
@@ -88,7 +88,7 @@ Con una linea esterna, centrata o con l’opzione “Più spesso”, il riquadro
 
 ## Livelli e cartellini con nome
 
-Un cartellino per una stampa multicolore è composto da più livelli di testo: le lettere in cima, sotto lo stesso testo un po’ più largo in un secondo colore e, in basso, una piastra senza fori in un terzo colore. layerling lo crea con un solo comando:
+Un cartellino per una stampa multicolore è composto da più livelli di testo: le lettere in cima, sotto lo stesso testo un po’ più largo in un secondo colore e, in basso, una piastra senza fori in un terzo colore. Magic3D lo crea con un solo comando:
 
 - **Nuovo cartellino:** scegli {{ui:shape.nameTag}} nella libreria delle forme e posizionalo. Mostra la parola “Name” con lettere bianche, un bordo rosso e una piastra scura.
 - **Da un testo:** seleziona il testo e fai clic su {{ui:nameTag.makeLayers}} in cima alle sue impostazioni.

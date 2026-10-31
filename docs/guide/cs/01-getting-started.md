@@ -3,15 +3,15 @@ title: Začínáme
 summary: Od prázdné plochy k prvnímu dílu pro 3D tiskárnu za pět minut, bez účtu a instalace.
 ---
 
-Layerling je modelovací program pro 3D tisk, který běží přímo v prohlížeči. Díly sestavujete z jednoduchých tvarů, vytváříte v nich otvory, zaoblujete hrany a výsledek předáte sliceru. Není potřeba nic instalovat ani se registrovat. Vaše modely zůstávají na vašem počítači.
+Magic3D je modelovací program pro 3D tisk, který běží přímo v prohlížeči. Díly sestavujete z jednoduchých tvarů, vytváříte v nich otvory, zaoblujete hrany a výsledek předáte sliceru. Není potřeba nic instalovat ani se registrovat. Vaše modely zůstávají na vašem počítači.
 
-![Úvodní stránka Layerlingu: nahoře vytvoření nového projektu, pod ním uložené projekty a stručný průvodce.](shot:start-page)
+![Úvodní stránka Magic3D: nahoře vytvoření nového projektu, pod ním uložené projekty a stručný průvodce.](shot:start-page)
 
 ## Vytvoření projektu
 
-Otevřete [layerling.com](https://layerling.com/) a na úvodní stránce klikněte na {{ui:dashboard.createDesign}}. Editor otevře prázdnou pracovní rovinu, tedy podložku s mřížkou, na které budete modelovat.
+Otevřete [magic3d.ro](https://magic3d.ro/) a na úvodní stránce klikněte na {{ui:dashboard.createDesign}}. Editor otevře prázdnou pracovní rovinu, tedy podložku s mřížkou, na které budete modelovat.
 
-Máte-li soubor, ve kterém chcete pokračovat, zvolte {{ui:dashboard.importGeometry}}. Otevřít lze projekty Layerlingu (`.lyl`) i soubory STL, OBJ, 3MF, STEP a SVG.
+Máte-li soubor, ve kterém chcete pokračovat, zvolte {{ui:dashboard.importGeometry}}. Otevřít lze projekty Magic3D (`.lyl`) i soubory STL, OBJ, 3MF, STEP a SVG.
 
 Všechny projekty se později zobrazují na úvodní stránce s náhledem. Uchovávají se v úložišti prohlížeče a ukládají automaticky po každé změně, proto zde není tlačítko pro ukládání. Jak projekty zabalit do souboru a předat dál, vysvětluje kapitola [Soubory a ukládání](chapter:files-and-saving). Pokud chceš připomínku, zapni v nastavení (ozubené kolo na pásu) {{ui:workspace.confirmTabClose}}: prohlížeč se pak zeptá, než se karta s otevřeným návrhem zavře nebo obnoví.
 
@@ -47,7 +47,7 @@ Najeďte myší na tlačítko a uvidíte jeho název. Pokud si nejste jistí, co
 
 ### Barevný motiv
 
-{{ui:common.theme}} úplně nahoře určuje vzhled layerlingu: podle systému, světlý, tmavý nebo grafitový.
+{{ui:common.theme}} úplně nahoře určuje vzhled Magic3D: podle systému, světlý, tmavý nebo grafitový.
 
 ### Přejmenovat projekt
 
@@ -83,7 +83,7 @@ Přepínač **mm | in** vedle {{ui:inspector.snapGrid}} mění jednotku, mříž
 
 ### Zápatí
 
-Dole v okně: {{ui:dashboard.sponsor}} vede na stránku, kde můžete projekt podpořit; {{ui:dashboard.userGuide}} otevře tuto příručku; {{ui:dashboard.forum}} vede na místo pro otázky, nápady a hlášení chyb (diskuse na GitHubu, v němčině fórum drucktipps3d); {{ui:editor.bugReport}} vytvoří ZIP pro hlášení chyby; {{ui:dashboard.projectOnGitHub}} vede na projekt na GitHubu a číslo verze otevře poznámky k vydání. Odkazy na provozovatele a ochranu osobních údajů patří tomu, kdo provozuje kopii layerlingu, kterou používáte.
+Dole v okně: {{ui:dashboard.sponsor}} vede na stránku, kde můžete projekt podpořit; {{ui:dashboard.userGuide}} otevře tuto příručku; {{ui:dashboard.forum}} vede na místo pro otázky, nápady a hlášení chyb (diskuse na GitHubu, v němčině fórum drucktipps3d); {{ui:editor.bugReport}} vytvoří ZIP pro hlášení chyby; {{ui:dashboard.projectOnGitHub}} vede na projekt na GitHubu a číslo verze otevře poznámky k vydání. Odkazy na provozovatele a ochranu osobních údajů patří tomu, kdo provozuje kopii Magic3D, kterou používáte.
 
 ## První díl
 

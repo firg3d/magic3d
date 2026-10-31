@@ -2,13 +2,14 @@
   <table>
     <tr>
       <td width="145" align="center">
-        <img src="apps/web/public/assets/layerling/layerling-logo.svg" width="110" alt="layerling logo">
+        <img src="apps/web/public/assets/magic3d/magic3d-logo.svg" width="110" alt="Magic3D logo">
       </td>
       <td>
-        <h1 align="right">layerling</h1>
-        <h3 align="right">Easy 3D CAD for 3D printing</h3>
+        <h1 align="right">Magic3D</h1>
+        <h3 align="right">CAD 3D gratuit pentru printare 3D · Free 3D CAD for 3D printing</h3>
         <p align="right">
-          Drop a shape, cut a hole, round an edge, print it. In your browser, with no account and no CAD background.
+          Pui o formă, faci o gaură, rotunjești o muchie, printezi. În browser, fără cont, la <a href="https://magic3d.ro">magic3d.ro</a>.
+          Fork of <a href="https://github.com/henmedia/layerling">layerling</a> (AGPL-3.0); the documentation below is layerling's and describes the editor Magic3D is built on.
         </p>
       </td>
     </tr>

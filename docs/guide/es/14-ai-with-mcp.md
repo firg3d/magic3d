@@ -3,21 +3,21 @@ title: Construir con una IA (MCP)
 summary: Cómo un asistente de IA como Gemini, Claude o Codex crea y cambia formas, las agrupa y hace capturas de la vista en tu editor abierto.
 ---
 
-layerling incluye un servidor MCP. MCP es un estándar con el que un asistente de IA puede usar herramientas de otros programas. Gracias a él, un cliente de IA como Gemini, Claude o Codex ve una pestaña abierta del editor y trabaja en ella: crea formas, cambia medidas, agrupa, corta, redondea aristas, lee la escena y hace capturas de la vista. Tú describes la pieza y la IA la construye; tú lo ves todo y puedes intervenir en cualquier momento.
+Magic3D incluye un servidor MCP. MCP es un estándar con el que un asistente de IA puede usar herramientas de otros programas. Gracias a él, un cliente de IA como Gemini, Claude o Codex ve una pestaña abierta del editor y trabaja en ella: crea formas, cambia medidas, agrupa, corta, redondea aristas, lee la escena y hace capturas de la vista. Tú describes la pieza y la IA la construye; tú lo ves todo y puedes intervenir en cualquier momento.
 
 El puente entre el cliente de IA y el editor funciona **en local, en tu ordenador**. Pero ten en cuenta que lo que lee la IA, es decir, la escena y las capturas de la vista, va al proveedor de tu cliente de IA, como cualquier otra cosa que le escribas.
 
-> **Importante:** El puente MCP existe en el servidor de desarrollo que arrancas tú mismo en tu ordenador. En layerling.com y en las instalaciones con alojamiento estático está desactivado. Una copia que alojes tú, como la imagen de Docker en un NAS, puede activarlo con un token de acceso; consulta «Una copia en un NAS o un servidor», más abajo.
+> **Importante:** El puente MCP existe en el servidor de desarrollo que arrancas tú mismo en tu ordenador. En magic3d.ro y en las instalaciones con alojamiento estático está desactivado. Una copia que alojes tú, como la imagen de Docker en un NAS, puede activarlo con un token de acceso; consulta «Una copia en un NAS o un servidor», más abajo.
 
 ## Configuración
 
-1. Descarga layerling de [GitHub](https://github.com/henmedia/layerling) y arráncalo en la carpeta del proyecto con `npm run dev`. Necesitas tener instalado Node.js. En Windows, de eso se encarga la línea de inicio rápido del README.
-2. Abre una pestaña del editor, por ejemplo `http://127.0.0.1:3000/?editor=1`. También puedes dejárselo a la IA: si no hay ningún editor abierto, la primera herramienta que lo necesite abre tu navegador con un editor y espera a que se conecte. Esto funciona con un layerling en tu propio ordenador; con una copia en un NAS o un servidor, el editor lo tienes que abrir tú. Para desactivarlo, pon `LAYERLING_MCP_OPEN_EDITOR=0` en el servidor MCP.
+1. Descarga Magic3D de [GitHub](https://github.com/henmedia/layerling) y arráncalo en la carpeta del proyecto con `npm run dev`. Necesitas tener instalado Node.js. En Windows, de eso se encarga la línea de inicio rápido del README.
+2. Abre una pestaña del editor, por ejemplo `http://127.0.0.1:3000/?editor=1`. También puedes dejárselo a la IA: si no hay ningún editor abierto, la primera herramienta que lo necesite abre tu navegador con un editor y espera a que se conecte. Esto funciona con un Magic3D en tu propio ordenador; con una copia en un NAS o un servidor, el editor lo tienes que abrir tú. Para desactivarlo, pon `LAYERLING_MCP_OPEN_EDITOR=0` en el servidor MCP.
 3. Conecta tu cliente de IA al servidor MCP. El propio cliente lo arranca con `node scripts/layerling-mcp-server.mjs`.
 
 ### Claude Code
 
-No hay que instalar nada: el proyecto trae un `.mcp.json` que registra el servidor, y la skill en `.claude/skills/layerling-mcp-skill`. Abre la carpeta de layerling en Claude Code y pídele, por ejemplo: «Usa las herramientas MCP de layerling para listar mis editores abiertos e inspeccionar la escena».
+No hay que instalar nada: el proyecto trae un `.mcp.json` que registra el servidor, y la skill en `.claude/skills/layerling-mcp-skill`. Abre la carpeta de Magic3D en Claude Code y pídele, por ejemplo: «Usa las herramientas MCP de Magic3D para listar mis editores abiertos e inspeccionar la escena».
 
 ### Claude Desktop
 
@@ -41,7 +41,7 @@ Solo un cliente con el token puede listar o manejar los editores. Las páginas d
 
 ## Lo que puede hacer la IA
 
-La IA trabaja con las mismas funciones que tú, por el mismo camino que sigues cuando manejas el editor. Las funciones nuevas de layerling reciben enseguida su acción MCP. Las herramientas:
+La IA trabaja con las mismas funciones que tú, por el mismo camino que sigues cuando manejas el editor. Las funciones nuevas de Magic3D reciben enseguida su acción MCP. Las herramientas:
 
 | Herramienta | Qué hace |
 | --- | --- |
