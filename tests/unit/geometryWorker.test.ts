@@ -63,6 +63,8 @@ const dispatched: string[] = [];
 async function load(build = "") {
   vi.resetModules();
   vi.stubEnv("NEXT_PUBLIC_BUILD_ID", build);
+  // A fresh module graph starts in Magic3D's default language (Romanian); these tests read English.
+  (await import("@/lib/i18n")).setLanguage("en", false);
   return import("@/lib/geometryWorker");
 }
 

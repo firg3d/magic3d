@@ -2,6 +2,7 @@ import { readdirSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 import {
+  DEFAULT_LANGUAGE,
   detectLanguage,
   getLanguage,
   isLanguage,
@@ -138,12 +139,12 @@ describe("language detection", () => {
     expect(isLanguage(null)).toBe(false);
   });
 
-  it("starts in English, so the first render matches the served HTML", () => {
-    expect(getLanguage()).toBe("en");
-    expect(detectLanguage()).toBe("en");
+  it("starts in Romanian, so the first render matches the served HTML (Magic3D)", () => {
+    expect(DEFAULT_LANGUAGE).toBe("ro");
+    expect(detectLanguage()).toBe("ro");
   });
 
-  it("follows the browser when nothing was chosen", () => {
+  it("opens in Romanian whatever the browser asks for, unless a language was chosen (Magic3D)", () => {
     // The tests run without a DOM, so this stands in for one: a browser that
     // has never been given a preference, only a language list.
     const withBrowser = (languages: string[], stored: string | null = null) => {
@@ -160,16 +161,12 @@ describe("language detection", () => {
       }
     };
 
-    expect(withBrowser(["en-GB", "en"])).toBe("en");
-    expect(withBrowser(["en-US"])).toBe("en");
-    expect(withBrowser(["de-AT", "de"])).toBe("de");
-    expect(withBrowser(["de"])).toBe("de");
-    // A language we do not serve falls back to English rather than to nothing.
-    expect(withBrowser(["sv-SE", "ko"])).toBe("en");
-    expect(withBrowser(["ja-JP", "ja"])).toBe("ja");
-    // The first tag we can serve wins, even behind one we cannot.
-    expect(withBrowser(["sv-SE", "de-DE"])).toBe("de");
-    // A stored choice outranks the browser in both directions.
+    expect(withBrowser(["en-GB", "en"])).toBe("ro");
+    expect(withBrowser(["de-AT", "de"])).toBe("ro");
+    expect(withBrowser(["ro-RO"])).toBe("ro");
+    expect(withBrowser(["sv-SE", "ko"])).toBe("ro");
+    expect(withBrowser(["en-US"], "xx")).toBe("ro");
+    // A stored choice is what counts.
     expect(withBrowser(["de-DE"], "en")).toBe("en");
     expect(withBrowser(["en-US"], "de")).toBe("de");
   });

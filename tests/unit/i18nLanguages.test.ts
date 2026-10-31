@@ -20,19 +20,19 @@ function catalogueOf(language: string) {
 }
 
 describe("the language registry", () => {
-  it("lists English first, then the Latin-script languages by their own names, then the others", () => {
-    expect(LANGUAGES[0]).toBe("en");
-    const latin = LANGUAGES.filter((language) => language !== "en" && /^[\p{Script=Latin} ]+$/u.test(LANGUAGE_INFO[language].name));
+  it("lists Romanian and English first (Magic3D), then the Latin-script languages by their own names, then the others", () => {
+    expect(LANGUAGES.slice(0, 2)).toEqual(["ro", "en"]);
+    const latin = LANGUAGES.filter((language) => language !== "ro" && language !== "en" && /^[\p{Script=Latin} ]+$/u.test(LANGUAGE_INFO[language].name));
     const names = latin.map((language) => LANGUAGE_INFO[language].name);
     expect(names).toEqual([...names].sort(new Intl.Collator("en").compare));
     // a language in another script never stands between two in the Latin one
-    const firstOther = LANGUAGES.findIndex((language) => language !== "en" && !latin.includes(language));
+    const firstOther = LANGUAGES.findIndex((language) => language !== "ro" && language !== "en" && !latin.includes(language));
     const lastLatin = Math.max(...latin.map((language) => LANGUAGES.indexOf(language)));
     expect(firstOther === -1 || firstOther > lastLatin).toBe(true);
   });
 
   it("has English as the language everything falls back to, and an entry for every language", () => {
-    expect(LANGUAGES[0]).toBe("en");
+    expect(LANGUAGES).toContain("en");
     for (const language of LANGUAGES) {
       const info = LANGUAGE_INFO[language];
       expect(info.name.trim(), language).not.toBe("");
@@ -82,11 +82,12 @@ describe("the language registry", () => {
       run({ documentElement }, { languages, language: languages[0] }, { getItem: () => stored });
       return documentElement.lang;
     };
-    expect(painted(["zh-Hant-TW"])).toBe("zh-TW");
-    expect(painted(["zh-Hans-CN"])).toBe("zh-CN");
-    expect(painted(["zh-HK"])).toBe("zh-TW");
-    expect(painted(["en-US"])).toBe("en");
+    // Magic3D: Romanian unless a language was chosen; the browser list is not asked.
+    expect(painted(["zh-Hant-TW"])).toBe("ro");
+    expect(painted(["en-US"])).toBe("ro");
+    expect(painted(["en-US"], "en")).toBe("en");
     expect(painted(["en-US"], "zh-tw")).toBe("zh-TW");
+    expect(painted(["ro-RO"], "zh-cn")).toBe("zh-CN");
   });
 });
 

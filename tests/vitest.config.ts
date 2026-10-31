@@ -19,6 +19,7 @@ export default defineConfig({
   test: {
     environment: "node",
     include: ["tests/unit/**/*.test.ts"],
+    setupFiles: ["tests/setupLanguage.ts"],
     maxWorkers: shareTheMachine(),
   },
 });

@@ -100,3 +100,6 @@ apps/web/public/fonts/japanese/
 
 # Built European Portuguese user guide.
 apps/web/public/guia-pt-pt/
+
+# Built Romanian user guide (Magic3D).
+apps/web/public/ghid/

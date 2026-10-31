@@ -11,14 +11,15 @@
  * To add a language, see docs/TRANSLATING.md.
  */
 /*
- * The order of the language menu. English comes first, as the language everything falls back to;
- * then the languages written in the Latin alphabet, sorted by the name each one gives itself
- * (Čeština, Dansk, Deutsch, Français, ...); then the others, by the name in their own script.
- * A new language goes in at its place, not at the end.
+ * The order of the language menu. Magic3D: Romanian comes first, as the language the site opens in, and
+ * English second, as the language everything falls back to; then the languages written in the Latin
+ * alphabet, sorted by the name each one gives itself (Čeština, Dansk, Deutsch, Français, ...); then the
+ * others, by the name in their own script. A new language goes in at its place, not at the end.
  */
-export const LANGUAGES = ["en", "cs", "da", "de", "es", "fr", "it", "hu", "nl", "pl", "pt-pt", "pt-br", "sl", "tr", "ru", "ar", "ja", "zh-cn", "zh-tw"] as const;
+export const LANGUAGES = ["ro", "en", "cs", "da", "de", "es", "fr", "it", "hu", "nl", "pl", "pt-pt", "pt-br", "sl", "tr", "ru", "ar", "ja", "zh-cn", "zh-tw"] as const;
 export type Language = (typeof LANGUAGES)[number];
-export const DEFAULT_LANGUAGE: Language = "en";
+/** Magic3D opens in Romanian unless the person picked another language; the browser's preference is not asked. */
+export const DEFAULT_LANGUAGE: Language = "ro";
 
 /**
  * Tags that name a script or a region before a language entry of their own: browsers write
@@ -94,10 +95,47 @@ export type LanguageInfo = {
   guide: GuideStrings;
 };
 
-const GITHUB_DISCUSSIONS = "https://github.com/henmedia/layerling/discussions";
+const GITHUB_DISCUSSIONS = "https://github.com/firg3d/magic3d/discussions";
 const DRUCKTIPPS_FORUM = "https://forum.drucktipps3d.de/forum/board/127-layerling/";
 
 export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
+  ro: {
+    name: "Română",
+    htmlLang: "ro",
+    numberLocale: "ro-RO",
+    quotes: ["„", "”"],
+    guideDir: "ghid",
+    communityUrl: GITHUB_DISCUSSIONS,
+    readme: "README.md",
+    quickstartAnchor: "windows-quickstart",
+    legal: { imprint: "Date de identificare", privacy: "Politica de confidențialitate" },
+    keyNames: { Click: "Clic", RightClick: "Clic dreapta", Drag: "Tragere" },
+    asciiUmlauts: false,
+    complete: true,
+    guide: {
+      site: "Ghidul Magic3D",
+      home: "Ghid de utilizare",
+      openEditor: "Deschide editorul",
+      backToEditor: "Înapoi la editor",
+      editorElsewhere: "Editorul e deja deschis în altă filă - treci acolo.",
+      chapters: "Capitole",
+      onThisPage: "Pe această pagină",
+      previous: "Capitolul anterior",
+      next: "Capitolul următor",
+      overviewLead: "Tot ce poate face Magic3D, pas cu pas. Imaginile sunt luate din programul care rulează și se reînnoiesc cu fiecare versiune.",
+      sourceNote: "Ghidul crește odată cu programul. Dacă lipsește ceva sau e greșit, spune-ne în",
+      forum: "discuții",
+      notTranslated: "Capitolul acesta nu e tradus încă în română. Urmează textul în engleză.",
+      languageMenu: "Limbă",
+      search: "Caută în ghid",
+      searchNothing: "Nu am găsit nimic.",
+      printAll: "Tot ghidul, pentru printare",
+      printAllTitle: "Tot ghidul pe o singură pagină",
+      printAllLead: "Toate capitolele unul după altul, pentru printare sau salvare ca PDF: apasă Ctrl+P și dezactivează „Antete și subsoluri” în setările de printare. Ca să printezi doar o parte, alege acolo numerele paginilor.",
+      printContents: "Cuprins",
+      printButton: "Printează",
+    },
+  },
   cs: {
     name: "Čeština",
     htmlLang: "cs",
@@ -112,7 +150,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
     asciiUmlauts: false,
     complete: true,
     guide: {
-      site: "Uživatelská příručka Layerlingu",
+      site: "Uživatelská příručka Magic3D",
       home: "Uživatelská příručka",
       openEditor: "Otevřít editor",
       backToEditor: "Zpět do editoru",
@@ -121,7 +159,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
       onThisPage: "Na této stránce",
       previous: "Předchozí kapitola",
       next: "Další kapitola",
-      overviewLead: "Možnosti Layerlingu krok za krokem. Obrázky pocházejí ze spuštěné aplikace a aktualizují se s každou verzí.",
+      overviewLead: "Možnosti Magic3D krok za krokem. Obrázky pocházejí ze spuštěné aplikace a aktualizují se s každou verzí.",
       sourceNote: "Příručka se rozšiřuje spolu s aplikací. Pokud něco chybí nebo je nesprávně, napište do",
       forum: "diskuze",
       notTranslated: "Tato kapitola zatím není přeložená do češtiny. Následuje anglický text.",
@@ -149,7 +187,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
     asciiUmlauts: false,
     complete: true,
     guide: {
-      site: "layerling user guide",
+      site: "Magic3D user guide",
       home: "User guide",
       openEditor: "Open the editor",
       backToEditor: "Back to the editor",
@@ -158,7 +196,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
       onThisPage: "On this page",
       previous: "Previous chapter",
       next: "Next chapter",
-      overviewLead: "Everything layerling can do, step by step. The pictures are taken from the running program and are renewed with every version.",
+      overviewLead: "Everything Magic3D can do, step by step. The pictures are taken from the running program and are renewed with every version.",
       sourceNote: "This guide grows with the program. If something is missing or wrong, tell us in the",
       forum: "discussions",
       notTranslated: "This chapter is not translated into your language yet. The English text follows.",
@@ -186,7 +224,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
     asciiUmlauts: true,
     complete: true,
     guide: {
-      site: "layerling Anleitung",
+      site: "Magic3D Anleitung",
       home: "Anleitung",
       openEditor: "Zum Editor",
       backToEditor: "Zurück zum Editor",
@@ -195,7 +233,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
       onThisPage: "Auf dieser Seite",
       previous: "Vorheriges Kapitel",
       next: "Nächstes Kapitel",
-      overviewLead: "Alles, was layerling kann, Schritt für Schritt. Die Bilder entstehen aus dem laufenden Programm und werden mit jeder Fassung neu aufgenommen.",
+      overviewLead: "Alles, was Magic3D kann, Schritt für Schritt. Die Bilder entstehen aus dem laufenden Programm und werden mit jeder Fassung neu aufgenommen.",
       sourceNote: "Diese Anleitung wächst mit dem Programm. Fehlt dir etwas oder stimmt etwas nicht, sag es im",
       forum: "Forum",
       notTranslated: "Dieses Kapitel ist noch nicht in deine Sprache übersetzt. Es folgt der englische Text.",
@@ -241,7 +279,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
     asciiUmlauts: false,
     complete: false,
     guide: {
-      site: "Guía de usuario de layerling",
+      site: "Guía de usuario de Magic3D",
       home: "Guía de usuario",
       openEditor: "Abrir el editor",
       backToEditor: "Volver al editor",
@@ -250,7 +288,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
       onThisPage: "En esta página",
       previous: "Capítulo anterior",
       next: "Capítulo siguiente",
-      overviewLead: "Todo lo que sabe hacer layerling, paso a paso. Las imágenes salen del programa en marcha y se renuevan con cada versión.",
+      overviewLead: "Todo lo que sabe hacer Magic3D, paso a paso. Las imágenes salen del programa en marcha y se renuevan con cada versión.",
       sourceNote: "Esta guía crece con el programa. Si falta algo o algo no es correcto, dínoslo en las",
       forum: "discusiones",
       notTranslated: "Este capítulo aún no está traducido al español. A continuación, el texto en inglés.",
@@ -278,7 +316,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
     asciiUmlauts: false,
     complete: true,
     guide: {
-      site: "layerling handleiding",
+      site: "Magic3D handleiding",
       home: "Handleiding",
       openEditor: "Naar de editor",
       backToEditor: "Terug naar de editor",
@@ -287,7 +325,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
       onThisPage: "Op deze pagina",
       previous: "Vorig hoofdstuk",
       next: "Volgend hoofdstuk",
-      overviewLead: "Alles wat layerling kan, stap voor stap. De afbeeldingen komen uit het draaiende programma en worden bij elke versie opnieuw gemaakt.",
+      overviewLead: "Alles wat Magic3D kan, stap voor stap. De afbeeldingen komen uit het draaiende programma en worden bij elke versie opnieuw gemaakt.",
       sourceNote: "Deze handleiding groeit mee met het programma. Mis je iets of klopt er iets niet, laat het ons weten in de",
       forum: "discussies",
       notTranslated: "Dit hoofdstuk is nog niet in jouw taal vertaald. Hieronder volgt de Engelse tekst.",
@@ -324,7 +362,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
     asciiUmlauts: false,
     complete: true,
     guide: {
-      site: "Manuel d'utilisation layerling",
+      site: "Manuel d'utilisation Magic3D",
       home: "Manuel d'utilisation",
       openEditor: "Ouvrir l'éditeur",
       backToEditor: "Retour à l'éditeur",
@@ -333,7 +371,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
       onThisPage: "Sur cette page",
       previous: "Chapitre précédent",
       next: "Chapitre suivant",
-      overviewLead: "Tout ce que layerling peut faire, pas à pas. Les images proviennent du programme en cours d'exécution et sont renouvelées à chaque version.",
+      overviewLead: "Tout ce que Magic3D peut faire, pas à pas. Les images proviennent du programme en cours d'exécution et sont renouvelées à chaque version.",
       sourceNote: "Ce manuel grandit avec le programme. Si quelque chose manque ou est inexact, dites-le nous dans les",
       forum: "discussions",
       notTranslated: "Ce chapitre n'est pas encore traduit en français. Le texte en anglais suit.",
@@ -365,7 +403,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
     asciiUmlauts: false,
     complete: false,
     guide: {
-      site: "Instrukcja layerling",
+      site: "Instrukcja Magic3D",
       home: "Instrukcja",
       openEditor: "Otwórz edytor",
       backToEditor: "Wróć do edytora",
@@ -374,7 +412,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
       onThisPage: "Na tej stronie",
       previous: "Poprzedni rozdział",
       next: "Następny rozdział",
-      overviewLead: "Wszystko, co potrafi layerling, krok po kroku. Obrazki pochodzą z działającego programu i są odnawiane przy każdej wersji.",
+      overviewLead: "Wszystko, co potrafi Magic3D, krok po kroku. Obrazki pochodzą z działającego programu i są odnawiane przy każdej wersji.",
       sourceNote: "Ta instrukcja rośnie razem z programem. Jeśli czegoś brakuje albo coś się nie zgadza, napisz w",
       forum: "dyskusjach",
       notTranslated: "Ten rozdział nie jest jeszcze przetłumaczony na polski. Poniżej tekst angielski.",
@@ -404,7 +442,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
     asciiUmlauts: false,
     complete: false,
     guide: {
-      site: "layerling kılavuzu",
+      site: "Magic3D kılavuzu",
       home: "Kılavuz",
       openEditor: "Editörü aç",
       backToEditor: "Editöre dön",
@@ -413,7 +451,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
       onThisPage: "Bu sayfada",
       previous: "Önceki bölüm",
       next: "Sonraki bölüm",
-      overviewLead: "layerling'in yapabildiği her şey, adım adım. Resimler çalışan programdan alınır ve her sürümle yenilenir.",
+      overviewLead: "Magic3D'in yapabildiği her şey, adım adım. Resimler çalışan programdan alınır ve her sürümle yenilenir.",
       sourceNote: "Bu kılavuz programla birlikte büyür. Bir şey eksik veya yanlışsa bunu şurada söyle:",
       forum: "forum",
       notTranslated: "Bu bölüm henüz Türkçeye çevrilmedi. Aşağıda İngilizce metin var.",
@@ -441,7 +479,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
     asciiUmlauts: false,
     complete: true,
     guide: {
-      site: "Руководство layerling",
+      site: "Руководство Magic3D",
       home: "Руководство",
       openEditor: "Открыть редактор",
       backToEditor: "Вернуться в редактор",
@@ -450,7 +488,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
       onThisPage: "На этой странице",
       previous: "Предыдущая глава",
       next: "Следующая глава",
-      overviewLead: "Всё, что умеет layerling, шаг за шагом. Картинки сняты с работающей программы и обновляются с каждой версией.",
+      overviewLead: "Всё, что умеет Magic3D, шаг за шагом. Картинки сняты с работающей программы и обновляются с каждой версией.",
       sourceNote: "Это руководство растёт вместе с программой. Если чего-то не хватает или что-то не так — напишите в",
       forum: "обсуждениях",
       notTranslated: "Эта глава ещё не переведена на ваш язык. Ниже идёт английский текст.",
@@ -482,7 +520,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
     asciiUmlauts: false,
     complete: false,
     guide: {
-      site: "Guia do usuário do layerling",
+      site: "Guia do usuário do Magic3D",
       home: "Guia do usuário",
       openEditor: "Abrir o editor",
       backToEditor: "Voltar ao editor",
@@ -491,7 +529,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
       onThisPage: "Nesta página",
       previous: "Capítulo anterior",
       next: "Próximo capítulo",
-      overviewLead: "Tudo o que o layerling sabe fazer, passo a passo. As imagens são tiradas do programa em funcionamento e renovadas a cada versão.",
+      overviewLead: "Tudo o que o Magic3D sabe fazer, passo a passo. As imagens são tiradas do programa em funcionamento e renovadas a cada versão.",
       sourceNote: "Este guia cresce junto com o programa. Se algo estiver faltando ou errado, avise nas",
       forum: "discussões",
       notTranslated: "Este capítulo ainda não foi traduzido para o português. Segue o texto em inglês.",
@@ -520,7 +558,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
     asciiUmlauts: false,
     complete: false,
     guide: {
-      site: "Guia do utilizador do layerling",
+      site: "Guia do utilizador do Magic3D",
       home: "Guia do utilizador",
       openEditor: "Abrir o editor",
       backToEditor: "Voltar ao editor",
@@ -529,7 +567,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
       onThisPage: "Nesta página",
       previous: "Capítulo anterior",
       next: "Capítulo seguinte",
-      overviewLead: "Tudo o que podes fazer com o layerling, passo a passo. As imagens são captadas no programa em funcionamento e atualizadas a cada versão.",
+      overviewLead: "Tudo o que podes fazer com o Magic3D, passo a passo. As imagens são captadas no programa em funcionamento e atualizadas a cada versão.",
       sourceNote: "Este guia cresce com o programa. Se faltar alguma coisa ou encontrares um erro, diz-nos nas",
       forum: "discussões",
       notTranslated: "Este capítulo ainda não está traduzido para português de Portugal. Segue-se o texto em inglês.",
@@ -557,7 +595,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
     asciiUmlauts: false,
     complete: true,
     guide: {
-      site: "layerling navodila",
+      site: "Magic3D navodila",
       home: "Navodila",
       openEditor: "V urejevalnik",
       backToEditor: "Nazaj v urejevalnik",
@@ -566,7 +604,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
       onThisPage: "Na tej strani",
       previous: "Prejšnje poglavje",
       next: "Naslednje poglavje",
-      overviewLead: "Vse, kar zmore layerling, korak za korakom. Slike so posnete iz delujočega programa (v angleškem vmesniku).",
+      overviewLead: "Vse, kar zmore Magic3D, korak za korakom. Slike so posnete iz delujočega programa (v angleškem vmesniku).",
       sourceNote: "Ta navodila rastejo skupaj s programom. Če kaj manjka ali ne drži, sporoči v",
       forum: "razpravah",
       notTranslated: "To poglavje še ni prevedeno v tvoj jezik. Sledi angleško besedilo.",
@@ -599,7 +637,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
     asciiUmlauts: false,
     complete: false,
     guide: {
-      site: "layerling útmutató",
+      site: "Magic3D útmutató",
       home: "Útmutató",
       openEditor: "Szerkesztő megnyitása",
       backToEditor: "Vissza a szerkesztőhöz",
@@ -608,7 +646,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
       onThisPage: "Ezen az oldalon",
       previous: "Előző fejezet",
       next: "Következő fejezet",
-      overviewLead: "Minden, amit a layerling tud, lépésről lépésre. A képek a futó programból készülnek, és minden verzióval megújulnak.",
+      overviewLead: "Minden, amit a Magic3D tud, lépésről lépésre. A képek a futó programból készülnek, és minden verzióval megújulnak.",
       sourceNote: "Ez az útmutató a programmal együtt bővül. Ha valami hiányzik vagy nem stimmel, szólj a",
       forum: "beszélgetésekben",
       notTranslated: "Ez a fejezet még nincs lefordítva magyarra. Alább az angol szöveg következik.",
@@ -638,7 +676,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
     asciiUmlauts: false,
     complete: false,
     guide: {
-      site: "layerling brugervejledning",
+      site: "Magic3D brugervejledning",
       home: "Brugervejledning",
       openEditor: "Åbn editoren",
       backToEditor: "Tilbage til editoren",
@@ -647,7 +685,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
       onThisPage: "På denne side",
       previous: "Forrige kapitel",
       next: "Næste kapitel",
-      overviewLead: "Alt hvad layerling kan, trin for trin. Billederne er taget fra det kørende program og bliver fornyet med hver version.",
+      overviewLead: "Alt hvad Magic3D kan, trin for trin. Billederne er taget fra det kørende program og bliver fornyet med hver version.",
       sourceNote: "Denne vejledning vokser sammen med programmet. Hvis noget mangler eller er forkert, så fortæl os i",
       forum: "diskussioner",
       notTranslated: "Dette kapitel er ikke oversat til dit sprog endnu. Den engelske tekst følger.",
@@ -689,7 +727,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
     asciiUmlauts: false,
     complete: false,
     guide: {
-      site: "Guida utente di layerling",
+      site: "Guida utente di Magic3D",
       home: "Guida utente",
       openEditor: "Apri l'editor",
       backToEditor: "Torna all'editor",
@@ -698,7 +736,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
       onThisPage: "In questa pagina",
       previous: "Capitolo precedente",
       next: "Capitolo successivo",
-      overviewLead: "Tutto quello che layerling può fare, passo dopo passo. Le immagini sono tratte dal programma in esecuzione e vengono aggiornate a ogni versione.",
+      overviewLead: "Tutto quello che Magic3D può fare, passo dopo passo. Le immagini sono tratte dal programma in esecuzione e vengono aggiornate a ogni versione.",
       sourceNote: "Questa guida cresce insieme al programma. Se manca qualcosa o trovi un errore, segnalalo nelle",
       forum: "discussioni",
       notTranslated: "Questo capitolo non è ancora tradotto in italiano. Segue il testo inglese.",
@@ -729,7 +767,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
     asciiUmlauts: false,
     complete: false,
     guide: {
-      site: "دليل استخدام layerling",
+      site: "دليل استخدام Magic3D",
       home: "دليل الاستخدام",
       openEditor: "افتح المحرّر",
       backToEditor: "العودة إلى المحرّر",
@@ -738,7 +776,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
       onThisPage: "في هذه الصفحة",
       previous: "الفصل السابق",
       next: "الفصل التالي",
-      overviewLead: "كل ما يستطيع layerling فعله، خطوة بخطوة. الصور مأخوذة من البرنامج أثناء تشغيله وتُحدَّث مع كل إصدار.",
+      overviewLead: "كل ما يستطيع Magic3D فعله، خطوة بخطوة. الصور مأخوذة من البرنامج أثناء تشغيله وتُحدَّث مع كل إصدار.",
       sourceNote: "ينمو هذا الدليل مع البرنامج. إذا كان هناك شيء ناقص أو خاطئ، فأخبرنا في",
       forum: "النقاشات",
       notTranslated: "لم يُترجَم هذا الفصل إلى لغتك بعد، ويليه النص الإنجليزي.",
@@ -768,7 +806,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
     asciiUmlauts: false,
     complete: false,
     guide: {
-      site: "layerling ユーザーガイド",
+      site: "Magic3D ユーザーガイド",
       home: "ユーザーガイド",
       openEditor: "エディターを開く",
       backToEditor: "エディターに戻る",
@@ -777,7 +815,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
       onThisPage: "このページの内容",
       previous: "前の章",
       next: "次の章",
-      overviewLead: "layerling でできることを、じゅんばんに説明します。画像は動いているプログラムからとったもので、新しいバージョンが出るたびにとり直しています。",
+      overviewLead: "Magic3D でできることを、じゅんばんに説明します。画像は動いているプログラムからとったもので、新しいバージョンが出るたびにとり直しています。",
       sourceNote: "このガイドはプログラムといっしょに育っていきます。足りないところやまちがいがあったら、ここで教えてください:",
       forum: "ディスカッション",
       notTranslated: "この章はまだ日本語になっていません。このあとは英語で書かれています。",
@@ -809,7 +847,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
     asciiUmlauts: false,
     complete: false,
     guide: {
-      site: "layerling 用户指南",
+      site: "Magic3D 用户指南",
       home: "用户指南",
       openEditor: "打开编辑器",
       backToEditor: "返回编辑器",
@@ -818,7 +856,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
       onThisPage: "本页内容",
       previous: "上一章",
       next: "下一章",
-      overviewLead: "layerling 的全部功能，逐步讲解。图片取自运行中的程序，并随每个版本更新。",
+      overviewLead: "Magic3D 的全部功能，逐步讲解。图片取自运行中的程序，并随每个版本更新。",
       sourceNote: "本指南随程序一同完善。如有缺漏或错误，请到",
       forum: "讨论区反馈",
       notTranslated: "本章尚未翻译为简体中文，以下为英文原文。",
@@ -849,7 +887,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
     asciiUmlauts: false,
     complete: false,
     guide: {
-      site: "layerling 使用者指南",
+      site: "Magic3D 使用者指南",
       home: "使用者指南",
       openEditor: "開啟編輯器",
       backToEditor: "返回編輯器",
@@ -858,7 +896,7 @@ export const LANGUAGE_INFO: Readonly<Record<Language, LanguageInfo>> = {
       onThisPage: "本頁內容",
       previous: "上一章",
       next: "下一章",
-      overviewLead: "layerling 的全部功能，逐步說明。圖片取自執行中的程式，並隨每個版本更新。",
+      overviewLead: "Magic3D 的全部功能，逐步說明。圖片取自執行中的程式，並隨每個版本更新。",
       sourceNote: "本指南隨程式一同完善。如有缺漏或錯誤，請到",
       forum: "討論區告訴我們",
       notTranslated: "本章尚未翻譯為繁體中文，以下為英文原文。",

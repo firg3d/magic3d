@@ -26,11 +26,11 @@ describe("the browser's translator and the page language", () => {
   it("gives the page its real language before anything is drawn", () => {
     // Read as English, a German page was translated into German and "Hell" became "Hölle".
     expect(bootLanguage("de", ["de-DE"])).toBe("de");
-    expect(bootLanguage(null, ["de-AT", "en"])).toBe("de");
-    expect(bootLanguage(null, ["pt-BR"])).toBe("pt-BR");
     expect(bootLanguage("en", ["de-DE"])).toBe("en");
-    expect(bootLanguage(null, ["es-MX", "es"])).toBe("es-ES");
-    expect(bootLanguage(null, ["sv-SE", "sv"])).toBe("en");
-    expect(bootLanguage("xx", ["sv"])).toBe("en");
+    expect(bootLanguage("pt-br", ["en"])).toBe("pt-BR");
+    // Magic3D: without a stored choice the page is Romanian, whatever the browser asks for.
+    expect(bootLanguage(null, ["de-AT", "en"])).toBe("ro");
+    expect(bootLanguage(null, ["sv-SE", "sv"])).toBe("ro");
+    expect(bootLanguage("xx", ["sv"])).toBe("ro");
   });
 });

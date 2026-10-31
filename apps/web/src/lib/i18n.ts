@@ -1,9 +1,9 @@
 import { MESSAGES_DE } from "@/lib/messages.de";
 import { MESSAGES_EN, type MessageKey } from "@/lib/messages.en";
+import { MESSAGES_RO } from "@/lib/messages.ro";
 import {
   DEFAULT_LANGUAGE,
   LANGUAGE_INFO,
-  LANGUAGE_TAG_ALIASES,
   LANGUAGES,
   isLanguage,
   languageFromTag,
@@ -101,7 +101,8 @@ const LOADERS: Partial<Record<Language, CatalogueLoader>> = {
   "zh-tw": () => import("@/lib/messages.zh-tw").then((module) => module.MESSAGES_ZH_TW),
 };
 
-const catalogues = createCatalogueStore({ en: MESSAGES_EN, de: MESSAGES_DE }, LOADERS);
+// Romanian is built in next to English: it is the language the page is drawn in before anything is chosen.
+const catalogues = createCatalogueStore({ en: MESSAGES_EN, de: MESSAGES_DE, ro: MESSAGES_RO }, LOADERS);
 
 /**
  * The current language lives in a module-level store rather than in React
@@ -169,18 +170,17 @@ export function setLanguage(language: Language, persist = true): Promise<void> {
     });
 }
 
-/** Stored choice first, then what the browser asks for, then English. */
+/**
+ * Stored choice first, then Romanian. Magic3D does not follow the browser's language: many people in
+ * Romania run an English browser and still expect the site in Romanian; the language menu is one click away.
+ */
 export function detectLanguage(): Language {
   if (typeof window === "undefined") return DEFAULT_LANGUAGE;
   try {
     const stored = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
     if (isLanguage(stored)) return stored;
   } catch {
-    // Fall through to the browser's own preference.
-  }
-  for (const tag of window.navigator.languages ?? [window.navigator.language]) {
-    const language = languageFromTag(tag);
-    if (language) return language;
+    // Fall through to the default language.
   }
   return DEFAULT_LANGUAGE;
 }
@@ -193,7 +193,7 @@ export function detectLanguage(): Language {
  */
 export const LANGUAGE_BOOT_SCRIPT = `try{var m=${JSON.stringify(
   Object.fromEntries(LANGUAGES.map((language) => [language, LANGUAGE_INFO[language].htmlLang])),
-)},a=${JSON.stringify(LANGUAGE_TAG_ALIASES)},l=null;try{var s=localStorage.getItem(${JSON.stringify(LANGUAGE_STORAGE_KEY)});if(m[s])l=s}catch(e){}if(!l){var t=navigator.languages||[navigator.language];for(var i=0;i<t.length&&!l;i++){var p=String(t[i]||"").trim().toLowerCase().split("-"),r=p.slice(0,2).join("-");l=m[r]?r:a[r]?a[r]:m[p[0]]?p[0]:null}}document.documentElement.lang=m[l||${JSON.stringify(DEFAULT_LANGUAGE)}]}catch(e){}`;
+)},l=null;try{var s=localStorage.getItem(${JSON.stringify(LANGUAGE_STORAGE_KEY)});if(m[s])l=s}catch(e){}document.documentElement.lang=m[l||${JSON.stringify(DEFAULT_LANGUAGE)}]}catch(e){}`;
 
 export function translate(
   language: Language,
