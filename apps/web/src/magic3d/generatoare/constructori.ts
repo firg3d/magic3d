@@ -1,5 +1,6 @@
 import opentype from "opentype.js";
-import type { Constructor, Construit, Fonturi, PiesaManifold } from "@/magic3d/generatoare/constructori/comun";
+import { parseaza3mf, type CorpModel } from "@/magic3d/core/assets/threemf";
+import type { Constructor, Construit, Fonturi, Modele, PiesaManifold } from "@/magic3d/generatoare/constructori/comun";
 import { articulat } from "@/magic3d/generatoare/constructori/articulat";
 import { brelocDecor } from "@/magic3d/generatoare/constructori/breloc-decor";
 import { brelocuri } from "@/magic3d/generatoare/constructori/brelocuri";
@@ -62,12 +63,38 @@ export async function incarcaFonturi(assetBase: string, p: Parametri): Promise<F
   return Object.fromEntries(chei.map((cheie, i) => [cheie, parsate[i]]));
 }
 
+const modele = new Map<string, Promise<CorpModel[]>>();
+
+/** Un model 3MF din /magic3d/ ("tematici/As romb.3mf"), citit o singura data per worker. */
+export function incarcaModel(assetBase: string, cale: string): Promise<CorpModel[]> {
+  let model = modele.get(cale);
+  if (!model) {
+    const url = new URL(`magic3d/${cale.split("/").map(encodeURIComponent).join("/")}`, assetBase).href;
+    model = fetch(url)
+      .then((response) => {
+        if (!response.ok) throw new Error(`model ${cale}: HTTP ${response.status}`);
+        return response.arrayBuffer();
+      })
+      .then((buffer) => parseaza3mf(new Uint8Array(buffer)));
+    model.catch(() => modele.delete(cale));
+    modele.set(cale, model);
+  }
+  return model;
+}
+
+/** Toate modelele cerute de parametri: fiecare cheie care incepe cu "fisier3mf" si are o cale. */
+export async function incarcaModele(assetBase: string, p: Parametri): Promise<Modele> {
+  const chei = Object.keys(p).filter((cheie) => /^fisier3mf/.test(cheie) && typeof p[cheie] === "string" && p[cheie]);
+  const citite = await Promise.all(chei.map((cheie) => incarcaModel(assetBase, String(p[cheie]))));
+  return Object.fromEntries(chei.map((cheie, i) => [cheie, citite[i]]));
+}
+
 export const areConstructor = (id: string) => id in CONSTRUCTORI;
 
-export function construieste(id: string, p: Parametri, mod: unknown, fonturiCerute: Fonturi): Construit {
+export function construieste(id: string, p: Parametri, mod: unknown, fonturiCerute: Fonturi, modeleCerute: Modele = {}): Construit {
   const constructor = CONSTRUCTORI[id];
   if (!constructor) throw new Error(`generator necunoscut: ${id}`);
-  return constructor(p, mod, fonturiCerute);
+  return constructor(p, mod, fonturiCerute, modeleCerute);
 }
 
 /**

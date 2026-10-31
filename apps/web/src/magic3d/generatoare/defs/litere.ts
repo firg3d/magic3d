@@ -1,13 +1,47 @@
-import type { GeneratorDef, Parametri } from "@/magic3d/generatoare/tipuri";
+import manifestBaze from "../../../../public/magic3d/base/base-manifest.json";
+import manifestTematici from "../../../../public/magic3d/tematici/manifest.json";
+import type { GeneratorDef, ParamDef, Parametri } from "@/magic3d/generatoare/tipuri";
 
 /*
- * Litere Decor: litera mare cu chenar si scris (relief, gravat sau in locas), din
- * src/apps/litere/main.ts (magic3d-legacy). Pozitia scrisului e numerica (offsetX/Y, rotatie,
- * adancime), nu trasa cu mouse-ul. Tematicile si bazele vin din biblioteca de modele, ca piese
- * separate aranjate cu uneltele editorului; diacriticele, permise vechi doar pe baza, raman afara.
+ * Litere Decor: litera mare cu chenar si scris (relief, gravat sau in locas), pana la trei tematici
+ * lipite pe ea si o baza cu locas, din src/apps/litere/main.ts (magic3d-legacy). Pozitiile (scris,
+ * tematici, litera pe baza) sunt numerice, nu trase cu mouse-ul. Diacriticele au nevoie de baza:
+ * fara ea, accentul ar fi o piesa de 2-3 mm fara sprijin (regula aplicatiei vechi).
  */
 
-const CARACTERE = [..."ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", "&", "♥"];
+const CARACTERE = [..."ABCDEFGHIJKLMNOPQRSTUVWXYZ", "Ă", "Â", "Î", "Ș", "Ț", ..."0123456789", "&", "♥"];
+export const DIACRITICE = ["Ă", "Â", "Î", "Ș", "Ț"];
+export const NR_TEMATICI = 3;
+
+const modele = (lista: { fisier: string; nume: string }[], folder: string) => [
+  { valoare: "", eticheta: "litere.faraModel" },
+  ...lista.map((m) => ({ valoare: `${folder}/${m.fisier}`, eticheta: m.nume })),
+];
+const OPTIUNI_TEMATICI = modele(manifestTematici, "tematici");
+const OPTIUNI_BAZE = modele(manifestBaze, "base");
+
+const cuTema = (i: number) => (p: Parametri) => String(p[`fisier3mfTema${i}`] ?? "") !== "";
+const cuBaza = (p: Parametri) => String(p.fisier3mfBaza ?? "") !== "";
+
+/** Campurile unei tematici: modelul, marimea (latura cea mai lunga), pozitia pe fata literei, rotatia, adancimea, culoarea. */
+function campuriTema(i: number): ParamDef[] {
+  const grup = `litere.tema${i}`;
+  const vizibil = cuTema(i);
+  return [
+    { cheie: `fisier3mfTema${i}`, tip: "alegere", eticheta: "litere.model", grup, optiuni: OPTIUNI_TEMATICI },
+    { cheie: `marimeTema${i}`, tip: "numar", eticheta: "litere.temaMarime", grup, min: 5, max: 250, pas: 1, vizibil },
+    { cheie: `xTema${i}`, tip: "numar", eticheta: "litere.temaX", grup, min: -150, max: 150, pas: 0.5, vizibil },
+    { cheie: `yTema${i}`, tip: "numar", eticheta: "litere.temaY", grup, min: -150, max: 150, pas: 0.5, vizibil },
+    { cheie: `rotTema${i}`, tip: "numar", eticheta: "litere.temaRotatie", grup, min: -180, max: 180, pas: 1, vizibil },
+    { cheie: `adancimeTema${i}`, tip: "numar", eticheta: "litere.temaAdancime", grup, min: -20, max: 20, pas: 0.1, vizibil },
+    { cheie: `culoareTema${i}`, tip: "culoare", eticheta: "litere.culoare", grup, vizibil },
+  ];
+}
+const PALETA = ["#88aaff", "#ff9a6b", "#7fd6a0"];
+const implicitTeme = Object.fromEntries(Array.from({ length: NR_TEMATICI }, (_, k) => k + 1).flatMap((i) => [
+  [`fisier3mfTema${i}`, ""], [`marimeTema${i}`, 35], [`xTema${i}`, 0], [`yTema${i}`, 0], [`rotTema${i}`, 0],
+  [`adancimeTema${i}`, -3], [`culoareTema${i}`, PALETA[i - 1]],
+]));
 const cuScris = (p: Parametri) => String(p.scris).trim().length > 0;
 const ingropat = (p: Parametri) => cuScris(p) && p.modScris !== "relief";
 
@@ -38,6 +72,14 @@ export const LITERE: GeneratorDef = {
     offsetY: -35.2,
     rotatieScris: 0,
     culoareScris: "#ffffff",
+    ...implicitTeme,
+    fisier3mfBaza: "",
+    scaraBaza: 100,
+    adancimeInfigere: 5,
+    jocInfigere: 0.2,
+    literaX: 0,
+    literaZ: 0,
+    rotatieLitera: 0,
   },
   parametri: [
     { cheie: "litera", tip: "alegere", eticheta: "litere.litera", grup: "litere.grupLitera", optiuni: CARACTERE.map((ch) => ({ valoare: ch, eticheta: ch })) },
@@ -73,5 +115,13 @@ export const LITERE: GeneratorDef = {
     { cheie: "offsetY", tip: "numar", eticheta: "litere.scrisY", grup: "litere.grupScris", min: -150, max: 150, pas: 0.5, vizibil: cuScris },
     { cheie: "rotatieScris", tip: "numar", eticheta: "litere.scrisRotatie", grup: "litere.grupScris", min: -180, max: 180, pas: 1, vizibil: cuScris },
     { cheie: "culoareScris", tip: "culoare", eticheta: "litere.culoare", grup: "litere.grupScris", vizibil: cuScris },
+    ...Array.from({ length: NR_TEMATICI }, (_, k) => campuriTema(k + 1)).flat(),
+    { cheie: "fisier3mfBaza", tip: "alegere", eticheta: "litere.model", grup: "litere.grupBaza", optiuni: OPTIUNI_BAZE },
+    { cheie: "scaraBaza", tip: "numar", eticheta: "litere.scaraProcent", grup: "litere.grupBaza", min: 10, max: 400, pas: 1, vizibil: cuBaza },
+    { cheie: "adancimeInfigere", tip: "numar", eticheta: "litere.adancimeInfigere", grup: "litere.grupBaza", min: 1, max: 30, pas: 0.5, vizibil: cuBaza },
+    { cheie: "jocInfigere", tip: "numar", eticheta: "litere.jocInfigere", grup: "litere.grupBaza", min: 0, max: 1, pas: 0.05, vizibil: cuBaza },
+    { cheie: "literaX", tip: "numar", eticheta: "litere.literaPeBazaX", grup: "litere.grupBaza", min: -150, max: 150, pas: 0.5, vizibil: cuBaza },
+    { cheie: "literaZ", tip: "numar", eticheta: "litere.literaPeBazaZ", grup: "litere.grupBaza", min: -150, max: 150, pas: 0.5, vizibil: cuBaza },
+    { cheie: "rotatieLitera", tip: "numar", eticheta: "litere.rotatieLitera", grup: "litere.grupBaza", min: -180, max: 180, pas: 1, vizibil: cuBaza },
   ],
 };

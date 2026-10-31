@@ -3,6 +3,7 @@ import path from "node:path";
 import ManifoldModule from "manifold-3d";
 import opentype from "opentype.js";
 import { instrumenteazaArena, inArena } from "@/magic3d/core/geometry/arena";
+import { parseaza3mf } from "@/magic3d/core/assets/threemf";
 import { construieste, triunghiuri } from "@/magic3d/generatoare/constructori";
 import type { Constructor } from "@/magic3d/generatoare/constructori/comun";
 import type { GeneratorDef, Parametri, PiesaGenerata } from "@/magic3d/generatoare/tipuri";
@@ -40,7 +41,7 @@ export function font(fisier: string): unknown {
 
 /** Construieste ca worker-ul: fonturile din parametrii "font*", arena, triunghiuri in scena. */
 export function genereaza(id: string, p: Parametri): { piese: PiesaGenerata[]; avertizari: string[] } {
-  return genereazaCu((parametri, m, fonturi) => construieste(id, parametri, m, fonturi), p);
+  return genereazaCu((parametri, m, fonturi, modele) => construieste(id, parametri, m, fonturi, modele), p);
 }
 
 /** La fel, cu un constructor dat direct (inainte sa fie inregistrat in constructori.ts). */
@@ -48,7 +49,9 @@ export function genereazaCu(constructor: Constructor, p: Parametri): { piese: Pi
   if (!mod) throw new Error("apeleaza await manifold() in beforeAll");
   const fonturi = Object.fromEntries(Object.keys(p).filter((k) => /^font/.test(k) && typeof p[k] === "string" && p[k]).map((k) => [k, font(String(p[k]))]));
   return inArena(() => {
-    const construit = constructor(p, mod, fonturi);
+    const modele = Object.fromEntries(Object.keys(p).filter((k) => /^fisier3mf/.test(k) && typeof p[k] === "string" && p[k])
+      .map((k) => [k, parseaza3mf(new Uint8Array(readFileSync(path.join(fonts, "..", String(p[k])))))]));
+    const construit = constructor(p, mod, fonturi, modele);
     return { piese: triunghiuri(construit.piese), avertizari: construit.avertizari, pastreaza: construit.pastreaza ?? [] };
   }, (rez) => rez.pastreaza);
 }

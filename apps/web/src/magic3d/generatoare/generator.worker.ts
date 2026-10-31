@@ -2,7 +2,7 @@
 import { getManifoldRuntime, setManifoldAssetBase } from "@/lib/editorMeshCore";
 import { instrumenteazaArena, inArena } from "@/magic3d/core/geometry/arena";
 import { foloseste } from "@/magic3d/core/i18n/index";
-import { construieste, incarcaFonturi, triunghiuri } from "@/magic3d/generatoare/constructori";
+import { construieste, incarcaFonturi, incarcaModele, triunghiuri } from "@/magic3d/generatoare/constructori";
 import type { CerereGenerare, RaspunsGenerare } from "@/magic3d/generatoare/tipuri";
 
 /*
@@ -23,11 +23,11 @@ self.onmessage = async (event: MessageEvent<CerereGenerare>) => {
       instrumentat = true;
     }
     foloseste(cerere.limba);
-    const fonturi = await incarcaFonturi(cerere.assetBase, cerere.parametri);
+    const [fonturi, modele] = await Promise.all([incarcaFonturi(cerere.assetBase, cerere.parametri), incarcaModele(cerere.assetBase, cerere.parametri)]);
     const start = performance.now();
     const rezultat = inArena(
       () => {
-        const construit = construieste(cerere.generator, cerere.parametri, mod, fonturi);
+        const construit = construieste(cerere.generator, cerere.parametri, mod, fonturi, modele);
         return { piese: triunghiuri(construit.piese), avertizari: construit.avertizari, pastreaza: construit.pastreaza ?? [] };
       },
       (rez) => rez.pastreaza,
