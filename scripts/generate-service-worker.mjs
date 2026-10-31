@@ -44,6 +44,8 @@ export function precachePaths(relativeFiles) {
     const path = "/" + file.split(sep).join("/");
     if (path.endsWith(".php")) continue;
     if (path.endsWith(".map")) continue;
+    // .htaccess and other dotfiles are server configuration the host refuses to serve; one refused file fails the whole offline copy.
+    if (path.split("/").some((segment) => segment.startsWith("."))) continue;
     // version.json is what an open page asks for to learn that a new version arrived: never stored.
     if (path === "/sw.js" || path === "/version.json" || path === "/index.txt" || path === "/robots.txt" || path === "/sitemap.xml") continue;
     if (path === "/404.html" || path.startsWith("/404/")) continue;

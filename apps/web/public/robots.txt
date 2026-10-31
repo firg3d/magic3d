@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /store.php
-Disallow: /kontakt.php
+Disallow: /oferta/
 
-Sitemap: https://layerling.com/sitemap.xml
+Sitemap: https://magic3d.ro/sitemap.xml

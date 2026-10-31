@@ -1,0 +1,68 @@
+# Magic3D - configurarea Apache/LiteSpeed pentru magic3d.ro (cPanel).
+#
+# Sta in public/, deci ajunge in exportul static si se urca la radacina domeniului
+# (public_html/). Se editeaza aici si se publica, nu pe server: altfel prima publicare il
+# suprascrie.
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # O singura adresa canonica: https://magic3d.ro (fara www), dintr-un singur redirect.
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC,OR]
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^ https://magic3d.ro%{REQUEST_URI} [R=301,L]
+
+  # Paginile site-ului vechi (aplicatiile separate, landingul, academia, varianta engleza)
+  # duc la editorul nou, ca linkurile din cautari si de pe alte site-uri sa nu dea 404.
+  RewriteRule ^(litere|nume|nume-led|led|rame|cuvinte|cutii|fagure|brelocuri|breloc-decor|placute|articulat|huse|token|demo)\.html$ / [R=301,L]
+  RewriteRule ^(academia|aplicatii|contact|landing|produse|en)(/.*)?$ / [R=301,L]
+
+  # Formularul vechi de contact si raportul nu mai exista.
+  RewriteRule ^(contact-magic3d|raport)\.php$ - [G,L]
+</IfModule>
+
+ErrorDocument 404 /404.html
+Options -Indexes
+
+# Compresie doar pentru text; imaginile, fonturile si .wasm sunt deja comprimate.
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE application/json application/ld+json application/manifest+json
+  AddOutputFilterByType DEFLATE image/svg+xml application/xml
+</IfModule>
+
+<IfModule mod_mime.c>
+  AddType application/wasm .wasm
+  AddType application/manifest+json .webmanifest
+  AddType font/ttf .ttf
+  AddType font/otf .otf
+  AddType font/woff2 .woff2
+  AddType image/avif .avif
+  AddType application/vnd.ms-package.3dmanufacturing-3dmodel+xml .3mf
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Bucatile de cod din /_next/static/ au hash in nume: nu se schimba niciodata sub acelasi nume.
+  <FilesMatch "[.-][0-9a-f]{16,}\.(js|css)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # HTML-ul, service workerul si version.json trebuie vazute imediat dupa o publicare noua:
+  # dupa ele se anunta "Versiune noua" si se reimprospateaza copia offline.
+  <FilesMatch "\.html$|^(sw\.js|version\.json|manifest\.webmanifest)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+
+  <FilesMatch "^(sitemap\.xml|robots\.txt)$">
+    Header set Cache-Control "public, max-age=3600"
+  </FilesMatch>
+
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Fisierele care nu se servesc niciodata.
+<FilesMatch "(^\.|composer\.json|package\.json|\.env)">
+  Require all denied
+</FilesMatch>

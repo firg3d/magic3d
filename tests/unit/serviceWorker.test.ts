@@ -53,6 +53,10 @@ describe("offline copy of layerling", () => {
     expect(precachePaths(["dalil/img/editor-overview.webp", "dalil/print-all.html", "zh-cn/print-all.html", "zh-cn/index.html"])).toEqual(["/zh-cn/index.html"]);
   });
 
+  it("leaves out the server's .htaccess files, which the host refuses to serve", () => {
+    expect(precachePaths([".htaccess", "oferta/.htaccess", "oferta/config.json"])).toEqual(["/oferta/config.json"]);
+  });
+
   /*
    * A page left open across an update loads some files only when it needs
    * them, such as the CAD workers. The new version's service worker took over
