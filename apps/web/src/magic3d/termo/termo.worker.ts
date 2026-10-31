@@ -4,7 +4,7 @@ import { getManifoldRuntime, setManifoldAssetBase } from "@/lib/editorMeshCore";
 import type { RasterPixels } from "@/lib/rasterTrace";
 import { instrumenteazaArena, inArena } from "@/magic3d/core/geometry/arena";
 import type { SetariTermo } from "@/magic3d/termo/config";
-import { construiesteTermo, piesePrint, type Inele, type InfoTermo, type PieseTermo } from "@/magic3d/termo/geometrie";
+import { construiesteTermo, piesePrint, vedereTriunghiuri, type Inele, type InfoTermo, type PieseTermo, type VedereTermo } from "@/magic3d/termo/geometrie";
 import { siluetaDinPixeli, type OptiuniSilueta, type Silueta } from "@/magic3d/termo/silueta";
 
 /*
@@ -19,7 +19,7 @@ export type CerereTermo =
   | { id: number; tip: "construieste"; inele: Inele; setari: SetariTermo; assetBase: string };
 export type RaspunsTermo =
   | { id: number; ok: true; tip: "silueta"; silueta: Silueta }
-  | { id: number; ok: true; tip: "construieste"; piese: PieseTermo; contur: Inele; zone: Inele; gura: Inele; info: InfoTermo; ms: number }
+  | { id: number; ok: true; tip: "construieste"; piese: PieseTermo; vedere: VedereTermo | null; contur: Inele; zone: Inele; gura: Inele; info: InfoTermo; ms: number }
   | { id: number; ok: false; eroare: string };
 
 let pixeliCache: { sursa: number; pixeli: RasterPixels } | null = null;
@@ -63,10 +63,10 @@ self.onmessage = async (event: MessageEvent<CerereTermo>) => {
     }
     const start = performance.now();
     const rezultat = inArena(() => {
-      const rez = construiesteTermo(mod, cerere.inele, cerere.setari);
-      return { piese: piesePrint(rez), contur: rez.contur, zone: rez.zone, gura: rez.gura, info: rez.info };
+      const rez = construiesteTermo(mod, cerere.inele, cerere.setari, true);
+      return { piese: piesePrint(rez), vedere: vedereTriunghiuri(rez), contur: rez.contur, zone: rez.zone, gura: rez.gura, info: rez.info };
     }, () => []);
-    trimite({ id: cerere.id, ok: true, tip: "construieste", ...rezultat, ms: Math.round(performance.now() - start) }, [rezultat.piese.plasa.buffer, rezultat.piese.jos.buffer, rezultat.piese.sus.buffer]);
+    trimite({ id: cerere.id, ok: true, tip: "construieste", ...rezultat, ms: Math.round(performance.now() - start) }, [...rezultat.piese, ...(rezultat.vedere ? [...rezultat.vedere.rezultat, ...rezultat.vedere.presare] : [])].map((p) => p.corp.buffer));
   } catch (error) {
     trimite({ id: cerere.id, ok: false, eroare: error instanceof Error ? error.message : String(error) });
   }

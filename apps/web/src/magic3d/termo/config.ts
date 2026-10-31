@@ -55,6 +55,25 @@ export const TERMO = {
   ariePastrata: 0.97,
   /** Aschiile mai mici de atat (mm²) nu conteaza ca zone. */
   aschieMax: 0.5,
+  /** Cutie: cat de departe de margine e gaura de clema in flansa si diametrul ei. */
+  gauraClemaDepartare: 3.2,
+  gauraClemaDiametru: 2.4,
+  /** Cat se lateste polita in jurul unei gauri de clema (raza, de la centrul gaurii la gura cavitatii). */
+  pernitaClema: 3.4,
+  /** Clema in U: latimea, peretele, jocul peste cele doua membrane, cat ies umflaturile care intra in gauri. */
+  clemaLatime: 6,
+  clemaPerete: 1.2,
+  clemaJoc: 0.25,
+  clemaUmflatura: 0.35,
+  /** O clema la atatia mm de contur, intre limite. */
+  clemaPas: 70,
+  clemeMin: 4,
+  clemeMax: 10,
+  /** Cat poate diferi o forma de oglinda ei (din arie) ca sa fie "simetrica": un singur set de matrite la cutie. */
+  simetrieToleranta: 0.02,
+  /** Previzualizarea presarii: cat de sus sta matrita de sus deasupra celei de jos. */
+  ridicareSus: 18,
+  culoareCleme: "#d9822b",
   /** Latimile sugerate in panou si limitele. */
   latimiSugerate: [80, 120, 160],
   latimeImplicita: 120,
@@ -134,6 +153,8 @@ export const SETARI_PRINT = {
   }),
   /** La fagure, gaurile sunt in model: membrana se printeaza plina. */
   plasaFagure: () => ({ layer_height: "0.2", wall_loops: "2" }),
+  /** Clemele: mici, deci pline (multi pereti) si cu straturi fine, ca umflaturile sa iasa rotunde. */
+  cleme: () => ({ layer_height: "0.12", wall_loops: "4", sparse_infill_density: "100%" }),
   matrita: () => ({ layer_height: "0.28", wall_loops: "3", sparse_infill_density: "15%", sparse_infill_pattern: "grid" }),
 };
 

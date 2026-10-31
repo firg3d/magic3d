@@ -13,9 +13,10 @@ import { construieste, silueta as cereSilueta } from "@/magic3d/termo/client";
 import { LIMITE, latimeMaxima, MATERIALE, SETARI_IMPLICITE, TERMO, type Material, type ModelPlasa, type SetariTermo } from "@/magic3d/termo/config";
 import { arhivaStl, instructiuni, pieseScena, proiectTermo, type PieseTermo } from "@/magic3d/termo/export";
 import { caleSvgInele, FORME, formaExemplu, type FormaExemplu } from "@/magic3d/termo/forme";
-import type { Inele, InfoTermo } from "@/magic3d/termo/geometrie";
+import type { Inele, InfoTermo, VedereTermo } from "@/magic3d/termo/geometrie";
 import { ineleCuYSus, OPTIUNI_SILUETA, type OptiuniSilueta } from "@/magic3d/termo/silueta";
 import { tt, type CheieTermo } from "@/magic3d/termo/texte";
+import { Vizualizare3D } from "@/magic3d/termo/Vizualizare3D";
 
 /*
  * "Termoformare din poză", ca expert in patru pasi: 1. imaginea (sau o forma proprie) si silueta ei,
@@ -25,7 +26,7 @@ import { tt, type CheieTermo } from "@/magic3d/termo/texte";
 
 export type CreeazaTermo = (piese: PiesaGenerata[], nume: string, meta: Magic3dGenerat, inlocuieste: string | null) => Promise<{ id: string; nume: string }>;
 
-type Construit = { piese: PieseTermo; contur: Inele; zone: Inele; gura: Inele; info: InfoTermo };
+type Construit = { piese: PieseTermo; vedere: VedereTermo | null; contur: Inele; zone: Inele; gura: Inele; info: InfoTermo };
 type Sursa = { tip: "forma"; forma: FormaExemplu } | { tip: "imagine"; id: number; date: { fisier: Blob } | { pixeli: RasterPixels } };
 
 const ACCEPTA = ".svg,.png,.jpg,.jpeg,image/svg+xml,image/png,image/jpeg";
@@ -80,6 +81,7 @@ export function TermoSectiune({ onCreate }: { onCreate: CreeazaTermo }) {
   const [pus, setPus] = useState<{ id: string; nume: string } | null>(null);
   const [eroare, setEroare] = useState("");
   const [trag, setTrag] = useState(false);
+  const [vedere, setVedere] = useState<"rezultat" | "presare">("rezultat");
   const trimisa = useRef(0);
 
   const alegeFisier = async (fisier: File) => {
@@ -146,7 +148,7 @@ export function TermoSectiune({ onCreate }: { onCreate: CreeazaTermo }) {
       construieste(inele, setari)
         .then((r) => {
           if (anulat || !r) return;
-          setConstruit({ piese: r.piese, contur: r.contur, zone: r.zone, gura: r.gura, info: r.info });
+          setConstruit({ piese: r.piese, vedere: r.vedere, contur: r.contur, zone: r.zone, gura: r.gura, info: r.info });
           setEroare("");
         })
         .catch((error: unknown) => {
@@ -280,9 +282,13 @@ export function TermoSectiune({ onCreate }: { onCreate: CreeazaTermo }) {
           </div>
           {info ? <p className="logo-nota" data-testid="termo-sigura">{tt("sigura", { mm: info.adancimeSigura, ingust: info.ingust })}</p> : null}
           <div className="logo-iesiri" role="radiogroup" aria-label={tt("mod")}>
-            <button type="button" role="radio" aria-checked={setari.mod === "bol"} data-testid="termo-mod-bol" className="activ" onClick={() => schimba("mod", "bol")}>{tt("modBol")}</button>
-            <button type="button" role="radio" aria-checked={false} data-testid="termo-mod-cutie" disabled>{tt("modCutie")}</button>
+            {(["bol", "cutie"] as const).map((m) => (
+              <button key={m} type="button" role="radio" aria-checked={setari.mod === m} data-testid={`termo-mod-${m}`} className={setari.mod === m ? "activ" : ""} onClick={() => schimba("mod", m)}>
+                {tt(m === "bol" ? "modBol" : "modCutie")}
+              </button>
+            ))}
           </div>
+          {setari.mod === "cutie" ? <p className="logo-nota">{tt("notaCutie")}</p> : null}
           <label className="logo-camp">
             <span>{tt("material")}</span>
             <select data-testid="termo-material" value={setari.material} onChange={(event) => schimba("material", event.target.value as Material)}>
@@ -321,7 +327,21 @@ export function TermoSectiune({ onCreate }: { onCreate: CreeazaTermo }) {
             {tt("piese", { l: construit.info.latime, a: construit.info.inaltime, b1: construit.info.bloc[0], b2: construit.info.bloc[1], b3: construit.info.bloc[2], s: construit.info.inaltimeSus })}
             <br />
             {tt("joc", { joc: construit.info.joc.toFixed(1), v: construit.info.aerisiri, p: construit.info.stifturi })}
+            {setari.mod === "cutie" ? (<><br />{tt("cutieInfo", { n: construit.info.cleme, seturi: tt(construit.info.seturi === 2 ? "douaSeturi" : "unSet") })}</>) : null}
           </p>
+          {construit.vedere ? (
+            <figure className="termo-vedere" data-testid="termo-vedere">
+              <div className="logo-iesiri" role="radiogroup" aria-label={tt("vedereTitlu")}>
+                {(["rezultat", "presare"] as const).map((v) => (
+                  <button key={v} type="button" role="radio" aria-checked={vedere === v} data-testid={`termo-vedere-${v}`} className={vedere === v ? "activ" : ""} onClick={() => setVedere(v)}>
+                    {tt(v === "rezultat" ? "vedereRezultat" : "vederePresare")}
+                  </button>
+                ))}
+              </div>
+              <Vizualizare3D key={vedere} piese={construit.vedere[vedere]} testid="termo-vedere-3d" />
+              <figcaption>{tt("vedereAjutor")}</figcaption>
+            </figure>
+          ) : null}
           <div className="logo-actiuni">
             <button type="button" className="logo-buton logo-buton-plin" data-testid="termo-pune" disabled={!gata} onClick={() => void pune()}>
               {pus ? tt("inlocuieste") : tt("pune")}

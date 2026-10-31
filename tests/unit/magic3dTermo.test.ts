@@ -5,7 +5,7 @@ import { inArena } from "@/magic3d/core/geometry/arena";
 import { proiectBambu } from "@/magic3d/termo/bambu3mf";
 import { jocMatrite, SETARI_IMPLICITE, TERMO, type SetariTermo } from "@/magic3d/termo/config";
 import { FORME, formaExemplu, type Inel } from "@/magic3d/termo/forme";
-import { construiesteTermo, latimeIngusta, type RezultatTermo } from "@/magic3d/termo/geometrie";
+import { clema, construiesteTermo, latimeIngusta, type CheiePiesa, type RezultatTermo } from "@/magic3d/termo/geometrie";
 import { piesePrint, proiectTermo } from "@/magic3d/termo/export";
 import { ineleCuYSus, siluetaDinPixeli } from "@/magic3d/termo/silueta";
 import { manifold } from "./magic3dGenUtil";
@@ -27,6 +27,13 @@ const setari = (extra: Partial<SetariTermo> = {}): SetariTermo => ({ ...SETARI_I
 /** Construieste si elibereaza tot ce a facut manifold-ul; intoarce ce cere `masoara`, calculat inainte de eliberare. */
 function cu<T>(inele: Inel[], s: SetariTermo, masoara: (r: RezultatTermo) => T): T {
   return inArena(() => masoara(construiesteTermo(mod, inele, s)), () => []);
+}
+
+/** Piesa de print cu cheia data. */
+function pr(rez: RezultatTermo, cheie: CheiePiesa): Manifold {
+  const p = rez.print.find((x) => x.cheie === cheie);
+  if (!p) throw new Error(`lipseste ${cheie}`);
+  return p.corp;
 }
 
 /** Bucatile unui corp, fara aschii. */
@@ -77,10 +84,12 @@ describe("Termoformare din poză", { timeout: 60_000 }, () => {
   it.each(FORME)("construieste plasa si cele doua matrite din forma proprie %s", (forma) => {
     const r = cu(formaExemplu(forma), setari(), (rez) => ({
       info: rez.info,
-      bucati: { plasa: bucati(rez.print.plasa), jos: bucati(rez.print.jos), sus: bucati(rez.print.sus) },
-      status: [rez.print.plasa, rez.print.jos, rez.print.sus].map((m) => m.status()),
-      cutii: [rez.print.plasa, rez.print.jos, rez.print.sus].map((m) => m.boundingBox()),
+      chei: rez.print.map((p) => p.cheie),
+      bucati: { plasa: bucati(pr(rez, "plasa")), jos: bucati(pr(rez, "jos")), sus: bucati(pr(rez, "sus")) },
+      status: rez.print.map((p) => p.corp.status()),
+      cutii: rez.print.map((p) => p.corp.boundingBox()),
     }));
+    expect(r.chei).toEqual(["plasa", "jos", "sus"]);
     expect(r.status).toEqual(["NoError", "NoError", "NoError"]);
     expect(r.bucati).toEqual({ plasa: 1, jos: 1, sus: 1 });
     // In pozitia de print toate stau pe masa.
@@ -186,7 +195,7 @@ describe("Termoformare din poză", { timeout: 60_000 }, () => {
   });
 
   it("modelul fagure decupeaza gauri in membrana, rama ramane plina", () => {
-    const volum = (model: SetariTermo["model"]) => cu(formaExemplu("hexagon"), setari({ model, densitate: 40 }), (rez) => rez.print.plasa.volume());
+    const volum = (model: SetariTermo["model"]) => cu(formaExemplu("hexagon"), setari({ model, densitate: 40 }), (rez) => pr(rez, "plasa").volume());
     const plin = volum("gyroid");
     const gaurit = volum("fagure");
     expect(gaurit).toBeLessThan(plin * 0.85);
@@ -195,7 +204,7 @@ describe("Termoformare din poză", { timeout: 60_000 }, () => {
 
   it("la ~104 mm, cotele seamana cu cele masurate pe referinta (doar ca ordin de marime)", () => {
     // Referinta (masurata, nu inclusa): bloc ~ contur + 5.5 / parte, cavitate 21.35, fund 3.65, dom = adancime - 1.
-    const r = cu(formaExemplu("nor"), setari({ latime: 104, adancime: 20 }), (rez) => ({ info: rez.info, jos: rez.print.jos.boundingBox(), sus: rez.print.sus.boundingBox() }));
+    const r = cu(formaExemplu("nor"), setari({ latime: 104, adancime: 20 }), (rez) => ({ info: rez.info, jos: pr(rez, "jos").boundingBox(), sus: pr(rez, "sus").boundingBox() }));
     const inaltimeJos = r.jos.max[2] - r.jos.min[2];
     expect(inaltimeJos).toBeCloseTo(TERMO.fundJos + TERMO.locasAdancime + r.info.adancime, 3);
     expect(r.jos.max[0] - r.jos.min[0]).toBeGreaterThanOrEqual(104 + 2 * TERMO.margineBloc - 0.1);
@@ -230,5 +239,104 @@ describe("Termoformare din poză", { timeout: 60_000 }, () => {
       const info = cu(formaExemplu("hexagon"), setari({ latime }), (rez) => rez.info);
       expect(info.latime).toBeCloseTo(latime, 0);
     }
+  });
+  it("cutie dintr-o forma simetrica: doua plase in oglinda, cleme, un singur set de matrite", () => {
+    const r = cu(formaExemplu("inima"), setari({ mod: "cutie" }), (rez) => {
+      const { jos } = rez.folosire;
+      const H = jos.boundingBox().max[2];
+      const L = H - TERMO.locasAdancime;
+      const gura = new mod.CrossSection(rez.gura, "EvenOdd");
+      // Plasa B se formeaza tot in matrita A: gaurile ambelor plase trebuie sa stea pe polita, nu deasupra cavitatii.
+      const oglinda = rez.gauriCleme.map(([x, y]) => (rez.info.simetrie === "y" ? [x, -y] : [-x, y]) as [number, number]);
+      const peCavitate = [...rez.gauriCleme, ...oglinda].map(([x, y]) => mod.CrossSection.circle(TERMO.gauraClemaDiametru / 2 + 0.3, 24).translate([x, y]).intersect(gura).area());
+      return {
+        info: rez.info,
+        chei: rez.print.map((p) => p.cheie),
+        bucatiCleme: bucati(pr(rez, "cleme")),
+        golurileRamei: rez.folosire.plasa.slice(L - 1).decompose().filter((b) => b.area() > 1).length,
+        peCavitate,
+        volume: [pr(rez, "plasa").volume(), pr(rez, "plasa2").volume()],
+      };
+    });
+    expect(r.info.simetrie).toBe("x");
+    expect(r.info.seturi).toBe(1);
+    expect(r.chei).toEqual(["plasa", "plasa2", "cleme", "jos", "sus"]);
+    expect(r.info.cleme).toBeGreaterThanOrEqual(TERMO.clemeMin);
+    expect(r.bucatiCleme).toBe(r.info.cleme);
+    // Rama e intrerupta in dreptul fiecarei cleme: atatea bucati de rama cate cleme.
+    expect(r.golurileRamei).toBe(r.info.cleme);
+    for (const a of r.peCavitate) expect(a).toBeLessThan(0.01);
+    expect(r.volume[1]).toBeCloseTo(r.volume[0], 1);
+  });
+
+  it("cutie dintr-o forma nesimetrica: al doilea set de matrite, in oglinda", () => {
+    const r = cu(formaExemplu("frunza"), setari({ mod: "cutie", latime: 110 }), (rez) => ({
+      info: rez.info,
+      chei: rez.print.map((p) => p.cheie),
+      volume: [pr(rez, "jos").volume(), pr(rez, "jos2").volume(), pr(rez, "sus").volume(), pr(rez, "sus2").volume()],
+    }));
+    expect(r.info.simetrie).toBeNull();
+    expect(r.info.seturi).toBe(2);
+    expect(r.info.avertizari).toContain("avAsimetric");
+    expect(r.chei).toEqual(["plasa", "plasa2", "cleme", "jos", "sus", "jos2", "sus2"]);
+    expect(r.volume[1]).toBeCloseTo(r.volume[0], 0);
+    expect(r.volume[3]).toBeCloseTo(r.volume[2], 0);
+  });
+
+  it("clema prinde cele doua membrane: golul, bratele si umflaturile au cotele din config", () => {
+    const m = inArena(() => {
+      const c = clema(mod);
+      const b = c.boundingBox();
+      // La mijlocul latimii, prin umflaturi: golul ramas intre ele; langa margine, golul intreg.
+      const golPrinUmflaturi = (z: number, x: number) => {
+        const s = c.slice(z);
+        const linie = mod.CrossSection.square([0.05, 20]).translate([x, -5]);
+        return linie.subtract(s).intersect(mod.CrossSection.square([0.05, b.max[1] - 2 * TERMO.clemaPerete + 0.002]).translate([x, TERMO.clemaPerete - 0.001])).area() / 0.05;
+      };
+      const xU = TERMO.clemaPerete + TERMO.gauraClemaDepartare;
+      return { bucati: c.decompose().length, b, golMargine: golPrinUmflaturi(0.3, xU), golUmflaturi: golPrinUmflaturi(TERMO.clemaLatime / 2, xU) };
+    }, () => []);
+    const gol = 2 * TERMO.membrana + TERMO.clemaJoc;
+    expect(m.bucati).toBe(1);
+    expect(m.b.max[2] - m.b.min[2]).toBeCloseTo(TERMO.clemaLatime, 3);
+    expect(m.b.max[1] - m.b.min[1]).toBeCloseTo(2 * TERMO.clemaPerete + gol, 3);
+    expect(m.golMargine).toBeCloseTo(gol, 2);
+    // Umflaturile strang locul cat sa intre in gauri: mai putin decat cele doua membrane.
+    expect(m.golUmflaturi).toBeCloseTo(gol - 2 * TERMO.clemaUmflatura, 2);
+    expect(m.golUmflaturi).toBeLessThan(2 * TERMO.membrana);
+  });
+
+  it("previzualizarea: membrana formata sta in jocul dintre matrite, iar cutia se inchide fara suprapuneri", () => {
+    const r = inArena(() => {
+      const rez = construiesteTermo(mod, formaExemplu("inima"), setari({ mod: "cutie" }), true);
+      if (!rez.vedere) throw new Error("fara vedere");
+      const format = rez.vedere.rezultat[0].corp;
+      const { jos, sus } = rez.folosire;
+      return {
+        nRezultat: rez.vedere.rezultat.length,
+        nPresare: rez.vedere.presare.length,
+        inJos: format.intersect(jos).volume(),
+        inSus: format.intersect(sus).volume(),
+        jumatati: rez.vedere.rezultat[0].corp.intersect(rez.vedere.rezultat[1].corp).volume(),
+        volum: format.volume(),
+      };
+    }, () => []);
+    expect(r.nRezultat).toBe(2);
+    expect(r.nPresare).toBe(3);
+    expect(r.volum).toBeGreaterThan(1000);
+    expect(r.inJos).toBeLessThan(0.5);
+    expect(r.inSus).toBeLessThan(0.5);
+    expect(r.jumatati).toBeLessThan(0.5);
+  });
+
+  it("3MF-ul cutiei are o placa pe piesa, iar clemele se printeaza pline", () => {
+    const s = setari({ mod: "cutie" });
+    const { piese, info } = cu(formaExemplu("inima"), s, (rez) => ({ piese: piesePrint(rez), info: rez.info }));
+    const fisiere = unzipSync(proiectBambu(proiectTermo(piese, s, "ro", "inima", info)));
+    const config = strFromU8(fisiere["Metadata/model_settings.config"]);
+    expect(config.match(/<plate>/g)).toHaveLength(5);
+    expect(config).toContain('value="Plasă B"');
+    expect(config).toContain('key="sparse_infill_density" value="100%"');
+    expect(strFromU8(fisiere["Metadata/instructiuni.txt"])).toContain("cleme");
   });
 });

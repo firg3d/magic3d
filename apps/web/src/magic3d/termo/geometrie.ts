@@ -38,20 +38,38 @@ export type InfoTermo = {
   inaltimeSus: number;
   aerisiri: number;
   stifturi: number;
+  /** Cutie: cate cleme, axa de simetrie a formei (null = nesimetrica) si cate seturi de matrite. */
+  cleme: number;
+  simetrie: "x" | "y" | null;
+  seturi: 1 | 2;
   /** Incape pe placa imprimantei (fiecare piesa pe placa ei). */
   incape: boolean;
   /** Chei de avertizare (texte in texte.ts). */
   avertizari: string[];
 };
 
+/** Piesele de printat: plasa (A), la cutie si plasa B si clemele, matritele (si setul in oglinda, la o forma nesimetrica). */
+export type CheiePiesa = "plasa" | "plasa2" | "cleme" | "jos" | "sus" | "jos2" | "sus2";
+export type PiesaTermo<T> = { cheie: CheiePiesa; corp: T };
+
+/** Ce arata previzualizarea: rolul da culoarea. */
+export type RolVedere = "plasa" | "jos" | "sus";
+export type PiesaVedere<T> = { rol: RolVedere; corp: T };
+export type Vedere<T> = { rezultat: PiesaVedere<T>[]; presare: PiesaVedere<T>[] };
+
 export type RezultatTermo = {
+  /** Jumatatea A la folosire: plasa plata asezata, matrita de jos, matrita de sus apasata. */
   folosire: Piese<Manifold>;
-  print: Piese<Manifold>;
+  print: PiesaTermo<Manifold>[];
+  /** Bolul format (sau cutia inchisa) si presarea; doar cand a fost cerut. */
+  vedere: Vedere<Manifold> | null;
   /** Conturul final (dupa ingrosare) si zonele ingrosate, in mm, centrate: pentru previzualizare. */
   contur: Inele;
   zone: Inele;
   /** Gura cavitatii, pentru previzualizare. */
   gura: Inele;
+  /** Cutie: centrele gaurilor de clema din plasa A (plasa B le are in oglinda). */
+  gauriCleme: Pt[];
   info: InfoTermo;
 };
 
@@ -204,13 +222,97 @@ function fagure(mod: ManifoldToplevel, interior: CrossSection, densitate: number
   return interior.subtract(gauri);
 }
 
+
+/** Punctele de pe conturul exterior, la distante egale pe lungimea lui. */
+function puncteContur(cs: CrossSection, n: number): Pt[] {
+  const poligoane = cs.toPolygons() as Pt[][];
+  if (!poligoane.length || n <= 0) return [];
+  const p = poligoane.reduce((a, b) => (b.length > a.length ? b : a));
+  const lungimi = p.map((q, i) => Math.hypot(p[(i + 1) % p.length][0] - q[0], p[(i + 1) % p.length][1] - q[1]));
+  const total = lungimi.reduce((s, l) => s + l, 0);
+  const pas = total / n;
+  const puncte: Pt[] = [];
+  let parcurs = 0;
+  let urmator = pas / 2;
+  for (let i = 0; i < p.length && puncte.length < n; i += 1) {
+    while (urmator <= parcurs + lungimi[i] && puncte.length < n) {
+      const u = (urmator - parcurs) / (lungimi[i] || 1);
+      const r = p[(i + 1) % p.length];
+      puncte.push([p[i][0] + u * (r[0] - p[i][0]), p[i][1] + u * (r[1] - p[i][1])]);
+      urmator += pas;
+    }
+    parcurs += lungimi[i];
+  }
+  return puncte;
+}
+
+/** Lungimea conturului exterior. */
+function perimetru(cs: CrossSection): number {
+  const poligoane = cs.toPolygons() as Pt[][];
+  const p = poligoane.reduce((a, b) => (b.length > a.length ? b : a), [] as Pt[]);
+  return p.reduce((s, q, i) => s + Math.hypot(p[(i + 1) % p.length][0] - q[0], p[(i + 1) % p.length][1] - q[1]), 0);
+}
+
+/** Cel mai apropiat punct de `p` de pe conturul unei sectiuni. */
+function celMaiAproape(cs: CrossSection, p: Pt): Pt {
+  let cel: Pt = p;
+  let dist = Infinity;
+  for (const poligon of cs.toPolygons() as Pt[][]) {
+    for (let i = 0; i < poligon.length; i += 1) {
+      const a = poligon[i], b = poligon[(i + 1) % poligon.length];
+      const dx = b[0] - a[0], dy = b[1] - a[1];
+      const u = Math.max(0, Math.min(1, ((p[0] - a[0]) * dx + (p[1] - a[1]) * dy) / (dx * dx + dy * dy || 1)));
+      const q: Pt = [a[0] + u * dx, a[1] + u * dy];
+      const d = Math.hypot(q[0] - p[0], q[1] - p[1]);
+      if (d < dist) { dist = d; cel = q; }
+    }
+  }
+  return cel;
+}
+
+/** Axa fata de care forma (centrata) e simetrica: "x" = stanga-dreapta, "y" = sus-jos; null daca niciuna. */
+export function simetrie(P: CrossSection): "x" | "y" | null {
+  const arie = P.area();
+  for (const [axa, normala] of [["x", [1, 0]], ["y", [0, 1]]] as Array<["x" | "y", [number, number]]>) {
+    const oglinda = P.mirror(normala);
+    const diferenta = P.subtract(oglinda).area() + oglinda.subtract(P).area();
+    if (diferenta / arie < TERMO.simetrieToleranta) return axa;
+  }
+  return null;
+}
+
 /**
- * Construieste cele trei piese. `inele` e conturul in orice unitate, cu y in sus; se scaleaza la
- * `setari.latime`. Arunca "termo-gol" cand nu exista forma si "termo-ingust" cand forma e prea
- * ingusta ca sa aiba o cavitate.
+ * Clema in U, culcata pe masa (profilul in XY, latimea pe Z): spatele la x = 0, gura spre +x. Prinde
+ * cele doua membrane puse fata in fata; umflaturile de pe interiorul bratelor intra in gaurile lor.
  */
-export function construiesteTermo(mod: ManifoldToplevel, inele: Inele, setari: SetariTermo): RezultatTermo {
+export function clema(mod: ManifoldToplevel): Manifold {
+  const t = TERMO.membrana;
+  const w = TERMO.clemaPerete;
+  const g = 2 * t + TERMO.clemaJoc;
+  const razaGaura = TERMO.gauraClemaDiametru / 2;
+  const brat = TERMO.gauraClemaDepartare + razaGaura + 1.2;
+  const h = TERMO.clemaLatime;
+  const exterior = mod.CrossSection.square([w + brat, 2 * w + g]);
+  const interior = mod.CrossSection.square([brat + 1, g]).translate([w, w]);
+  const u = exterior.subtract(interior).extrude(h);
+  const razaUmflatura = razaGaura - 0.25;
+  const x = w + TERMO.gauraClemaDepartare;
+  // Cilindrii umflaturilor, pe axa Y: unul iese din bratul de jos in sus, celalalt din cel de sus in jos.
+  const umflatura = (y0: number, sens: 1 | -1) =>
+    mod.Manifold.cylinder(TERMO.clemaUmflatura + SUPRAPUNERE, razaUmflatura, razaUmflatura, 24)
+      .rotate([sens === 1 ? -90 : 90, 0, 0])
+      .translate([x, y0 - sens * SUPRAPUNERE, h / 2]);
+  return mod.Manifold.union([u, umflatura(w, 1), umflatura(w + g, -1)]);
+}
+
+/**
+ * Construieste piesele. `inele` e conturul in orice unitate, cu y in sus; se scaleaza la
+ * `setari.latime`. Arunca "termo-gol" cand nu exista forma si "termo-ingust" cand forma e prea
+ * ingusta ca sa aiba o cavitate. `cuVedere` adauga bolul format si presarea, pentru previzualizare.
+ */
+export function construiesteTermo(mod: ManifoldToplevel, inele: Inele, setari: SetariTermo, cuVedere = false): RezultatTermo {
   const avertizari: string[] = [];
+  const cutie = setari.mod === "cutie";
   const latimeCeruta = Math.max(TERMO.latimeMin, Math.min(latimeMaxima(), setari.latime));
   if (latimeCeruta !== setari.latime) avertizari.push("avLatime");
   const ingrosat = ingroasa(mod, laLatime(formaPlina(mod, inele, avertizari), latimeCeruta));
@@ -235,14 +337,31 @@ export function construiesteTermo(mod: ManifoldToplevel, inele: Inele, setari: S
   const H = TERMO.fundJos + c + D;
   const L = H - c;
 
-  const gura = offset(P, -(TERMO.ramaLatime + TERMO.canalJoc + TERMO.polita));
+  // ---- Cutie: clemele, gaurile lor in flansa si oglinda jumatatii B ----
+  const axa = cutie ? simetrie(P) : null;
+  const normala3: [number, number, number] = axa === "y" ? [0, 1, 0] : [1, 0, 0];
+  const oglindaPt = ([x, y]: Pt): Pt => (axa === "y" ? [x, -y] : [-x, y]);
+  if (cutie && !axa) avertizari.push("avAsimetric");
+  const nCleme = cutie ? Math.max(TERMO.clemeMin, Math.min(TERMO.clemeMax, Math.round(perimetru(P) / TERMO.clemaPas))) : 0;
+  const margini = cutie ? puncteContur(P, nCleme) : [];
+  const interiorGauri = offset(P, -TERMO.gauraClemaDepartare);
+  const gauri = margini.map((p) => celMaiAproape(interiorGauri, p));
+  // Matrita A primeste pernitele ambelor plase cand forma e simetrica (plasa B se formeaza tot in ea).
+  const pernite: Pt[] = [...gauri];
+  if (axa) for (const g of gauri.map(oglindaPt)) if (pernite.every((q) => Math.hypot(q[0] - g[0], q[1] - g[1]) > 3)) pernite.push(g);
+
+  let gura = offset(P, -(TERMO.ramaLatime + TERMO.canalJoc + TERMO.polita));
+  if (pernite.length) {
+    gura = gura.subtract(mod.CrossSection.union(pernite.map(([x, y]) => mod.CrossSection.circle(TERMO.pernitaClema, 32).translate([x, y]))));
+    gura = offset(offset(gura, -0.4), 0.4);
+  }
   if (gura.isEmpty() || gura.area() < 4 * joc * joc) throw new Error("termo-ingust");
 
   // Stifturile: in marginea blocului, cat mai departe unul de altul; blocul se lateste in jurul lor.
   const razaGaura = TERMO.stiftDiametru / 2 + TERMO.stiftJoc;
   const stifturi = puncteOpuse(offset(P, departeStift()), TERMO.stifturi);
-  const pernite = stifturi.map(([x, y]) => mod.CrossSection.circle(razaGaura + TERMO.stiftPerete, 48).translate([x, y]));
-  const conturBloc = mod.CrossSection.union([offset(P, TERMO.margineBloc), ...pernite]);
+  const pernStift = stifturi.map(([x, y]) => mod.CrossSection.circle(razaGaura + TERMO.stiftPerete, 48).translate([x, y]));
+  const conturBloc = mod.CrossSection.union([offset(P, TERMO.margineBloc), ...pernStift]);
 
   // ---- Matrita de jos ----
   const locas = offset(P, TERMO.locasJoc);
@@ -278,15 +397,58 @@ export function construiesteTermo(mod: ManifoldToplevel, inele: Inele, setari: S
   for (const p of stifturi) plinSus.push(cilindru(mod, p, TERMO.stiftDiametru / 2, H - TERMO.stiftLungime, H + SUPRAPUNERE));
   const sus = mod.Manifold.union(plinSus);
 
-  // ---- Plasa (membrana pe polita, rama in canal) ----
+  // ---- Plasa (membrana pe polita, rama in canal); la cutie cu gaurile clemelor si rama intrerupta la ele ----
   const interiorRama = offset(P, -TERMO.ramaLatime);
-  const membrana = setari.model === "fagure" ? fagure(mod, interiorRama, setari.densitate).add(P.subtract(interiorRama)) : P;
-  const plasa = mod.Manifold.union([intre(membrana, L, L + t), intre(P.subtract(interiorRama), L + t - TERMO.ramaInaltime, L + t)]);
+  const cercuri = (puncte: Pt[], raza: number) => (puncte.length ? mod.CrossSection.union(puncte.map(([x, y]) => mod.CrossSection.circle(raza, 24).translate([x, y]))) : null);
+  const gauriPlasa = cercuri(gauri, TERMO.gauraClemaDiametru / 2);
+  const golRama = cercuri(margini, TERMO.clemaLatime / 2 + 0.75);
+  let membrana = setari.model === "fagure" ? fagure(mod, interiorRama, setari.densitate).add(P.subtract(interiorRama)) : P;
+  if (gauriPlasa) membrana = membrana.subtract(gauriPlasa);
+  let rama = P.subtract(interiorRama);
+  if (golRama) rama = rama.subtract(golRama);
+  const plasa = mod.Manifold.union([intre(membrana, L, L + t), intre(rama, L + t - TERMO.ramaInaltime, L + t)]);
 
   // ---- Pozitia de print ----
   const peMasa = (m: Manifold) => m.translate([0, 0, -m.boundingBox().min[2]]);
   const intoarsa = (m: Manifold) => peMasa(m.rotate([180, 0, 0]));
-  const print = { plasa: intoarsa(plasa), jos: peMasa(jos), sus: intoarsa(sus) };
+  const print: PiesaTermo<Manifold>[] = [{ cheie: "plasa", corp: intoarsa(plasa) }];
+  if (cutie) {
+    // Plasa B e oglinda plasei A: intoarsa peste A, gaurile ei cad peste gaurile lui A.
+    print.push({ cheie: "plasa2", corp: intoarsa(plasa.mirror(normala3)) });
+    const una = clema(mod);
+    const pas = 2 * TERMO.clemaPerete + 2 * t + TERMO.clemaJoc + 3;
+    print.push({ cheie: "cleme", corp: mod.Manifold.union(Array.from({ length: nCleme }, (_, i) => una.translate([0, i * pas, 0]))) });
+  }
+  print.push({ cheie: "jos", corp: peMasa(jos) }, { cheie: "sus", corp: intoarsa(sus) });
+  const seturi: 1 | 2 = cutie && !axa ? 2 : 1;
+  if (seturi === 2) print.push({ cheie: "jos2", corp: peMasa(jos.mirror(normala3)) }, { cheie: "sus2", corp: intoarsa(sus.mirror(normala3)) });
+
+  // ---- Previzualizarea: membrana formata in jocul dintre matrite ----
+  let vedere: Vedere<Manifold> | null = null;
+  if (cuVedere) {
+    const ra = R - (joc - t) / 2;
+    const rb = ra - t;
+    const sectiune = (r: number, d: number) => offset(gura, -(R - Math.sqrt(Math.max(0, r * r - d * d))));
+    const coaja: Manifold[] = [];
+    const niv = niveluri(ra, ra);
+    // Treptele raman in joc: fata exterioara ia sectiunea de la baza treptei (mai mica decat cavitatea),
+    // golul interior pe cea de la varf (mai mare decat domul).
+    for (let k = 0; k + 1 < niv.length; k += 1) {
+      let s = sectiune(ra, niv[k + 1]);
+      if (s.isEmpty()) break;
+      if (niv[k] < rb) s = s.subtract(sectiune(rb, niv[k]));
+      if (!s.isEmpty()) coaja.push(intre(s, L - niv[k + 1], L - niv[k] + SUPRAPUNERE));
+    }
+    let flansa = P.subtract(offset(gura, -(R - ra) - 0.05));
+    if (gauriPlasa) flansa = flansa.subtract(gauriPlasa);
+    const format = mod.Manifold.union([...coaja, intre(flansa, L, L + t), intre(rama, L + t - TERMO.ramaInaltime, L + t)]);
+    const rezultat: PiesaVedere<Manifold>[] = [{ rol: "plasa", corp: format }];
+    if (cutie) rezultat.push({ rol: "plasa", corp: format.mirror(normala3).mirror([0, 0, 1]).translate([0, 0, 2 * (L + t)]) });
+    vedere = {
+      rezultat,
+      presare: [{ rol: "jos", corp: jos }, { rol: "plasa", corp: format }, { rol: "sus", corp: sus.translate([0, 0, TERMO.ridicareSus]) }],
+    };
+  }
 
   const bb = conturBloc.bounds();
   const bloc: [number, number, number] = [bb.max[0] - bb.min[0], bb.max[1] - bb.min[1], H];
@@ -306,23 +468,26 @@ export function construiesteTermo(mod: ManifoldToplevel, inele: Inele, setari: S
     inaltimeSus: r1(TERMO.placaSus + c + Rd),
     aerisiri: aerisiri.length,
     stifturi: stifturi.length,
+    cleme: nCleme,
+    simetrie: axa,
+    seturi,
     incape,
     avertizari,
   };
   return {
     folosire: { plasa, jos, sus },
     print,
+    vedere,
     contur: P.toPolygons() as Inele,
     zone: zone.flatMap((z) => z.toPolygons() as Inele),
     gura: gura.toPolygons() as Inele,
+    gauriCleme: gauri,
     info,
   };
 }
 
-export type PieseTermo = Piese<Float32Array>;
-
 /** Triunghiurile neindexate ale unui corp manifold, Z in sus, mm. */
-function triunghiuri(m: Manifold): Float32Array {
+export function triunghiuri(m: Manifold): Float32Array {
   const { vertProperties: v, triVerts: t, numProp } = m.getMesh();
   const out = new Float32Array(t.length * 3);
   for (let i = 0; i < t.length; i += 1) {
@@ -333,4 +498,13 @@ function triunghiuri(m: Manifold): Float32Array {
   return out;
 }
 
-export const piesePrint = (rez: RezultatTermo): PieseTermo => ({ plasa: triunghiuri(rez.print.plasa), jos: triunghiuri(rez.print.jos), sus: triunghiuri(rez.print.sus) });
+export type PieseTermo = PiesaTermo<Float32Array>[];
+export type VedereTermo = Vedere<Float32Array>;
+
+export const piesePrint = (rez: RezultatTermo): PieseTermo => rez.print.map((p) => ({ cheie: p.cheie, corp: triunghiuri(p.corp) }));
+
+export const vedereTriunghiuri = (rez: RezultatTermo): VedereTermo | null =>
+  rez.vedere && {
+    rezultat: rez.vedere.rezultat.map((p) => ({ rol: p.rol, corp: triunghiuri(p.corp) })),
+    presare: rez.vedere.presare.map((p) => ({ rol: p.rol, corp: triunghiuri(p.corp) })),
+  };

@@ -18,7 +18,7 @@ import { manifold } from "../unit/magic3dGenUtil";
 it("scrie proba de termoformare", async () => {
   const mod = (await manifold()) as ManifoldToplevel;
   const forma = (process.env.TERMO_FORMA ?? "inima") as FormaExemplu;
-  const setari = { ...SETARI_IMPLICITE, latime: Number(process.env.TERMO_LATIME ?? SETARI_IMPLICITE.latime) };
+  const setari = { ...SETARI_IMPLICITE, latime: Number(process.env.TERMO_LATIME ?? SETARI_IMPLICITE.latime), mod: (process.env.TERMO_MOD ?? "bol") as "bol" | "cutie" };
   setari.adancime = Math.round(setari.latime * 0.19);
   const iesire = path.resolve(process.env.TERMO_IESIRE ?? "termo-proba");
   mkdirSync(iesire, { recursive: true });
@@ -33,10 +33,10 @@ it("scrie proba de termoformare", async () => {
   const minY = Math.min(...toate.map((p) => p[1])), maxY = Math.max(...toate.map((p) => p[1]));
   const s = 1000 / (maxX - minX);
   const cale = (inele: Array<Array<[number, number]>>) => inele.map((inel) => inel.map(([x, y], i) => `${i ? "L" : "M"}${((x - minX) * s + 20).toFixed(1)} ${((maxY - y) * s + 20).toFixed(1)}`).join("") + "Z").join("");
-  writeFileSync(path.join(iesire, `termo-${forma}-sectiune.svg`), `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${1040} ${((maxY - minY) * s + 40).toFixed(0)}"><rect width="100%" height="100%" fill="#fff"/>` +
+  writeFileSync(path.join(iesire, `termo-${forma}${setari.mod === "cutie" ? "-cutie" : ""}-sectiune.svg`), `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${1040} ${((maxY - minY) * s + 40).toFixed(0)}"><rect width="100%" height="100%" fill="#fff"/>` +
     `<path d="${cale(sectiune.jos)}" fill="#2c7be5" fill-rule="evenodd"/><path d="${cale(sectiune.sus)}" fill="#1f8a5b" fill-rule="evenodd"/><path d="${cale(sectiune.plasa)}" fill="#f2b134" fill-rule="evenodd"/></svg>`);
   const text = instructiuni(info, setari, forma, "ro");
-  writeFileSync(path.join(iesire, `termo-${forma}.3mf`), proiectBambu(proiectTermo(piese, setari, "ro", forma, info)));
-  writeFileSync(path.join(iesire, `termo-${forma}-stl.zip`), arhivaStl(piese, text, "ro"));
-  writeFileSync(path.join(iesire, `termo-${forma}.json`), JSON.stringify(info, null, 2));
+  writeFileSync(path.join(iesire, `termo-${forma}${setari.mod === "cutie" ? "-cutie" : ""}.3mf`), proiectBambu(proiectTermo(piese, setari, "ro", forma, info)));
+  writeFileSync(path.join(iesire, `termo-${forma}${setari.mod === "cutie" ? "-cutie" : ""}-stl.zip`), arhivaStl(piese, text, "ro"));
+  writeFileSync(path.join(iesire, `termo-${forma}${setari.mod === "cutie" ? "-cutie" : ""}.json`), JSON.stringify(info, null, 2));
 }, 60_000);
