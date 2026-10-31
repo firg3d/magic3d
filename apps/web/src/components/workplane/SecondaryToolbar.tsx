@@ -23,6 +23,7 @@ import type { CadModifierKind } from "@/lib/cadModifierTypes";
 import type { ShapeAsset, SketchOperation, WorkplaneWorkspaceSettings } from "@/types/layerling";
 import { TopPanel } from "./TopActionPanel";
 import { useToolbarCollapse } from "./useToolbarCollapse";
+import { OfertaButton } from "@/magic3d/oferta/OfertaButton";
 
 
 /** Die Befehle der Suche, die im Verlaufsblick wach bleiben: sie aendern nichts am Entwurf. */
@@ -1497,6 +1498,8 @@ export function SecondaryToolbar({
           </label>
         </div>
         <div className="toolbar-title-row-actions">
+          {/* Magic3D: print quote from Praktik3D, visible in every mode. */}
+          <OfertaButton />
           {simpleMode ? null : (
             <button
               className={`toolbar-ribbon-pin ${ribbonPinned ? "active" : ""}`}

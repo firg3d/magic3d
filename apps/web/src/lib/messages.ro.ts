@@ -308,7 +308,7 @@ export const MESSAGES_RO: Record<MessageKey, string> = {
   "welcome.videosHint": "Făcute de alții, nu de acest proiect. Linkurile deschid YouTube într-o filă nouă; nu se încarcă nimic de acolo până nu dai clic.",
   "welcome.help": "În editor, grupul Ajutor conține un ghid scurt și lista tuturor scurtăturilor de tastatură. În subsol, „Raportează o eroare” salvează proiectul cu tot ce e necesar pentru un raport pe forum sau pe GitHub.",
   "welcome.guideLink": "Citește ghidul complet al utilizatorului, cu imagini",
-  "welcome.guideUrl": "/guide/index.html",
+  "welcome.guideUrl": "/ghid/index.html",
   "guide.helpLink": "Citește despre asta în ghidul utilizatorului",
   "guide.fullGuide": "Deschide ghidul complet al utilizatorului, cu imagini",
   "guide.videos": "Videoclipuri făcute de alții:",

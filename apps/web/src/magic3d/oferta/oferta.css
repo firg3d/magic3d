@@ -1,0 +1,212 @@
+/* Magic3D: panoul "Printeaza in Romania - cere oferta" si butonul lui din bara de titlu. */
+
+.magic3d-oferta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--primary);
+  color: #ffffff;
+  font: 600 13px var(--font-ui);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.magic3d-oferta-button:hover {
+  filter: brightness(1.08);
+}
+
+.magic3d-oferta-button .scurt {
+  display: none;
+}
+
+@media (max-width: 1100px) {
+  .magic3d-oferta-button .lung {
+    display: none;
+  }
+
+  .magic3d-oferta-button .scurt {
+    display: inline;
+  }
+}
+
+/* Doubled class: the shared panel rules in globals.css have the same weight and come later. */
+.top-action-panel.oferta-panel {
+  display: flex;
+  flex-direction: column;
+  width: min(460px, calc(100vw - 32px));
+  max-height: calc(100vh - var(--editor-toolbar-height, 120px) - 24px);
+}
+
+.top-action-panel.oferta-panel .top-action-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: none;
+  overflow-y: auto;
+}
+
+.oferta-sectiune {
+  margin: 12px 0;
+}
+
+.oferta-sectiune h3 {
+  margin: 0 0 6px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted-strong);
+}
+
+.oferta-estimare {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 12px;
+  margin: 0;
+}
+
+.oferta-estimare dt {
+  color: var(--muted-strong);
+}
+
+.oferta-estimare dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.oferta-nota {
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: var(--muted-strong);
+}
+
+.oferta-stare {
+  margin: 4px 0;
+}
+
+.oferta-eroare {
+  margin: 8px 0;
+  color: #b42318;
+}
+
+.oferta-verificari {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.oferta-verificari li {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.oferta-verificari svg {
+  flex: none;
+  margin-top: 2px;
+}
+
+.oferta-ok svg {
+  color: var(--primary);
+}
+
+.oferta-nu {
+  color: #b42318;
+}
+
+.oferta-atentie svg {
+  color: #b45309;
+}
+
+.oferta-formular {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 12px;
+}
+
+.oferta-formular label {
+  display: grid;
+  gap: 3px;
+  font-size: 13px;
+}
+
+.oferta-formular input,
+.oferta-formular select,
+.oferta-formular textarea {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  font: inherit;
+}
+
+.oferta-lat {
+  grid-column: 1 / -1;
+}
+
+.oferta-formular .oferta-student {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.oferta-formular .oferta-student input {
+  width: auto;
+}
+
+.oferta-trimite {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--primary);
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.oferta-trimite:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.oferta-gata .oferta-actiuni {
+  display: grid;
+  gap: 8px;
+}
+
+.oferta-qr {
+  display: block;
+  margin: 8px auto;
+  background: #ffffff;
+  border-radius: 8px;
+}
+
+.oferta-atelier {
+  margin: 10px 0 0;
+  font-size: 13px;
+}
+
+.oferta-atelier a {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  color: var(--primary);
+}
+
+.oferta-gata a {
+  word-break: break-all;
+}
+
+@media (max-width: 480px) {
+  .oferta-formular {
+    grid-template-columns: 1fr;
+  }
+}

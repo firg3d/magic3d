@@ -1,0 +1,29 @@
+{
+  "whatsapp": "40744330466",
+  "uploadUrl": "/oferta/upload.php",
+  "atelierUrl": "https://praktik3d.ro",
+  "atelierNume": "Praktik3D",
+  "maxMbFisier": 50,
+  "expirareZile": 20,
+  "volumMaxMm": { "x": 300, "y": 300, "z": 300 },
+  "peretiMinimMm": 0.8,
+  "materiale": ["PLA", "PETG", "TPU", "ABS/ASA"],
+  "mesaj": [
+    "Bună ziua! Aș dori o ofertă de print 3D prin Magic3D.",
+    "",
+    "Nume: {nume}",
+    "Telefon: {telefon}",
+    "Oraș: {oras}",
+    "Material: {material}",
+    "Culoare: {culoare}",
+    "Cantitate: {cantitate}",
+    "Student: {student}",
+    "Dimensiuni: {dimensiuni}",
+    "Volum estimat: {volum}",
+    "Greutate estimată: {greutate}",
+    "Observații: {observatii}",
+    "",
+    "Fișiere (3MF, STL, imagine): {link}",
+    "Linkul expiră în {zileText}."
+  ]
+}

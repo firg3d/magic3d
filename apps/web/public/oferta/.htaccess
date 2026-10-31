@@ -1,0 +1,4 @@
+Options -Indexes
+<Files "config-oferta.example.php">
+  Require all denied
+</Files>

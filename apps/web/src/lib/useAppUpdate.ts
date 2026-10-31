@@ -8,7 +8,8 @@ import { checkAppUpdate, dismissUpdate as storeDismissUpdate, isUpdateDismissed,
 // GitHub would only announce a release they may never get - a fix to the start
 // scripts, say - and the notice would stay for good. Every other copy, local,
 // Docker or on a web server of its own, still asks.
-const PUBLISHED_HOSTS = new Set(["layerling.com", "www.layerling.com", "layerling.server"]);
+// Magic3D: magic3d.ro is published the same way.
+const PUBLISHED_HOSTS = new Set(["layerling.com", "www.layerling.com", "layerling.server", "magic3d.ro", "www.magic3d.ro"]);
 
 function asksGitHubForUpdates() {
   return typeof window === "undefined" || !PUBLISHED_HOSTS.has(window.location.hostname.toLowerCase());

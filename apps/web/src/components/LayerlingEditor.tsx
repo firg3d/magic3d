@@ -28,6 +28,10 @@ import type { IconLayerPatch, IconTagControls, ReferenceImageControls, TextLayer
 import { calibratedReferenceImage, dataUrlByteLength, isReferenceImage, LARGE_REFERENCE_IMAGE_BYTES, mirrorHidesReferenceImage, referenceImageOpacity, referenceImagePixelDistance, referenceImageShape } from "@/lib/referenceImage";
 import { IconTagPanel } from "@/components/workplane/IconTagPanel";
 import { QrCodePanel } from "@/components/workplane/QrCodePanel";
+import { meshBounds } from "@/lib/exportUnion";
+import { DESCHIDE_OFERTA } from "@/magic3d/oferta/OfertaButton";
+import { muchiiDeschise, peretiSubtiri } from "@/magic3d/oferta/oferta";
+import { OfertaPanel, type PachetOferta } from "@/magic3d/oferta/OfertaPanel";
 import { qrCodeOf, qrCodeShape, regeneratedQrCodeShape } from "@/lib/editorQrCode";
 import { DEFAULT_QR_WIDTH, MAX_QR_HEIGHT, MAX_QR_WIDTH, MIN_QR_HEIGHT, MIN_QR_WIDTH, QR_BYTE_CAPACITY, QR_ERROR_CORRECTIONS, QR_STYLES, normalizeQrSettings, qrByteLength, qrMatrix, qrModuleSize, qrModuleTooSmall, qrTextFits, type QrCodeSettings, type QrErrorCorrection, type QrStyle } from "@/lib/qrCode";
 import { iconSourceFromFile, PICTURE_FILE_ACCEPT, picturePixels, type IconSource } from "@/lib/pictureIcon";
@@ -2839,6 +2843,13 @@ export function LayerlingEditor({
   /** The icon tag window: an SVG file, its width and OK (the library's Icon tag). */
   const [iconTagPanelOpen, setIconTagPanelOpen] = useState(false);
   const [qrCodePanelOpen, setQrCodePanelOpen] = useState(false);
+  // Magic3D: "Printeaza in Romania - cere oferta", deschis din butonul din bara de titlu.
+  const [ofertaOpen, setOfertaOpen] = useState(false);
+  useEffect(() => {
+    const open = () => setOfertaOpen(true);
+    window.addEventListener(DESCHIDE_OFERTA, open);
+    return () => window.removeEventListener(DESCHIDE_OFERTA, open);
+  }, []);
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
   // Interactive Help: while on, a click asks the guide about the element instead of using it.
   const [interactiveHelp, setInteractiveHelp] = useState(false);
@@ -12881,6 +12892,55 @@ export function LayerlingEditor({
     return { shapes: hasSelection ? selectedShapes : shapes, selection: hasSelection };
   }, [hasSelection, selectedShapes, shapes]);
 
+  /**
+   * Magic3D: what a print quote sends - the same bodies the export window writes (selection or all, loose
+   * holes cut, overlaps merged for STL, separated by colour for 3MF), a picture of the view, and the
+   * measurements the quote panel shows and checks.
+   */
+  const pregatesteOferta = useCallback(async (): Promise<PachetOferta> => {
+    const all = historyViewStateRef.current?.shapes ?? shapes;
+    const { shapes: chosen, selection } = exportSource();
+    const scoped = selection ? [...chosen, ...all.filter((shape) => shape.hole && !chosen.some((picked) => picked.id === shape.id))] : chosen;
+    const { visible, hiddenNote } = visibleExportShapes(scoped);
+    if (!visible.some((shape) => !shape.hole && !isNonSolidShape(shape))) throw new Error(t(hiddenNote ? "status.exportOnlyHidden" : "status.addSolidBeforeExport"));
+    const { solids, meshes, cut } = await exportBodiesWithLooseHoles(visible);
+    const joined = await unionOverlappingExportMeshes(solids, meshes, cut);
+    const byColor = await colorSeparatedExportMeshes(solids, meshes, cut);
+    const threeMf = await exportMeshesTo3mfAsync(
+      byColor.meshes.map((mesh, index) => ({ ...mesh, name: solids[byColor.quellen[index]]?.name || mesh.name, color: solids[byColor.quellen[index]]?.color })),
+      { title: projectName },
+    );
+    const stl = new Uint8Array(exportMeshesToStl(joined.meshes));
+    // Y is up in the scene: width X, depth Z, height Y.
+    const bounds = meshBounds(joined.meshes.flatMap((mesh) => mesh.vertices));
+    const dimensiuni = bounds
+      ? { x: bounds.maxX - bounds.minX, y: bounds.maxZ - bounds.minZ, z: bounds.maxY - bounds.minY }
+      : { x: 0, y: 0, z: 0 };
+    const volume = await exportSolidVolumeOffThread(scoped);
+    let png: Blob | null = null;
+    const dataUrl = window.layerlingCaptureImage?.({ plate: true, transparent: false, scale: 1 }) ?? "";
+    const comma = dataUrl.indexOf(",");
+    if (dataUrl.startsWith("data:image/png") && comma > 0) {
+      const binary = atob(dataUrl.slice(comma + 1));
+      const bytes = new Uint8Array(binary.length);
+      for (let index = 0; index < binary.length; index += 1) bytes[index] = binary.charCodeAt(index);
+      png = new Blob([bytes], { type: "image/png" });
+    }
+    return {
+      threeMf,
+      stl,
+      png,
+      dimensiuni,
+      volumMm3: volume.volumeMm3,
+      suprafete: { sideMm2: volume.sideMm2, flatMm2: volume.flatMm2 },
+      muchiiDeschise: muchiiDeschise(joined.meshes),
+      // The threshold comes from /oferta/config.json, which the panel reads; the bodies stay here until then.
+      subtiri: (pragMm: number) => peretiSubtiri(joined.meshes, pragMm),
+      obiecte: chosen.length,
+      selectie: selection,
+    };
+  }, [exportSource, projectName, shapes]);
+
   /** `chooseFile` asks for a new STL even when the design already has one (Save as). `svgView` picks what an SVG shows (#692). */
   const exportDesign = useCallback(async (format: DirectExportFormat, exportName: string, chooseFile = false, svgView: SvgExportView = "silhouette", toServer = false, bridges: StencilBridgeOptions | null = null) => {
     const source = exportSource();
@@ -15256,6 +15316,7 @@ export function LayerlingEditor({
       {qrCodePanelOpen && !historyViewState ? (
         <QrCodePanel onClose={() => setQrCodePanelOpen(false)} onCreate={createQrCode} />
       ) : null}
+      {ofertaOpen ? <OfertaPanel onClose={() => setOfertaOpen(false)} pregateste={pregatesteOferta} /> : null}
       {topPanel ? (
         <TopActionPanel
           panel={topPanel}
