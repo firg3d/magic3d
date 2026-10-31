@@ -108,17 +108,9 @@ export function StartHero({ onCreate, onContinue, onImport, ultima }: {
           ))}
         </div>
       </div>
-      <div className="m3d-hero-ilustratie" aria-hidden="true">
-        <div className="m3d-ilustratie-fereastra">
-          <div className="m3d-ilustratie-bara"><span /><span /><span /></div>
-          <div className="m3d-ilustratie-scena">
-            <div className="m3d-ilustratie-grila" />
-            <div className="m3d-ilustratie-baza" />
-            <div className="m3d-ilustratie-suport" />
-          </div>
-        </div>
-        <div className="m3d-ilustratie-eticheta">{tst("ilustratieDim")}</div>
-        <div className="m3d-ilustratie-whatsapp">
+      <div className="m3d-hero-ilustratie">
+        <img className="m3d-hero-poza" src={START.pozaHero} alt={tst("pozaHeroAlt")} width={1536} height={1024} fetchPriority="high" />
+        <div className="m3d-ilustratie-whatsapp" aria-hidden="true">
           <span>{tst("ilustratieSus")}</span>
           <strong>{tst("ilustratieTitlu")}</strong>
           <span>{tst("ilustratieJos")}</span>

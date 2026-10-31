@@ -18,6 +18,9 @@ export const START = {
     { text: { ro: "Ghid", en: "Guide" }, href: "ghid" as const },
   ],
 
+  /** Poza din dreapta hero-ului: o piesa reala, printata in atelier. */
+  pozaHero: "/magic3d/start/suport-telefon.webp",
+
   /** Cifrele atelierului, sub butoanele din hero. */
   cifre: [
     { valoare: "500+", text: { ro: "lucrări printate", en: "parts printed" } },
