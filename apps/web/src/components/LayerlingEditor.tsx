@@ -47,6 +47,9 @@ import { IMPORTA_MODEL, type CerereImport } from "@/magic3d/generatoare/Bibliote
 import { semnaleazaExport } from "@/magic3d/sustine/config";
 import { preiaFormaInitiala } from "@/magic3d/start/formaInitiala";
 import { t as tMagic3d } from "@/magic3d/core/i18n/index";
+import { ModPictura, type RezultatPictura } from "@/magic3d/pictura/ModPictura";
+import { plasaDin, reaplicaPictura, salveazaPictura, type CorpPictat } from "@/magic3d/pictura/date";
+import { sloturiInitiale } from "@/magic3d/pictura/paleta";
 import { qrCodeOf, qrCodeShape, regeneratedQrCodeShape } from "@/lib/editorQrCode";
 import { DEFAULT_QR_WIDTH, MAX_QR_HEIGHT, MAX_QR_WIDTH, MIN_QR_HEIGHT, MIN_QR_WIDTH, QR_BYTE_CAPACITY, QR_ERROR_CORRECTIONS, QR_STYLES, normalizeQrSettings, qrByteLength, qrMatrix, qrModuleSize, qrModuleTooSmall, qrTextFits, type QrCodeSettings, type QrErrorCorrection, type QrStyle } from "@/lib/qrCode";
 import { iconSourceFromFile, PICTURE_FILE_ACCEPT, picturePixels, type IconSource } from "@/lib/pictureIcon";
@@ -10053,6 +10056,89 @@ export function LayerlingEditor({
     window.addEventListener(IMPORTA_MODEL, importa);
     return () => window.removeEventListener(IMPORTA_MODEL, importa);
   }, [setNotice]);
+  // Modul Pictura: corpurile selectate (sau toate cele vizibile) intra ca plase; la iesire pictura
+  // fiecaruia se pune pe corp intr-un singur pas de istoric.
+  const [picturaIntrare, setPicturaIntrare] = useState<{ corpuri: CorpPictat[]; sloturi: string[] } | null>(null);
+  const colectorPicturaRef = useRef<(() => RezultatPictura) | null>(null);
+  const inregistreazaPictura = useCallback((colector: (() => RezultatPictura) | null) => {
+    if (colector) colectorPicturaRef.current = colector;
+  }, []);
+  const pregatestePictura = useCallback(() => {
+    const ids = selectedIdsRef.current;
+    const candidati = shapesRef.current.filter((shape) => !shape.hidden && !shape.hole && !isNonSolidShape(shape));
+    const alese = candidati.filter((shape) => ids.includes(shape.id));
+    const lista = alese.length ? alese : candidati;
+    const pierdute: string[] = [];
+    const corpuri = lista.map((shape): CorpPictat => {
+      const mesh = meshForShape(shape);
+      const plasa = plasaDin(mesh.vertices, mesh.faces);
+      const culori = shape.pictura ? reaplicaPictura(shape.pictura, plasa) : null;
+      if (shape.pictura && !culori) pierdute.push(shape.name);
+      return { ...plasa, id: shape.id, nume: shape.name, culori: culori ?? new Uint8Array(plasa.fete.length / 3) };
+    });
+    const salvata = lista.find((shape, i) => shape.pictura && !pierdute.includes(lista[i].name))?.pictura;
+    colectorPicturaRef.current = null;
+    setPicturaIntrare({ corpuri, sloturi: salvata?.sloturi ?? sloturiInitiale(lista[0]?.color, 4) });
+    if (pierdute.length) setNotice(tMagic3d("pictura.pierdut", { nume: pierdute.join(", ") }), true);
+  }, [setNotice]);
+  /** Pune pictura curenta pe corpuri, ca pas "Pictura" in istoric (pasii apropiati se unesc). */
+  const salveazaPicturaCurenta = useCallback((colector: (() => RezultatPictura) | null) => {
+    if (salvarePicturaRef.current) {
+      window.clearTimeout(salvarePicturaRef.current);
+      salvarePicturaRef.current = 0;
+    }
+    if (!colector) return;
+    const { corpuri, sloturi } = colector();
+    const dupaId = new Map(corpuri.map((corp) => [corp.id, corp]));
+    let schimbat = false;
+    const next = shapesRef.current.map((shape) => {
+      const corp = dupaId.get(shape.id);
+      if (!corp) return shape;
+      const pictat = corp.culori.some((c) => c !== 0) || sloturi.length > 1;
+      const pictura = pictat ? salveazaPictura(corp, sloturi) : undefined;
+      if (JSON.stringify(pictura ?? null) === JSON.stringify(shape.pictura ?? null)) return shape;
+      schimbat = true;
+      if (pictura) return { ...shape, pictura };
+      const { pictura: _, ...fara } = shape;
+      return fara;
+    });
+    if (schimbat) commitShapes(next, selectedIdsRef.current, tMagic3d("pictura.aplicat"), "pictura");
+  }, [commitShapes]);
+  // Fiecare actiune terminata se salveaza pe corp curand dupa aceea: o pagina reincarcata sau inchisa
+  // in mijlocul picturii nu pierde nimic.
+  const salvarePicturaRef = useRef(0);
+  const programeazaSalvarePictura = useCallback(() => {
+    if (salvarePicturaRef.current) window.clearTimeout(salvarePicturaRef.current);
+    salvarePicturaRef.current = window.setTimeout(() => {
+      salvarePicturaRef.current = 0;
+      salveazaPicturaCurenta(colectorPicturaRef.current);
+    }, 700);
+  }, [salveazaPicturaCurenta]);
+  useEffect(() => {
+    const ascunsa = () => {
+      if (document.visibilityState === "hidden" && salvarePicturaRef.current) salveazaPicturaCurenta(colectorPicturaRef.current);
+    };
+    document.addEventListener("visibilitychange", ascunsa);
+    window.addEventListener("pagehide", ascunsa);
+    return () => {
+      document.removeEventListener("visibilitychange", ascunsa);
+      window.removeEventListener("pagehide", ascunsa);
+    };
+  }, [salveazaPicturaCurenta]);
+  const finalizeazaPictura = useCallback(() => {
+    const colector = colectorPicturaRef.current;
+    colectorPicturaRef.current = null;
+    setPicturaIntrare(null);
+    salveazaPicturaCurenta(colector);
+  }, [salveazaPicturaCurenta]);
+  const toolbarModeAnterior = useRef(toolbarMode);
+  useEffect(() => {
+    const fost = toolbarModeAnterior.current;
+    toolbarModeAnterior.current = toolbarMode;
+    if (fost === "paint" && toolbarMode !== "paint") finalizeazaPictura();
+    else if (fost !== "paint" && toolbarMode === "paint") pregatestePictura();
+  }, [toolbarMode, finalizeazaPictura, pregatestePictura]);
+
   // Obiectul selectat (unul singur), ca plasa: generatoarele care pornesc de la un model il pot folosi.
   const selectieGenerator = useCallback(() => {
     const ids = selectedIdsRef.current;
@@ -14796,6 +14882,17 @@ export function LayerlingEditor({
         shapeCustomizations={workspaceSettings.shapeCustomizations}
       />
       <div className="editor-body">
+        {toolbarMode === "paint" && picturaIntrare ? (
+          <ModPictura
+            corpuri={picturaIntrare.corpuri}
+            sloturi={picturaIntrare.sloturi}
+            titlu={projectName}
+            inregistreaza={inregistreazaPictura}
+            onSchimbare={programeazaSalvarePictura}
+            onGata={() => setToolbarMode("geometry")}
+            onAnunt={(text, eroare) => setNotice(text, Boolean(eroare))}
+          />
+        ) : null}
         {outlinerOpen ? (
           <ObjectListPanel
             inert={historyViewState !== null}

@@ -1,0 +1,430 @@
+/* Modul Pictura: aceleasi culori ca editorul (variabilele lui), deci si tema intunecata. */
+
+.m3d-pictura {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  display: grid;
+  grid-template-columns: 236px minmax(0, 1fr) 272px;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-ui, inherit);
+}
+
+.m3d-pictura-gol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
+  text-align: center;
+}
+
+.m3d-pictura-panou {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 0;
+  padding: 14px;
+  overflow-y: auto;
+  background: var(--panel);
+  border-right: 1px solid var(--border);
+}
+
+.m3d-pictura-panou.dreapta {
+  border-right: 0;
+  border-left: 1px solid var(--border);
+}
+
+.m3d-pictura-panou h3 {
+  margin: 6px 0 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--label, var(--foreground));
+}
+
+.m3d-pictura-unelte {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.m3d-pictura-unelte button,
+.m3d-pictura-istoric button,
+.m3d-pictura-buton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--tile);
+  color: var(--foreground);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.m3d-pictura-unelte button:hover:not(:disabled),
+.m3d-pictura-istoric button:hover:not(:disabled),
+.m3d-pictura-buton:hover:not(:disabled) {
+  border-color: var(--primary);
+}
+
+.m3d-pictura-unelte button.activ {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: #fff;
+}
+
+.m3d-pictura button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.m3d-pictura button:focus-visible,
+.m3d-pictura input:focus-visible,
+.m3d-pictura select:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.m3d-pictura-icon {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+}
+
+.m3d-pictura-icon[data-unealta="galeata"] { border-radius: 2px 2px 6px 6px; }
+.m3d-pictura-icon[data-unealta="pipeta"] { width: 6px; border-radius: 3px; transform: rotate(35deg); }
+.m3d-pictura-icon[data-unealta="radiera"] { border-radius: 3px; transform: rotate(-30deg); }
+
+.m3d-pictura-camp {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+}
+
+.m3d-pictura-camp > span {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.m3d-pictura-camp output {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.m3d-pictura-camp select {
+  min-height: 36px;
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface, var(--panel));
+  color: var(--foreground);
+  font: inherit;
+}
+
+.m3d-pictura-camp input[type="range"] {
+  width: 100%;
+  accent-color: var(--primary);
+}
+
+.m3d-pictura-camp.linie {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.m3d-pictura-camp input[type="color"] {
+  width: 48px;
+  height: 36px;
+  padding: 2px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: transparent;
+}
+
+.m3d-pictura-bifa {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+  font-size: 13px;
+}
+
+.m3d-pictura-bifa input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+}
+
+.m3d-pictura-istoric {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.m3d-pictura-istoric button {
+  font-size: 12px;
+}
+
+.m3d-pictura-taste,
+.m3d-pictura-nota {
+  margin: 0;
+  font-size: 11.5px;
+  line-height: 1.45;
+  opacity: 0.75;
+}
+
+.m3d-pictura-vedere {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  touch-action: none;
+  background:
+    radial-gradient(circle at 50% 40%, color-mix(in srgb, var(--panel) 70%, transparent), transparent 70%),
+    var(--background);
+}
+
+.m3d-pictura-vedere canvas {
+  display: block;
+  cursor: crosshair;
+}
+
+.m3d-pictura-info {
+  position: absolute;
+  left: 12px;
+  bottom: 10px;
+  margin: 0;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--panel) 85%, transparent);
+  font-size: 12px;
+  pointer-events: none;
+}
+
+.m3d-pictura-avertisment {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: min(560px, calc(100% - 24px));
+  padding: 10px 12px;
+  transform: translateX(-50%);
+  border: 1px solid #e0a43a;
+  border-left-width: 4px;
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.m3d-pictura-avertisment p {
+  flex: 1;
+  margin: 0;
+}
+
+.m3d-pictura-avertisment button {
+  flex: none;
+  min-height: 36px;
+  padding: 4px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--tile);
+  color: var(--foreground);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.m3d-pictura-sloturi {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.m3d-pictura-sloturi li {
+  display: flex;
+  gap: 4px;
+}
+
+.m3d-pictura-slot {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  min-height: 40px;
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--tile);
+  color: var(--foreground);
+  font: inherit;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.m3d-pictura-sloturi li.activ .m3d-pictura-slot {
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+.m3d-pictura-numar {
+  flex: none;
+  width: 20px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.m3d-pictura-mostra {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.m3d-pictura-nume {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.m3d-pictura-nume em {
+  font-style: normal;
+  opacity: 0.65;
+}
+
+.m3d-pictura-ochi {
+  flex: none;
+  width: 40px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--tile);
+  color: var(--foreground);
+  cursor: pointer;
+}
+
+.m3d-pictura-paleta {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
+}
+
+.m3d-pictura-paleta button {
+  aspect-ratio: 1;
+  min-height: 32px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.m3d-pictura-paleta button.ales {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.m3d-pictura-paleta button:disabled {
+  background-image: linear-gradient(135deg, transparent 45%, rgba(0, 0, 0, 0.55) 46%, rgba(0, 0, 0, 0.55) 54%, transparent 55%);
+}
+
+.m3d-pictura-export {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+.m3d-pictura-buton.principal {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: #fff;
+}
+
+.m3d-pictura-bara {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+/* Telefon: vederea sus, panourile dedesubt, unul langa altul cand incap. */
+@media (max-width: 900px) {
+  .m3d-pictura {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(260px, 55%) minmax(0, 1fr);
+  }
+
+  .m3d-pictura-vedere {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .m3d-pictura-panou.stanga {
+    grid-row: 2;
+    border-top: 1px solid var(--border);
+  }
+
+  .m3d-pictura-panou.dreapta {
+    grid-row: 2;
+    border-top: 1px solid var(--border);
+  }
+
+  .m3d-pictura-taste {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .m3d-pictura-panou {
+    padding: 10px;
+  }
+
+  .m3d-pictura-unelte {
+    grid-template-columns: 1fr;
+  }
+
+  .m3d-pictura-paleta {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Al treilea tab trebuie sa incapa si pe telefon: sub 560 px marca ramane doar sigla, iar taburile
+   se strang. Restul randului (care oricum depaseste ecranul) nu se schimba. */
+@media (max-width: 560px) {
+  .toolbar-brand .toolbar-brand-text {
+    display: none;
+  }
+
+  .toolbar-workspace-tabs {
+    margin-left: 4px;
+  }
+
+  .toolbar-workspace-tabs button {
+    padding-inline: 9px;
+    letter-spacing: 0;
+  }
+}

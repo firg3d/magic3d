@@ -26,11 +26,13 @@ import { useToolbarCollapse } from "./useToolbarCollapse";
 import { OfertaButton } from "@/magic3d/oferta/OfertaButton";
 import { GeneratoareButton } from "@/magic3d/generatoare/GeneratoareButton";
 import { SustineButon } from "@/magic3d/sustine/SustineButon";
+import { t as tMagic3d } from "@/magic3d/core/i18n/index";
 
 
 /** Die Befehle der Suche, die im Verlaufsblick wach bleiben: sie aendern nichts am Entwurf. */
 export const HISTORY_VIEW_COMMANDS = new Set(["history", "export", "guide", "shortcuts"]);
-export type ToolbarMode = "geometry" | "sketch";
+/** "paint": modul Pictura Magic3D (magic3d/pictura). */
+export type ToolbarMode = "geometry" | "sketch" | "paint";
 
 export const sketchReferenceIcons = {
   line: "sketch-tool-line.png",
@@ -540,7 +542,7 @@ export function SecondaryToolbar({
     setProjectNameDraft(nextName);
     if (nextName !== projectName) onProjectNameChange?.(nextName);
   };
-  const selectToolbarMode = (mode: "geometry" | "sketch") => {
+  const selectToolbarMode = (mode: ToolbarMode) => {
     setShapesOpen(false);
     setVisibilityOpen(false);
     onTopPanel(null);
@@ -925,7 +927,9 @@ export function SecondaryToolbar({
     <div className="secondary-toolbar">
       {paletteOpen ? <CommandPalette commands={buildPaletteCommands()} onClose={() => setPaletteOpen(false)} /> : null}
       <div ref={toolbarContentRef} className={`toolbar-mode-content ${toolbarMode}`}>
-        {toolbarMode === "geometry" ? (
+        {toolbarMode === "paint" ? (
+          <div className="tool-group left m3d-pictura-bara" data-testid="pictura-bara">{tMagic3d("pictura.bara")}</div>
+        ) : toolbarMode === "geometry" ? (
           <>
       <div className="tool-group left">
         <div className="toolbar-section" data-group="clipboard" data-collapse="2" inert={historyViewActive}>
@@ -1469,6 +1473,17 @@ export function SecondaryToolbar({
             disabled={historyViewActive}
           >
             {t("editor.modeSketch")}
+          </button>
+          <button
+            className={toolbarMode === "paint" ? "active" : ""}
+            type="button"
+            role="tab"
+            aria-selected={toolbarMode === "paint"}
+            data-testid="pictura-tab"
+            onClick={() => selectToolbarMode("paint")}
+            disabled={historyViewActive}
+          >
+            {tMagic3d("pictura.tab")}
           </button>
         </div>
         <div className="toolbar-project-name">

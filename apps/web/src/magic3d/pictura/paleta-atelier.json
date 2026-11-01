@@ -1,0 +1,24 @@
+{
+  "versiune": 1,
+  "nota": "EXEMPLU: lista reala de filamente Praktik3D de pe stoc vine de la atelier. Fiecare filament: id unic, nume, material, hex, disponibil.",
+  "exemplu": true,
+  "sincronizare": {
+    "activ": false,
+    "url": "",
+    "nota": "Mai tarziu: lista se poate citi dintr-un endpoint Ecosis3D cu aceeasi structura (filamente[]). Dezactivat implicit."
+  },
+  "filamente": [
+    { "id": "pla-alb", "nume": "Alb", "material": "PLA", "hex": "#f4f4f1", "disponibil": true },
+    { "id": "pla-negru", "nume": "Negru", "material": "PLA", "hex": "#1d1f1e", "disponibil": true },
+    { "id": "pla-gri", "nume": "Gri", "material": "PLA", "hex": "#8d9291", "disponibil": true },
+    { "id": "pla-rosu", "nume": "Roșu", "material": "PLA", "hex": "#c8282e", "disponibil": true },
+    { "id": "pla-portocaliu", "nume": "Portocaliu", "material": "PLA", "hex": "#ee7a1e", "disponibil": true },
+    { "id": "pla-galben", "nume": "Galben", "material": "PLA", "hex": "#f5c518", "disponibil": true },
+    { "id": "petg-verde", "nume": "Verde", "material": "PETG", "hex": "#1f8a5b", "disponibil": true },
+    { "id": "pla-verde-lime", "nume": "Verde lime", "material": "PLA", "hex": "#8cc63f", "disponibil": true },
+    { "id": "pla-albastru", "nume": "Albastru", "material": "PLA", "hex": "#1f5fbf", "disponibil": true },
+    { "id": "pla-bleu", "nume": "Bleu", "material": "PLA", "hex": "#6ec1e4", "disponibil": true },
+    { "id": "pla-mov", "nume": "Mov", "material": "PLA", "hex": "#7b3fa0", "disponibil": true },
+    { "id": "pla-roz", "nume": "Roz", "material": "PLA", "hex": "#f08bb4", "disponibil": false }
+  ]
+}

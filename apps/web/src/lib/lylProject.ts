@@ -32,6 +32,7 @@ import { PORT_PROFILES } from "@/lib/portGeometry";
 import type { PortProfile } from "@/types/layerling";
 import { normalizeSnapGrid, normalizeWorkspaceSettings } from "@/lib/workplaneSettings";
 import { esteMagic3dGenerat } from "@/magic3d/generatoare/tipuri";
+import { estePicturaSalvata } from "@/magic3d/pictura/date";
 import type { CadDisplayEdge, GridSize, ProjectAsset, ProjectAssetSourceFormat, ProjectAttachment, SketchOperation, SketchRevolveSettings, WorkplaneNote, WorkplaneShape, WorkplaneWorkspaceSettings } from "@/types/layerling";
 
 export const LYL_SCHEMA_ID = "com.layerling.project";
@@ -1407,6 +1408,10 @@ function validateShapeDefinition(definition: Record<string, unknown>, label: str
   // Magic3D: a generator's name, version and values; nothing else.
   if (definition.magic3d !== undefined && !esteMagic3dGenerat(definition.magic3d)) {
     throw new Error(`${label}.magic3d must hold a generator name, a version and its values`);
+  }
+  // Magic3D: pictura pe triunghiuri (amprenta plasei, culorile, sloturile).
+  if (definition.pictura !== undefined && !estePicturaSalvata(definition.pictura)) {
+    throw new Error(`${label}.pictura must hold a mesh fingerprint, the colours and the filament slots`);
   }
   // A QR code's settings (#553): a text and known choices. Old projects have none.
   if (definition.qrCode !== undefined && !normalizeQrSettings(definition.qrCode)) {

@@ -17,6 +17,7 @@ import "@/magic3d/logo/logo.css";
 import "@/magic3d/termo/termo.css";
 import "@/magic3d/generatoare/generatoare.css";
 import "@/magic3d/sustine/sustine.css";
+import "@/magic3d/pictura/pictura.css";
 import "@/magic3d/start/tema.css";
 import "@/magic3d/start/start.css";
 import { DiagnoseStrip } from "@/components/DiagnoseStrip";

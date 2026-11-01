@@ -1200,6 +1200,11 @@ export type WorkplaneShape = {
    */
   magic3d?: { generator: string; versiune: number; parametri: Record<string, string | number | boolean> };
   /**
+   * Magic3D: culorile pictate pe triunghiuri in modul Pictura (magic3d/pictura/date.ts), cu amprenta
+   * plasei; se reaplica doar cat timp plasa corpului e aceeasi.
+   */
+  pictura?: import("@/magic3d/pictura/date").PicturaSalvata;
+  /**
    * Set on a body made by wrapping around a cylinder (#106): its box is
    * centred on the cylinder's axis, and aligning, snapping and centring use
    * that box rather than the arc the mesh actually covers.
