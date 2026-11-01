@@ -23,7 +23,9 @@ export type ParamDef =
   | (ParamComun & { tip: "culoare" })
   | (ParamComun & { tip: "bifa" })
   /** Un logo / desen incarcat de client, pastrat doar ca contur (core/geometry/conturImagine.ts); "" = fara. */
-  | (ParamComun & { tip: "imagine" })
+  | (ParamComun & { tip: "imagine"; /** Cheia (ascunsa) unde se pune si harta de gri a imaginii, pentru relieful din poza (codare.ts). */ harta?: string; laturaHarta?: number })
+  /** Un model STL incarcat de client, pastrat ca plasa codata (codare.ts); "" = fara. */
+  | (ParamComun & { tip: "model"; maxTriunghiuri: number })
   | (ParamComun & { tip: "numar"; min: number | ((p: Parametri) => number); max: number | ((p: Parametri) => number); pas: number })
   | (ParamComun & { tip: "alegere"; optiuni: { valoare: string; eticheta: string }[] });
 

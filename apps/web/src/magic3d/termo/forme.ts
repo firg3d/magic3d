@@ -1,4 +1,4 @@
-import { cerc as cercDecor, inima as inimaDecor, stea as steaDecor } from "@/magic3d/core/geometry/formeDecor";
+import { cerc as cercDecor, hexagon as hexagonDecor, inima as inimaDecor, stea as steaDecor } from "@/magic3d/core/geometry/formeDecor";
 
 /*
  * Formele de exemplu ale termoformarii, desenate aici din formule: nicio imagine sau model al
@@ -11,25 +11,6 @@ export const FORME: FormaExemplu[] = ["hexagon", "inima", "nor", "stea", "frunza
 
 const PUNCTE = 180;
 const cerc = (n: number, f: (t: number) => [number, number]): Inel => Array.from({ length: n }, (_, i) => f((2 * Math.PI * i) / n));
-
-/** Hexagonul Magic3D: sase laturi cu colturile rotunjite. */
-function hexagon(): Inel {
-  const raza = 1;
-  const rotunjire = 0.12;
-  const inel: Inel = [];
-  for (let k = 0; k < 6; k += 1) {
-    const unghi = (Math.PI / 3) * k + Math.PI / 6;
-    // Centrul arcului de colt sta pe bisectoare, la distanta potrivita ca arcul sa atinga laturile.
-    const d = raza - rotunjire / Math.cos(Math.PI / 6);
-    const cx = d * Math.cos(unghi);
-    const cy = d * Math.sin(unghi);
-    for (let i = 0; i <= 8; i += 1) {
-      const a = unghi - Math.PI / 6 + ((Math.PI / 3) * i) / 8;
-      inel.push([cx + rotunjire * Math.cos(a), cy + rotunjire * Math.sin(a)]);
-    }
-  }
-  return inel;
-}
 
 /** Norul: reuniunea a cinci cercuri, citita pe raze din centru (forma e "stelata" fata de el). */
 function nor(): Inel {
@@ -61,7 +42,7 @@ function frunza(): Inel {
 
 export function formaExemplu(forma: FormaExemplu): Inel[] {
   switch (forma) {
-    case "hexagon": return [hexagon()];
+    case "hexagon": return hexagonDecor();
     case "inima": return inimaDecor();
     case "nor": return [nor()];
     case "stea": return steaDecor();

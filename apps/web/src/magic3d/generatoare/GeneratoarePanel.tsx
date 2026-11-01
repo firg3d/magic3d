@@ -13,6 +13,7 @@ import type { GeneratorDef, Magic3dGenerat, ParamDef, Parametri, RezultatGenerar
 import { tg } from "@/magic3d/generatoare/texte";
 import { Biblioteca, type Colectie } from "@/magic3d/generatoare/Biblioteca";
 import { CampImagine } from "@/magic3d/generatoare/CampImagine";
+import { CampModel } from "@/magic3d/generatoare/CampModel";
 import { DESCHIDE_LOGO } from "@/magic3d/logo/asset";
 import { deschideOferta } from "@/magic3d/oferta/OfertaButton";
 import { deschideTermo } from "@/magic3d/termo/preset";
@@ -140,7 +141,18 @@ export function GeneratoarePanel({ onClose, editat, initial, aplica }: {
           </label>
         );
       case "imagine":
-        return <CampImagine key={param.cheie} eticheta={eticheta} valoare={String(v ?? "")} onChange={(next) => schimba(param.cheie, next)} testid={testid} />;
+        return (
+          <CampImagine
+            key={param.cheie}
+            eticheta={eticheta}
+            valoare={String(v ?? "")}
+            onChange={(next) => schimba(param.cheie, next)}
+            testid={testid}
+            harta={param.harta ? { latura: param.laturaHarta ?? 128, onChange: (next) => schimba(param.harta as string, next) } : undefined}
+          />
+        );
+      case "model":
+        return <CampModel key={param.cheie} eticheta={eticheta} valoare={String(v ?? "")} maxTriunghiuri={param.maxTriunghiuri} onChange={(next) => schimba(param.cheie, next)} testid={testid} />;
       case "numar": {
         const min = valoare(param.min, parametri);
         const max = valoare(param.max, parametri);

@@ -9,8 +9,8 @@
 
 import { arieRing, poligon, type Pt, type Ring } from './forme2d.js';
 
-export type FormaDecor = 'cerc' | 'stea' | 'brad' | 'fulg' | 'inima' | 'clopotel';
-export const FORME_DECOR: FormaDecor[] = ['cerc', 'stea', 'brad', 'fulg', 'inima', 'clopotel'];
+export type FormaDecor = 'cerc' | 'stea' | 'brad' | 'fulg' | 'inima' | 'clopotel' | 'patrat' | 'hexagon';
+export const FORME_DECOR: FormaDecor[] = ['cerc', 'stea', 'brad', 'fulg', 'inima', 'clopotel', 'patrat', 'hexagon'];
 
 const PUNCTE = 160;
 
@@ -84,6 +84,28 @@ export function clopotel(): Ring[] {
   return [poligon(0, 0.35, 0.45, 48), corp, buza, poligon(0, -0.82, 0.16, 24), poligon(0, 0.86, 0.14, 24)];
 }
 
+/** Poligon regulat cu colturile rotunjite (raza `rotunjire`), circumscris cercului unitate. */
+function poligonRotunjit(laturi: number, faza: number, rotunjire: number): Ring {
+  const inel: Ring = [];
+  const jum = Math.PI / laturi;
+  for (let k = 0; k < laturi; k += 1) {
+    const unghi = faza + 2 * jum * k;
+    // Centrul arcului de colt sta pe bisectoare, la distanta potrivita ca arcul sa atinga laturile.
+    const d = 1 - rotunjire / Math.cos(jum);
+    for (let i = 0; i <= 8; i += 1) {
+      const a = unghi - jum + (2 * jum * i) / 8;
+      inel.push([d * Math.cos(unghi) + rotunjire * Math.cos(a), d * Math.sin(unghi) + rotunjire * Math.sin(a)]);
+    }
+  }
+  return inel;
+}
+
+/** Hexagonul Magic3D: sase laturi cu colturile rotunjite. */
+export const hexagon = (): Ring[] => [poligonRotunjit(6, Math.PI / 6, 0.12)];
+
+/** Patratul cu colturile usor rotunjite, cu laturile pe axe. */
+export const patrat = (): Ring[] => normalizeaza([poligonRotunjit(4, Math.PI / 4, 0.12)]);
+
 export function formaDecor(forma: FormaDecor): Ring[] {
   switch (forma) {
     case 'cerc': return cerc();
@@ -92,5 +114,7 @@ export function formaDecor(forma: FormaDecor): Ring[] {
     case 'fulg': return fulg();
     case 'inima': return inima();
     case 'clopotel': return clopotel();
+    case 'patrat': return patrat();
+    case 'hexagon': return hexagon();
   }
 }

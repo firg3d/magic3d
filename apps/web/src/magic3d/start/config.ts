@@ -53,6 +53,15 @@ export const START = {
     ],
   },
 
+  /** Generatoarele "Matrite" (pentru turnat si presat in atelier), la fel ca "Personalizate". */
+  matrite: {
+    titlu: { ro: "Matrițe", en: "Molds" },
+    carduri: [
+      { generator: "tava", icon: "▦", titlu: { ro: "Matriță tavă", en: "Tray mold" }, text: { ro: "Forme în grilă pentru săpun, ceară, ipsos sau rășină; sau master pentru silicon, cu volumul calculat.", en: "Shapes in a grid for soap, wax, plaster or resin; or a silicone master with the volume worked out." } },
+      { generator: "presalut", icon: "◧", titlu: { ro: "Presă pentru lut și săpun", en: "Clay and soap press" }, text: { ro: "Două jumătăți cu canal de surplus și știfturi, sau o ștampilă mare de săpun.", en: "Two halves with an overflow channel and pins, or a large soap stamp." } },
+    ],
+  },
+
   /** Numarul WhatsApp al atelierului pentru "Cere ofertă" de pe pagina de start (acelasi ca in oferta/config.json). */
   whatsapp: "40744330466",
   mesajWhatsApp: { ro: "Bună ziua! Aș dori o ofertă de print 3D.", en: "Hello! I would like a 3D printing quote." },

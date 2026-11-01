@@ -1,6 +1,7 @@
 "use client";
 
 import { FolderOpen, Search, Sparkles, Upload } from "lucide-react";
+import { Fragment } from "react";
 import { LanguageSwitch } from "@/components/LanguageSwitch";
 import { ThemeSwitch } from "@/components/ThemeSwitch";
 import { t } from "@/lib/i18n";
@@ -172,26 +173,30 @@ export function StartGeneratoare({ onCreate }: { onCreate: () => void }) {
           </button>
         ))}
       </div>
-      <h3 className="m3d-subtitlu">{tx(START.personalizate.titlu, limba)}</h3>
-      <div className="m3d-grila-generatoare">
-        {START.personalizate.carduri.map((card) => (
-          <button
-            key={card.generator}
-            type="button"
-            className="m3d-card-generator"
-            data-testid={`start-personalizat-${card.generator}`}
-            onClick={() => {
-              // Designul nou se deschide, apoi panoul generatoarelor direct pe generatorul cardului.
-              onCreate();
-              window.setTimeout(() => deschideGenerator(card.generator), 1200);
-            }}
-          >
-            <span className="m3d-card-generator-icon">{card.icon}</span>
-            <strong>{tx(card.titlu, limba)}</strong>
-            <span>{tx(card.text, limba)}</span>
-          </button>
-        ))}
-      </div>
+      {([["personalizat", START.personalizate], ["matrita", START.matrite]] as const).map(([prefix, sectiune]) => (
+        <Fragment key={prefix}>
+          <h3 className="m3d-subtitlu">{tx(sectiune.titlu, limba)}</h3>
+          <div className="m3d-grila-generatoare">
+            {sectiune.carduri.map((card) => (
+              <button
+                key={card.generator}
+                type="button"
+                className="m3d-card-generator"
+                data-testid={`start-${prefix}-${card.generator}`}
+                onClick={() => {
+                  // Designul nou se deschide, apoi panoul generatoarelor direct pe generatorul cardului.
+                  onCreate();
+                  window.setTimeout(() => deschideGenerator(card.generator), 1200);
+                }}
+              >
+                <span className="m3d-card-generator-icon">{card.icon}</span>
+                <strong>{tx(card.titlu, limba)}</strong>
+                <span>{tx(card.text, limba)}</span>
+              </button>
+            ))}
+          </div>
+        </Fragment>
+      ))}
     </section>
   );
 }

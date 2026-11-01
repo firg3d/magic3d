@@ -38,6 +38,14 @@ const RO = {
   imagineMare: "Fișierul e prea mare (cel mult {mb} MB).",
   imagineIncarcata: "imagine proprie (conturată)",
   imaginePastrata: "Se păstrează doar conturul; imaginea nu pleacă din browser.",
+  alegeModel: "Alege modelul (STL)",
+  schimbaModel: "Alt model",
+  stergeModel: "Scoate modelul",
+  modelInfo: "{nume}: {n} triunghiuri",
+  modelPreaMare: "Modelul are {n} triunghiuri; păstrăm cel mult {max}. Simplifică-l în slicer sau în editor și încarcă-l din nou.",
+  modelNecunoscut: "Fișierul nu a putut fi citit ca STL.",
+  modelIncarcat: "model propriu (STL)",
+  modelDrepturi: "Încarcă doar modele pe care ai dreptul să le folosești. Modelul nu pleacă din browser; se păstrează în proiect.",
 } as const;
 
 export type CheieGen = keyof typeof RO;
@@ -78,6 +86,14 @@ const EN: Record<CheieGen, string> = {
   imagineMare: "The file is too large (at most {mb} MB).",
   imagineIncarcata: "own picture (traced)",
   imaginePastrata: "Only the outline is kept; the picture never leaves the browser.",
+  alegeModel: "Choose the model (STL)",
+  schimbaModel: "Another model",
+  stergeModel: "Remove the model",
+  modelInfo: "{nume}: {n} triangles",
+  modelPreaMare: "The model has {n} triangles; at most {max} are kept. Simplify it in the slicer or the editor and upload it again.",
+  modelNecunoscut: "The file could not be read as STL.",
+  modelIncarcat: "own model (STL)",
+  modelDrepturi: "Only upload models you have the right to use. The model never leaves the browser; it is kept in the project.",
 };
 
 export function tg(cheie: CheieGen, valori: Record<string, string | number> = {}): string {
