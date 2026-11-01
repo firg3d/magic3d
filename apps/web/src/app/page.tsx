@@ -85,7 +85,7 @@ import { designsToRecover, hiddenCopiesOf, isInlineThumbnail, LOST_DESIGNS_RECOV
 import { deleteDesignThumbnail, loadDesignThumbnails, saveDesignThumbnail } from "@/lib/designThumbnailStore";
 import { DEFAULT_SNAP_GRID, DEFAULT_WORKPLANE_WORKSPACE, normalizeSnapGrid, normalizeWorkspaceSettings, readWorkspaceDefault, workplaneSettingsFingerprint } from "@/lib/workplaneSettings";
 import type { GridSize, ProjectAsset, ProjectAttachment, WorkplaneShape, WorkplaneWorkspaceSettings } from "@/types/layerling";
-import { StartBanda, StartCarduri, StartGeneratoare, StartPictura, StartHeader, StartHero, StartLucrari, StartPasi, StartProiecteCap, StartStratImport } from "@/magic3d/start/StartSectiuni";
+import { StartBanda, StartCarduri, StartGeneratoare, StartNoutati, StartPictura, StartHeader, StartHero, StartLucrari, StartPasi, StartProiecteCap, StartStratImport } from "@/magic3d/start/StartSectiuni";
 import { tst } from "@/magic3d/start/texte";
 
 type AppView = "dashboard" | "editor";
@@ -3623,6 +3623,7 @@ function Dashboard({
             } : null}
           />
           <StartBanda />
+          {simpleMode ? null : <StartNoutati />}
           <StartGeneratoare onCreate={onCreate} />
           {simpleMode ? null : <StartPictura onCreate={onCreate} />}
           {simpleMode ? null : <StartPasi />}

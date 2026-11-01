@@ -27,6 +27,7 @@ import { OfertaButton } from "@/magic3d/oferta/OfertaButton";
 import { GeneratoareButton } from "@/magic3d/generatoare/GeneratoareButton";
 import { SustineButon } from "@/magic3d/sustine/SustineButon";
 import { t as tMagic3d } from "@/magic3d/core/i18n/index";
+import { VERSIUNE_MAGIC3D } from "@/magic3d/versiune";
 
 
 /** Die Befehle der Suche, die im Verlaufsblick wach bleiben: sie aendern nichts am Entwurf. */
@@ -1436,7 +1437,7 @@ export function SecondaryToolbar({
         <div className="toolbar-brand">
           <img src="/assets/magic3d/magic3d-logo.svg" alt="Magic3D" />
           <span className="toolbar-brand-text">
-            <span className="toolbar-brand-name">Magic<b>3D</b></span>
+            <span className="toolbar-brand-name">Magic<b>3D</b> <span className="m3d-versiune-logo" data-testid="editor-versiune-magic3d">{VERSIUNE_MAGIC3D}</span></span>
             <span className="toolbar-brand-tagline">{t("brand.tagline")}</span>
           </span>
         </div>

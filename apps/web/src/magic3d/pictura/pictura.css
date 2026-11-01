@@ -723,3 +723,15 @@
   flex-wrap: wrap;
   gap: 4px;
 }
+
+/* "2.0" langa numele din bara editorului. */
+.toolbar-brand-name .m3d-versiune-logo {
+  margin-left: 4px;
+  padding: 0 5px;
+  border-radius: 4px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  vertical-align: 2px;
+}

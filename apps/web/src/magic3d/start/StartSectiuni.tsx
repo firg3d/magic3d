@@ -13,6 +13,7 @@ import { START, tx } from "@/magic3d/start/config";
 import { noteazaDeschidePictura, noteazaFisierPictura, noteazaFormaInitiala } from "@/magic3d/start/formaInitiala";
 import { PanouImprimanta } from "@/magic3d/start/PanouImprimanta";
 import { tst } from "@/magic3d/start/texte";
+import { VERSIUNE_MAGIC3D } from "@/magic3d/versiune";
 import { tl } from "@/magic3d/logo/texte";
 
 /*
@@ -48,6 +49,7 @@ export function StartHeader({ query, onQueryChange, onOpenEditor, searchLabel, s
       <a className="m3d-brand" href="./" aria-label="Magic3D">
         <img src="/assets/magic3d/magic3d-logo.svg" alt="" width={34} height={34} />
         <span className="m3d-brand-nume">Magic3D</span>
+        <span className="m3d-versiune-logo" data-testid="start-versiune-magic3d">{VERSIUNE_MAGIC3D}</span>
       </a>
       <span className="m3d-eticheta-versiune" data-testid="start-versiune">v{versiune} · {tst("dePraktik")}</span>
       <nav className="m3d-nav" aria-label="Magic3D">
@@ -195,6 +197,36 @@ export function StartGeneratoare({ onCreate }: { onCreate: () => void }) {
           </Fragment>
         ))}
       </ol>
+    </section>
+  );
+}
+
+/** "Magic3D 2.0 - ce e nou": noutatile versiunii, fiecare cu un link spre locul ei de pe pagina sau din ghid. */
+export function StartNoutati() {
+  const limba = useLanguage();
+  const noutati = [
+    { numar: "01", titlu: tst("nouPictura"), text: tst("nouPicturaText"), href: "#pictura", testid: "start-nou-pictura" },
+    { numar: "02", titlu: tst("nouGeneratoare"), text: tst("nouGeneratoareText"), href: "#generatoare", testid: "start-nou-generatoare" },
+    { numar: "03", titlu: tst("nouOferta"), text: tst("nouOfertaText"), href: "#printare-la-noi", testid: "start-nou-oferta" },
+    { numar: "04", titlu: tst("nouGhid"), text: tst("nouGhidText"), href: ghid(limba).replace("index.html", "painting.html"), testid: "start-nou-ghid" },
+  ];
+  return (
+    <section className="m3d-sectiune m3d-noutati" id="noutati" aria-labelledby="m3d-noutati-titlu">
+      <div className="m3d-noutati-cap">
+        <span className="m3d-eticheta">{tst("nouEticheta")}</span>
+        <h2 id="m3d-noutati-titlu">Magic3D {VERSIUNE_MAGIC3D}<span className="m3d-noutati-sub"> · {tst("nouTitlu")}</span></h2>
+      </div>
+      <ul className="m3d-noutati-lista">
+        {noutati.map((n) => (
+          <li key={n.testid}>
+            <a href={n.href} data-testid={n.testid}>
+              <span className="m3d-noutati-numar">{n.numar}</span>
+              <span className="m3d-noutati-titlu">{n.titlu} <span aria-hidden="true">→</span></span>
+              <span className="m3d-noutati-text">{n.text}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

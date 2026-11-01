@@ -6,6 +6,16 @@ code still carries it - so a lower number further down is older, not newer.
 
 ## Unreleased
 
+## 2.0.0
+
+Magic3D 2.0.
+
+- **Multicolour painting:** a third tab, Paint, colours bodies triangle by triangle - brush, bucket, rectangle and lasso selection, eyedropper, eraser - with procedural colour patterns and named presets, a picture projected onto the model, local subdivision, repair and simplification, a colour limit taken from the printer's multicolour system with an OKLab colour reduction, and estimates of filament changes. It exports a 3MF with the colour on every triangle for Bambu Studio and OrcaSlicer (`paint_color`) or PrusaSlicer (`slic3rpe:mmu_segmentation`); see docs/pictura-3mf.md. The painting is saved in the project and set aside when a body's shape changes.
+- **New Magic3D generators:** custom stamp, paper embosser, tray mold, clay and soap press, silicone mold from a 3D model.
+- **Print it with us:** the quote panel sends the files, an estimate and, from Paint, the coloured 3MF and the filament list to the Praktik3D workshop.
+- **Start page "atelier":** numbered generator catalog, animated printer, "Colour a model" card, Graphite theme.
+- **Guide:** chapters on the Magic3D generators and on painting; `{{m3d:key}}` takes button names from Magic3D's own texts.
+
 ## 1.127.0
 
 - **A thread in an enlarged group keeps its shape (Discussion #1066):** A group stretched all the points of its parts, so a thread in a group that was pulled larger in one direction came out squeezed or stretched, while opening the group built it right again. The group now builds a thread again at the size the stretch gives it, as Ungroup does (`editorMeshCore.ts`). Unit test in `groupedThreadStretch.test.ts`. Reported by @willi1955 in #1066.

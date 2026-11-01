@@ -1115,6 +1115,88 @@ html[data-theme="dark"] .m3d-bloc-verde .m3d-pas-eticheta {
 
 /* ---------- miscare redusa ---------- */
 /* Pictura multicolor: textul in stanga, vaza pictata (randata in Magic3D) pe grila in dreapta. */
+/* "Magic3D 2.0 - ce e nou": patru noutati numerotate, ca randurile catalogului. */
+.m3d-noutati {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.m3d-noutati-cap h2 {
+  margin: 8px 0 0;
+}
+
+.m3d-noutati-sub {
+  color: var(--m3d-text3);
+  font-weight: 700;
+  text-transform: none;
+}
+
+.m3d-noutati-lista {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  border-top: 2px solid var(--m3d-cerneala);
+  list-style: none;
+}
+
+.m3d-noutati-lista li + li {
+  border-left: 1px solid var(--m3d-linie);
+}
+
+.m3d-noutati-lista a {
+  display: grid;
+  gap: 6px;
+  height: 100%;
+  padding: 18px 18px 22px;
+  color: inherit;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.m3d-noutati-lista a:hover,
+.m3d-noutati-lista a:focus-visible {
+  background: var(--m3d-hover);
+}
+
+.m3d-noutati-lista a:focus-visible {
+  outline: 2px solid var(--m3d-verde-text);
+  outline-offset: -2px;
+}
+
+.m3d-noutati-numar {
+  color: var(--m3d-verde-text);
+  font-family: var(--m3d-mono);
+  font-size: 12px;
+}
+
+.m3d-noutati-titlu {
+  font-size: 20px;
+  font-weight: 800;
+  font-stretch: 75%;
+  text-transform: uppercase;
+}
+
+.m3d-noutati-text {
+  color: var(--m3d-text2);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+/* "2.0" langa logo, pe pagina de start (in editor: pictura.css). */
+.m3d-start .m3d-versiune-logo {
+  align-self: center;
+  padding: 1px 6px;
+  border-radius: var(--m3d-raza);
+  background: var(--m3d-verde-fundal);
+  color: var(--m3d-pe-verde);
+  font-family: var(--m3d-mono);
+  font-size: 12px;
+  font-weight: 600;
+}
+
 .m3d-pictura-start {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -1277,6 +1359,18 @@ html[data-theme="dark"] .m3d-bloc-verde .m3d-pas-eticheta {
 }
 
 @media (max-width: 900px) {
+  .m3d-noutati-lista {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .m3d-noutati-lista li:nth-child(3) {
+    border-left: 0;
+  }
+
+  .m3d-noutati-lista li:nth-child(n + 3) {
+    border-top: 1px solid var(--m3d-linie);
+  }
+
   .m3d-pictura-start {
     grid-template-columns: minmax(0, 1fr);
     gap: 32px;

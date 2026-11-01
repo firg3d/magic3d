@@ -1,5 +1,58 @@
 [
   {
+    "version": "2.0.0",
+    "items": [
+      {
+        "title": {
+          "de": "Mehrfarbiges Bemalen",
+          "en": "Multicolour painting",
+          "ro": "Pictură multicoloră"
+        },
+        "body": {
+          "de": "Der dritte Reiter, „Paint“, färbt das Modell Dreieck für Dreieck: Pinsel, Eimer, Auswahl, Farbmuster und Bilder, für so viele Filamente wie dein Drucker kann. Der Export ist ein mehrfarbiges 3MF für Bambu Studio, OrcaSlicer oder PrusaSlicer.",
+          "en": "The third tab, “Paint”, colours the model triangle by triangle: brush, bucket, selection, colour patterns and pictures, for as many filaments as your printer takes. It exports a multicolour 3MF for Bambu Studio, OrcaSlicer or PrusaSlicer.",
+          "ro": "Al treilea tab, „Pictură”, colorează modelul triunghi cu triunghi: pensulă, găleată, selecție, modele de culoare și imagini, pentru câte filamente duce imprimanta ta. Exportul e un 3MF multicolor pentru Bambu Studio, OrcaSlicer sau PrusaSlicer."
+        }
+      },
+      {
+        "title": {
+          "de": "Neue Generatoren: Stempel, Prägezange, Gussformen",
+          "en": "New generators: stamp, embosser, molds",
+          "ro": "Generatoare noi: ștampilă, presă, matrițe"
+        },
+        "body": {
+          "de": "Eigener Stempel, Prägezange für Papier, Schalenform, Presse für Ton und Seife und Silikonform aus einem 3D-Modell, neben den bisherigen Buchstaben, Namen und Schlüsselanhängern.",
+          "en": "Custom stamp, paper embosser, tray mold, clay and soap press and silicone mold from a 3D model, next to the letters, names and keyrings so far.",
+          "ro": "Ștampilă personalizată, presă pentru hârtie, matriță tavă, presă pentru lut și săpun și matriță de silicon din model 3D, lângă literele, numele și brelocurile de până acum."
+        }
+      },
+      {
+        "title": {
+          "de": "Bei uns drucken",
+          "en": "Print it with us",
+          "ro": "Printează la noi"
+        },
+        "body": {
+          "de": "Aus dem Editor oder aus Paint schickst du das Teil an die Werkstatt Praktik3D: Dateien, Schätzung und Filamentliste gehen in einer fertigen WhatsApp-Nachricht.",
+          "en": "From the editor or from Paint you send the part to the Praktik3D workshop: the files, the estimate and the filament list go in a WhatsApp message already written.",
+          "ro": "Din editor sau din Pictură trimiți piesa atelierului Praktik3D: fișierele, estimarea și lista de filamente pleacă într-un mesaj WhatsApp gata scris."
+        }
+      },
+      {
+        "title": {
+          "de": "Eine neue Startseite",
+          "en": "A new start page",
+          "ro": "Pagină de start nouă"
+        },
+        "body": {
+          "de": "Ein nummerierter Katalog der Generatoren, ein arbeitender Drucker, „Colour a model“ und das Graphit-Thema.",
+          "en": "A numbered catalog of generators, a printer at work, “Colour a model” and the Graphite theme.",
+          "ro": "Catalog numerotat de generatoare, o imprimantă care lucrează, „Colorează un model” și tema Grafit."
+        }
+      }
+    ]
+  },
+  {
     "version": "1.127.0",
     "items": [
       {
