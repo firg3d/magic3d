@@ -11,6 +11,7 @@ import {
   estePeTelefon,
   formatDimensiuni,
   incarcaConfigOferta,
+  LINK_FIRME,
   linkWhatsApp,
   mesajOferta,
   OFERTA_IMPLICIT,
@@ -285,7 +286,7 @@ export function OfertaPanel({ onClose, pregateste, context }: { onClose: () => v
                 {context?.firma ? (
                   <label className="oferta-lat oferta-student">
                     <input type="checkbox" data-testid="oferta-firma" checked={firma} onChange={(event) => setFirma(event.target.checked)} />
-                    <span>{to("firma")}</span>
+                    <span>{to("firma")} · <a href={LINK_FIRME} target="_blank" rel="noopener noreferrer" data-testid="oferta-firma-link">{to("firmaLink")}</a></span>
                   </label>
                 ) : null}
               </div>

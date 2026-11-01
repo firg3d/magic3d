@@ -12,6 +12,7 @@ import { grupuriFonturi, incarcaManifestFonturi, type FontItem } from "@/magic3d
 import type { GeneratorDef, Magic3dGenerat, ParamDef, Parametri, RezultatGenerare } from "@/magic3d/generatoare/tipuri";
 import { tg } from "@/magic3d/generatoare/texte";
 import { Biblioteca, type Colectie } from "@/magic3d/generatoare/Biblioteca";
+import { CampImagine } from "@/magic3d/generatoare/CampImagine";
 import { DESCHIDE_LOGO } from "@/magic3d/logo/asset";
 import { deschideOferta } from "@/magic3d/oferta/OfertaButton";
 import { deschideTermo } from "@/magic3d/termo/preset";
@@ -107,17 +108,18 @@ export function GeneratoarePanel({ onClose, editat, initial, aplica }: {
     if (param.vizibil && !param.vizibil(parametri)) return null;
     const eticheta = tm(valoare(param.eticheta, parametri));
     const v = parametri[param.cheie];
+    const testid = `gen-param-${param.cheie}`;
     switch (param.tip) {
       case "text":
-        return <label key={param.cheie}><span>{eticheta}</span><input value={String(v)} onChange={(e) => schimba(param.cheie, e.target.value)} /></label>;
+        return <label key={param.cheie}><span>{eticheta}</span><input data-testid={testid} value={String(v)} onChange={(e) => schimba(param.cheie, e.target.value)} /></label>;
       case "culoare":
-        return <label key={param.cheie} className="gen-culoare"><span>{eticheta}</span><input type="color" value={String(v)} onChange={(e) => schimba(param.cheie, e.target.value)} /></label>;
+        return <label key={param.cheie} className="gen-culoare"><span>{eticheta}</span><input type="color" data-testid={testid} value={String(v)} onChange={(e) => schimba(param.cheie, e.target.value)} /></label>;
       case "bifa":
-        return <label key={param.cheie} className="gen-bifa"><input type="checkbox" checked={Boolean(v)} onChange={(e) => schimba(param.cheie, e.target.checked)} /><span>{eticheta}</span></label>;
+        return <label key={param.cheie} className="gen-bifa"><input type="checkbox" data-testid={testid} checked={Boolean(v)} onChange={(e) => schimba(param.cheie, e.target.checked)} /><span>{eticheta}</span></label>;
       case "alegere":
         return (
           <label key={param.cheie}><span>{eticheta}</span>
-            <select value={String(v)} onChange={(e) => schimba(param.cheie, e.target.value)}>
+            <select data-testid={testid} value={String(v)} onChange={(e) => schimba(param.cheie, e.target.value)}>
               {/* Cheile i18n au puncte ("placute.prindGaura"); o eticheta fara punct (litera "A") se arata ca atare. */}
               {param.optiuni.map((o) => <option key={o.valoare} value={o.valoare}>{o.eticheta.includes(".") ? tm(o.eticheta) : o.eticheta}</option>)}
             </select>
@@ -126,7 +128,7 @@ export function GeneratoarePanel({ onClose, editat, initial, aplica }: {
       case "font":
         return (
           <label key={param.cheie}><span>{eticheta}</span>
-            <select value={String(v)} onChange={(e) => schimba(param.cheie, e.target.value)}>
+            <select data-testid={testid} value={String(v)} onChange={(e) => schimba(param.cheie, e.target.value)}>
               {grupuri.length === 0 ? <option value={String(v)}>{String(v)}</option> : null}
               {grupuri.map((g) => (
                 <optgroup key={g.categorie} label={g.categorie}>
@@ -137,6 +139,8 @@ export function GeneratoarePanel({ onClose, editat, initial, aplica }: {
             {fontAles?.lipsaDiacritice.length ? <small className="gen-nota">{tg("faraDiacritice", { litere: fontAles.lipsaDiacritice.join(" ") })}</small> : null}
           </label>
         );
+      case "imagine":
+        return <CampImagine key={param.cheie} eticheta={eticheta} valoare={String(v ?? "")} onChange={(next) => schimba(param.cheie, next)} testid={testid} />;
       case "numar": {
         const min = valoare(param.min, parametri);
         const max = valoare(param.max, parametri);
@@ -144,7 +148,7 @@ export function GeneratoarePanel({ onClose, editat, initial, aplica }: {
         return (
           <label key={param.cheie} className="gen-numar"><span>{eticheta}</span>
             <span className="gen-numar-rand">
-              <input type="range" min={min} max={max} step={param.pas} value={numar} onChange={(e) => schimba(param.cheie, Number(e.target.value))} />
+              <input type="range" data-testid={testid} min={min} max={max} step={param.pas} value={numar} onChange={(e) => schimba(param.cheie, Number(e.target.value))} />
               <input
                 className="gen-numar-valoare"
                 inputMode="decimal"

@@ -22,6 +22,8 @@ export type ParamDef =
   | (ParamComun & { tip: "font" })
   | (ParamComun & { tip: "culoare" })
   | (ParamComun & { tip: "bifa" })
+  /** Un logo / desen incarcat de client, pastrat doar ca contur (core/geometry/conturImagine.ts); "" = fara. */
+  | (ParamComun & { tip: "imagine" })
   | (ParamComun & { tip: "numar"; min: number | ((p: Parametri) => number); max: number | ((p: Parametri) => number); pas: number })
   | (ParamComun & { tip: "alegere"; optiuni: { valoare: string; eticheta: string }[] });
 

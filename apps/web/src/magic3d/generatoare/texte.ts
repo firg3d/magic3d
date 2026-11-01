@@ -27,6 +27,17 @@ const RO = {
   descarcaStl: "Descarcă STL-urile",
   printeaza: "Printează la noi",
   instructiuni: "Instrucțiuni",
+  alegeImagine: "Alege imaginea (PNG, JPG, WEBP, SVG)",
+  schimbaImagine: "Altă imagine",
+  stergeImagine: "Scoate imaginea",
+  detaliuContur: "Detaliu contur",
+  inverseaza: "Inversează",
+  conturez: "Conturez imaginea…",
+  imagineGoala: "Nu am găsit nicio formă în imagine. Încearcă „Inversează” sau altă imagine.",
+  imagineNecunoscuta: "Imaginea nu a putut fi citită.",
+  imagineMare: "Fișierul e prea mare (cel mult {mb} MB).",
+  imagineIncarcata: "imagine proprie (conturată)",
+  imaginePastrata: "Se păstrează doar conturul; imaginea nu pleacă din browser.",
 } as const;
 
 export type CheieGen = keyof typeof RO;
@@ -56,6 +67,17 @@ const EN: Record<CheieGen, string> = {
   descarcaStl: "Download the STLs",
   printeaza: "Print it with us",
   instructiuni: "Instructions",
+  alegeImagine: "Choose the picture (PNG, JPG, WEBP, SVG)",
+  schimbaImagine: "Another picture",
+  stergeImagine: "Remove the picture",
+  detaliuContur: "Outline detail",
+  inverseaza: "Invert",
+  conturez: "Tracing the picture…",
+  imagineGoala: "No shape found in the picture. Try “Invert” or another picture.",
+  imagineNecunoscuta: "The picture could not be read.",
+  imagineMare: "The file is too large (at most {mb} MB).",
+  imagineIncarcata: "own picture (traced)",
+  imaginePastrata: "Only the outline is kept; the picture never leaves the browser.",
 };
 
 export function tg(cheie: CheieGen, valori: Record<string, string | number> = {}): string {

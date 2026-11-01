@@ -47,6 +47,8 @@ export const START = {
   personalizate: {
     titlu: { ro: "Personalizate", en: "Personalised" },
     carduri: [
+      { generator: "stampila", icon: "✒", titlu: { ro: "Ștampilă personalizată", en: "Custom stamp" }, text: { ro: "Text sau logo, pentru cerneală sau pentru lut și fondant; mâner la alegere.", en: "Text or a logo, for ink or for clay and fondant; pick the handle." } },
+      { generator: "presa", icon: "◎", titlu: { ro: "Presă pentru hârtie", en: "Paper embosser" }, text: { ro: "Emblemă în relief pe hârtie și carton: clește cu balamaua printată gata montată.", en: "A raised emblem on paper and card: a clamp whose hinge prints assembled." } },
       { generator: "ornament", icon: "❄", titlu: { ro: "Ornament de Crăciun", en: "Christmas ornament" }, text: { ro: "Disc cu nume sau glob 3D din două jumătăți; pachet pentru toată familia.", en: "A named disc or a 3D bauble in two halves; a pack for the whole family." } },
     ],
   },

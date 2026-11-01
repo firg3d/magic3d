@@ -111,7 +111,8 @@ export function detaliiGenerat(def: GeneratorDef, p: Parametri): string {
     .map((d) => {
       const v = p[d.cheie];
       if (v === "" || v === undefined) return "";
-      const text = d.tip === "alegere" ? tm(d.optiuni.find((o) => o.valoare === v)?.eticheta ?? String(v)) : d.tip === "bifa" ? (v ? "✓" : "✗") : String(v);
+      // Imaginea e un contur lung: in mesaj ajunge doar ca a fost incarcata (fisierul e in 3MF).
+      const text = d.tip === "alegere" ? tm(d.optiuni.find((o) => o.valoare === v)?.eticheta ?? String(v)) : d.tip === "bifa" ? (v ? "✓" : "✗") : d.tip === "imagine" ? tg("imagineIncarcata") : String(v);
       return `${tm(valoare(d.eticheta))}: ${text}`;
     })
     .filter(Boolean)
