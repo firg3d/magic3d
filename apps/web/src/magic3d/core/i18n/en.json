@@ -1758,6 +1758,18 @@
     "imagineEsuata": "The image “{nume}” could not be read.",
     "exportPentru": "For",
     "exportNotaPrusa": "For PrusaSlicer (MMU segmentation). Slot 1 is extruder 1, slot 2 extruder 2…",
-    "exportPesteLimita": "Note: the model has {n} colours, the chosen printer takes {m}."
+    "exportPesteLimita": "Note: the model has {n} colours, the chosen printer takes {m}.",
+    "importat": "Imported “{nume}” for painting.",
+    "importEsuat": "“{nume}” could not be imported: {motiv}",
+    "generatorOferta": "Multicolour painting",
+    "faraStoc": "These colours are not in the workshop's stock. The closest filaments in stock:",
+    "folosesteStocul": "Use the colours in stock",
+    "printeazaLaNoi": "Print it with us",
+    "printeazaNota": "Sends the coloured 3MF and the filament list to the Praktik3D workshop.",
+    "culoareProprieOferta": "custom colour",
+    "ofertaCulori": "{n} colours",
+    "ofertaFilamente": "filaments",
+    "ofertaSchimbari": "~{n} filament changes (approximate)",
+    "ofertaFaraStoc": "not in stock, proposed"
   }
 }

@@ -50,3 +50,20 @@ export function preiaDeschidePictura(): boolean {
     return false;
   }
 }
+
+/*
+ * Fisierul ales pe cardul "Coloreaza un model": ramane in memorie (poate avea zeci de MB), nu in
+ * sessionStorage. Pagina de start si editorul sunt aceeasi pagina, deci ajunge la editor.
+ */
+let fisierPictura: File | null = null;
+
+export function noteazaFisierPictura(fisier: File): void {
+  fisierPictura = fisier;
+}
+
+/** Fisierul de importat in modul Pictura (o singura data). */
+export function preiaFisierPictura(): File | null {
+  const f = fisierPictura;
+  fisierPictura = null;
+  return f;
+}

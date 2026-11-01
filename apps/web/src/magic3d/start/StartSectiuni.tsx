@@ -1,7 +1,7 @@
 "use client";
 
 import { FolderOpen, Search, Upload } from "lucide-react";
-import { Fragment } from "react";
+import { Fragment, type ChangeEvent } from "react";
 import { preload } from "react-dom";
 import { LanguageSwitch } from "@/components/LanguageSwitch";
 import { ThemeSwitch } from "@/components/ThemeSwitch";
@@ -10,7 +10,7 @@ import { LANGUAGE_INFO } from "@/lib/languages";
 import { useLanguage } from "@/lib/useLanguage";
 import { DESCHIDE_GENERATOARE, deschideGenerator } from "@/magic3d/generatoare/GeneratoareButton";
 import { START, tx } from "@/magic3d/start/config";
-import { noteazaDeschidePictura, noteazaFormaInitiala } from "@/magic3d/start/formaInitiala";
+import { noteazaDeschidePictura, noteazaFisierPictura, noteazaFormaInitiala } from "@/magic3d/start/formaInitiala";
 import { PanouImprimanta } from "@/magic3d/start/PanouImprimanta";
 import { tst } from "@/magic3d/start/texte";
 import { tl } from "@/magic3d/logo/texte";
@@ -206,6 +206,15 @@ export function StartPictura({ onCreate }: { onCreate: () => void }) {
     noteazaDeschidePictura();
     onCreate();
   };
+  // "Coloreaza un model": fisierul ales se importa in designul nou, care se deschide in modul Pictura.
+  const coloreaza = (event: ChangeEvent<HTMLInputElement>) => {
+    const fisier = event.target.files?.[0];
+    event.target.value = "";
+    if (!fisier) return;
+    noteazaFisierPictura(fisier);
+    noteazaDeschidePictura();
+    onCreate();
+  };
   return (
     <section className="m3d-sectiune m3d-pictura-start" id="pictura">
       <div className="m3d-pictura-start-text">
@@ -220,6 +229,12 @@ export function StartPictura({ onCreate }: { onCreate: () => void }) {
         <button className="m3d-buton m3d-buton-verde m3d-buton-mare" type="button" data-testid="start-pictura" onClick={incearca}>
           {tst("picturaIncearca")} <span aria-hidden="true">→</span>
         </button>
+        <label className="m3d-pictura-start-card" data-testid="start-coloreaza">
+          <span className="m3d-pictura-start-card-titlu">{tst("coloreazaTitlu")} <span aria-hidden="true">→</span></span>
+          <span className="m3d-pictura-start-card-text">{tst("coloreazaText")}</span>
+          <span className="m3d-pictura-start-card-param">STL · 3MF · OBJ</span>
+          <input type="file" accept=".stl,.3mf,.obj,model/stl,model/3mf" data-testid="start-coloreaza-fisier" onChange={coloreaza} />
+        </label>
       </div>
       <figure className="m3d-pictura-start-imagine">
         <picture>

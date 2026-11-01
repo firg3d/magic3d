@@ -44,6 +44,16 @@ describe("guide markdown", () => {
     expect(english).toContain("“Group”");
   });
 
+  it("takes the Magic3D wording from Magic3D's own texts: Romanian for the Romanian guide, English for the rest", async () => {
+    const references = { uiKeys: new Set<string>(), shots: new Set<string>(), chapters: new Set<string>() };
+    const ro = { language: "ro", messages: {}, values: {}, imageSize: () => null, references };
+    expect(renderInline("{{m3d:pictura.tab}}", ro)).toContain("„Pictură”");
+    expect(renderInline("{{m3d:pictura.tab}}", await contextFor("en"))).toContain("“Paint”");
+    expect(renderInline("{{m3d:oferta.buton}}", await contextFor("de"))).toContain("Print in Romania");
+    expect(renderInline("{{m3d:gen.buton}}", ro)).toContain("Generatoare");
+    expect(() => renderInline("{{m3d:pictura.nuExista}}", ro)).toThrow(/Magic3D/);
+  });
+
   it("fills the {count} of a counting sentence from the number after the bar", async () => {
     expect(renderInline("{{ui:workspace.gridMajorSteps|10}}", await contextFor("en"))).toContain("“10 grid steps”");
     expect(renderInline("{{ui:workspace.gridMajorSteps|10}}", await contextFor("de"))).toContain("„10 Rasterschritte“");

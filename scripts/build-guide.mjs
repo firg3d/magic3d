@@ -1,5 +1,5 @@
 import { copyFile, mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
@@ -167,8 +167,54 @@ export function parseFrontMatter(source) {
   return { meta, body: source.slice(match[0].length) };
 }
 
+/*
+ * The Magic3D parts of the program (painting, generators, quote panel, start page) keep their own
+ * texts in Romanian and English, outside messages.<code>.ts. {{m3d:key}} reads them, as {{ui:key}}
+ * reads the editor's: the Romanian guide shows the Romanian wording, every other language the
+ * English one, as the program does.
+ *
+ *   {{m3d:pictura.tab}}        magic3d/core/i18n/<ro|en>.json (flattened)
+ *   {{m3d:gen.buton}}          magic3d/generatoare/texte.ts
+ *   {{m3d:oferta.buton}}       magic3d/oferta/texte.ts
+ *   {{m3d:start.picturaIncearca}} magic3d/start/texte.ts
+ */
+const magic3dTextCache = new Map();
+
+/** The `key: "text",` lines of a texte.ts object (`const RO = {` ... `} as const;`, `const EN: Record<...> = {` ... `};`). */
+function textsOfObject(source, name) {
+  const declaration = new RegExp(`^const ${name}\\b[^=\\n]*=\\s*\\{`, "m").exec(source);
+  if (!declaration) return {};
+  const start = declaration.index;
+  const close = /^\}/m.exec(source.slice(start));
+  const end = close ? start + close.index : source.length;
+  const out = {};
+  for (const match of source.slice(start, end).matchAll(/^\s+(\w+):\s*"((?:[^"\\]|\\.)*)",?\s*$/gm)) out[match[1]] = match[2].replace(/\\"/g, '"');
+  return out;
+}
+
+export function magic3dTexts(language) {
+  const code = language === "ro" ? "ro" : "en";
+  const cached = magic3dTextCache.get(code);
+  if (cached) return cached;
+  const base = join(root, "apps", "web", "src", "magic3d");
+  const texts = {};
+  const flatten = (object, prefix) => {
+    for (const [key, value] of Object.entries(object)) {
+      if (value && typeof value === "object") flatten(value, `${prefix}${key}.`);
+      else texts[`${prefix}${key}`] = String(value);
+    }
+  };
+  flatten(JSON.parse(readFileSync(join(base, "core", "i18n", `${code}.json`), "utf8")), "");
+  for (const [prefix, file] of [["gen", "generatoare/texte.ts"], ["oferta", "oferta/texte.ts"], ["start", "start/texte.ts"]]) {
+    const object = textsOfObject(readFileSync(join(base, file), "utf8"), code.toUpperCase());
+    for (const [key, value] of Object.entries(object)) texts[`${prefix}.${key}`] = value;
+  }
+  magic3dTextCache.set(code, texts);
+  return texts;
+}
+
 /**
- * Inline text. `context.messages` resolves {{ui:key}}, `context.values`
+ * Inline text. `context.messages` resolves {{ui:key}}, {{m3d:key}} the Magic3D texts, `context.values`
  * {{value:NAME}}, `context.language` sets
  * the quotation marks, `context.references` (optional) collects what was used.
  */
@@ -190,6 +236,11 @@ export function renderInline(text, context) {
     const written = (count === undefined ? label.replace(/\s*[(（]\{count\}[)）]/g, "") : label).replace(/\{count\}/g, count ?? "{count}");
     if (written.includes("{count}")) throw new Error(`{{ui:${key}}} needs a number: {{ui:${key}|10}}`);
     return `<strong class="ui">${open}${escapeHtml(written)}${close}</strong>`;
+  });
+  work = work.replace(/\{\{m3d:([A-Za-z0-9_.-]+)\}\}/g, (_, key) => {
+    const label = magic3dTexts(context.language)[key];
+    if (label === undefined) throw new Error(`Unknown Magic3D text {{m3d:${key}}}`);
+    return `<strong class="ui">${open}${escapeHtml(label)}${close}</strong>`;
   });
   work = work.replace(/\{\{value:([A-Za-z0-9_]+)\}\}/g, (_, name) => {
     const value = context.values?.[name];

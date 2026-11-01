@@ -691,3 +691,35 @@
   background: var(--primary);
   color: #fff;
 }
+
+/* Etapa 4: culorile care nu sunt pe stocul atelierului. */
+.m3d-pictura-stoc {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px 10px;
+  border-left: 4px solid #e0a43a;
+  border-radius: 6px;
+  background: var(--tile);
+  font-size: 12.5px;
+}
+
+.m3d-pictura-stoc p {
+  margin: 0;
+}
+
+.m3d-pictura-stoc ul {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.m3d-pictura-stoc li {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+}

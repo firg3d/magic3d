@@ -1758,6 +1758,18 @@
     "imagineEsuata": "Imaginea „{nume}” nu s-a putut citi.",
     "exportPentru": "Pentru",
     "exportNotaPrusa": "Pentru PrusaSlicer (segmentare MMU). Slotul 1 e extruderul 1, slotul 2 extruderul 2…",
-    "exportPesteLimita": "Atenție: modelul are {n} culori, imprimanta aleasă duce {m}."
+    "exportPesteLimita": "Atenție: modelul are {n} culori, imprimanta aleasă duce {m}.",
+    "importat": "Am importat „{nume}” pentru pictură.",
+    "importEsuat": "„{nume}” nu s-a putut importa: {motiv}",
+    "generatorOferta": "Pictură multicolor",
+    "faraStoc": "Aceste culori nu sunt pe stocul atelierului. Cele mai apropiate filamente de pe stoc:",
+    "folosesteStocul": "Folosește culorile de pe stoc",
+    "printeazaLaNoi": "Printează la noi",
+    "printeazaNota": "Trimite 3MF-ul colorat și lista de filamente atelierului Praktik3D.",
+    "culoareProprieOferta": "culoare proprie",
+    "ofertaCulori": "{n} culori",
+    "ofertaFilamente": "filamente",
+    "ofertaSchimbari": "~{n} schimbări de filament (orientativ)",
+    "ofertaFaraStoc": "nu sunt pe stoc, propuse"
   }
 }

@@ -15,6 +15,8 @@ import { acceleratedRaycast, computeBoundsTree, disposeBoundsTree } from "three-
 import { t } from "@/magic3d/core/i18n/index";
 import { SLOTURI_MAXIME, type CorpPictat } from "@/magic3d/pictura/date";
 import { PALETA_ATELIER, filamentAtelier } from "@/magic3d/pictura/paleta";
+import { deschideOferta } from "@/magic3d/oferta/OfertaButton";
+import { culoriFaraStoc, detaliiOferta } from "@/magic3d/pictura/ofertaPictura";
 import { exportaPictura3mfAsync } from "@/magic3d/pictura/pictura3mf";
 import { calculeazaModelInFundal, type CalculModel } from "@/magic3d/pictura/calculWorker";
 import { estimeaza, limitaCulori, sistem as sistemDupaId, sistemPentruProfil } from "@/magic3d/pictura/imprimante";
@@ -821,6 +823,29 @@ export function ModPictura({ corpuri: intrare, sloturi: sloturiInitiale, titlu, 
   // --- exportul ---
   const [pentruSlicer, setPentruSlicer] = useState<"bambu" | "prusa">("bambu");
 
+  // --- legatura cu atelierul ---
+  const faraStoc = useMemo(() => culoriFaraStoc(sloturi, ponderi), [ponderi, sloturi]);
+  /** Culorile care nu sunt pe stoc trec pe cel mai apropiat filament disponibil (sloturile identice se unesc). */
+  const folosesteStocul = () => {
+    aplicaMapare(reduceCulori({ sloturi, ponderi, limita: sloturi.length, paleta: PALETA_ATELIER.filamente.filter((f) => f.disponibil).map((f) => f.hex) }));
+  };
+  const [pregatesteOferta, setPregatesteOferta] = useState(false);
+  const printeazaLaNoi = async () => {
+    setPregatesteOferta(true);
+    try {
+      const sl = sloturi.map((hex) => {
+        const f = filamentAtelier(hex);
+        return { culoare: hex, nume: f?.nume, material: f?.material };
+      });
+      const threeMf = await exportaPictura3mfAsync(corpuri, sl, titlu, "bambu");
+      deschideOferta({ generator: t("pictura.generatorOferta"), detalii: detaliiOferta(sloturi, ponderi, estimare.schimbari), threeMf });
+    } catch (e) {
+      onAnunt(t("pictura.exportEsuat", { motiv: e instanceof Error ? e.message : String(e) }), true);
+    } finally {
+      setPregatesteOferta(false);
+    }
+  };
+
   const exportaFisier = async () => {
     setExporta(true);
     try {
@@ -1013,6 +1038,21 @@ export function ModPictura({ corpuri: intrare, sloturi: sloturiInitiale, titlu, 
           <button type="button" className="m3d-pictura-buton principal" data-testid="pictura-export" disabled={exporta} onClick={() => void exportaFisier()}>{t("pictura.export")}</button>
           <p className="m3d-pictura-nota">{t(pentruSlicer === "prusa" ? "pictura.exportNotaPrusa" : "pictura.exportNota")}</p>
           {folosite > limita ? <p className="m3d-pictura-nota m3d-pictura-avertizare">{t("pictura.exportPesteLimita", { n: folosite, m: limita })}</p> : null}
+          {faraStoc.length ? (
+            <div className="m3d-pictura-stoc" role="note" data-testid="pictura-fara-stoc">
+              <p>{t("pictura.faraStoc")}</p>
+              <ul>
+                {faraStoc.map((x) => (
+                  <li key={x.slot}>
+                    <span className="m3d-pictura-mostra mica" style={{ background: x.culoare }} /> {t("pictura.slot", { n: x.slot + 1 })} → <span className="m3d-pictura-mostra mica" style={{ background: x.propunere.hex }} /> {x.propunere.nume} · {x.propunere.material}
+                  </li>
+                ))}
+              </ul>
+              <button type="button" className="m3d-pictura-buton" data-testid="pictura-foloseste-stocul" onClick={folosesteStocul}>{t("pictura.folosesteStocul")}</button>
+            </div>
+          ) : null}
+          <button type="button" className="m3d-pictura-buton principal" data-testid="pictura-printeaza" disabled={pregatesteOferta} onClick={() => void printeazaLaNoi()}>{t("pictura.printeazaLaNoi")}</button>
+          <p className="m3d-pictura-nota">{t("pictura.printeazaNota")}</p>
           <button type="button" className="m3d-pictura-buton" data-testid="pictura-gata" onClick={onGata}>{t("pictura.gata")}</button>
         </div>
       </aside>

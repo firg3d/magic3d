@@ -45,7 +45,8 @@ import { GeneratoarePanel, type AplicaGenerare } from "@/magic3d/generatoare/Gen
 import { pachetGenerat } from "@/magic3d/generatoare/forma";
 import { IMPORTA_MODEL, type CerereImport } from "@/magic3d/generatoare/Biblioteca";
 import { semnaleazaExport } from "@/magic3d/sustine/config";
-import { preiaDeschidePictura, preiaFormaInitiala } from "@/magic3d/start/formaInitiala";
+import { preiaDeschidePictura, preiaFisierPictura, preiaFormaInitiala } from "@/magic3d/start/formaInitiala";
+import { importaPentruPictura } from "@/magic3d/pictura/importPictura";
 import { t as tMagic3d } from "@/magic3d/core/i18n/index";
 import { ModPictura, type RezultatPictura } from "@/magic3d/pictura/ModPictura";
 import { aceeasiPlasa, amprentaPlasei, plasaDin, reaplicaPictura, salveazaPictura, type CorpPictat } from "@/magic3d/pictura/date";
@@ -5927,11 +5928,27 @@ export function LayerlingEditor({
     // A moment after the new design has loaded its (empty) shapes, so the hydration does not wipe the new body.
     const timer = window.setTimeout(() => {
       if (shapesRef.current.length > 0) return;
+      // Cardul "Coloreaza un model": fisierul ales intra in designul nou, cu culorile lui pe triunghi,
+      // iar modul Pictura se deschide cand corpurile au ajuns pe plansa.
+      const fisier = preiaFisierPictura();
+      if (fisier) {
+        void importaPentruPictura(fisier)
+          .then(({ forme }) => commitShapesRef.current([...shapesRef.current, ...forme], forme.map((forma) => forma.id), tMagic3d("pictura.importat", { nume: fisier.name })))
+          .catch((error: unknown) => {
+            setDeschidePictura(false);
+            setNotice(tMagic3d("pictura.importEsuat", { nume: fisier.name, motiv: error instanceof Error ? error.message : String(error) }), true);
+          });
+        return;
+      }
       const asset = preiaFormaInitiala();
       if (asset) addShapeRef.current(asset);
     }, 500);
     return () => window.clearTimeout(timer);
+    // setNotice si setDeschidePictura nu se schimba intre randari.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [projectId]);
+  const commitShapesRef = useRef(commitShapes);
+  commitShapesRef.current = commitShapes;
 
   /** Sets the parts picked up with C down on the face (or the workplane) that was clicked, as one step. */
   const dropCarried = useCallback((target: { point: PlacementPoint; normal: PlacementPoint; workplane: PlacementWorkplane }) => {
