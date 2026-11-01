@@ -58,6 +58,7 @@ export const START = {
     titlu: { ro: "Matrițe", en: "Molds" },
     carduri: [
       { generator: "tava", icon: "▦", titlu: { ro: "Matriță tavă", en: "Tray mold" }, text: { ro: "Forme în grilă pentru săpun, ceară, ipsos sau rășină; sau master pentru silicon, cu volumul calculat.", en: "Shapes in a grid for soap, wax, plaster or resin; or a silicone master with the volume worked out." } },
+      { generator: "silicon", icon: "◍", titlu: { ro: "Matriță de silicon din model 3D", en: "Silicone mold from a 3D model" }, text: { ro: "Încarci modelul: primești cutia de turnare, placa de separație cu chei, canalul și volumul de silicon.", en: "Upload the model: get the mold box, the keyed parting plate, the pour channel and the silicone volume." } },
       { generator: "presalut", icon: "◧", titlu: { ro: "Presă pentru lut și săpun", en: "Clay and soap press" }, text: { ro: "Două jumătăți cu canal de surplus și știfturi, sau o ștampilă mare de săpun.", en: "Two halves with an overflow channel and pins, or a large soap stamp." } },
     ],
   },

@@ -10053,6 +10053,13 @@ export function LayerlingEditor({
     window.addEventListener(IMPORTA_MODEL, importa);
     return () => window.removeEventListener(IMPORTA_MODEL, importa);
   }, [setNotice]);
+  // Obiectul selectat (unul singur), ca plasa: generatoarele care pornesc de la un model il pot folosi.
+  const selectieGenerator = useCallback(() => {
+    const ids = selectedIdsRef.current;
+    const shape = ids.length === 1 ? shapesRef.current.find((entry) => entry.id === ids[0]) : undefined;
+    return shape ? { nume: shape.name ?? "", plasa: meshForShape(shape) } : null;
+  }, []);
+
   const aplicaGenerare = useCallback<AplicaGenerare>((rezultat, def, meta, tinta) => {
     const vechi = tinta ? shapesRef.current.find((shape) => shape.id === tinta) ?? null : null;
     const shape = pachetGenerat(rezultat.piese, tMagic3d(def.titlu), meta, vechi);
@@ -15453,7 +15460,7 @@ export function LayerlingEditor({
         <QrCodePanel onClose={() => setQrCodePanelOpen(false)} onCreate={createQrCode} />
       ) : null}
       {ofertaOpen ? <OfertaPanel onClose={() => setOfertaOpen(null)} pregateste={pregatesteOferta} context={ofertaOpen} /> : null}
-      {generatoare ? <GeneratoarePanel editat={generatoare.editat} initial={generatoare.initial} aplica={aplicaGenerare} onClose={() => setGeneratoare(null)} /> : null}
+      {generatoare ? <GeneratoarePanel editat={generatoare.editat} initial={generatoare.initial} aplica={aplicaGenerare} selectie={selectieGenerator} onClose={() => setGeneratoare(null)} /> : null}
       {topPanel ? (
         <TopActionPanel
           panel={topPanel}

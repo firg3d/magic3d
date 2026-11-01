@@ -16,6 +16,7 @@ import { presa } from "@/magic3d/generatoare/constructori/presa";
 import { stampila } from "@/magic3d/generatoare/constructori/stampila";
 import { tava } from "@/magic3d/generatoare/constructori/tava";
 import { presalut } from "@/magic3d/generatoare/constructori/presalut";
+import { silicon } from "@/magic3d/generatoare/constructori/silicon";
 import { rame } from "@/magic3d/generatoare/constructori/rame";
 import { placute } from "@/magic3d/generatoare/constructori/placute";
 import type { Parametri, PiesaGenerata } from "@/magic3d/generatoare/tipuri";
@@ -46,6 +47,7 @@ const CONSTRUCTORI: Record<string, Constructor> = {
   presa,
   tava,
   presalut,
+  silicon,
 };
 
 const fonturi = new Map<string, Promise<unknown>>();

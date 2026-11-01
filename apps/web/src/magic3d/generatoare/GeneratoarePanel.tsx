@@ -3,6 +3,7 @@
 import { ArrowLeft, Download, Printer, TriangleAlert, X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { MovableToolPanel } from "@/components/workplane/MovableToolPanel";
+import type { MeshData } from "@/lib/editorMeshCore";
 import { getLanguage } from "@/lib/i18n";
 import { useLanguage } from "@/lib/useLanguage";
 import { foloseste, t as tm } from "@/magic3d/core/i18n/index";
@@ -39,13 +40,15 @@ const ASTEPTARE_MS = 350;
  * Panoul generatoarelor Magic3D. Fara selectie: lista generatoarelor, apoi parametrii si "Adauga pe
  * placa". Cu un pachet generat selectat: parametrii lui, iar fiecare schimbare il reconstruieste pe loc.
  */
-export function GeneratoarePanel({ onClose, editat, initial, aplica }: {
+export function GeneratoarePanel({ onClose, editat, initial, aplica, selectie }: {
   onClose: () => void;
   /** Pachetul generat selectat la deschidere, de editat. */
   editat: { id: string; meta: Magic3dGenerat } | null;
   /** Generatorul pe care se deschide panoul, cand nu se editeaza nimic (cardurile de pe pagina de start). */
   initial?: string;
   aplica: AplicaGenerare;
+  /** Plasa obiectului selectat in editor, pentru campurile "model" (vezi CampModel). */
+  selectie?: () => { nume: string; plasa: MeshData } | null;
 }) {
   useLanguage();
   foloseste(getLanguage() === "ro" ? "ro" : "en");
@@ -152,7 +155,7 @@ export function GeneratoarePanel({ onClose, editat, initial, aplica }: {
           />
         );
       case "model":
-        return <CampModel key={param.cheie} eticheta={eticheta} valoare={String(v ?? "")} maxTriunghiuri={param.maxTriunghiuri} onChange={(next) => schimba(param.cheie, next)} testid={testid} />;
+        return <CampModel key={param.cheie} eticheta={eticheta} valoare={String(v ?? "")} maxTriunghiuri={param.maxTriunghiuri} onChange={(next) => schimba(param.cheie, next)} testid={testid} selectie={selectie} />;
       case "numar": {
         const min = valoare(param.min, parametri);
         const max = valoare(param.max, parametri);

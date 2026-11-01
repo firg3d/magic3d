@@ -35,6 +35,8 @@ export type GeneratorDef = {
   categorie?: "personalizate" | "matrite";
   /** Instructiunile de print si asamblare, in panou si in 3MF (din core/i18n). */
   instructiuni?: (p: Parametri) => string;
+  /** Serviciile in plus din cererea de oferta (ca la termoformare): de bifat de client, ajung in mesaj. */
+  servicii?: (p: Parametri) => Array<{ id: string; eticheta: string; nota?: string; mesaj: string; bifat?: boolean }>;
   /** Cheia numelui in core/i18n (comutator.<id>). */
   titlu: string;
   /** Versiunea parametrilor: urca la o schimbare care face vechile valori sa insemne altceva. */

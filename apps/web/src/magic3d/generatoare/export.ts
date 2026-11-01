@@ -141,5 +141,5 @@ export function obiectMaxim(piese: PiesaGenerata[]): { x: number; y: number; z: 
 
 /** Cererea de oferta a unei constructii: numele generatorului, parametrii, proiectul Bambu si cel mai mare obiect (fiecare se printeaza pe placa lui). */
 export function contextGenerat(piese: PiesaGenerata[], def: GeneratorDef, p: Parametri): ContextOferta {
-  return { generator: `${tg("titlu")} → ${tm(def.titlu)}`, firma: true, detalii: detaliiGenerat(def, p), threeMf: proiectGenerat(piese, def, p), piesaMaxima: obiectMaxim(piese) };
+  return { generator: `${tg("titlu")} → ${tm(def.titlu)}`, firma: true, detalii: detaliiGenerat(def, p), servicii: def.servicii?.(p), threeMf: proiectGenerat(piese, def, p), piesaMaxima: obiectMaxim(piese) };
 }
