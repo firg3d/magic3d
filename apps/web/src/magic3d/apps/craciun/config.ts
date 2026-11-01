@@ -87,6 +87,90 @@ export const FONTURI_CRACIUN = {
   bloc: ["BebasNeue-Regular.ttf", "Anton-Regular.ttf", "ArchivoBlack-Regular.ttf", "Oswald-700.ttf"],
 };
 
+/**
+ * MEDALION CU BANDA — disc rotund sau oval cu rama, o banda peste mijloc (orizontala sau inclinata),
+ * cu capete pliate optionale, numele pe banda si decor deasupra si dedesubt. Valorile implicite din
+ * masuratorile de referinta (Etapa 0): O70, rama 4,7 x 4 mm, banda 12 mm, decor plat (fara relief 3D).
+ * Inaltimile: rama 4, fundal 2, decor 3, banda la nivelul ramei, numele cu `textPeste` deasupra ei.
+ * Corpul e tot in culoarea discului; banda, numele si decorul au culoarea lor doar in ultimii
+ * `grosimeCuloare` mm (placi deasupra corpului): filamentul se schimba doar in straturile de sus.
+ * Ca piese de culoare de la placa in sus, schimbarea ar fi pe fiecare strat (la proba: 35 de schimbari,
+ * 10,5 g purjate la 7,7 g de model).
+ */
+export const MEDALION = {
+  latimeMin: 50,
+  latimeMax: 100,
+  latime: 70,
+  /** Ovalul: inaltimea fata de latime. */
+  raportOval: 0.8,
+  latimeRama: 4.7,
+  latimeRamaMin: 3,
+  latimeRamaMax: 8,
+  grosimeRama: 4,
+  grosimeRamaMin: 3,
+  grosimeRamaMax: 6,
+  /** Fundalul plin dintre rama si banda. */
+  grosimeFundal: 2,
+  /** Grosimea placilor colorate de deasupra corpului (4 straturi de 0,2). */
+  grosimeCuloare: 0.8,
+
+  // ---- banda ----
+  latimeBanda: 12,
+  latimeBandaMin: 8,
+  latimeBandaMax: 20,
+  inclinare: 0,
+  inclinareMax: 30,
+  /** Capetele pliate, ca fractiuni din latimea benzii: cat ies din rama, adancimea crestaturii, cat coboara la pliu. */
+  capat: 1.1,
+  crestatura: 0.4,
+  cadereCapat: 0.22,
+
+  // ---- numele ----
+  /** Cat iese numele peste banda. */
+  textPeste: 0.8,
+  /** Marginea numelui fata de marginile benzii (sus-jos) si fata de rama (la capete). */
+  margineBanda: 1.2,
+  margineRama: 1.5,
+  /** Sub atat numele nu mai iese citet; scade intai latimea (pana la `comprimareMax`), apoi apare avertizarea. */
+  textMin: 4.5,
+  comprimareMax: 0.7,
+  ingrosareText: 0.15,
+  linieMin: 0.8,
+  pierdereLinieMax: 0.03,
+
+  // ---- decorul ----
+  /** Inaltimea decorului (relief plat peste fundal). */
+  inaltimeDecor: 3,
+  latimeLinieDecor: 1.5,
+  /** Distanta decorului fata de nume (decorul care sta pe banda e oricum in afara ei). */
+  distantaText: 0.6,
+  /** Distanta decorului fata de banda (sau rama) pe care nu sta si fata de vecini. */
+  distantaDecor: 1.5,
+  /** Cat intra un element in banda sau in rama pe care sta (ca sa se lege de ea). */
+  suprapunereDecor: 0.6,
+  /** Cea mai mare marime a unui element, ca fractiune din latime; sub `decorMinMm` nu se mai pune. */
+  decorMax: 0.3,
+  decorMinMm: 6,
+  /** Elemente pe fiecare zona (sus, jos). */
+  decorMaxBucati: 5,
+
+  // ---- urechea ----
+  diametruGaura: 4,
+  pereteUreche: 3,
+
+  colt: 0.05,
+  segmente: 128,
+};
+
+/** Scris de mana cu linii groase: la 6-7 mm pe banda, liniile raman peste minimul printabil. */
+export const FONT_MEDALION = "Pacifico-Regular.ttf";
+
+/** Culorile implicite (referinta: alb si rosu #BB3D43): disc alb, banda rosie, numele alb, decorul rosu. */
+export const CULORI_MEDALION = { disc: "#ffffff", banda: "#bb3d43", text: "#ffffff", decor: "#bb3d43" };
+
+/** Setarile de print (referinta: strat 0,2, lightning 10%). */
+export const SETARI_PRINT_MEDALION = { layer_height: "0.2", wall_loops: "2", top_shell_layers: "5", bottom_shell_layers: "3", sparse_infill_pattern: "lightning", sparse_infill_density: "10%" };
+
 /** Paturile de imprimanta pentru asezarea pachetului (latura, mm). */
 export const PATURI = [180, 256] as const;
 

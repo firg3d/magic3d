@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100">
+  <!-- Magic3D: om de zapada. Desen propriu. Caile cu stroke sunt linii (latimea o da generatorul); celelalte sunt pline. -->
+  <path d="M 22 22 C 22 34.15 12.15 44 0 44 C -12.15 44 -22 34.15 -22 22 C -22 9.85 -12.15 0 0 0 C 12.15 0 22 9.85 22 22 Z"/>
+  <path d="M 15 -6 C 15 2.28 8.28 9 0 9 C -8.28 9 -15 2.28 -15 -6 C -15 -14.28 -8.28 -21 0 -21 C 8.28 -21 15 -14.28 15 -6 Z"/>
+  <path d="M 10 -27 C 10 -21.48 5.52 -17 0 -17 C -5.52 -17 -10 -21.48 -10 -27 C -10 -32.52 -5.52 -37 0 -37 C 5.52 -37 10 -32.52 10 -27 Z"/>
+  <!-- boruta nu trece prin punctele cercului capului: o atingere intr-un punct ar da, extrudata, o muchie ciupita -->
+  <path d="M -13 -32 L 13 -32 L 13 -35.5 L 7.5 -35.5 L 7.5 -48 L -7.5 -48 L -7.5 -35.5 L -13 -35.5 Z"/>
+  <path d="M -13 -9 L -30 -20 M -25 -16.7 L -28 -24 M 13 -9 L 30 -20 M 25 -16.7 L 28 -24" fill="none" stroke="#000"/>
+</svg>

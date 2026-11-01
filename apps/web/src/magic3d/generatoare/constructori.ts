@@ -14,6 +14,7 @@ import { nume } from "@/magic3d/generatoare/constructori/nume";
 import { ornament } from "@/magic3d/generatoare/constructori/ornament";
 import { globNume } from "@/magic3d/generatoare/constructori/glob-nume";
 import { turtaDulce } from "@/magic3d/generatoare/constructori/turta-dulce";
+import { medalionBanda } from "@/magic3d/generatoare/constructori/medalion-banda";
 import { presa } from "@/magic3d/generatoare/constructori/presa";
 import { stampila } from "@/magic3d/generatoare/constructori/stampila";
 import { tava } from "@/magic3d/generatoare/constructori/tava";
@@ -47,6 +48,7 @@ const CONSTRUCTORI: Record<string, Constructor> = {
   ornament,
   "glob-nume": globNume,
   "turta-dulce": turtaDulce,
+  "medalion-banda": medalionBanda,
   stampila,
   presa,
   tava,

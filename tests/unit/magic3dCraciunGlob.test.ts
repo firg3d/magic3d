@@ -169,7 +169,7 @@ describe("formele de decor (SVG proprii)", () => {
   it("formeSvg.ts e generat din forme/*.svg (node scripts/magic3d-craciun-forme.mjs)", () => {
     const dir = path.resolve(__dirname, "../../apps/web/src/magic3d/apps/craciun");
     expect(readFileSync(path.join(dir, "formeSvg.ts"), "utf8")).toBe(modulForme(formeDinSvg(path.join(dir, "forme"))));
-    expect(Object.keys(FORME_SVG).sort()).toEqual(["brad", "fulg", "fulg-simplu", "steluta"]);
+    expect(Object.keys(FORME_SVG).sort()).toEqual(["brad", "fulg", "fulg-simplu", "om-zapada", "steluta"]);
   });
 
   it("caile SVG: linii, curbe, relative si inchise", () => {
