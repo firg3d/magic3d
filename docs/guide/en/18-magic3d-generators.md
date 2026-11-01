@@ -1,6 +1,6 @@
 ---
 title: Magic3D generators
-summary: Ready-made parts from a few numbers - letters, names, keyrings, stamps, embossers, molds - and how to order the print.
+summary: Ready-made parts from a few numbers - letters, names, keyrings, stamps, embossers, Christmas ornaments, molds - and how to order the print.
 ---
 
 ## Opening the generators
@@ -29,6 +29,19 @@ Under {{m3d:gen.personalizate}}:
 - {{m3d:comutator.ornament}} - a disc with a name or a bauble in two halves, also as a pack for the whole family.
 
 A logo comes from a PNG, JPG or SVG: the panel traces its outline. Only upload pictures you have the right to use.
+
+## The Christmas collection
+
+Under {{m3d:gen.craciun}} are the name ornaments. From 1 November to 6 January they also get a large card on the start page.
+
+- {{m3d:comutator.globNume}} - the name crosses the bauble and holds on to the frame at both ends; snowflakes, stars or trees around it, with an optional thin background in another colour.
+- {{m3d:comutator.turtaDulce}} - ten shapes (gingerbread man, bauble, tree, star, reindeer, stocking, teddy bear, sack, heart, bell): the brown cookie with the white icing on top, decorated on three levels; the name stays in its own zone and shrinks or goes on two lines, never splitting a word.
+- {{m3d:comutator.medalionBanda}} - a framed disc with a band across the middle, straight or tilted, with folded ends; the name on the band, a snowman, trees or snowflakes above and below.
+- {{m3d:comutator.globModele}} - a bauble with straight or twisted ribs, a spiral, slots, diamonds, hexagons or facets, with a cap and a loop; hollow, in two halves joined by a ring, or one piece for vase mode. A name, if you type one, sits on a band at the equator.
+
+For the first three, a list of names (one per line) makes one ornament each, laid out on plates to fit the printer's bed. The colours are separate parts of one object, each on its own extruder: the 3MF opens in Bambu Studio with the colours and print settings already in place. The panel tells you when a name comes out too small or has lines too thin to print.
+
+> **Tip:** The fonts in these generators have every Romanian diacritic, with the comma below (Ș, Ț).
 
 ## Molds
 

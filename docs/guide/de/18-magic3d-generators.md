@@ -30,6 +30,17 @@ Unter {{m3d:gen.personalizate}}:
 
 Ein Logo kommt aus einer PNG-, JPG- oder SVG-Datei: Das Panel zeichnet seinen Umriss nach. Lade nur Bilder hoch, die du verwenden darfst.
 
+## Die Weihnachtskollektion
+
+Unter {{m3d:gen.craciun}} stehen die Ornamente mit Namen. Vom 1. November bis 6. Januar haben sie auch eine große Karte auf der Startseite.
+
+- {{m3d:comutator.globNume}} - der Name durchquert die Kugel und hält sich an beiden Enden am Rahmen; rundherum Schneeflocken, Sterne oder Bäume, auf Wunsch mit dünnem Hintergrund in einer anderen Farbe.
+- {{m3d:comutator.turtaDulce}} - zehn Formen (Lebkuchenmann, Kugel, Baum, Stern, Rentier, Strumpf, Teddy, Sack, Herz, Glocke): der braune Keks mit weißem Zuckerguss obendrauf, in drei Stufen verziert; der Name bleibt in seiner Zone, wird kleiner oder geht auf zwei Zeilen und trennt nie ein Wort.
+- {{m3d:comutator.medalionBanda}} - eine Scheibe mit Rahmen und einem Band über die Mitte, gerade oder schräg, mit gefalteten Enden; der Name auf dem Band, Schneemann, Bäume oder Schneeflocken darüber und darunter.
+- {{m3d:comutator.globModele}} - eine Kugel mit geraden oder gedrehten Rippen, Spirale, Schlitzen, Rauten, Sechsecken oder Facetten, mit Kappe und Öse; hohl aus zwei Hälften, die ein Ring verbindet, oder aus einem Stück für den Vasenmodus. Ein Name, wenn du einen schreibst, steht auf einem Band am Äquator.
+
+Bei den ersten drei macht eine Namensliste (ein Name pro Zeile) je ein Ornament, verteilt auf Platten passend zum Druckbett. Die Farben sind getrennte Teile eines Objekts, jede auf ihrem Extruder: die 3MF öffnet sich in Bambu Studio mit Farben und Druckeinstellungen. Das Panel sagt dir, wenn ein Name zu klein wird oder zu dünne Linien hat.
+
 ## Gussformen
 
 Unter {{m3d:gen.matrite}}:

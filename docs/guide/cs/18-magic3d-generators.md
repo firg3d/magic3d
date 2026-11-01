@@ -30,6 +30,17 @@ V části {{m3d:gen.personalizate}}:
 
 Logo přijde z PNG, JPG nebo SVG: panel obkreslí jeho obrys. Nahrávej jen obrázky, které smíš používat.
 
+## Vánoční kolekce
+
+V části {{m3d:gen.craciun}} jsou ozdoby se jménem. Od 1. listopadu do 6. ledna mají na úvodní stránce i velkou kartu.
+
+- {{m3d:comutator.globNume}} - jméno prochází koulí a drží se rámu na obou koncích; kolem vločky, hvězdičky nebo stromky, volitelně s tenkým pozadím v jiné barvě.
+- {{m3d:comutator.turtaDulce}} - deset tvarů (perníček, koule, stromek, hvězda, sob, punčocha, medvídek, pytel, srdce, zvonek): hnědý perník s bílou polevou navrchu, zdobený ve třech úrovních; jméno zůstává ve své zóně, zmenší se nebo přejde na dva řádky, nikdy nerozdělí slovo.
+- {{m3d:comutator.medalionBanda}} - kotouč s rámem a páskou přes střed, rovnou nebo šikmou, se složenými konci; jméno na pásce, sněhulák, stromky nebo vločky nahoře a dole.
+- {{m3d:comutator.globModele}} - koule s rovnými nebo zkroucenými žebry, spirálou, štěrbinami, kosočtverci, šestiúhelníky nebo fazetami, s víčkem a očkem; dutá ze dvou polovin spojených kroužkem, nebo z jednoho kusu pro režim vázy. Jméno, pokud ho napíšete, je na pásce u rovníku.
+
+U prvních tří udělá seznam jmen (jedno na řádek) ozdobu pro každé, rozmístěné na podložky podle tiskárny. Barvy jsou samostatné díly jednoho objektu, každá na svém extruderu: 3MF se v Bambu Studiu otevře s barvami a nastavením tisku. Panel upozorní, když jméno vyjde příliš malé nebo má příliš tenké čáry.
+
 ## Formy
 
 V části {{m3d:gen.matrite}}:

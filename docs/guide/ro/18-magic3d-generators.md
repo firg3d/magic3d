@@ -1,6 +1,6 @@
 ---
 title: Generatoarele Magic3D
-summary: Piese gata făcute din câteva cifre - litere, nume, brelocuri, ștampile, prese, matrițe - și cum ceri printarea.
+summary: Piese gata făcute din câteva cifre - litere, nume, brelocuri, ștampile, prese, ornamente de Crăciun, matrițe - și cum ceri printarea.
 ---
 
 ## Deschiderea generatoarelor
@@ -29,6 +29,19 @@ La {{m3d:gen.personalizate}}:
 - {{m3d:comutator.ornament}} - un disc cu nume sau un glob din două jumătăți, și ca pachet pentru toată familia.
 
 Logo-ul vine dintr-un PNG, JPG sau SVG: panoul îi urmărește conturul. Încarcă doar poze pe care ai dreptul să le folosești.
+
+## Colecția Crăciun
+
+La {{m3d:gen.craciun}} sunt ornamentele cu nume. Între 1 noiembrie și 6 ianuarie au și un card mare pe pagina de start.
+
+- {{m3d:comutator.globNume}} - numele traversează globul și se prinde de ramă la ambele capete; în jur fulgi, steluțe sau brazi, cu un fundal subțire opțional, pe altă culoare.
+- {{m3d:comutator.turtaDulce}} - zece forme (om de turtă dulce, glob, brad, stea, ren, ciorap, ursuleț, sac, inimă, clopoțel): biscuitul maro și glazura albă deasupra, cu decorul pe trei niveluri; numele stă doar în zona lui și se micșorează sau trece pe două rânduri, fără să despartă un cuvânt.
+- {{m3d:comutator.medalionBanda}} - un disc cu ramă și o bandă peste mijloc, dreaptă sau înclinată, cu capete pliate; numele pe bandă, om de zăpadă, brazi sau fulgi deasupra și dedesubt.
+- {{m3d:comutator.globModele}} - un glob cu nervuri drepte sau răsucite, spirală, fante, romburi, hexagoane sau fațete, cu capac și ureche; gol, din două jumătăți îmbinate cu un inel, sau dintr-o bucată pentru modul vază. Numele, dacă îl scrii, stă pe o bandă la ecuator.
+
+La primele trei, o listă de nume (câte unul pe rând) face câte un ornament pentru fiecare, așezate singure pe plăci după patul imprimantei. Culorile sunt piese separate în același obiect, fiecare pe extruderul ei: fișierul 3MF se deschide în Bambu Studio cu culorile și setările de print deja puse. Panoul te anunță când un nume iese prea mic sau are linii prea subțiri ca să se printeze.
+
+> **Sfat:** Fonturile din aceste generatoare au toate diacriticele românești, cu virgula dedesubt (Ș, Ț).
 
 ## Matrițe
 

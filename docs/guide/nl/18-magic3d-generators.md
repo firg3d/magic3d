@@ -30,6 +30,17 @@ Onder {{m3d:gen.personalizate}}:
 
 Een logo komt uit een PNG, JPG of SVG: het paneel volgt de omtrek. Upload alleen afbeeldingen die je mag gebruiken.
 
+## De kerstcollectie
+
+Onder {{m3d:gen.craciun}} staan de ornamenten met naam. Van 1 november tot 6 januari hebben ze ook een grote kaart op de startpagina.
+
+- {{m3d:comutator.globNume}} - de naam loopt door de bal en houdt aan beide kanten vast aan de rand; eromheen sneeuwvlokken, sterren of boompjes, met een optionele dunne achtergrond in een andere kleur.
+- {{m3d:comutator.turtaDulce}} - tien vormen (peperkoekmannetje, bal, boom, ster, rendier, kous, beer, zak, hart, bel): het bruine koekje met witte glazuur erop, versierd in drie niveaus; de naam blijft in zijn eigen zone, wordt kleiner of gaat op twee regels en splitst nooit een woord.
+- {{m3d:comutator.medalionBanda}} - een schijf met rand en een band over het midden, recht of schuin, met gevouwen uiteinden; de naam op de band, een sneeuwpop, boompjes of sneeuwvlokken erboven en eronder.
+- {{m3d:comutator.globModele}} - een bal met rechte of gedraaide ribben, een spiraal, sleuven, ruiten, zeshoeken of facetten, met dop en oogje; hol uit twee helften met een ring verbonden, of uit één stuk voor vaasmodus. Een naam, als je die typt, staat op een band bij de evenaar.
+
+Bij de eerste drie maakt een namenlijst (één per regel) voor elke naam een ornament, verdeeld over platen passend bij het printbed. De kleuren zijn aparte onderdelen van één object, elk op zijn eigen extruder: de 3MF opent in Bambu Studio met kleuren en printinstellingen. Het paneel zegt het als een naam te klein wordt of te dunne lijnen heeft.
+
 ## Mallen
 
 Onder {{m3d:gen.matrite}}:
