@@ -85,7 +85,7 @@ import { designsToRecover, hiddenCopiesOf, isInlineThumbnail, LOST_DESIGNS_RECOV
 import { deleteDesignThumbnail, loadDesignThumbnails, saveDesignThumbnail } from "@/lib/designThumbnailStore";
 import { DEFAULT_SNAP_GRID, DEFAULT_WORKPLANE_WORKSPACE, normalizeSnapGrid, normalizeWorkspaceSettings, readWorkspaceDefault, workplaneSettingsFingerprint } from "@/lib/workplaneSettings";
 import type { GridSize, ProjectAsset, ProjectAttachment, WorkplaneShape, WorkplaneWorkspaceSettings } from "@/types/layerling";
-import { StartCarduri, StartGeneratoare, StartHeader, StartHero, StartLucrari, StartPasi, StartStratImport } from "@/magic3d/start/StartSectiuni";
+import { StartBanda, StartCarduri, StartGeneratoare, StartHeader, StartHero, StartLucrari, StartPasi, StartProiecteCap, StartStratImport } from "@/magic3d/start/StartSectiuni";
 import { tst } from "@/magic3d/start/texte";
 
 type AppView = "dashboard" | "editor";
@@ -3577,6 +3577,7 @@ function Dashboard({
         onOpenEditor={onWorkspace}
         searchLabel={t("dashboard.searchLabel")}
         searchPlaceholder={t("dashboard.searchPlaceholder")}
+        versiune={LYL_CREATED_WITH_VERSION}
       />
 
       <div className="dashboard-layout">
@@ -3621,6 +3622,7 @@ function Dashboard({
               poza: latestThumbnailUrl,
             } : null}
           />
+          <StartBanda />
           <StartGeneratoare onCreate={onCreate} />
           {simpleMode ? null : <StartPasi />}
           {simpleMode ? null : <StartLucrari />}
@@ -3633,7 +3635,7 @@ function Dashboard({
           {whatsNew.view && !simpleMode ? <WhatsNewCard view={whatsNew.view} current={LYL_CREATED_WITH_VERSION} onClose={whatsNew.dismiss} /> : null}
           {simpleMode ? null : <InstallAppHint />}
           {simpleMode ? null : <TabletHint />}
-          <div id="proiecte" className="m3d-ancora-proiecte" />
+          <StartProiecteCap />
           <DesignTabs tabs={designTabs} active={activeSection} onSelect={onSelectSection}>
             {activeSection === "shared" ? (
               <button className="dashboard-select dashboard-backup-button" type="button" onClick={() => onRefreshSharedProjects()} disabled={sharedProjectsLoading}>

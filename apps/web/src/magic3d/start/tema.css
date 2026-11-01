@@ -1,0 +1,146 @@
+/*
+ * Tema paginii de start Magic3D ("atelier"): fonturile si tokenurile de culoare, intr-un singur loc.
+ * Totul e sub .m3d-start, deci editorul nu se schimba. Fonturile sunt servite local
+ * (public/magic3d/start/fonts, SIL OFL 1.1): Archivo variabil (latime 62-125, greutate 400-900)
+ * pentru titluri si text, JetBrains Mono pentru cifre, etichete si parametri.
+ *
+ * Contrast (WCAG): verdele de marca #1f8a5b ramane pentru decor (umbre, bare, sageti); textul verde
+ * pe hartie foloseste --m3d-verde-text (5,0:1), fundalurile verzi cu text alb --m3d-verde-fundal (5,1:1).
+ */
+
+@font-face {
+  font-family: "Archivo";
+  src: url("/magic3d/start/fonts/Archivo-latin.woff2") format("woff2");
+  font-weight: 400 900;
+  font-stretch: 62% 125%;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Archivo";
+  src: url("/magic3d/start/fonts/Archivo-latin-ext.woff2") format("woff2");
+  font-weight: 400 900;
+  font-stretch: 62% 125%;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/magic3d/start/fonts/JetBrainsMono-latin.woff2") format("woff2");
+  font-weight: 400 600;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/magic3d/start/fonts/JetBrainsMono-latin-ext.woff2") format("woff2");
+  font-weight: 400 600;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Rezervele au aceleasi masuri aproximative, ca textul sa nu sara cand sosesc fonturile (fara CLS). */
+@font-face {
+  font-family: "Archivo Rezerva";
+  src: local("Arial");
+  size-adjust: 98%;
+  ascent-override: 88%;
+  descent-override: 21%;
+}
+
+@font-face {
+  font-family: "Mono Rezerva";
+  src: local("Consolas"), local("Menlo"), local("Courier New");
+  size-adjust: 100%;
+}
+
+.m3d-start {
+  --m3d-font: "Archivo", "Archivo Rezerva", system-ui, sans-serif;
+  --m3d-mono: "JetBrains Mono", "Mono Rezerva", ui-monospace, monospace;
+
+  --m3d-hartie: #f4f2ec;
+  --m3d-grila: #e6e3da;
+  --m3d-cerneala: #121815;
+  --m3d-text2: #3c4540;
+  --m3d-text3: #5a625d;
+  --m3d-linie: #c9c5b9;
+  --m3d-linie-punct: #a9a596;
+  --m3d-hover: #eef4f0;
+  --m3d-suprafata: rgba(255, 255, 255, 0.45);
+
+  --m3d-verde: #1f8a5b;
+  --m3d-verde-text: #17734b;
+  --m3d-verde-fundal: #1a774e;
+  --m3d-pe-verde: #ffffff;
+  --m3d-pe-verde-slab: #d6f3e4;
+  --m3d-verde-deschis: #7fd1a8;
+  --m3d-umbra: #121815;
+  --m3d-buton-negru: #121815;
+  --m3d-pe-buton-negru: #f4f2ec;
+
+  /* Panoul imprimantei si banda sunt inchise in ambele teme. */
+  --m3d-panou: #121815;
+  --m3d-panou-scena: #0c110e;
+  --m3d-panou-grila: #18221c;
+  --m3d-panou-text: #e9efe9;
+  --m3d-panou-text2: #9fb2a7;
+  --m3d-panou-text3: #8a9b91;
+  --m3d-strat-a: #2fae74;
+  --m3d-strat-b: #1f8a5b;
+  --m3d-pe-panou-umbra: #1f8a5b;
+  --m3d-panou-valoare: #ffffff;
+  --m3d-stare-print: #ff9f43;
+  --m3d-stare-gata: #7fd1a8;
+  --m3d-duza-cap: #c9d2cc;
+  --m3d-duza-varf: #e0a43a;
+  --m3d-duza-jar: #ffcf7a;
+  --m3d-duza-lumina: rgba(255, 190, 90, 0.55);
+  --m3d-axa: #3a4740;
+  --m3d-pat: #2a332e;
+  --m3d-pat-margine: #4a5a51;
+  --m3d-progres-fundal: #26302b;
+  /* Eticheta deschisa ("Gata") si butonul hartie de pe verde: aceleasi in ambele teme. */
+  --m3d-eticheta-fundal: #f4f2ec;
+  --m3d-eticheta-text: #121815;
+  /* Banda care deruleaza. */
+  --m3d-banda: #121815;
+  --m3d-banda-text: #f4f2ec;
+  --m3d-banda-cod: #7fd1a8;
+
+  --m3d-raza: 6px;
+  --m3d-raza-mare: 10px;
+  --m3d-latime: 1280px;
+  --m3d-margine: clamp(16px, 3vw, 32px);
+
+  /* Componentele layerling de pe pagina (taburi, butoane) iau verdele paginii. */
+  --primary: var(--m3d-verde-fundal);
+}
+
+html[data-theme="dark"] .m3d-start {
+  --m3d-hartie: #121815;
+  --m3d-grila: #1b231e;
+  --m3d-cerneala: #f4f2ec;
+  --m3d-text2: #c3ccc6;
+  --m3d-text3: #9aa69f;
+  --m3d-linie: #2f3a34;
+  --m3d-linie-punct: #46524b;
+  --m3d-hover: #1a2420;
+  --m3d-suprafata: rgba(255, 255, 255, 0.03);
+
+  --m3d-verde: #7fd1a8;
+  --m3d-verde-text: #7fd1a8;
+  --m3d-verde-fundal: #7fd1a8;
+  --m3d-pe-verde: #0c1410;
+  --m3d-pe-verde-slab: #1d4632;
+  --m3d-umbra: #050807;
+  --m3d-buton-negru: #f4f2ec;
+  --m3d-pe-buton-negru: #121815;
+
+  --m3d-panou: #0b100d;
+  --m3d-panou-scena: #070a08;
+  --m3d-pe-panou-umbra: #2f8a62;
+  --primary: var(--m3d-verde-fundal);
+}

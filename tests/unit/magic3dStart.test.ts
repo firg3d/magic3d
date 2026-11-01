@@ -1,11 +1,15 @@
 // @vitest-environment jsdom
 import { act, createElement } from "react";
 import { createRoot, type Root } from "react-dom/client";
-import { afterEach, describe, expect, it } from "vitest";
+import { readFileSync } from "node:fs";
+import path from "node:path";
+import { afterEach, describe, expect, it, vi } from "vitest";
+import { DESCHIDE_GENERATOARE, type CerereGeneratoare } from "@/magic3d/generatoare/GeneratoareButton";
+import { cadru, IMPRIMANTA, PanouImprimanta } from "@/magic3d/start/PanouImprimanta";
 import { libraryShapeAssets } from "@/lib/shapeCatalog";
 import { START } from "@/magic3d/start/config";
 import { noteazaFormaInitiala, preiaFormaInitiala } from "@/magic3d/start/formaInitiala";
-import { StartGeneratoare } from "@/magic3d/start/StartSectiuni";
+import { StartGeneratoare, StartPasi } from "@/magic3d/start/StartSectiuni";
 
 (globalThis as { IS_REACT_ACT_ENVIRONMENT?: boolean }).IS_REACT_ACT_ENVIRONMENT = true;
 
@@ -18,7 +22,17 @@ afterEach(() => {
   container = null;
   root = null;
   window.sessionStorage.clear();
+  vi.useRealTimers();
+  vi.restoreAllMocks();
 });
+
+function randeaza(element: ReturnType<typeof createElement>) {
+  container = document.createElement("div");
+  document.body.append(container);
+  root = createRoot(container);
+  act(() => root!.render(element));
+  return container;
+}
 
 describe("pagina de start Magic3D", () => {
   it("fiecare card de generator trimite la o forma care exista in biblioteca editorului", () => {
@@ -47,5 +61,90 @@ describe("pagina de start Magic3D", () => {
     act(() => (container!.querySelector("[data-testid='start-generator-qrCode']") as HTMLButtonElement).click());
     expect(create).toBe(1);
     expect(preiaFormaInitiala()?.id).toBe("qrCode");
+  });
+});
+
+describe("pagina de start v2 (atelier)", () => {
+  it("catalogul: fiecare rand de forma deschide editorul cu forma lui", () => {
+    let create = 0;
+    const c = randeaza(createElement(StartGeneratoare, { onCreate: () => void create++ }));
+    for (const g of START.generatoare) {
+      act(() => (c.querySelector(`[data-testid='start-generator-${g.forma}']`) as HTMLButtonElement).click());
+      expect(preiaFormaInitiala()?.id, g.forma).toBe(g.forma);
+    }
+    act(() => (c.querySelector("[data-testid='start-logo']") as HTMLButtonElement).click());
+    expect(preiaFormaInitiala()?.id).toBe("magic3dLogo");
+    expect(create).toBe(START.generatoare.length + 1);
+    // Numerotarea e continua, 01..NN, si fiecare rand are parametrul tehnic.
+    const numere = [...c.querySelectorAll(".m3d-rand-numar")].map((n) => n.textContent);
+    expect(numere[0]).toBe("01");
+    expect(numere).toHaveLength(START.generatoare.length + 1 + START.personalizate.carduri.length + START.matrite.carduri.length);
+    expect([...c.querySelectorAll(".m3d-rand-param")].every((p) => (p.textContent ?? "").length > 0)).toBe(true);
+  });
+
+  it("catalogul: randurile Personalizate si Matrite deschid editorul pe generatorul corect", () => {
+    vi.useFakeTimers();
+    let create = 0;
+    const cerute: (string | undefined)[] = [];
+    const asculta = (event: Event) => cerute.push((event as CustomEvent<CerereGeneratoare>).detail?.generator);
+    window.addEventListener(DESCHIDE_GENERATOARE, asculta);
+    const c = randeaza(createElement(StartGeneratoare, { onCreate: () => void create++ }));
+    const asteptate = [...START.personalizate.carduri.map((x) => ["personalizat", x.generator]), ...START.matrite.carduri.map((x) => ["matrita", x.generator])];
+    for (const [prefix, generator] of asteptate) {
+      act(() => (c.querySelector(`[data-testid='start-${prefix}-${generator}']`) as HTMLButtonElement).click());
+      act(() => void vi.advanceTimersByTime(1300));
+    }
+    window.removeEventListener(DESCHIDE_GENERATOARE, asculta);
+    expect(create).toBe(asteptate.length);
+    expect(cerute).toEqual(asteptate.map(([, g]) => g));
+  });
+
+  it("butonul WhatsApp porneste cererea de oferta, cu numarul si mesajul atelierului", () => {
+    const c = randeaza(createElement(StartPasi));
+    const a = c.querySelector("[data-testid='start-whatsapp']") as HTMLAnchorElement;
+    const url = new URL(a.href);
+    expect(url.host).toBe("wa.me");
+    expect(url.pathname).toBe(`/${START.whatsapp}`);
+    expect([START.mesajWhatsApp.ro, START.mesajWhatsApp.en]).toContain(url.searchParams.get("text"));
+    expect(a.target).toBe("_blank");
+  });
+
+  it("imprimanta: piesa creste si se termina in ciclul ei", () => {
+    expect(cadru(0).strat).toBe(0);
+    expect(cadru(IMPRIMANTA.print / 2).procent).toBe(50);
+    const gata = cadru(IMPRIMANTA.print + 1);
+    expect(gata.gata).toBe(true);
+    expect(gata.strat).toBe(IMPRIMANTA.straturi);
+    expect(gata.ramas).toBe("00:00");
+    expect(cadru(IMPRIMANTA.print / 2).axaY).toBeGreaterThan(cadru(IMPRIMANTA.print / 4).axaY);
+  });
+
+  it("imprimanta: cu prefers-reduced-motion nu porneste animatia si ramane la 70%", () => {
+    vi.stubGlobal("matchMedia", (q: string) => ({ matches: q.includes("reduce"), media: q, addEventListener() {}, removeEventListener() {} }));
+    const raf = vi.spyOn(window, "requestAnimationFrame");
+    const c = randeaza(createElement(PanouImprimanta));
+    const panou = c.querySelector("[data-testid='start-imprimanta']") as HTMLElement;
+    expect(panou.dataset.animat).toBe("nu");
+    expect(raf).not.toHaveBeenCalled();
+    expect((c.querySelector(".m3d-imprimanta-progres div") as HTMLElement).style.width).toBe("70%");
+    vi.unstubAllGlobals();
+  });
+
+  it("imprimanta: fara miscare redusa, animatia porneste pe requestAnimationFrame", () => {
+    const raf = vi.spyOn(window, "requestAnimationFrame").mockImplementation(() => 1);
+    const c = randeaza(createElement(PanouImprimanta));
+    expect((c.querySelector("[data-testid='start-imprimanta']") as HTMLElement).dataset.animat).toBe("da");
+    expect(raf).toHaveBeenCalled();
+  });
+
+  it("tema Grafit aplica tokenurile, iar culorile stau doar in fisierul de tema", () => {
+    const dir = path.resolve(__dirname, "../../apps/web/src/magic3d/start");
+    const tema = readFileSync(path.join(dir, "tema.css"), "utf8");
+    const grafit = tema.slice(tema.indexOf('html[data-theme="dark"] .m3d-start'));
+    for (const [token, valoare] of [["--m3d-hartie", "#121815"], ["--m3d-grila", "#1b231e"], ["--m3d-cerneala", "#f4f2ec"], ["--m3d-verde", "#7fd1a8"]]) {
+      expect(grafit).toMatch(new RegExp(`${token}:\\s*${valoare};`));
+    }
+    const asezare = readFileSync(path.join(dir, "start.css"), "utf8");
+    expect(asezare.match(/#[0-9a-fA-F]{3,8}/g) ?? []).toEqual([]);
   });
 });
