@@ -58,8 +58,10 @@ export function randare3d(piese: PiesaGenerata[], opt: { latime?: number; azimut
   }
   // piesele: fete orientate spre camera, umbrire Lambert + ambient + un mic luciu
   for (const t of tri) {
-    // Scena e oglindita (manifoldInTriunghiuri): fetele spre exterior au varfurile in sens invers, deci normala e c x b.
-    const n = norm(cruce(scade(t.p[2], t.p[0]), scade(t.p[1], t.p[0])));
+    // manifoldInTriunghiuri oglindeste scena si inverseaza sensul varfurilor, deci fetele raman orientate spre
+    // exterior (b x c). Cu c x b se desenau fetele din spate: la piesele plate in straturi nu se vedea, la un
+    // glob gol aparea peretele interior in locul celui exterior.
+    const n = norm(cruce(scade(t.p[1], t.p[0]), scade(t.p[2], t.p[0])));
     if (punct(n, d) >= 0) continue;
     const dif = Math.max(0, -punct(n, lumina));
     const h = norm([-lumina[0] - d[0], -lumina[1] - d[1], -lumina[2] - d[2]]);

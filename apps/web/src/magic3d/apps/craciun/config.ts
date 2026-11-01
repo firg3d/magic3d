@@ -171,6 +171,115 @@ export const CULORI_MEDALION = { disc: "#ffffff", banda: "#bb3d43", text: "#ffff
 /** Setarile de print (referinta: strat 0,2, lightning 10%). */
 export const SETARI_PRINT_MEDALION = { layer_height: "0.2", wall_loops: "2", top_shell_layers: "5", bottom_shell_layers: "3", sparse_infill_pattern: "lightning", sparse_infill_density: "10%" };
 
+/**
+ * GLOBURI CU MODELE — glob de revolutie cu un model pe suprafata (nervuri drepte sau rasucite, spirala,
+ * fante, retea de romburi sau hexagoane, fatete), gat si capac cu ureche. Referinta (Etapa 0): O60,
+ * strat 0,16, adaptive cubic 10%, o culoare #C52C18.
+ * Profilul: sfera pana la `latitudineUmar`, apoi un con la 45° pana la gat (se printeaza in picioare,
+ * fara suporturi, si in modul vaza), gatul drept peste care intra capacul; jos, la globul din jumatati,
+ * un con la 45° cu varful tesit (tavanul interior al jumatatii de jos ramane in panta), la modul vaza
+ * o baza plata.
+ * Doua constructii: gol, din doua jumatati (fiecare pe taietura, imbinate cu un inel presat), sau dintr-o
+ * bucata, plin, pentru modul vaza (feliatorul face un singur perete si lasa gatul deschis).
+ */
+export const GLOB_MODELE = {
+  diametruMin: 50,
+  diametruMax: 100,
+  diametru: 60,
+  perete: 2,
+  pereteMin: 1.6,
+  pereteMax: 3,
+
+  // ---- modelul ----
+  numarMin: 6,
+  numarMax: 72,
+  numar: 24,
+  adancime: 1.2,
+  adancimeMin: 0.4,
+  adancimeMax: 3,
+  /** Nervurile rasucite: unghiul de rotire de jos pana sus (grade). */
+  rasucire: 60,
+  rasucireMax: 180,
+  /** Spirala: cate ture face o nervura de jos pana sus. */
+  ture: 1,
+  tureMin: 0.5,
+  tureMax: 3,
+  latimeFanta: 2.5,
+  latimeFantaMin: 1.5,
+  latimeFantaMax: 5,
+  /** Liniile retelei (romburi, hexagoane) si ale spiralei: latimea, plus tranzitia moale de pe margini. */
+  latimeLinie: 1.6,
+  tranzitieLinie: 0.5,
+  /** Fatetele: cate benzi pe verticala la o fateta pe orizontala. */
+  benziPeFatete: 0.34,
+  /** Pe ce distanta (mm) se stinge modelul spre gat, spre baza si spre banda numelui. */
+  stingere: 4,
+
+  // ---- profilul ----
+  /** Deasupra acestei latitudini peretele urca la 45° (fara consola, nici in modul vaza). */
+  latitudineUmar: 45,
+  /** Gatul: raza (fractiune din diametru) si inaltimea. */
+  razaGat: 0.12,
+  inaltimeGat: 5,
+  /** Globul din jumatati: varful tesit al conului de jos, ca fractiune din raza gatului. */
+  razaVarf: 0.5,
+  /** Gaura din varful de jos (raza minima): interiorul ramane deschis la ambele capete. */
+  gauraVarfMin: 1,
+  /** Modul vaza: baza plata la latitudinea la care consola ajunge la `consolaMax`. */
+  latitudineBaza: -50,
+  /** Fantele stau departe de taietura, de gat si de baza. */
+  margineFante: 3,
+
+  // ---- imbinarea jumatatilor (ca la globul din Ornament) ----
+  locasInel: 3,
+  tolerantaInel: 0.2,
+  fractieInel: 0.5,
+
+  // ---- capacul: paharul care intra peste gat, cu urechea deasupra ----
+  tolerantaCapac: 0.25,
+  pereteCapac: 1.6,
+  inaltimeCapac: 6,
+  urecheLatime: 10,
+  urecheInaltime: 9,
+  urecheGrosime: 3,
+  urecheGaura: 4,
+
+  // ---- numele pe banda de la ecuator ----
+  inaltimeBanda: 10,
+  /** Banda iese pana la varful modelului, dar cel putin atat. */
+  reliefBandaMin: 0.8,
+  reliefText: 0.8,
+  margineBanda: 1.5,
+  /** Cat de lat poate fi numele, ca fractiune din diametru (mai lat s-ar deforma pe curbura). */
+  latimeTextMax: 0.62,
+  textMin: 4,
+
+  // ---- plasa ----
+  /** Varfuri pe o perioada a modelului si limitele pe cerc; randuri pe profil. */
+  esantioanePerPerioada: 12,
+  segmenteMin: 192,
+  segmenteMax: 480,
+  randuriSfera: 120,
+
+  // ---- verificarea consolei, strat cu strat ----
+  pasConsola: 0.32,
+  consolaMax: 55,
+  punteMax: 12,
+  consolaArieMax: 40,
+};
+
+export const FONT_GLOB_MODELE = "Baloo2-800.ttf";
+
+/** Culorile implicite: globul rosu (referinta #C52C18), capacul auriu. */
+export const CULORI_GLOB_MODELE = { glob: "#c52c18", capac: "#d4af37" };
+
+/** Setarile de print: jumatatile si capacul (strat 0,16, adaptive cubic 10%) si corpul pentru modul vaza. */
+export const SETARI_PRINT_GLOB_MODELE = {
+  jumatate: { layer_height: "0.16", wall_loops: "2", top_shell_layers: "5", bottom_shell_layers: "4", sparse_infill_pattern: "adaptivecubic", sparse_infill_density: "10%" },
+  vaza: { layer_height: "0.16", spiral_mode: "1", wall_loops: "1", top_shell_layers: "0", bottom_shell_layers: "4", sparse_infill_density: "0%" },
+  capac: { layer_height: "0.16", wall_loops: "3", top_shell_layers: "5", bottom_shell_layers: "4", sparse_infill_density: "100%" },
+};
+
 /** Paturile de imprimanta pentru asezarea pachetului (latura, mm). */
 export const PATURI = [180, 256] as const;
 
