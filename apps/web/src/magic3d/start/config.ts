@@ -46,6 +46,17 @@ export const START = {
     carduri: [
       { generator: "stampila", icon: "✒", titlu: { ro: "Ștampilă personalizată", en: "Custom stamp" }, text: { ro: "Text sau logo, pentru cerneală sau pentru lut și fondant; mâner la alegere.", en: "Text or a logo, for ink or for clay and fondant; pick the handle." }, param: "TPU + PLA" },
       { generator: "presa", icon: "◎", titlu: { ro: "Presă pentru hârtie", en: "Paper embosser" }, text: { ro: "Emblemă în relief pe hârtie și carton: clește cu balamaua printată gata montată.", en: "A raised emblem on paper and card: a clamp whose hinge prints assembled." }, param: "Ø 20–40 MM" },
+    ],
+  },
+
+  /**
+   * Colectia "Craciun": in catalog tot anul; in sezon (apps/craciun/config.ts, SEZON_CRACIUN) are si
+   * cardul ei mare pe pagina de start, deasupra noutatilor.
+   */
+  craciun: {
+    titlu: { ro: "Crăciun", en: "Christmas" },
+    carduri: [
+      { generator: "glob-nume", icon: "✶", titlu: { ro: "Glob cu nume decupat", en: "Bauble with a cut-out name" }, text: { ro: "Numele traversează globul și se prinde de ramă; fulgi, steluțe sau brazi în jur; pachet pentru toată familia.", en: "The name crosses the bauble and holds on to the frame; snowflakes, stars or trees around it; a pack for the whole family." }, param: "Ø 60–120 MM" },
       { generator: "ornament", icon: "❄", titlu: { ro: "Ornament de Crăciun", en: "Christmas ornament" }, text: { ro: "Disc cu nume sau glob 3D din două jumătăți; pachet pentru toată familia.", en: "A named disc or a 3D bauble in two halves; a pack for the whole family." }, param: "Ø 50–100 MM" },
     ],
   },

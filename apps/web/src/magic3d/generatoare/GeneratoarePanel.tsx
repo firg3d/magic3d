@@ -115,7 +115,9 @@ export function GeneratoarePanel({ onClose, editat, initial, aplica, selectie }:
     const testid = `gen-param-${param.cheie}`;
     switch (param.tip) {
       case "text":
-        return <label key={param.cheie}><span>{eticheta}</span><input data-testid={testid} value={String(v)} onChange={(e) => schimba(param.cheie, e.target.value)} /></label>;
+        return param.randuri
+          ? <label key={param.cheie}><span>{eticheta}</span><textarea data-testid={testid} rows={param.randuri} value={String(v)} onChange={(e) => schimba(param.cheie, e.target.value)} /></label>
+          : <label key={param.cheie}><span>{eticheta}</span><input data-testid={testid} value={String(v)} onChange={(e) => schimba(param.cheie, e.target.value)} /></label>;
       case "culoare":
         return <label key={param.cheie} className="gen-culoare"><span>{eticheta}</span><input type="color" data-testid={testid} value={String(v)} onChange={(e) => schimba(param.cheie, e.target.value)} /></label>;
       case "bifa":
@@ -129,12 +131,16 @@ export function GeneratoarePanel({ onClose, editat, initial, aplica, selectie }:
             </select>
           </label>
         );
-      case "font":
+      case "font": {
+        // Un generator poate oferi doar cateva fonturi, pe grupurile lui; altfel tot catalogul.
+        const grupuriCamp = param.fonturi
+          ? Object.entries(param.fonturi).map(([cheie, fisiere]) => ({ categorie: tm(cheie), items: fisiere.map((x) => fonturi.find((f) => f.fisier === x)).filter((f): f is FontItem => !!f) })).filter((g) => g.items.length)
+          : grupuri;
         return (
           <label key={param.cheie}><span>{eticheta}</span>
             <select data-testid={testid} value={String(v)} onChange={(e) => schimba(param.cheie, e.target.value)}>
-              {grupuri.length === 0 ? <option value={String(v)}>{String(v)}</option> : null}
-              {grupuri.map((g) => (
+              {grupuriCamp.length === 0 ? <option value={String(v)}>{String(v)}</option> : null}
+              {grupuriCamp.map((g) => (
                 <optgroup key={g.categorie} label={g.categorie}>
                   {g.items.map((f) => <option key={f.fisier} value={f.fisier}>{f.familie}{f.lipsaDiacritice.length ? " *" : ""}</option>)}
                 </optgroup>
@@ -143,6 +149,7 @@ export function GeneratoarePanel({ onClose, editat, initial, aplica, selectie }:
             {fontAles?.lipsaDiacritice.length ? <small className="gen-nota">{tg("faraDiacritice", { litere: fontAles.lipsaDiacritice.join(" ") })}</small> : null}
           </label>
         );
+      }
       case "imagine":
         return (
           <CampImagine
@@ -214,6 +221,14 @@ export function GeneratoarePanel({ onClose, editat, initial, aplica, selectie }:
                   <button key={g.id} type="button" className="gen-card" onClick={() => alege(g)}>{tm(g.titlu)}</button>
                 ))}
               </div>
+              <section className="gen-sectiune" data-testid="gen-craciun">
+                <h3>{tg("craciun")}</h3>
+                <div className="gen-lista">
+                  {GENERATOARE.filter((g) => g.categorie === "craciun").map((g) => (
+                    <button key={g.id} type="button" className="gen-card" data-testid={`gen-${g.id}`} onClick={() => alege(g)}>{tm(g.titlu)}</button>
+                  ))}
+                </div>
+              </section>
               <section className="gen-sectiune" data-testid="gen-personalizate">
                 <h3>{tg("personalizate")}</h3>
                 <div className="gen-lista">

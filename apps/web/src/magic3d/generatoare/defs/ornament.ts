@@ -14,7 +14,7 @@ export const ORNAMENT_DEF: GeneratorDef = {
   id: "ornament",
   titlu: "comutator.ornament",
   versiune: 1,
-  categorie: "personalizate",
+  categorie: "craciun",
   implicit: {
     tip: "plat",
     forma: "cerc",

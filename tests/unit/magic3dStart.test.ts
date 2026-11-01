@@ -9,7 +9,7 @@ import { cadru, IMPRIMANTA, PanouImprimanta } from "@/magic3d/start/PanouImprima
 import { libraryShapeAssets } from "@/lib/shapeCatalog";
 import { START } from "@/magic3d/start/config";
 import { noteazaFormaInitiala, preiaDeschidePictura, preiaFormaInitiala } from "@/magic3d/start/formaInitiala";
-import { StartGeneratoare, StartPasi, StartPictura } from "@/magic3d/start/StartSectiuni";
+import { StartCraciun, StartGeneratoare, StartPasi, StartPictura } from "@/magic3d/start/StartSectiuni";
 
 (globalThis as { IS_REACT_ACT_ENVIRONMENT?: boolean }).IS_REACT_ACT_ENVIRONMENT = true;
 
@@ -78,8 +78,26 @@ describe("pagina de start v2 (atelier)", () => {
     // Numerotarea e continua, 01..NN, si fiecare rand are parametrul tehnic.
     const numere = [...c.querySelectorAll(".m3d-rand-numar")].map((n) => n.textContent);
     expect(numere[0]).toBe("01");
-    expect(numere).toHaveLength(START.generatoare.length + 1 + START.personalizate.carduri.length + START.matrite.carduri.length);
+    expect(numere).toHaveLength(START.generatoare.length + 1 + START.craciun.carduri.length + START.personalizate.carduri.length + START.matrite.carduri.length);
     expect([...c.querySelectorAll(".m3d-rand-param")].every((p) => (p.textContent ?? "").length > 0)).toBe(true);
+  });
+
+  it("cardul Craciun: apare doar in sezon si deschide generatoarele colectiei", () => {
+    vi.useFakeTimers();
+    const cerute: (string | undefined)[] = [];
+    const asculta = (event: Event) => cerute.push((event as CustomEvent<CerereGeneratoare>).detail?.generator);
+    window.addEventListener(DESCHIDE_GENERATOARE, asculta);
+    const vara = randeaza(createElement(StartCraciun, { onCreate: () => undefined, azi: new Date(2026, 6, 1) }));
+    expect(vara.querySelector("[data-testid='start-craciun']")).toBeNull();
+    act(() => root?.unmount());
+    const c = randeaza(createElement(StartCraciun, { onCreate: () => undefined, azi: new Date(2026, 11, 1) }));
+    expect(c.querySelector("[data-testid='start-craciun']")).not.toBeNull();
+    for (const card of START.craciun.carduri) {
+      act(() => (c.querySelector(`[data-testid='start-craciun-card-${card.generator}']`) as HTMLButtonElement).click());
+      act(() => void vi.advanceTimersByTime(1300));
+    }
+    window.removeEventListener(DESCHIDE_GENERATOARE, asculta);
+    expect(cerute).toEqual(START.craciun.carduri.map((x) => x.generator));
   });
 
   it("catalogul: randurile Personalizate si Matrite deschid editorul pe generatorul corect", () => {
@@ -89,7 +107,7 @@ describe("pagina de start v2 (atelier)", () => {
     const asculta = (event: Event) => cerute.push((event as CustomEvent<CerereGeneratoare>).detail?.generator);
     window.addEventListener(DESCHIDE_GENERATOARE, asculta);
     const c = randeaza(createElement(StartGeneratoare, { onCreate: () => void create++ }));
-    const asteptate = [...START.personalizate.carduri.map((x) => ["personalizat", x.generator]), ...START.matrite.carduri.map((x) => ["matrita", x.generator])];
+    const asteptate = [...START.craciun.carduri.map((x) => ["craciun", x.generator]), ...START.personalizate.carduri.map((x) => ["personalizat", x.generator]), ...START.matrite.carduri.map((x) => ["matrita", x.generator])];
     for (const [prefix, generator] of asteptate) {
       act(() => (c.querySelector(`[data-testid='start-${prefix}-${generator}']`) as HTMLButtonElement).click());
       act(() => void vi.advanceTimersByTime(1300));

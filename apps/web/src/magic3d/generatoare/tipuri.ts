@@ -18,8 +18,10 @@ type ParamComun = {
 };
 
 export type ParamDef =
-  | (ParamComun & { tip: "text" })
-  | (ParamComun & { tip: "font" })
+  /** `randuri`: o lista, cate un element pe rand (textarea). */
+  | (ParamComun & { tip: "text"; randuri?: number })
+  /** `fonturi`: doar aceste fisiere, pe grupuri (cheia grupului din core/i18n); fara = tot catalogul. */
+  | (ParamComun & { tip: "font"; fonturi?: Record<string, readonly string[]> })
   | (ParamComun & { tip: "culoare" })
   | (ParamComun & { tip: "bifa" })
   /** Un logo / desen incarcat de client, pastrat doar ca contur (core/geometry/conturImagine.ts); "" = fara. */
@@ -32,11 +34,15 @@ export type ParamDef =
 export type GeneratorDef = {
   id: string;
   /** Sectiunea din panou si din biblioteca: fara = generatoarele de litere si nume. */
-  categorie?: "personalizate" | "matrite";
+  categorie?: "personalizate" | "matrite" | "craciun";
   /** Instructiunile de print si asamblare, in panou si in 3MF (din core/i18n). */
   instructiuni?: (p: Parametri) => string;
   /** Serviciile in plus din cererea de oferta (ca la termoformare): de bifat de client, ajung in mesaj. */
   servicii?: (p: Parametri) => Array<{ id: string; eticheta: string; nota?: string; mesaj: string; bifat?: boolean }>;
+  /** Cate bucati iese o constructie (pachet familie: cate un ornament pe nume); ajunge in cererea de oferta. */
+  bucati?: (p: Parametri) => number;
+  /** Latura patului pe care sunt asezate placile (mm); 3MF-ul numeste o imprimanta cu acest pat. Implicit 180. */
+  pat?: (p: Parametri) => number;
   /** Cheia numelui in core/i18n (comutator.<id>). */
   titlu: string;
   /** Versiunea parametrilor: urca la o schimbare care face vechile valori sa insemne altceva. */

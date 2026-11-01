@@ -1,7 +1,7 @@
 import { zipSync } from "fflate";
 import { layerlingToZUp } from "@/lib/meshCoordinates";
 import { proiectBambu, type ObiectBambu, type PlacaBambu } from "@/magic3d/core/assets/bambu3mf";
-import { slicerA1Mini } from "@/magic3d/core/assets/bambuPreseturi";
+import { slicerPentruPat } from "@/magic3d/core/assets/bambuPreseturi";
 import { t as tm } from "@/magic3d/core/i18n/index";
 import type { ContextOferta } from "@/magic3d/oferta/OfertaPanel";
 import type { GeneratorDef, Parametri, PiesaGenerata } from "@/magic3d/generatoare/tipuri";
@@ -66,8 +66,9 @@ export function proiectGenerat(piese: PiesaGenerata[], def: GeneratorDef, p: Par
     });
     return { nume: placiIndex.length > 1 ? `${titlu} ${indexPlaca + 1}` : titlu, obiecte: lista };
   });
-  const slicer = slicerA1Mini(culori.map((culoare) => ({ material: "PLA", culoare })));
-  return proiectBambu({ titlu, instructiuni: def.instructiuni?.(p) ?? titlu, pat: 180, placi, slicer });
+  const pat = def.pat?.(p) ?? 180;
+  const slicer = slicerPentruPat(pat, culori.map((culoare) => ({ material: "PLA", culoare })));
+  return proiectBambu({ titlu, instructiuni: def.instructiuni?.(p) ?? titlu, pat, placi, slicer });
 }
 
 /** STL-urile pieselor (cate unul pe piesa) si instructiunile, intr-o arhiva. */
@@ -114,7 +115,8 @@ export function detaliiGenerat(def: GeneratorDef, p: Parametri): string {
       const v = p[d.cheie];
       if (v === "" || v === undefined) return "";
       // Imaginea e un contur lung: in mesaj ajunge doar ca a fost incarcata (fisierul e in 3MF).
-      const text = d.tip === "alegere" ? tm(d.optiuni.find((o) => o.valoare === v)?.eticheta ?? String(v)) : d.tip === "bifa" ? (v ? "✓" : "✗") : d.tip === "imagine" ? tg("imagineIncarcata") : d.tip === "model" ? tg("modelIncarcat") : String(v);
+      // O lista (cate un nume pe rand) ajunge pe un singur rand, cu virgule.
+      const text = d.tip === "text" && d.randuri ? String(v).split(/\n+/).map((x) => x.trim()).filter(Boolean).join(", ") : d.tip === "alegere" ? tm(d.optiuni.find((o) => o.valoare === v)?.eticheta ?? String(v)) : d.tip === "bifa" ? (v ? "✓" : "✗") : d.tip === "imagine" ? tg("imagineIncarcata") : d.tip === "model" ? tg("modelIncarcat") : String(v);
       return `${tm(valoare(d.eticheta))}: ${text}`;
     })
     .filter(Boolean)
@@ -143,5 +145,7 @@ export function obiectMaxim(piese: PiesaGenerata[]): { x: number; y: number; z: 
 
 /** Cererea de oferta a unei constructii: numele generatorului, parametrii, proiectul Bambu si cel mai mare obiect (fiecare se printeaza pe placa lui). */
 export function contextGenerat(piese: PiesaGenerata[], def: GeneratorDef, p: Parametri): ContextOferta {
-  return { generator: `${tg("titlu")} → ${tm(def.titlu)}`, firma: true, detalii: detaliiGenerat(def, p), servicii: def.servicii?.(p), threeMf: proiectGenerat(piese, def, p), piesaMaxima: obiectMaxim(piese) };
+  const bucati = def.bucati?.(p);
+  const detalii = [bucati && bucati > 1 ? tg("bucati", { n: bucati }) : "", detaliiGenerat(def, p)].filter(Boolean).join(" · ");
+  return { generator: `${tg("titlu")} → ${tm(def.titlu)}`, firma: true, detalii, servicii: def.servicii?.(p), threeMf: proiectGenerat(piese, def, p), piesaMaxima: obiectMaxim(piese) };
 }

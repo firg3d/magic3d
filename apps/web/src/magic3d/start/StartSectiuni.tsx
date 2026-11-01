@@ -14,6 +14,7 @@ import { noteazaDeschidePictura, noteazaFisierPictura, noteazaFormaInitiala } fr
 import { PanouImprimanta } from "@/magic3d/start/PanouImprimanta";
 import { tst } from "@/magic3d/start/texte";
 import { VERSIUNE_MAGIC3D } from "@/magic3d/versiune";
+import { inSezonCraciun } from "@/magic3d/apps/craciun/config";
 import { tl } from "@/magic3d/logo/texte";
 
 /*
@@ -140,7 +141,7 @@ export function StartHero({ onCreate, onContinue, onImport, ultima }: {
 /** Banda neagra care deruleaza: comenzi G-code intre numele generatoarelor (decor, deci ascunsa cititoarelor). */
 export function StartBanda() {
   const limba = useLanguage();
-  const nume = [...START.generatoare, ...START.personalizate.carduri, ...START.matrite.carduri].map((g) => tx(g.titlu, limba).toUpperCase());
+  const nume = [...START.generatoare, ...START.craciun.carduri, ...START.personalizate.carduri, ...START.matrite.carduri].map((g) => tx(g.titlu, limba).toUpperCase());
   const elemente = nume.flatMap((n, i) => [{ text: START.gcode[i % START.gcode.length], cod: true }, { text: n, cod: false }]);
   return (
     <div className="m3d-banda-gcode" aria-hidden="true" data-testid="start-banda">
@@ -188,7 +189,7 @@ export function StartGeneratoare({ onCreate }: { onCreate: () => void }) {
           <RandCatalog key={g.forma} numar={++numar} titlu={tx(g.titlu, limba)} text={tx(g.text, limba)} param={g.param} testid={`start-generator-${g.forma}`} onClick={() => deschideForma(g.forma)} />
         ))}
         <RandCatalog numar={++numar} titlu={tl("cardTitlu")} text={tl("cardText")} param="PNG · JPG · SVG" testid="start-logo" onClick={() => deschideForma("magic3dLogo")} />
-        {([["personalizat", START.personalizate], ["matrita", START.matrite]] as const).map(([prefix, sectiune]) => (
+        {([["craciun", START.craciun], ["personalizat", START.personalizate], ["matrita", START.matrite]] as const).map(([prefix, sectiune]) => (
           <Fragment key={prefix}>
             <li className="m3d-catalog-grup" aria-hidden="true">{tx(sectiune.titlu, limba)}</li>
             {sectiune.carduri.map((card) => (
@@ -197,6 +198,31 @@ export function StartGeneratoare({ onCreate }: { onCreate: () => void }) {
           </Fragment>
         ))}
       </ol>
+    </section>
+  );
+}
+
+/** Cardul sezonier "Craciun": doar in perioada din SEZON_CRACIUN, cu generatoarele colectiei. */
+export function StartCraciun({ onCreate, azi = new Date() }: { onCreate: () => void; azi?: Date }) {
+  const limba = useLanguage();
+  if (!inSezonCraciun(azi)) return null;
+  return (
+    <section className="m3d-sectiune m3d-noutati m3d-craciun" id="craciun" aria-labelledby="m3d-craciun-titlu" data-testid="start-craciun">
+      <div className="m3d-noutati-cap">
+        <span className="m3d-eticheta">{tst("craciunEticheta")}</span>
+        <h2 id="m3d-craciun-titlu">{tst("craciunTitlu")}<span className="m3d-noutati-sub"> · {tst("craciunText")}</span></h2>
+      </div>
+      <ul className="m3d-noutati-lista">
+        {START.craciun.carduri.map((card, i) => (
+          <li key={card.generator}>
+            <button type="button" data-testid={`start-craciun-card-${card.generator}`} onClick={() => deschidePanou(onCreate, card.generator)}>
+              <span className="m3d-noutati-numar">{card.icon} {String(i + 1).padStart(2, "0")}</span>
+              <span className="m3d-noutati-titlu">{tx(card.titlu, limba)} <span aria-hidden="true">→</span></span>
+              <span className="m3d-noutati-text">{tx(card.text, limba)}</span>
+            </button>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

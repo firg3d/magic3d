@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100">
+  <!-- Magic3D: fulg simplu. Desen propriu. Caile cu stroke sunt linii (latimea o da generatorul); celelalte sunt pline. -->
+  <path d="M 6 -10.39 L 12 -0 L 6 10.39 L -6 10.39 L -12 0 L -6 -10.39 L 6 -10.39" fill="none" stroke="#000"/>
+  <path d="M 0 -10.39 L 0 -46" fill="none" stroke="#000"/>
+  <path d="M 0 -34 L -5.88 -25.91" fill="none" stroke="#000"/>
+  <path d="M 0 -34 L 5.88 -25.91" fill="none" stroke="#000"/>
+  <path d="M 9 -5.2 L 39.84 -23" fill="none" stroke="#000"/>
+  <path d="M 29.44 -17 L 19.5 -18.05" fill="none" stroke="#000"/>
+  <path d="M 29.44 -17 L 25.38 -7.86" fill="none" stroke="#000"/>
+  <path d="M 9 5.2 L 39.84 23" fill="none" stroke="#000"/>
+  <path d="M 29.44 17 L 25.38 7.86" fill="none" stroke="#000"/>
+  <path d="M 29.44 17 L 19.5 18.05" fill="none" stroke="#000"/>
+  <path d="M 0 10.39 L 0 46" fill="none" stroke="#000"/>
+  <path d="M 0 34 L 5.88 25.91" fill="none" stroke="#000"/>
+  <path d="M 0 34 L -5.88 25.91" fill="none" stroke="#000"/>
+  <path d="M -9 5.2 L -39.84 23" fill="none" stroke="#000"/>
+  <path d="M -29.44 17 L -19.5 18.05" fill="none" stroke="#000"/>
+  <path d="M -29.44 17 L -25.38 7.86" fill="none" stroke="#000"/>
+  <path d="M -9 -5.2 L -39.84 -23" fill="none" stroke="#000"/>
+  <path d="M -29.44 -17 L -25.38 -7.86" fill="none" stroke="#000"/>
+  <path d="M -29.44 -17 L -19.5 -18.05" fill="none" stroke="#000"/>
+</svg>

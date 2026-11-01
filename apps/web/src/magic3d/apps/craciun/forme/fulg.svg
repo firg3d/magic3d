@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100">
+  <!-- Magic3D: fulg cu ramuri. Desen propriu. Caile cu stroke sunt linii (latimea o da generatorul); celelalte sunt pline. -->
+  <path d="M 0 0 L 0 -46" fill="none" stroke="#000"/>
+  <path d="M 0 -20 L -11.26 -26.5" fill="none" stroke="#000"/>
+  <path d="M 0 -20 L 11.26 -26.5" fill="none" stroke="#000"/>
+  <path d="M 0 -33 L -8.66 -38" fill="none" stroke="#000"/>
+  <path d="M 0 -33 L 8.66 -38" fill="none" stroke="#000"/>
+  <path d="M 0 0 L 39.84 -23" fill="none" stroke="#000"/>
+  <path d="M 17.32 -10 L 17.32 -23" fill="none" stroke="#000"/>
+  <path d="M 17.32 -10 L 28.58 -3.5" fill="none" stroke="#000"/>
+  <path d="M 28.58 -16.5 L 28.58 -26.5" fill="none" stroke="#000"/>
+  <path d="M 28.58 -16.5 L 37.24 -11.5" fill="none" stroke="#000"/>
+  <path d="M 0 0 L 39.84 23" fill="none" stroke="#000"/>
+  <path d="M 17.32 10 L 28.58 3.5" fill="none" stroke="#000"/>
+  <path d="M 17.32 10 L 17.32 23" fill="none" stroke="#000"/>
+  <path d="M 28.58 16.5 L 37.24 11.5" fill="none" stroke="#000"/>
+  <path d="M 28.58 16.5 L 28.58 26.5" fill="none" stroke="#000"/>
+  <path d="M 0 0 L 0 46" fill="none" stroke="#000"/>
+  <path d="M 0 20 L 11.26 26.5" fill="none" stroke="#000"/>
+  <path d="M 0 20 L -11.26 26.5" fill="none" stroke="#000"/>
+  <path d="M 0 33 L 8.66 38" fill="none" stroke="#000"/>
+  <path d="M 0 33 L -8.66 38" fill="none" stroke="#000"/>
+  <path d="M 0 0 L -39.84 23" fill="none" stroke="#000"/>
+  <path d="M -17.32 10 L -17.32 23" fill="none" stroke="#000"/>
+  <path d="M -17.32 10 L -28.58 3.5" fill="none" stroke="#000"/>
+  <path d="M -28.58 16.5 L -28.58 26.5" fill="none" stroke="#000"/>
+  <path d="M -28.58 16.5 L -37.24 11.5" fill="none" stroke="#000"/>
+  <path d="M 0 0 L -39.84 -23" fill="none" stroke="#000"/>
+  <path d="M -17.32 -10 L -28.58 -3.5" fill="none" stroke="#000"/>
+  <path d="M -17.32 -10 L -17.32 -23" fill="none" stroke="#000"/>
+  <path d="M -28.58 -16.5 L -37.24 -11.5" fill="none" stroke="#000"/>
+  <path d="M -28.58 -16.5 L -28.58 -26.5" fill="none" stroke="#000"/>
+</svg>
