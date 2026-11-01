@@ -170,8 +170,8 @@ export const departeStift = () => TERMO.locasJoc + 1.5 + TERMO.stiftDiametru / 2
 /** Latimea maxima a conturului: blocul, cu stifturile la capetele lui, sa incapa pe placa. */
 export const latimeMaxima = () => Math.floor(TERMO.placa - 2 * (departeStift() + TERMO.stiftDiametru / 2 + TERMO.stiftJoc + TERMO.stiftPerete));
 
-/** Jocul dintre matrite. */
-export const jocMatrite = () => TERMO.membrana + TERMO.jocPeste;
+/** Jocul dintre matrite: plasa (membrana, plus stratul desenului cand are desen colorat) si jocPeste. */
+export const jocMatrite = (cuDesen = false) => TERMO.membrana * (cuDesen ? 2 : 1) + TERMO.jocPeste;
 
 /**
  * Setarile de print scrise in 3MF, pe obiect (cheile Bambu Studio / OrcaSlicer). Plasa: fara
@@ -179,9 +179,10 @@ export const jocMatrite = () => TERMO.membrana + TERMO.jocPeste;
  * mai multi, PETG (sta mai bine la caldura decat PLA-ul plasei).
  */
 export const SETARI_PRINT = {
+  // Membrana de 0.8 mm iese din trei straturi de 0.28; pereti 3, doar pe conturul exterior (rama solida).
   plasa: (densitate: number) => ({
-    layer_height: "0.2",
-    wall_loops: "2",
+    layer_height: "0.28",
+    wall_loops: "3",
     top_shell_layers: "0",
     bottom_shell_layers: "0",
     sparse_infill_pattern: "gyroid",

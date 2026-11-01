@@ -1,6 +1,7 @@
 import { zipSync } from "fflate";
 import { layerlingToZUp } from "@/lib/meshCoordinates";
 import { proiectBambu, type ObiectBambu, type PlacaBambu } from "@/magic3d/core/assets/bambu3mf";
+import { slicerA1Mini } from "@/magic3d/core/assets/bambuPreseturi";
 import { t as tm } from "@/magic3d/core/i18n/index";
 import type { ContextOferta } from "@/magic3d/oferta/OfertaPanel";
 import type { GeneratorDef, Parametri, PiesaGenerata } from "@/magic3d/generatoare/tipuri";
@@ -65,7 +66,8 @@ export function proiectGenerat(piese: PiesaGenerata[], def: GeneratorDef, p: Par
     });
     return { nume: placiIndex.length > 1 ? `${titlu} ${indexPlaca + 1}` : titlu, obiecte: lista };
   });
-  return proiectBambu({ titlu, instructiuni: def.instructiuni?.(p) ?? titlu, pat: 180, placi });
+  const slicer = slicerA1Mini(culori.map((culoare) => ({ material: "PLA", culoare })));
+  return proiectBambu({ titlu, instructiuni: def.instructiuni?.(p) ?? titlu, pat: 180, placi, slicer });
 }
 
 /** STL-urile pieselor (cate unul pe piesa) si instructiunile, intr-o arhiva. */

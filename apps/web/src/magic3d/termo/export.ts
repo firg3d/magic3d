@@ -2,7 +2,8 @@ import { zipSync } from "fflate";
 import type { PiesaGenerata } from "@/magic3d/generatoare/tipuri";
 import type { ContextOferta } from "@/magic3d/oferta/OfertaPanel";
 import { proiectBambu, type PlacaBambu, type ProiectBambu } from "@/magic3d/core/assets/bambu3mf";
-import { EXTRUDER, FORMARE, jocMatrite, SETARI_PRINT, TERMO, type SetariTermo } from "@/magic3d/termo/config";
+import { slicerA1Mini } from "@/magic3d/core/assets/bambuPreseturi";
+import { EXTRUDER, FORMARE, SETARI_PRINT, TERMO, type SetariTermo } from "@/magic3d/termo/config";
 import type { CheiePiesa, InfoTermo, PieseTermo } from "@/magic3d/termo/geometrie";
 import { tt, type CheieTermo } from "@/magic3d/termo/texte";
 import { filamentAtelier } from "@/magic3d/pictura/paleta";
@@ -88,7 +89,7 @@ export function listaFilamente(info: InfoTermo, setari: SetariTermo, limba?: str
 export function instructiuni(info: InfoTermo, setari: SetariTermo, nume: string, limba?: string): string {
   const f = FORMARE[setari.material];
   const model = setari.model === "gyroid" ? tt("modelGyroid", { densitate: setari.densitate }, limba) : tt("modelFagure", { densitate: setari.densitate }, limba);
-  const valori = { nume, material: setari.material, model, t1: f.incalzire[0], t2: f.incalzire[1], s1: f.presare[0], s2: f.presare[1], d: info.adancime, joc: jocMatrite().toFixed(1), l: info.latime, n: info.cleme };
+  const valori = { nume, material: setari.material, model, t1: f.incalzire[0], t2: f.incalzire[1], s1: f.presare[0], s2: f.presare[1], d: info.adancime, joc: info.joc.toFixed(1), l: info.latime, n: info.cleme };
   const text = setari.mod !== "cutie" ? tt("instructiuni", valori, limba) : tt(info.seturi === 2 ? "instructiuniCutie2" : "instructiuniCutie", valori, limba);
   return `${text}\n\n${tt("filamenteTitlu", {}, limba)}\n${listaFilamente(info, setari, limba).join("\n")}`;
 }
@@ -126,7 +127,10 @@ export function proiectTermo(piese: PieseTermo, setari: SetariTermo, limba?: str
       }],
     };
   });
-  return { titlu: tt("numeProiect", { forma: nume }, limba), instructiuni: text, pat: TERMO.placa, placi };
+  // Sloturile, ca in lista filamentelor: plasa (si culorile desenului) in materialul ales, apoi matritele in PETG.
+  const desen = info?.culori.length ? info.culori : [TERMO.culoarePlasa];
+  const slicer = slicerA1Mini([...desen.map((culoare) => ({ material: setari.material, culoare })), { material: "PETG", culoare: TERMO.culoareJos }]);
+  return { titlu: tt("numeProiect", { forma: nume }, limba), instructiuni: text, pat: TERMO.placa, placi, slicer };
 }
 
 /** STL binar din triunghiuri Z in sus. */

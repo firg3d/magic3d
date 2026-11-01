@@ -338,7 +338,8 @@ export function construiesteTermo(mod: ManifoldToplevel, inele: Inele, setari: S
   if (zone.length) avertizari.push("avIngrosat");
 
   const t = TERMO.membrana;
-  const joc = jocMatrite();
+  // Desenul colorat e un strat cat membrana, peste ea: jocul il cuprinde, ca matrita de sus sa nu-l striveasca.
+  const joc = jocMatrite(setari.desen === "culori" && !!straturi);
   const ingust = latimeIngusta(P);
   const adancimeSigura = Math.max(TERMO.adancimeMin, Math.floor(TERMO.adancimeDinIngust * ingust * 10) / 10);
   const D = Math.max(TERMO.adancimeMin, Math.min(setari.adancime, adancimeSigura));
@@ -421,6 +422,8 @@ export function construiesteTermo(mod: ManifoldToplevel, inele: Inele, setari: S
   const plasa = mod.Manifold.union([intre(membrana, L, L + t), intre(rama, L + t - TERMO.ramaInaltime, L + t)]);
 
   // ---- Desenul colorat: piese plate cat membrana, peste ea, in acelasi obiect ----
+  // Stau pe fata membranei dinspre rama (la print, deasupra ei): un slicer da zona suprapusa unei singure
+  // parti, deci o culoare pusa in grosimea membranei ar disparea in ea. Raman in gura cavitatii, nu pe polita.
   // Fiecare culoare a pozei (in afara bazei, pe care se printeaza plasa insasi) devine zone groase si
   // linii subtiri (cele mai inguste de latimeLinie), fiecare o parte cu umplerea ei; petele mai mici
   // decat celula plasei se lasa deoparte. Rama colorata e un modificator: schimba doar extruderul.
@@ -439,7 +442,7 @@ export function construiesteTermo(mod: ManifoldToplevel, inele: Inele, setari: S
     const r = TERMO.latimeLinie / 2;
     desen.inele.forEach((ine, i) => {
       if (i === 0 || !ine.length) return;
-      const zona = fara(laForma(new mod.CrossSection(ine.filter((x) => x.length >= 3), "EvenOdd")).intersect(interior));
+      const zona = fara(laForma(new mod.CrossSection(ine.filter((x) => x.length >= 3), "EvenOdd")).intersect(interior).intersect(gura));
       if (!zona) return;
       const groase = offset(offset(zona, -r), r).intersect(zona);
       const zone = groase.isEmpty() ? null : fara(groase);
@@ -447,8 +450,8 @@ export function construiesteTermo(mod: ManifoldToplevel, inele: Inele, setari: S
       if (!zone && !linii) return;
       const culoare = desen.culori[i];
       culori.push(culoare);
-      if (zone) { partiA.push({ nume: "zone", culoare, corp: intre(zone, L, L + t), tip: "normal_part", densitate: TERMO.densitateZone }); zoneA.push({ zona: zone, culoare }); }
-      if (linii) { partiA.push({ nume: "linii", culoare, corp: intre(linii, L, L + t), tip: "normal_part", densitate: TERMO.densitateLinii }); zoneA.push({ zona: linii, culoare }); liniiDense += 1; }
+      if (zone) { partiA.push({ nume: "zone", culoare, corp: intre(zone, L - t, L), tip: "normal_part", densitate: TERMO.densitateZone }); zoneA.push({ zona: zone, culoare }); }
+      if (linii) { partiA.push({ nume: "linii", culoare, corp: intre(linii, L - t, L), tip: "normal_part", densitate: TERMO.densitateLinii }); zoneA.push({ zona: linii, culoare }); liniiDense += 1; }
     });
     if (D / latimeCeruta > TERMO.raportDesen) avertizari.push("avDesenAdanc");
   }
@@ -458,7 +461,8 @@ export function construiesteTermo(mod: ManifoldToplevel, inele: Inele, setari: S
     const culoareRama = /^#[0-9a-f]{6}$/i.test(setari.culoareRama) ? setari.culoareRama.toLowerCase() : [...culori].sort((a, b) => lumina(a) - lumina(b))[0];
     if (!culori.includes(culoareRama)) culori.push(culoareRama);
     const inel = offset(P, TERMO.modificatorPeste).subtract(interiorRama);
-    partiA.push({ nume: "rama", culoare: culoareRama, corp: intre(inel, L + t - TERMO.ramaInaltime - TERMO.modificatorInaltime, L + t + TERMO.modificatorInaltime), tip: "modifier_part" });
+    // Se opreste la fata membranei (la print, patul): un modificator sub pat ar ridica tot obiectul de pe el.
+    partiA.push({ nume: "rama", culoare: culoareRama, corp: intre(inel, L + t - TERMO.ramaInaltime - TERMO.modificatorInaltime, L + t), tip: "modifier_part" });
   }
   // Jumatatea din spate a cutiei: tot desenul, doar liniile si culoarea dominanta, sau simpla.
   const dominanta = zoneA.filter((z) => partiA.some((p) => p.nume === "zone" && p.culoare === z.culoare)).sort((a, b) => b.zona.area() - a.zona.area())[0]?.culoare;

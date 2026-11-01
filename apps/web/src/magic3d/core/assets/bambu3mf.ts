@@ -9,6 +9,12 @@ import { strToU8, zipSync } from "fflate";
  * se printeaza impreuna, in culori diferite. Folosit de termoformare si de generatoare.
  *
  * Triunghiurile vin neindexate, Z in sus, mm; varfurile identice se unesc aici.
+ *
+ * Bambu Studio citeste setarile pe obiect si pe parte (extruderul, umplerea, peretii) doar dintr-un
+ * proiect al lui: aplicatia din 3dmodel.model incepe cu "BambuStudio-" (de acolo ia versiunea
+ * formatului) si exista Metadata/project_settings.config. Altfel spune "invalid config" si incarca
+ * doar geometria. Config-ul numeste imprimanta, procesul si filamentele (inherits_group leaga fiecare
+ * slot de presetul lui de sistem); restul setarilor le completeaza Bambu Studio din preseturi.
  */
 
 /** O parte a unui obiect, in coordonatele comune ale obiectului. */
@@ -36,6 +42,20 @@ export type ObiectBambu = {
 
 export type PlacaBambu = { nume: string; obiecte: ObiectBambu[] };
 
+/** Un slot de filament: presetul de sistem (dupa nume), codul lui, culoarea "#rrggbb" si tipul. */
+export type FilamentBambu = { preset: string; id: string; culoare: string; tip: string };
+
+/** Imprimanta, procesul si filamentele numite de proiect; le alege aplicatia (vezi bambuPreseturi). */
+export type SlicerBambu = {
+  model: string;
+  varianta: string;
+  duza: number;
+  imprimanta: string;
+  proces: string;
+  /** Cate unul pentru fiecare extruder folosit, in ordinea sloturilor. */
+  filamente: FilamentBambu[];
+};
+
 export type ProiectBambu = {
   titlu: string;
   /** Text simplu; ajunge in descrierea proiectului si intr-un fisier separat. */
@@ -43,11 +63,14 @@ export type ProiectBambu = {
   /** Latura patului imprimantei, mm (placile se aseaza in grila, ca in Bambu Studio). */
   pat: number;
   placi: PlacaBambu[];
+  slicer: SlicerBambu;
 };
 
 const CORE = "http://schemas.microsoft.com/3dmanufacturing/core/2015/02";
 const PRODUCTIE = "http://schemas.microsoft.com/3dmanufacturing/production/2015/06";
 const BAMBU = "http://schemas.bambulab.com/package/2021";
+/** Versiunea de format declarata (Bambu Studio 2.8); fara ea proiectul nu e citit ca proiect. */
+const VERSIUNE_BAMBU = "02.08.02.61";
 const REL_MODEL = "http://schemas.microsoft.com/3dmanufacturing/2013/01/3dmodel";
 /** Distanta dintre placi, ca fractiune din pat (LOGICAL_PART_PLATE_GAP in Bambu Studio). */
 const DISTANTA_PLACI = 0.2;
@@ -85,6 +108,28 @@ function indexeaza(positions: Float32Array) {
   const bune: number[] = [];
   for (let i = 0; i < fete.length; i += 3) if (fete[i] !== fete[i + 1] && fete[i + 1] !== fete[i + 2] && fete[i] !== fete[i + 2]) bune.push(fete[i], fete[i + 1], fete[i + 2]);
   return { varfuri, fete: bune, min, max };
+}
+
+/** project_settings.config: doar ce leaga proiectul de preseturile de sistem; restul vine din ele. */
+function setariProiect(s: SlicerBambu) {
+  const f = s.filamente;
+  return {
+    name: "project_settings",
+    from: "project",
+    version: VERSIUNE_BAMBU,
+    printer_technology: "FFF",
+    printer_model: s.model,
+    printer_variant: s.varianta,
+    nozzle_diameter: [String(s.duza)],
+    printer_settings_id: s.imprimanta,
+    print_settings_id: s.proces,
+    filament_settings_id: f.map((x) => x.preset),
+    filament_ids: f.map((x) => x.id),
+    filament_colour: f.map((x) => x.culoare.toUpperCase()),
+    filament_type: f.map((x) => x.tip),
+    inherits_group: [s.proces, ...f.map((x) => x.preset), s.imprimanta],
+    different_settings_to_system: ["", ...f.map(() => ""), ""],
+  };
 }
 
 export function proiectBambu(proiect: ProiectBambu): Uint8Array {
@@ -161,7 +206,7 @@ export function proiectBambu(proiect: ProiectBambu): Uint8Array {
   const descriere = xml(proiect.instructiuni).replace(/\n/g, "&#10;");
   fisiere["3D/3dmodel.model"] = strToU8(
     `<?xml version="1.0" encoding="UTF-8"?>\n<model unit="millimeter" xml:lang="en-US" xmlns="${CORE}" xmlns:BambuStudio="${BAMBU}" xmlns:p="${PRODUCTIE}" requiredextensions="p">\n` +
-      ` <metadata name="Application">Magic3D</metadata>\n <metadata name="BambuStudio:3mfVersion">1</metadata>\n` +
+      ` <metadata name="Application">BambuStudio-${VERSIUNE_BAMBU}</metadata>\n <metadata name="BambuStudio:3mfVersion">1</metadata>\n <metadata name="Magic3D:Generator">Magic3D</metadata>\n` +
       ` <metadata name="Title">${xml(proiect.titlu)}</metadata>\n <metadata name="Description">${descriere}</metadata>\n` +
       ` <resources>\n${obiecteModel.join("\n")}\n </resources>\n <build p:UUID="${uuid(0, 5)}">\n${itemi.join("\n")}\n </build>\n</model>\n`,
   );
@@ -171,6 +216,7 @@ export function proiectBambu(proiect: ProiectBambu): Uint8Array {
     `<?xml version="1.0" encoding="UTF-8"?>\n<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">\n <Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/>\n <Default Extension="model" ContentType="application/vnd.ms-package.3dmanufacturing-3dmodel+xml"/>\n <Default Extension="png" ContentType="image/png"/>\n <Default Extension="txt" ContentType="text/plain"/>\n</Types>\n`,
   );
   fisiere["Metadata/model_settings.config"] = strToU8(`<?xml version="1.0" encoding="UTF-8"?>\n<config>\n${setari.join("\n")}\n${placi.join("\n")}\n  <assemble>\n${asamblare.join("\n")}\n  </assemble>\n</config>\n`);
+  fisiere["Metadata/project_settings.config"] = strToU8(JSON.stringify(setariProiect(proiect.slicer), null, 4));
   fisiere["Metadata/instructiuni.txt"] = strToU8(proiect.instructiuni);
   return zipSync(fisiere, { level: 6 });
 }

@@ -77,6 +77,17 @@ describe("termoformare: desenul colorat pe plasa", () => {
     });
   });
 
+  it("proiectul are cate un slot de filament pentru fiecare extruder folosit, matritele in PETG", () => {
+    cu(SETARI, (rez) => {
+      const fisiere = unzipSync(proiectBambu(proiectTermo(piesePrint(rez), SETARI, "ro", "Proba", rez.info)));
+      const cfg = JSON.parse(strFromU8(fisiere["Metadata/project_settings.config"])) as { filament_type: string[]; filament_colour: string[] };
+      const folosite = [...strFromU8(fisiere["Metadata/model_settings.config"]).matchAll(/key="extruder" value="(\d+)"/g)].map((m) => Number(m[1]));
+      expect(cfg.filament_type).toHaveLength(Math.max(...folosite));
+      expect(cfg.filament_type).toEqual(["PLA", "PLA", "PLA", "PLA", "PETG"]);
+      expect(cfg.filament_colour.slice(0, 4)).toEqual(rez.info.culori.map((c) => c.toUpperCase()));
+    });
+  });
+
   it("liniile subtiri primesc umplerea deasa, zonele mari umplerea zonelor", () => {
     cu(SETARI, (rez) => {
       const plasa = rez.print.find((p) => p.cheie === "plasa")!;
@@ -95,16 +106,19 @@ describe("termoformare: desenul colorat pe plasa", () => {
     });
   });
 
-  it("partile de culoare sunt plate, cat membrana, in planul ei", () => {
+  it("partile de culoare sunt plate, cat membrana, asezate peste ea (nu in grosimea ei)", () => {
     cu(SETARI, (rez) => {
       const plasa = rez.print.find((p) => p.cheie === "plasa")!;
       const bp = plasa.corp.boundingBox();
-      for (const p of plasa.parti!) {
+      for (const p of plasa.parti!.filter((x) => x.tip === "normal_part")) {
         const b = p.corp.boundingBox();
         expect(b.max[2] - b.min[2]).toBeCloseTo(TERMO.membrana, 3);
-        expect(b.min[2]).toBeGreaterThanOrEqual(bp.min[2] - 1e-6);
-        expect(b.max[2]).toBeLessThanOrEqual(bp.max[2] + 1e-6);
+        // Membrana sta pe pat (0..t); culoarea incepe unde se termina ea. Suprapuse, slicerul ar da zona plasei.
+        expect(b.min[2]).toBeCloseTo(bp.min[2] + TERMO.membrana, 3);
+        expect(p.corp.intersect(plasa.corp).volume()).toBeLessThan(1e-3);
       }
+      // Matritele lasa loc si stratului desenului.
+      expect(rez.info.joc).toBeCloseTo(2 * TERMO.membrana + TERMO.jocPeste, 6);
     });
   });
 
@@ -126,6 +140,10 @@ describe("termoformare: desenul colorat pe plasa", () => {
       // implicit: cea mai inchisa culoare din desen (negrul)
       const negru = rez.info.culori.findIndex((c) => esteNegru(c)) + 1;
       expect(mod_[0].extruder).toBe(String(negru));
+      // Nicio parte sub pat: Bambu Studio ar ridica tot obiectul pana la ea, iar membrana ar incepe in aer.
+      const plasa = rez.print.find((p) => p.cheie === "plasa")!;
+      const jos = plasa.corp.boundingBox().min[2];
+      for (const p of plasa.parti!) expect(p.corp.boundingBox().min[2]).toBeGreaterThanOrEqual(jos - 1e-6);
     });
   });
 
