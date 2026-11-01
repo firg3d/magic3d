@@ -27,7 +27,7 @@ export function Vizualizare3D({ piese, testid }: { piese: PiesaVedere<Float32Arr
     const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 5000);
     const grup = new THREE.Group();
     const deEliberat: Array<{ dispose(): void }> = [];
-    for (const { rol, corp } of piese) {
+    for (const { rol, corp, culoare } of piese) {
       // Z in sus (print) -> Y in sus (three): (x, y, z) -> (x, z, -y).
       const pozitii = new Float32Array(corp.length);
       for (let i = 0; i < corp.length; i += 3) {
@@ -38,7 +38,7 @@ export function Vizualizare3D({ piese, testid }: { piese: PiesaVedere<Float32Arr
       const geometrie = new THREE.BufferGeometry();
       geometrie.setAttribute("position", new THREE.BufferAttribute(pozitii, 3));
       geometrie.computeVertexNormals();
-      const material = new THREE.MeshStandardMaterial({ color: CULORI[rol], roughness: 0.62, metalness: 0.02, side: THREE.DoubleSide, flatShading: true });
+      const material = new THREE.MeshStandardMaterial({ color: culoare ?? CULORI[rol], roughness: 0.62, metalness: 0.02, side: THREE.DoubleSide, flatShading: true });
       grup.add(new THREE.Mesh(geometrie, material));
       deEliberat.push(geometrie, material);
     }

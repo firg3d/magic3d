@@ -12,7 +12,15 @@ import { strToU8, zipSync } from "fflate";
  */
 
 /** O parte a unui obiect, in coordonatele comune ale obiectului. */
-export type ParteBambu = { nume: string; positions: Float32Array; extruder: number };
+export type ParteBambu = {
+  nume: string;
+  positions: Float32Array;
+  extruder: number;
+  /** "modifier_part": nu se printeaza, doar schimba setarile (extruderul) acolo unde acopera obiectul. */
+  tip?: "normal_part" | "modifier_part";
+  /** Setari de print ale partii (wall_loops, sparse_infill_density...), peste cele ale obiectului. */
+  setari?: Record<string, string>;
+};
 
 export type ObiectBambu = {
   nume: string;
@@ -137,8 +145,9 @@ export function proiectBambu(proiect: ProiectBambu): Uint8Array {
       itemi.push(`  <item objectid="${idObiect}" p:UUID="${uuid(idObiect, 4)}" transform="${transformare}" printable="1"/>`);
       const chei = Object.entries({ extruder: String(meshuri[0].p.extruder), ...o.setari }).map(([k, v]) => `    <metadata key="${xml(k)}" value="${xml(v)}"/>`);
       const parteXml = meshuri.map((x) =>
-        `    <part id="${x.idMesh}" subtype="normal_part">\n      <metadata key="name" value="${xml(x.p.nume)}"/>\n      <metadata key="matrix" value="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"/>\n` +
+        `    <part id="${x.idMesh}" subtype="${x.p.tip ?? "normal_part"}">\n      <metadata key="name" value="${xml(x.p.nume)}"/>\n      <metadata key="matrix" value="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"/>\n` +
           `      <metadata key="extruder" value="${x.p.extruder}"/>\n` +
+          Object.entries(x.p.setari ?? {}).map(([k, v]) => `      <metadata key="${xml(k)}" value="${xml(v)}"/>\n`).join("") +
           `      <mesh_stat face_count="${x.fete}" edges_fixed="0" degenerate_facets="0" facets_removed="0" facets_reversed="0" backwards_edges="0"/>\n    </part>`);
       setari.push(`  <object id="${idObiect}">\n    <metadata key="name" value="${xml(o.nume)}"/>\n${chei.join("\n")}\n${parteXml.join("\n")}\n  </object>`);
       instante.push(`    <model_instance>\n      <metadata key="object_id" value="${idObiect}"/>\n      <metadata key="instance_id" value="0"/>\n      <metadata key="identify_id" value="${100 + idObiect}"/>\n    </model_instance>`);

@@ -35,6 +35,21 @@ describe("pictura: imagine redusa la culorile paletei", () => {
     expect(reduceImagine(px, w, h, paleta, 1).culori).toHaveLength(1);
   });
 
+  it("marginile netezite (multe nuante amestecate, fiecare rara) nu iau locul unei linii subtiri", () => {
+    // 100x100: jumatate bej, jumatate rosu, o linie neagra de 2 px, si 60 de nuante de margine unice.
+    const w = 100, h = 100;
+    const px = new Uint8ClampedArray(w * h * 4);
+    for (let y = 0; y < h; y += 1) for (let x = 0; x < w; x += 1) {
+      const c = y < 50 ? [232, 219, 183] : [193, 46, 31];
+      px.set([...c, 255], (y * w + x) * 4);
+    }
+    for (let x = 10; x < 90; x += 1) for (const y of [70, 71]) px.set([10, 10, 10, 255], (y * w + x) * 4);
+    for (let k = 0; k < 60; k += 1) px.set([120 + k * 2, 40 + k * 3, 200 - k * 2, 255], (49 * w + 20 + k) * 4);
+    const r = reduceImagine(px, w, h, ["#f4f4f1", "#c8282e", "#1d1f1e", "#1f5fbf", "#f5c518", "#7b3fa0", "#ee7a1e"], 4);
+    expect(r.culori).toContain("#1d1f1e");
+    expect(r.culori[r.index[70 * w + 50]]).toBe("#1d1f1e");
+  });
+
   it("fundalul cerut nu coloreaza nimic", () => {
     const r = reduceImagine(px, w, h, paleta, 3, "#ffffff");
     expect(r.index[8]).toBe(FARA);

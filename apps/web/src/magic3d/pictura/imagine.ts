@@ -11,6 +11,9 @@ import type { Topologie } from "@/magic3d/pictura/topologie";
 
 export const FARA = 255;
 
+/** O nuanta care acopera mai putin de atat din poza (0,2%) nu poate cere un filament al ei. */
+const PONDERE_MINIMA = 0.002;
+
 export type ImagineRedusa = {
   latime: number;
   inaltime: number;
@@ -46,14 +49,21 @@ export function reduceImagine(rgba: Uint8ClampedArray | Uint8Array, latime: numb
   const ePeFundal = chei.map((_, i) => ponderi[i] === 0);
   const index = new Uint8Array(total).fill(FARA);
   if (!chei.length || ponderi.every((w) => w === 0)) return { latime, inaltime, culori: [], index };
-  const rez = reduceCulori({ sloturi: medii, ponderi, limita: Math.max(1, n), paleta });
+  // Culorile se aleg doar dintre nuantele care acopera o parte vizibila a pozei: pixelii de pe marginile
+  // netezite (amestecuri de doua culori) nu trebuie sa ocupe un filament in locul unei linii subtiri.
+  const opaci = ponderi.reduce((s, w) => s + w, 0);
+  const prag = Math.max(1, opaci * PONDERE_MINIMA);
+  const insemnate = ponderi.map((w) => (w >= prag ? w : 0));
+  const rez = reduceCulori({ sloturi: medii, ponderi: insemnate.some((w) => w > 0) ? insemnate : ponderi, limita: Math.max(1, n), paleta });
+  // Fiecare nuanta (si cele mici) merge la cea mai apropiata culoare aleasa.
+  const laAleasa = medii.map((m) => rez.sloturi.reduce((best, c, k) => (distanta(m, c) < distanta(m, rez.sloturi[best]) ? k : best), 0));
   const pozitie = new Map(chei.map((k, i) => [k, i]));
   for (let i = 0; i < total; i += 1) {
     const k = cheiePixel[i];
     if (k < 0) continue;
     const j = pozitie.get(k)!;
     if (ePeFundal[j]) continue;
-    index[i] = rez.mapare[j];
+    index[i] = laAleasa[j];
   }
   return { latime, inaltime, culori: rez.sloturi, index };
 }

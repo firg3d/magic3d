@@ -202,3 +202,84 @@ html[data-theme="dark"] .termo-pasi button.activ {
   font-size: 12px;
   line-height: 1.35;
 }
+
+/* Desenul pe plasa: culorile pozei, sistemul imprimantei, rama colorata, spatele cutiei. */
+.termo-culori {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 12px 0 0;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.termo-culori legend {
+  padding: 0 4px;
+  font-weight: 700;
+}
+
+.termo-culori label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+}
+
+.termo-culori select {
+  min-height: 34px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface, var(--panel));
+  color: var(--foreground);
+  font: inherit;
+}
+
+.termo-culori-optiuni {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.termo-culori-lista,
+.termo-filamente ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 13px;
+}
+
+.termo-culori-lista li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.termo-mostra {
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+}
+
+.termo-culori .termo-bifa {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.termo-filamente {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 8px 0;
+  font-size: 13px;
+}
+
+.termo-filamente ol {
+  flex-direction: column;
+  list-style: none;
+}

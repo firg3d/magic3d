@@ -1,5 +1,6 @@
 import type { CrossSection, Manifold, ManifoldToplevel } from "manifold-3d";
 import { departeStift, jocMatrite, latimeMaxima, TERMO, type SetariTermo } from "@/magic3d/termo/config";
+import type { StraturiCulori } from "@/magic3d/termo/culoriPoza";
 
 /*
  * Termoformare: conturul -> plasa plata, matrita de jos (cavitatea) si matrita de sus (domul).
@@ -42,6 +43,10 @@ export type InfoTermo = {
   cleme: number;
   simetrie: "x" | "y" | null;
   seturi: 1 | 2;
+  /** Filamentele, in ordinea extruderelor: plasa (baza) primul, apoi culorile desenului si rama; gol fara desen. */
+  culori: string[];
+  /** Cate parti de linii subtiri au primit umplerea deasa. */
+  liniiDense: number;
   /** Incape pe placa imprimantei (fiecare piesa pe placa ei). */
   incape: boolean;
   /** Chei de avertizare (texte in texte.ts). */
@@ -50,12 +55,18 @@ export type InfoTermo = {
 
 /** Piesele de printat: plasa (A), la cutie si plasa B si clemele, matritele (si setul in oglinda, la o forma nesimetrica). */
 export type CheiePiesa = "plasa" | "plasa2" | "cleme" | "jos" | "sus" | "jos2" | "sus2";
-export type PiesaTermo<T> = { cheie: CheiePiesa; corp: T };
+/**
+ * O parte de culoare a plasei: placa plata cat membrana, peste ea, in culoarea ei, cu setarile ei
+ * (fara pereti, umplerea deasa la linii); sau modificatorul ramei colorate.
+ */
+export type ParteCuloare<T> = { nume: "linii" | "zone" | "rama"; culoare: string; corp: T; tip: "normal_part" | "modifier_part"; densitate?: number };
+/** O piesa de printat; plasa are si partile ei de culoare, in acelasi obiect. */
+export type PiesaTermo<T> = { cheie: CheiePiesa; corp: T; parti?: ParteCuloare<T>[] };
 
 /** Ce arata previzualizarea: rolul da culoarea. */
 export type RolVedere = "plasa" | "jos" | "sus";
-export type PiesaVedere<T> = { rol: RolVedere; corp: T };
-export type Vedere<T> = { rezultat: PiesaVedere<T>[]; presare: PiesaVedere<T>[] };
+export type PiesaVedere<T> = { rol: RolVedere; corp: T; culoare?: string };
+export type Vedere<T> = { rezultat: PiesaVedere<T>[]; presare: PiesaVedere<T>[]; plata: PiesaVedere<T>[] };
 
 export type RezultatTermo = {
   /** Jumatatea A la folosire: plasa plata asezata, matrita de jos, matrita de sus apasata. */
@@ -310,12 +321,13 @@ export function clema(mod: ManifoldToplevel): Manifold {
  * `setari.latime`. Arunca "termo-gol" cand nu exista forma si "termo-ingust" cand forma e prea
  * ingusta ca sa aiba o cavitate. `cuVedere` adauga bolul format si presarea, pentru previzualizare.
  */
-export function construiesteTermo(mod: ManifoldToplevel, inele: Inele, setari: SetariTermo, cuVedere = false): RezultatTermo {
+export function construiesteTermo(mod: ManifoldToplevel, inele: Inele, setari: SetariTermo, cuVedere = false, straturi: StraturiCulori | null = null): RezultatTermo {
   const avertizari: string[] = [];
   const cutie = setari.mod === "cutie";
   const latimeCeruta = Math.max(TERMO.latimeMin, Math.min(latimeMaxima(), setari.latime));
   if (latimeCeruta !== setari.latime) avertizari.push("avLatime");
-  const ingrosat = ingroasa(mod, laLatime(formaPlina(mod, inele, avertizari), latimeCeruta));
+  const forma0 = formaPlina(mod, inele, avertizari);
+  const ingrosat = ingroasa(mod, laLatime(forma0, latimeCeruta));
   // Ingrosarea unui varf poate lati forma: o readucem la latimea ceruta, zonele odata cu ea.
   const bi = ingrosat.forma.bounds();
   const corectie = latimeCeruta / (bi.max[0] - bi.min[0]);
@@ -408,13 +420,64 @@ export function construiesteTermo(mod: ManifoldToplevel, inele: Inele, setari: S
   if (golRama) rama = rama.subtract(golRama);
   const plasa = mod.Manifold.union([intre(membrana, L, L + t), intre(rama, L + t - TERMO.ramaInaltime, L + t)]);
 
+  // ---- Desenul colorat: piese plate cat membrana, peste ea, in acelasi obiect ----
+  // Fiecare culoare a pozei (in afara bazei, pe care se printeaza plasa insasi) devine zone groase si
+  // linii subtiri (cele mai inguste de latimeLinie), fiecare o parte cu umplerea ei; petele mai mici
+  // decat celula plasei se lasa deoparte. Rama colorata e un modificator: schimba doar extruderul.
+  const partiA: ParteCuloare<Manifold>[] = [];
+  const zoneA: Array<{ zona: CrossSection; culoare: string }> = [];
+  const culori: string[] = [];
+  let liniiDense = 0;
+  const desen = setari.desen === "culori" && straturi ? straturi : null;
+  if (desen) {
+    culori.push(desen.culori[0]);
+    const b0 = forma0.bounds();
+    const f0 = latimeCeruta / Math.max(1e-9, b0.max[0] - b0.min[0]);
+    const laForma = (cs: CrossSection) => laLoc(cs.translate([-(b0.min[0] + b0.max[0]) / 2, -(b0.min[1] + b0.max[1]) / 2]).scale([f0, f0]));
+    const interior = offset(P, -TERMO.ramaLatime);
+    const fara = (cs: CrossSection) => { const b = cs.decompose().filter((x) => x.area() >= TERMO.celulaPlasa * TERMO.celulaPlasa); return b.length ? mod.CrossSection.compose(b) : null; };
+    const r = TERMO.latimeLinie / 2;
+    desen.inele.forEach((ine, i) => {
+      if (i === 0 || !ine.length) return;
+      const zona = fara(laForma(new mod.CrossSection(ine.filter((x) => x.length >= 3), "EvenOdd")).intersect(interior));
+      if (!zona) return;
+      const groase = offset(offset(zona, -r), r).intersect(zona);
+      const zone = groase.isEmpty() ? null : fara(groase);
+      const linii = fara(zona.subtract(groase));
+      if (!zone && !linii) return;
+      const culoare = desen.culori[i];
+      culori.push(culoare);
+      if (zone) { partiA.push({ nume: "zone", culoare, corp: intre(zone, L, L + t), tip: "normal_part", densitate: TERMO.densitateZone }); zoneA.push({ zona: zone, culoare }); }
+      if (linii) { partiA.push({ nume: "linii", culoare, corp: intre(linii, L, L + t), tip: "normal_part", densitate: TERMO.densitateLinii }); zoneA.push({ zona: linii, culoare }); liniiDense += 1; }
+    });
+    if (D / latimeCeruta > TERMO.raportDesen) avertizari.push("avDesenAdanc");
+  }
+  const lumina = (h: string) => 0.299 * parseInt(h.slice(1, 3), 16) + 0.587 * parseInt(h.slice(3, 5), 16) + 0.114 * parseInt(h.slice(5, 7), 16);
+  if (setari.ramaColorata) {
+    if (!culori.length) culori.push(TERMO.culoarePlasa);
+    const culoareRama = /^#[0-9a-f]{6}$/i.test(setari.culoareRama) ? setari.culoareRama.toLowerCase() : [...culori].sort((a, b) => lumina(a) - lumina(b))[0];
+    if (!culori.includes(culoareRama)) culori.push(culoareRama);
+    const inel = offset(P, TERMO.modificatorPeste).subtract(interiorRama);
+    partiA.push({ nume: "rama", culoare: culoareRama, corp: intre(inel, L + t - TERMO.ramaInaltime - TERMO.modificatorInaltime, L + t + TERMO.modificatorInaltime), tip: "modifier_part" });
+  }
+  // Jumatatea din spate a cutiei: tot desenul, doar liniile si culoarea dominanta, sau simpla.
+  const dominanta = zoneA.filter((z) => partiA.some((p) => p.nume === "zone" && p.culoare === z.culoare)).sort((a, b) => b.zona.area() - a.zona.area())[0]?.culoare;
+  const partiB = partiA.filter((p) => p.tip === "modifier_part" || setari.spate === "oglinda" || (setari.spate === "contur" && (p.nume === "linii" || p.culoare === dominanta)));
+
   // ---- Pozitia de print ----
   const peMasa = (m: Manifold) => m.translate([0, 0, -m.boundingBox().min[2]]);
   const intoarsa = (m: Manifold) => peMasa(m.rotate([180, 0, 0]));
-  const print: PiesaTermo<Manifold>[] = [{ cheie: "plasa", corp: intoarsa(plasa) }];
+  // Partile de culoare se intorc odata cu plasa lor (aceeasi rotire si aceeasi ridicare).
+  const intoarsaCa = (ref: Manifold) => { const dz = -ref.rotate([180, 0, 0]).boundingBox().min[2]; return (m: Manifold) => m.rotate([180, 0, 0]).translate([0, 0, dz]); };
+  const cuParti = (ref: Manifold, parti: ParteCuloare<Manifold>[], oglinda: boolean) => {
+    const tr = intoarsaCa(ref);
+    return parti.map((p) => ({ ...p, corp: tr(oglinda ? p.corp.mirror(normala3) : p.corp) }));
+  };
+  const print: PiesaTermo<Manifold>[] = [{ cheie: "plasa", corp: intoarsa(plasa), ...(partiA.length ? { parti: cuParti(plasa, partiA, false) } : {}) }];
   if (cutie) {
     // Plasa B e oglinda plasei A: intoarsa peste A, gaurile ei cad peste gaurile lui A.
-    print.push({ cheie: "plasa2", corp: intoarsa(plasa.mirror(normala3)) });
+    const plasaB = plasa.mirror(normala3);
+    print.push({ cheie: "plasa2", corp: intoarsa(plasaB), ...(partiB.length ? { parti: cuParti(plasaB, partiB, true) } : {}) });
     const una = clema(mod);
     const pas = 2 * TERMO.clemaPerete + 2 * t + TERMO.clemaJoc + 3;
     print.push({ cheie: "cleme", corp: mod.Manifold.union(Array.from({ length: nCleme }, (_, i) => una.translate([0, i * pas, 0]))) });
@@ -442,9 +505,21 @@ export function construiesteTermo(mod: ManifoldToplevel, inele: Inele, setari: S
     let flansa = P.subtract(offset(gura, -(R - ra) - 0.05));
     if (gauriPlasa) flansa = flansa.subtract(gauriPlasa);
     const format = mod.Manifold.union([...coaja, intre(flansa, L, L + t), intre(rama, L + t - TERMO.ramaInaltime, L + t)]);
-    const rezultat: PiesaVedere<Manifold>[] = [{ rol: "plasa", corp: format }];
-    if (cutie) rezultat.push({ rol: "plasa", corp: format.mirror(normala3).mirror([0, 0, 1]).translate([0, 0, 2 * (L + t)]) });
+    // Desenul pe piesa formata: fiecare zona, proiectata vertical pe coaja (fara pre-deformare, ca la print).
+    const colorata = (baza: Manifold, zone: Array<{ zona: CrossSection; culoare: string }>): PiesaVedere<Manifold>[] => {
+      if (!zone.length) return [{ rol: "plasa", corp: baza }];
+      const prisme = zone.map((z) => ({ culoare: z.culoare, corp: intre(z.zona, L - 2 * H, L + 2 * H) }));
+      const rest = baza.subtract(mod.Manifold.union(prisme.map((p) => p.corp)));
+      return [{ rol: "plasa", corp: rest, culoare: culori[0] }, ...prisme.map((p) => ({ rol: "plasa" as const, culoare: p.culoare, corp: baza.intersect(p.corp) }))];
+    };
+    const rezultat: PiesaVedere<Manifold>[] = colorata(format, zoneA);
+    if (cutie) {
+      const zoneB = zoneA.filter((z) => setari.spate === "oglinda" || (setari.spate === "contur" && partiB.some((p) => p.culoare === z.culoare)));
+      for (const p of colorata(format, zoneB)) rezultat.push({ ...p, corp: p.corp.mirror(normala3).mirror([0, 0, 1]).translate([0, 0, 2 * (L + t)]) });
+    }
+    const plata: PiesaVedere<Manifold>[] = colorata(plasa, zoneA);
     vedere = {
+      plata,
       rezultat,
       presare: [{ rol: "jos", corp: jos }, { rol: "plasa", corp: format }, { rol: "sus", corp: sus.translate([0, 0, TERMO.ridicareSus]) }],
     };
@@ -471,6 +546,8 @@ export function construiesteTermo(mod: ManifoldToplevel, inele: Inele, setari: S
     cleme: nCleme,
     simetrie: axa,
     seturi,
+    culori,
+    liniiDense,
     incape,
     avertizari,
   };
@@ -501,10 +578,15 @@ export function triunghiuri(m: Manifold): Float32Array {
 export type PieseTermo = PiesaTermo<Float32Array>[];
 export type VedereTermo = Vedere<Float32Array>;
 
-export const piesePrint = (rez: RezultatTermo): PieseTermo => rez.print.map((p) => ({ cheie: p.cheie, corp: triunghiuri(p.corp) }));
+export const piesePrint = (rez: RezultatTermo): PieseTermo => rez.print.map((p) => ({
+  cheie: p.cheie,
+  corp: triunghiuri(p.corp),
+  ...(p.parti ? { parti: p.parti.map((x) => ({ ...x, corp: triunghiuri(x.corp) })) } : {}),
+}));
 
 export const vedereTriunghiuri = (rez: RezultatTermo): VedereTermo | null =>
   rez.vedere && {
-    rezultat: rez.vedere.rezultat.map((p) => ({ rol: p.rol, corp: triunghiuri(p.corp) })),
-    presare: rez.vedere.presare.map((p) => ({ rol: p.rol, corp: triunghiuri(p.corp) })),
+    rezultat: rez.vedere.rezultat.map((p) => ({ rol: p.rol, culoare: p.culoare, corp: triunghiuri(p.corp) })),
+    presare: rez.vedere.presare.map((p) => ({ rol: p.rol, culoare: p.culoare, corp: triunghiuri(p.corp) })),
+    plata: rez.vedere.plata.map((p) => ({ rol: p.rol, culoare: p.culoare, corp: triunghiuri(p.corp) })),
   };

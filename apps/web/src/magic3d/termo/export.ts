@@ -5,6 +5,7 @@ import { proiectBambu, type PlacaBambu, type ProiectBambu } from "@/magic3d/core
 import { EXTRUDER, FORMARE, jocMatrite, SETARI_PRINT, TERMO, type SetariTermo } from "@/magic3d/termo/config";
 import type { CheiePiesa, InfoTermo, PieseTermo } from "@/magic3d/termo/geometrie";
 import { tt, type CheieTermo } from "@/magic3d/termo/texte";
+import { filamentAtelier } from "@/magic3d/pictura/paleta";
 
 export { piesePrint, type PieseTermo } from "@/magic3d/termo/geometrie";
 
@@ -53,16 +54,43 @@ export function pieseScena(piese: PieseTermo): PiesaGenerata[] {
       positions[i + 1] = p[i + 2];
       positions[i + 2] = -p[i + 1];
     }
-    return { nume: numePiesa(cheie, piese, undefined), culoare: PIESE[cheie].culoare, positions };
-  });
+    const parti = (piese.find((x) => x.corp === p)?.parti ?? []).filter((parte) => parte.tip === "normal_part");
+    const muta = (q: Float32Array) => {
+      const out = new Float32Array(q.length);
+      for (let i = 0; i < q.length; i += 3) { out[i] = q[i] + dx; out[i + 1] = q[i + 2]; out[i + 2] = -q[i + 1]; }
+      return out;
+    };
+    return [
+      { nume: numePiesa(cheie, piese, undefined), culoare: PIESE[cheie].culoare, positions },
+      ...parti.map((parte, k) => ({ nume: `${numePiesa(cheie, piese, undefined)} · ${k + 1}`, culoare: parte.culoare, positions: muta(parte.corp) })),
+    ];
+  }).flat();
+}
+
+/** Numele unei culori: filamentul atelierului cu acea culoare, sau codul ei. */
+const numeCuloare = (hex: string) => {
+  const f = filamentAtelier(hex);
+  return f ? `${f.nume} (${f.material})` : hex.toUpperCase();
+};
+
+/** Extruderul matritelor: dupa culorile desenului (sau 2, fara desen). */
+export const extruderMatrite = (info?: InfoTermo) => (info?.culori.length ? info.culori.length + 1 : EXTRUDER.matrita);
+
+/** Filamentele in ordinea sloturilor: plasa, culorile desenului, apoi matritele. */
+export function listaFilamente(info: InfoTermo, setari: SetariTermo, limba?: string): string[] {
+  if (!info.culori.length) return [tt("filamentPlasa", { n: 1, c: setari.material }, limba), tt("filamentMatrite", { n: 2 }, limba)];
+  return [
+    ...info.culori.map((c, i) => tt(i === 0 ? "filamentBaza" : "filamentDesen", { n: i + 1, c: numeCuloare(c) }, limba)),
+    tt("filamentMatrite", { n: info.culori.length + 1 }, limba),
+  ];
 }
 
 export function instructiuni(info: InfoTermo, setari: SetariTermo, nume: string, limba?: string): string {
   const f = FORMARE[setari.material];
   const model = setari.model === "gyroid" ? tt("modelGyroid", { densitate: setari.densitate }, limba) : tt("modelFagure", { densitate: setari.densitate }, limba);
   const valori = { nume, material: setari.material, model, t1: f.incalzire[0], t2: f.incalzire[1], s1: f.presare[0], s2: f.presare[1], d: info.adancime, joc: jocMatrite().toFixed(1), l: info.latime, n: info.cleme };
-  if (setari.mod !== "cutie") return tt("instructiuni", valori, limba);
-  return tt(info.seturi === 2 ? "instructiuniCutie2" : "instructiuniCutie", valori, limba);
+  const text = setari.mod !== "cutie" ? tt("instructiuni", valori, limba) : tt(info.seturi === 2 ? "instructiuniCutie2" : "instructiuniCutie", valori, limba);
+  return `${text}\n\n${tt("filamenteTitlu", {}, limba)}\n${listaFilamente(info, setari, limba).join("\n")}`;
 }
 
 /** Proiectul Bambu: fiecare piesa pe placa ei, cu setarile ei (plasa ca retea, clemele pline, matritele groase). */
@@ -70,9 +98,33 @@ export function proiectTermo(piese: PieseTermo, setari: SetariTermo, limba?: str
   const setariPlasa = setari.model === "gyroid" ? SETARI_PRINT.plasa(setari.densitate) : SETARI_PRINT.plasaFagure();
   const setariPiesa = (cheie: CheiePiesa) => (cheie === "plasa" || cheie === "plasa2" ? setariPlasa : cheie === "cleme" ? SETARI_PRINT.cleme() : SETARI_PRINT.matrita());
   const text = info ? instructiuni(info, setari, nume, limba) : tt("instructiuni", { nume }, limba);
-  const placi: PlacaBambu[] = piese.map(({ cheie, corp }) => {
+  const matrite = extruderMatrite(info);
+  const extruder = (cheie: CheiePiesa) => (PIESE[cheie].extruder === EXTRUDER.matrita ? matrite : PIESE[cheie].extruder);
+  const slot = (hex: string) => Math.max(0, info?.culori.indexOf(hex) ?? 0) + 1;
+  const densitate = (d: number) => ({ sparse_infill_density: `${d}%`, skin_infill_density: `${d}%`, skeleton_infill_density: `${d}%` });
+  const placi: PlacaBambu[] = piese.map(({ cheie, corp, parti }) => {
     const numeP = numePiesa(cheie, piese, limba);
-    return { nume: numeP, obiecte: [{ nume: numeP, positions: corp, extruder: PIESE[cheie].extruder, setari: setariPiesa(cheie) }] };
+    if (!parti?.length) return { nume: numeP, obiecte: [{ nume: numeP, positions: corp, extruder: extruder(cheie), setari: setariPiesa(cheie) }] };
+    // Plasa (baza, extruderul 1) si, peste ea, partile de culoare: fara pereti, cu umplerea lor; rama: modificator.
+    return {
+      nume: numeP,
+      obiecte: [{
+        nume: numeP,
+        positions: corp,
+        extruder: 1,
+        setari: setariPiesa(cheie),
+        parti: [
+          { nume: numeP, positions: corp, extruder: 1 },
+          ...parti.map((p, i) => ({
+            nume: `${numeP} - ${tt(p.nume === "rama" ? "parteRama" : p.nume === "linii" ? "parteLinii" : "parteZone", {}, limba)} ${i + 1}`,
+            positions: p.corp,
+            extruder: slot(p.culoare),
+            tip: p.tip,
+            setari: p.tip === "modifier_part" ? undefined : { wall_loops: "0", ...(p.densitate ? densitate(p.densitate) : {}) },
+          })),
+        ],
+      }],
+    };
   });
   return { titlu: tt("numeProiect", { forma: nume }, limba), instructiuni: text, pat: TERMO.placa, placi };
 }
@@ -137,7 +189,7 @@ export function contextOferta(piese: PieseTermo, info: InfoTermo, setari: Setari
     d: info.adancime,
     cutie,
     placi: piese.length,
-  }, limbaMesaj);
+  }, limbaMesaj) + (info.culori.length ? ` ${tt("detaliiCulori", { n: info.culori.length, lista: listaFilamente(info, setari, limbaMesaj).join("; ") }, limbaMesaj)}` : "");
   return {
     generator: `${tt("titlu", {}, limbaMesaj)} → ${nume}`,
     firma: true,

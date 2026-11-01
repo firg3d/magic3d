@@ -82,6 +82,22 @@ export const TERMO = {
   placa: 180,
   /** Culorile pieselor in editor. */
   culoarePlasa: "#f2b134",
+  /*
+   * Desenul colorat pe plasa (masurat pe un model de referinta: piese de culoare plate, cat
+   * membrana, suprapuse peste ea, fara pereti; liniile negre cu umplere 50%, fata 35%).
+   */
+  /** Petele mai mici de celula^2 (mm^2) se pierd in plasa si se lasa deoparte. */
+  celulaPlasa: 2.5,
+  /** O zona mai ingusta de atat (mm) e linie (contur, ochi, gura) si primeste umplerea deasa. */
+  latimeLinie: 3.2,
+  /** Umplerea liniilor subtiri si a zonelor mari de culoare, procente. */
+  densitateLinii: 50,
+  densitateZone: 35,
+  /** Rama colorata: cat iese modificatorul in afara siluetei (mm) si cat depaseste rama in sus/jos. */
+  modificatorPeste: 3,
+  modificatorInaltime: 1,
+  /** Peste acest raport adancime/latime, desenul se lateste vizibil spre margini: avertizare. */
+  raportDesen: 0.22,
   culoareJos: "#2c7be5",
   culoareSus: "#1f8a5b",
 };
@@ -100,6 +116,12 @@ export type ModelPlasa = "gyroid" | "fagure";
 
 export type Mod = "bol" | "cutie";
 
+/** Desenul pe plasa: o singura culoare, sau zonele de culoare din poza. */
+export type Desen = "fara" | "culori";
+export type PaletaCulori = "atelier" | "imagine";
+/** Jumatatea din spate a cutiei: tot desenul in oglinda, doar liniile si culoarea dominanta, sau simpla. */
+export type Spate = "oglinda" | "contur" | "simplu";
+
 export type SetariTermo = {
   mod: Mod;
   /** Latimea conturului, mm. */
@@ -110,6 +132,16 @@ export type SetariTermo = {
   model: ModelPlasa;
   /** Densitatea plasei, procente (gyroid in slicer sau cat ramane plin la fagure). */
   densitate: number;
+  desen: Desen;
+  /** Sistemul multicolor al imprimantei (imprimante-multicolor.json): da numarul maxim de culori. */
+  sistemCulori: string;
+  /** Cate culori are desenul, plasa inclusa; 0 = cate duce imprimanta. */
+  culori: number;
+  paletaCulori: PaletaCulori;
+  /** Rama colorata separat (modificator), in culoarea aleasa ("" = cea mai inchisa din desen). */
+  ramaColorata: boolean;
+  culoareRama: string;
+  spate: Spate;
 };
 
 export const SETARI_IMPLICITE: SetariTermo = {
@@ -119,6 +151,13 @@ export const SETARI_IMPLICITE: SetariTermo = {
   material: "PLA",
   model: "gyroid",
   densitate: 30,
+  desen: "culori",
+  sistemCulori: "bambu-ams-lite",
+  culori: 0,
+  paletaCulori: "atelier",
+  ramaColorata: false,
+  culoareRama: "",
+  spate: "contur",
 };
 
 export const LIMITE = {

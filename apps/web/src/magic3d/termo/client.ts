@@ -54,7 +54,7 @@ export async function silueta(sursa: number, date: SursaTermo | undefined, optiu
 }
 
 /** Cele trei piese si cotele; null cand a fost ceruta intre timp alta constructie. */
-export async function construieste(inele: Inele, setari: SetariTermo): Promise<Construit | null> {
-  const r = await cere("construieste", { tip: "construieste", inele, setari, assetBase: new URL(".", window.location.href).href });
+export async function construieste(inele: Inele, setari: SetariTermo, cadru?: { latime: number; inaltime: number }): Promise<Construit | null> {
+  const r = await cere("construieste", { tip: "construieste", inele, setari, cadru, assetBase: new URL(".", window.location.href).href });
   return r && r.ok && r.tip === "construieste" ? r : null;
 }

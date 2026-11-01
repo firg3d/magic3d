@@ -10,8 +10,12 @@ import { pixeliDinSvg } from "@/magic3d/logo/client";
 import { deschideOferta } from "@/magic3d/oferta/OfertaButton";
 import { proiectBambu } from "@/magic3d/core/assets/bambu3mf";
 import { construieste, silueta as cereSilueta } from "@/magic3d/termo/client";
-import { LIMITE, latimeMaxima, MATERIALE, SETARI_IMPLICITE, TERMO, type Material, type ModelPlasa, type SetariTermo } from "@/magic3d/termo/config";
-import { arhivaStl, contextOferta, instructiuni, pieseScena, proiectTermo, type PieseTermo } from "@/magic3d/termo/export";
+import { LIMITE, latimeMaxima, MATERIALE, SETARI_IMPLICITE, TERMO, type Material, type ModelPlasa, type SetariTermo, type Spate } from "@/magic3d/termo/config";
+import { arhivaStl, contextOferta, instructiuni, listaFilamente, pieseScena, proiectTermo, type PieseTermo } from "@/magic3d/termo/export";
+import { culoriMaxime } from "@/magic3d/termo/culoriPoza";
+import { IMPRIMANTE } from "@/magic3d/pictura/imprimante";
+import { PALETA_ATELIER, filamentAtelier } from "@/magic3d/pictura/paleta";
+import { limba as limbaMagic3d } from "@/magic3d/core/i18n/index";
 import { caleSvgInele, FORME, formaExemplu, type FormaExemplu } from "@/magic3d/termo/forme";
 import type { Inele, InfoTermo, VedereTermo } from "@/magic3d/termo/geometrie";
 import { DESCHIDE_TERMO, preiaPresetTermo } from "@/magic3d/termo/preset";
@@ -77,6 +81,8 @@ export function TermoSectiune({ onCreate }: { onCreate: CreeazaTermo }) {
   const [numeSursa, setNumeSursa] = useState("");
   const [optiuni, setOptiuni] = useState<OptiuniSilueta>(OPTIUNI_SILUETA);
   const [inele, setInele] = useState<Inele | null>(null);
+  /** Marimea siluetei (pixelii ei): zonele de culoare din poza se aseaza in acelasi cadru. Null la o forma proprie. */
+  const [cadru, setCadru] = useState<{ latime: number; inaltime: number } | null>(null);
   const [conturez, setConturez] = useState(false);
   const [setari, setSetari] = useState<SetariTermo>(SETARI_IMPLICITE);
   const [adancimeAtinsa, setAdancimeAtinsa] = useState(false);
@@ -85,7 +91,7 @@ export function TermoSectiune({ onCreate }: { onCreate: CreeazaTermo }) {
   const [pus, setPus] = useState<{ id: string; nume: string } | null>(null);
   const [eroare, setEroare] = useState("");
   const [trag, setTrag] = useState(false);
-  const [vedere, setVedere] = useState<"rezultat" | "presare">("rezultat");
+  const [vedere, setVedere] = useState<"plata" | "rezultat" | "presare">("rezultat");
   const [alegere, setAlegere] = useState<Alegere>("eu");
   const trimisa = useRef(0);
 
@@ -137,6 +143,7 @@ export function TermoSectiune({ onCreate }: { onCreate: CreeazaTermo }) {
     if (!sursa) return;
     if (sursa.tip === "forma") {
       setInele(formaExemplu(sursa.forma));
+      setCadru(null);
       return;
     }
     let anulat = false;
@@ -148,6 +155,7 @@ export function TermoSectiune({ onCreate }: { onCreate: CreeazaTermo }) {
         .then((s) => {
           if (anulat || !s) return;
           setInele(ineleCuYSus(s.inele));
+          setCadru({ latime: s.latime, inaltime: s.inaltime });
           setEroare("");
         })
         .catch((error: unknown) => {
@@ -169,7 +177,7 @@ export function TermoSectiune({ onCreate }: { onCreate: CreeazaTermo }) {
     let anulat = false;
     setConstruiesc(true);
     const pauza = window.setTimeout(() => {
-      construieste(inele, setari)
+      construieste(inele, setari, cadru ?? undefined)
         .then((r) => {
           if (anulat || !r) return;
           setConstruit({ piese: r.piese, vedere: r.vedere, contur: r.contur, zone: r.zone, gura: r.gura, info: r.info });
@@ -187,7 +195,7 @@ export function TermoSectiune({ onCreate }: { onCreate: CreeazaTermo }) {
       anulat = true;
       window.clearTimeout(pauza);
     };
-  }, [inele, setari, pas]);
+  }, [inele, setari, pas, cadru]);
 
   const schimba = <K extends keyof SetariTermo>(cheie: K, valoare: SetariTermo[K]) => setSetari((s) => ({ ...s, [cheie]: valoare }));
   const schimbaLatime = (latime: number) => setSetari((s) => ({ ...s, latime, adancime: adancimeAtinsa ? s.adancime : Math.round(latime * TERMO.adancimeDinLatime) }));
@@ -343,6 +351,71 @@ export function TermoSectiune({ onCreate }: { onCreate: CreeazaTermo }) {
           <div className="logo-optiuni">
             <Camp eticheta={tt("densitate")} unitate="%" valoare={setari.densitate} limite={LIMITE.densitate} onChange={(v) => schimba("densitate", Math.round(v))} testid="termo-densitate" />
           </div>
+          <fieldset className="termo-culori" data-testid="termo-culori">
+            <legend>{tt("culoriTitlu")}</legend>
+            <div className="logo-iesiri" role="radiogroup" aria-label={tt("culoriTitlu")}>
+              {(["fara", "culori"] as const).map((d) => (
+                <button key={d} type="button" role="radio" aria-checked={setari.desen === d} data-testid={`termo-desen-${d}`} className={setari.desen === d ? "activ" : ""} disabled={d === "culori" && !cadru} onClick={() => schimba("desen", d)}>
+                  {tt(d === "fara" ? "desenFara" : "desenCulori")}
+                </button>
+              ))}
+            </div>
+            {setari.desen === "culori" && cadru ? (
+              <div className="termo-culori-optiuni">
+                <label>
+                  <span>{tt("sistemCulori")}</span>
+                  <select value={setari.sistemCulori} data-testid="termo-sistem" onChange={(e) => setSetari((x) => ({ ...x, sistemCulori: e.target.value, culori: 0 }))}>
+                    {IMPRIMANTE.sisteme.filter((x) => x.culoriPeUnitate * x.unitatiMax > 1).map((x) => <option key={x.id} value={x.id}>{x.nume[limbaMagic3d()]}</option>)}
+                  </select>
+                </label>
+                <label>
+                  <span>{tt("numarCulori")}</span>
+                  <select value={setari.culori} data-testid="termo-numar-culori" onChange={(e) => schimba("culori", Number(e.target.value))}>
+                    <option value={0}>{tt("culoriAuto", { n: culoriMaxime(setari) })}</option>
+                    {Array.from({ length: culoriMaxime(setari) - 1 }, (_, i) => i + 2).map((n) => <option key={n} value={n}>{n}</option>)}
+                  </select>
+                </label>
+                <label>
+                  <span>{tt("paletaCulori")}</span>
+                  <select value={setari.paletaCulori} data-testid="termo-paleta" onChange={(e) => schimba("paletaCulori", e.target.value as SetariTermo["paletaCulori"])}>
+                    <option value="atelier">{tt("paletaAtelier")}</option>
+                    <option value="imagine">{tt("paletaImagine")}</option>
+                  </select>
+                </label>
+                {construit?.info.culori.length ? (
+                  <ul className="termo-culori-lista" data-testid="termo-culori-lista">
+                    {construit.info.culori.map((c, i) => (
+                      <li key={c}><span className="termo-mostra" style={{ background: c }} />{i + 1}. {filamentAtelier(c)?.nume ?? c.toUpperCase()}</li>
+                    ))}
+                  </ul>
+                ) : null}
+                {construit ? <p className="logo-nota">{construit.info.culori.length ? tt("culoriRezultat", { n: construit.info.culori.length, l: construit.info.liniiDense }) : tt("faraCuloriPoza")}</p> : null}
+                <p className="logo-nota">{tt("culoriNota")}</p>
+              </div>
+            ) : null}
+            <label className="termo-bifa">
+              <input type="checkbox" checked={setari.ramaColorata} data-testid="termo-rama-colorata" onChange={(e) => schimba("ramaColorata", e.target.checked)} />
+              {tt("ramaColorata")}
+            </label>
+            {setari.ramaColorata ? (
+              <label>
+                <span>{tt("culoareRama")}</span>
+                <select value={setari.culoareRama} data-testid="termo-culoare-rama" onChange={(e) => schimba("culoareRama", e.target.value)}>
+                  <option value="">{tt("culoareRamaAuto")}</option>
+                  {PALETA_ATELIER.filamente.filter((f) => f.disponibil).map((f) => <option key={f.id} value={f.hex.toLowerCase()}>{f.nume}</option>)}
+                </select>
+              </label>
+            ) : null}
+            {setari.mod === "cutie" && setari.desen === "culori" ? (
+              <div className="logo-iesiri" role="radiogroup" aria-label={tt("spateTitlu")} data-testid="termo-spate">
+                {(["oglinda", "contur", "simplu"] as Spate[]).map((x) => (
+                  <button key={x} type="button" role="radio" aria-checked={setari.spate === x} data-testid={`termo-spate-${x}`} className={setari.spate === x ? "activ" : ""} onClick={() => schimba("spate", x)}>
+                    {tt(`spate_${x}` as CheieTermo)}
+                  </button>
+                ))}
+              </div>
+            ) : null}
+          </fieldset>
         </section>
       ) : null}
 
@@ -362,12 +435,16 @@ export function TermoSectiune({ onCreate }: { onCreate: CreeazaTermo }) {
             {tt("joc", { joc: construit.info.joc.toFixed(1), v: construit.info.aerisiri, p: construit.info.stifturi })}
             {setari.mod === "cutie" ? (<><br />{tt("cutieInfo", { n: construit.info.cleme, seturi: tt(construit.info.seturi === 2 ? "douaSeturi" : "unSet") })}</>) : null}
           </p>
+          <div className="termo-filamente" data-testid="termo-filamente">
+            <strong>{tt("filamenteTitlu")}</strong>
+            <ol>{listaFilamente(construit.info, setari).map((r) => <li key={r}>{r}</li>)}</ol>
+          </div>
           {construit.vedere ? (
             <figure className="termo-vedere" data-testid="termo-vedere">
               <div className="logo-iesiri" role="radiogroup" aria-label={tt("vedereTitlu")}>
-                {(["rezultat", "presare"] as const).map((v) => (
+                {(["plata", "rezultat", "presare"] as const).map((v) => (
                   <button key={v} type="button" role="radio" aria-checked={vedere === v} data-testid={`termo-vedere-${v}`} className={vedere === v ? "activ" : ""} onClick={() => setVedere(v)}>
-                    {tt(v === "rezultat" ? "vedereRezultat" : "vederePresare")}
+                    {tt(v === "plata" ? "vederePlata" : v === "rezultat" ? "vedereRezultat" : "vederePresare")}
                   </button>
                 ))}
               </div>

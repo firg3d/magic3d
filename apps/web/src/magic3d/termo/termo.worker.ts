@@ -6,6 +6,7 @@ import { instrumenteazaArena, inArena } from "@/magic3d/core/geometry/arena";
 import type { SetariTermo } from "@/magic3d/termo/config";
 import { construiesteTermo, piesePrint, vedereTriunghiuri, type Inele, type InfoTermo, type PieseTermo, type VedereTermo } from "@/magic3d/termo/geometrie";
 import { siluetaDinPixeli, type OptiuniSilueta, type Silueta } from "@/magic3d/termo/silueta";
+import { straturiCulori } from "@/magic3d/termo/culoriPoza";
 
 /*
  * Termoformarea in afara paginii: decodarea imaginii, silueta si cele trei piese (manifold, intr-o
@@ -16,7 +17,7 @@ import { siluetaDinPixeli, type OptiuniSilueta, type Silueta } from "@/magic3d/t
 export type SursaTermo = { fisier: Blob } | { pixeli: RasterPixels };
 export type CerereTermo =
   | { id: number; tip: "silueta"; sursa: number; date?: SursaTermo; optiuni: OptiuniSilueta }
-  | { id: number; tip: "construieste"; inele: Inele; setari: SetariTermo; assetBase: string };
+  | { id: number; tip: "construieste"; inele: Inele; setari: SetariTermo; assetBase: string; cadru?: { latime: number; inaltime: number } };
 export type RaspunsTermo =
   | { id: number; ok: true; tip: "silueta"; silueta: Silueta }
   | { id: number; ok: true; tip: "construieste"; piese: PieseTermo; vedere: VedereTermo | null; contur: Inele; zone: Inele; gura: Inele; info: InfoTermo; ms: number }
@@ -63,10 +64,12 @@ self.onmessage = async (event: MessageEvent<CerereTermo>) => {
     }
     const start = performance.now();
     const rezultat = inArena(() => {
-      const rez = construiesteTermo(mod, cerere.inele, cerere.setari, true);
+      // Desenul colorat ia zonele din aceeasi poza ca silueta (pastrata aici de la cererea siluetei).
+      const straturi = cerere.setari.desen === "culori" && pixeliCache && cerere.cadru ? straturiCulori(pixeliCache.pixeli, cerere.cadru, cerere.setari) : null;
+      const rez = construiesteTermo(mod, cerere.inele, cerere.setari, true, straturi);
       return { piese: piesePrint(rez), vedere: vedereTriunghiuri(rez), contur: rez.contur, zone: rez.zone, gura: rez.gura, info: rez.info };
     }, () => []);
-    trimite({ id: cerere.id, ok: true, tip: "construieste", ...rezultat, ms: Math.round(performance.now() - start) }, [...rezultat.piese, ...(rezultat.vedere ? [...rezultat.vedere.rezultat, ...rezultat.vedere.presare] : [])].map((p) => p.corp.buffer));
+    trimite({ id: cerere.id, ok: true, tip: "construieste", ...rezultat, ms: Math.round(performance.now() - start) }, [...rezultat.piese, ...rezultat.piese.flatMap((p) => p.parti ?? []), ...(rezultat.vedere ? [...rezultat.vedere.rezultat, ...rezultat.vedere.presare, ...rezultat.vedere.plata] : [])].map((p) => p.corp.buffer));
   } catch (error) {
     trimite({ id: cerere.id, ok: false, eroare: error instanceof Error ? error.message : String(error) });
   }
