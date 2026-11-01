@@ -1,5 +1,5 @@
 import { FONTURI_CRACIUN, GLOB_NUME, PATURI } from "@/magic3d/apps/craciun/config";
-import { listaNume } from "@/magic3d/apps/craciun/globNume";
+import { listaNume } from "@/magic3d/apps/craciun/pachet";
 import { t } from "@/magic3d/core/i18n/index";
 import type { GeneratorDef, Parametri } from "@/magic3d/generatoare/tipuri";
 

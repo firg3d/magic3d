@@ -54,6 +54,12 @@ export type SlicerBambu = {
   proces: string;
   /** Cate unul pentru fiecare extruder folosit, in ordinea sloturilor. */
   filamente: FilamentBambu[];
+  /**
+   * Coltul turnului de curatare (mm, fata de coltul din fata-stanga al placii). Lipsa lui lasa pozitia
+   * implicita din Bambu Studio, gandita pentru alt pat: pe A1 mini turnul iese din placa si feliatorul
+   * refuza ("G-code path goes beyond plate boundaries").
+   */
+  turn: { x: number; y: number };
 };
 
 export type ProiectBambu = {
@@ -111,8 +117,9 @@ function indexeaza(positions: Float32Array) {
 }
 
 /** project_settings.config: doar ce leaga proiectul de preseturile de sistem; restul vine din ele. */
-function setariProiect(s: SlicerBambu) {
+function setariProiect(s: SlicerBambu, placi: number) {
   const f = s.filamente;
+  const pePlaca = (v: number) => Array.from({ length: placi }, () => nr(v));
   return {
     name: "project_settings",
     from: "project",
@@ -129,6 +136,9 @@ function setariProiect(s: SlicerBambu) {
     filament_type: f.map((x) => x.tip),
     inherits_group: [s.proces, ...f.map((x) => x.preset), s.imprimanta],
     different_settings_to_system: ["", ...f.map(() => ""), ""],
+    // cate o pozitie pentru fiecare placa
+    wipe_tower_x: pePlaca(s.turn.x),
+    wipe_tower_y: pePlaca(s.turn.y),
   };
 }
 
@@ -216,7 +226,7 @@ export function proiectBambu(proiect: ProiectBambu): Uint8Array {
     `<?xml version="1.0" encoding="UTF-8"?>\n<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">\n <Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/>\n <Default Extension="model" ContentType="application/vnd.ms-package.3dmanufacturing-3dmodel+xml"/>\n <Default Extension="png" ContentType="image/png"/>\n <Default Extension="txt" ContentType="text/plain"/>\n</Types>\n`,
   );
   fisiere["Metadata/model_settings.config"] = strToU8(`<?xml version="1.0" encoding="UTF-8"?>\n<config>\n${setari.join("\n")}\n${placi.join("\n")}\n  <assemble>\n${asamblare.join("\n")}\n  </assemble>\n</config>\n`);
-  fisiere["Metadata/project_settings.config"] = strToU8(JSON.stringify(setariProiect(proiect.slicer), null, 4));
+  fisiere["Metadata/project_settings.config"] = strToU8(JSON.stringify(setariProiect(proiect.slicer, proiect.placi.length), null, 4));
   fisiere["Metadata/instructiuni.txt"] = strToU8(proiect.instructiuni);
   return zipSync(fisiere, { level: 6 });
 }

@@ -57,6 +57,7 @@ export const START = {
     titlu: { ro: "Crăciun", en: "Christmas" },
     carduri: [
       { generator: "glob-nume", icon: "✶", titlu: { ro: "Glob cu nume decupat", en: "Bauble with a cut-out name" }, text: { ro: "Numele traversează globul și se prinde de ramă; fulgi, steluțe sau brazi în jur; pachet pentru toată familia.", en: "The name crosses the bauble and holds on to the frame; snowflakes, stars or trees around it; a pack for the whole family." }, param: "Ø 60–120 MM" },
+      { generator: "turta-dulce", icon: "♥", titlu: { ro: "Turtă dulce glazurată", en: "Iced gingerbread" }, text: { ro: "Om de turtă dulce, brad, glob, stea, ren și altele: glazura, numele și decorul se fac singure.", en: "Gingerbread man, tree, bauble, star, reindeer and more: the icing, the name and the decoration make themselves." }, param: "BAZĂ + GLAZURĂ" },
       { generator: "ornament", icon: "❄", titlu: { ro: "Ornament de Crăciun", en: "Christmas ornament" }, text: { ro: "Disc cu nume sau glob 3D din două jumătăți; pachet pentru toată familia.", en: "A named disc or a 3D bauble in two halves; a pack for the whole family." }, param: "Ø 50–100 MM" },
     ],
   },

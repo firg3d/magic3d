@@ -1,5 +1,6 @@
 import { GLOB_NUME, SETARI_PRINT_GLOB_NUME } from "@/magic3d/apps/craciun/config";
-import { buildGlobNume, configureManifold, grilaPachet, listaNume, type Decor, type FormaGlob, type Legatura, type RolPiesa } from "@/magic3d/apps/craciun/globNume";
+import { buildGlobNume, configureManifold, type Decor, type FormaGlob, type Legatura, type RolPiesa } from "@/magic3d/apps/craciun/globNume";
+import { grilaPachet, listaNume } from "@/magic3d/apps/craciun/pachet";
 import { t } from "@/magic3d/core/i18n/index";
 import { bool, num, piese, str, type Constructor, type PiesaManifold } from "@/magic3d/generatoare/constructori/comun";
 

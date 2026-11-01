@@ -83,7 +83,7 @@ export const GLOB_NUME = {
 /** Fonturile oferite (toate OFL-1.1, cu diacritice romanesti complete; vezi public/magic3d/fonts/LICENTE.md). */
 export const FONTURI_CRACIUN = {
   script: ["GreatVibes-Regular.ttf", "Allura-Regular.ttf", "DancingScript-700.ttf", "Pacifico-Regular.ttf", "KaushanScript-Regular.ttf"],
-  rotunjite: ["Baloo2-700.ttf", "Nunito-800.ttf"],
+  rotunjite: ["Baloo2-800.ttf", "Baloo2-700.ttf", "Nunito-800.ttf"],
   bloc: ["BebasNeue-Regular.ttf", "Anton-Regular.ttf", "ArchivoBlack-Regular.ttf", "Oswald-700.ttf"],
 };
 
@@ -102,3 +102,73 @@ export function inSezonCraciun(data: Date): boolean {
   const pana = SEZON_CRACIUN.pana[0] * 100 + SEZON_CRACIUN.pana[1];
   return de <= pana ? z >= de && z <= pana : z >= de || z <= pana;
 }
+
+/**
+ * TURTA DULCE — ornament "glazurat" din sabloane desenate (turta/*.svg): biscuitul (baza) si
+ * glazura ca un cordon rotunjit deasupra, fiecare element de glazura o piesa separata.
+ * Valorile implicite vin din corecturile clientului: 75 mm pe latura mare, baza 3,5 mm cu muchia de
+ * sus rotunjita, cordon de 2 mm x 0,9 mm la 2,8 mm de margine, numele cu linii de minim 1,2 mm.
+ */
+export const TURTA = {
+  /** Latura cea mai mare a ornamentului (cu urechea), aceeasi pentru toate formele unui set. */
+  marimeMin: 50,
+  marimeMax: 120,
+  marime: 75,
+  grosimeBaza: 3.5,
+  grosimeBazaMin: 2.5,
+  grosimeBazaMax: 5,
+  /** Raza muchiei de sus a bazei (rotunjita in trepte, cate una pe pas de profil). */
+  rotunjireMuchie: 0.7,
+
+  // ---- cordonul de glazura ----
+  /** Distanta de la marginea bazei la marginea cordonului (constanta pe tot conturul). */
+  distantaCordon: 2.8,
+  distantaCordonMin: 1.5,
+  distantaCordonMax: 4,
+  latimeCordon: 2,
+  latimeCordonMin: 1.8,
+  latimeCordonMax: 2.2,
+  inaltimeCordon: 0.9,
+  inaltimeCordonMin: 0.8,
+  inaltimeCordonMax: 1,
+  /** Profilul rotunjit: cate trepte pe inaltime si cat ramane, cel putin, varful (latimea de sus). */
+  pasiProfil: 5,
+  varfMin: 0.6,
+  /** Liniile de decor din sablon (zigzag, zambet) si spatiul liber dintre doua elemente de glazura. */
+  latimeLinieDecor: 1.6,
+  distantaGlazura: 1,
+  /** Liniile de decor (valuri peste incheieturi) stau la cel putin atat de cordon, la ambele capete. */
+  distantaDecorCordon: 1.5,
+  /** Cat se rotunjesc, peste jumatate din latime, colturile concave ale liniei de mijloc a cordonului. */
+  racordCordon: 0.3,
+  /** Aria sub care o bucata de cordon (intr-un varf ingust) nu se mai pune, mm2. */
+  cordonMinArie: 80,
+  /** Racordarea urechii cu conturul (raza). */
+  racordUreche: 1.5,
+
+  // ---- numele, doar in name-zone ----
+  /** Inaltimea literelor mari: limitele (aceleasi pentru tot setul); sub minim, intai doua randuri. */
+  numeMin: 4.5,
+  numeMax: 8,
+  /** Spatiul dintre doua randuri, ca fractiune din inaltimea literelor. */
+  spatiuRanduri: 0.35,
+  /** Pana unde coboara numele (cu avertizare) cand nu incape nici pe doua randuri la minim; ramane in zona. */
+  numeMinAbsolut: 1,
+  /** Ingrosarea conturului literelor (pe fiecare parte) si linia minima a numelui. */
+  ingrosareText: 0.25,
+  linieMin: 1.2,
+  pierdereLinieMax: 0.03,
+
+  colt: 0.05,
+};
+
+export const CULORI_TURTA = { baza: "#ae835b", glazura: "#ffffff", detalii: "#c8282e", ochi: "#38261f", obraji: "#efa17f" };
+
+/** Setarile de print ale obiectului (masurate pe referinte: strat 0,2, grid 15%, 2 pereti, 5 sus / 3 jos). */
+export const SETARI_PRINT_TURTA = { layer_height: "0.2", wall_loops: "2", top_shell_layers: "5", bottom_shell_layers: "3", sparse_infill_pattern: "grid", sparse_infill_density: "15%" };
+
+/** Formele, in ordinea din panou (cate un sablon in turta/*.svg); celelalte se adauga pe masura ce sunt desenate. */
+export const FORME_TURTA = ["om", "glob", "brad", "stea", "ren", "ciorap", "ursulet", "sac", "inima", "clopotel"] as const;
+
+/** Nivelurile de decor: fiecare sablon are elementele desenate pe niveluri cumulative. */
+export const NIVELURI_TURTA = ["simplu", "mediu", "bogat"] as const;

@@ -11,7 +11,7 @@ import type { SlicerBambu } from "@/magic3d/core/assets/bambu3mf";
 
 export type MaterialBambu = "PLA" | "PETG";
 
-type Imprimanta = { model: string; varianta: string; duza: number; imprimanta: string; proces: string; filamente: Record<MaterialBambu, { preset: string; id: string }> };
+type Imprimanta = { model: string; varianta: string; duza: number; imprimanta: string; proces: string; turn: { x: number; y: number }; filamente: Record<MaterialBambu, { preset: string; id: string }> };
 
 const A1_MINI: Imprimanta = {
   model: "Bambu Lab A1 mini",
@@ -19,6 +19,8 @@ const A1_MINI: Imprimanta = {
   duza: 0.4,
   imprimanta: "Bambu Lab A1 mini 0.4 nozzle",
   proces: "0.20mm Standard @BBL A1M",
+  // turnul (35 mm lat, cu bordura de 3) in coltul din fata-dreapta, departe de piesele centrate
+  turn: { x: 135, y: 10 },
   filamente: {
     PLA: { preset: "Bambu PLA Basic @BBL A1M", id: "GFA00" },
     PETG: { preset: "Bambu PETG HF @BBL A1M", id: "GFG02" },
@@ -31,6 +33,7 @@ const A1: Imprimanta = {
   duza: 0.4,
   imprimanta: "Bambu Lab A1 0.4 nozzle",
   proces: "0.20mm Standard @BBL A1",
+  turn: { x: 211, y: 10 },
   filamente: {
     PLA: { preset: "Bambu PLA Basic @BBL A1", id: "GFA00" },
     PETG: { preset: "Bambu PETG HF @BBL A1", id: "GFG02" },
@@ -38,7 +41,7 @@ const A1: Imprimanta = {
 };
 
 const slicer = (imp: Imprimanta, filamente: ReadonlyArray<{ material: MaterialBambu; culoare: string }>): SlicerBambu => ({
-  model: imp.model, varianta: imp.varianta, duza: imp.duza, imprimanta: imp.imprimanta, proces: imp.proces,
+  model: imp.model, varianta: imp.varianta, duza: imp.duza, imprimanta: imp.imprimanta, proces: imp.proces, turn: imp.turn,
   filamente: filamente.map(({ material, culoare }) => ({ ...imp.filamente[material], culoare, tip: material })),
 });
 
