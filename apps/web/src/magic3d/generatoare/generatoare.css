@@ -188,3 +188,27 @@
   aspect-ratio: 1;
   object-fit: contain;
 }
+
+.gen-iesire {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.gen-iesire .gen-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gen-instructiuni {
+  margin: 0;
+  padding: 10px;
+  border: 1px solid var(--border, #d6dedb);
+  border-radius: 10px;
+  font: inherit;
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}

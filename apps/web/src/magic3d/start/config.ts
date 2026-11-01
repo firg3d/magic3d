@@ -43,6 +43,14 @@ export const START = {
     { forma: "hinge", icon: "⟂", titlu: { ro: "Balama print-in-place", en: "Print-in-place hinge" }, text: { ro: "Se printează gata asamblată.", en: "Prints already assembled." } },
   ],
 
+  /** Generatoarele "Personalizate" (produse cu nume, gata de dat cadou): fiecare card deschide editorul pe generatorul lui. */
+  personalizate: {
+    titlu: { ro: "Personalizate", en: "Personalised" },
+    carduri: [
+      { generator: "ornament", icon: "❄", titlu: { ro: "Ornament de Crăciun", en: "Christmas ornament" }, text: { ro: "Disc cu nume sau glob 3D din două jumătăți; pachet pentru toată familia.", en: "A named disc or a 3D bauble in two halves; a pack for the whole family." } },
+    ],
+  },
+
   /** Numarul WhatsApp al atelierului pentru "Cere ofertă" de pe pagina de start (acelasi ca in oferta/config.json). */
   whatsapp: "40744330466",
   mesajWhatsApp: { ro: "Bună ziua! Aș dori o ofertă de print 3D.", en: "Hello! I would like a 3D printing quote." },

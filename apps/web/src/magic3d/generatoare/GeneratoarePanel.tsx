@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, TriangleAlert, X } from "lucide-react";
+import { ArrowLeft, Download, Printer, TriangleAlert, X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { MovableToolPanel } from "@/components/workplane/MovableToolPanel";
 import { getLanguage } from "@/lib/i18n";
@@ -13,27 +13,41 @@ import type { GeneratorDef, Magic3dGenerat, ParamDef, Parametri, RezultatGenerar
 import { tg } from "@/magic3d/generatoare/texte";
 import { Biblioteca, type Colectie } from "@/magic3d/generatoare/Biblioteca";
 import { DESCHIDE_LOGO } from "@/magic3d/logo/asset";
+import { deschideOferta } from "@/magic3d/oferta/OfertaButton";
+import { deschideTermo } from "@/magic3d/termo/preset";
+import { arhivaGenerat, contextGenerat, numeFisier, proiectGenerat } from "@/magic3d/generatoare/export";
 import { tl } from "@/magic3d/logo/texte";
 
 /** Ce face editorul cu o constructie: o pune pe placa (tinta null) sau inlocuieste pachetul `tinta`. Intoarce id-ul pachetului. */
 export type AplicaGenerare = (rezultat: RezultatGenerare, def: GeneratorDef, meta: Magic3dGenerat, tinta: string | null) => string;
 
 const valoare = <T,>(v: T | ((p: Parametri) => T), p: Parametri): T => (typeof v === "function" ? (v as (p: Parametri) => T)(p) : v);
+
+function descarca(bytes: Uint8Array, nume: string, tip: string) {
+  const url = URL.createObjectURL(new Blob([bytes as BlobPart], { type: tip }));
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = nume;
+  a.click();
+  window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
 const ASTEPTARE_MS = 350;
 
 /**
  * Panoul generatoarelor Magic3D. Fara selectie: lista generatoarelor, apoi parametrii si "Adauga pe
  * placa". Cu un pachet generat selectat: parametrii lui, iar fiecare schimbare il reconstruieste pe loc.
  */
-export function GeneratoarePanel({ onClose, editat, aplica }: {
+export function GeneratoarePanel({ onClose, editat, initial, aplica }: {
   onClose: () => void;
   /** Pachetul generat selectat la deschidere, de editat. */
   editat: { id: string; meta: Magic3dGenerat } | null;
+  /** Generatorul pe care se deschide panoul, cand nu se editeaza nimic (cardurile de pe pagina de start). */
+  initial?: string;
   aplica: AplicaGenerare;
 }) {
   useLanguage();
   foloseste(getLanguage() === "ro" ? "ro" : "en");
-  const [def, setDef] = useState<GeneratorDef | null>(() => (editat ? generatorDupaId(editat.meta.generator) ?? null : null));
+  const [def, setDef] = useState<GeneratorDef | null>(() => (editat ? generatorDupaId(editat.meta.generator) ?? null : initial ? generatorDupaId(initial) ?? null : null));
   const [parametri, setParametri] = useState<Parametri>(() => (def ? parametriCompleti(def, editat?.meta.parametri) : {}));
   const [tinta, setTinta] = useState<string | null>(editat?.id ?? null);
   const [lucreaza, setLucreaza] = useState(false);
@@ -177,10 +191,32 @@ export function GeneratoarePanel({ onClose, editat, aplica }: {
             <>
               <p>{tg("alege")}</p>
               <div className="gen-lista">
-                {GENERATOARE.map((g) => (
+                {GENERATOARE.filter((g) => !g.categorie).map((g) => (
                   <button key={g.id} type="button" className="gen-card" onClick={() => alege(g)}>{tm(g.titlu)}</button>
                 ))}
               </div>
+              <section className="gen-sectiune" data-testid="gen-personalizate">
+                <h3>{tg("personalizate")}</h3>
+                <div className="gen-lista">
+                  {GENERATOARE.filter((g) => g.categorie === "personalizate").map((g) => (
+                    <button key={g.id} type="button" className="gen-card" data-testid={`gen-${g.id}`} onClick={() => alege(g)}>{tm(g.titlu)}</button>
+                  ))}
+                  <button type="button" className="gen-card" data-testid="gen-glob-plasa" onClick={() => { onClose(); deschideTermo({ forma: "cerc", mod: "cutie", latime: 80 }); }}>
+                    {tg("globPlasa")}
+                  </button>
+                </div>
+              </section>
+              <section className="gen-sectiune" data-testid="gen-matrite">
+                <h3>{tg("matrite")}</h3>
+                <div className="gen-lista">
+                  {GENERATOARE.filter((g) => g.categorie === "matrite").map((g) => (
+                    <button key={g.id} type="button" className="gen-card" data-testid={`gen-${g.id}`} onClick={() => alege(g)}>{tm(g.titlu)}</button>
+                  ))}
+                  <button type="button" className="gen-card" data-testid="gen-termoformare" onClick={() => { onClose(); deschideTermo({}); }}>
+                    {tg("termoformare")}
+                  </button>
+                </div>
+              </section>
               <section className="gen-sectiune">
                 <h3>{tl("titlu")}</h3>
                 <div className="gen-lista">
@@ -226,6 +262,25 @@ export function GeneratoarePanel({ onClose, editat, aplica }: {
               ) : (
                 <p className="gen-nota">{lucreaza ? tg("lucreaza") : tg("viu", { ms: rezultat?.ms ?? 0 })}</p>
               )}
+              {tinta && rezultat && !lucreaza ? (
+                <div className="gen-iesire" data-testid="gen-iesire">
+                  <button type="button" className="gen-card" data-testid="gen-3mf" onClick={() => descarca(proiectGenerat(rezultat.piese, def, parametri), `${numeFisier(tm(def.titlu))}.3mf`, "model/3mf")}>
+                    <Download size={15} aria-hidden /> {tg("descarca3mf")}
+                  </button>
+                  <button type="button" className="gen-card" data-testid="gen-stl" onClick={() => descarca(arhivaGenerat(rezultat.piese, def, parametri), `${numeFisier(tm(def.titlu))}-stl.zip`, "application/zip")}>
+                    <Download size={15} aria-hidden /> {tg("descarcaStl")}
+                  </button>
+                  <button type="button" className="gen-card" data-testid="gen-printeaza" onClick={() => deschideOferta(contextGenerat(rezultat.piese, def, parametri))}>
+                    <Printer size={15} aria-hidden /> {tg("printeaza")}
+                  </button>
+                </div>
+              ) : null}
+              {def.instructiuni ? (
+                <section className="gen-sectiune">
+                  <h3>{tg("instructiuni")}</h3>
+                  <pre className="gen-instructiuni" data-testid="gen-instructiuni">{def.instructiuni(parametri)}</pre>
+                </section>
+              ) : null}
             </>
           )}
         </div>

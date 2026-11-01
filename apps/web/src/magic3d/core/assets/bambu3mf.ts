@@ -5,8 +5,14 @@ import { strToU8, zipSync } from "fflate";
  * print (Metadata/model_settings.config) si extruderul / filamentul ei. Un program care nu stie
  * extensiile Bambu vede doar geometria (obiectele din 3D/Objects, referite ca componente).
  *
+ * Un obiect poate avea mai multe parti (un ornament: baza, textul, rama), fiecare cu extruderul ei:
+ * se printeaza impreuna, in culori diferite. Folosit de termoformare si de generatoare.
+ *
  * Triunghiurile vin neindexate, Z in sus, mm; varfurile identice se unesc aici.
  */
+
+/** O parte a unui obiect, in coordonatele comune ale obiectului. */
+export type ParteBambu = { nume: string; positions: Float32Array; extruder: number };
 
 export type ObiectBambu = {
   nume: string;
@@ -14,6 +20,10 @@ export type ObiectBambu = {
   positions: Float32Array;
   extruder: number;
   setari: Record<string, string>;
+  /** Cand exista, obiectul e facut din aceste parti (iar positions si extruder nu se mai folosesc). */
+  parti?: ParteBambu[];
+  /** Centrul obiectului fata de centrul placii (mm), cand obiectele placii sunt deja asezate; altfel stau in rand pe X. */
+  pozitie?: [number, number];
 };
 
 export type PlacaBambu = { nume: string; obiecte: ObiectBambu[] };
@@ -88,41 +98,49 @@ export function proiectBambu(proiect: ProiectBambu): Uint8Array {
     const centru = [col * pas + proiect.pat / 2, -rand * pas + proiect.pat / 2];
     const instante: string[] = [];
     // Mai multe obiecte pe o placa stau unul langa altul pe X, centrate impreuna.
-    const indexate = placa.obiecte.map((o) => ({ o, m: indexeaza(o.positions) }));
-    const latimi = indexate.map(({ m }) => m.max[0] - m.min[0]);
+    const indexate = placa.obiecte.map((o) => {
+      const parti = (o.parti ?? [{ nume: o.nume, positions: o.positions, extruder: o.extruder }]).map((p) => ({ p, m: indexeaza(p.positions) }));
+      const min = [0, 1, 2].map((a) => Math.min(...parti.map(({ m }) => m.min[a])));
+      const max = [0, 1, 2].map((a) => Math.max(...parti.map(({ m }) => m.max[a])));
+      return { o, parti, min, max };
+    });
+    const latimi = indexate.map(({ min, max }) => max[0] - min[0]);
     const total = latimi.reduce((s, l) => s + l, 0) + 5 * Math.max(0, latimi.length - 1);
     let x = centru[0] - total / 2;
-    indexate.forEach(({ o, m }, iObiect) => {
+    indexate.forEach(({ o, parti, min, max }, iObiect) => {
       fisier += 1;
-      const idMesh = urmatorId++;
-      const idObiect = urmatorId++;
       const cale = `3D/Objects/object_${fisier}.model`;
-      // Mesh-ul centrat in X/Y, cu baza la z = 0; asezarea pe placa o face transformarea itemului.
-      const cx = (m.min[0] + m.max[0]) / 2;
-      const cy = (m.min[1] + m.max[1]) / 2;
-      const varfuri: string[] = [];
-      for (let i = 0; i < m.varfuri.length; i += 3) varfuri.push(`<vertex x="${nr(m.varfuri[i] - cx)}" y="${nr(m.varfuri[i + 1] - cy)}" z="${nr(m.varfuri[i + 2] - m.min[2])}"/>`);
-      const triunghiuri: string[] = [];
-      for (let i = 0; i < m.fete.length; i += 3) triunghiuri.push(`<triangle v1="${m.fete[i]}" v2="${m.fete[i + 1]}" v3="${m.fete[i + 2]}"/>`);
+      // Partile centrate impreuna in X/Y, cu baza obiectului la z = 0; asezarea pe placa o face transformarea itemului.
+      const cx = (min[0] + max[0]) / 2;
+      const cy = (min[1] + max[1]) / 2;
+      const meshuri = parti.map(({ p, m }) => {
+        const idMesh = urmatorId++;
+        const varfuri: string[] = [];
+        for (let i = 0; i < m.varfuri.length; i += 3) varfuri.push(`<vertex x="${nr(m.varfuri[i] - cx)}" y="${nr(m.varfuri[i + 1] - cy)}" z="${nr(m.varfuri[i + 2] - min[2])}"/>`);
+        const triunghiuri: string[] = [];
+        for (let i = 0; i < m.fete.length; i += 3) triunghiuri.push(`<triangle v1="${m.fete[i]}" v2="${m.fete[i + 1]}" v3="${m.fete[i + 2]}"/>`);
+        const xmlMesh = `  <object id="${idMesh}" p:UUID="${uuid(idMesh, 1)}" type="model">\n   <mesh>\n    <vertices>\n` + varfuri.join("\n") + `\n    </vertices>\n    <triangles>\n` + triunghiuri.join("\n") + `\n    </triangles>\n   </mesh>\n  </object>`;
+        return { p, idMesh, xmlMesh, fete: m.fete.length / 3 };
+      });
+      const idObiect = urmatorId++;
       fisiere[cale] = strToU8(
         `<?xml version="1.0" encoding="UTF-8"?>\n<model unit="millimeter" xml:lang="en-US" xmlns="${CORE}" xmlns:BambuStudio="${BAMBU}" xmlns:p="${PRODUCTIE}" requiredextensions="p">\n` +
-          ` <metadata name="BambuStudio:3mfVersion">1</metadata>\n <resources>\n  <object id="${idMesh}" p:UUID="${uuid(idMesh, 1)}" type="model">\n   <mesh>\n    <vertices>\n` +
-          varfuri.join("\n") + `\n    </vertices>\n    <triangles>\n` + triunghiuri.join("\n") + `\n    </triangles>\n   </mesh>\n  </object>\n </resources>\n <build/>\n</model>\n`,
+          ` <metadata name="BambuStudio:3mfVersion">1</metadata>\n <resources>\n` + meshuri.map((x) => x.xmlMesh).join("\n") + `\n </resources>\n <build/>\n</model>\n`,
       );
       relatii.push(` <Relationship Target="/${cale}" Id="rel-${fisier}" Type="${REL_MODEL}"/>`);
-      obiecteModel.push(
-        `  <object id="${idObiect}" p:UUID="${uuid(idObiect, 2)}" type="model">\n   <components>\n    <component p:path="/${cale}" objectid="${idMesh}" p:UUID="${uuid(idMesh, 3)}" transform="1 0 0 0 1 0 0 0 1 0 0 0"/>\n   </components>\n  </object>`,
-      );
-      const tx = x + latimi[iObiect] / 2;
+      const componente = meshuri.map((x) => `    <component p:path="/${cale}" objectid="${x.idMesh}" p:UUID="${uuid(x.idMesh, 3)}" transform="1 0 0 0 1 0 0 0 1 0 0 0"/>`);
+      obiecteModel.push(`  <object id="${idObiect}" p:UUID="${uuid(idObiect, 2)}" type="model">\n   <components>\n${componente.join("\n")}\n   </components>\n  </object>`);
+      const tx = o.pozitie ? centru[0] + o.pozitie[0] : x + latimi[iObiect] / 2;
+      const ty = o.pozitie ? centru[1] + o.pozitie[1] : centru[1];
       x += latimi[iObiect] + 5;
-      const transformare = `1 0 0 0 1 0 0 0 1 ${nr(tx)} ${nr(centru[1])} 0`;
+      const transformare = `1 0 0 0 1 0 0 0 1 ${nr(tx)} ${nr(ty)} 0`;
       itemi.push(`  <item objectid="${idObiect}" p:UUID="${uuid(idObiect, 4)}" transform="${transformare}" printable="1"/>`);
-      const chei = Object.entries({ extruder: String(o.extruder), ...o.setari }).map(([k, v]) => `    <metadata key="${xml(k)}" value="${xml(v)}"/>`);
-      setari.push(
-        `  <object id="${idObiect}">\n    <metadata key="name" value="${xml(o.nume)}"/>\n${chei.join("\n")}\n    <part id="${idMesh}" subtype="normal_part">\n` +
-          `      <metadata key="name" value="${xml(o.nume)}"/>\n      <metadata key="matrix" value="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"/>\n` +
-          `      <mesh_stat face_count="${m.fete.length / 3}" edges_fixed="0" degenerate_facets="0" facets_removed="0" facets_reversed="0" backwards_edges="0"/>\n    </part>\n  </object>`,
-      );
+      const chei = Object.entries({ extruder: String(meshuri[0].p.extruder), ...o.setari }).map(([k, v]) => `    <metadata key="${xml(k)}" value="${xml(v)}"/>`);
+      const parteXml = meshuri.map((x) =>
+        `    <part id="${x.idMesh}" subtype="normal_part">\n      <metadata key="name" value="${xml(x.p.nume)}"/>\n      <metadata key="matrix" value="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"/>\n` +
+          `      <metadata key="extruder" value="${x.p.extruder}"/>\n` +
+          `      <mesh_stat face_count="${x.fete}" edges_fixed="0" degenerate_facets="0" facets_removed="0" facets_reversed="0" backwards_edges="0"/>\n    </part>`);
+      setari.push(`  <object id="${idObiect}">\n    <metadata key="name" value="${xml(o.nume)}"/>\n${chei.join("\n")}\n${parteXml.join("\n")}\n  </object>`);
       instante.push(`    <model_instance>\n      <metadata key="object_id" value="${idObiect}"/>\n      <metadata key="instance_id" value="0"/>\n      <metadata key="identify_id" value="${100 + idObiect}"/>\n    </model_instance>`);
       asamblare.push(`   <assemble_item object_id="${idObiect}" instance_id="0" transform="${transformare}" offset="0 0 0"/>`);
     });

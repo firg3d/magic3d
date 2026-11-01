@@ -27,6 +27,10 @@ export type ParamDef =
 
 export type GeneratorDef = {
   id: string;
+  /** Sectiunea din panou si din biblioteca: fara = generatoarele de litere si nume. */
+  categorie?: "personalizate" | "matrite";
+  /** Instructiunile de print si asamblare, in panou si in 3MF (din core/i18n). */
+  instructiuni?: (p: Parametri) => string;
   /** Cheia numelui in core/i18n (comutator.<id>). */
   titlu: string;
   /** Versiunea parametrilor: urca la o schimbare care face vechile valori sa insemne altceva. */
@@ -35,8 +39,15 @@ export type GeneratorDef = {
   parametri: ParamDef[];
 };
 
+/**
+ * Cum ajunge o piesa in 3MF: pe ce placa (piesele cu aceeasi placa se printeaza impreuna), din ce
+ * obiect face parte (piesele aceluiasi obiect sunt parti ale lui, in culori diferite, ca la un
+ * print multicolor) si setarile de print ale obiectului. Fara ele: o placa, un obiect.
+ */
+export type PrintPiesa = { placa?: number; obiect?: string; setari?: Record<string, string> };
+
 /** O piesa construita: triunghiuri in coordonatele scenei (Y in sus, mm), neindexate. */
-export type PiesaGenerata = { nume: string; culoare: string; positions: Float32Array };
+export type PiesaGenerata = { nume: string; culoare: string; positions: Float32Array; print?: PrintPiesa };
 
 export type RezultatGenerare = {
   piese: PiesaGenerata[];

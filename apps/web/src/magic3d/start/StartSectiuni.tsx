@@ -7,7 +7,7 @@ import { t } from "@/lib/i18n";
 import { LANGUAGE_INFO } from "@/lib/languages";
 import { libraryShapeAssets } from "@/lib/shapeCatalog";
 import { useLanguage } from "@/lib/useLanguage";
-import { DESCHIDE_GENERATOARE } from "@/magic3d/generatoare/GeneratoareButton";
+import { DESCHIDE_GENERATOARE, deschideGenerator } from "@/magic3d/generatoare/GeneratoareButton";
 import { START, tx } from "@/magic3d/start/config";
 import { noteazaFormaInitiala } from "@/magic3d/start/formaInitiala";
 import { tst } from "@/magic3d/start/texte";
@@ -169,6 +169,26 @@ export function StartGeneratoare({ onCreate }: { onCreate: () => void }) {
             </span>
             <strong>{tx(generator.titlu, limba)}</strong>
             <span>{tx(generator.text, limba)}</span>
+          </button>
+        ))}
+      </div>
+      <h3 className="m3d-subtitlu">{tx(START.personalizate.titlu, limba)}</h3>
+      <div className="m3d-grila-generatoare">
+        {START.personalizate.carduri.map((card) => (
+          <button
+            key={card.generator}
+            type="button"
+            className="m3d-card-generator"
+            data-testid={`start-personalizat-${card.generator}`}
+            onClick={() => {
+              // Designul nou se deschide, apoi panoul generatoarelor direct pe generatorul cardului.
+              onCreate();
+              window.setTimeout(() => deschideGenerator(card.generator), 1200);
+            }}
+          >
+            <span className="m3d-card-generator-icon">{card.icon}</span>
+            <strong>{tx(card.titlu, limba)}</strong>
+            <span>{tx(card.text, limba)}</span>
           </button>
         ))}
       </div>

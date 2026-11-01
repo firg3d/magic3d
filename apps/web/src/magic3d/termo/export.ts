@@ -1,7 +1,7 @@
 import { zipSync } from "fflate";
 import type { PiesaGenerata } from "@/magic3d/generatoare/tipuri";
 import type { ContextOferta } from "@/magic3d/oferta/OfertaPanel";
-import { proiectBambu, type PlacaBambu, type ProiectBambu } from "@/magic3d/termo/bambu3mf";
+import { proiectBambu, type PlacaBambu, type ProiectBambu } from "@/magic3d/core/assets/bambu3mf";
 import { EXTRUDER, FORMARE, jocMatrite, SETARI_PRINT, TERMO, type SetariTermo } from "@/magic3d/termo/config";
 import type { CheiePiesa, InfoTermo, PieseTermo } from "@/magic3d/termo/geometrie";
 import { tt, type CheieTermo } from "@/magic3d/termo/texte";

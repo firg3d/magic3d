@@ -11,6 +11,7 @@ import { led } from "@/magic3d/generatoare/constructori/led";
 import { litere } from "@/magic3d/generatoare/constructori/litere";
 import { numeLed } from "@/magic3d/generatoare/constructori/nume-led";
 import { nume } from "@/magic3d/generatoare/constructori/nume";
+import { ornament } from "@/magic3d/generatoare/constructori/ornament";
 import { rame } from "@/magic3d/generatoare/constructori/rame";
 import { placute } from "@/magic3d/generatoare/constructori/placute";
 import type { Parametri, PiesaGenerata } from "@/magic3d/generatoare/tipuri";
@@ -36,6 +37,7 @@ const CONSTRUCTORI: Record<string, Constructor> = {
   "nume-led": numeLed,
   placute,
   rame,
+  ornament,
 };
 
 const fonturi = new Map<string, Promise<unknown>>();
@@ -129,5 +131,6 @@ export function triunghiuri(lista: PiesaManifold[]): PiesaGenerata[] {
     nume: piesa.nume,
     culoare: piesa.culoare,
     positions: manifoldInTriunghiuri(piesa.manifold as Parameters<typeof manifoldInTriunghiuri>[0]),
+    ...(piesa.print ? { print: piesa.print } : {}),
   }));
 }

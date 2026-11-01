@@ -40,7 +40,7 @@ import { meshBounds } from "@/lib/exportUnion";
 import { DESCHIDE_OFERTA } from "@/magic3d/oferta/OfertaButton";
 import { muchiiDeschise, peretiSubtiri } from "@/magic3d/oferta/oferta";
 import { OfertaPanel, type ContextOferta, type PachetOferta } from "@/magic3d/oferta/OfertaPanel";
-import { DESCHIDE_GENERATOARE } from "@/magic3d/generatoare/GeneratoareButton";
+import { DESCHIDE_GENERATOARE, type CerereGeneratoare } from "@/magic3d/generatoare/GeneratoareButton";
 import { GeneratoarePanel, type AplicaGenerare } from "@/magic3d/generatoare/GeneratoarePanel";
 import { pachetGenerat } from "@/magic3d/generatoare/forma";
 import { IMPORTA_MODEL, type CerereImport } from "@/magic3d/generatoare/Biblioteca";
@@ -2868,7 +2868,7 @@ export function LayerlingEditor({
   // Magic3D: "Printeaza in Romania - cere oferta", deschis din butonul din bara de titlu.
   const [ofertaOpen, setOfertaOpen] = useState<ContextOferta | null>(null);
   // Magic3D: the generators panel, with the generated bundle that was selected when it opened (to edit it).
-  const [generatoare, setGeneratoare] = useState<{ editat: { id: string; meta: NonNullable<WorkplaneShape["magic3d"]> } | null } | null>(null);
+  const [generatoare, setGeneratoare] = useState<{ editat: { id: string; meta: NonNullable<WorkplaneShape["magic3d"]> } | null; initial?: string } | null>(null);
   useEffect(() => {
     const open = (event: Event) => setOfertaOpen((event as CustomEvent<ContextOferta | undefined>).detail ?? {});
     window.addEventListener(DESCHIDE_OFERTA, open);
@@ -10024,7 +10024,13 @@ export function LayerlingEditor({
    * on the list. Each build puts a new bundle on the plate or replaces the one being edited, where it stands.
    */
   useEffect(() => {
-    const open = () => {
+    const open = (event: Event) => {
+      // Cerut pe un anume generator (de pe pagina de start): panoul se deschide pe el, fara pachetul selectat.
+      const initial = (event as CustomEvent<CerereGeneratoare | undefined>).detail?.generator;
+      if (initial) {
+        setGeneratoare({ editat: null, initial });
+        return;
+      }
       const ids = selectedIdsRef.current;
       const shape = ids.length === 1 ? shapesRef.current.find((entry) => entry.id === ids[0]) : undefined;
       setGeneratoare({ editat: shape?.magic3d && !shape.locked ? { id: shape.id, meta: shape.magic3d } : null });
@@ -15447,7 +15453,7 @@ export function LayerlingEditor({
         <QrCodePanel onClose={() => setQrCodePanelOpen(false)} onCreate={createQrCode} />
       ) : null}
       {ofertaOpen ? <OfertaPanel onClose={() => setOfertaOpen(null)} pregateste={pregatesteOferta} context={ofertaOpen} /> : null}
-      {generatoare ? <GeneratoarePanel editat={generatoare.editat} aplica={aplicaGenerare} onClose={() => setGeneratoare(null)} /> : null}
+      {generatoare ? <GeneratoarePanel editat={generatoare.editat} initial={generatoare.initial} aplica={aplicaGenerare} onClose={() => setGeneratoare(null)} /> : null}
       {topPanel ? (
         <TopActionPanel
           panel={topPanel}

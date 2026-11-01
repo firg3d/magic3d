@@ -3,7 +3,7 @@ import path from "node:path";
 import type { ManifoldToplevel } from "manifold-3d";
 import { it } from "vitest";
 import { inArena } from "@/magic3d/core/geometry/arena";
-import { proiectBambu } from "@/magic3d/termo/bambu3mf";
+import { proiectBambu } from "@/magic3d/core/assets/bambu3mf";
 import { SETARI_IMPLICITE } from "@/magic3d/termo/config";
 import { arhivaStl, instructiuni, piesePrint, proiectTermo } from "@/magic3d/termo/export";
 import { formaExemplu, type FormaExemplu } from "@/magic3d/termo/forme";

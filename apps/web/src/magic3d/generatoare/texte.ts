@@ -19,6 +19,14 @@ const RO = {
   tematici: "Tematici",
   baze: "Baze",
   licentaModele: "Modelele sunt ale Magic3D, sub licența",
+  personalizate: "Personalizate",
+  matrite: "Matrițe",
+  globPlasa: "Glob din plasă (termoformare)",
+  termoformare: "Termoformare din poză",
+  descarca3mf: "Descarcă 3MF (Bambu / Orca)",
+  descarcaStl: "Descarcă STL-urile",
+  printeaza: "Printează la noi",
+  instructiuni: "Instrucțiuni",
 } as const;
 
 export type CheieGen = keyof typeof RO;
@@ -40,6 +48,14 @@ const EN: Record<CheieGen, string> = {
   tematici: "Themes",
   baze: "Bases",
   licentaModele: "The models belong to Magic3D, licensed",
+  personalizate: "Personalised",
+  matrite: "Molds",
+  globPlasa: "Mesh bauble (thermoforming)",
+  termoformare: "Thermoforming from a picture",
+  descarca3mf: "Download 3MF (Bambu / Orca)",
+  descarcaStl: "Download the STLs",
+  printeaza: "Print it with us",
+  instructiuni: "Instructions",
 };
 
 export function tg(cheie: CheieGen, valori: Record<string, string | number> = {}): string {

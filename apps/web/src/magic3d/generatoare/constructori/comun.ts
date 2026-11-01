@@ -1,9 +1,9 @@
 import type { CorpModel } from "@/magic3d/core/assets/threemf";
-import type { Parametri } from "@/magic3d/generatoare/tipuri";
+import type { Parametri, PrintPiesa } from "@/magic3d/generatoare/tipuri";
 
 /* Ce au in comun constructorii generatoarelor (partea de worker). */
 
-export type PiesaManifold = { nume: string; culoare: string; manifold: unknown };
+export type PiesaManifold = { nume: string; culoare: string; manifold: unknown; print?: PrintPiesa };
 export type Construit = {
   piese: PiesaManifold[];
   avertizari: string[];

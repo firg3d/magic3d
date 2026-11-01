@@ -14,6 +14,7 @@ import { ReliefSectiune, type CreeazaRelief } from "@/magic3d/logo/ReliefSectiun
 import { caleSvg } from "@/magic3d/logo/profil";
 import { OPTIUNI_IMPLICITE, type OptiuniTrasare, type TrasareLogo } from "@/magic3d/logo/trasare";
 import { tl, type CheieLogo } from "@/magic3d/logo/texte";
+import { DESCHIDE_TERMO, existaPresetTermo } from "@/magic3d/termo/preset";
 import { TermoSectiune, type CreeazaTermo } from "@/magic3d/termo/TermoSectiune";
 import { tt } from "@/magic3d/termo/texte";
 
@@ -32,7 +33,7 @@ const ACCEPTA = ".svg,.png,.jpg,.jpeg,image/svg+xml,image/png,image/jpeg";
 
 export function LogoPanel({ onClose, onCreate, onCreateRelief, onCreatePiesa, onCreateTermo }: { onClose: () => void; onCreate: CreeazaLogo; onCreateRelief: CreeazaRelief; onCreatePiesa: CreeazaPiesa; onCreateTermo: CreeazaTermo }) {
   useLanguage();
-  const [fila, setFila] = useState<"logo" | "relief" | "termo" | "masuratori">("logo");
+  const [fila, setFila] = useState<"logo" | "relief" | "termo" | "masuratori">(() => (existaPresetTermo() ? "termo" : "logo"));
   const inputRef = useRef<HTMLInputElement>(null);
   const [numeFisier, setNumeFisier] = useState("");
   const [sursa, setSursa] = useState<Sursa | null>(null);
@@ -44,6 +45,13 @@ export function LogoPanel({ onClose, onCreate, onCreateRelief, onCreatePiesa, on
   const [pus, setPus] = useState<{ id: string; nume: string; tip: TipIesire } | null>(null);
   const [eroare, setEroare] = useState("");
   const [trag, setTrag] = useState(false);
+
+  // Termoformarea ceruta din alt panou cand acesta era deja deschis.
+  useEffect(() => {
+    const laTermo = () => setFila("termo");
+    window.addEventListener(DESCHIDE_TERMO, laTermo);
+    return () => window.removeEventListener(DESCHIDE_TERMO, laTermo);
+  }, []);
 
   const alege = async (fisier: File) => {
     setEroare("");

@@ -1,11 +1,13 @@
+import { cerc as cercDecor, inima as inimaDecor, stea as steaDecor } from "@/magic3d/core/geometry/formeDecor";
+
 /*
  * Formele de exemplu ale termoformarii, desenate aici din formule: nicio imagine sau model al
  * altcuiva. Inele cu y in sus, in unitati oarecare (geometria scaleaza la latimea ceruta).
  */
 
 export type Inel = Array<[number, number]>;
-export type FormaExemplu = "hexagon" | "inima" | "nor" | "stea" | "frunza";
-export const FORME: FormaExemplu[] = ["hexagon", "inima", "nor", "stea", "frunza"];
+export type FormaExemplu = "hexagon" | "inima" | "nor" | "stea" | "frunza" | "cerc";
+export const FORME: FormaExemplu[] = ["hexagon", "inima", "nor", "stea", "frunza", "cerc"];
 
 const PUNCTE = 180;
 const cerc = (n: number, f: (t: number) => [number, number]): Inel => Array.from({ length: n }, (_, i) => f((2 * Math.PI * i) / n));
@@ -29,8 +31,6 @@ function hexagon(): Inel {
   return inel;
 }
 
-const inima = (): Inel => cerc(PUNCTE, (t) => [16 * Math.sin(t) ** 3, 13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t)]);
-
 /** Norul: reuniunea a cinci cercuri, citita pe raze din centru (forma e "stelata" fata de el). */
 function nor(): Inel {
   const cercuri: Array<[number, number, number]> = [[-0.55, -0.1, 0.38], [-0.15, 0.2, 0.48], [0.35, 0.15, 0.42], [0.7, -0.12, 0.3], [0.05, -0.2, 0.36]];
@@ -49,16 +49,6 @@ function nor(): Inel {
   });
 }
 
-function stea(): Inel {
-  const inel: Inel = [];
-  for (let i = 0; i < 10; i += 1) {
-    const unghi = Math.PI / 2 + (Math.PI / 5) * i;
-    const raza = i % 2 === 0 ? 1 : 0.55;
-    inel.push([raza * Math.cos(unghi), raza * Math.sin(unghi)]);
-  }
-  return inel;
-}
-
 /** Frunza: varf ascutit intr-o parte, rotunda in cealalta, putin aplecata. */
 function frunza(): Inel {
   const aplecare = Math.PI / 7;
@@ -72,10 +62,11 @@ function frunza(): Inel {
 export function formaExemplu(forma: FormaExemplu): Inel[] {
   switch (forma) {
     case "hexagon": return [hexagon()];
-    case "inima": return [inima()];
+    case "inima": return inimaDecor();
     case "nor": return [nor()];
-    case "stea": return [stea()];
+    case "stea": return steaDecor();
     case "frunza": return [frunza()];
+    case "cerc": return cercDecor();
   }
 }
 

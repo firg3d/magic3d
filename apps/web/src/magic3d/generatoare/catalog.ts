@@ -9,6 +9,7 @@ import { LED } from "@/magic3d/generatoare/defs/led";
 import { LITERE } from "@/magic3d/generatoare/defs/litere";
 import { NUME_LED } from "@/magic3d/generatoare/defs/nume-led";
 import { NUME } from "@/magic3d/generatoare/defs/nume";
+import { ORNAMENT_DEF } from "@/magic3d/generatoare/defs/ornament";
 import { RAME } from "@/magic3d/generatoare/defs/rame";
 import { PLACUTE } from "@/magic3d/generatoare/defs/placute";
 
@@ -21,7 +22,7 @@ export { PLACUTE };
  * linie aici si in constructori.ts. Parametrii de tip "font" au cheia care incepe cu "font".
  */
 
-export const GENERATOARE: GeneratorDef[] = [LITERE, NUME, CUVINTE, PLACUTE, BRELOCURI, BRELOC_DECOR, RAME, ARTICULAT, FAGURE, CUTII, LED, NUME_LED];
+export const GENERATOARE: GeneratorDef[] = [LITERE, NUME, CUVINTE, PLACUTE, BRELOCURI, BRELOC_DECOR, RAME, ARTICULAT, FAGURE, CUTII, LED, NUME_LED, ORNAMENT_DEF];
 
 export const generatorDupaId = (id: string) => GENERATOARE.find((def) => def.id === id);
 

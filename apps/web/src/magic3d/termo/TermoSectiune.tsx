@@ -8,12 +8,13 @@ import type { Magic3dGenerat, PiesaGenerata } from "@/magic3d/generatoare/tipuri
 import { Camp } from "@/magic3d/logo/Camp";
 import { pixeliDinSvg } from "@/magic3d/logo/client";
 import { deschideOferta } from "@/magic3d/oferta/OfertaButton";
-import { proiectBambu } from "@/magic3d/termo/bambu3mf";
+import { proiectBambu } from "@/magic3d/core/assets/bambu3mf";
 import { construieste, silueta as cereSilueta } from "@/magic3d/termo/client";
 import { LIMITE, latimeMaxima, MATERIALE, SETARI_IMPLICITE, TERMO, type Material, type ModelPlasa, type SetariTermo } from "@/magic3d/termo/config";
 import { arhivaStl, contextOferta, instructiuni, pieseScena, proiectTermo, type PieseTermo } from "@/magic3d/termo/export";
 import { caleSvgInele, FORME, formaExemplu, type FormaExemplu } from "@/magic3d/termo/forme";
 import type { Inele, InfoTermo, VedereTermo } from "@/magic3d/termo/geometrie";
+import { DESCHIDE_TERMO, preiaPresetTermo } from "@/magic3d/termo/preset";
 import { ineleCuYSus, OPTIUNI_SILUETA, type OptiuniSilueta } from "@/magic3d/termo/silueta";
 import { tt, type CheieTermo } from "@/magic3d/termo/texte";
 import { Vizualizare3D } from "@/magic3d/termo/Vizualizare3D";
@@ -111,6 +112,25 @@ export function TermoSectiune({ onCreate }: { onCreate: CreeazaTermo }) {
     setNumeSursa(tt(`forma_${forma}` as CheieTermo));
     setSursa({ tip: "forma", forma });
   };
+
+  // O presetare venita din alt panou ("Glob din plasa"): forma, modul si latimea, apoi pasul marimii.
+  useEffect(() => {
+    const aplica = () => {
+      const p = preiaPresetTermo();
+      if (!p) return;
+      if (p.forma) alegeForma(p.forma);
+      setSetari((s) => {
+        const latime = p.latime ?? s.latime;
+        return { ...s, mod: p.mod ?? s.mod, latime, adancime: Math.round(latime * TERMO.adancimeDinLatime) };
+      });
+      setPas(2);
+    };
+    aplica();
+    window.addEventListener(DESCHIDE_TERMO, aplica);
+    return () => window.removeEventListener(DESCHIDE_TERMO, aplica);
+    // alegeForma nu are dependinte care sa se schimbe intre randari.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Silueta: formele proprii direct, imaginile in worker (cu o mica pauza cand se trage un cursor).
   useEffect(() => {

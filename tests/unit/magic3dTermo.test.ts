@@ -2,7 +2,7 @@ import { strFromU8, unzipSync } from "fflate";
 import type { CrossSection, Manifold, ManifoldToplevel } from "manifold-3d";
 import { beforeAll, describe, expect, it } from "vitest";
 import { inArena } from "@/magic3d/core/geometry/arena";
-import { proiectBambu } from "@/magic3d/termo/bambu3mf";
+import { proiectBambu } from "@/magic3d/core/assets/bambu3mf";
 import { jocMatrite, SETARI_IMPLICITE, TERMO, type SetariTermo } from "@/magic3d/termo/config";
 import { FORME, formaExemplu, type Inel } from "@/magic3d/termo/forme";
 import { clema, construiesteTermo, latimeIngusta, type CheiePiesa, type RezultatTermo } from "@/magic3d/termo/geometrie";
