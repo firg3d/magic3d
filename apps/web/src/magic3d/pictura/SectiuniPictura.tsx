@@ -61,7 +61,7 @@ export function SectiuneImprimanta(p: {
   );
 }
 
-export type TintaModel = "tot" | number;
+export type TintaModel = "tot" | "selectie" | number;
 
 export function SectiuneModele(p: {
   parametri: ParametriModel;
@@ -71,6 +71,8 @@ export function SectiuneModele(p: {
   presetari: PresetareModel[];
   modeleleMele: ModelulMeu[];
   tinta: TintaModel;
+  /** Cate triunghiuri sunt selectate: cu selectie, modelul se poate aplica doar pe ea. */
+  selectate: number;
   progres: number | null;
   onParametri: (p: ParametriModel) => void;
   onCulori: (c: string[]) => void;
@@ -165,8 +167,9 @@ export function SectiuneModele(p: {
       </ol>
       <label className="m3d-pictura-camp">
         <span>{t("pictura.aplicaPe")}</span>
-        <select value={String(p.tinta)} data-testid="pictura-model-tinta" onChange={(e) => p.onTinta(e.target.value === "tot" ? "tot" : Number(e.target.value))}>
+        <select value={String(p.tinta)} data-testid="pictura-model-tinta" onChange={(e) => p.onTinta(e.target.value === "tot" || e.target.value === "selectie" ? e.target.value : Number(e.target.value))}>
           <option value="tot">{t("pictura.totCorpul")}</option>
+          {p.selectate ? <option value="selectie">{t("pictura.doarPeSelectie", { n: p.selectate.toLocaleString() })}</option> : null}
           {p.sloturi.map((h, i) => <option key={i} value={i}>{t("pictura.doarPeSlot", { n: numeSlot(h, i) })}</option>)}
         </select>
       </label>

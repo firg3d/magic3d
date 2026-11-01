@@ -14,6 +14,8 @@ import { exportaPictura3mf } from "@/magic3d/pictura/pictura3mf";
 import { topologie, zonaGaleata } from "@/magic3d/pictura/topologie";
 import { calculeazaModel, cutieVarfuri } from "@/magic3d/pictura/modele";
 import { PRESETARI } from "@/magic3d/pictura/presetari";
+import { FARA, proiecteazaDecal, reduceImagine } from "@/magic3d/pictura/imagine";
+import { subdivizeaza, sudeazaVarfuri } from "@/magic3d/pictura/retusare";
 
 function corp(geom: THREE.BufferGeometry, nume: string, x: number): CorpPictat {
   geom.translate(x, 0, 0);
@@ -64,4 +66,25 @@ it("scrie fisierele de proba", () => {
   const niveluri = calculeazaModel(t.centre, t.normale, cutieVarfuri(sfera.varfuri), curcubeu.parametri)!;
   sfera.culori.set(niveluri);
   writeFileSync(path.join(out, "pictura-proba-curcubeu.3mf"), exportaPictura3mf([sfera], curcubeu.culori.map((culoare) => ({ culoare })), "Curcubeu", "bambu"));
+
+  // Etapa 3: un cub subdivizat la 0,6 mm, cu o imagine proprie (un cerc verde si un patrat rosu pe
+  // alb) proiectata pe fata din fata, exportat pentru PrusaSlicer.
+  const cubMare = corp(new THREE.BoxGeometry(30, 30, 30).translate(0, 15, 0), "Cub imagine", 0);
+  const sudat = sudeazaVarfuri(cubMare);
+  const fin = subdivizeaza(sudat, new Uint8Array(sudat.culori.length).fill(1), 0.6, 400_000);
+  const lat = 120, ina = 120;
+  const px = new Uint8ClampedArray(lat * ina * 4);
+  for (let y = 0; y < ina; y += 1) for (let x = 0; x < lat; x += 1) {
+    const i = (y * lat + x) * 4;
+    const cerc = (x - 42) ** 2 + (y - 60) ** 2 < 30 ** 2;
+    const patrat = x > 70 && x < 110 && y > 40 && y < 80;
+    px.set(cerc ? [31, 138, 91, 255] : patrat ? [200, 40, 46, 255] : [255, 255, 255, 255], i);
+  }
+  const redusa = reduceImagine(px, lat, ina, ["#1f8a5b", "#c8282e", "#f4f4f1"], 2, "#ffffff");
+  const topFin = topologie(fin);
+  const idx = proiecteazaDecal(topFin, redusa, { centru: [0, 15, 15], directie: [0, 0, -1], sus: [0, 1, 0], latime: 26, rotire: 0, mutare: [0, 0] });
+  const culoriImg = new Uint8Array(fin.culori.length);
+  idx.forEach((k, i) => { if (k !== FARA) culoriImg[i] = k + 1; });
+  const sloturiImg = [{ culoare: "#f4f4f1", nume: "Alb", material: "PLA" }, ...redusa.culori.map((culoare) => ({ culoare }))];
+  writeFileSync(path.join(out, "pictura-proba-imagine-prusa.3mf"), exportaPictura3mf([{ id: "img", nume: "Cub imagine", varfuri: fin.varfuri, fete: fin.fete, culori: culoriImg }], sloturiImg, "Imagine pe model", "prusa"));
 });

@@ -45,10 +45,11 @@ import { GeneratoarePanel, type AplicaGenerare } from "@/magic3d/generatoare/Gen
 import { pachetGenerat } from "@/magic3d/generatoare/forma";
 import { IMPORTA_MODEL, type CerereImport } from "@/magic3d/generatoare/Biblioteca";
 import { semnaleazaExport } from "@/magic3d/sustine/config";
-import { preiaFormaInitiala } from "@/magic3d/start/formaInitiala";
+import { preiaDeschidePictura, preiaFormaInitiala } from "@/magic3d/start/formaInitiala";
 import { t as tMagic3d } from "@/magic3d/core/i18n/index";
 import { ModPictura, type RezultatPictura } from "@/magic3d/pictura/ModPictura";
-import { plasaDin, reaplicaPictura, salveazaPictura, type CorpPictat } from "@/magic3d/pictura/date";
+import { aceeasiPlasa, amprentaPlasei, plasaDin, reaplicaPictura, salveazaPictura, type CorpPictat } from "@/magic3d/pictura/date";
+import { corpCuPlasaNoua } from "@/magic3d/pictura/plasaEditor";
 import { sloturiInitiale } from "@/magic3d/pictura/paleta";
 import { qrCodeOf, qrCodeShape, regeneratedQrCodeShape } from "@/lib/editorQrCode";
 import { DEFAULT_QR_WIDTH, MAX_QR_HEIGHT, MAX_QR_WIDTH, MIN_QR_HEIGHT, MIN_QR_WIDTH, QR_BYTE_CAPACITY, QR_ERROR_CORRECTIONS, QR_STYLES, normalizeQrSettings, qrByteLength, qrMatrix, qrModuleSize, qrModuleTooSmall, qrTextFits, type QrCodeSettings, type QrErrorCorrection, type QrStyle } from "@/lib/qrCode";
@@ -10094,12 +10095,17 @@ export function LayerlingEditor({
     const next = shapesRef.current.map((shape) => {
       const corp = dupaId.get(shape.id);
       if (!corp) return shape;
+      // Retusarea (subdivizare, reparare, simplificare) a schimbat plasa: corpul primeste triunghiurile
+      // noi, in aceeasi ordine, altfel pictura nu s-ar mai potrivi.
+      const mesh = meshForShape(shape);
+      const geometrieNoua = !aceeasiPlasa(amprentaPlasei(corp), amprentaPlasei(plasaDin(mesh.vertices, mesh.faces)));
+      const baza = geometrieNoua ? corpCuPlasaNoua(shape, corp) : shape;
       const pictat = corp.culori.some((c) => c !== 0) || sloturi.length > 1;
       const pictura = pictat ? salveazaPictura(corp, sloturi) : undefined;
-      if (JSON.stringify(pictura ?? null) === JSON.stringify(shape.pictura ?? null)) return shape;
+      if (!geometrieNoua && JSON.stringify(pictura ?? null) === JSON.stringify(shape.pictura ?? null)) return shape;
       schimbat = true;
-      if (pictura) return { ...shape, pictura };
-      const { pictura: _, ...fara } = shape;
+      if (pictura) return { ...baza, pictura };
+      const { pictura: _, ...fara } = baza;
       return fara;
     });
     if (schimbat) commitShapes(next, selectedIdsRef.current, tMagic3d("pictura.aplicat"), "pictura");
@@ -10131,6 +10137,14 @@ export function LayerlingEditor({
     setPicturaIntrare(null);
     salveazaPicturaCurenta(colector);
   }, [salveazaPicturaCurenta]);
+  // Cardul "Pictura" de pe pagina de start: designul nou se deschide direct in mod, dupa ce forma
+  // ceruta a ajuns pe plansa.
+  const [deschidePictura, setDeschidePictura] = useState(() => (typeof window === "undefined" ? false : preiaDeschidePictura()));
+  useEffect(() => {
+    if (!deschidePictura || shapes.length === 0) return;
+    setDeschidePictura(false);
+    setToolbarMode("paint");
+  }, [deschidePictura, shapes.length]);
   const toolbarModeAnterior = useRef(toolbarMode);
   useEffect(() => {
     const fost = toolbarModeAnterior.current;

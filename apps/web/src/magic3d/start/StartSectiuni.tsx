@@ -10,7 +10,7 @@ import { LANGUAGE_INFO } from "@/lib/languages";
 import { useLanguage } from "@/lib/useLanguage";
 import { DESCHIDE_GENERATOARE, deschideGenerator } from "@/magic3d/generatoare/GeneratoareButton";
 import { START, tx } from "@/magic3d/start/config";
-import { noteazaFormaInitiala } from "@/magic3d/start/formaInitiala";
+import { noteazaDeschidePictura, noteazaFormaInitiala } from "@/magic3d/start/formaInitiala";
 import { PanouImprimanta } from "@/magic3d/start/PanouImprimanta";
 import { tst } from "@/magic3d/start/texte";
 import { tl } from "@/magic3d/logo/texte";
@@ -195,6 +195,39 @@ export function StartGeneratoare({ onCreate }: { onCreate: () => void }) {
           </Fragment>
         ))}
       </ol>
+    </section>
+  );
+}
+
+/** Prezentarea modului Pictura: vaza pictata (randata in Magic3D) si un design nou deschis direct in mod. */
+export function StartPictura({ onCreate }: { onCreate: () => void }) {
+  const incearca = () => {
+    noteazaFormaInitiala("vase");
+    noteazaDeschidePictura();
+    onCreate();
+  };
+  return (
+    <section className="m3d-sectiune m3d-pictura-start" id="pictura">
+      <div className="m3d-pictura-start-text">
+        <span className="m3d-eticheta">{tst("picturaEticheta")}</span>
+        <h2>{tst("picturaTitlu1")}<br />{tst("picturaTitlu2")}</h2>
+        <p>{tst("picturaText")}</p>
+        <ul className="m3d-pictura-start-puncte">
+          <li>{tst("picturaPunct1")}</li>
+          <li>{tst("picturaPunct2")}</li>
+          <li>{tst("picturaPunct3")}</li>
+        </ul>
+        <button className="m3d-buton m3d-buton-verde m3d-buton-mare" type="button" data-testid="start-pictura" onClick={incearca}>
+          {tst("picturaIncearca")} <span aria-hidden="true">→</span>
+        </button>
+      </div>
+      <figure className="m3d-pictura-start-imagine">
+        <picture>
+          <source srcSet="/magic3d/start/pictura-vaza.webp" type="image/webp" />
+          <img src="/magic3d/start/pictura-vaza.png" width={337} height={720} alt={tst("picturaImagine")} loading="lazy" decoding="async" />
+        </picture>
+        <figcaption>{tst("picturaLegenda")}</figcaption>
+      </figure>
     </section>
   );
 }

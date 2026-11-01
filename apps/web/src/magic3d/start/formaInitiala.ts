@@ -28,3 +28,25 @@ export function preiaFormaInitiala(): ShapeAsset | null {
     return null;
   }
 }
+
+const CHEIE_PICTURA = "magic3d.deschidePictura";
+
+/** Designul nou se deschide direct in modul Pictura (cardul de pe pagina de start). */
+export function noteazaDeschidePictura(): void {
+  try {
+    window.sessionStorage.setItem(CHEIE_PICTURA, "da");
+  } catch {
+    // fara stocare: designul se deschide in Editor 3D
+  }
+}
+
+/** Daca s-a cerut modul Pictura (o singura data). */
+export function preiaDeschidePictura(): boolean {
+  try {
+    if (window.sessionStorage.getItem(CHEIE_PICTURA) !== "da") return false;
+    window.sessionStorage.removeItem(CHEIE_PICTURA);
+    return true;
+  } catch {
+    return false;
+  }
+}

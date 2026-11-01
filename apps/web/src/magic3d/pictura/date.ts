@@ -61,7 +61,9 @@ export function amprentaPlasei(plasa: PlasaPictura): Amprenta {
 
 /** Aceeasi plasa, cu o toleranta pentru rotunjirile unei mutari sau rotiri. */
 export function aceeasiPlasa(a: Amprenta, b: Amprenta): boolean {
-  if (a.triunghiuri !== b.triunghiuri || a.varfuri !== b.varfuri || a.mostre.length !== b.mostre.length) return false;
+  // Varfurile nu conteaza: aceleasi triunghiuri pot veni sudate (din retusare) sau cate trei pe
+  // triunghi (o plasa importata din editor).
+  if (a.triunghiuri !== b.triunghiuri || a.mostre.length !== b.mostre.length) return false;
   const aproape = (x: number, y: number) => Math.abs(x - y) <= 1e-3 + 1e-4 * Math.max(Math.abs(x), Math.abs(y));
   return aproape(a.arie, b.arie) && a.mostre.every((m, i) => aproape(m, b.mostre[i]));
 }

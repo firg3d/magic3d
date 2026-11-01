@@ -8,8 +8,8 @@ import { DESCHIDE_GENERATOARE, type CerereGeneratoare } from "@/magic3d/generato
 import { cadru, IMPRIMANTA, PanouImprimanta } from "@/magic3d/start/PanouImprimanta";
 import { libraryShapeAssets } from "@/lib/shapeCatalog";
 import { START } from "@/magic3d/start/config";
-import { noteazaFormaInitiala, preiaFormaInitiala } from "@/magic3d/start/formaInitiala";
-import { StartGeneratoare, StartPasi } from "@/magic3d/start/StartSectiuni";
+import { noteazaFormaInitiala, preiaDeschidePictura, preiaFormaInitiala } from "@/magic3d/start/formaInitiala";
+import { StartGeneratoare, StartPasi, StartPictura } from "@/magic3d/start/StartSectiuni";
 
 (globalThis as { IS_REACT_ACT_ENVIRONMENT?: boolean }).IS_REACT_ACT_ENVIRONMENT = true;
 
@@ -97,6 +97,20 @@ describe("pagina de start v2 (atelier)", () => {
     window.removeEventListener(DESCHIDE_GENERATOARE, asculta);
     expect(create).toBe(asteptate.length);
     expect(cerute).toEqual(asteptate.map(([, g]) => g));
+  });
+
+  it("blocul Pictura deschide un design nou cu vaza, direct in modul Pictura", () => {
+    let create = 0;
+    const c = randeaza(createElement(StartPictura, { onCreate: () => void create++ }));
+    const img = c.querySelector(".m3d-pictura-start-imagine img") as HTMLImageElement;
+    expect(img.getAttribute("src")).toBe("/magic3d/start/pictura-vaza.png");
+    expect(img.alt.length).toBeGreaterThan(10);
+    expect(preiaDeschidePictura()).toBe(false);
+    act(() => (c.querySelector("[data-testid='start-pictura']") as HTMLButtonElement).click());
+    expect(create).toBe(1);
+    expect(preiaFormaInitiala()?.id).toBe("vase");
+    expect(preiaDeschidePictura()).toBe(true);
+    expect(preiaDeschidePictura()).toBe(false);
   });
 
   it("butonul WhatsApp porneste cererea de oferta, cu numarul si mesajul atelierului", () => {

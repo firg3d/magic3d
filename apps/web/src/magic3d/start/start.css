@@ -1114,6 +1114,89 @@ html[data-theme="dark"] .m3d-bloc-verde .m3d-pas-eticheta {
 }
 
 /* ---------- miscare redusa ---------- */
+/* Pictura multicolor: textul in stanga, vaza pictata (randata in Magic3D) pe grila in dreapta. */
+.m3d-pictura-start {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.m3d-pictura-start-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.m3d-pictura-start-text p {
+  max-width: 46ch;
+  margin: 0;
+  color: var(--m3d-text2);
+  line-height: 1.55;
+}
+
+.m3d-pictura-start-puncte {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.m3d-pictura-start-puncte li {
+  padding: 6px 10px;
+  border: 1px solid var(--m3d-linie);
+  border-radius: var(--m3d-raza);
+  background: var(--m3d-suprafata);
+  font-family: var(--m3d-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.m3d-pictura-start-imagine {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin: 0;
+  padding: 32px 24px 20px;
+  border: 2px solid var(--m3d-cerneala);
+  border-radius: var(--m3d-raza-mare);
+  background:
+    linear-gradient(var(--m3d-grila) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(90deg, var(--m3d-grila) 1px, transparent 1px) 0 0 / 24px 24px,
+    var(--m3d-hartie);
+  box-shadow: 6px 6px 0 var(--m3d-verde);
+}
+
+.m3d-pictura-start-imagine img {
+  display: block;
+  width: auto;
+  height: clamp(260px, 34vw, 440px);
+  filter: drop-shadow(0 18px 18px rgba(0, 0, 0, 0.18));
+}
+
+.m3d-pictura-start-imagine figcaption {
+  color: var(--m3d-text3);
+  font-family: var(--m3d-mono);
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .m3d-pictura-start-imagine img {
+    transition: transform 0.4s ease;
+  }
+
+  .m3d-pictura-start-imagine:hover img {
+    transform: rotate(-3deg) translateY(-4px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .m3d-start .m3d-banda-pista,
   .m3d-start .m3d-imprimanta-punct,
@@ -1140,6 +1223,11 @@ html[data-theme="dark"] .m3d-bloc-verde .m3d-pas-eticheta {
 }
 
 @media (max-width: 900px) {
+  .m3d-pictura-start {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
   .m3d-hero,
   .m3d-generatoare {
     grid-template-columns: minmax(0, 1fr);

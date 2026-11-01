@@ -66,6 +66,14 @@ starea care acoperă cea mai mare parte din el (`culoarePeTriunghi.ts`).
   - culorile 3MF de pe triunghiuri se păstrează separat pentru fișierele din alte programe;
   - atributul `slic3rpe:mmu_segmentation` nu e citit de Bambu. Exportul „prusa” e numai pentru
     PrusaSlicer.
+- **Codul sursă PrusaSlicer 2.8.1** (`src/libslic3r/Format/3mf.cpp`, tag `version_2.8.1`):
+  - `_handle_start_triangle` citește `slic3rpe:mmu_segmentation` pentru orice triunghi, fără nicio
+    condiție de versiune, `Application` sau `Metadata/Slic3r_PE_model.config`; dacă atributul
+    lipsește, citește `paint_color` (deci și exportul Bambu se deschide pictat în PrusaSlicer);
+  - fără `Slic3r_PE_model.config`, tot obiectul devine un singur volum, iar `_generate_volumes`
+    pune pictura pe el cu `set_triangle_from_string`;
+  - `slic3rpe:Version3mf` lipsă înseamnă versiunea 0: schimbă doar numele obiectelor și
+    instanțele, nu pictura. Nu există o verificare a numărului de extrudere la încărcare.
 
 ## Verificare manuală (de făcut cu interfața deschisă)
 
