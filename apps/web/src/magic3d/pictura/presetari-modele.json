@@ -1,0 +1,54 @@
+{
+  "versiune": 1,
+  "nota": "Presetari de culoare: un model procedural (vezi modele.ts) si culorile lui, in ordinea nivelurilor. Se adauga aici, fara cod. Numele sunt in ambele limbi.",
+  "presetari": [
+    {
+      "id": "pepene",
+      "nume": { "ro": "Pepene", "en": "Watermelon" },
+      "parametri": { "model": "gradientRadial", "marime": 6, "unghi": 0, "densitate": 0.5, "seed": 1, "culori": 3, "proiectie": "sus" },
+      "culori": ["#c8282e", "#f4f4f1", "#1f8a5b"]
+    },
+    {
+      "id": "militar",
+      "nume": { "ro": "Militar", "en": "Military" },
+      "parametri": { "model": "camuflaj", "marime": 8, "unghi": 0, "densitate": 0.7, "seed": 7, "culori": 4, "proiectie": "triplanar" },
+      "culori": ["#5b6b3a", "#8a7d55", "#3a3f2c", "#1d1f1e"]
+    },
+    {
+      "id": "craciun",
+      "nume": { "ro": "Crăciun", "en": "Christmas" },
+      "parametri": { "model": "fulgi", "marime": 10, "unghi": 0, "densitate": 0.8, "seed": 3, "culori": 2, "proiectie": "triplanar" },
+      "culori": ["#c8282e", "#f4f4f1"]
+    },
+    {
+      "id": "galaxie",
+      "nume": { "ro": "Galaxie", "en": "Galaxy" },
+      "parametri": { "model": "marmura", "marime": 6, "unghi": 30, "densitate": 0.8, "seed": 11, "culori": 4, "proiectie": "sferic" },
+      "culori": ["#1d1f1e", "#2b2363", "#7b3fa0", "#6ec1e4"]
+    },
+    {
+      "id": "zebra",
+      "nume": { "ro": "Zebră", "en": "Zebra" },
+      "parametri": { "model": "lemn", "marime": 3, "unghi": 0, "densitate": 0.6, "seed": 5, "culori": 2, "proiectie": "triplanar" },
+      "culori": ["#f4f4f1", "#1d1f1e"]
+    },
+    {
+      "id": "curcubeu",
+      "nume": { "ro": "Curcubeu", "en": "Rainbow" },
+      "parametri": { "model": "gradientInaltime", "marime": 5, "unghi": 0, "densitate": 0.5, "seed": 1, "culori": 6, "proiectie": "fata" },
+      "culori": ["#7b3fa0", "#1f5fbf", "#1f8a5b", "#f5c518", "#ee7a1e", "#c8282e"]
+    },
+    {
+      "id": "marmura-alba",
+      "nume": { "ro": "Marmură albă", "en": "White marble" },
+      "parametri": { "model": "marmura", "marime": 4, "unghi": 20, "densitate": 0.6, "seed": 2, "culori": 3, "proiectie": "triplanar" },
+      "culori": ["#f4f4f1", "#d9dcd8", "#8d9291"]
+    },
+    {
+      "id": "tabla-sah",
+      "nume": { "ro": "Tablă de șah", "en": "Checkerboard" },
+      "parametri": { "model": "carouri", "marime": 5, "unghi": 0, "densitate": 0.5, "seed": 1, "culori": 2, "proiectie": "triplanar" },
+      "culori": ["#f4f4f1", "#1d1f1e"]
+    }
+  ]
+}

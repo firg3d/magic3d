@@ -1,0 +1,37 @@
+{
+  "versiune": 1,
+  "nota": "Sistemele multicolor si cate culori duc. Valorile sunt orientative (de verificat la fiecare producator); estimarile de material si timp depind de slicer, de turnul de curatare si de setarile de purjare.",
+  "alegeriManuale": [2, 4, 6, 8, 12, 14, 16],
+  "sisteme": [
+    { "id": "fara", "nume": { "ro": "Fără sistem multicolor", "en": "No multicolour system" }, "culoriPeUnitate": 1, "unitatiMax": 1, "gramePerSchimbare": 0, "secundePerSchimbare": 0 },
+    { "id": "bambu-ams-lite", "nume": { "ro": "Bambu AMS lite", "en": "Bambu AMS lite" }, "culoriPeUnitate": 4, "unitatiMax": 1, "gramePerSchimbare": 0.45, "secundePerSchimbare": 45 },
+    { "id": "bambu-ams", "nume": { "ro": "Bambu AMS / AMS 2 Pro", "en": "Bambu AMS / AMS 2 Pro" }, "culoriPeUnitate": 4, "unitatiMax": 4, "gramePerSchimbare": 0.4, "secundePerSchimbare": 40 },
+    { "id": "prusa-mmu3", "nume": { "ro": "Prusa MMU3", "en": "Prusa MMU3" }, "culoriPeUnitate": 5, "unitatiMax": 1, "gramePerSchimbare": 0.35, "secundePerSchimbare": 50 },
+    { "id": "prusa-xl-5t", "nume": { "ro": "Prusa XL (5 capete)", "en": "Prusa XL (5 toolheads)" }, "culoriPeUnitate": 5, "unitatiMax": 1, "gramePerSchimbare": 0.1, "secundePerSchimbare": 15 },
+    { "id": "creality-cfs", "nume": { "ro": "Creality CFS", "en": "Creality CFS" }, "culoriPeUnitate": 4, "unitatiMax": 4, "gramePerSchimbare": 0.45, "secundePerSchimbare": 45 },
+    { "id": "anycubic-ace-pro", "nume": { "ro": "Anycubic ACE Pro", "en": "Anycubic ACE Pro" }, "culoriPeUnitate": 4, "unitatiMax": 2, "gramePerSchimbare": 0.5, "secundePerSchimbare": 50 },
+    { "id": "elegoo-canvas", "nume": { "ro": "Elegoo Canvas", "en": "Elegoo Canvas" }, "culoriPeUnitate": 4, "unitatiMax": 1, "gramePerSchimbare": 0.45, "secundePerSchimbare": 45 },
+    { "id": "qidi-box", "nume": { "ro": "Qidi Box", "en": "Qidi Box" }, "culoriPeUnitate": 4, "unitatiMax": 4, "gramePerSchimbare": 0.45, "secundePerSchimbare": 45 },
+    { "id": "snapmaker-u1", "nume": { "ro": "Snapmaker U1 (4 capete)", "en": "Snapmaker U1 (4 toolheads)" }, "culoriPeUnitate": 4, "unitatiMax": 1, "gramePerSchimbare": 0.1, "secundePerSchimbare": 15 }
+  ],
+  "profile": [
+    { "profil": "bambu-lab-a1-mini", "sistem": "bambu-ams-lite" },
+    { "profil": "bambu-lab-a1", "sistem": "bambu-ams-lite" },
+    { "profil": "bambu-lab-*", "sistem": "bambu-ams" },
+    { "profil": "prusa-xl", "sistem": "prusa-xl-5t" },
+    { "profil": "prusa-mk3s", "sistem": "prusa-mmu3" },
+    { "profil": "prusa-mk3-5", "sistem": "prusa-mmu3" },
+    { "profil": "prusa-mk4", "sistem": "prusa-mmu3" },
+    { "profil": "prusa-mk4s", "sistem": "prusa-mmu3" },
+    { "profil": "prusa-core-one", "sistem": "prusa-mmu3" },
+    { "profil": "creality-k2*", "sistem": "creality-cfs" },
+    { "profil": "creality-hi", "sistem": "creality-cfs" },
+    { "profil": "anycubic-kobra-3*", "sistem": "anycubic-ace-pro" },
+    { "profil": "anycubic-kobra-s1*", "sistem": "anycubic-ace-pro" },
+    { "profil": "elegoo-centauri-carbon-2", "sistem": "elegoo-canvas" },
+    { "profil": "qidi-q2*", "sistem": "qidi-box" },
+    { "profil": "qidi-x-plus-4", "sistem": "qidi-box" },
+    { "profil": "qidi-x-max-4", "sistem": "qidi-box" },
+    { "profil": "snapmaker-u1", "sistem": "snapmaker-u1" }
+  ]
+}

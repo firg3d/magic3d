@@ -16,12 +16,26 @@ import { t } from "@/magic3d/core/i18n/index";
 import { SLOTURI_MAXIME, type CorpPictat } from "@/magic3d/pictura/date";
 import { PALETA_ATELIER, filamentAtelier } from "@/magic3d/pictura/paleta";
 import { exportaPictura3mfAsync } from "@/magic3d/pictura/pictura3mf";
+import { calculeazaModelInFundal, type CalculModel } from "@/magic3d/pictura/calculWorker";
+import { estimeaza, limitaCulori, sistem as sistemDupaId, sistemPentruProfil } from "@/magic3d/pictura/imprimante";
+import { PARAMETRI_IMPLICITI, cutieVarfuri, type ParametriModel } from "@/magic3d/pictura/modele";
+import { PRESETARI, modeleleMele as citesteModeleleMele, salveazaModelulMeu, stergeModelulMeu, type ModelulMeu } from "@/magic3d/pictura/presetari";
+import { reduceCulori, unesteSloturi, type RezultatReducere } from "@/magic3d/pictura/reducere";
+import { SectiuneEstimari, SectiuneImprimanta, SectiuneModele, SectiuneReducere, type SursaReducere, type TintaModel } from "@/magic3d/pictura/SectiuniPictura";
 import { subPensula, topologie, zonaGaleata, type ModGaleata, type ModPensula, type Topologie } from "@/magic3d/pictura/topologie";
 
 export type Unealta = "pensula" | "galeata" | "pipeta" | "radiera";
 
 /** O actiune de pictura: ce triunghiuri, ce culori aveau, ce culoare au primit. */
-type Actiune = { corp: number; triunghiuri: Uint32Array; vechi: Uint8Array; nou: number };
+type ActiunePictura = { tip: "pictura"; corp: number; triunghiuri: Uint32Array; vechi: Uint8Array; nou: number };
+/** Culorile tuturor corpurilor si sloturile, inainte si dupa: un model aplicat, o reducere, o unire. */
+type StarePictura = { culori: Uint8Array[]; sloturi: string[] };
+type ActiuneStare = { tip: "stare"; inainte: StarePictura; dupa: StarePictura };
+type Actiune = ActiunePictura | ActiuneStare;
+
+/** Cata memorie poate tine istoricul modului (instantaneele unui model mare sunt mari). */
+const ISTORIC_OCTETI_MAX = 160 * 1024 * 1024;
+const octeti = (a: Actiune) => (a.tip === "pictura" ? a.triunghiuri.byteLength + a.vechi.byteLength : a.inainte.culori.reduce((s, c) => s + c.byteLength * 2, 0));
 
 export type RezultatPictura = { corpuri: CorpPictat[]; sloturi: string[] };
 
@@ -35,6 +49,8 @@ type Props = {
   /** O actiune s-a terminat (pictura, anulare, sloturi): editorul o poate salva pe corpuri. */
   onSchimbare?: () => void;
   onAnunt: (text: string, eroare?: boolean) => void;
+  /** Profilul de imprimanta ales in editor (id de preset): da sistemul multicolor si limita. */
+  profilImprimanta?: string | null;
 };
 
 const AVERTISMENT_VAZUT = "magic3d.pictura.avertisment";
@@ -44,7 +60,7 @@ function nrFormat(n: number) {
   return n.toLocaleString("ro-RO");
 }
 
-export function ModPictura({ corpuri: intrare, sloturi: sloturiInitiale, titlu, inregistreaza, onGata, onSchimbare, onAnunt }: Props) {
+export function ModPictura({ corpuri: intrare, sloturi: sloturiInitiale, titlu, inregistreaza, onGata, onSchimbare, onAnunt, profilImprimanta }: Props) {
   const onSchimbareRef = useRef(onSchimbare);
   onSchimbareRef.current = onSchimbare;
   const gazda = useRef<HTMLDivElement>(null);
@@ -81,6 +97,12 @@ export function ModPictura({ corpuri: intrare, sloturi: sloturiInitiale, titlu, 
   const stare = useRef({ unealta, modPensula, modGaleata, unghi, marime, activ, sloturi, ascunse });
   stare.current = { unealta, modPensula, modGaleata, unghi, marime, activ, sloturi, ascunse };
   const scena = useRef<{ plase: THREE.Mesh[]; fire: THREE.Mesh[]; inel: THREE.Mesh; randeaza: () => void } | null>(null);
+  /** Creste la fiecare schimbare de culori (culorile se schimba pe loc, in typed arrays). */
+  const [versiune, setVersiune] = useState(0);
+  /** Reducerea propusa, aratata pe model inainte de a fi aplicata. */
+  const [previzualizare, setPrevizualizare] = useState<RezultatReducere | null>(null);
+  const previzRef = useRef(previzualizare);
+  previzRef.current = previzualizare;
   const actiuneCurenta = useRef<{ corp: number; vechi: Map<number, number>; nou: number } | null>(null);
 
   /** Culorile unui corp, din indexuri, in bufferul plasei. */
@@ -91,10 +113,13 @@ export function ModPictura({ corpuri: intrare, sloturi: sloturiInitiale, titlu, 
     const atr = geom.getAttribute("color") as THREE.BufferAttribute;
     const arr = atr.array as Float32Array;
     const culori = stare.current.sloturi.map((hex) => new THREE.Color(hex));
+    const prev = previzRef.current;
+    const culoriPrev = prev ? prev.sloturi.map((hex) => new THREE.Color(hex)) : null;
     const corp = corpuri[index];
     const scrie = (tri: number) => {
       const slot = corp.culori[tri];
-      const c = stare.current.ascunse.has(slot) ? NEUTRU : culori[slot] ?? culori[0];
+      const c = culoriPrev ? culoriPrev[prev!.mapare[slot]] ?? culoriPrev[0]
+        : stare.current.ascunse.has(slot) ? NEUTRU : culori[slot] ?? culori[0];
       for (let k = 0; k < 3; k += 1) { arr[tri * 9 + k * 3] = c.r; arr[tri * 9 + k * 3 + 1] = c.g; arr[tri * 9 + k * 3 + 2] = c.b; }
     };
     if (triunghiuri) for (const tri of triunghiuri) scrie(tri);
@@ -103,11 +128,36 @@ export function ModPictura({ corpuri: intrare, sloturi: sloturiInitiale, titlu, 
     s.randeaza();
   }, [corpuri]);
 
+  /** Pune o stare intreaga (culorile tuturor corpurilor si sloturile). */
+  const puneStare = useCallback((st: StarePictura) => {
+    corpuri.forEach((c, i) => c.culori.set(st.culori[i]));
+    stare.current.sloturi = st.sloturi;
+    setSloturi(st.sloturi);
+    setActiv((a) => Math.min(a, st.sloturi.length - 1));
+    corpuri.forEach((_, i) => coloreaza(i));
+  }, [coloreaza, corpuri]);
+  const instantaneu = useCallback((): StarePictura => ({ culori: corpuri.map((c) => new Uint8Array(c.culori)), sloturi: [...stare.current.sloturi] }), [corpuri]);
+
   const aplicaActiune = useCallback((a: Actiune, invers: boolean) => {
+    if (a.tip === "stare") {
+      puneStare(invers ? a.inainte : a.dupa);
+      return;
+    }
     const culori = corpuri[a.corp].culori;
     a.triunghiuri.forEach((tri, i) => { culori[tri] = invers ? a.vechi[i] : a.nou; });
     coloreaza(a.corp, a.triunghiuri);
-  }, [coloreaza, corpuri]);
+  }, [coloreaza, corpuri, puneStare]);
+
+  const adaugaPas = useCallback((pas: Actiune) => {
+    const h = istoricRef.current;
+    const pasi = [...h.pasi.slice(0, h.index), pas];
+    let total = pasi.reduce((s2, x) => s2 + octeti(x), 0);
+    while (pasi.length > 1 && (pasi.length > 200 || total > ISTORIC_OCTETI_MAX)) total -= octeti(pasi.shift()!);
+    istoricRef.current = { pasi, index: pasi.length };
+    setIstoric(istoricRef.current);
+    setVersiune((v) => v + 1);
+    onSchimbareRef.current?.();
+  }, []);
 
   const anuleaza = useCallback(() => {
     const h = istoricRef.current;
@@ -115,6 +165,7 @@ export function ModPictura({ corpuri: intrare, sloturi: sloturiInitiale, titlu, 
     aplicaActiune(h.pasi[h.index - 1], true);
     istoricRef.current = { ...h, index: h.index - 1 };
     setIstoric(istoricRef.current);
+    setVersiune((v) => v + 1);
     onSchimbareRef.current?.();
   }, [aplicaActiune]);
   const reface = useCallback(() => {
@@ -123,6 +174,7 @@ export function ModPictura({ corpuri: intrare, sloturi: sloturiInitiale, titlu, 
     aplicaActiune(h.pasi[h.index], false);
     istoricRef.current = { ...h, index: h.index + 1 };
     setIstoric(istoricRef.current);
+    setVersiune((v) => v + 1);
     onSchimbareRef.current?.();
   }, [aplicaActiune]);
 
@@ -150,14 +202,8 @@ export function ModPictura({ corpuri: intrare, sloturi: sloturiInitiale, titlu, 
     const a = actiuneCurenta.current;
     actiuneCurenta.current = null;
     if (!a || a.vechi.size === 0) return;
-    const triunghiuri = Uint32Array.from(a.vechi.keys());
-    const vechi = Uint8Array.from(a.vechi.values());
-    const h = istoricRef.current;
-    const pasi = [...h.pasi.slice(0, h.index), { corp: a.corp, triunghiuri, vechi, nou: a.nou }].slice(-200);
-    istoricRef.current = { pasi, index: pasi.length };
-    setIstoric(istoricRef.current);
-    onSchimbareRef.current?.();
-  }, []);
+    adaugaPas({ tip: "pictura", corp: a.corp, triunghiuri: Uint32Array.from(a.vechi.keys()), vechi: Uint8Array.from(a.vechi.values()), nou: a.nou });
+  }, [adaugaPas]);
 
   // Editorul cere rezultatul la iesire, dupa ce modul s-a inchis: colectorul ramane al lui.
   useEffect(() => {
@@ -342,7 +388,7 @@ export function ModPictura({ corpuri: intrare, sloturi: sloturiInitiale, titlu, 
   }, [corpuri, topologii]);
 
   // Culorile sloturilor sau ce e ascuns s-au schimbat: se recoloreaza tot.
-  useEffect(() => { corpuri.forEach((_, i) => coloreaza(i)); }, [sloturi, ascunse, corpuri, coloreaza]);
+  useEffect(() => { corpuri.forEach((_, i) => coloreaza(i)); }, [sloturi, ascunse, previzualizare, corpuri, coloreaza]);
   const sloturiPrimite = useRef(sloturi);
   useEffect(() => {
     if (sloturiPrimite.current !== sloturi) onSchimbareRef.current?.();
@@ -382,6 +428,108 @@ export function ModPictura({ corpuri: intrare, sloturi: sloturiInitiale, titlu, 
     return () => document.removeEventListener("keydown", tasta);
   }, [anuleaza, reface, marimeMax]);
 
+  // --- imprimanta, limita, estimari ---
+  const [sistemId, setSistemId] = useState(() => sistemPentruProfil(profilImprimanta)?.id ?? "bambu-ams");
+  const [unitati, setUnitati] = useState(1);
+  const [limitaManuala, setLimitaManuala] = useState<number | null>(null);
+  const sistemAles = sistemDupaId(sistemId);
+  const limita = limitaManuala ?? limitaCulori(sistemAles, unitati);
+  const ponderi = useMemo(() => {
+    const p = new Array<number>(SLOTURI_MAXIME).fill(0);
+    corpuri.forEach((c) => c.culori.forEach((x) => { p[x] += 1; }));
+    return p.slice(0, sloturi.length);
+    // versiune: culorile se schimba pe loc
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [corpuri, sloturi.length, versiune]);
+  const folosite = ponderi.filter((x) => x > 0).length;
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const estimare = useMemo(() => estimeaza(corpuri, sistemAles), [corpuri, sistemAles, versiune]);
+
+  /** O stare noua pentru toate corpurile, ca un singur pas de anulare. */
+  const aplicaStare = useCallback((culoriNoi: Uint8Array[], sloturiNoi: string[]) => {
+    const inainte = instantaneu();
+    const dupa = { culori: culoriNoi, sloturi: sloturiNoi };
+    puneStare(dupa);
+    adaugaPas({ tip: "stare", inainte, dupa: { culori: culoriNoi.map((c) => new Uint8Array(c)), sloturi: [...sloturiNoi] } });
+  }, [adaugaPas, instantaneu, puneStare]);
+  const aplicaMapare = useCallback((rez: RezultatReducere) => {
+    aplicaStare(corpuri.map((c) => c.culori.map((x) => Math.max(0, rez.mapare[x] ?? 0))), rez.sloturi);
+  }, [aplicaStare, corpuri]);
+
+  // --- reducerea de culori ---
+  const [sursaReducere, setSursaReducere] = useState<SursaReducere>("folosite");
+  const [fixate, setFixate] = useState<Set<number>>(new Set());
+  const [arataPrevizualizare, setArataPrevizualizare] = useState(false);
+  const propunereReducere = useCallback((): RezultatReducere => reduceCulori({
+    sloturi,
+    ponderi,
+    limita,
+    paleta: sursaReducere === "atelier" ? PALETA_ATELIER.filamente.filter((f) => f.disponibil).map((f) => f.hex) : undefined,
+    fixate: [...fixate],
+  }), [fixate, limita, ponderi, sloturi, sursaReducere]);
+  useEffect(() => { setPrevizualizare(arataPrevizualizare ? propunereReducere() : null); }, [arataPrevizualizare, propunereReducere]);
+  const aplicaReducerea = () => {
+    setArataPrevizualizare(false);
+    aplicaMapare(propunereReducere());
+    setFixate(new Set());
+  };
+  const uneste = (din: number, inSlot: number) => {
+    setArataPrevizualizare(false);
+    aplicaMapare(unesteSloturi(sloturi, din, inSlot));
+    setFixate(new Set());
+  };
+
+  // --- modele de culoare ---
+  const [parametri, setParametri] = useState<ParametriModel>(PARAMETRI_IMPLICITI);
+  const [culoriModel, setCuloriModel] = useState<string[]>(() => Array.from({ length: PARAMETRI_IMPLICITI.culori }, (_, i) => sloturiInitiale[i % sloturiInitiale.length]));
+  const [presetareId, setPresetareId] = useState("");
+  const [modeleleMele, setModeleleMele] = useState<ModelulMeu[]>(() => citesteModeleleMele());
+  const [tinta, setTinta] = useState<TintaModel>("tot");
+  const [progres, setProgres] = useState<number | null>(null);
+  const calcul = useRef<CalculModel | null>(null);
+  const alegePresetare = (id: string) => {
+    setPresetareId(id);
+    const p = PRESETARI.find((x) => x.id === id) ?? modeleleMele.find((x) => x.id === id);
+    if (!p) return;
+    setParametri(p.parametri);
+    setCuloriModel(p.culori.map((c) => c.toLowerCase()));
+  };
+  const aplicaModel = async () => {
+    if (calcul.current) return;
+    // Culorile modelului devin sloturi: o culoare deja folosita isi pastreaza slotul.
+    const sloturiNoi = [...sloturi];
+    const nivelLaSlot = culoriModel.slice(0, parametri.culori).map((hex) => {
+      const h = hex.toLowerCase();
+      let k = sloturiNoi.indexOf(h);
+      if (k < 0 && sloturiNoi.length < SLOTURI_MAXIME) { sloturiNoi.push(h); k = sloturiNoi.length - 1; }
+      return Math.max(0, k);
+    });
+    const culoriNoi: Uint8Array[] = [];
+    setProgres(0);
+    try {
+      for (let i = 0; i < corpuri.length; i += 1) {
+        const top = topologii[i];
+        const c = calculeazaModelInFundal(top.centre, top.normale, cutieVarfuri(corpuri[i].varfuri), parametri, (f) => setProgres((i + f) / corpuri.length));
+        calcul.current = c;
+        const niveluri = await c.rezultat;
+        if (!niveluri) return; // anulat
+        const noua = new Uint8Array(corpuri[i].culori);
+        for (let tri = 0; tri < noua.length; tri += 1) {
+          if (tinta === "tot" || corpuri[i].culori[tri] === tinta) noua[tri] = nivelLaSlot[niveluri[tri]] ?? 0;
+        }
+        culoriNoi.push(noua);
+      }
+      aplicaStare(culoriNoi, sloturiNoi);
+    } catch (e) {
+      onAnunt(t("pictura.modelEsuat", { motiv: e instanceof Error ? e.message : String(e) }), true);
+    } finally {
+      calcul.current = null;
+      setProgres(null);
+    }
+  };
+  const anuleazaModel = () => calcul.current?.anuleaza();
+  useEffect(() => () => calcul.current?.anuleaza(), []);
+
   const schimbaCuloare = (hex: string) => setSloturi((s) => s.map((c, i) => (i === activ ? hex.toLowerCase() : c)));
   const adaugaSlot = () => {
     if (sloturi.length >= SLOTURI_MAXIME) return;
@@ -391,14 +539,8 @@ export function ModPictura({ corpuri: intrare, sloturi: sloturiInitiale, titlu, 
   };
   const stergeSlot = () => {
     if (sloturi.length <= 1) return;
-    const ultim = sloturi.length - 1;
-    corpuri.forEach((c, i) => {
-      const tri: number[] = [];
-      c.culori.forEach((x, k) => { if (x === ultim) tri.push(k); });
-      if (tri.length) { picteaza(i, tri, 0); inchideActiune(); }
-    });
-    setSloturi((s) => s.slice(0, -1));
-    setActiv((a) => Math.min(a, ultim - 1));
+    // Triunghiurile ultimului slot trec pe baza, ca un singur pas de anulare.
+    aplicaMapare(unesteSloturi(sloturi, sloturi.length - 1, 0));
   };
   const comutaAscuns = (slot: number) => setAscunse((s) => {
     const n = new Set(s);
@@ -519,6 +661,8 @@ export function ModPictura({ corpuri: intrare, sloturi: sloturiInitiale, titlu, 
       </div>
 
       <aside className="m3d-pictura-panou dreapta" aria-label={t("pictura.sloturi")}>
+        <SectiuneImprimanta sistem={sistemAles} unitati={unitati} manual={limitaManuala} limita={limita} folosite={folosite}
+          onSistem={(id) => { setSistemId(id); setUnitati(1); }} onUnitati={setUnitati} onManual={setLimitaManuala} />
         <h3>{t("pictura.sloturi")}</h3>
         <ol className="m3d-pictura-sloturi">
           {sloturi.map((hex, i) => {
@@ -557,6 +701,17 @@ export function ModPictura({ corpuri: intrare, sloturi: sloturiInitiale, titlu, 
           <span>{t("pictura.culoareProprie")}</span>
           <input type="color" value={sloturi[activ] ?? "#808080"} data-testid="pictura-culoare-proprie" onChange={(e) => schimbaCuloare(e.target.value)} />
         </label>
+        <SectiuneModele parametri={parametri} culoriModel={culoriModel} sloturi={sloturi} presetareId={presetareId} presetari={PRESETARI}
+          modeleleMele={modeleleMele} tinta={tinta} progres={progres}
+          onParametri={(p) => { setParametri(p); setPresetareId(""); }} onCulori={(c) => { setCuloriModel(c); setPresetareId(""); }} onPresetare={alegePresetare} onTinta={setTinta}
+          onAplica={() => void aplicaModel()} onAnuleaza={anuleazaModel}
+          onSalveaza={(nume) => setModeleleMele(salveazaModelulMeu({ nume, parametri, culori: culoriModel.slice(0, parametri.culori) }))}
+          onSterge={(id) => { setModeleleMele(stergeModelulMeu(id)); setPresetareId(""); }} />
+        <SectiuneReducere sloturi={sloturi} ponderi={ponderi} limita={limita} sursa={sursaReducere} fixate={fixate}
+          previzualizare={arataPrevizualizare} deschisa={folosite > limita}
+          onSursa={setSursaReducere} onFixeaza={(i) => setFixate((f) => { const n = new Set(f); if (n.has(i)) n.delete(i); else n.add(i); return n; })}
+          onPrevizualizare={setArataPrevizualizare} onAplica={aplicaReducerea} onUneste={uneste} />
+        <SectiuneEstimari estimare={estimare} sistem={sistemAles} />
         <div className="m3d-pictura-export">
           <button type="button" className="m3d-pictura-buton principal" data-testid="pictura-export" disabled={exporta} onClick={() => void exportaFisier()}>{t("pictura.export")}</button>
           <p className="m3d-pictura-nota">{t("pictura.exportNota")}</p>

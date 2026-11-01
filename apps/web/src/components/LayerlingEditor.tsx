@@ -14889,6 +14889,7 @@ export function LayerlingEditor({
             titlu={projectName}
             inregistreaza={inregistreazaPictura}
             onSchimbare={programeazaSalvarePictura}
+            profilImprimanta={workspaceSettings.printer}
             onGata={() => setToolbarMode("geometry")}
             onAnunt={(text, eroare) => setNotice(text, Boolean(eroare))}
           />

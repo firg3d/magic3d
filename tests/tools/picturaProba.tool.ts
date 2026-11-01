@@ -12,6 +12,8 @@ import { it } from "vitest";
 import type { CorpPictat } from "@/magic3d/pictura/date";
 import { exportaPictura3mf } from "@/magic3d/pictura/pictura3mf";
 import { topologie, zonaGaleata } from "@/magic3d/pictura/topologie";
+import { calculeazaModel, cutieVarfuri } from "@/magic3d/pictura/modele";
+import { PRESETARI } from "@/magic3d/pictura/presetari";
 
 function corp(geom: THREE.BufferGeometry, nume: string, x: number): CorpPictat {
   geom.translate(x, 0, 0);
@@ -54,4 +56,12 @@ it("scrie fisierele de proba", () => {
   ];
   writeFileSync(path.join(out, "pictura-proba-bambu.3mf"), exportaPictura3mf([cub, cil], sloturi, "Pictura proba", "bambu"));
   writeFileSync(path.join(out, "pictura-proba-prusa.3mf"), exportaPictura3mf([cub, cil], sloturi, "Pictura proba", "prusa"));
+
+  // Etapa 2: o sfera cu presetarea "Curcubeu" (6 culori), generata procedural.
+  const sfera = corp(new THREE.SphereGeometry(20, 96, 48).translate(0, 20, 0), "Sfera", 0);
+  const curcubeu = PRESETARI.find((x) => x.id === "curcubeu")!;
+  const t = topologie(sfera);
+  const niveluri = calculeazaModel(t.centre, t.normale, cutieVarfuri(sfera.varfuri), curcubeu.parametri)!;
+  sfera.culori.set(niveluri);
+  writeFileSync(path.join(out, "pictura-proba-curcubeu.3mf"), exportaPictura3mf([sfera], curcubeu.culori.map((culoare) => ({ culoare })), "Curcubeu", "bambu"));
 });

@@ -428,3 +428,174 @@
     letter-spacing: 0;
   }
 }
+
+/* Etapa 2: sectiuni pliabile (imprimanta, modele, reducere, estimari). */
+.m3d-pictura-sectiune {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px 0;
+  border-top: 1px solid var(--border);
+}
+
+.m3d-pictura-sectiune[open] {
+  padding-bottom: 12px;
+}
+
+.m3d-pictura-sectiune > summary {
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--label, var(--foreground));
+  cursor: pointer;
+}
+
+.m3d-pictura-sectiune[open] > summary {
+  margin-bottom: 4px;
+}
+
+.m3d-pictura-sectiune > * + * {
+  margin-top: 8px;
+}
+
+.m3d-pictura-rand {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.m3d-pictura-rand > .m3d-pictura-camp,
+.m3d-pictura-rand > input {
+  flex: 1;
+  min-width: 0;
+}
+
+.m3d-pictura-camp input[type="text"],
+.m3d-pictura-rand input[type="text"] {
+  min-height: 36px;
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface, var(--panel));
+  color: var(--foreground);
+  font: inherit;
+  font-size: 13px;
+}
+
+.m3d-pictura-buton.mic {
+  min-height: 36px;
+  padding: 4px 10px;
+  font-size: 12px;
+}
+
+.m3d-pictura-culori-model {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.m3d-pictura-culori-model li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.m3d-pictura-culori-model select,
+.m3d-pictura-uneste select {
+  flex: 1;
+  min-width: 0;
+  min-height: 34px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface, var(--panel));
+  color: var(--foreground);
+  font: inherit;
+  font-size: 12px;
+}
+
+.m3d-pictura-mostra.mica {
+  width: 14px;
+  height: 14px;
+}
+
+.m3d-pictura-progres {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.m3d-pictura-progres progress {
+  flex: 1;
+  height: 10px;
+  accent-color: var(--primary);
+}
+
+.m3d-pictura-limita {
+  margin: 0;
+  padding: 6px 8px;
+  border-radius: 6px;
+  background: var(--tile);
+  font-size: 12.5px;
+  line-height: 1.4;
+}
+
+.m3d-pictura-limita.peste {
+  border-left: 4px solid #e0a43a;
+  font-weight: 600;
+}
+
+.m3d-pictura-fixate {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.m3d-pictura-fixate legend {
+  margin-bottom: 4px;
+  font-size: 12.5px;
+}
+
+.m3d-pictura-uneste {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+}
+
+.m3d-pictura-uneste > span:first-child {
+  flex-basis: 100%;
+}
+
+.m3d-pictura-estimari {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+}
+
+.m3d-pictura-estimari div {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.m3d-pictura-estimari dt {
+  opacity: 0.8;
+}
+
+.m3d-pictura-estimari dd {
+  margin: 0;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
